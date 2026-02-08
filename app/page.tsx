@@ -1,4 +1,3 @@
-import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ValueProps from "./components/ValueProps";
 import About from "./components/About";
@@ -8,12 +7,10 @@ import Partners from "./components/Partners";
 import FAQ from "./components/FAQ";
 import Blog from "./components/Blog";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
       <Hero />
       <ValueProps />
       <About />
@@ -23,7 +20,6 @@ export default function Home() {
       <FAQ />
       <Blog />
       <Contact />
-      <Footer />
     </>
   );
 }

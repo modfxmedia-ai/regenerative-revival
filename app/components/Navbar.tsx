@@ -5,13 +5,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 
 const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "About", href: "#about" },
-  { label: "Treatments", href: "#treatments" },
-  { label: "For Businesses", href: "#partners" },
-  { label: "Results", href: "#results" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Blog", href: "#blog" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "For Businesses", href: "/#partners" },
+  { label: "Results", href: "/#results" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -76,7 +76,7 @@ export default function Navbar() {
                 <span>(555) 123-4567</span>
               </a>
               <a
-                href="#contact"
+                href="/contact"
                 className={`hidden md:inline-flex h-10 items-center rounded-full px-6 text-sm font-semibold transition-all ${
                   scrolled
                     ? "bg-primary text-white hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/20"
@@ -122,7 +122,7 @@ export default function Navbar() {
                 </motion.a>
               ))}
               <a
-                href="#contact"
+                href="/contact"
                 onClick={() => setMobileOpen(false)}
                 className="mt-4 flex h-14 items-center justify-center rounded-full bg-primary text-lg font-semibold text-white"
               >

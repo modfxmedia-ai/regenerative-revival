@@ -32,22 +32,28 @@ export default function ValueProps() {
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section ref={ref} className="relative py-16 bg-white">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+    <section ref={ref} className="relative py-20 bg-white overflow-hidden">
+      {/* Subtle ambient glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {props.map((p, i) => (
             <motion.div
               key={p.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="flex flex-col items-center text-center"
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
+              transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="group relative flex flex-col items-center text-center rounded-3xl p-8 bg-white/60 backdrop-blur-xl border border-white/80 shadow-[0_8px_32px_rgba(107,63,160,0.06)] hover:shadow-[0_16px_48px_rgba(107,63,160,0.12)] hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 mb-5">
+              {/* Glass highlight */}
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-white/80 to-transparent opacity-60 pointer-events-none" />
+
+              <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/10 mb-5 group-hover:scale-110 transition-transform duration-300">
                 <p.icon className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{p.title}</h3>
-              <p className="text-sm text-gray-500 leading-relaxed">{p.description}</p>
+              <h3 className="relative text-lg font-semibold text-gray-900 mb-2">{p.title}</h3>
+              <p className="relative text-sm text-gray-500 leading-relaxed">{p.description}</p>
             </motion.div>
           ))}
         </div>

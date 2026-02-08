@@ -179,7 +179,7 @@ export default function Hero() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-              Video player — add your embed here
+              Video player
             </div>
             <button
               onClick={() => setVideoOpen(false)}

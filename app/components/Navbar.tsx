@@ -32,53 +32,64 @@ export default function Navbar() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-white/90 backdrop-blur-xl shadow-sm border-b border-primary/5"
+            ? "bg-white/90 backdrop-blur-xl shadow-sm border-b border-gray-100"
             : "bg-transparent"
         }`}
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex h-20 items-center justify-between">
-            {/* Logo */}
             <a href="#" className="flex items-center gap-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://www.regenerativerevival.com/wp-content/uploads/2024/08/cropped-Regenerative-Revival-Logo-1.png"
+                src="/logo.png"
                 alt="Regenerative Revival"
-                className="h-12 w-auto"
+                className="h-16 w-auto"
               />
             </a>
 
-            {/* Desktop Nav */}
             <div className="hidden lg:flex items-center gap-8">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-sm font-medium text-text-light transition-colors hover:text-primary"
+                  className={`text-sm font-medium transition-colors ${
+                    scrolled
+                      ? "text-gray-600 hover:text-primary"
+                      : "text-white/70 hover:text-white"
+                  }`}
                 >
                   {link.label}
                 </a>
               ))}
             </div>
 
-            {/* CTA + Mobile Toggle */}
             <div className="flex items-center gap-4">
               <a
                 href="tel:+1234567890"
-                className="hidden sm:flex items-center gap-2 text-sm text-text-light hover:text-primary transition-colors"
+                className={`hidden sm:flex items-center gap-2 text-sm transition-colors ${
+                  scrolled
+                    ? "text-gray-600 hover:text-primary"
+                    : "text-white/60 hover:text-white"
+                }`}
               >
                 <Phone className="h-4 w-4" />
                 <span>(555) 123-4567</span>
               </a>
               <a
                 href="#contact"
-                className="hidden md:inline-flex h-10 items-center rounded-full bg-primary px-6 text-sm font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/20"
+                className={`hidden md:inline-flex h-10 items-center rounded-full px-6 text-sm font-semibold transition-all ${
+                  scrolled
+                    ? "bg-primary text-white hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/20"
+                    : "bg-white/15 backdrop-blur-md text-white border border-white/20 hover:bg-white/25"
+                }`}
               >
                 Book Consultation
               </a>
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="lg:hidden flex h-10 w-10 items-center justify-center rounded-lg text-text hover:text-primary transition-colors"
+                className={`lg:hidden flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${
+                  scrolled ? "text-gray-700 hover:text-primary" : "text-white hover:text-white/80"
+                }`}
                 aria-label={mobileOpen ? "Close menu" : "Open menu"}
               >
                 {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -88,7 +99,6 @@ export default function Navbar() {
         </div>
       </motion.nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -106,7 +116,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
                   onClick={() => setMobileOpen(false)}
-                  className="text-2xl font-semibold text-text hover:text-primary transition-colors"
+                  className="text-2xl font-semibold text-gray-900 hover:text-primary transition-colors"
                 >
                   {link.label}
                 </motion.a>

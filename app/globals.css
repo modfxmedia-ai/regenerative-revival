@@ -3,13 +3,12 @@
 @theme inline {
   --color-background: #ffffff;
   --color-foreground: #1a1a2e;
-  --color-primary: #2d8a6e;
-  --color-primary-light: #3aaf8a;
-  --color-primary-dark: #1e6b54;
-  --color-secondary: #1a5c45;
-  --color-cream: #f8faf7;
-  --color-sage: #e8f0ec;
-  --color-sage-dark: #d0e0d6;
+  --color-primary: #6b3fa0;
+  --color-primary-light: #9b6dd7;
+  --color-primary-dark: #4e2d78;
+  --color-secondary: #3a1f5c;
+  --color-cream: #faf8fc;
+  --color-sage: #f0ecf5;
   --color-warm: #f5f1eb;
   --color-gold: #c9a84c;
   --color-gold-light: #dfc06e;
@@ -32,7 +31,7 @@ body {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #2d8a6e 0%, #3aaf8a 50%, #1e6b54 100%);
+  background: linear-gradient(135deg, #6b3fa0 0%, #9b6dd7 50%, #4e2d78 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -43,40 +42,6 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-/* Video overlay — light version */
-.video-overlay {
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.3) 30%,
-    rgba(255, 255, 255, 0.7) 70%,
-    rgba(255, 255, 255, 1) 100%
-  );
-}
-
-.video-overlay-dark {
-  background: linear-gradient(
-    to bottom,
-    rgba(26, 92, 69, 0.3) 0%,
-    rgba(26, 92, 69, 0.5) 40%,
-    rgba(26, 92, 69, 0.8) 80%,
-    rgba(26, 92, 69, 0.95) 100%
-  );
-}
-
-/* Glass — light theme */
-.glass {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(45, 138, 110, 0.1);
-}
-
-.glass-dark {
-  background: rgba(26, 92, 69, 0.08);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(26, 92, 69, 0.12);
 }
 
 /* Soft shadow */
@@ -110,5 +75,5 @@ body {
 /* Section divider */
 .section-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(45, 138, 110, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(107, 63, 160, 0.2), transparent);
 }

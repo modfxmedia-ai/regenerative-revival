@@ -145,8 +145,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Bottom fade — subtle */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white/40 to-transparent z-20 pointer-events-none" />
+      {/* Bottom edge — thin line transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent z-20 pointer-events-none" />
 
       {/* Scroll indicator */}
       <motion.div

@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import ValueProps from "./components/ValueProps";
 import About from "./components/About";
 import Treatments from "./components/Treatments";
 import WhyChooseUs from "./components/WhyChooseUs";
@@ -14,6 +15,7 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
+      <ValueProps />
       <About />
       <Treatments />
       <WhyChooseUs />

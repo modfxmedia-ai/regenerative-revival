@@ -23,7 +23,7 @@ export default function About() {
           <motion.div initial={{ opacity: 0, x: -50 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8 }} className="relative">
             <div className="relative rounded-3xl overflow-hidden soft-shadow-lg">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.pexels.com/photos/5407206/pexels-photo-5407206.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Seth Berge — Founder of Regenerative Revival" className="w-full h-auto rounded-3xl object-cover" />
+              <img src="/photos/seth-berge-w-backdrop.jpg" alt="Seth Berge — Founder of Regenerative Revival" className="w-full h-auto rounded-3xl object-cover" />
             </div>
             <div className="absolute -bottom-6 -right-6 lg:right-auto lg:-left-6 bg-white rounded-2xl p-6 soft-shadow-lg border border-gray-100">
               <div className="text-4xl font-bold gradient-text">15+</div>

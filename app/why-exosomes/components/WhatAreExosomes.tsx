@@ -2,36 +2,36 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Dna, FlaskConical, HeartPulse, Leaf } from "lucide-react";
+import { Send, FlaskConical, ShieldCheck, Dna } from "lucide-react";
 
 const highlights = [
   {
-    icon: Dna,
-    title: "Mesenchymal Stem Cells",
+    icon: Send,
+    title: "Cell Communication",
     description:
-      "Rich in powerful stem cells known for their regenerative capabilities.",
+      "Act as communication vehicles between cells, carrying therapeutic signals.",
   },
   {
     icon: FlaskConical,
-    title: "Cell Differentiation",
+    title: "Proteins & Lipids",
     description:
-      "Capable of differentiating into various cell types essential for repair.",
+      "Carry proteins, lipids, and genetic material like microRNA to recipient cells.",
   },
   {
-    icon: HeartPulse,
-    title: "Tissue Repair",
+    icon: ShieldCheck,
+    title: "Cell-Free Therapy",
     description:
-      "Repairs damaged tissues and reduces inflammation from within.",
+      "Not living cells — they are byproducts that carry therapeutic signals safely.",
   },
   {
-    icon: Leaf,
-    title: "Natural Source",
+    icon: Dna,
+    title: "MSC Derived",
     description:
-      "Derived from the umbilical cord — a safe, ethically sourced material.",
+      "Secreted by mesenchymal stem cells known for regenerative properties.",
   },
 ];
 
-export default function WhatIsWhartonsJelly() {
+export default function WhatAreExosomes() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -41,7 +41,7 @@ export default function WhatIsWhartonsJelly() {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left — image composition */}
+          {/* Left — image */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -50,8 +50,8 @@ export default function WhatIsWhartonsJelly() {
           >
             <div className="relative rounded-[2rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
               <img
-                src="8470.jpg"
-                alt="Wharton's Jelly stem cells"
+                src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=900&q=80"
+                alt="Exosome therapy research"
                 className="w-full h-[480px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-secondary/30 to-transparent" />
@@ -67,29 +67,29 @@ export default function WhatIsWhartonsJelly() {
             >
               <div className="flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 border border-primary/10">
-                  <Dna className="h-6 w-6 text-primary" />
+                  <Send className="h-6 w-6 text-primary" />
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-gray-900">
-                    Stem Cell Rich
+                    Nano-Sized
                   </div>
                   <div className="text-xs text-gray-500 font-sans">
-                    Umbilical cord derived
+                    Cell-free vesicles
                   </div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Accent image */}
+            {/* Accent badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.6 }}
               className="absolute -top-4 -left-4 bg-primary/90 backdrop-blur-xl rounded-2xl p-4 shadow-[0_8px_32px_rgba(107,63,160,0.3)]"
             >
-              <div className="text-2xl font-bold text-white">100%</div>
+              <div className="text-2xl font-bold text-white">MSC</div>
               <div className="text-xs text-white/70 font-sans">
-                Non-Invasive
+                Stem Cell Derived
               </div>
             </motion.div>
           </motion.div>
@@ -108,21 +108,25 @@ export default function WhatIsWhartonsJelly() {
               The Science
             </span>
             <h2 className="mt-5 text-4xl sm:text-5xl font-bold leading-tight text-gray-900">
-              What is{" "}
-              <span className="gradient-text">Wharton&apos;s Jelly?</span>
+              What Are{" "}
+              <span className="gradient-text">Stem Cell Exosomes?</span>
             </h2>
 
             <p className="mt-6 text-lg text-gray-600 leading-relaxed font-sans">
-              Found within the umbilical cord, Wharton&apos;s Jelly is a
-              gel-like substance rich in mesenchymal stem cells. These powerful
-              cells are known for their regenerative capabilities, capable of
-              differentiating into various cell types essential for repairing
-              damaged tissues and reducing inflammation.
+              Stem cell exosomes are nano-sized vesicles secreted by stem cells,
+              particularly mesenchymal stem cells (MSCs), which are known for
+              their regenerative properties. Exosomes act as communication
+              vehicles between cells, carrying proteins, lipids, and genetic
+              material (such as microRNA) that influence the behavior of
+              recipient cells.
             </p>
             <p className="mt-4 text-base text-gray-500 leading-relaxed font-sans">
-              This unique characteristic makes Wharton&apos;s Jelly an
-              innovative option for addressing chronic pain, offering a way to
-              heal the body from within.
+              Unlike stem cells themselves, exosomes are not living cells;
+              instead, they are the byproducts of cells that can carry
+              therapeutic signals to damaged or aging tissues. The regenerative
+              potential of exosomes has been a subject of intense research in
+              recent years. They have been shown to play a critical role in
+              wound healing, tissue repair, and inflammation reduction.
             </p>
 
             {/* Highlight cards */}

@@ -3,11 +3,36 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, Clock } from "lucide-react";
+import Link from "next/link";
 
 const posts = [
-  { title: "The Ultimate Guide to Managing Joint Pain with Regenerative Therapies", excerpt: "Joint pain affects millions worldwide. Traditional treatments offer temporary relief, but regenerative therapies provide a promising long-term alternative.", category: "Treatment Guide", readTime: "8 min read", image: "https://images.pexels.com/photos/4506105/pexels-photo-4506105.jpeg?auto=compress&cs=tinysrgb&w=600" },
-  { title: "10 Tips to Naturally Boost Your Energy and Performance", excerpt: "Maintaining high energy levels in today's fast-paced world is a challenge. Discover natural ways to boost your energy and performance.", category: "Wellness", readTime: "5 min read", image: "https://images.pexels.com/photos/3768916/pexels-photo-3768916.jpeg?auto=compress&cs=tinysrgb&w=600" },
-  { title: "How to Enhance Your Workout Recovery with Stem Cell Therapy", excerpt: "Intense workouts take a toll on your body. Emerging treatments like stem cell therapy are revolutionizing recovery.", category: "Recovery", readTime: "6 min read", image: "https://images.pexels.com/photos/40751/running-runner-long-distance-fitness-40751.jpeg?auto=compress&cs=tinysrgb&w=600" },
+  {
+    slug: "the-ultimate-guide-to-managing-joint-pain-with-regenerative-therapies",
+    title: "The Ultimate Guide to Managing Joint Pain with Regenerative Therapies",
+    excerpt:
+      "Joint pain affects millions worldwide. Traditional treatments offer temporary relief, but regenerative therapies provide a promising long-term alternative.",
+    category: "Treatment Guide",
+    readTime: "8 min read",
+    image: "/news/imgi_15_manage-joint-pain-naturally-1080x675.jpg",
+  },
+  {
+    slug: "10-tips-to-naturally-boost-your-energy-and-performance",
+    title: "10 Tips to Naturally Boost Your Energy and Performance",
+    excerpt:
+      "Maintaining high energy levels in today's fast-paced world is a challenge. Discover natural ways to boost your energy and performance.",
+    category: "Wellness",
+    readTime: "5 min read",
+    image: "/news/imgi_40_boost-your-energy-naturally-1080x675.jpg",
+  },
+  {
+    slug: "how-to-enhance-your-workout-recovery-with-stem-cell-therapy",
+    title: "How to Enhance Your Workout Recovery with Stem Cell Therapy",
+    excerpt:
+      "Intense workouts take a toll on your body. Emerging treatments like stem cell therapy are revolutionizing recovery.",
+    category: "Recovery",
+    readTime: "6 min read",
+    image: "/news/imgi_13_enhance-workout-recovery-1080x675.jpg",
+  },
 ];
 
 export default function Blog() {
@@ -29,42 +54,45 @@ export default function Blog() {
               Insights & <span className="gradient-text">Updates</span>
             </h2>
           </div>
-          <a href="#" className="group flex items-center gap-2 text-primary font-semibold hover:text-primary-dark transition-colors shrink-0">
+          <Link href="/news" className="group flex items-center gap-2 text-primary font-semibold hover:text-primary-dark transition-colors shrink-0">
             View All Articles
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </a>
+          </Link>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6">
           {posts.map((post, i) => (
-            <motion.article
+            <motion.div
               key={post.title}
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
               animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.1 + i * 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="group relative bg-white/60 backdrop-blur-2xl rounded-3xl overflow-hidden border border-white/80 shadow-[0_8px_32px_rgba(107,63,160,0.05)] hover:shadow-[0_20px_60px_rgba(107,63,160,0.12)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
             >
-              {/* Glass shine */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-white/40 to-transparent pointer-events-none z-10" />
+              <Link
+                href={`/news/${post.slug}`}
+                className="group relative block bg-white/60 backdrop-blur-2xl rounded-3xl overflow-hidden border border-white/80 shadow-[0_8px_32px_rgba(107,63,160,0.05)] hover:shadow-[0_20px_60px_rgba(107,63,160,0.12)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
+              >
+                {/* Glass shine */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-white/40 to-transparent pointer-events-none z-10" />
 
-              <div className="aspect-[16/10] overflow-hidden relative">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                {/* Image overlay on hover */}
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
-              </div>
-              <div className="relative p-6 z-10">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="inline-flex items-center rounded-full bg-primary/10 backdrop-blur-sm px-3 py-1 text-xs font-medium text-primary border border-primary/10">{post.category}</span>
-                  <div className="flex items-center gap-1 text-xs text-gray-400">
-                    <Clock className="h-3 w-3" />
-                    {post.readTime}
-                  </div>
+                <div className="aspect-[16/10] overflow-hidden relative">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3 leading-snug group-hover:text-primary transition-colors duration-200">{post.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">{post.excerpt}</p>
-              </div>
-            </motion.article>
+                <div className="relative p-6 z-10">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="inline-flex items-center rounded-full bg-primary/10 backdrop-blur-sm px-3 py-1 text-xs font-medium text-primary border border-primary/10">{post.category}</span>
+                    <div className="flex items-center gap-1 text-xs text-gray-400">
+                      <Clock className="h-3 w-3" />
+                      {post.readTime}
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3 leading-snug group-hover:text-primary transition-colors duration-200">{post.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">{post.excerpt}</p>
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>

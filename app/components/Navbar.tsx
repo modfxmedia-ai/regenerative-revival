@@ -8,9 +8,9 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "For Businesses", href: "/#partners" },
-  { label: "Results", href: "/#results" },
-  { label: "FAQ", href: "/#faq" },
+  { label: "Why Exosomes?", href: "/why-exosomes" },
+  { label: "Why Stem Cells?", href: "/why-stem-cells" },
+  { label: "News", href: "/news" },
   { label: "Contact", href: "/contact" },
 ];
 

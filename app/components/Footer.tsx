@@ -1,23 +1,23 @@
 "use client";
 
 const footerLinks = {
-  Treatments: [
-    { label: "Stem Cell Therapy", href: "#treatments" },
-    { label: "Wharton's Jelly", href: "#treatments" },
-    { label: "Joint Pain Relief", href: "#treatments" },
-    { label: "Sports Recovery", href: "#treatments" },
+  Services: [
+    { label: "Stem Cell Therapy", href: "/services" },
+    { label: "Why Exosomes?", href: "/why-exosomes" },
+    { label: "Why Stem Cells?", href: "/why-stem-cells" },
+    { label: "Wharton's Jelly", href: "/services" },
   ],
   Company: [
-    { label: "About Us", href: "#about" },
-    { label: "Our Team", href: "#about" },
-    { label: "Blog", href: "#blog" },
-    { label: "FAQ", href: "#faq" },
+    { label: "About Us", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "News", href: "/news" },
+    { label: "Contact", href: "/contact" },
   ],
-  Partners: [
-    { label: "JV Partnership", href: "#partners" },
-    { label: "Wholesale Inquiry", href: "#partners" },
-    { label: "For Practices", href: "#partners" },
-    { label: "Revenue Share", href: "#partners" },
+  Resources: [
+    { label: "Why Exosomes?", href: "/why-exosomes" },
+    { label: "Why Stem Cells?", href: "/why-stem-cells" },
+    { label: "Latest Articles", href: "/news" },
+    { label: "Book Consultation", href: "/contact" },
   ],
   Legal: [
     { label: "Privacy Policy", href: "#" },

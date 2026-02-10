@@ -2,6 +2,7 @@ import Hero from "./components/Hero";
 import ValueProps from "./components/ValueProps";
 import About from "./components/About";
 import Treatments from "./components/Treatments";
+import WhartonsJellyPower from "./components/WhartonsJellyPower";
 import WhyChooseUs from "./components/WhyChooseUs";
 import Partners from "./components/Partners";
 import FAQ from "./components/FAQ";
@@ -15,6 +16,7 @@ export default function Home() {
       <ValueProps />
       <About />
       <Treatments />
+      <WhartonsJellyPower />
       <WhyChooseUs />
       <Partners />
       <FAQ />

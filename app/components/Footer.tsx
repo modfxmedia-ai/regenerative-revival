@@ -2,10 +2,10 @@
 
 const footerLinks = {
   Services: [
-    { label: "Stem Cell Therapy", href: "/services" },
+    { label: "Stem Cell Therapy", href: "/stem-cell-therapy" },
     { label: "Why Exosomes?", href: "/why-exosomes" },
     { label: "Why Stem Cells?", href: "/why-stem-cells" },
-    { label: "Wharton's Jelly", href: "/services" },
+    { label: "Wharton's Jelly", href: "/whartons-jelly" },
   ],
   Company: [
     { label: "About Us", href: "/about" },

@@ -1,11 +1,31 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, MapPin, Phone, ArrowRight, ExternalLink, Shield, Star, Sparkles } from "lucide-react";
+import {
+  ChevronDown,
+  MapPin,
+  Phone,
+  ArrowRight,
+  ExternalLink,
+  Shield,
+  Star,
+  Sparkles,
+  CheckCircle2,
+} from "lucide-react";
 import type { Location } from "../../../lib/locations";
 import type { Treatment } from "../../../lib/treatments";
 import HeroContactForm from "../../../components/HeroContactForm";
+
+const sectionImages = [
+  "/2149040261.jpg",
+  "/2149230689.jpg",
+  "/2149374070.jpg",
+  "/2148882109.jpg",
+  "/2149611219.jpg",
+  "/about/imgi_71_HERO-STEM-CELL.jpg",
+];
 
 interface Props {
   treatment: Treatment;
@@ -129,46 +149,108 @@ export default function TreatmentPageContent({
         </div>
       </section>
 
-      {/* Intro */}
+      {/* Intro with image */}
       <section className="py-20 bg-white">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <p className="text-lg text-gray-600 leading-relaxed">{intro}</p>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-primary bg-primary/5 rounded-full px-4 py-1.5 mb-6">
+                About This Treatment
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                {treatment.name} in {location.city}
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">{intro}</p>
+            </div>
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/about/imgi_74_doctor-and-patient.jpg"
+                alt={`${treatment.name} consultation`}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-secondary/20 to-transparent" />
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Content Sections */}
-      {sections.map((section, i) => (
-        <section
-          key={i}
-          className={`py-20 ${i % 2 === 0 ? "bg-cream" : "bg-white"}`}
-        >
-          <div className="mx-auto max-w-4xl px-6 lg:px-8">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-              {section.heading}
-            </h2>
-            <p className="text-base text-gray-600 leading-relaxed">
-              {section.content}
-            </p>
-          </div>
-        </section>
-      ))}
-
-      {/* Conditions */}
-      <section className="py-20 bg-white">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">
-            Conditions We Treat in {location.city}
-          </h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
-            {treatment.medicalConditions.map((c) => (
+      {/* Content Sections — alternating image/text layout */}
+      {sections.map((section, i) => {
+        const imageLeft = i % 2 === 0;
+        const img = sectionImages[i % sectionImages.length];
+        return (
+          <section
+            key={i}
+            className={`py-20 ${i % 2 === 0 ? "bg-cream" : "bg-white"}`}
+          >
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <div
-                key={c}
-                className="flex items-center gap-3 rounded-xl bg-primary/5 border border-primary/10 px-4 py-3"
+                className={`grid lg:grid-cols-2 gap-12 items-center ${imageLeft ? "" : "direction-rtl"}`}
               >
-                <div className="h-2 w-2 rounded-full bg-primary shrink-0" />
-                <span className="text-sm font-medium text-gray-800">{c}</span>
+                <div
+                  className={`relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg ${imageLeft ? "lg:order-1" : "lg:order-2"}`}
+                >
+                  <Image
+                    src={img}
+                    alt={section.heading}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                </div>
+                <div className={imageLeft ? "lg:order-2" : "lg:order-1"}>
+                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                    {section.heading}
+                  </h2>
+                  <p className="text-base text-gray-600 leading-relaxed">
+                    {section.content}
+                  </p>
+                </div>
               </div>
-            ))}
+            </div>
+          </section>
+        );
+      })}
+
+      {/* Conditions — with visual grid */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-primary bg-primary/5 rounded-full px-4 py-1.5 mb-6">
+                What We Treat
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                Conditions We Treat in {location.city}
+              </h2>
+              <p className="text-gray-500 mb-8">
+                Our {treatment.shortName.toLowerCase()} treatments address a
+                wide range of conditions. Find out if you&apos;re a candidate.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {treatment.medicalConditions.map((c) => (
+                  <div
+                    key={c}
+                    className="flex items-center gap-3 rounded-xl bg-primary/5 border border-primary/10 px-4 py-3"
+                  >
+                    <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
+                    <span className="text-sm font-medium text-gray-800">
+                      {c}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/about/imgi_73_doctor-and-patient2.jpg"
+                alt={`Conditions treated with ${treatment.shortName}`}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-secondary/20 to-transparent" />
+            </div>
           </div>
         </div>
       </section>
@@ -192,9 +274,17 @@ export default function TreatmentPageContent({
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-secondary">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
+      {/* CTA with background image */}
+      <section className="relative py-20 overflow-hidden">
+        <Image
+          src="/about/imgi_71_HERO-STEM-CELL.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-secondary/90" />
+        <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Ready to Get Started in {location.city}?
           </h2>

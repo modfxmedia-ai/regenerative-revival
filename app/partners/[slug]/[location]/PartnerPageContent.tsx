@@ -1,11 +1,28 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, MapPin, Phone, ArrowRight, Building2, TrendingUp, Package, Headphones } from "lucide-react";
+import {
+  ChevronDown,
+  MapPin,
+  Phone,
+  ArrowRight,
+  Building2,
+  TrendingUp,
+  Package,
+  Headphones,
+} from "lucide-react";
 import type { Location } from "../../../lib/locations";
 import type { PartnerService } from "../../../lib/partner-content";
 import HeroContactForm from "../../../components/HeroContactForm";
+
+const benefitImages = [
+  "/2149040261.jpg",
+  "/2149374070.jpg",
+  "/2149230689.jpg",
+  "/2148882109.jpg",
+];
 
 interface Props {
   service: PartnerService;
@@ -147,29 +164,67 @@ export default function PartnerPageContent({
         </div>
       </section>
 
-      {/* Intro */}
+      {/* Intro with image */}
       <section className="py-20 bg-cream">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <p className="text-lg text-gray-600 leading-relaxed">{intro}</p>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-primary bg-primary/5 rounded-full px-4 py-1.5 mb-6">
+                Partnership Overview
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                {service.name} in {location.city}
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">{intro}</p>
+            </div>
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/about/imgi_72_HERO-PRESENTER.jpg"
+                alt={`${service.name} partnership`}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-secondary/20 to-transparent" />
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Benefits */}
-      {benefits.map((section, i) => (
-        <section
-          key={i}
-          className={`py-20 ${i % 2 === 0 ? "bg-white" : "bg-cream"}`}
-        >
-          <div className="mx-auto max-w-4xl px-6 lg:px-8">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-              {section.heading}
-            </h2>
-            <p className="text-base text-gray-600 leading-relaxed">
-              {section.content}
-            </p>
-          </div>
-        </section>
-      ))}
+      {/* Benefits — alternating image/text */}
+      {benefits.map((section, i) => {
+        const imageLeft = i % 2 === 0;
+        const img = benefitImages[i % benefitImages.length];
+        return (
+          <section
+            key={i}
+            className={`py-20 ${i % 2 === 0 ? "bg-white" : "bg-cream"}`}
+          >
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div
+                  className={`relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg ${imageLeft ? "lg:order-1" : "lg:order-2"}`}
+                >
+                  <Image
+                    src={img}
+                    alt={section.heading}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                </div>
+                <div className={imageLeft ? "lg:order-2" : "lg:order-1"}>
+                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                    {section.heading}
+                  </h2>
+                  <p className="text-base text-gray-600 leading-relaxed">
+                    {section.content}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      })}
 
       {/* FAQs */}
       <section className="py-20 bg-cream">
@@ -188,9 +243,17 @@ export default function PartnerPageContent({
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-secondary">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
+      {/* CTA with background image */}
+      <section className="relative py-20 overflow-hidden">
+        <Image
+          src="/about/imgi_71_HERO-STEM-CELL.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-secondary/90" />
+        <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Ready to Partner in {location.city}?
           </h2>

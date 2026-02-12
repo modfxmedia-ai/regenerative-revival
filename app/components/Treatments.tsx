@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Zap, ShieldCheck, Timer, Sparkles, Activity, Bone, Brain, HeartPulse, Play } from "lucide-react";
+import { Zap, ShieldCheck, Timer, Sparkles, Activity, Bone, Brain, HeartPulse } from "lucide-react";
 
 const benefits = [
   { icon: Zap, title: "Enhanced Regeneration", description: "MSCs from Wharton's Jelly accelerate the body's natural repair processes, significantly reducing recovery time." },
@@ -99,11 +99,6 @@ export default function Treatments() {
             <div className="absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/20 z-10 pointer-events-none" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="https://images.pexels.com/photos/4033148/pexels-photo-4033148.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Stem cell therapy treatment" className="w-full h-auto rounded-[2rem] object-cover aspect-video" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/70 backdrop-blur-2xl cursor-pointer hover:bg-white/90 transition-all shadow-[0_8px_32px_rgba(0,0,0,0.15)] hover:scale-105 duration-300">
-                <Play className="h-8 w-8 text-primary ml-1" />
-              </div>
-            </div>
           </motion.div>
         </div>
       </div>

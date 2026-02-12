@@ -1,11 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Play, Shield, Star, Sparkles, ChevronDown, X } from "lucide-react";
-import { useState } from "react";
+import { ArrowRight, Shield, Star, Sparkles, ChevronDown } from "lucide-react";
 
 export default function Hero() {
-  const [videoOpen, setVideoOpen] = useState(false);
 
   return (
     <section className="relative h-screen min-h-[750px] max-h-[1100px] overflow-hidden bg-black">
@@ -102,15 +100,6 @@ export default function Hero() {
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-dark to-primary opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
-              <button
-                onClick={() => setVideoOpen(true)}
-                className="group flex h-14 items-center justify-center gap-3 rounded-2xl bg-white/[0.06] backdrop-blur-xl border border-white/[0.1] px-7 text-base font-semibold text-white transition-all hover:bg-white/[0.12] hover:-translate-y-0.5"
-              >
-                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 group-hover:bg-white/20 transition-colors">
-                  <Play className="h-4 w-4 text-white ml-0.5" />
-                </span>
-                Watch Our Story
-              </button>
             </motion.div>
 
             {/* Trust strip */}
@@ -163,34 +152,6 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Video Modal */}
-      {videoOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
-          onClick={() => setVideoOpen(false)}
-        >
-          <motion.div
-            initial={{ scale: 0.92, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            className="relative w-full max-w-4xl aspect-video mx-6 rounded-2xl overflow-hidden bg-gray-900"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-              Video player
-            </div>
-            <button
-              onClick={() => setVideoOpen(false)}
-              className="absolute top-4 right-4 h-10 w-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-              aria-label="Close video"
-            >
-              <X className="h-5 w-5" />
-            </button>
-          </motion.div>
-        </motion.div>
-      )}
     </section>
   );
 }

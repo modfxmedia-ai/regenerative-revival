@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { CheckCircle2, Play } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 const reasons = [
   { title: "Expertise in Stem Cell Therapy", description: "Our team brings decades of combined experience in regenerative medicine, staying at the forefront of stem cell research." },
@@ -41,11 +41,7 @@ export default function WhyChooseUs() {
               <div className="absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/20 z-10 pointer-events-none" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="https://images.pexels.com/photos/7089401/pexels-photo-7089401.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Patient testimonial" className="w-full h-auto rounded-[2rem] object-cover aspect-video" />
-              <div className="absolute inset-0 bg-secondary/10 flex items-center justify-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/70 backdrop-blur-2xl cursor-pointer hover:bg-white/90 transition-all shadow-[0_8px_32px_rgba(0,0,0,0.15)] hover:scale-105 duration-300">
-                  <Play className="h-6 w-6 text-primary ml-0.5" />
-                </div>
-              </div>
+              <div className="absolute inset-0 bg-secondary/10" />
             </div>
           </motion.div>
 

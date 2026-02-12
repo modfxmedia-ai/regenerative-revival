@@ -1,0 +1,101 @@
+import { notFound } from "next/navigation";
+import { locations, getNearbyLocations } from "../../../lib/locations";
+import { treatments, getTreatmentBySlug } from "../../../lib/treatments";
+import { generateIntro, generateBenefitSections, generateFAQs, getGovResources } from "../../../lib/content-engine";
+import { generatePageMetadata } from "../../../lib/seo";
+import { JsonLd, medicalWebPageSchema, breadcrumbSchema, faqSchema, localBusinessSchema } from "../../../lib/schema";
+import Breadcrumbs from "../../../components/Breadcrumbs";
+import TreatmentPageContent from "./TreatmentPageContent";
+
+interface Props {
+  params: Promise<{ slug: string; location: string }>;
+}
+
+export async function generateStaticParams() {
+  const params: { slug: string; location: string }[] = [];
+  for (const t of treatments) {
+    for (const l of locations) {
+      params.push({ slug: t.slug, location: l.slug });
+    }
+  }
+  return params;
+}
+
+export async function generateMetadata({ params }: Props) {
+  const { slug, location: locSlug } = await params;
+  const treatment = getTreatmentBySlug(slug);
+  const location = locations.find((l) => l.slug === locSlug);
+  if (!treatment || !location) return {};
+
+  return generatePageMetadata({
+    title: `${treatment.name} in ${location.city}, ${location.stateAbbr}`,
+    description: `${treatment.description} Serving ${location.city}, ${location.state} and the ${location.metro} area. Book your free consultation today.`,
+    path: `/treatments/${treatment.slug}/${location.slug}`,
+    cta: "Book Now",
+  });
+}
+
+export default async function TreatmentLocationPage({ params }: Props) {
+  const { slug, location: locSlug } = await params;
+  const treatment = getTreatmentBySlug(slug);
+  const location = locations.find((l) => l.slug === locSlug);
+  if (!treatment || !location) notFound();
+
+  const intro = generateIntro(treatment, location);
+  const sections = generateBenefitSections(treatment, location);
+  const faqs = generateFAQs(treatment, location);
+  const govLinks = getGovResources(treatment);
+  const nearby = getNearbyLocations(location, 4);
+  const relatedTreatments = treatments.filter((t) => t.slug !== treatment.slug).slice(0, 4);
+
+  const SITE_URL = "https://www.regenerativerevival.com";
+  const pagePath = `/treatments/${treatment.slug}/${location.slug}`;
+
+  const localBiz = {
+    ...localBusinessSchema(),
+    name: `Regenerative Revival — ${location.city}`,
+    address: {
+      "@type": "PostalAddress" as const,
+      addressLocality: location.city,
+      addressRegion: location.state,
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates" as const,
+      latitude: String(location.lat),
+      longitude: String(location.lng),
+    },
+    areaServed: {
+      "@type": "City" as const,
+      name: location.city,
+      containedInPlace: { "@type": "State" as const, name: location.state },
+    },
+  };
+
+  return (
+    <>
+      <JsonLd data={localBiz} />
+      <JsonLd data={medicalWebPageSchema({ title: `${treatment.name} in ${location.city}, ${location.stateAbbr}`, description: treatment.description, url: pagePath, medicalConditions: treatment.medicalConditions })} />
+      <JsonLd data={breadcrumbSchema([
+        { name: "Home", url: SITE_URL },
+        { name: treatment.name, url: `${SITE_URL}${treatment.pageLink}` },
+        { name: `${location.city}, ${location.stateAbbr}`, url: `${SITE_URL}${pagePath}` },
+      ])} />
+      <JsonLd data={faqSchema(faqs)} />
+      <Breadcrumbs items={[
+        { label: treatment.name, href: treatment.pageLink },
+        { label: `${location.city}, ${location.stateAbbr}`, href: pagePath },
+      ]} />
+      <TreatmentPageContent
+        treatment={treatment}
+        location={location}
+        intro={intro}
+        sections={sections}
+        faqs={faqs}
+        govLinks={govLinks}
+        nearby={nearby}
+        relatedTreatments={relatedTreatments}
+      />
+    </>
+  );
+}

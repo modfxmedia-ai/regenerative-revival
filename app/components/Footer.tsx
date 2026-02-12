@@ -20,13 +20,9 @@ const footerLinks = {
     { label: "Why Stem Cells?", href: "/why-stem-cells" },
     { label: "Latest Articles", href: "/news" },
     { label: "Book Consultation", href: "/contact" },
+    { label: "All Locations", href: "/locations" },
   ],
-  Legal: [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Service", href: "#" },
-    { label: "SMS Policy", href: "#" },
-    { label: "Disclaimer", href: "#" },
-  ],
+
 };
 
 export default function Footer() {

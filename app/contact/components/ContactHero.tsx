@@ -5,7 +5,7 @@ import { MessageCircle, CalendarCheck, HelpCircle } from "lucide-react";
 
 export default function ContactHero() {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden">
+    <section className="relative pt-8 pb-20 overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
         <img

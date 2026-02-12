@@ -22,7 +22,7 @@ export default function StemTherapyHero() {
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
         }}
       />
-      <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8 pt-32 pb-24">
+      <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8 pt-8 pb-24">
         <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -34,7 +34,9 @@ export default function StemTherapyHero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-light opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-light" />
             </span>
-            <span className="text-sm font-medium text-white/80 font-sans">Advanced Treatment</span>
+            <span className="text-sm font-medium text-white/80 font-sans">
+              Advanced Treatment
+            </span>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 25 }}
@@ -54,8 +56,8 @@ export default function StemTherapyHero() {
             className="mt-7 max-w-2xl text-lg leading-relaxed text-white/55 font-sans"
           >
             Harness the regenerative power of mesenchymal stem cells to promote
-            natural healing, reduce inflammation, and restore damaged tissues.
-            A cutting-edge, non-invasive approach to lasting pain relief and
+            natural healing, reduce inflammation, and restore damaged tissues. A
+            cutting-edge, non-invasive approach to lasting pain relief and
             improved quality of life.
           </motion.p>
           <motion.div
@@ -69,9 +71,14 @@ export default function StemTherapyHero() {
               { icon: ShieldCheck, label: "Minimally Invasive" },
               { icon: Zap, label: "Accelerated Healing" },
             ].map((item) => (
-              <div key={item.label} className="flex items-center gap-2.5 rounded-full bg-white/[0.06] backdrop-blur-xl border border-white/[0.08] px-5 py-2.5">
+              <div
+                key={item.label}
+                className="flex items-center gap-2.5 rounded-full bg-white/[0.06] backdrop-blur-xl border border-white/[0.08] px-5 py-2.5"
+              >
                 <item.icon className="h-4 w-4 text-primary-light" />
-                <span className="text-sm font-medium text-white/70 font-sans">{item.label}</span>
+                <span className="text-sm font-medium text-white/70 font-sans">
+                  {item.label}
+                </span>
               </div>
             ))}
           </motion.div>

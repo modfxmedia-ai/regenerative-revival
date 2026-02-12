@@ -82,7 +82,7 @@ export default function ArticleContent({ article, related }: Props) {
       <section className="relative bg-secondary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(107,63,160,0.3),transparent)] pointer-events-none" />
 
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8 pt-32 pb-16">
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8 pt-8 pb-16">
           {/* Back link */}
           <motion.div
             initial={{ opacity: 0, x: -10 }}
@@ -212,7 +212,9 @@ export default function ArticleContent({ article, related }: Props) {
                   />
                 </div>
                 <div className="p-6">
-                  <span className="text-xs text-gray-400 font-sans">{r.date}</span>
+                  <span className="text-xs text-gray-400 font-sans">
+                    {r.date}
+                  </span>
                   <h3 className="mt-2 text-lg font-bold text-gray-900 leading-snug line-clamp-2 group-hover:text-primary transition-colors duration-300">
                     {r.title}
                   </h3>

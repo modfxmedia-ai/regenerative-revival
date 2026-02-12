@@ -27,7 +27,7 @@ export default function AboutHero() {
         }}
       />
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8 pt-32 pb-24 text-center">
+      <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8 pt-8 pb-24 text-center">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
@@ -96,9 +96,14 @@ export default function AboutHero() {
         >
           <div className="flex items-center gap-1">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+              <Star
+                key={i}
+                className="h-3.5 w-3.5 fill-amber-400 text-amber-400"
+              />
             ))}
-            <span className="ml-1.5 text-sm font-bold text-white font-sans">4.9</span>
+            <span className="ml-1.5 text-sm font-bold text-white font-sans">
+              4.9
+            </span>
           </div>
           <span className="h-3.5 w-px bg-white/20" />
           <div className="flex items-center gap-2 text-sm text-white/60 font-sans">

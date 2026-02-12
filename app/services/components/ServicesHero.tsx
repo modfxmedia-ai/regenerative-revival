@@ -26,7 +26,7 @@ export default function ServicesHero() {
         }}
       />
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8 pt-32 pb-24">
+      <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8 pt-8 pb-24">
         <div className="max-w-3xl">
           {/* Badge */}
           <motion.div
@@ -53,7 +53,8 @@ export default function ServicesHero() {
           >
             Unlocking the Power of Wharton&apos;s Jelly, A
             <span className="bg-gradient-to-r from-primary-light via-[#c4a0f0] to-gold-light bg-clip-text text-transparent">
-              {" "}Breakthrough in Chronic Pain Management
+              {" "}
+              Breakthrough in Chronic Pain Management
             </span>
           </motion.h1>
 

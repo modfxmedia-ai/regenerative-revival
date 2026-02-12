@@ -26,7 +26,7 @@ export default function ExosomesHero() {
         }}
       />
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8 pt-32 pb-24">
+      <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8 pt-8 pb-24">
         <div className="max-w-3xl">
           {/* Badge */}
           <motion.div

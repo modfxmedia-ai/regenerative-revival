@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, Clock } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const posts = [
   {
@@ -76,8 +77,7 @@ export default function Blog() {
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-white/40 to-transparent pointer-events-none z-10" />
 
                 <div className="aspect-[16/10] overflow-hidden relative">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={post.image} alt={post.title} width={640} height={400} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
                 </div>
                 <div className="relative p-6 z-10">

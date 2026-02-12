@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import {
   Send,
   Phone,
@@ -79,107 +79,124 @@ export default function ContactForm() {
 
 
 function FormCard() {
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  function validateName(value: string, field: string): string | null {
+    const trimmed = value.trim();
+    if (!trimmed) return `${field} is required`;
+    if (trimmed.length < 2) return `${field} must be at least 2 characters`;
+    if (!/^[a-zA-Z\s'-]+$/.test(trimmed)) return `${field} contains invalid characters`;
+    return null;
+  }
+
+  function validatePhone(value: string): string | null {
+    const digits = value.replace(/\D/g, "");
+    if (!digits) return "Phone number is required";
+    if (digits.length < 10 || digits.length > 11) return "Enter a valid 10-digit phone number";
+    const areaCode = digits.length === 11 ? digits.slice(1, 4) : digits.slice(0, 3);
+    // Reject invalid area codes (0xx, 1xx, x11 except 911)
+    if (/^[01]/.test(areaCode) || /^.11$/.test(areaCode)) return "Enter a valid US area code";
+    return null;
+  }
+
+  function validateEmail(value: string): string | null {
+    if (!value.trim()) return "Email is required";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) return "Enter a valid email address";
+    return null;
+  }
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const newErrors: Record<string, string> = {};
+
+    const firstName = (data.get("firstName") as string) || "";
+    const lastName = (data.get("lastName") as string) || "";
+    const fullName = `${firstName.trim()} ${lastName.trim()}`.trim();
+    const nameParts = fullName.split(/\s+/).filter(Boolean);
+
+    const fnErr = validateName(firstName, "First name");
+    if (fnErr) newErrors.firstName = fnErr;
+    const lnErr = validateName(lastName, "Last name");
+    if (lnErr) newErrors.lastName = lnErr;
+    if (!fnErr && !lnErr && nameParts.length < 2) newErrors.lastName = "Please enter your full name (first and last)";
+
+    const phoneErr = validatePhone((data.get("phone") as string) || "");
+    if (phoneErr) newErrors.phone = phoneErr;
+
+    const emailErr = validateEmail((data.get("email") as string) || "");
+    if (emailErr) newErrors.email = emailErr;
+
+    const message = ((data.get("message") as string) || "").trim();
+    if (!message) newErrors.message = "Message is required";
+    if (message && message.length < 10) newErrors.message = "Please provide more detail in your message";
+
+    setErrors(newErrors);
+    if (Object.keys(newErrors).length === 0) {
+      // Form is valid — submit logic here
+      alert("Thank you! We'll be in touch shortly.");
+      form.reset();
+    }
+  }
+
+  const inputClass = "w-full rounded-xl bg-white/80 backdrop-blur-sm border px-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all font-sans";
+  const errorInputClass = "border-red-300 focus:border-red-400 focus:ring-red-100";
+  const normalInputClass = "border-gray-200/60";
+
   return (
     <div className="relative bg-white/70 backdrop-blur-2xl rounded-3xl p-8 sm:p-10 border border-white/80 shadow-[0_8px_40px_rgba(107,63,160,0.06)]">
       <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/60 via-transparent to-transparent pointer-events-none" />
 
-      {/* Form header with image */}
       <div className="relative mb-8">
         <div className="flex items-center gap-4 mb-2">
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 border border-primary/10">
             <Send className="h-6 w-6 text-primary" />
           </div>
           <div>
-            <h3 className="text-xl font-semibold text-gray-900">
-              Send Us a Message
-            </h3>
-            <p className="text-sm text-gray-500 font-sans">
-              Fill out the form and we&apos;ll get back to you shortly
-            </p>
+            <h3 className="text-xl font-semibold text-gray-900">Send Us a Message</h3>
+            <p className="text-sm text-gray-500 font-sans">Fill out the form and we&apos;ll get back to you shortly</p>
           </div>
         </div>
       </div>
 
-      <form
-        className="relative flex flex-col gap-5"
-        onSubmit={(e) => e.preventDefault()}
-      >
+      <form className="relative flex flex-col gap-5" onSubmit={handleSubmit} noValidate>
         <div className="grid sm:grid-cols-2 gap-5">
           <div>
-            <label
-              htmlFor="contact-firstName"
-              className="block text-sm font-medium text-gray-900 mb-2 font-sans"
-            >
+            <label htmlFor="contact-firstName" className="block text-sm font-medium text-gray-900 mb-2 font-sans">
               First Name <span className="text-red-400">*</span>
             </label>
-            <input
-              id="contact-firstName"
-              type="text"
-              required
-              className="w-full rounded-xl bg-white/80 backdrop-blur-sm border border-gray-200/60 px-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all font-sans"
-              placeholder="John"
-            />
+            <input id="contact-firstName" name="firstName" type="text" required className={`${inputClass} ${errors.firstName ? errorInputClass : normalInputClass}`} placeholder="John" />
+            {errors.firstName && <p className="mt-1 text-xs text-red-500 font-sans">{errors.firstName}</p>}
           </div>
           <div>
-            <label
-              htmlFor="contact-lastName"
-              className="block text-sm font-medium text-gray-900 mb-2 font-sans"
-            >
+            <label htmlFor="contact-lastName" className="block text-sm font-medium text-gray-900 mb-2 font-sans">
               Last Name <span className="text-red-400">*</span>
             </label>
-            <input
-              id="contact-lastName"
-              type="text"
-              required
-              className="w-full rounded-xl bg-white/80 backdrop-blur-sm border border-gray-200/60 px-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all font-sans"
-              placeholder="Doe"
-            />
+            <input id="contact-lastName" name="lastName" type="text" required className={`${inputClass} ${errors.lastName ? errorInputClass : normalInputClass}`} placeholder="Doe" />
+            {errors.lastName && <p className="mt-1 text-xs text-red-500 font-sans">{errors.lastName}</p>}
           </div>
         </div>
 
         <div>
-          <label
-            htmlFor="contact-email"
-            className="block text-sm font-medium text-gray-900 mb-2 font-sans"
-          >
+          <label htmlFor="contact-email" className="block text-sm font-medium text-gray-900 mb-2 font-sans">
             Email <span className="text-red-400">*</span>
           </label>
-          <input
-            id="contact-email"
-            type="email"
-            required
-            className="w-full rounded-xl bg-white/80 backdrop-blur-sm border border-gray-200/60 px-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all font-sans"
-            placeholder="john@example.com"
-          />
+          <input id="contact-email" name="email" type="email" required className={`${inputClass} ${errors.email ? errorInputClass : normalInputClass}`} placeholder="john@example.com" />
+          {errors.email && <p className="mt-1 text-xs text-red-500 font-sans">{errors.email}</p>}
         </div>
 
         <div>
-          <label
-            htmlFor="contact-phone"
-            className="block text-sm font-medium text-gray-900 mb-2 font-sans"
-          >
+          <label htmlFor="contact-phone" className="block text-sm font-medium text-gray-900 mb-2 font-sans">
             Phone <span className="text-red-400">*</span>
           </label>
-          <input
-            id="contact-phone"
-            type="tel"
-            required
-            className="w-full rounded-xl bg-white/80 backdrop-blur-sm border border-gray-200/60 px-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all font-sans"
-            placeholder="(555) 123-4567"
-          />
+          <input id="contact-phone" name="phone" type="tel" required className={`${inputClass} ${errors.phone ? errorInputClass : normalInputClass}`} placeholder="(555) 123-4567" />
+          {errors.phone && <p className="mt-1 text-xs text-red-500 font-sans">{errors.phone}</p>}
         </div>
 
         <div>
-          <label
-            htmlFor="contact-subject"
-            className="block text-sm font-medium text-gray-900 mb-2 font-sans"
-          >
-            Subject
-          </label>
-          <select
-            id="contact-subject"
-            className="w-full rounded-xl bg-white/80 backdrop-blur-sm border border-gray-200/60 px-4 py-3.5 text-sm text-gray-900 focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all font-sans"
-          >
+          <label htmlFor="contact-subject" className="block text-sm font-medium text-gray-900 mb-2 font-sans">Subject</label>
+          <select id="contact-subject" name="subject" className={`${inputClass} ${normalInputClass}`}>
             <option value="">Select a topic...</option>
             <option value="consultation">Schedule a Consultation</option>
             <option value="treatment">Treatment Information</option>
@@ -190,39 +207,21 @@ function FormCard() {
         </div>
 
         <div>
-          <label
-            htmlFor="contact-message"
-            className="block text-sm font-medium text-gray-900 mb-2 font-sans"
-          >
+          <label htmlFor="contact-message" className="block text-sm font-medium text-gray-900 mb-2 font-sans">
             Message <span className="text-red-400">*</span>
           </label>
-          <textarea
-            id="contact-message"
-            rows={5}
-            required
-            className="w-full rounded-xl bg-white/80 backdrop-blur-sm border border-gray-200/60 px-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all resize-none font-sans"
-            placeholder="Tell us about your health concerns, questions, or how we can help you..."
-          />
+          <textarea id="contact-message" name="message" rows={5} required className={`${inputClass} resize-none ${errors.message ? errorInputClass : normalInputClass}`} placeholder="Tell us about your health concerns, questions, or how we can help you..." />
+          {errors.message && <p className="mt-1 text-xs text-red-500 font-sans">{errors.message}</p>}
         </div>
 
-        <button
-          type="submit"
-          className="group flex h-14 items-center justify-center gap-2.5 rounded-2xl bg-primary text-base font-semibold text-white transition-all duration-300 hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-0.5 font-sans"
-        >
+        <button type="submit" className="group flex h-14 items-center justify-center gap-2.5 rounded-2xl bg-primary text-base font-semibold text-white transition-all duration-300 hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-0.5 font-sans">
           <Send className="h-5 w-5 group-hover:translate-x-0.5 transition-transform" />
           Send Message
         </button>
 
         <p className="text-xs text-gray-400 text-center leading-relaxed font-sans">
-          By providing a telephone number and submitting the form you are
-          consenting to be contacted by SMS text message from Regenerative
-          Revival and/or Seth Berge Inc. Message frequency may vary. Message
-          &amp; data rates may apply. Reply STOP to opt out of further
-          messaging. Reply HELP for more information. See our{" "}
-          <a href="#" className="text-primary hover:underline">
-            Privacy Policy
-          </a>
-          .
+          By providing a telephone number and submitting the form you are consenting to be contacted by SMS text message from Regenerative Revival and/or Seth Berge Inc. Message frequency may vary. Message &amp; data rates may apply. Reply STOP to opt out of further messaging. Reply HELP for more information. See our{" "}
+          <a href="#" className="text-primary hover:underline">Privacy Policy</a>.
         </p>
       </form>
     </div>

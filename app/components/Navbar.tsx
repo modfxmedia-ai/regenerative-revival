@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -39,11 +40,13 @@ export default function Navbar() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex h-20 items-center justify-between">
             <a href="#" className="flex items-center gap-3">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/logo.png"
                 alt="Regenerative Revival"
+                width={160}
+                height={64}
                 className="h-16 w-auto"
+                priority
               />
             </a>
 

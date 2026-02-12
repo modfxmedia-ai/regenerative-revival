@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowUpRight, Calendar, Tag } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import type { Article } from "../data";
 
 function renderMarkdown(content: string) {
@@ -149,10 +150,13 @@ export default function ArticleContent({ article, related }: Props) {
         className="mx-auto max-w-5xl px-6 lg:px-8 mt-14"
       >
         <div className="rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
-          <img
+          <Image
             src={article.image}
             alt={article.title}
+            width={1080}
+            height={675}
             className="w-full h-auto object-contain"
+            priority
           />
         </div>
       </motion.div>
@@ -199,9 +203,11 @@ export default function ArticleContent({ article, related }: Props) {
                 className="group block bg-cream"
               >
                 <div className="overflow-hidden">
-                  <img
+                  <Image
                     src={r.image}
                     alt={r.title}
+                    width={640}
+                    height={400}
                     className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.04]"
                   />
                 </div>

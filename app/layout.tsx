@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import { JsonLd, organizationSchema, localBusinessSchema } from "./lib/schema";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -17,7 +20,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Regenerative Revival | Advanced Stem Cell Therapy & Regenerative Medicine",
   description:
-    "Reviving health through cutting-edge regenerative medicine. Wharton's Jelly stem cell therapy for pain relief, tissue repair, and total body renewal.",
+    "Reviving health through cutting-edge regenerative medicine. Wharton's Jelly stem cell therapy for pain relief, tissue repair, and total body renewal. Book your free consultation today.",
   keywords: [
     "stem cell therapy",
     "regenerative medicine",
@@ -28,6 +31,9 @@ export const metadata: Metadata = {
     "buy stem cells",
     "regenerative revival",
   ],
+  alternates: {
+    canonical: "https://www.regenerativerevival.com",
+  },
   openGraph: {
     title: "Regenerative Revival | Advanced Stem Cell Therapy",
     description:
@@ -35,11 +41,23 @@ export const metadata: Metadata = {
     url: "https://www.regenerativerevival.com",
     siteName: "Regenerative Revival",
     type: "website",
+    images: [
+      {
+        url: "https://www.regenerativerevival.com/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Regenerative Revival",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Regenerative Revival | Advanced Stem Cell Therapy",
+    description:
+      "Cutting-edge regenerative medicine powered by Wharton's Jelly stem cell therapy.",
+    images: ["https://www.regenerativerevival.com/logo.png"],
   },
 };
-
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 
 export default function RootLayout({
   children,
@@ -51,6 +69,8 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} antialiased`}
       >
+        <JsonLd data={organizationSchema()} />
+        <JsonLd data={localBusinessSchema()} />
         <Navbar />
         {children}
         <Footer />

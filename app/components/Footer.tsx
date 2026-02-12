@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const footerLinks = {
   Services: [
     { label: "Stem Cell Therapy", href: "/stem-cell-therapy" },
@@ -45,8 +47,7 @@ export default function Footer() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-16">
           <div className="col-span-2 md:col-span-4 lg:col-span-1 mb-4 lg:mb-0">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="Regenerative Revival" className="h-16 w-auto mb-4 brightness-0 invert" />
+            <Image src="/logo.png" alt="Regenerative Revival" width={160} height={64} className="h-16 w-auto mb-4 brightness-0 invert" />
             <p className="text-sm text-white/50 leading-relaxed max-w-xs">
               Reviving health through advanced regenerative medicine and Wharton&apos;s Jelly stem cell therapy.
             </p>

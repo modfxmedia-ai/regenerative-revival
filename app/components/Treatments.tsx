@@ -12,10 +12,10 @@ const benefits = [
 ];
 
 const conditions = [
-  { icon: Bone, label: "Joint Pain & Arthritis" },
-  { icon: Activity, label: "Sports Injuries" },
-  { icon: HeartPulse, label: "Chronic Pain" },
-  { icon: Brain, label: "Degenerative Conditions" },
+  { icon: Bone, label: "Joint & Mobility Wellness" },
+  { icon: Activity, label: "Active Recovery & Performance" },
+  { icon: HeartPulse, label: "Ongoing Discomfort & Fatigue" },
+  { icon: Brain, label: "Cellular Renewal & Longevity" },
 ];
 
 export default function Treatments() {
@@ -32,12 +32,12 @@ export default function Treatments() {
 
       <div ref={ref} className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className="text-center max-w-3xl mx-auto mb-20">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-primary bg-primary/5 rounded-full px-4 py-1.5">Our Treatments</span>
+          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-primary bg-primary/5 rounded-full px-4 py-1.5">Our Protocols</span>
           <h2 className="mt-5 text-4xl sm:text-5xl font-bold leading-tight text-gray-900">
-            The Power of <span className="gradient-text">Wharton&apos;s Jelly</span>
+            A Full Spectrum of <span className="gradient-text">Regenerative Therapies</span>
           </h2>
           <p className="mt-6 text-lg text-gray-600 leading-relaxed">
-            This remarkable substance, found in the umbilical cord, is rich in mesenchymal stem cells (MSCs) and growth factors essential for tissue repair and regeneration.
+            From stem cells and exosomes to peptides and hormone optimization — we offer a comprehensive suite of science-backed protocols designed to support your body&apos;s natural ability to heal and renew.
           </p>
         </motion.div>
 
@@ -68,10 +68,10 @@ export default function Treatments() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div initial={{ opacity: 0, x: -30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, delay: 0.3 }}>
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Conditions We <span className="gradient-text">Treat</span>
+              Wellness Areas We <span className="gradient-text">Support</span>
             </h3>
             <p className="text-gray-600 mb-8 leading-relaxed">
-              Stem cell therapy can relieve a variety of conditions. Our personalized approach ensures the right protocol for your specific needs.
+              Our regenerative protocols are tailored to a wide range of wellness goals. We work with each client to find the right approach for their unique needs.
             </p>
             <div className="grid grid-cols-2 gap-4">
               {conditions.map((c, i) => (

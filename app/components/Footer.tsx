@@ -11,18 +11,23 @@ const footerLinks = {
   ],
   Company: [
     { label: "About Us", href: "/about" },
-    { label: "Services", href: "/services" },
+    { label: "Why We're Different", href: "/about/why-were-different" },
+    { label: "Testimonials", href: "/testimonials" },
     { label: "News", href: "/news" },
     { label: "Contact", href: "/contact" },
   ],
-  Resources: [
-    { label: "Why Exosomes?", href: "/why-exosomes" },
-    { label: "Why Stem Cells?", href: "/why-stem-cells" },
+  Education: [
+    { label: "What Are Stem Cells?", href: "/why-stem-cells" },
+    { label: "Where Do They Come From?", href: "/whartons-jelly" },
+    { label: "Why We're Different", href: "/about/why-were-different" },
     { label: "Latest Articles", href: "/news" },
+  ],
+  Partners: [
+    { label: "Partner With Us", href: "/partner-with-us" },
+    { label: "For Providers", href: "/partner-with-us" },
     { label: "Book Consultation", href: "/contact" },
     { label: "All Locations", href: "/locations" },
   ],
-
 };
 
 export default function Footer() {
@@ -41,8 +46,8 @@ export default function Footer() {
       />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-16">
-          <div className="col-span-2 md:col-span-4 lg:col-span-1 mb-4 lg:mb-0">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-10 mb-16">
+          <div className="col-span-2 md:col-span-4 lg:col-span-2 mb-4 lg:mb-0">
             <Image src="/logo.png" alt="Regenerative Revival" width={160} height={64} className="h-16 w-auto mb-4 brightness-0 invert" />
             <p className="text-sm text-white/50 leading-relaxed max-w-xs">
               Reviving health through advanced regenerative medicine and Wharton&apos;s Jelly stem cell therapy.

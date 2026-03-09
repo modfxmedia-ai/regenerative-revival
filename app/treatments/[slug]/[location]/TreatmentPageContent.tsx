@@ -219,14 +219,14 @@ export default function TreatmentPageContent({
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
               <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-primary bg-primary/5 rounded-full px-4 py-1.5 mb-6">
-                What We Treat
+                Wellness Areas
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Conditions We Treat in {location.city}
+                Wellness Areas We Support in {location.city}
               </h2>
               <p className="text-gray-500 mb-8">
-                Our {treatment.shortName.toLowerCase()} treatments address a
-                wide range of conditions. Find out if you&apos;re a candidate.
+                Our {treatment.shortName.toLowerCase()} protocols support a
+                wide range of wellness goals. Find out if you&apos;re a candidate.
               </p>
               <div className="grid sm:grid-cols-2 gap-3">
                 {treatment.medicalConditions.map((c) => (

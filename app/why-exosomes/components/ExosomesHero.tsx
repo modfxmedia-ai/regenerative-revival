@@ -64,11 +64,12 @@ export default function ExosomesHero() {
             transition={{ duration: 0.7, delay: 0.25 }}
             className="mt-7 max-w-2xl text-lg leading-relaxed text-white/55 font-sans"
           >
-            Stem cell exosomes are nano-sized vesicles secreted by stem cells,
-            particularly mesenchymal stem cells (MSCs), which are known for
-            their regenerative properties. Exosomes act as communication
-            vehicles between cells, carrying proteins, lipids, and genetic
-            material that influence the behavior of recipient cells.
+            Think of exosomes as the message, not the messenger. They&apos;re
+            tiny vesicles released by stem cells that carry the regenerative
+            signals — without being living cells themselves. For many people,
+            that distinction matters a lot. No cells, no complexity, just
+            targeted biological communication that tells your body to get
+            to work.
           </motion.p>
 
           {/* Feature pills */}

@@ -5,10 +5,10 @@ import { useRef } from "react";
 import { Heart, Microscope, Handshake, GraduationCap } from "lucide-react";
 
 const values = [
-  { icon: Heart, title: "Patient-First Care", description: "Every treatment plan is built around your unique needs, goals, and medical history." },
+  { icon: GraduationCap, title: "Education First", description: "We empower you with knowledge so you can make informed decisions about your health." },
+  { icon: Heart, title: "Patient-First Care", description: "Every plan is built around your unique needs, goals, and medical history." },
   { icon: Microscope, title: "Science-Backed Protocols", description: "Our therapies are grounded in peer-reviewed research and clinical evidence." },
   { icon: Handshake, title: "Trusted Partnerships", description: "We work with licensed practitioners and top-tier labs to ensure quality at every step." },
-  { icon: GraduationCap, title: "Education First", description: "We empower you with knowledge so you can make informed decisions about your health." },
 ];
 
 export default function About() {
@@ -43,7 +43,7 @@ export default function About() {
               className="absolute -bottom-6 -right-6 lg:right-auto lg:-left-6 bg-white/70 backdrop-blur-2xl rounded-2xl p-6 shadow-[0_8px_32px_rgba(0,0,0,0.08)] border border-white/80"
             >
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/60 to-transparent pointer-events-none" />
-              <div className="relative text-4xl font-bold gradient-text">15+</div>
+              <div className="relative text-4xl font-bold gradient-text">8+</div>
               <div className="relative text-sm text-gray-500 mt-1">Years in<br />Regenerative Medicine</div>
             </motion.div>
           </motion.div>
@@ -57,7 +57,7 @@ export default function About() {
               <p className="mt-2 text-lg text-gold font-medium">Founder of Regenerative Revival</p>
             </div>
             <p className="text-lg leading-relaxed text-gray-600">
-              With over 15 years of experience in regenerative medicine, Seth Berge founded Regenerative Revival with a singular mission: to make cutting-edge stem cell therapy accessible to everyone who needs it.
+              With over 8 years of experience in regenerative medicine, Seth Berge founded Regenerative Revival with a singular mission: to make cutting-edge stem cell therapy accessible to everyone who needs it.
             </p>
             <p className="text-base leading-relaxed text-gray-500">
               We educate clients on advanced wellness protocols that ease pain, restore vitality, and renew the body from within — then provide access to licensed practitioners who deliver them.

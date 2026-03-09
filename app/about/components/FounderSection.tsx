@@ -62,7 +62,7 @@ export default function FounderSection() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="absolute -bottom-6 -right-6 bg-white/90 backdrop-blur-2xl rounded-2xl p-6 shadow-[0_12px_40px_rgba(0,0,0,0.12)] border border-white/80"
             >
-              <div className="text-4xl font-bold gradient-text">15+</div>
+              <div className="text-4xl font-bold gradient-text">8+</div>
               <div className="text-xs text-gray-500 mt-1 font-sans">
                 Years in Regenerative
                 <br />
@@ -82,7 +82,7 @@ export default function FounderSection() {
             </motion.div>
 
             {/* Small secondary image — accent */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.7 }}
@@ -95,7 +95,7 @@ export default function FounderSection() {
                   className="h-full w-full object-cover"
                 />
               </div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
 
           {/* Right — Content */}

@@ -13,7 +13,7 @@ export default function CTABanner() {
       {/* Full background image */}
       <div className="absolute inset-0">
         <img
-          src="/about/imgi_74_doctor-and-patient.jpg"
+          src="/2149374070.jpg"
           alt=""
           className="h-full w-full object-cover"
         />

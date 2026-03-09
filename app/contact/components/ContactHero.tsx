@@ -9,7 +9,7 @@ export default function ContactHero() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="/contact/imgi_5_HERO7 (1).jpg"
+          src="/Why Exosomes Page&Contact page-_Ready to Explore Exosome Therapy__ And background image on contact pagesection.jpeg"
           alt=""
           className="h-full w-full object-cover"
         />

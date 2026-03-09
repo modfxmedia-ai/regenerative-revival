@@ -262,7 +262,7 @@ function ContactInfo() {
       {/* Mini image banner */}
       <div className="relative rounded-xl overflow-hidden mb-6 h-32">
         <img
-          src="/about/imgi_74_doctor-and-patient.jpg"
+          src="/About Page & contact page-_Our Guarantee.jpeg"
           alt="Regenerative Revival team"
           className="h-full w-full object-cover"
         />

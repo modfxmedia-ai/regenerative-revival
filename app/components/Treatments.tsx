@@ -98,7 +98,7 @@ export default function Treatments() {
           <motion.div initial={{ opacity: 0, x: 30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, delay: 0.4 }} className="relative rounded-[2rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.1)]">
             <div className="absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/20 z-10 pointer-events-none" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://images.pexels.com/photos/4033148/pexels-photo-4033148.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Stem cell therapy treatment" className="w-full h-auto rounded-[2rem] object-cover aspect-video" />
+            <img src="/HomePage-_Conditions We Treat_ section.jpeg" alt="Stem cell therapy treatment" className="w-full h-auto rounded-[2rem] object-cover aspect-video" />
           </motion.div>
         </div>
       </div>

@@ -16,8 +16,7 @@ const steps = [
     title: "Schedule Your Consultation",
     description:
       "Book an appointment with our experienced team to discuss your health concerns and goals, offering flexible scheduling options to accommodate your busy lifestyle.",
-    image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
+    image: "/2149230689.jpg",
   },
   {
     icon: ClipboardList,
@@ -25,23 +24,21 @@ const steps = [
     description:
       "During your consultation, we'll review your medical history and assess your specific needs, creating a tailored treatment plan designed for the best possible outcomes.",
     image:
-      "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&w=800&q=80",
+      "/About page-_Your Journey to Revival_ section 2.jpeg",
   },
   {
     icon: Sparkles,
     title: "Regenerative Therapy",
     description:
       "Experience the transformative power of Wharton's Jelly-derived stem cell therapy, providing non-invasive and innovative solutions to enhance your health and well-being.",
-    image:
-      "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80",
+    image: "/2149040261.jpg",
   },
   {
     icon: HeartHandshake,
     title: "Follow-Up and Support",
     description:
       "We're committed to your long-term health and well-being, providing ongoing support and follow-up care to ensure optimal results and maintain your improved quality of life.",
-    image:
-      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80",
+    image: "/About Page & contact page-_Our Guarantee.jpeg",
   },
 ];
 

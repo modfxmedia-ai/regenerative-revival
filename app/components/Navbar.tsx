@@ -161,11 +161,7 @@ export default function Navbar() {
                         : "text-white/75 hover:text-white hover:bg-white/10"
                     }`}
                   >
-                    {link.icon && (
-                      <span className={scrolled ? "text-primary/70" : "text-white/50"}>
-                        {link.icon}
-                      </span>
-                    )}
+                   
                     {link.label}
                     {link.dropdown && (
                       <ChevronDown

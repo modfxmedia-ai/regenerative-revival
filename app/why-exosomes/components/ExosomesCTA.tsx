@@ -13,7 +13,7 @@ export default function ExosomesCTA() {
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=2000&q=80"
+          src="/Why Exosomes Page&Contact page-_Ready to Explore Exosome Therapy__ And background image on contact pagesection.jpeg"
           alt=""
           className="h-full w-full object-cover"
         />

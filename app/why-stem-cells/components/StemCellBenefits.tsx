@@ -59,9 +59,10 @@ export default function StemCellBenefits() {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="text-center text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto mb-16 font-sans"
         >
-          Wharton&apos;s jelly-derived stem cell therapies hold immense promise
-          for a variety of conditions. Here are some of the key potential
-          benefits:
+          When people ask us why MSCs from Wharton&apos;s Jelly, the answer
+          comes down to three things that matter most: how well they work,
+          how safely they&apos;re tolerated, and how consistently we see
+          meaningful results across a wide range of clients.
         </motion.p>
 
         {/* Feature image */}

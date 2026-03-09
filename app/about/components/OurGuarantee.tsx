@@ -117,7 +117,7 @@ export default function OurGuarantee() {
             {/* Main image */}
             <div className="relative rounded-[2rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.1)]">
               <img
-                src="/about/imgi_73_doctor-and-patient2.jpg"
+                src="/About Page & contact page-_Our Guarantee.jpeg"
                 alt="Advanced regenerative medicine treatment"
                 className="w-full h-[500px] object-cover"
               />
@@ -169,20 +169,7 @@ export default function OurGuarantee() {
             </motion.div>
 
             {/* Secondary image — small accent */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="absolute top-1/2 -right-8 -translate-y-1/2 hidden xl:block"
-            >
-              <div className="w-36 h-48 rounded-2xl overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.12)] border-2 border-white">
-                <img
-                  src="/about/imgi_74_doctor-and-patient.jpg"
-                  alt="Patient consultation"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </motion.div>
+            
           </motion.div>
         </div>
       </div>

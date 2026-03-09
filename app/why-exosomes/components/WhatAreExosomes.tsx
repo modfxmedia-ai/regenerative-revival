@@ -113,20 +113,20 @@ export default function WhatAreExosomes() {
             </h2>
 
             <p className="mt-6 text-lg text-gray-600 leading-relaxed font-sans">
-              Stem cell exosomes are nano-sized vesicles secreted by stem cells,
-              particularly mesenchymal stem cells (MSCs), which are known for
-              their regenerative properties. Exosomes act as communication
-              vehicles between cells, carrying proteins, lipids, and genetic
-              material (such as microRNA) that influence the behavior of
-              recipient cells.
+              Exosomes are tiny vesicles — essentially small packets — that stem
+              cells release to communicate with surrounding tissue. They carry
+              proteins, lipids, and genetic material like microRNA that instruct
+              other cells on how to respond. In short, they deliver the
+              regenerative message without any of the complexity of using live
+              cells.
             </p>
             <p className="mt-4 text-base text-gray-500 leading-relaxed font-sans">
-              Unlike stem cells themselves, exosomes are not living cells;
-              instead, they are the byproducts of cells that can carry
-              therapeutic signals to damaged or aging tissues. The regenerative
-              potential of exosomes has been a subject of intense research in
-              recent years. They have been shown to play a critical role in
-              wound healing, tissue repair, and inflammation reduction.
+              Because they aren&apos;t living cells, exosomes are easier to
+              standardize, store, and administer. Research into their role in
+              tissue repair and inflammation reduction has grown significantly —
+              and what&apos;s becoming clear is that a lot of the regenerative
+              benefit we associate with stem cells may actually be driven by
+              the exosomes they produce.
             </p>
 
             {/* Highlight cards */}

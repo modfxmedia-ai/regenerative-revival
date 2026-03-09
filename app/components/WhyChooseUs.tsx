@@ -40,7 +40,7 @@ export default function WhyChooseUs() {
             <div className="mt-10 relative rounded-[2rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.1)]">
               <div className="absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/20 z-10 pointer-events-none" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.pexels.com/photos/7089401/pexels-photo-7089401.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Patient testimonial" className="w-full h-auto rounded-[2rem] object-cover aspect-video" />
+              <img src="/HomePage-_Why Choose Regenerative Revival__ section.jpeg" alt="Patient testimonial" className="w-full h-auto rounded-[2rem] object-cover aspect-video" />
               <div className="absolute inset-0 bg-secondary/10" />
             </div>
           </motion.div>

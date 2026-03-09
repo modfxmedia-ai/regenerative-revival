@@ -6,7 +6,7 @@ import { ArrowRight, Shield, Star, Sparkles, ChevronDown } from "lucide-react";
 export default function Hero() {
 
   return (
-    <section className="relative h-screen min-h-[750px] max-h-[1100px] overflow-hidden bg-black">
+    <section className="relative h-screen min-h-[750px] max-h-[1100px] overflow-hidden bg-black ">
       {/* Full-bleed DNA video background */}
       <div className="absolute inset-0">
         <video
@@ -38,8 +38,8 @@ export default function Hero() {
       />
 
       {/* Main content — bottom left */}
-      <div className="absolute inset-0 z-10 flex items-end">
-        <div className="w-full mx-auto max-w-7xl px-6 lg:px-8 pb-20 sm:pb-24 lg:pb-28">
+      <div className="absolute inset-0 z-10  flex items-end">
+        <div className="w-full mx-auto max-w-7xl px-6 lg:px-8  pb-20 sm:pb-24 lg:pb-28">
           <div className="max-w-3xl">
             {/* Pill badge */}
             <motion.div
@@ -78,8 +78,8 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.5 }}
               className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-white/50"
             >
-              Wharton&apos;s Jelly stem cell therapy that eases pain, restores
-              vitality, and renews your body from within — delivered by licensed
+              Cutting-edge regenerative therapies that ease pain, restore
+              vitality, and renew your body from within — delivered by licensed
               practitioners you can trust.
             </motion.p>
 
@@ -128,7 +128,7 @@ export default function Hero() {
                 10,000+ Patients
               </div>
               <span className="h-3.5 w-px bg-white/15 hidden md:block" />
-              <span className="text-sm text-white/50 hidden md:block">15+ Years Experience</span>
+              <span className="text-sm text-white/50 hidden md:block">8+ Years Experience</span>
             </motion.div>
           </div>
         </div>

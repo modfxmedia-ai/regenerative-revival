@@ -133,7 +133,7 @@ const sections = [
     subtitle: "Our doctors in regenerative therapy.",
     icon: Stethoscope,
     members: doctors,
-    banner: "/about/imgi_74_doctor-and-patient.jpg",
+    banner: "/HomePage-_Why Choose Regenerative Revival__ section.jpeg",
   },
   {
     id: "advocates",
@@ -149,7 +149,7 @@ const sections = [
     subtitle: "Our regenerative therapy nurse practitioners.",
     icon: ShieldPlus,
     members: nursePractitioners,
-    banner: "/about/imgi_73_doctor-and-patient2.jpg",
+    banner: "/2149611219.jpg",
   },
   {
     id: "staff",

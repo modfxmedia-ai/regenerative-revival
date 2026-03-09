@@ -35,8 +35,8 @@ const benefitBlocks = [
     content: `${t.name} involves the application of regenerative biological materials to damaged or degenerated tissues. These materials contain powerful growth factors, cytokines, and signaling molecules that activate your body's healing cascade. When applied to the treatment area, they recruit your own stem cells to the site of injury, promote new blood vessel formation, reduce chronic inflammation, and stimulate the regeneration of cartilage, tendons, ligaments, and other soft tissues. For ${l.city} patients, this translates to meaningful pain relief and improved function — often within weeks of treatment.`,
   }),
   (t: Treatment, l: Location) => ({
-    heading: `Conditions We Treat in ${l.city}`,
-    content: `Our ${t.name.toLowerCase()} protocols in ${l.city}, ${l.state} are effective for a wide range of conditions including ${t.medicalConditions.join(", ")}. Many of our ${l.metro} area patients come to us after exhausting conventional treatment options — and they're often amazed by the results. Whether you're an athlete recovering from a sports injury, a professional dealing with repetitive strain, or a retiree seeking relief from degenerative joint disease, our personalized approach ensures you receive the most appropriate treatment for your specific condition.`,
+    heading: `Wellness Areas We Support in ${l.city}`,
+    content: `Our ${t.name.toLowerCase()} protocols in ${l.city}, ${l.state} support a wide range of wellness goals including ${t.medicalConditions.join(", ")}. Many of our ${l.metro} area clients come to us after exhausting conventional options — and they're often amazed by what's possible. Whether you're an athlete looking to bounce back from a sports injury, a professional managing repetitive strain, or simply someone who wants to feel better and move more freely, our personalized approach helps you find the right protocol for your unique situation.`,
   }),
   (t: Treatment, l: Location) => ({
     heading: `What to Expect During Your ${l.city} Consultation`,

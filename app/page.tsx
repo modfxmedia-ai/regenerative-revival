@@ -1,23 +1,23 @@
 import Hero from "./components/Hero";
 import ValueProps from "./components/ValueProps";
+import Testimonials from "./components/Testimonials";
 import About from "./components/About";
 import Treatments from "./components/Treatments";
 import WhartonsJellyPower from "./components/WhartonsJellyPower";
 import WhyChooseUs from "./components/WhyChooseUs";
-import Partners from "./components/Partners";
 import FAQ from "./components/FAQ";
 import Blog from "./components/Blog";
 import Contact from "./components/Contact";
 import { JsonLd, webPageSchema, faqSchema } from "./lib/schema";
 
 const homeFaqs = [
-  { question: "What is stem cell therapy?", answer: "Stem cell therapy is a form of regenerative medicine that utilizes the body's stem cells to repair and regenerate damaged tissues. It's a non-invasive approach that harnesses your body's natural healing capabilities." },
-  { question: "How does Wharton's Jelly enhance stem cell therapy?", answer: "Wharton's Jelly contains a high concentration of mesenchymal stem cells (MSCs) and growth factors, which significantly enhance the body's natural healing processes. These cells are younger and more potent than adult-derived stem cells." },
-  { question: "Is stem cell therapy safe?", answer: "Yes, stem cell therapy using Wharton's Jelly has a strong safety profile and is less likely to trigger an immune response. All our products come from accredited tissue banks and undergo rigorous testing." },
-  { question: "What conditions can stem cell therapy address?", answer: "Stem cell therapy can be used to relieve a variety of conditions, including sports injuries, chronic pain, osteoarthritis, degenerative diseases, joint pain, and soft tissue damage." },
-  { question: "What can I expect during my consultation?", answer: "During your consultation, our team will review your medical history, discuss your specific health concerns, and develop a personalized treatment plan tailored to your needs." },
-  { question: "When will I see results?", answer: "Many patients experience improvements within a few weeks, with ongoing progress over several months as the stem cells continue to promote tissue repair and regeneration." },
-  { question: "How do I become a business partner?", answer: "We offer a turnkey JV partnership with revenue sharing for medical practices and businesses. Contact us through the partner inquiry form and our team will walk you through the process." },
+  { question: "What is stem cell therapy?", answer: "Stem cell therapy uses mesenchymal stem cells (MSCs) — sourced externally from ethically donated umbilical cord tissue, not from your own body — to support your body's natural repair processes. These cells are introduced via injection or IV and work by signaling the body to reduce inflammation and promote tissue regeneration." },
+  { question: "Why Wharton's Jelly MSCs specifically?", answer: "Wharton's Jelly, found in umbilical cord tissue, is one of the richest known sources of high-quality MSCs. Because these cells come from newborn tissue, they're younger, more active, and carry a lower risk of immune rejection than adult-derived cells. It's simply a better starting point." },
+  { question: "Is this safe?", answer: "Yes. Our protocols use rigorously tested, FDA-compliant products sourced from accredited tissue banks. Wharton's Jelly-derived MSCs are well-tolerated by most people and do not require immunosuppressants. That said, every client goes through a screening process — this isn't a one-size-fits-all approach." },
+  { question: "What kinds of wellness goals do people come to you for?", answer: "People come to us for all sorts of reasons — joint discomfort, post-injury recovery, fatigue, inflammation, longevity, and performance. We don't make specific medical claims, but we work with each client to understand their goals and match them with the right protocol and provider." },
+  { question: "What happens during a consultation?", answer: "Your consultation is a conversation, not a sales pitch. We go over your health history, listen to what you're dealing with, and walk you through which protocols might make sense. From there, you're connected to a licensed practitioner who handles the clinical side." },
+  { question: "How soon do people notice a difference?", answer: "It really depends on the person and the protocol. Some clients notice changes within a few weeks; for others it unfolds over several months as the regenerative process continues. We'll set realistic expectations from the start." },
+  { question: "Do you work with gyms, clinics, or other health professionals?", answer: "Yes — we have a dedicated B2B partnership program for gyms, recovery centers, physical therapists, and health influencers. Visit our Partner With Us page for details on revenue sharing, onboarding, and how it works." },
 ];
 
 export default function Home() {
@@ -31,9 +31,9 @@ export default function Home() {
       <Treatments />
       <WhartonsJellyPower />
       <WhyChooseUs />
-      <Partners />
       <FAQ />
       <Blog />
+      <Testimonials />
       <Contact />
     </>
   );

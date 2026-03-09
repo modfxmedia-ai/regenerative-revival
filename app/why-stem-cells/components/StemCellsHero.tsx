@@ -64,12 +64,11 @@ export default function StemCellsHero() {
             transition={{ duration: 0.7, delay: 0.25 }}
             className="mt-7 max-w-2xl text-lg leading-relaxed text-white/55 font-sans"
           >
-            Wharton&apos;s jelly is a remarkable substance found within the
-            umbilical cord, serving as a protective cushion for the vital blood
-            vessels that connect a developing baby to the placenta. More than
-            just a structural component, Wharton&apos;s jelly is a rich source
-            of mesenchymal stem cells (MSCs) with the unique potential to
-            differentiate into various cell types.
+            Your body already knows how to heal — it just needs the right signals.
+            Mesenchymal stem cells (MSCs) sourced from Wharton&apos;s Jelly are
+            among the most potent regenerative cells available today. They&apos;re
+            not taken from your own body. They come from ethically donated umbilical
+            cord tissue, and they arrive ready to work.
           </motion.p>
 
           {/* Feature pills */}

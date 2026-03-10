@@ -18,6 +18,7 @@ const videoTestimonials = [
     title: "Actor & Philanthropist",
     src: `${BLOB_BASE}/testimonial_video/Morgan-freeman-resize.mp4`,
     featured: false,
+    poster: "/image.png",
   },
   {
     name: "Tony Robbins",
@@ -46,7 +47,7 @@ function VideoCard({
   index,
   inView,
 }: {
-  video: (typeof videoTestimonials)[0];
+  video: (typeof videoTestimonials)[0] & { poster?: string };
   index: number;
   inView: boolean;
 }) {
@@ -93,8 +94,9 @@ function VideoCard({
           className="w-full h-full object-cover"
           preload="metadata"
           playsInline
+          poster={video.poster}
           onLoadedMetadata={() => {
-            if (videoRef.current) videoRef.current.currentTime = 5;
+            if (!video.poster && videoRef.current) videoRef.current.currentTime = 5;
           }}
           onEnded={() => setPlaying(false)}
         />

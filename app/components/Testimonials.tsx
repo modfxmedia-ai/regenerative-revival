@@ -30,17 +30,102 @@ const videoTestimonials = [
 
 const writtenTestimonials = [
   {
-    name: "Cody Jefferson",
-    title: "Entrepreneur & Speaker",
+    name: "Vicki R.",
+    condition: "Osteoarthritis & Knee",
     quote:
-      "Regenerative Revival completely changed the way I look at recovery and health. The stem cell therapy got me back on my feet faster than anything I've ever tried. I feel stronger and more alive at 45 than I did at 30.",
+      "The Osteoarthritis set in fast; as well as the pain from the severely from meniscus in both knees and the extreme bone on bone. I had no cartilage left, I could feel the bones grinding and clicking. So, I had my stem cell injections… the next morning, I woke up and took a deep breath, swung my feet over the bed side and touched the floor. Holy cow! No PAIN… No Hobbling… No Tears… No Fear! I welcome the journey to recovery and getting back to being able to do things I lost to the injury.",
     stars: 5,
-    featured: true,
-    initials: "CJ",
-    accentColor: "from-primary to-primary-dark",
+    initials: "VR",
   },
-
+  {
+    name: "Crystal R.",
+    condition: "Back & Ankle Pain",
+    quote:
+      "I had severe injuries to my ankle, bulging discs in my back, and arthritis. I would play a game each morning, guessing my pain level… My back-pain specialist wanted me to do injections, but I didn't want medication. I never knew about stem cells… Eight days after my appointment, I was driving to work and realized I didn't play my game. I didn't have to, it was so great.",
+    stars: 5,
+    initials: "CR",
+  },
+  {
+    name: "Grace",
+    condition: "MS & Fibromyalgia",
+    quote:
+      "I had Multiple sclerosis (MS), fibromyalgia, degenerative joint and disc disease, and scoliosis… My husband couldn't put his arm around me because of the pain… I was on opioids and used a walker and couldn't get out of bed most days… I'm now off them and don't need the walker. My husband can put his arm around me again and I don't have the popping in my back.",
+    stars: 5,
+    initials: "G",
+  },
+  {
+    name: "Ethan M.",
+    condition: "Rotator Cuff",
+    quote:
+      "I tore my rotator cuff while at work… They told me I needed surgery. I'm 26 years old… I had no interest in letting them cut into my body. I looked for alternatives and found stem cells… And after only one injection, and 30 days later, 80–90% of my range of motion in my shoulder has returned and I have minimal to no pain… AND no recovery time from surgery.",
+    stars: 5,
+    initials: "EM",
+  },
+  {
+    name: "Margaret P.",
+    condition: "Knee Mobility",
+    quote:
+      "For years, I could not bend my leg up over my knee, so that I could put my socks on… I signed up, came in here, got my injection. Three days later I'm sitting on the bed thinking, I'm going to try this… You're not going to believe this, I was just shocked. I took my little right leg here, and I picked it up. I put it over my knee, and I hadn't done it for 10 years… I've had no pain whatsoever. None. Will I recommend this to others? You better believe it.",
+    stars: 5,
+    initials: "MP",
+  },
+  {
+    name: "Roy B.",
+    condition: "Knee Pain",
+    quote:
+      "I wasn't able to do much of my moving towards my right, with my knee problem. Since I've got the shot, the three weeks, I've been bouncing around, walking all over the place, and almost running, riding bikes, things that I wasn't able to do. I've been talking to a lot of people and they've been asking me \"Where did you get it?\" — I've referred them to the doctor and a few of them have taken the procedure and they're doing great.",
+    stars: 5,
+    initials: "RB",
+  },
+  {
+    name: "John R.",
+    condition: "Knee Burning",
+    quote:
+      "My problem is in my right knee and I was feeling a lot of burning sensation and since I've taken stem cell system, it has diminished quite a bit. My knee's feeling great, I'm back to dancing, where I couldn't before and it's working for me.",
+    stars: 5,
+    initials: "JR",
+  },
 ];
+
+// Duplicate for seamless infinite loop
+const marqueeItems = [...writtenTestimonials, ...writtenTestimonials];
+
+function TestimonialCard({ t }: { t: (typeof writtenTestimonials)[0] }) {
+  return (
+    <div className="relative flex flex-col w-[340px] shrink-0 rounded-2xl bg-white/[0.04] border border-white/[0.08] p-6 hover:bg-white/[0.07] hover:border-primary/30 transition-all duration-300 shadow-[0_4px_24px_rgba(0,0,0,0.35)]">
+      {/* Top purple line */}
+      <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
+
+      {/* Header row: condition badge + stars */}
+      <div className="flex items-center justify-between mb-3">
+        <span className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 bg-primary/15 border border-primary/25 text-[10px] font-semibold uppercase tracking-widest text-primary-light">
+          {t.condition}
+        </span>
+        <div className="flex items-center gap-0.5">
+          {[...Array(t.stars)].map((_, i) => (
+            <Star key={i} className="h-3 w-3 fill-amber-400 text-amber-400" />
+          ))}
+        </div>
+      </div>
+
+      {/* Quote */}
+      <div className="flex-1 mb-4">
+        <Quote className="h-5 w-5 text-primary/35 mb-2" />
+        <p className="text-sm text-white/65 leading-relaxed">
+          {t.quote}
+        </p>
+      </div>
+
+      {/* Author */}
+      <div className="flex items-center gap-3 pt-4 border-t border-white/[0.07]">
+        <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center shadow-md shrink-0">
+          <span className="text-[10px] font-bold text-white">{t.initials}</span>
+        </div>
+        <p className="text-sm font-bold text-white">{t.name}</p>
+      </div>
+    </div>
+  );
+}
 
 function VideoCard({
   video,
@@ -94,9 +179,10 @@ function VideoCard({
           className="w-full h-full object-cover"
           preload="metadata"
           playsInline
-          poster={video.poster}
+          poster={(video as { poster?: string }).poster}
           onLoadedMetadata={() => {
-            if (!video.poster && videoRef.current) videoRef.current.currentTime = 5;
+            if (!(video as { poster?: string }).poster && videoRef.current)
+              videoRef.current.currentTime = 5;
           }}
           onEnded={() => setPlaying(false)}
         />
@@ -140,9 +226,6 @@ export default function Testimonials() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
-  const featuredTestimonial = writtenTestimonials.find((t) => t.featured)!;
-  const gridTestimonials = writtenTestimonials.filter((t) => !t.featured);
-
   return (
     <section
       id="testimonials"
@@ -178,59 +261,32 @@ export default function Testimonials() {
             the results that speak for themselves.
           </p>
         </motion.div>
+      </div>
 
-        {/* Featured written testimonial — Cody Jefferson */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.15 }}
-          className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary/[0.12] via-white/[0.03] to-transparent border border-white/[0.08] p-8 sm:p-12 mb-8 shadow-[0_8px_60px_rgba(107,63,160,0.15)]"
-        >
-          {/* Glow accent */}
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
-          <div className="absolute -top-24 -left-24 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Marquee — written testimonials (full bleed) */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={inView ? { opacity: 1 } : {}}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="relative w-full overflow-hidden mb-20"
+      >
+        {/* Edge fades */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
-          <div className="relative flex flex-col sm:flex-row gap-8 items-start">
-            {/* Avatar */}
-            <div className="shrink-0">
-              <div className="relative h-20 w-20 rounded-2xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center shadow-lg shadow-primary/30">
-                <span className="text-2xl font-bold text-white">{featuredTestimonial.initials}</span>
-              </div>
-            </div>
+        <div className="flex gap-4 animate-marquee w-max py-2">
+          {marqueeItems.map((t, i) => (
+            <TestimonialCard key={i} t={t} />
+          ))}
+        </div>
+      </motion.div>
 
-            <div className="flex-1">
-              {/* Stars */}
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(featuredTestimonial.stars)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
-                ))}
-              </div>
-
-              {/* Quote icon */}
-              <Quote className="h-8 w-8 text-primary/40 mb-3" />
-
-              <blockquote className="text-xl sm:text-2xl font-medium text-white leading-relaxed">
-                &ldquo;{featuredTestimonial.quote}&rdquo;
-              </blockquote>
-
-              <div className="mt-6 flex items-center gap-3">
-                <div>
-                  <p className="text-base font-bold text-white">{featuredTestimonial.name}</p>
-                  <p className="text-sm text-white/45">{featuredTestimonial.title}</p>
-                </div>
-                <span className="ml-2 text-xs font-semibold uppercase tracking-widest text-primary-light bg-primary/15 border border-primary/20 rounded-full px-3 py-1">
-                  Featured
-                </span>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Divider */}
+      {/* Divider */}
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, scaleX: 0 }}
           animate={inView ? { opacity: 1, scaleX: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.45 }}
+          transition={{ duration: 0.8, delay: 0.35 }}
           className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-20 origin-center"
         />
 
@@ -247,4 +303,3 @@ export default function Testimonials() {
     </section>
   );
 }
-

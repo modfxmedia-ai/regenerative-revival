@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 import { JsonLd, organizationSchema, localBusinessSchema } from "./lib/schema";
 
 const inter = Inter({
@@ -57,6 +58,11 @@ export const metadata: Metadata = {
       "Cutting-edge regenerative medicine powered by Wharton's Jelly stem cell therapy.",
     images: ["https://www.regenerativerevival.com/logo.png"],
   },
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && {
+    verification: {
+      google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    },
+  }),
 };
 
 export default function RootLayout({
@@ -69,6 +75,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} antialiased`}
       >
+        <GoogleAnalytics />
         <JsonLd data={organizationSchema()} />
         <JsonLd data={localBusinessSchema()} />
         <Navbar />

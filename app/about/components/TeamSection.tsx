@@ -3,7 +3,6 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import {
-  ChevronDown,
   Stethoscope,
   HeartPulse,
   ShieldPlus,
@@ -72,45 +71,64 @@ const nursePractitioners: TeamMember[] = [
     bio: "With over 20 years of experience in emergency, critical care, and hospital medicine, Dr. Angie McGough specializes in advanced biologic injections designed to support joint health, reduce inflammation, and improve mobility. She also leads her own functional medicine clinic, Essential Infusions Plus, integrating regenerative therapies with nutrition, hormone optimization, and personalized wellness strategies.",
   },
   {
-    name: "Shina Chase",
+    name: "Shina Chase, MSN, APRN, CNP",
     role: "Minnesota Lead NP",
-    photo: "/about/imgi_13_Screen-Shot-2026-01-31-at-1.50.58-PM.png",
+    photo: "/team/0.jpg",
+    bio: "Shina Chase, MSN, APRN, CNP is a board-certified Adult-Gerontology Nurse Practitioner with a strong clinical background in regenerative, orthopedic, and sports medicine. She specializes in joint and soft-tissue orthobiologic injections, BMAC procedures, and comprehensive musculoskeletal evaluations. Shina brings a diverse healthcare background that includes women's health, cardiac care, and ophthalmology, along with experience as an adjunct nursing faculty member. She is licensed in multiple states and is known for her patient-focused approach, clinical precision, and commitment to evidence-based regenerative care.",
   },
   {
     name: "Dana Cook, FNP",
     role: "South West Regional Lead NP",
-    photo: "/about/imgi_76_team-Dana-Cook.jpg",
-    bio: "Dana Cook is a Family Nurse Practitioner with over 25 years of acute care experience. She has worked across cardiovascular, research, administration, and procedural areas including the cardiac cath lab and interventional radiology. Since graduating from Grand Canyon University in 2018, she has worked in GI/liver, pain management, and alternative and regenerative medicine.",
-  },
-  {
-    name: "Kefah Mazloum, MSN, APRN, FNP-C",
-    role: "Michigan Lead NP",
-    photo: "/about/imgi_15_Screen-Shot-2026-01-31-at-1.12.10-PM.png",
-    bio: "Kefah Mazloum is a highly skilled Family Nurse Practitioner with extensive experience in emergency and trauma care across high-acuity hospital and urgent care settings. He specializes in rapid medical stabilization, advanced clinical decision-making, and complex procedural care. Kefah currently practices in a Level I trauma environment and holds a Master of Science in Nursing from the University of Michigan–Flint.",
+    photo: "/team/1.jpg",
+    bio: "Dana Cook is a Family Nurse Practitioner with over 25 years of acute care experience as a registered nurse. She has worked in many different areas including cardiovascular, research, administration as well as different procedural areas including the cardiac cath lab and interventional radiology. Dana received her nurse practitioner degree from Grand Canyon University in 2018. Since graduating, she has worked in gastrointestinal/liver, pain management, and alternative and regenerative medicine. Being an Arizona native, she enjoys the outdoors during the non-summer months as well as spending time with her son.",
   },
   {
     name: "Susan Kelly, APRN, FNP-BC, LNC",
     role: "South Eastern Regional Lead NP",
-    photo: "/about/imgi_77_team-Kelly-Susan.jpg",
-    bio: "Susan Kelly is a double board-certified Nurse Practitioner with extensive experience in advanced clinical practice and regenerative medicine. She brings a unique blend of clinical precision, compassion, and forward-thinking care, remaining committed to patient education, safety, and excellence in every aspect of regenerative treatment delivery.",
+    photo: "/team/2.jpg",
+    bio: "Susan Kelly, APRN, FNP-BC, LNC is a double board-certified Nurse Practitioner with extensive experience in advanced clinical practice and regenerative medicine. For several years, she has been actively involved in the regenerative medicine field, where her deep knowledge and hands-on expertise help patients access innovative, science-based therapies designed to support healing and restoration. Susan brings a unique blend of clinical precision, compassion, and forward-thinking care to her work. Passionate about advancing the field, she remains committed to patient education, safety, and excellence in every aspect of regenerative treatment delivery.",
   },
   {
     name: "Nicole Stroop, MSN, APRN, FNP-BC, IFMCP",
     role: "Tennessee Lead NP",
-    photo: "/about/imgi_19_Screen-Shot-2026-01-31-at-1.36.35-PM.png",
-    bio: "Nicole Stroop is a board-certified Nurse Practitioner specializing in functional, regenerative, orthopedic, and aesthetic medicine. With advanced training in peptide therapy, stem cell therapy, and hormone optimization, Nicole brings a comprehensive, patient-centered approach to complex care. She practices across multiple states and is dedicated to optimizing patient outcomes and long-term wellness.",
-  },
-  {
-    name: "Robyn Rafter, APRN, FNP-C",
-    role: "Midwest Regional Lead NP",
-    photo: "/about/imgi_79_team-Rafter-Robyn.jpg",
-    bio: "Robyn Rafter is an experienced Nurse Practitioner and co-founder of Element Wellness in Omaha, Nebraska. With a strong background in functional and regenerative medicine, Robyn focuses on creating meaningful, long-term patient relationships while addressing root causes of illness through therapies such as hormone optimization, medical weight loss, IV infusion therapy, and functional medicine.",
+    photo: "/team/3.jpg",
+    bio: "Nicole Stroop, MSN, APRN, FNP-BC, IFMCP is a board-certified Nurse Practitioner specializing in functional, regenerative, orthopedic, and aesthetic medicine. With advanced training in peptide therapy, stem cell therapy, and hormone optimization, Nicole brings a comprehensive, patient-centered approach to complex care. She is certified in functional medicine and practices across multiple states, with experience ranging from orthopedics and regenerative therapies to aesthetics and peptides. Known for blending cutting-edge therapies with compassionate care, Nicole is dedicated to optimizing patient outcomes and long-term wellness.",
   },
   {
     name: "Deanna Kaup, DNP, FNP-C",
     role: "Iowa Lead NP",
-    photo: "/about/imgi_20_Screen-Shot-2026-01-27-at-1.25.06-PM.png",
-    bio: "Deanna Kaup is a compassionate Advanced Registered Nurse Practitioner with 32 years of nursing experience across Med-Surg, Emergency, OB, and ICU, and over six years as a Nurse Practitioner. She specializes in joint and trigger point injections and has worked with diverse patient populations across multiple states. She is recognized for her patient-centered approach and commitment to improving mobility and quality of life.",
+    photo: "/team/4.jpg",
+    bio: "Deanna Kaup, DNP, FNP-C is a compassionate and experienced Advanced Registered Nurse Practitioner with 32 years of nursing experience across Med-Surg, Emergency, OB, and ICU, and over six years of clinical practice as a Nurse Practitioner in acute care, chronic disease management, wellness exams, and alternative pain therapies. She specializes in joint and trigger point injections and has worked with diverse patient populations across multiple states. Deanna holds a Doctor of Nursing Practice and is board certified through the ANCC. She is licensed in multiple states and is recognized for her patient-centered approach, clinical leadership, and commitment to improving mobility and quality of life.",
+  },
+  {
+    name: "Kefah Mazloum, MSN, APRN, FNP-C",
+    role: "Michigan Lead NP",
+    photo: "/team/5.png",
+    bio: "Kefah Mazloum, MSN, APRN, FNP-C is a highly skilled Family Nurse Practitioner with extensive experience in emergency and trauma care across high-acuity hospital and urgent care settings. He specializes in rapid medical stabilization, advanced clinical decision-making, and complex procedural care, including trauma resuscitation, wound management, and critical care interventions. Kefah currently practices in a Level I trauma environment and is recognized for his calm, collaborative approach in high-pressure situations. He holds a Master of Science in Nursing from the University of Michigan-Flint and is known for delivering efficient, patient-centered care across diverse populations.",
+  },
+  {
+    name: "Robyn Rafter, APRN, FNP-C",
+    role: "Midwest Regional Lead NP",
+    photo: "/team/6.jpg",
+    bio: "Robyn Rafter, APRN, FNP-C is an experienced Nurse Practitioner and co-founder of Element Wellness in Omaha, Nebraska. With a strong background in functional and regenerative medicine, Robyn is passionate about helping patients achieve optimal health through personalized, evidence-based care that supports the body's natural ability to heal. Her approach blends advanced clinical practice with a deep commitment to preventive and holistic wellness. At Element Wellness, Robyn focuses on creating meaningful, long-term patient relationships while addressing the root causes of illness through therapies such as hormone optimization, medical weight loss, IV infusion therapy, and functional medicine. Driven by a belief that true wellness is personal, Robyn is dedicated to empowering her patients with knowledge, proactive care, and innovative treatment options designed to help them look, feel, and live better — inside and out.",
+  },
+  {
+    name: "Shayne Yocum, ARNP, FNP-BC",
+    role: "Seattle Lead NP",
+    photo: "/team/7.jpg",
+    bio: "Shayne Yocum, ARNP, FNP-BC is a board-certified Family Nurse Practitioner with over 50 years of nursing experience and more than 15 years in advanced practice. Her career spans emergency medicine, neurosurgery, neurology, family medicine, regenerative medicine, and rural health, providing care to diverse patient populations across both hospital and clinic settings. Shayne specializes in regenerative and orthobiologic therapies, including ultrasound-guided joint injections, PRP, and cellular tissue procedures. In addition to clinical practice, she has a strong passion for teaching and has instructed courses in ACLS, BLS, trauma care, and emergency response. Known for her patient-centered approach and commitment to lifelong learning, Shayne brings extensive clinical expertise and compassionate care to every patient interaction.",
+  },
+  {
+    name: "Danielle Cory, DNP, FNP-C",
+    role: "Oklahoma Lead NP",
+    photo: "/team/8.jpg",
+    bio: "Danielle Cory, DNP, FNP-C is a compassionate and dedicated Family Nurse Practitioner committed to improving access to high-quality care in rural and underserved communities. She specializes in preventive medicine, chronic disease management, and comprehensive primary care for pediatric, adult, and geriatric populations. Danielle performs a wide range of in-office procedures, including joint injections, biopsies, laceration repair, and women's health services. With a strong background in cardiac critical care and emergency nursing, she brings clinical precision and collaborative leadership to every patient interaction. Danielle earned her Doctor of Nursing Practice from Baylor University and is passionate about advancing health equity and long-term patient relationships.",
+  },
+  {
+    name: "Natalie Chovan-Hahn, FNP",
+    role: "California Lead NP",
+    photo: "/team/9.png",
+    bio: "Natalie is a Family Nurse Practitioner with experience in both primary care and regenerative medicine. Her work focuses on innovative therapies including stem cell injections, peptide therapy, and hormone optimization to help patients improve their overall health and quality of life. Natalie believes that truly effective care begins with listening, and she prioritizes understanding each patient's concerns, goals, and unique health journey. Her approach combines evidence-based medicine with advanced regenerative treatments to address the root causes of symptoms rather than simply managing them. She is dedicated to helping patients feel heard, supported, and empowered while guiding them toward improved health, function, and overall well-being.",
   },
 ];
 
@@ -163,8 +181,6 @@ const sections = [
 
 
 function MemberCard({ member, index }: { member: TeamMember; index: number }) {
-  const [expanded, setExpanded] = useState(false);
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20, scale: 0.97 }}
@@ -208,26 +224,9 @@ function MemberCard({ member, index }: { member: TeamMember; index: number }) {
         </div>
 
         {member.bio && (
-          <>
-            <p
-              className={`text-sm text-gray-600 leading-relaxed font-sans ${
-                expanded ? "" : "line-clamp-3"
-              }`}
-            >
-              {member.bio}
-            </p>
-            <button
-              onClick={() => setExpanded(!expanded)}
-              className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:text-primary-dark transition-colors font-sans"
-            >
-              {expanded ? "Show less" : "Read full bio"}
-              <ChevronDown
-                className={`h-3.5 w-3.5 transition-transform duration-200 ${
-                  expanded ? "rotate-180" : ""
-                }`}
-              />
-            </button>
-          </>
+          <p className="text-sm text-gray-600 leading-relaxed font-sans">
+            {member.bio}
+          </p>
         )}
       </div>
     </motion.div>

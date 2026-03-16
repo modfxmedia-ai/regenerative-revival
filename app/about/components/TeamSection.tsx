@@ -203,7 +203,7 @@ function MemberCard({ member, index }: { member: TeamMember; index: number }) {
               <img
                 src={member.photo}
                 alt={member.name}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-top"
               />
             ) : (
               <span className="text-lg font-bold text-primary font-sans">

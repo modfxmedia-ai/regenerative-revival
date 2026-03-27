@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import { Send, Shield } from "lucide-react";
+import { submitLead } from "@/app/lib/submit-lead";
 
 export default function HeroContactForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
@@ -27,8 +29,22 @@ export default function HeroContactForm() {
 
     setErrors(newErrors);
     if (Object.keys(newErrors).length === 0) {
-      setSubmitted(true);
-      form.reset();
+      setSubmitting(true);
+      const nameParts = name.split(/\s+/);
+      const result = await submitLead({
+        firstName: nameParts[0],
+        lastName: nameParts.slice(1).join(" "),
+        email,
+        phone: (data.get("phone") as string).trim(),
+        source: "hero-form",
+      });
+      setSubmitting(false);
+      if (result.success) {
+        setSubmitted(true);
+        form.reset();
+      } else {
+        setErrors({ form: result.error || "Something went wrong. Please try again." });
+      }
     }
   }
 
@@ -54,6 +70,7 @@ export default function HeroContactForm() {
       <p className="text-sm text-white/40 mb-6">Get a personalized treatment plan</p>
 
       <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4">
+        {errors.form && <p className="text-xs text-red-400">{errors.form}</p>}
         <div>
           <input
             name="name"
@@ -86,10 +103,11 @@ export default function HeroContactForm() {
         </div>
         <button
           type="submit"
-          className="flex h-12 items-center justify-center gap-2 rounded-xl bg-primary text-sm font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/30"
+          disabled={submitting}
+          className="flex h-12 items-center justify-center gap-2 rounded-xl bg-primary text-sm font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/30 disabled:opacity-60 disabled:cursor-not-allowed"
         >
           <Send className="h-4 w-4" />
-          Request Consultation
+          {submitting ? "Sending..." : "Request Consultation"}
         </button>
         <div className="flex items-center justify-center gap-2 text-xs text-white/30">
           <Shield className="h-3 w-3" />

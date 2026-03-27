@@ -16,6 +16,7 @@ import {
   CheckCircle2,
   ArrowRight,
 } from "lucide-react";
+import { submitLead } from "@/app/lib/submit-lead";
 
 export default function ContactForm() {
   const ref = useRef(null);
@@ -80,6 +81,8 @@ export default function ContactForm() {
 
 function FormCard() {
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   function validateName(value: string, field: string): string | null {
     const trimmed = value.trim();
@@ -105,7 +108,7 @@ function FormCard() {
     return null;
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
@@ -134,15 +137,41 @@ function FormCard() {
 
     setErrors(newErrors);
     if (Object.keys(newErrors).length === 0) {
-      // Form is valid — submit logic here
-      alert("Thank you! We'll be in touch shortly.");
-      form.reset();
+      setSubmitting(true);
+      const result = await submitLead({
+        firstName,
+        lastName,
+        email: (data.get("email") as string).trim(),
+        phone: (data.get("phone") as string).trim(),
+        message,
+        subject: (data.get("subject") as string) || undefined,
+        source: "contact-page",
+      });
+      setSubmitting(false);
+      if (result.success) {
+        setSubmitted(true);
+        form.reset();
+      } else {
+        setErrors({ form: result.error || "Something went wrong. Please try again." });
+      }
     }
   }
 
   const inputClass = "w-full rounded-xl bg-white/80 backdrop-blur-sm border px-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all font-sans";
   const errorInputClass = "border-red-300 focus:border-red-400 focus:ring-red-100";
   const normalInputClass = "border-gray-200/60";
+
+  if (submitted) {
+    return (
+      <div className="relative bg-white/70 backdrop-blur-2xl rounded-3xl p-8 sm:p-10 border border-white/80 shadow-[0_8px_40px_rgba(107,63,160,0.06)] text-center py-20">
+        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-500/15 border border-green-400/20 mx-auto mb-5">
+          <Send className="h-7 w-7 text-green-600" />
+        </div>
+        <h3 className="text-2xl font-semibold text-gray-900 mb-2">Thank You!</h3>
+        <p className="text-gray-600 font-sans">We&apos;ve received your message and will be in touch within 24 hours.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="relative bg-white/70 backdrop-blur-2xl rounded-3xl p-8 sm:p-10 border border-white/80 shadow-[0_8px_40px_rgba(107,63,160,0.06)]">
@@ -159,6 +188,8 @@ function FormCard() {
           </div>
         </div>
       </div>
+
+      {errors.form && <p className="relative text-sm text-red-500 mb-4 font-sans">{errors.form}</p>}
 
       <form className="relative flex flex-col gap-5" onSubmit={handleSubmit} noValidate>
         <div className="grid sm:grid-cols-2 gap-5">
@@ -214,9 +245,9 @@ function FormCard() {
           {errors.message && <p className="mt-1 text-xs text-red-500 font-sans">{errors.message}</p>}
         </div>
 
-        <button type="submit" className="group flex h-14 items-center justify-center gap-2.5 rounded-2xl bg-primary text-base font-semibold text-white transition-all duration-300 hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-0.5 font-sans">
+        <button type="submit" disabled={submitting} className="group flex h-14 items-center justify-center gap-2.5 rounded-2xl bg-primary text-base font-semibold text-white transition-all duration-300 hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-0.5 font-sans disabled:opacity-60 disabled:cursor-not-allowed">
           <Send className="h-5 w-5 group-hover:translate-x-0.5 transition-transform" />
-          Send Message
+          {submitting ? "Sending..." : "Send Message"}
         </button>
 
         <p className="text-xs text-gray-400 text-center leading-relaxed font-sans">

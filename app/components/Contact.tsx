@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Send, MapPin, Phone, Mail, Zap, Shield, Award, Lock } from "lucide-react";
+import { submitLead } from "@/app/lib/submit-lead";
 
 export default function Contact() {
   const ref = useRef(null);
@@ -44,6 +45,48 @@ export default function Contact() {
 
 
 function FormCard({ inquiryType, setInquiryType }: { inquiryType: string; setInquiryType: (v: string) => void }) {
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [formError, setFormError] = useState("");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    setFormError("");
+    setSubmitting(true);
+
+    const result = await submitLead({
+      firstName: ((data.get("firstName") as string) || "").trim(),
+      lastName: ((data.get("lastName") as string) || "").trim(),
+      email: ((data.get("email") as string) || "").trim(),
+      phone: ((data.get("phone") as string) || "").trim(),
+      message: ((data.get("message") as string) || "").trim(),
+      inquiryType,
+      source: "homepage-contact",
+    });
+
+    setSubmitting(false);
+    if (result.success) {
+      setSubmitted(true);
+      form.reset();
+    } else {
+      setFormError(result.error || "Something went wrong. Please try again.");
+    }
+  }
+
+  if (submitted) {
+    return (
+      <div className="relative bg-white/60 backdrop-blur-2xl rounded-3xl p-8 sm:p-10 border border-white/80 shadow-[0_8px_40px_rgba(107,63,160,0.06)] text-center py-20">
+        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-500/15 border border-green-400/20 mx-auto mb-5">
+          <Send className="h-7 w-7 text-green-600" />
+        </div>
+        <h3 className="text-2xl font-semibold text-gray-900 mb-2">Thank You!</h3>
+        <p className="text-gray-600">We&apos;ve received your message and will be in touch within 24 hours.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="relative bg-white/60 backdrop-blur-2xl rounded-3xl p-8 sm:p-10 border border-white/80 shadow-[0_8px_40px_rgba(107,63,160,0.06)]">
       <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/60 via-transparent to-transparent pointer-events-none" />
@@ -57,7 +100,9 @@ function FormCard({ inquiryType, setInquiryType }: { inquiryType: string; setInq
         </button>
       </div>
 
-      <form className="relative flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
+      {formError && <p className="relative text-sm text-red-500 mb-4">{formError}</p>}
+
+      <form className="relative flex flex-col gap-5" onSubmit={handleSubmit}>
         <div className="grid sm:grid-cols-2 gap-5">
           <div>
             <label htmlFor="firstName" className="block text-sm font-medium text-gray-900 mb-2">First Name</label>
@@ -88,9 +133,9 @@ function FormCard({ inquiryType, setInquiryType }: { inquiryType: string; setInq
           </label>
           <textarea id="message" rows={4} className="w-full rounded-xl bg-white/80 backdrop-blur-sm border border-gray-200/60 px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all resize-none" placeholder={inquiryType === "patient" ? "Describe your symptoms..." : "Tell us about your practice..."} />
         </div>
-        <button type="submit" className={`group flex h-14 items-center justify-center gap-2 rounded-2xl text-base font-semibold text-white transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 ${inquiryType === "patient" ? "bg-primary hover:bg-primary-dark hover:shadow-primary/20" : "bg-gold hover:bg-gold-light hover:shadow-gold/20"}`}>
+        <button type="submit" disabled={submitting} className={`group flex h-14 items-center justify-center gap-2 rounded-2xl text-base font-semibold text-white transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed ${inquiryType === "patient" ? "bg-primary hover:bg-primary-dark hover:shadow-primary/20" : "bg-gold hover:bg-gold-light hover:shadow-gold/20"}`}>
           <Send className="h-5 w-5 group-hover:translate-x-0.5 transition-transform" />
-          {inquiryType === "patient" ? "Request Consultation" : "Submit Partnership Inquiry"}
+          {submitting ? "Sending..." : inquiryType === "patient" ? "Request Consultation" : "Submit Partnership Inquiry"}
         </button>
         <p className="text-xs text-gray-400 text-center leading-relaxed">
           By submitting this form you consent to be contacted by SMS and email. Message &amp; data rates may apply. Reply STOP to opt out.

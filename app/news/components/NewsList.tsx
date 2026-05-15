@@ -14,7 +14,6 @@ export default function NewsList() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
   const [expanded, setExpanded] = useState(false);
-  const shown = expanded ? remaining : remaining.slice(0, 5);
 
   return (
     <div ref={ref}>
@@ -113,12 +112,13 @@ export default function NewsList() {
             <div className="flex-1 h-px bg-gray-100" />
           </motion.div>
 
-          {shown.map((article, i) => (
+          {remaining.map((article, i) => (
             <motion.div
               key={article.slug}
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.4, delay: 0.45 + i * 0.05 }}
+              transition={{ duration: 0.4, delay: 0.45 + Math.min(i, 5) * 0.05 }}
+              className={!expanded && i >= 5 ? "hidden" : ""}
             >
               <Link href={`/news/${article.slug}`} className="group grid md:grid-cols-12 gap-6 lg:gap-10 py-9 border-b border-gray-100 last:border-0 cursor-pointer">
                 <div className="md:col-span-4 overflow-hidden">

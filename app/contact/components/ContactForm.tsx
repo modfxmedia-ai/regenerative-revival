@@ -138,6 +138,13 @@ function FormCard() {
     setErrors(newErrors);
     if (Object.keys(newErrors).length === 0) {
       setSubmitting(true);
+      // TODO (when paid ads launch): capture marketing attribution per SEO
+      // playbook §11.3 / §12.4 — read utm_*, gclid, fbclid, msclkid, ttclid,
+      // li_fat_id from URL params (persist across pages via sessionStorage)
+      // plus landing_page + document.referrer. Pass them to submitLead so the
+      // /api/leads route can surface them in the team email. Without this,
+      // paid leads attribute to "direct" and Google Ads / Meta can't import
+      // conversions back to optimize ad spend.
       const result = await submitLead({
         firstName,
         lastName,

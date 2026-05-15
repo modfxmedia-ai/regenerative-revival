@@ -30,12 +30,23 @@ export function generatePageMetadata({
   if (cta && fullTitle.length + cta.length + 3 <= 60) {
     fullTitle = `${title} | ${cta} | ${SITE_NAME}`;
   }
+  // Safeguard: cap title at 60 chars per SEO playbook §4.1 (~600px desktop).
+  if (fullTitle.length > 60) {
+    fullTitle = fullTitle.substring(0, 57).replace(/\s+\S*$/, "") + "…";
+  }
 
-  // Dynamic CTA in description: append if under 160 chars
-  let fullDescription = description;
+  // Dynamic CTA in description: append if under 158 chars (per playbook §4.2,
+  // Google truncates around 920px ≈ 158-160 chars on desktop).
+  let fullDescription = description.trim();
   const descCta = "Book your free consultation today.";
-  if (fullDescription.length + descCta.length + 1 <= 160) {
-    fullDescription = `${description} ${descCta}`;
+  if (fullDescription.length + descCta.length + 1 <= 158) {
+    fullDescription = `${fullDescription} ${descCta}`;
+  }
+  // Safeguard: cap at 158 chars even if caller passed a long description.
+  // Trim at word boundary + ellipsis to avoid Google's mid-sentence truncation.
+  if (fullDescription.length > 158) {
+    fullDescription =
+      fullDescription.substring(0, 155).replace(/\s+\S*$/, "") + "…";
   }
 
   const url = `${SITE_URL}${path}`;

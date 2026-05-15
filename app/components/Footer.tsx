@@ -3,11 +3,12 @@
 import Image from "next/image";
 
 const footerLinks = {
-  Services: [
+  Treatments: [
+    { label: "All Treatments", href: "/treatments" },
     { label: "Stem Cell Therapy", href: "/stem-cell-therapy" },
+    { label: "Wharton's Jelly", href: "/whartons-jelly" },
     { label: "Why Exosomes?", href: "/why-exosomes" },
     { label: "Why Stem Cells?", href: "/why-stem-cells" },
-    { label: "Wharton's Jelly", href: "/whartons-jelly" },
   ],
   Company: [
     { label: "About Us", href: "/about" },
@@ -23,12 +24,18 @@ const footerLinks = {
     { label: "Latest Articles", href: "/news" },
   ],
   Partners: [
-    { label: "Partner With Us", href: "/partner-with-us" },
-    { label: "For Providers", href: "/partner-with-us" },
+    { label: "Partner Programs", href: "/partners" },
+    { label: "Apply to Partner", href: "/partner-with-us" },
     { label: "Book Consultation", href: "/contact" },
     { label: "All Locations", href: "/locations" },
   ],
 };
+
+const legalLinks = [
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms & Conditions", href: "/terms-conditions" },
+  { label: "Disclaimer", href: "/disclaimer" },
+];
 
 export default function Footer() {
   return (
@@ -70,8 +77,19 @@ export default function Footer() {
         {/* Divider */}
         <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8" />
 
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <p className="text-xs text-white/30">© {new Date().getFullYear()} Regenerative Revival. All rights reserved.</p>
+          <nav aria-label="Legal" className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            {legalLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-xs text-white/40 hover:text-primary-light transition-colors duration-200"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
           <p className="text-xs text-white/30">Powered by Seth Berge Inc.</p>
         </div>
       </div>

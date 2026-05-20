@@ -9,12 +9,27 @@ export interface LeadData {
   source: string;
 }
 
+/**
+ * Read UTM params previously stashed in sessionStorage by <UtmCapture/>.
+ * Safe on SSR — returns empty object if window is undefined.
+ */
+function readStoredUtms(): Record<string, string> {
+  if (typeof window === "undefined") return {};
+  try {
+    const raw = window.sessionStorage.getItem("rr_utm");
+    return raw ? (JSON.parse(raw) as Record<string, string>) : {};
+  } catch {
+    return {};
+  }
+}
+
 export async function submitLead(data: LeadData): Promise<{ success: boolean; error?: string }> {
   try {
+    const utms = readStoredUtms();
     const res = await fetch("/api/leads", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
+      body: JSON.stringify({ ...data, ...utms }),
     });
     if (!res.ok) {
       const body = await res.json().catch(() => ({}));

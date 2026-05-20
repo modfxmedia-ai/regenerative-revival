@@ -1,0 +1,398 @@
+﻿BUILD PARTNER SCOPE OF WORK
+Regenerative Revival
+Website Build · Wizlo Platform Integration · Tyriacore CRM Build-Out
+
+
+PREPARED FOR
+Lesser Media — Build Execution Partner
+
+PREPARED BY
+ModFX Media — Project Lead / Prime Contractor
+
+CLIENT (END)
+Regenerative Revival · Founder: Seth Berge · RegenerativeRevival.com
+
+PROJECT
+Regenerative Revival Website, Wizlo Integration & Tyriacore CRM Build-Out
+
+DOCUMENT
+Build Partner Brief v1.0
+
+TIMELINE
+6 weeks from kickoff to launch
+
+
+————————————————————————————————————
+
+ENGAGEMENT FRAMING
+
+ModFX Media holds the prime contractor relationship with Regenerative Revival under a signed Scope of Work. Lesser Media is engaged as the build execution partner for the technical workstreams defined in this document.
+
+All client-facing communication, approvals, and deliverable acceptance flow through ModFX Media. Lesser Media does not communicate directly with the end client (Seth Berge / Regenerative Revival) unless explicitly invited to a working session by ModFX.
+
+Points of contact:
+- Justin Ingram (ModFX CEO) — Project lead, scope authority, escalation
+- Brennan (ModFX) — Day-to-day technical liaison
+- Sophia (ModFX) — Design (provides finished design files; no copy or strategy)
+- Lydia (ModFX) — Copy and forms (provides finished copy)
+- Jared (ModFX) — Journey mapping and Tyrion EMR integration support
+- Dante (ModFX) — Affiliate / ICP work (Phase 2, not in this build)
+
+Lesser Media is expected to execute against the scope, timeline, and acceptance criteria below as if working directly inside the ModFX project structure.
+
+————————————————————————————————————
+
+1.  PROJECT OVERVIEW
+
+Regenerative Revival is rebuilding its digital presence around a dual-hub architecture that reflects how the business actually operates: a regenerative medicine concierge funnel on one side (consult-led, never selling stem cells or exosomes online), and a telehealth marketplace on the other (self-serve peptides, HRT, NAD+, and supplements delivered through the Wizlo platform). Both hubs live under one brand, share one patient record, and route every lead, order, and prescription into a single source of truth.
+
+This brief covers the complete build of that system end-to-end: the new public-facing marketing site, full white-labeled integration with the Wizlo platform and products marketplace (58 active SKUs), and a fully wired Tyriacore CRM instance at tyriacore.app that captures every patient, lead, order, and subscription from first click through fulfillment.
+
+The site is scoped as the Phase 1 launch build. Phase 2 items (For Providers page, affiliate tracking, loyalty tiers, co-branded partner pages, multilingual support) are explicitly carved out and will be handled separately once Phase 1 is live.
+
+LAUNCH OBJECTIVE
+Put the dual-hub positioning live, make both consult flows work end-to-end, and ensure every patient interaction — regen consult, telehealth intake, marketplace order, Rx refill — is captured in Tyriacore with complete source attribution and pipeline tracking.
+
+KEY CONSTRAINTS
+- LegitScript compliance required across all telehealth-facing surfaces
+- Category II medications must stay off public navigation (concierge-only interstitial pages)
+- HRT held until Steve's (Wizlo) automation is ready — exclude from MVP catalog
+- Hims is the design reference for polish and premium feel; preserve clinical credibility
+
+
+————————————————————————————————————
+
+2.  SCOPE OF DELIVERABLES
+
+The work breaks into four tightly-coupled workstreams. Each is defined below with explicit deliverables. Anything not listed here is out of scope and is addressed in Section 6.
+
+
+2.1  WEBSITE BUILD — PHASE 1 LAUNCH SITE
+
+Eight core pages plus site-wide infrastructure. All pages built mobile-responsive, optimized for page speed, and designed against the visual system established in the Regenerative Revival brand brief (Hydra Teal + dark navy + warm neutral palette).
+
+Pages:
+1. Home page — cycling hero (Regeneration → Hormones → Peptides → NAD+ → Longevity), dual-hub positioning, three-pillar architecture, numeric proof block, named medical direction (Dr. Sean Arora), LegitScript badge slot, and unified consult quiz as the primary CTA.
+2. Regenerative Therapy service page — consult-led funnel. Routes to GHL lead capture. Carries regen-specific compliance disclaimers.
+3. Hormones & Peptides service page — telehealth funnel. Routes to Wizlo intake. Lists approved products at launch.
+4. NAD+ & Supplements service page — telehealth funnel, softer compliance posture, Wizlo intake handoff.
+5. Concierge Care Model page — the "how" of the brand: NP-plus-physician structure, in-home and telehealth delivery, Arora partnership explainer.
+6. About / Founder page — Seth Berge origin story, team roster, full medical direction credentials.
+7. Unified Consult Router — two-question qualifier that routes every Book a Consult click to the correct downstream system (GHL for regen, Wizlo intake for telehealth).
+8. Blog foundation — category structure, post template, three seed posts to avoid launching with an empty feed.
+
+Site-wide infrastructure:
+- Mobile-responsive design across every page
+- On-page SEO foundation — title tags, meta descriptions, Open Graph, structured data/schema markup
+- Page speed optimization and Core Web Vitals pass
+- Site-wide compliance disclaimer framework (footer + per-page service disclaimers)
+- LegitScript badge slot (pending-state badge at launch, swapped to certified badge when RR + Wizlo complete certification)
+- Cookie consent banner and privacy policy / terms templates (ModFX to supply final legal language)
+- GA4 and Meta Pixel installed with conversion events mapped for both hubs
+
+
+2.2  WIZLO PLATFORM INTEGRATION
+
+Full white-labeled integration across all five Wizlo surfaces the patient touches — portal, marketplace, intake, e-Rx handoff, and payments.
+
+- Wizlo Portal — subdomain handoff configured (recommended default: portal.regenerativerevival.com). Brand tokens applied: color, typography, logo.
+- Wizlo Marketplace — white-labeled header, footer, and checkout flow. Visual continuity maintained from public site through purchase.
+- Wizlo Intake Forms — all intake forms embedded or routed from the relevant telehealth service pages and from the unified consult router.
+- e-Rx Workflow — provider-side handoff documented and verified. No UI work — but the flow diagram and test script are deliverables.
+- WizloPay — payment surfaces styled to match RR brand. PCI scope confirmed with Wizlo (via Steve).
+
+Product catalog mapping — 58 total active SKUs (all "Wiz-" prefixed):
+
+GROUPED WIZLO FORMS — 4 forms / 27 SKUs
+Each group routes through one shared Wizlo form URL with dosage variants handled inside the form:
+- Tirzepatide+B12 Injection (6 doses: 5/10/15/20/25/30mg per 0.5mg/mL B12)
+- Semaglutide+B12 Injection (5 doses: 1/2/4/6/10mg per 0.5mg/mL B12)
+- Sublingual Semaglutide (5 doses: 0.5/1/1.5/2/2.5mg/mL)
+- Sublingual Tirzepatide (6 doses: 2.5/5/7.5/10/12.5/15mg/mL)
+
+INDIVIDUAL PRODUCTS — 25 SKUs
+Each maps to a dedicated Wizlo form URL: BPC-157 (and BPC combo variants), GHK-Cu, GHK-Cu/Epithalon, MOTS-C, NAD+, PT-141, Sermorelin, Tesamorelin, Tesamorelin/Ipamorelin, CJC/Ipamorelin, DSIP, DSIP/BPC/CJC, Epithalon, Glutathione, Gonadorelin, IGF-LR3, Kisspeptin, LIPO-B, LL-37, Pinealon/PE22-28/Selank, Semax/Selank, Thymosin A-1.
+
+CAPSULE/TABLET PRODUCTS — 11 SKUs
+Ondansetron 4mg tablet, SLU_PP 332/BAM 15, SLU-PP 332, 5-Amino, Ibutamoren (MK-677), Dihexa, Dihexa/Tesofensine, BPC-157/TB500 capsules, BPC-157 capsules, Tesofensine capsules, BPC-157/TB-500/GHKU. Wizlo URLs currently pending from ModFX/client — install placeholder routing at launch with a documented swap mechanism for live URLs when provided.
+
+The full product sheet with Wizlo URLs will be provided to Lesser Media at kickoff (source file: RR_Peptide_product_sheet_w__URL_Links_.xlsx).
+
+
+2.3  TYRIACORE CRM BUILD-OUT (tyriacore.app)
+
+Tyriacore is the single source of truth for Regenerative Revival. Every patient record, every lead, every marketplace order, and every clinical event is captured here with complete source attribution. The build-out includes CRM configuration, webhook infrastructure, and the bi-directional sync architecture between Tyriacore and every adjacent system.
+
+CRM configuration:
+- Contact/patient record schema defined and deployed
+- Custom fields mapped for RR-specific data: product category, dosage, consult source, regen vs telehealth path, NP assigned, referring partner
+- Two pipelines built: Regenerative Consult Funnel and Telehealth Intake Funnel
+- Stages defined for each pipeline with automation hooks at each stage transition
+- Automated tag and list assignment based on product category (GLP-1, peptide, NAD+, sublingual, capsule, regen consult, HRT intake)
+
+Regenerative consult funnel — pipeline stages:
+Consult requested → Consult scheduled → Consult completed → Qualified / Not qualified → Converted / Nurture
+- Source attribution captured on every lead (ad campaign, organic, referral, seminar, influencer affiliate)
+- Automated SMS/email notifications on stage transitions via GHL
+
+Telehealth intake funnel — pipeline stages:
+Intake submitted → Provider review → Qualified / Declined → Rx sent → Shipped → Delivered → Refill due → Reordered / Churned
+- Product SKU, dosage, quantity, and refill schedule captured on every order record
+- Refill-due automation triggers 7 and 14 days before expected reorder
+
+Webhook and data-flow infrastructure:
+- Website forms → dual-write to GHL and Tyriacore with source tagging
+- Wizlo intake submissions → Tyriacore patient record with full form payload
+- Wizlo marketplace orders → Tyriacore order record with SKU, dosage, patient match
+- Wizlo e-Rx events → Tyriacore timeline events on the patient record
+- GHL regen consult events → Tyriacore with pipeline stage sync
+- Error handling and retry logic on every webhook endpoint
+- Admin dashboard view in Tyriacore showing live funnel health for both pipelines
+
+
+2.4  CROSS-SYSTEM INTEGRATIONS
+
+The four systems — website, Wizlo, GHL, Tyriacore — are wired together so no data lives in only one place and every handoff is observable.
+
+| Source | Destination | Data & Trigger |
+| Website forms | GHL + Tyriacore | Regen consult, newsletter, partner applications, contact — dual-write on submit with UTM and source tags. |
+| Unified Consult Router | GHL or Wizlo | Two-question qualifier routes to GHL (regen path) or Wizlo intake (telehealth path) based on answers. Audit log written to Tyriacore. |
+| Wizlo Intake | Tyriacore | Full form payload written to patient record. Creates new contact if not matched, updates if matched on email/phone. |
+| Wizlo Marketplace | Tyriacore | Order record created with SKU, dosage, quantity, amount, provider, and refill schedule. |
+| Wizlo e-Rx | Tyriacore | Rx sent / shipped / delivered events written as timeline events on patient record. |
+| GHL | Tyriacore | Regen consult stage transitions sync to mirrored pipeline in Tyriacore. Notes, tags, and assigned-user fields sync bi-directionally. |
+
+
+————————————————————————————————————
+
+3.  PROJECT TIMELINE — 6 WEEKS
+
+The timeline assumes kickoff within 5 business days of Lesser Media engagement confirmation and access provisioning. Each week has a single focused theme — integration work stacks on top of a finished site, not in parallel with it, so nothing gets re-done.
+
+TIMELINE DEPENDENCIES
+Timeline is contingent on inbound deliverables from ModFX landing on schedule — specifically, final approved copy from Lydia by end of Week 3, clinical review turnaround within 3 business days per page, Wizlo API credentials by end of Week 1, and Tyriacore admin access by end of Week 1. ModFX is responsible for chasing these on Lesser Media's behalf; Lesser Media flags blockers immediately.
+
+
+WEEK 1 — DISCOVERY, DESIGN DIRECTION & ACCESS
+- Kickoff call with Justin, Brennan, Steve (Wizlo), Lydia — walk this brief section by section and lock all open decisions
+- Sitemap review and approval
+- Wireframes delivered for all 8 Phase 1 pages
+- Visual design direction — home page hero mockup approved before any other pages are styled (Sophia provides design files)
+- Wizlo handoff decision locked (subdomain recommended)
+- Tyriacore admin access provisioned + CRM field mapping session
+- Wizlo API credentials handed off + API contract reviewed
+- GHL account access confirmed for lead-handoff wiring
+
+
+WEEK 2 — SITE BUILD — ROUND 1
+- Base theme, design system, and component library deployed
+- Home page built to design spec
+- Regenerative Therapy service page built
+- Hormones & Peptides service page built
+- Compliance disclaimer framework installed site-wide
+- Mid-week ModFX review call — feedback captured and bundled for Week 3
+
+
+WEEK 3 — SITE BUILD — ROUND 2
+- NAD+ & Supplements service page built
+- Concierge Care Model page built
+- About / Founder page built
+- Unified Consult Router built and wired to routing logic (stub endpoints pending Week 4-5 integration)
+- Blog foundation deployed with 3 seed posts published
+- Content freeze — all copy final from Lydia before Week 4 begins
+
+
+WEEK 4 — WIZLO PLATFORM INTEGRATION
+- Portal subdomain DNS configured and branded
+- Marketplace white-labeled (header, footer, checkout)
+- All 58 Wiz- products mapped into site catalog with correct Wizlo form URLs
+- All 4 grouped intake forms embedded/routed
+- All 25 individual product intake URLs live
+- 11 capsule products running on placeholder URLs with swap mechanism ready
+- WizloPay surfaces styled
+- End-to-end test: click product on site → intake → Rx handoff confirmed
+
+
+WEEK 5 — TYRIACORE CRM INTEGRATION
+- Both pipelines (regen + telehealth) built in Tyriacore with stages and automations
+- Custom fields deployed and tested
+- Website form dual-write webhooks deployed (GHL + Tyriacore)
+- Wizlo → Tyriacore webhooks deployed for intake, orders, Rx events
+- GHL → Tyriacore bi-directional sync deployed for regen pipeline
+- Source attribution, tagging, and list assignment automations live
+- Refill-due automations configured
+- End-to-end test: test patient walks both flows, verify all data lands correctly in Tyriacore with correct tags, pipeline, and source
+
+
+WEEK 6 — QA, REVISIONS & LAUNCH
+- Full patient-flow dry run on staging — regen path and telehealth path clicked through end-to-end
+- Clinical review pass completed by Arora team (coordinated by ModFX)
+- Bundled revision round (one round, delivered in one document, not rolling)
+- Cross-browser QA: Chrome, Safari, Edge, Firefox, iOS Safari, Android Chrome
+- Page speed and Core Web Vitals verified
+- Analytics conversion events verified live
+- DNS cutover and site push-live
+- 48-hour post-launch monitoring window
+- Handoff documentation delivered (CRM field map, webhook registry, product routing table, admin credentials)
+
+
+————————————————————————————————————
+
+4.  SCOPE SUMMARY — WHAT'S INCLUDED
+
+Quick reference of everything delivered under this engagement.
+
+- 8 responsive web pages plus unified consult router and blog foundation
+- Visual design system and component library
+- On-page SEO foundation, schema markup, Open Graph
+- Page speed and Core Web Vitals optimization
+- Site-wide compliance disclaimer framework + LegitScript badge slot
+- GA4 + Meta Pixel + conversion event mapping
+- White-labeled Wizlo portal subdomain
+- White-labeled Wizlo marketplace
+- All 58 Wiz- product SKUs integrated and routed
+- Wizlo intake forms embedded/routed from all relevant service pages
+- WizloPay surfaces branded
+- Tyriacore CRM field schema, two pipelines, all stage automations
+- Webhook infrastructure for every cross-system handoff
+- Bi-directional sync: Website ↔ GHL ↔ Tyriacore ↔ Wizlo
+- Source attribution, tagging, and list automation
+- Refill-due automations on telehealth orders
+- One bundled revision round
+- Full QA: cross-browser, cross-device, end-to-end flow testing
+- Clinical review coordination support
+- DNS cutover and launch
+- 48-hour post-launch monitoring window
+- Handoff documentation (CRM field map, webhook registry, product routing table, admin credentials)
+
+
+————————————————————————————————————
+
+5.  OUT OF SCOPE
+
+The following items are explicitly not included in this engagement. Each is handled separately or by another party.
+
+CONTENT & CREATIVE
+- Copywriting — handled by Lydia (ModFX) and provided to Lesser Media as finished copy
+- Logo or brand identity redesign
+- Photography, videography, or stock asset licensing
+- Video production or animated assets
+
+MARKETING & GROWTH
+- Paid ads strategy, campaign buildout, or ad creative
+- SEO content calendar beyond the 3 seed blog posts
+- Email or SMS marketing campaign creative (GHL technical setup only)
+- Social media setup or management
+- Affiliate / influencer program setup (Phase 2)
+
+COMPLIANCE, LEGAL & CLINICAL
+- LegitScript certification application (handled by RR + Wizlo)
+- HIPAA compliance audit or BAA execution (coordination only — not legal work)
+- Final privacy policy, terms of service, or legal copy (ModFX supplies templates and final language)
+- Merchant processor application or PCI scope documentation
+- Clinical protocol review (Arora Health engagement, coordinated by ModFX)
+
+PHASE 2 ITEMS — NOT IN THIS BUILD
+- For Providers page and NP recruiting portal
+- Co-branded partner landing pages (gyms, recovery centers)
+- Expanded audience-segment landing pages (athletes, executives)
+- Loyalty / membership tier UI
+- Seminar and dinner event calendar with RSVP integration
+- Multilingual site support
+- Mobile app (iOS/Android)
+
+POST-LAUNCH
+- Ongoing hosting, maintenance, or support beyond the 48-hour monitoring window
+- Future integrations with platforms not named in this brief
+- Third-party platform changes (Wizlo, Tyriacore, GHL API changes that break integrations post-launch)
+
+
+————————————————————————————————————
+
+6.  INBOUND DEPENDENCIES FROM MODFX
+
+Lesser Media is dependent on the following inputs from ModFX (or ModFX's coordination with the client) landing on the dates noted. Late delivery shifts the launch date day-for-day and Lesser Media should flag blockers in writing as soon as a date slips.
+
+| Deliverable | Needed By | Owner |
+| Wizlo API credentials + account admin access | End of Week 1 | Steve / Wizlo (chased by ModFX) |
+| Tyriacore admin access + field mapping approval | End of Week 1 | ModFX |
+| GHL account access | End of Week 1 | ModFX |
+| Domain registrar access (for DNS cutover) | Week 5 | ModFX |
+| Final approved copy for all 8 pages | End of Week 3 | Lydia (ModFX) |
+| Final design files (home page first, then balance) | Per timeline | Sophia (ModFX) |
+| Clinical review sign-off per page | Within 3 business days of page delivery | Arora Health (coordinated by ModFX) |
+| Final 11 capsule/tablet product Wizlo URLs | Week 4 (placeholder routing if late) | ModFX / Wizlo |
+| Approved patient testimonials (if any used) | End of Week 3 | ModFX |
+| LegitScript certification status | Week 5 (pending badge used if incomplete) | RR / Wizlo |
+| Decision-maker availability for sync calls | Throughout | Justin / Brennan |
+
+
+————————————————————————————————————
+
+7.  REVISIONS & CHANGE MANAGEMENT
+
+7.1  Revisions included
+- One (1) bundled revision round per page after initial build, delivered in Week 2, 3, or 6 depending on page
+- Revisions must be consolidated into a single document per page — rolling individual changes are treated as out-of-scope
+- Revision scope is limited to adjustments within the approved design direction and copy framework — fundamental redirection ("actually, let's change the whole hero concept") is a change request
+
+7.2  Change requests
+- Any work outside this brief is handled via written change request between ModFX and Lesser Media, approved before work proceeds
+- Scope additions that move Phase 2 items into the Phase 1 launch add 1 week of timeline per page
+- New product groups or new Wizlo integrations beyond the 58 SKUs noted in Section 2.2 are handled as change requests
+
+7.3  Change-of-direction policy
+If the end client decides mid-build to change fundamental architecture (e.g., swap the stack, change the dual-hub structure, migrate off Tyriacore), ModFX will coordinate with Lesser Media on a project restart. Work completed to that point is not redone under the original engagement.
+
+
+————————————————————————————————————
+
+8.  ACCEPTANCE CRITERIA & LAUNCH
+
+Launch is defined as all of the following being true simultaneously:
+
+- All 8 Phase 1 pages live at the production domain
+- All Wizlo integrations functional — test patient successfully walks both regen and telehealth flows end-to-end
+- All 58 product SKUs route to the correct Wizlo form URL (11 capsule products on placeholder URLs if live URLs not yet provided)
+- Tyriacore receiving real data from all configured webhooks — test records verified in both pipelines
+- GA4 and Meta Pixel firing conversion events correctly
+- Cross-browser QA pass on Chrome, Safari, Edge, Firefox, iOS, and Android
+- Core Web Vitals in the "good" range on home page and all service pages
+- DNS cutover complete and SSL certificate active
+- Handoff documentation delivered
+
+POST-LAUNCH MONITORING
+A 48-hour active monitoring window follows launch. Any bugs surfaced by real patient traffic in that window are fixed under the original engagement. Bugs surfaced after 48 hours are addressed via change request or post-launch support arrangement (handled separately between ModFX and Lesser Media).
+
+
+————————————————————————————————————
+
+9.  WARRANTIES & LIMITATIONS
+
+- Functionality warranty: Site delivered functional against modern evergreen browsers (latest two versions of Chrome, Safari, Edge, Firefox) and current iOS/Android mobile.
+- Third-party platform risk: Wizlo, Tyriacore, and GHL are external platforms. Changes they make to their APIs, UI, or terms post-launch that break integrations fall outside this engagement.
+- Compliance disclaimer: Compliance copy and disclaimers are installed based on industry-standard frameworks and the Regenerative Revival brief, but final legal and clinical sign-off is the end client's responsibility (Arora Health for clinical; client's legal counsel for regulatory). Lesser Media is not expected to provide legal or clinical guidance.
+- IP transfer: Upon project completion, all custom site code, CRM configurations, and webhook code produced under this engagement transfer to ModFX Media for handoff to the end client. Third-party platform accounts (Wizlo, Tyriacore, GHL) remain in the end client's name throughout.
+- Confidentiality: All client data, brand assets, product information, and project details are confidential to Regenerative Revival and ModFX Media. Lesser Media will not share, reference, or use any of this material outside the scope of executing this build.
+
+
+————————————————————————————————————
+
+10.  KICKOFF ACKNOWLEDGMENT
+
+By proceeding with the build, Lesser Media acknowledges and agrees to the scope, timeline, deliverables, dependencies, and acceptance criteria described in this document.
+
+Commercial terms (engagement fee, payment schedule, working arrangement) are documented separately between ModFX Media and Lesser Media and are not addressed in this scope document.
+
+Open items to confirm at kickoff:
+- Tech stack confirmation (CMS, hosting, framework preferences)
+- Access provisioning checklist completed
+- Communication cadence (suggested: daily Slack standup, mid-week sync call, end-of-week status doc)
+- Staging environment URL and review access list
+- Repository / project management tool of record
+
+————————————————————————————————————
+
+END OF DOCUMENT
+
+

@@ -7,21 +7,36 @@ import Image from "next/image";
 
 type DropdownItem = { label: string; href: string; desc: string };
 
-const educationDropdown: DropdownItem[] = [
+const regenerativeDropdown: DropdownItem[] = [
   {
-    label: "What Are Stem Cells?",
-    href: "/why-stem-cells",
-    desc: "The science behind stem cell therapy",
+    label: "Stem Cell Therapy",
+    href: "/stem-cell-therapy",
+    desc: "In-home Wharton's Jelly regenerative care",
   },
   {
-    label: "Where Do They Come From?",
+    label: "Wharton's Jelly",
     href: "/whartons-jelly",
-    desc: "Wharton's Jelly & umbilical cord sourcing",
+    desc: "Source, science, and how it's delivered",
   },
   {
-    label: "Why We're Different",
-    href: "/about/why-were-different",
-    desc: "Our protocols, quality & transparent approach",
+    label: "Why Exosomes",
+    href: "/why-exosomes",
+    desc: "The signaling layer that drives repair",
+  },
+  {
+    label: "Concierge Care Model",
+    href: "/concierge-care-model",
+    desc: "NP-led, physician-overseen, in your home",
+  },
+  {
+    label: "All Treatments",
+    href: "/treatments",
+    desc: "Browse the full regenerative catalog",
+  },
+  {
+    label: "Service Areas",
+    href: "/locations",
+    desc: "Find concierge care in your city",
   },
 ];
 
@@ -32,6 +47,11 @@ const aboutDropdown: DropdownItem[] = [
     desc: "Our mission, team & story",
   },
   {
+    label: "Founder — Seth Berge",
+    href: "/about/founder",
+    desc: "Why Regenerative Revival exists",
+  },
+  {
     label: "Why We're Different",
     href: "/about/why-were-different",
     desc: "What sets Regenerative Revival apart",
@@ -39,7 +59,7 @@ const aboutDropdown: DropdownItem[] = [
   {
     label: "Testimonials",
     href: "/testimonials",
-    desc: "Real results from real people",
+    desc: "Real results from real patients",
   },
 ];
 
@@ -51,10 +71,10 @@ type NavLink = {
 };
 
 const navLinks: NavLink[] = [
-  { label: "Home", href: "/" },
+  { label: "Regenerative", href: "/stem-cell-therapy", dropdown: regenerativeDropdown, icon: <BookOpen className="h-3.5 w-3.5" /> },
+  { label: "Hormones & Peptides", href: "/hormones-peptides" },
+  { label: "NAD+", href: "/nad" },
   { label: "About", href: "/about", dropdown: aboutDropdown },
-  { label: "Education", href: "#", dropdown: educationDropdown, icon: <BookOpen className="h-3.5 w-3.5" /> },
-  { label: "Services", href: "/services" },
   { label: "News", href: "/news" },
   { label: "Contact", href: "/contact" },
 ];
@@ -201,7 +221,7 @@ export default function Navbar() {
 
               {/* For Providers / Partners */}
               <a
-                href="/partner-with-us"
+                href="/for-providers"
                 className={`hidden lg:inline-flex items-center gap-1.5 h-9 rounded-full px-4 text-xs font-semibold border transition-all ${
                   scrolled
                     ? "border-primary/30 text-primary hover:bg-primary/5 hover:border-primary/50"
@@ -213,16 +233,16 @@ export default function Navbar() {
                 <ArrowUpRight className="h-3 w-3" />
               </a>
 
-              {/* Book Consultation CTA */}
+              {/* Take The Quiz CTA — V2 primary action, routes to consult router */}
               <a
-                href="/contact"
+                href="/consult-router"
                 className={`hidden md:inline-flex h-10 items-center rounded-full px-6 text-sm font-semibold transition-all ${
                   scrolled
                     ? "bg-primary text-white hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/20"
                     : "bg-white/15 backdrop-blur-md text-white border border-white/20 hover:bg-white/25"
                 }`}
               >
-                Book Consultation
+                Take The Quiz
               </a>
 
               {/* Mobile toggle */}

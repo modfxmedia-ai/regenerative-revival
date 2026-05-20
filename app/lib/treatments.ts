@@ -81,6 +81,42 @@ export const treatments: Treatment[] = [
     medicalConditions: ["Tendinitis", "Muscle Injuries", "Joint Pain", "Hair Loss", "Chronic Wounds"],
     keywords: ["PRP therapy", "platelet-rich plasma", "PRP treatment", "PRP injections"],
   },
+  {
+    name: "Mobile Stem Cell Therapy",
+    slug: "mobile-stem-cell-therapy",
+    shortName: "Mobile Stem Cells",
+    description: "Concierge in-home stem cell therapy delivered by a licensed clinician — the full regenerative protocol without leaving your home.",
+    pageLink: "/stem-cell-therapy",
+    medicalConditions: ["Joint Pain", "Osteoarthritis", "Sports Injuries", "Chronic Inflammation", "Mobility Issues"],
+    keywords: ["mobile stem cell therapy", "in-home stem cell therapy", "at-home stem cell treatment", "concierge stem cell therapy"],
+  },
+  {
+    name: "Concierge Regenerative Medicine",
+    slug: "concierge-regenerative-medicine",
+    shortName: "Concierge Regen",
+    description: "White-glove regenerative medicine delivered in-home by a physician-led, NP-staffed team operating under Arora Health Group clinical oversight.",
+    pageLink: "/concierge-care-model",
+    medicalConditions: ["Chronic Pain", "Joint Degeneration", "Sports Injuries", "Recovery & Performance", "Longevity"],
+    keywords: ["concierge regenerative medicine", "in-home regenerative medicine", "private regenerative care", "concierge medicine"],
+  },
+  {
+    name: "Peptide Therapy",
+    slug: "peptide-therapy",
+    shortName: "Peptides",
+    description: "Physician-supervised peptide therapy — BPC-157, GHK-Cu, PT-141, MK-677 and more — prescribed via telehealth and shipped from a compounding pharmacy.",
+    pageLink: "/hormones-peptides",
+    medicalConditions: ["Recovery", "Inflammation", "Sleep", "Sexual Health", "Longevity", "Muscle & Performance"],
+    keywords: ["peptide therapy", "peptide treatment", "BPC-157", "GHK-Cu", "physician-supervised peptides"],
+  },
+  {
+    name: "NAD+ Therapy",
+    slug: "nad-therapy",
+    shortName: "NAD+",
+    description: "NAD+ therapy via injection or sublingual — supports cellular energy, cognitive function, and longevity. Prescribed via telehealth, shipped nationwide.",
+    pageLink: "/nad",
+    medicalConditions: ["Fatigue", "Cognitive Function", "Cellular Aging", "Recovery", "Longevity"],
+    keywords: ["NAD+ therapy", "NAD therapy", "NAD injection", "NAD IV therapy", "at-home NAD"],
+  },
 ];
 
 export function getTreatmentBySlug(slug: string): Treatment | undefined {

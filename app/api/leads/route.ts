@@ -6,10 +6,50 @@ const LEAD_RECIPIENTS = [
   "justin@modfxmedia.com",
 ];
 
+// Optional dual-write targets — leads also forwarded to GHL and Tyriacore CRM
+// when these env vars are present. Both are fire-and-forget; failures never
+// break the user-facing response.
+const GHL_WEBHOOK_URL = process.env.GHL_WEBHOOK_URL;
+const TYRIACORE_WEBHOOK_URL = process.env.TYRIACORE_WEBHOOK_URL;
+
+async function forwardToWebhook(
+  url: string,
+  label: string,
+  payload: Record<string, unknown>,
+) {
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) {
+      console.error(`[${label} WEBHOOK ERROR]`, res.status, await res.text());
+    }
+  } catch (err) {
+    console.error(`[${label} WEBHOOK EXCEPTION]`, err);
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { firstName, lastName, email, phone, message, subject, inquiryType, source } = body;
+    const {
+      firstName,
+      lastName,
+      email,
+      phone,
+      message,
+      subject,
+      inquiryType,
+      source,
+      // UTM attribution (optional, passed by client when present)
+      utmSource,
+      utmMedium,
+      utmCampaign,
+      utmTerm,
+      utmContent,
+    } = body;
 
     // Basic server-side validation
     if (!firstName?.trim() || !email?.trim() || !phone?.trim()) {
@@ -17,6 +57,42 @@ export async function POST(req: NextRequest) {
     }
 
     const fullName = `${firstName.trim()} ${(lastName || "").trim()}`.trim();
+
+    // ── Dual-write to CRM webhooks (fire-and-forget) ─────────────────────
+    // Runs in parallel with Resend, never blocks the response, never throws.
+    const crmPayload = {
+      firstName: firstName.trim(),
+      lastName: (lastName || "").trim(),
+      fullName,
+      email: email.trim(),
+      phone: phone.trim(),
+      subject: subject || null,
+      inquiryType: inquiryType || null,
+      source: source || "website",
+      message: message || null,
+      utm: {
+        source: utmSource || null,
+        medium: utmMedium || null,
+        campaign: utmCampaign || null,
+        term: utmTerm || null,
+        content: utmContent || null,
+      },
+      submittedAt: new Date().toISOString(),
+    };
+
+    const crmWrites: Promise<void>[] = [];
+    if (GHL_WEBHOOK_URL) {
+      crmWrites.push(forwardToWebhook(GHL_WEBHOOK_URL, "GHL", crmPayload));
+    }
+    if (TYRIACORE_WEBHOOK_URL) {
+      crmWrites.push(
+        forwardToWebhook(TYRIACORE_WEBHOOK_URL, "TYRIACORE", crmPayload),
+      );
+    }
+    // Don't await — let them run while we send email. We `void` them so the
+    // unhandled-promise lint stays quiet; errors are already swallowed inside
+    // forwardToWebhook.
+    if (crmWrites.length) void Promise.all(crmWrites);
 
     const htmlBody = `
       <h2>New Lead from Regenerative Revival</h2>

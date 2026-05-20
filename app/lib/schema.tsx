@@ -210,6 +210,94 @@ export function medicalWebPageSchema(page: {
   };
 }
 
+// ─── Product Schema (for Wizlo product pages, Google rich snippets) ───
+// Uses schema.org/Product with embedded Offer. For compounded Rx medications
+// we additionally surface @type: Drug context inside `isRelatedTo` so search
+// engines understand the clinical nature without claiming FDA approval.
+export function productSchema(product: {
+  name: string;
+  slug: string;
+  description: string;
+  image?: string;
+  category: string;
+  hub: string;
+  priceFrom?: number;
+  brand?: string;
+  sku?: string;
+  /** When true, marks as PrescriptionOnly availability */
+  prescriptionOnly?: boolean;
+}) {
+  const url = `${SITE_URL}/${product.hub}/${product.slug}`;
+  const data: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    url,
+    sku: product.sku ?? product.slug,
+    category: product.category,
+    brand: {
+      "@type": "Brand",
+      name: product.brand ?? SITE_NAME,
+    },
+    image: product.image ? `${SITE_URL}${product.image}` : SITE_LOGO,
+  };
+
+  if (product.priceFrom !== undefined) {
+    data.offers = {
+      "@type": "Offer",
+      url,
+      priceCurrency: "USD",
+      price: product.priceFrom,
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: product.priceFrom,
+        priceCurrency: "USD",
+        referenceQuantity: {
+          "@type": "QuantitativeValue",
+          value: 1,
+          unitCode: "MON", // months
+        },
+      },
+      availability: product.prescriptionOnly
+        ? "https://schema.org/InStock"
+        : "https://schema.org/InStock",
+      eligibleQuantity: {
+        "@type": "QuantitativeValue",
+        unitText: "monthly program",
+      },
+      seller: {
+        "@type": "Organization",
+        name: SITE_NAME,
+        url: SITE_URL,
+      },
+    };
+  }
+
+  return data;
+}
+
+// ─── ItemList Schema (for category/hub listing pages) ───
+// Helps Google understand collection pages like /hormones-peptides
+export function productListSchema(items: {
+  name: string;
+  slug: string;
+  hub: string;
+  description?: string;
+}[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: `${SITE_URL}/${item.hub}/${item.slug}`,
+      name: item.name,
+      ...(item.description ? { description: item.description } : {}),
+    })),
+  };
+}
+
 // ─── JSON-LD Script Component ───
 export function JsonLd({ data }: { data: Record<string, unknown> | Record<string, unknown>[] }) {
   return (

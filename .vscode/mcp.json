@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "marketing-kb": {
+      "type": "http",
+      "url": "https://marketing-kb-api.summer-violet-6b30.workers.dev/mcp",
+      "headers": { "Authorization": "aWw7DGBJYIhLlt+bu/zUg3KDid1JMOfbhmx4s2k0ils=" }
+    }
+  }
+}

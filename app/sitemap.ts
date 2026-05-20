@@ -3,6 +3,7 @@ import { articles } from "./news/data";
 import { locations } from "./lib/locations";
 import { treatments } from "./lib/treatments";
 import { partnerServices } from "./lib/partner-content";
+import { products } from "./lib/products";
 
 const SITE_URL = "https://www.regenerativerevival.com";
 
@@ -44,6 +45,13 @@ const STATIC_PAGE_DATES: Record<string, string> = {
   "/privacy-policy": "2024-09-05", // from scraped WP page
   "/terms-conditions": "2024-09-05", // from scraped WP page
   "/disclaimer": "2025-01-01",
+  // V2 routes
+  "/hormones-peptides": "2026-05-20",
+  "/nad": "2026-05-20",
+  "/concierge-care-model": "2026-05-20",
+  "/for-providers": "2026-05-20",
+  "/about/founder": "2026-05-20",
+  // /consult-router intentionally omitted — noindex utility route
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -86,6 +94,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
+  // V2 product pages (Wizlo catalog) — no per-URL signal, omit lastmod.
+  // Only telehealth hubs have dynamic product routes (/hormones-peptides/[slug],
+  // /nad/[slug]). Regenerative SKUs are consult-only and covered by the
+  // /whartons-jelly hub page — exclude them to avoid 404s in the sitemap.
+  const productPages: MetadataRoute.Sitemap = products
+    .filter((p) => p.hub === "hormones-peptides" || p.hub === "nad")
+    .map((p) => ({
+      url: `${SITE_URL}/${p.hub}/${p.slug}`,
+    }));
+
   return [
     ...staticPages,
     ...articlePages,
@@ -93,5 +111,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...partnerHubs,
     ...treatmentPages,
     ...partnerPages,
+    ...productPages,
   ];
 }

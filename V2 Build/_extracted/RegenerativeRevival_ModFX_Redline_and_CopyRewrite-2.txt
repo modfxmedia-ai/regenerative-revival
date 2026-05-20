@@ -1,0 +1,288 @@
+﻿
+
+
+
+RegenerativeRevival.com v2
+Design Review & Copy Rewrite
+Redline Feedback for ModFX Dev Team
+
+
+
+
+
+
+
+
+Prepared by
+Regenerative Revival
+Date
+May 2026
+
+Table of Contents
+TOC \h \o "1-2"
+
+
+Introduction
+Thanks for the v2 prototypes. This document covers (1) critical issues and changes needed before we move forward, (2) recommended design direction across the two home page variants and two product page color schemes, and (3) rewritten copy for the home hero and Semaglutide product page that you can paste directly into Figma. Please treat the Critical Compliance section as a hard blocker — nothing else moves until that’s resolved.
+
+Part 1: Prototypes Reviewed
+The following four ModFX prototype links were reviewed for this round of feedback:
+Prototype 1 (Node 52:15) — Home page v1, purple/blue gradient hero.
+Prototype 2 (Node 52:543) — Semaglutide product page, purple CTA.
+Prototype 3 (Node 209:15) — Home page v2, human body + health data overlay.
+Prototype 4 (Node 20:3467) — Semaglutide product page, navy CTA with magenta nav (essentially a color iteration of Prototype 2; the embedded home page is a duplicate of Prototype 1).
+
+Net: 3 unique designs across 4 links. ModFX is asking for a decision between two home hero directions and two product page color schemes.
+
+Part 2: Critical Compliance Issue
+The single highest-priority item in this review is below. Nothing else proceeds until this is fixed.
+CRITICAL — Product Label: "For Research Use Only / Not for Human Use" MUST BE REMOVED
+The Semaglutide product mockup shows a bottle label reading "For Research Use Only / Not for Human Use." This is the exact language used by gray-market and non-prescription peptide vendors to dodge FDA enforcement. It directly contradicts our physician-prescribed, Arora-overseen telehealth model and creates several serious problems:
+•  It misrepresents the product. Our Semaglutide is a physician-prescribed compounded medication, not a research chemical.
+•  It will fail Arora Health Group compliance review. Arora is the prescribing medical group; they will not allow this language on a product they are clinically responsible for.
+•  It exposes Regenerative Revival to FDA enforcement risk, state pharmacy board complaints, and potential cease-and-desist letters from compounding pharmacy partners.
+•  It undermines patient trust. Anyone who has done five minutes of research recognizes this phrase as gray-market peptide language.
+
+Required label text (replace with):
+•  REGENERATIVE REVIVAL
+•  SUBLINGUAL SEMAGLUTIDE
+•  Compounded by [Pharmacy Name]
+•  5 mg/mL · 30 mL
+•  Rx Only — Dispensed pursuant to a valid prescription
+
+This is a hard blocker. The product page cannot go to staging or any client review with the current label.
+
+Part 3: Design Direction Decisions
+3A. Home Page Hero — Recommendation: GO WITH PROTOTYPE 3 (Node 209:15)
+Why
+The human body silhouette + health data overlay aesthetic positions Regenerative Revival as a longevity-tech company, not a generic wellness brand. The gradient/bokeh hero in Prototype 1 is visually overused across the wellness space (every Instagram supplement brand uses it).
+Prototype 3 includes the logo in the top left, the "Patient Portal" CTA, and a Blog link — all of which we want long-term.
+"50+ States Covered" is the correct number (Arora is licensed in all 50). Prototype 1’s "12+ States Covered" is wrong and needs to be fixed.
+Refinements needed on the body + data overlay
+The numeric noise strings ("2323234763 8799876544") look like placeholder lorem ipsum. Replace with brand-relevant data points such as: biomarker labels (Testosterone, NAD+, hs-CRP, HbA1c), peptide categories (Recovery, Cognition, Metabolic), or age-reversal indicators. Make the data feel intentional, not random.
+Keep the red upward-trending graph — it reads as "longevity gains," which is on-brand.
+The "SCAN 3468" indicator can stay if it points to a meaningful body region; otherwise replace with a labeled callout (e.g., "Joint Health" or "Hormone Optimization").
+Logo should remain top-left in white.
+3B. Product Page Colors — Recommendation: GO WITH PROTOTYPE 4 (Navy CTA, Magenta Nav)
+Why
+Navy primary CTA adds clinical credibility. Pure purple-on-white in Prototype 2 reads dated and homogenous.
+Magenta accent on the nav button adds modern energy and breaks up the palette.
+Refinement
+Make sure magenta is used sparingly (nav CTA only, not throughout the page). Overuse of magenta will fight the men’s TRT/peptide positioning. Keep the rest of the page primarily navy + purple + white.
+3C. Color System Summary (for ModFX to lock in across all pages)
+
+Color
+Hex
+Usage
+ 
+Deep Purple
+#583664
+Primary brand, hero gradients, footer
+ 
+Blue Accent
+#6D93DC
+Secondary accents, link hover, badges
+ 
+Navy
+#1B3A5C
+Primary CTAs
+ 
+Magenta
+#C2185B
+Nav CTA only — used sparingly
+ 
+White / Off-white
+#FFFFFF
+Backgrounds
+ 
+Green
+#2E7D32
+Stock status indicators only
+
+Part 4: Navigation Fixes
+Current nav (across all v2 prototypes): Regenerative | Hormones & Peptides | NAD+ | Our Team (+ Blog and Patient Portal in Prototype 3).
+Issues
+"For Providers" page was dropped entirely. This is a revenue channel — it’s where NPs, PAs, and clinics learn how to partner with Regenerative Revival, plug into Wizlo, and operate under Arora’s clinical umbrella. Without this page, we lose our provider-recruiting funnel.
+"About Seth" was folded into "Our Team." Losing Seth’s personal founder story removes a major differentiator versus corporate telehealth brands. The founder narrative drives trust and conversion.
+"Concierge Care Model" was dropped. This is the explanation of how in-home regenerative treatments work alongside telehealth — it’s how we justify premium pricing.
+Recommended Final Navigation
+Regenerative
+Hormones & Peptides
+NAD+
+For Providers (RESTORE)
+Our Team (with About Seth as a sub-section or anchor link)
+Blog
+Patient Portal (CTA button)
+Take The Quiz (sticky/primary CTA)
+
+Concierge Care Model can be folded into the Regenerative page rather than a standalone nav item.
+
+Part 5: Copy Issues to Fix (with specific redlines)
+Issue 1 — Hero Headline is Incomplete
+Current: "Your Concierge Hub For" / "Regeneration"
+Problem: Dropping "& Longevity" kills half the positioning. Longevity is the reason hormones/peptides/NAD+ belong under the same roof as stem cells.
+Fix: See rewritten hero copy in Part 6 below.
+Issue 2 — Hero Sub-headline Breaks Awkwardly
+Current: "Your Concierge Hub For" sits above a giant "Regeneration." Reads as two disconnected fragments rather than one cohesive line.
+Fix: Consolidate into one headline lockup with proper hierarchy. See Part 6.
+Issue 3 — "Next Decade" vs "Best Decade" Inconsistency
+Current: Prototype 1 says "next decade." Prototype 3 says "best decade."
+Fix: Lock to "best decade." Punchier and on-brand for longevity positioning.
+Issue 4 — Stats Inconsistency
+Current: Prototype 1 says "12+ States Covered." Prototype 3 says "50+ States Covered."
+Fix: "50+ States Covered" everywhere. Arora is licensed in all 50.
+Issue 5 — Product Page Body Copy Lacks Authority
+Current: "Compounded Semaglutide — physician-supervised, without the needle."
+Problem: Fine, but reads thin and a bit gimmicky. Doesn’t establish clinical seriousness.
+Fix: See rewritten product page copy in Part 7.
+Issue 6 — Product Bullets Are Truncated in Mockup
+Current: The benefit list shows cut-off text ("for susta...", "no injections requi...", etc.).
+Fix: This is a layout issue — bullets need to either wrap or fit within the column. Fix in Figma.
+
+Part 6: Rewritten Hero Copy
+FOR ModFX TO PASTE INTO PROTOTYPE 3. Use this exact copy structure for the v2 home hero.
+Hero Copy Block — Paste into Prototype 3
+EYEBROW (small caps, light weight, above main headline):
+REGENERATIVE MEDICINE · TELEHEALTH · LONGEVITY
+
+MAIN HEADLINE (large, bold, white):
+Your Concierge Hub for Regeneration & Longevity
+
+SUB-HEADLINE (medium weight, lighter):
+Regenerative therapy in your home. Hormones, peptides, and NAD+ through telehealth. One physician-led medical team, one patient record, one plan — for the best decade of your life.
+
+PRIMARY CTA (button):
+Take The 2-Minute Quiz →
+
+SECONDARY CTA (text link):
+Watch 90-Second Overview
+
+TRUST BAR (below hero, 4 stats):
+•  8+ Years in Regenerative Medicine
+•  20+ Licensed Clinicians
+•  50+ States Covered
+•  Backed by Arora Health Group
+
+Alternate Hero Headline Options (for A/B testing if desired)
+"Your Concierge Hub for Regeneration & Longevity" (recommended primary)
+"One Medical Team. One Plan. The Best Decade of Your Life."
+"Regeneration, Hormones, and Longevity — Under One Roof."
+
+Part 7: Rewritten Semaglutide Product Page Copy
+FOR ModFX TO PASTE INTO PROTOTYPE 4.
+Product Header Block
+PRODUCT NAME:
+Semaglutide (Sublingual)
+
+PRICE LINE:
+Programs starting at $379/month — includes provider consult, prescription, and shipping
+
+PRODUCT DESCRIPTION (replaces "physician-supervised, without the needle"):
+A physician-prescribed, compounded GLP-1 program designed for sustainable weight loss without daily injections. Reviewed and adjusted by licensed clinicians, shipped directly from a licensed compounding pharmacy.
+
+STOCK BADGE:
+In Stock · Ships in 3–5 Business Days
+
+Benefit Bullets (Full, Untruncated)
+•  Clinically studied GLP-1 receptor agonist designed to support sustainable, long-term weight loss
+•  Regulates appetite and reduces cravings between meals
+•  Convenient sublingual delivery — no needles, no injection sites, no sharps disposal
+•  Personalized dosing reviewed and adjusted by a licensed clinician
+•  Ships free from a licensed compounding pharmacy, fully tracked
+
+PRIMARY CTA:
+Take The 2-Minute Quiz →
+SECONDARY CTA (text link under primary):
+Talk to a Provider First
+
+Section 1 — How Sublingual Semaglutide Works
+SECTION 1 HEADER (currently "What are GLP-1 Injections?"):
+Rename to: "How Sublingual Semaglutide Works"
+
+SECTION 1 BODY:
+Semaglutide is a GLP-1 receptor agonist — a class of medications originally developed for type 2 diabetes and now widely used for weight management. It works by signaling fullness, slowing gastric emptying, and reducing food noise and cravings. Most clinical research has been done on injectable forms. Compounded sublingual semaglutide delivers the same active molecule under the tongue, where it is absorbed through the oral mucosa. For patients who don’t tolerate injections or prefer a daily oral dose, sublingual is a practical alternative — when prescribed and monitored by a clinician.
+
+Section 2 — Who Sublingual Semaglutide Is For
+•  Adults with a BMI of 27+ (with comorbidities) or 30+
+•  People who have struggled with appetite regulation despite diet and exercise
+•  Patients who don’t want to self-inject
+•  Anyone seeking a clinician-guided weight loss program rather than a DIY approach
+
+Section 3 — What This Program Is Not
+•  Not a quick fix. Sustainable results take 3–6 months minimum.
+•  Not for everyone. Some patients are better served by injectable GLP-1s, lifestyle programs, or other interventions. Your provider will tell you honestly.
+•  Not a pill mill. Every prescription requires a clinical evaluation, and ongoing dosing is reviewed by your provider.
+
+Section 4 — One Medical Team That Holds The Whole Picture
+Sublingual Semaglutide doesn’t have to exist in a silo. Our clinicians can coordinate it with peptide protocols, hormone optimization (TRT/HRT), NAD+ programs, and even regenerative therapy — so your weight loss plan plugs into your bigger longevity strategy instead of competing with it.
+
+Section 5 — Just Four Steps
+1.  Take the 2-minute quiz to share your goals, history, and current health.
+2.  Connect with a licensed clinician via telehealth. Labs ordered if needed.
+3.  Your provider builds a personalized dosing protocol. Medication ships within 3–5 business days.
+4.  Ongoing check-ins and dosing adjustments to keep you progressing safely.
+
+Section 6 — Frequently Asked Questions
+Q: Is sublingual semaglutide as effective as injectable?
+A: Both forms deliver the same active molecule. Injectable semaglutide has more published clinical data. Sublingual is a practical alternative for patients who prefer not to inject, and many patients see meaningful results — but your provider will help you decide which form is right for you.
+
+Q: How quickly will I see results?
+A: Most patients begin noticing reduced appetite within the first 1–2 weeks and meaningful weight loss within 4–8 weeks. Sustainable change takes 3–6 months.
+
+Q: Do I need lab work?
+A: Yes. Baseline labs are typically required before starting, and follow-up labs may be ordered depending on your protocol. We coordinate this through our national lab network.
+
+Q: What are the side effects?
+A: Common side effects include nausea, reduced appetite, and mild GI changes, especially in the first few weeks. Your provider will discuss the full risk profile during your consultation.
+
+Q: Can I combine this with other Regenerative Revival programs?
+A: Yes. Many patients pair GLP-1 programs with peptide therapy, hormone optimization, or NAD+ for a coordinated longevity plan.
+
+Q: Is this covered by insurance?
+A: No. Compounded GLP-1 programs are typically cash-pay. Pricing is transparent and includes provider consults, prescription, and shipping.
+
+Disclaimer (footer of product page, small)
+Compounded medications are not FDA-approved drugs. They are prepared by licensed compounding pharmacies based on a clinician’s prescription for an individual patient. Individual results vary. A medical evaluation is required to determine if this therapy is appropriate for you. Some uses discussed may be considered off-label.
+
+Bottom CTA Section (purple background)
+Headline: "Not sure where to start? Take the 2-minute quiz."
+Body: Find out which of our programs — Semaglutide, Tirzepatide, peptides, TRT/HRT, or NAD+ — fits your goals.
+Button: Take The 2-Minute Quiz →
+
+Part 8: What We Still Need From ModFX
+Before any final sign-off, please deliver the following:
+Hormones & Peptides landing page (the category page, not individual products)
+TRT and HRT product/program pages
+NAD+ landing page
+Regenerative Therapy landing page (with Wharton’s Jelly focus)
+For Providers page (must be added back to the build)
+About Seth page or section
+The full quiz flow (questions, branching logic, and where users land at the end)
+Mobile mockups of every page above
+Footer design (compliance disclaimers, contact, lab/pharmacy partner credits)
+
+Part 9: Summary of Decisions (Final Checklist for ModFX)
+CRITICAL — Resolve before next review
+☐  Remove "For Research Use Only / Not for Human Use" from product label. Replace with prescription-compliant label text (see Part 2).
+
+Home Page
+☐  Use Prototype 3 (body + data overlay) as the home page direction
+☐  Replace placeholder data noise with brand-relevant biomarkers/categories
+☐  Standardize copy to "best decade" (not "next decade")
+☐  Standardize stat to "50+ States Covered"
+☐  Use rewritten hero copy (see Part 6)
+☐  Restore "For Providers" to main navigation
+Product Page
+☐  Use Prototype 4 colors (navy CTA, magenta nav)
+☐  Use rewritten product page copy (see Part 7)
+☐  Fix truncated benefit bullets (layout issue)
+☐  Add the compliance disclaimer to the footer
+Additional Deliverables Needed
+☐  Inner page mockups (Hormones & Peptides, TRT, HRT, NAD+, Regenerative, For Providers, About Seth)
+☐  Quiz flow mockup
+☐  Mobile mockups for all approved pages
+☐  Footer design
+
+
+— End of document —
+

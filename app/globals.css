@@ -12,6 +12,12 @@
   --color-warm: #f5f1eb;
   --color-gold: #c9a84c;
   --color-gold-light: #dfc06e;
+  /* V2 palette (per Redline doc — locked at design review) */
+  --color-navy: #1b3a5c;
+  --color-navy-light: #2c5380;
+  --color-magenta: #c2185b;
+  --color-magenta-light: #e91e63;
+  --color-success: #2e7d32;
   --color-text: #2c3e50;
   --color-text-light: #5a6c7d;
   --color-text-muted: #8a9bab;

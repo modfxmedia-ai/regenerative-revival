@@ -1,0 +1,336 @@
+Regenerative  Revival  V2  —  Dev  Brief  
+Client:  Seth  Berge  (Regenerative  Revival)  via  Justin  Ingram,  ModFX   
+Engagement:
+ 
+Site
+ 
+rebuild
+ 
++
+ 
+Phase
+ 
+2
+ 
+Wizlo
+ 
+telemedicine
+ 
+integration
+ 
+ 
+Strategic
+ 
+context:
+ 
+VIP
+ 
+build;
+ 
+Wizlo
+ 
+partner
+ 
+pipeline
+ 
+projected
+ 
+at
+ 
+3–4
+ 
+builds/week;
+ 
+ 
+SOP
+ 
+deliverable
+ 
+required
+ 
+for
+ 
+repeatability
+   
+Strategic  Positioning  
+Regenerative  Revival  is  a  White  Glove  Concierge  brand  operating  in  the  regenerative  medicine  
+category.
+ 
+The
+ 
+site
+ 
+must
+ 
+reinforce
+ 
+premium
+ 
+positioning
+ 
+to
+ 
+support
+ 
+a
+ 
+sales
+ 
+funnel
+ 
+driven
+ 
+primarily
+ 
+by
+ 
+in-person
+ 
+dinner
+ 
+seminars.
+ 
+The
+ 
+current
+ 
+V1
+ 
+build
+ 
+reads
+ 
+as
+ 
+commodity
+ 
+telehealth,
+ 
+which
+ 
+is
+ 
+misaligned
+ 
+with
+ 
+the
+ 
+client's
+ 
+brand
+ 
+position
+ 
+and
+ 
+downstream
+ 
+conversion
+ 
+environment.
+  Design  north  star:  Luxury  wellness  brand  with  telehealth  capability  —  not  telehealth  with  
+premium
+ 
+styling.
+   
+Client-Stated  Requirements  (Source:  Seth  Berge,  Loom  5/18)  
+Requirement  Client  language  
+Brand  positioning  "White  Glove  Concierge"  (referenced  2x)  
+Visual  tone  "Elevated,  elegant,  high-level"  
+Layout  convention  Full-bleed  sections,  edge-to-edge  
+Differentiation  target  Move  away  from  "cookie-cutter  telehealth"  aesthetic  
+Funnel  continuity  Site  must  extend  the  dinner-seminar  experience  
+Palette  signals  Gold  (comparison  site)  +  red  (new  mailer)    
+Build  Priorities  
+1.  Layout  system  —  full-bleed  by  default.  Hero  and  feature  bands  extend  edge-to-edge.  
+Contained
+ 
+widths
+ 
+reserved
+ 
+for
+ 
+long-form
+ 
+body
+ 
+copy
+ 
+only.
+ 
+The
+ 
+boxed
+ 
+Divi-style
+ 
+sections
+ 
+on
+ 
+V1
+ 
+are
+ 
+a
+ 
+documented
+ 
+client
+ 
+complaint.
+  2.  Photography  —  editorial-grade,  branded.  V1  stock  library  is  incompatible  with  the  brand  
+position.
+ 
+Source
+ 
+from
+ 
+client
+ 
+drive
+ 
+(Lovelyn
+ 
+organizing)
+ 
+or
+ 
+budget
+ 
+a
+ 
+new
+ 
+shoot.
+  3.  Typography  +  spacing  —  premium  hierarchy.  Refined  sans  or  serif  pairing.  Generous  
+whitespace.
+ 
+Restrained
+ 
+motion.
+ 
+No
+ 
+template-grade
+ 
+animations.
+  4.  Palette  —  confirm  gold  +  red  against  Figma.  Client  cited  both  directly;  raise  with  Justin  if  
+Figma
+ 
+does
+ 
+not
+ 
+reflect.
+  5.  Brand  continuity  —  site,  mailer,  seminar  materials.  Treat  the  printed  mailer  as  a  design  
+reference
+ 
+point
+ 
+alongside
+ 
+Figma.
+ 
+Seminar
+ 
+attendees
+ 
+should
+ 
+experience
+ 
+visual
+ 
+consistency
+ 
+from
+ 
+event
+ 
+to
+ 
+web.
+  6.  Component  library  —  luxury-grade  primitives.  Full-bleed  hero,  condition  cards,  testimonial  
+video
+ 
+module,
+ 
+FAQ
+ 
+accordion,
+ 
+sticky
+ 
+CTA,
+ 
+footer.
+ 
+Build
+ 
+for
+ 
+reuse
+ 
+across
+ 
+the
+ 
+projected
+ 
+Wizlo
+ 
+partner
+ 
+portfolio.
+   
+Confirmed  Scope  
+-  Home  +  product  page  templates  (Figma  supplied)  -  Inner  pages:  About,  Services,  Why  Exosomes,  Why  Stem  Cells,  News,  Contact  -  Wizlo  telemedicine  handoff  —  architected  in  Phase  1,  integrated  in  Phase  2  -  SOP  documentation  deliverable    
+Measurement  Plan  (Phase  1)  
+Metric  Target  Rationale  
+Consult  bookings  /  month  Baseline  +  lift  TBD  Primary  conversion  event  
+Metric  Target  Rationale  
+Bounce  rate,  home  +  product  pages  
+<50%  Validates  brand  fit  with  seminar-warmed  traffic  
+Core  Web  Vitals  (LCP  /  CLS  /  INP)  
+All  green  Performance  gates  ad  quality  scores  and  SEO  
+Organic  sessions,  condition  pages  
+Baseline  +  30%  in  90  days  SEO  architecture  investment  ROI  
+Form  completion  rate  Baseline  +  lift  TBD  Funnel  health  indicator   Tracking  stack:  GA4,  Meta  Pixel,  call  tracking,  conversion  events  on  consult  booking.  Baseline  
+V1
+ 
+metrics
+ 
+before
+ 
+migration
+ 
+to
+ 
+enable
+ 
+lift
+ 
+measurement.
+   
+Blocking  Decisions  (pending  Justin  call,  5/18  7:30  PM)  
+Decision  Downstream  impact  
+CMS:  WordPress  vs.  modern  stack  (Vercel/Next.js)  
+Timeline,  performance  ceiling,  design  fidelity  
+Wizlo  handoff:  embed  /  SSO  /  outbound  IA,  lead  capture  flow,  HIPAA  posture  
+Figma  alignment  with  client's  Loom  direction  Rework  risk  if  Figma  pre-dates  feedback  
+Copy  +  photography  sourcing  Timeline  +  brand  quality  ceiling    
+Project  Resources  
+  
+V2  Figma  https://www.figma.com/design/6WZhnW9OB8Ee5rJjxmcf6h/Regenerative-Revival-v2 
+Client  Loom  walkthrough  https://www.loom.com/share/8b65e09368854b3f98583171af6c4a83 
+  
+Inspiration  reference  https://ways2well.com/ 
+Current  site  (V1)  https://regenerativerevival.com/ 
+Wizlo  platform  https://www.wizlo.com 
+Wizlo  Patient  Portal  2.0  https://black-river-02ead0710.7.azurestaticapps.net/ 
+Client  asset  drive  drive/folders/1joZ5FSzaP-JNe-ZCsqB3bpGT63-f_dnp  
+LSR  SOW  https://app.clickup.com/90141143629/v/dc/2kyd9cjd-13494 
+ClickUp  task  86b9znqm4   

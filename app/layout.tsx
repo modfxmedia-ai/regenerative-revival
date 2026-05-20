@@ -6,6 +6,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import GoogleAnalytics from "./components/GoogleAnalytics";
+import UtmCapture from "./components/UtmCapture";
 import { JsonLd, organizationSchema, localBusinessSchema } from "./lib/schema";
 
 const inter = Inter({
@@ -77,6 +78,7 @@ export default function RootLayout({
         className={`${inter.variable} ${playfair.variable} antialiased`}
       >
         <GoogleAnalytics />
+        <UtmCapture />
         <JsonLd data={organizationSchema()} />
         <JsonLd data={localBusinessSchema()} />
         <Navbar />

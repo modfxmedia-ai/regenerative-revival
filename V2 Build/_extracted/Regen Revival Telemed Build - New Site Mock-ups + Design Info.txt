@@ -1,0 +1,54 @@
+﻿Mock-up 
+https://www.figma.com/design/6WZhnW9OB8Ee5rJjxmcf6h/Regenerative-Revival-v2?node-id=279-15&p=f&t=3H0NXPBERAQSI9CW-0
+
+BRAND COLORS AND GUIDELINES 
+https://drive.google.com/file/d/1PUee_P7xsH1rPjPgYZRvrO0_ClhU6K18/view
+
+BRAND ASSETS:
+https://drive.google.com/drive/folders/1zKWe_5W0mMnCWoW5ycQcHnCezcrTl5MN 
+
+Website copy (from owner SETH):
+https://docs.google.com/document/d/1a19fXZ-_nZXO4wN7gtygzcYmOD_xKCMw/edit?usp=sharing&ouid=115654508690210803080&rtpof=true&sd=true
+
+LOOM video from client:
+https://www.loom.com/share/8b65e09368854b3f98583171af6c4a83 
+
+
+The client also loves https://ways2well.com/ as an inspiration site.
+
+Client wants to keep/re-use the video in the header of the home page of the current site - https://regenerativerevival.com/ 
+
+We need to get a full site build in the works and will then work with Wizlo to integrate their telemedicine platform.
+
+Wizlo information below if it helps:
+
+www.wizlo.com 
+
+DECK outlining our services
+
+Patient Portal 2.0
+
+
+
+
+The client wants RepeatMD portal access to be on the site (this is where clients can pay)
+https://drive.google.com/drive/folders/1qkKM95ysX8yeNfS9VFUG9g_osDWxaMRX
+
+
+Attached is the product sheet for the Peptides with the URL links for what we will be offering. this does not include the HRT and TRT product. we should be reciving that this monday but we need to get started with these first.
+
+https://docs.google.com/spreadsheets/d/1ohYE5SFh2AdSb25LRyi7YiEVuwqfT7CL_CAsxZbqPWI/edit?usp=sharing
+
+
+
+
+
+
+AFTER DESIGN/BUILD IS IN LIVE STATE 
+
+WE NEED TO INTEGRATE WITH WIZLO
+
+ALL DATA FROM WIZLO THEN NEEDS TO PASS THROUGH TO THEIR CRM SYSTEM WHICH IS https://www.tyriacore.app/ 
+
+(Brennen LesserHELP ZADDY)
+

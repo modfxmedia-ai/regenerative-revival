@@ -1,157 +1,219 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Shield, Star, Sparkles, ChevronDown } from "lucide-react";
+import { ArrowRight, Sparkles, Award, Users, MapPin, ShieldCheck } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
-
   return (
-    <section className="relative h-screen min-h-[750px] max-h-[1100px] overflow-hidden bg-black ">
-      {/* Full-bleed DNA video background */}
+    <section className="relative min-h-screen overflow-hidden bg-[#021E3C]">
+      {/* === Full-bleed background photo === */}
       <div className="absolute inset-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="h-full w-full object-cover scale-105"
-        >
-          <source
-            src="https://65iosdxq0lyc5cm9.public.blob.vercel-storage.com/0_Dna_Double_Helix_3840x2160.mp4"
-            type="video/mp4"
-          />
-        </video>
-        {/* Layered cinematic overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent" />
-        {/* Purple brand tint */}
-        <div className="absolute inset-0 bg-secondary/30 mix-blend-multiply" />
+        <Image
+          src="/8470.jpg"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        {/* Dark cinematic overlays — preserve readability over the photo */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#021E3C] via-[#021E3C]/70 to-[#021E3C]/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#021E3C]/80 via-[#1A1F30]/30 to-transparent" />
+        <div className="absolute inset-0 bg-[#583563]/20 mix-blend-multiply" />
       </div>
 
-      {/* Subtle grain texture overlay */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.04] z-[1]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
-        }}
-      />
+      {/* === Background layers === */}
 
-      {/* Main content — bottom left */}
-      <div className="absolute inset-0 z-10  flex items-end">
-        <div className="w-full mx-auto max-w-7xl px-6 lg:px-8  pb-20 sm:pb-24 lg:pb-28">
-          <div className="max-w-3xl">
-            {/* Pill badge */}
+      {/* Aurora orbs — sit on top of photo */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] left-[-5%] w-[700px] h-[700px] rounded-full bg-[#6762AF]/25 blur-[140px] animate-float-slow" />
+        <div className="absolute bottom-[-15%] right-[-10%] w-[800px] h-[800px] rounded-full bg-[#345691]/30 blur-[140px] animate-float-slow" style={{ animationDelay: "-6s" }} />
+        <div className="absolute top-[30%] right-[20%] w-[400px] h-[400px] rounded-full bg-[#583563]/20 blur-[120px] animate-pulse-soft" />
+      </div>
+
+      {/* Diagonal grid */}
+      <div className="absolute inset-0 lux-grid opacity-30 pointer-events-none" />
+
+      {/* Subtle noise */}
+      <div className="absolute inset-0 noise-overlay opacity-[0.04] pointer-events-none mix-blend-overlay" />
+
+      {/* === Decorative health-record motifs === */}
+      {/* Body silhouette — top left (matches figma) */}
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        animate={{ opacity: 0.18, x: 0 }}
+        transition={{ duration: 1.4, delay: 0.5 }}
+        className="absolute top-24 left-6 lg:left-12 hidden md:block pointer-events-none"
+      >
+        <div className="text-[10px] font-medium tracking-[0.3em] text-white/40 mb-2">
+          HEALTH<br />RECORD
+        </div>
+        <BodySilhouette />
+        <div className="mt-3 text-[9px] tracking-widest text-white/35 font-mono">
+          SCAN<br />1246<sup>Hz</sup>
+        </div>
+      </motion.div>
+
+      {/* EKG-style chart bars — top right */}
+      <motion.div
+        initial={{ opacity: 0, x: 30 }}
+        animate={{ opacity: 0.5, x: 0 }}
+        transition={{ duration: 1.2, delay: 0.7 }}
+        className="absolute top-28 right-6 lg:right-16 hidden md:flex items-end gap-1 pointer-events-none"
+      >
+        {[24, 38, 52, 28, 64, 48, 72, 32, 56, 40, 80, 44, 60, 36, 28, 48, 64, 30, 52, 38, 70, 42, 58].map((h, i) => (
+          <motion.span
+            key={i}
+            initial={{ scaleY: 0 }}
+            animate={{ scaleY: 1 }}
+            transition={{ duration: 0.4, delay: 0.8 + i * 0.03, ease: "easeOut" }}
+            className="w-[3px] origin-bottom rounded-full bg-gradient-to-t from-[#71A7F5]/0 via-[#71A7F5]/60 to-[#71A7F5]"
+            style={{ height: `${h}px` }}
+          />
+        ))}
+      </motion.div>
+
+      {/* Floating coordinates / data — bottom left */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.18 }}
+        transition={{ duration: 2, delay: 1 }}
+        className="absolute bottom-44 left-8 lg:left-16 hidden lg:block pointer-events-none font-mono text-[10px] leading-relaxed text-[#71A7F5]"
+      >
+        2323234769<br />
+        9445466761155<br />
+        879996843178
+      </motion.div>
+
+      {/* === Main content === */}
+      <div className="relative z-10 flex min-h-screen flex-col">
+        {/* Top spacer for navbar */}
+        <div className="h-20" />
+
+        <div className="flex-1 flex items-center justify-center px-6 lg:px-8 py-12 lg:py-20">
+          <div className="w-full max-w-5xl mx-auto text-center">
+            {/* Eyebrow */}
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-flex items-center gap-2.5 rounded-full bg-white/[0.07] backdrop-blur-xl border border-white/[0.08] px-5 py-2.5 mb-8"
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-flex items-center justify-center gap-3 mb-8"
             >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-light opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-light" />
+              <span className="h-px w-8 bg-white/30" />
+              <span className="text-[11px] font-medium tracking-[0.32em] text-white/60 uppercase">
+                Regenerative Medicine · Telehealth · Longevity
               </span>
-              <span className="text-sm font-medium text-white/70">
-                Advanced Regenerative Medicine
-              </span>
+              <span className="h-px w-8 bg-white/30" />
             </motion.div>
 
             {/* Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-[2.75rem] sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.04] tracking-tight"
+              transition={{ duration: 1, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className="lux-display text-white text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.02]"
             >
-              <span className="text-white">Your Body Can</span>
+              Your Concierge Hub for
               <br />
-              <span className="bg-gradient-to-r from-primary-light via-[#b794e0] to-primary bg-clip-text text-transparent">
-                Heal Itself.
-              </span>
+              <em className="em">Regeneration</em> &amp; <em className="em">Longevity</em>
             </motion.h1>
 
-            {/* Subtext */}
+            {/* Subhead */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.5 }}
-              className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-white/50"
+              transition={{ duration: 0.8, delay: 0.55 }}
+              className="mt-8 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed text-white/65"
             >
-              Cutting-edge regenerative therapies that ease pain, restore
-              vitality, and renew your body from within — delivered by licensed
-              practitioners you can trust.
+              Regenerative therapy in your home. Hormones, peptides, and NAD+ through telehealth. One physician-led medical team, one patient record, one plan for the best decade of your life.
             </motion.p>
 
-            {/* CTAs */}
+            {/* CTA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.65 }}
-              className="mt-9 flex flex-col sm:flex-row gap-4"
+              transition={{ duration: 0.7, delay: 0.7 }}
+              className="mt-11 flex flex-col sm:flex-row items-center justify-center gap-4"
             >
               <a
-                href="#contact"
-                className="group relative flex h-14 items-center justify-center gap-2.5 rounded-2xl bg-primary px-9 text-base font-semibold text-white overflow-hidden transition-all hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-0.5"
+                href="/consult-router"
+                className="group relative inline-flex h-14 items-center justify-center gap-2.5 rounded-full bg-white px-8 text-[15px] font-semibold text-[#1A1F30] overflow-hidden transition-all duration-300 hover:shadow-[0_20px_50px_-12px_rgba(255,255,255,0.5)] hover:scale-[1.02]"
               >
                 <span className="relative z-10 flex items-center gap-2.5">
-                  Book Free Consultation
-                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  <Sparkles className="h-4 w-4 text-[#6762AF]" />
+                  Take The 2-Minute Quiz
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-dark to-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                {/* Shimmer */}
+                <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-[#F1ECF8] to-transparent" />
               </a>
-            </motion.div>
 
-            {/* Trust strip */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.7, delay: 0.9 }}
-              className="mt-10 flex flex-wrap items-center gap-5"
-            >
-              <div className="flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-                ))}
-                <span className="ml-1.5 text-sm font-bold text-white">4.9</span>
-              </div>
-              <span className="h-3.5 w-px bg-white/15" />
-              <div className="flex items-center gap-2 text-sm text-white/50">
-                <Shield className="h-4 w-4 text-primary-light" />
-                FDA Compliant
-              </div>
-              <span className="h-3.5 w-px bg-white/15" />
-              <span className="text-sm text-white/50">98% Satisfaction</span>
-              <span className="h-3.5 w-px bg-white/15 hidden sm:block" />
-              <div className="hidden sm:flex items-center gap-2 text-sm text-white/50">
-                <Sparkles className="h-4 w-4 text-primary-light" />
-                10,000+ Patients
-              </div>
-              <span className="h-3.5 w-px bg-white/15 hidden md:block" />
-              <span className="text-sm text-white/50 hidden md:block">8+ Years Experience</span>
+              <a
+                href="/contact"
+                className="group inline-flex h-14 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-md px-7 text-[14px] font-medium text-white/85 hover:bg-white/10 hover:border-white/35 transition-all"
+              >
+                Book A Consult
+                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+              </a>
             </motion.div>
           </div>
         </div>
+
+        {/* === Credentials strip — matches figma === */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1 }}
+          className="relative z-10 border-t border-white/10 bg-black/30 backdrop-blur-md"
+        >
+          <div className="mx-auto max-w-6xl px-6 lg:px-8 py-5">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-2">
+              <CredItem icon={<Award className="h-4 w-4" />} label="8+ years in Regenerative Medicine" />
+              <CredItem icon={<Users className="h-4 w-4" />} label="20+ Licensed Clinicians" />
+              <CredItem icon={<MapPin className="h-4 w-4" />} label="50+ States Covered" />
+              <CredItem icon={<ShieldCheck className="h-4 w-4" />} label="Backed by Arora Health Group" />
+            </div>
+          </div>
+        </motion.div>
       </div>
 
-      {/* Bottom edge — thin line transition */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent z-20 pointer-events-none" />
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <ChevronDown className="h-5 w-5 text-white/30" />
-        </motion.div>
-      </motion.div>
-
+      {/* Side brand text — vertical, right edge */}
+      <div className="absolute right-3 top-1/2 -translate-y-1/2 hidden xl:block">
+        <span className="brand-side-text text-white/30">SETH BERGE</span>
+      </div>
     </section>
+  );
+}
+
+function CredItem({ icon, label }: { icon: React.ReactNode; label: string }) {
+  return (
+    <div className="flex items-center justify-center md:justify-center gap-2.5 text-white/70">
+      <span className="text-[#71A7F5]">{icon}</span>
+      <span className="text-xs sm:text-[13px] font-medium tracking-wide">{label}</span>
+    </div>
+  );
+}
+
+function BodySilhouette() {
+  return (
+    <svg width="62" height="120" viewBox="0 0 62 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="#71A7F5" strokeWidth="0.8" fill="none">
+        {/* Head */}
+        <circle cx="31" cy="11" r="7" />
+        {/* Neck */}
+        <line x1="31" y1="18" x2="31" y2="23" />
+        {/* Shoulders + torso */}
+        <path d="M14 26 L31 22 L48 26 L46 56 L40 78 L36 110 L31 118 L26 110 L22 78 L16 56 Z" />
+        {/* Arms */}
+        <path d="M14 26 L8 50 L6 70 L9 80" />
+        <path d="M48 26 L54 50 L56 70 L53 80" />
+        {/* Legs split */}
+        <line x1="31" y1="78" x2="31" y2="118" />
+        {/* Pulse markers */}
+        <circle cx="31" cy="50" r="1.4" fill="#71A7F5" />
+        <circle cx="31" cy="68" r="1.4" fill="#71A7F5" />
+      </g>
+    </svg>
   );
 }

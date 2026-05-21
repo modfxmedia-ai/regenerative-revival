@@ -1,198 +1,139 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Facebook, Instagram } from "lucide-react";
 
-const regenerativeLinks = [
-  { label: "Stem Cell Therapy", href: "/stem-cell-therapy" },
-  { label: "Wharton's Jelly", href: "/whartons-jelly" },
-  { label: "Why Exosomes", href: "/why-exosomes" },
-  { label: "Why Stem Cells", href: "/why-stem-cells" },
-  { label: "Concierge Care Model", href: "/concierge-care-model" },
-  { label: "All Treatments", href: "/treatments" },
-  { label: "Service Areas", href: "/locations" },
-];
-
-const telehealthLinks = [
+const services = [
+  { label: "Regenerative Therapy", href: "/stem-cell-therapy" },
   { label: "Hormones & Peptides", href: "/hormones-peptides" },
-  { label: "NAD+", href: "/nad" },
-  { label: "Take The Quiz", href: "/consult-router" },
+  { label: "NAD+ & Supplements", href: "/nad" },
 ];
 
-const companyLinks = [
-  { label: "About Us", href: "/about" },
-  { label: "Founder", href: "/about/founder" },
-  { label: "Why We're Different", href: "/about/why-were-different" },
-  { label: "Testimonials", href: "/testimonials" },
-  { label: "News", href: "/news" },
-  { label: "Contact", href: "/contact" },
+const about = [
+  { label: "Medical Team", href: "/about" },
+  { label: "Arora Health Group", href: "/about/arora-health" },
+  { label: "Our Mission", href: "/about/why-were-different" },
 ];
 
-const partnerLinks = [
-  { label: "For Providers", href: "/for-providers" },
-  { label: "Apply to Partner", href: "/partner-with-us" },
-  { label: "Partner Programs", href: "/partners" },
+const resources = [
+  { label: "How It Works", href: "/concierge-care-model" },
+  { label: "Patient Portal", href: "https://portal.regenerativerevival.com" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Blog", href: "/news" },
 ];
 
-const legalLinks = [
+const contact = [
+  { label: "Patient Support", href: "/contact" },
+  { label: "Wholesale", href: "/partner-with-us" },
+  { label: "Press", href: "/contact" },
+];
+
+const legal = [
   { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Terms & Conditions", href: "/terms-conditions" },
-  { label: "Disclaimer", href: "/disclaimer" },
-  { label: "Sitemap", href: "/sitemap.xml" },
+  { label: "Terms of Service", href: "/terms-conditions" },
+  { label: "HIPAA Notice", href: "/disclaimer" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="relative pt-20 pb-8 bg-secondary text-white overflow-hidden">
-      {/* Ambient orbs */}
-      <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-gold/5 rounded-full blur-[100px] pointer-events-none" />
-
-      {/* Subtle grid */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.02]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(155,109,215,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(155,109,215,0.5) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
-
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        {/* PRIMARY NAV BAND — 5 columns on desktop */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-12 gap-8 lg:gap-10 mb-12">
-          {/* Brand block */}
-          <div className="col-span-2 md:col-span-4 lg:col-span-3">
-            <Image
-              src="/logo.png"
-              alt="Regenerative Revival"
-              width={160}
-              height={64}
-              className="h-16 w-auto mb-4 brightness-0 invert"
-            />
-            <p className="text-sm text-white/50 leading-relaxed max-w-xs mb-4">
-              White-glove regenerative medicine in your home, plus nationwide
-              telehealth for peptides, hormones, and NAD+.
-            </p>
-            <Link
-              href="/consult-router"
-              className="inline-flex items-center rounded-full bg-white/10 hover:bg-white/20 border border-white/15 px-4 py-2 text-xs font-semibold text-white transition-colors"
-            >
-              Take The 2-Question Quiz →
+    <footer className="bg-white">
+      {/* ── Top: logo + nav columns ── */}
+      <div className="mx-auto max-w-[1280px] px-8 lg:px-12 pt-14 pb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-[200px_1fr_1fr_1fr_1fr] gap-8 lg:gap-6 items-start">
+          {/* Logo */}
+          <div className="col-span-2 lg:col-span-1">
+            <Link href="/">
+              <Image
+                src="/logo.png"
+                alt="Regenerative Revival"
+                width={160}
+                height={56}
+                className="h-14 w-auto"
+              />
             </Link>
           </div>
 
-          <div className="lg:col-span-2">
-            <h4 className="text-sm font-semibold text-white/80 mb-4">
-              Regenerative
-            </h4>
-            <ul className="flex flex-col gap-3">
-              {regenerativeLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/40 hover:text-primary-light transition-colors duration-200"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="lg:col-span-2">
-            <h4 className="text-sm font-semibold text-white/80 mb-4">
-              Telehealth
-            </h4>
-            <ul className="flex flex-col gap-3">
-              {telehealthLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/40 hover:text-primary-light transition-colors duration-200"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="lg:col-span-2">
-            <h4 className="text-sm font-semibold text-white/80 mb-4">
-              Company
-            </h4>
-            <ul className="flex flex-col gap-3">
-              {companyLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/40 hover:text-primary-light transition-colors duration-200"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="lg:col-span-3">
-            <h4 className="text-sm font-semibold text-white/80 mb-4">
-              For Providers
-            </h4>
-            <ul className="flex flex-col gap-3">
-              {partnerLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/40 hover:text-primary-light transition-colors duration-200"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <FooterColumn title="Services" links={services} />
+          <FooterColumn title="About" links={about} />
+          <FooterColumn title="Resources" links={resources} />
+          <FooterColumn title="Contact" links={contact} />
         </div>
+      </div>
 
-        {/* DIRECTORY BAND — exposes all programmatic hubs to crawlers + users */}
-        <div className="border-t border-white/10 pt-8 mb-10">
-          <p className="text-xs text-white/50 leading-relaxed max-w-2xl">
-            Looking for a specific treatment, partner program, or city?{" "}
-            <Link
-              href="/sitemap.xml"
-              className="text-primary-light hover:text-white transition-colors font-semibold"
-            >
-              View the full sitemap →
-            </Link>
+      {/* ── Mid bar ── */}
+      <div className="border-t border-[#E2DFF0]">
+        <div className="mx-auto max-w-[1280px] px-8 lg:px-12 py-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+          {/* Social icons */}
+          <div className="flex items-center gap-4">
+            <SocialIcon href="https://facebook.com" label="Facebook" icon={<Facebook className="h-[15px] w-[15px]" strokeWidth={2.2} />} />
+            <SocialIcon href="https://instagram.com" label="Instagram" icon={<Instagram className="h-[15px] w-[15px]" strokeWidth={2.2} />} />
+          </div>
+
+          {/* Copyright */}
+          <p className="text-[12.5px] font-medium text-[#6B7280] order-3 md:order-2">
+            © {new Date().getFullYear()} Regenerative Revival. All rights reserved.
           </p>
-        </div>
 
-        {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8" />
-
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-          <p className="text-xs text-white/30">
-            © {new Date().getFullYear()} Regenerative Revival. All rights
-            reserved.
-          </p>
-          <nav
-            aria-label="Legal"
-            className="flex flex-wrap items-center gap-x-5 gap-y-2"
-          >
-            {legalLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-xs text-white/40 hover:text-primary-light transition-colors duration-200"
-              >
-                {link.label}
-              </Link>
+          {/* Legal links */}
+          <nav aria-label="Legal" className="order-2 md:order-3 flex items-center">
+            {legal.map((link, i) => (
+              <span key={link.href} className="flex items-center">
+                <Link
+                  href={link.href}
+                  className="text-[12.5px] font-semibold text-[#374151] hover:text-[#345691] transition-colors duration-200"
+                >
+                  {link.label}
+                </Link>
+                {i < legal.length - 1 && (
+                  <span className="text-[#D1D5DB] mx-2 text-[11px]">·</span>
+                )}
+              </span>
             ))}
           </nav>
-          <p className="text-xs text-white/30">
-            Operating under Arora Health Group clinical oversight.
+        </div>
+      </div>
+
+      {/* ── Compliance band ── */}
+      <div className="border-t border-[#E2DFF0]">
+        <div className="mx-auto max-w-[1280px] px-8 lg:px-12 py-4">
+          <p className="text-[11px] font-medium text-[#9CA3AF] leading-[1.75]">
+            © {new Date().getFullYear()} Regenerative Revival. All rights reserved. Regenerative Revival provides concierge regenerative medicine and coordinates telehealth-based longevity care through a nationwide network of licensed nurse practitioners under physician oversight. Statements on this site have not been evaluated by the FDA. Our services are not intended to diagnose, treat, cure, or prevent any disease. Individual results vary. Regenerative therapies are considered off-label for most musculoskeletal applications. Telehealth services are delivered by licensed clinicians in accordance with state-specific regulations. Compounded medications are dispensed by LegitScript- and NABP-accredited pharmacy partners.
           </p>
         </div>
       </div>
     </footer>
+  );
+}
+
+function FooterColumn({ title, links }: { title: string; links: { label: string; href: string }[] }) {
+  return (
+    <div>
+      <h4 className="text-[13px] font-bold text-[#111827] mb-4 tracking-wide uppercase">{title}</h4>
+      <ul className="flex flex-col gap-3">
+        {links.map((link) => (
+          <li key={link.href}>
+            <Link
+              href={link.href}
+              className="text-[13.5px] font-medium text-[#374151] hover:text-[#345691] transition-colors duration-200"
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function SocialIcon({ href, label, icon }: { href: string; label: string; icon: React.ReactNode }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
+      className="text-[#374151] hover:text-[#345691] transition-colors duration-200"
+    >
+      {icon}
+    </a>
   );
 }

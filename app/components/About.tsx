@@ -2,13 +2,14 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Heart, Microscope, Handshake, GraduationCap } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 const values = [
-  { icon: GraduationCap, title: "Education First", description: "We empower you with knowledge so you can make informed decisions about your health." },
-  { icon: Heart, title: "Patient-First Care", description: "Every plan is built around your unique needs, goals, and medical history." },
-  { icon: Microscope, title: "Science-Backed Protocols", description: "Our therapies are grounded in peer-reviewed research and clinical evidence." },
-  { icon: Handshake, title: "Trusted Partnerships", description: "We work with licensed practitioners and top-tier labs to ensure quality at every step." },
+  { number: "01", title: "Education First", description: "Knowledge so you can make informed decisions about your health." },
+  { number: "02", title: "Patient-First Care", description: "Every plan built around your unique biology and goals." },
+  { number: "03", title: "Science-Backed", description: "Protocols grounded in peer-reviewed research and evidence." },
+  { number: "04", title: "Trusted Network", description: "Licensed practitioners and top-tier labs at every step." },
 ];
 
 export default function About() {
@@ -16,69 +17,114 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="relative py-28 bg-white overflow-hidden">
-      <div className="section-divider absolute top-0 left-0 right-0" />
+    <section id="about" className="relative py-28 lg:py-32 bg-[#1A1F30] overflow-hidden">
+      {/* Aurora */}
+      <div className="absolute top-1/4 left-0 w-[600px] h-[600px] rounded-full bg-[#6762AF]/15 blur-[140px] pointer-events-none animate-float-slow" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-[#345691]/20 blur-[140px] pointer-events-none" />
 
-      {/* Ambient orbs */}
-      <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-primary/[0.03] rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-sage/50 rounded-full blur-3xl pointer-events-none" />
+      {/* Grid */}
+      <div className="absolute inset-0 lux-grid opacity-30 pointer-events-none" />
 
       <div ref={ref} className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <motion.div initial={{ opacity: 0, x: -50 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }} className="relative">
-            {/* Image with glass frame */}
-            <div className="relative rounded-[2rem] overflow-hidden">
-              <div className="absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/20 z-10 pointer-events-none" />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/photos/seth-berge-w-backdrop.jpg" alt="Seth Berge — Founder of Regenerative Revival" className="w-full h-auto rounded-[2rem] object-cover" />
-              {/* Bottom glass overlay */}
-              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/30 to-transparent" />
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* IMAGE — left, with stat card */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-5 relative"
+          >
+            <div className="relative rounded-[2.5rem] overflow-hidden aspect-[4/5] luxe-shadow">
+              <Image
+                src="/photos/seth-berge-w-backdrop.jpg"
+                alt="Seth Berge — Founder of Regenerative Revival"
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover"
+              />
+              {/* Tint overlay */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#583563]/30 via-transparent to-[#71A7F5]/10" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-white/15 rounded-[2.5rem] pointer-events-none" />
+
+              {/* Bottom signature */}
+              <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+                <div className="text-white">
+                  <p className="text-xs tracking-[0.3em] uppercase text-white/60 mb-1">Founder</p>
+                  <p className="lux-display text-2xl">Seth <em className="em">Berge</em></p>
+                </div>
+              </div>
             </div>
 
-            {/* Floating glass stat card */}
+            {/* Floating stat — 8+ years */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
               animate={inView ? { opacity: 1, scale: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="absolute -bottom-6 -right-6 lg:right-auto lg:-left-6 bg-white/70 backdrop-blur-2xl rounded-2xl p-6 shadow-[0_8px_32px_rgba(0,0,0,0.08)] border border-white/80"
+              transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute -bottom-8 -right-4 lg:-right-12 rounded-2xl bg-white p-6 shadow-[0_24px_64px_-12px_rgba(0,0,0,0.4)] border border-white/80"
             >
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/60 to-transparent pointer-events-none" />
-              <div className="relative text-4xl font-bold gradient-text">8+</div>
-              <div className="relative text-sm text-gray-500 mt-1">Years in<br />Regenerative Medicine</div>
+              <div className="lux-display text-5xl text-[#6762AF]">
+                <em className="em">8+</em>
+              </div>
+              <div className="text-xs text-[#4A4F66] mt-1 leading-snug">
+                Years in<br />Regenerative Medicine
+              </div>
             </motion.div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, x: 50 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }} className="flex flex-col gap-8">
-            <div>
-              <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-primary bg-primary/5 rounded-full px-4 py-1.5">Our Story</span>
-              <h2 className="mt-5 text-4xl sm:text-5xl font-bold leading-tight text-gray-900">
-                Meet <span className="gradient-text">Seth Berge</span>
-              </h2>
-              <p className="mt-2 text-lg text-gold font-medium">Founder of Regenerative Revival</p>
-            </div>
-            <p className="text-lg leading-relaxed text-gray-600">
-              With over 8 years of experience in regenerative medicine, Seth Berge founded Regenerative Revival with a singular mission: to make cutting-edge stem cell therapy accessible to everyone who needs it.
+          {/* TEXT */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-7"
+          >
+            <span className="eyebrow text-[#71A7F5]">Our Story</span>
+            <h2 className="mt-4 lux-display text-4xl sm:text-5xl lg:text-[4rem] text-white leading-[1.05]">
+              Built by a team that's lived the <em className="em">promise</em> of regenerative medicine
+            </h2>
+            <p className="mt-7 text-lg text-white/65 leading-relaxed max-w-xl">
+              Founded by Seth Berge with a singular mission: to make cutting-edge regenerative therapy accessible to everyone who needs it. We educate, we prescribe, we coordinate — under one physician-led medical team.
             </p>
-            <p className="text-base leading-relaxed text-gray-500">
-              We educate clients on advanced wellness protocols that ease pain, restore vitality, and renew the body from within — then provide access to licensed practitioners who deliver them.
+            <p className="mt-4 text-base text-white/45 leading-relaxed max-w-xl">
+              No waiting rooms. No fragmented care. No subscription gimmicks.
+              Just clinician-led medicine, in your home or through telehealth, built around your labs and your life.
             </p>
 
-            {/* Glass value cards */}
-            <div className="grid grid-cols-2 gap-4 mt-4">
+            {/* Values grid — minimal numbered list */}
+            <div className="mt-10 grid sm:grid-cols-2 gap-x-8 gap-y-6">
               {values.map((v, i) => (
                 <motion.div
                   key={v.title}
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
-                  className="relative rounded-2xl p-5 bg-white/60 backdrop-blur-xl border border-white/80 shadow-[0_4px_24px_rgba(107,63,160,0.05)] hover:shadow-[0_8px_32px_rgba(107,63,160,0.1)] hover:-translate-y-0.5 transition-all duration-300 group"
+                  transition={{ duration: 0.6, delay: 0.4 + i * 0.1 }}
+                  className="border-t border-white/10 pt-5"
                 >
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/50 to-transparent pointer-events-none" />
-                  <v.icon className="relative h-6 w-6 text-primary mb-3 group-hover:scale-110 transition-transform" />
-                  <h3 className="relative text-sm font-semibold text-gray-900">{v.title}</h3>
-                  <p className="relative text-xs text-gray-500 mt-1 leading-relaxed">{v.description}</p>
+                  <div className="flex items-baseline gap-3 mb-2">
+                    <span className="lux-display text-sm text-[#71A7F5]">
+                      <em className="em">{v.number}</em>
+                    </span>
+                    <h3 className="text-base font-semibold text-white">{v.title}</h3>
+                  </div>
+                  <p className="text-sm text-white/55 leading-relaxed pl-9">{v.description}</p>
                 </motion.div>
               ))}
+            </div>
+
+            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+              <a
+                href="/about"
+                className="group inline-flex h-12 items-center gap-2 rounded-full bg-white px-7 text-sm font-semibold text-[#1A1F30] hover:bg-[#F1ECF8] hover:shadow-[0_12px_32px_-8px_rgba(255,255,255,0.3)] transition-all"
+              >
+                More About Us
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+              <a
+                href="/about/founder"
+                className="inline-flex h-12 items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white transition-all"
+              >
+                Meet Seth →
+              </a>
             </div>
           </motion.div>
         </div>

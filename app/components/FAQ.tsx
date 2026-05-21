@@ -2,7 +2,7 @@
 
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
-import { ChevronDown, MessageCircle } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   { q: "What is stem cell therapy?", a: "Stem cell therapy uses mesenchymal stem cells (MSCs) — sourced externally from ethically donated umbilical cord tissue, not from your own body — to support your body's natural repair processes. These cells are introduced via injection or IV and work by signaling the body to reduce inflammation and promote tissue regeneration." },
@@ -21,28 +21,38 @@ function FAQItem({ faq, index }: { faq: (typeof faqs)[0]; index: number }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: index * 0.05 }}
-      className={`group relative rounded-2xl overflow-hidden bg-white/60 backdrop-blur-2xl border transition-all duration-300 ${
-        open
-          ? "border-primary/20 shadow-[0_8px_32px_rgba(107,63,160,0.08)]"
-          : "border-white/80 shadow-[0_4px_16px_rgba(107,63,160,0.04)] hover:shadow-[0_8px_24px_rgba(107,63,160,0.08)]"
+      className={`group border-b border-[#F1ECF8] transition-colors duration-300 ${
+        open ? "border-[#6762AF]/30" : "hover:border-[#6762AF]/20"
       }`}
     >
-      {/* Glass shine */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/50 to-transparent pointer-events-none" />
-
-      <button onClick={() => setOpen(!open)} className="relative flex w-full items-center justify-between p-6 text-left" aria-expanded={open}>
-        <span className="text-base font-semibold text-gray-900 pr-4">{faq.q}</span>
-        <div className={`flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 shrink-0 transition-all duration-300 ${open ? "bg-primary/15 rotate-180" : ""}`}>
-          <ChevronDown className="h-4 w-4 text-primary" />
-        </div>
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex w-full items-center justify-between py-7 text-left"
+        aria-expanded={open}
+      >
+        <span className="lux-display text-lg lg:text-2xl text-[#1A1F30] pr-6 group-hover:text-[#583563] transition-colors duration-300">
+          {faq.q}
+        </span>
+        <span
+          className={`flex h-10 w-10 items-center justify-center rounded-full border shrink-0 transition-all duration-300 ${
+            open
+              ? "bg-[#1A1F30] border-[#1A1F30] text-white rotate-180"
+              : "border-[#6762AF]/30 text-[#6762AF] group-hover:border-[#6762AF] group-hover:bg-[#F1ECF8]"
+          }`}
+        >
+          {open ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+        </span>
       </button>
       <AnimatePresence>
         {open && (
-          <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }} className="overflow-hidden">
-            <div className="relative px-6 pb-6">
-              <div className="h-px bg-gradient-to-r from-primary/10 via-primary/5 to-transparent mb-4" />
-              <p className="text-sm text-gray-600 leading-relaxed">{faq.a}</p>
-            </div>
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden"
+          >
+            <p className="pb-7 pr-12 text-base text-[#4A4F66] leading-relaxed">{faq.a}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -55,31 +65,36 @@ export default function FAQ() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="faq" className="relative py-28 bg-cream overflow-hidden">
-      <div className="section-divider absolute top-0 left-0 right-0" />
+    <section id="faq" className="relative py-28 lg:py-32 bg-white overflow-hidden">
+      <div className="absolute top-1/4 left-0 w-[500px] h-[500px] rounded-full bg-[#F1ECF8]/60 blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-[#EAEFF7]/80 blur-[100px] pointer-events-none" />
 
-      {/* Ambient orbs */}
-      <div className="absolute top-20 right-0 w-[400px] h-[400px] bg-primary/[0.04] rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-20 left-0 w-[300px] h-[300px] bg-sage/40 rounded-full blur-3xl pointer-events-none" />
+      <div ref={ref} className="relative mx-auto max-w-5xl px-6 lg:px-8">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+          {/* Left — sticky header */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="lg:col-span-4 lg:sticky lg:top-32"
+          >
+            <span className="eyebrow">FAQ</span>
+            <h2 className="mt-4 lux-display text-4xl lg:text-5xl text-[#1A1F30] leading-[1.05]">
+              Frequently asked <em className="em">questions</em>
+            </h2>
+            <p className="mt-6 text-sm text-[#4A4F66] leading-relaxed">
+              Everything you need to know about our treatments and partnerships. Still have questions?{" "}
+              <a href="/contact" className="text-[#6762AF] underline-offset-2 hover:underline font-medium">
+                Get in touch.
+              </a>
+            </p>
+          </motion.div>
 
-      <div ref={ref} className="relative mx-auto max-w-3xl px-6 lg:px-8">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-primary bg-primary/5 rounded-full px-4 py-1.5">
-            <MessageCircle className="h-4 w-4" />
-            FAQ
-          </span>
-          <h2 className="mt-5 text-4xl sm:text-5xl font-bold leading-tight text-gray-900">
-            Frequently Asked <span className="gradient-text">Questions</span>
-          </h2>
-          <p className="mt-6 text-lg text-gray-600">Everything you need to know about our treatments and partnerships.</p>
-        </motion.div>
-        {inView && (
-          <div className="flex flex-col gap-3">
-            {faqs.map((faq, i) => (
-              <FAQItem key={i} faq={faq} index={i} />
-            ))}
+          {/* Right — accordion */}
+          <div className="lg:col-span-8">
+            {inView && faqs.map((faq, i) => <FAQItem key={i} faq={faq} index={i} />)}
           </div>
-        )}
+        </div>
       </div>
     </section>
   );

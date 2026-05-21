@@ -17,11 +17,11 @@ export default function ComplianceDisclaimer({
 }) {
   const body = productDisclaimers[variant];
   return (
-    <section className="bg-gray-50 border-t border-gray-200">
+    <section className="bg-[#F1ECF8]/40 border-t border-[#F1ECF8]">
       <div className="mx-auto max-w-4xl px-6 lg:px-8 py-10 space-y-3">
-        <p className="text-xs text-gray-500 leading-relaxed">{body}</p>
+        <p className="text-xs text-[#4A4F66] leading-relaxed">{body}</p>
         {extra?.map((p, i) => (
-          <p key={i} className="text-xs text-gray-500 leading-relaxed">
+          <p key={i} className="text-xs text-[#4A4F66] leading-relaxed">
             {p}
           </p>
         ))}

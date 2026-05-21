@@ -1,13 +1,15 @@
 import Hero from "./components/Hero";
 import ValueProps from "./components/ValueProps";
-import Testimonials from "./components/Testimonials";
-import About from "./components/About";
 import Treatments from "./components/Treatments";
+import WhoWeHelp from "./components/WhoWeHelp";
+import AroraPartner from "./components/AroraPartner";
+import PatientStories from "./components/PatientStories";
+import About from "./components/About";
 import WhartonsJellyPower from "./components/WhartonsJellyPower";
 import WhyChooseUs from "./components/WhyChooseUs";
 import FAQ from "./components/FAQ";
 import Blog from "./components/Blog";
-import Contact from "./components/Contact";
+import QuizCTA from "./components/QuizCTA";
 import { JsonLd, webPageSchema, faqSchema } from "./lib/schema";
 
 const homeFaqs = [
@@ -27,14 +29,16 @@ export default function Home() {
       <JsonLd data={faqSchema(homeFaqs)} />
       <Hero />
       <ValueProps />
-      <About />
       <Treatments />
+      <WhoWeHelp />
+      <AroraPartner />
+      <PatientStories />
+      <About />
       <WhartonsJellyPower />
       <WhyChooseUs />
       <FAQ />
       <Blog />
-      <Testimonials />
-      <Contact />
+      <QuizCTA />
     </>
   );
 }

@@ -2,7 +2,8 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
+import Image from "next/image";
 
 const benefits = [
   {
@@ -10,18 +11,21 @@ const benefits = [
     title: "Enhanced Regeneration",
     description:
       "MSCs from Wharton's Jelly accelerate the body's natural repair processes, significantly reducing recovery time for injuries and chronic conditions.",
+    accent: "01",
   },
   {
     image: "/2.webp",
     title: "Reduced Inflammation",
     description:
-      "These stem cells possess powerful anti-inflammatory properties, effectively helping to manage pain and swelling associated with tissue damage.",
+      "Powerful anti-inflammatory properties effectively help manage pain and swelling associated with tissue damage.",
+    accent: "02",
   },
   {
     image: "/3.webp",
     title: "Minimal Rejection Risk",
     description:
-      "The immune-privileged nature of Wharton's Jelly-derived MSCs lowers the likelihood of rejection, making the treatment viable for most patients.",
+      "The immune-privileged nature of Wharton's Jelly-derived MSCs lowers the likelihood of rejection, making treatment viable for most patients.",
+    accent: "03",
   },
 ];
 
@@ -30,9 +34,13 @@ export default function WhartonsJellyPower() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className="relative py-28 bg-white overflow-hidden">
-      <div className="section-divider absolute top-0 left-0 right-0" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-primary/[0.03] rounded-full blur-3xl pointer-events-none" />
+    <section ref={ref} className="relative py-28 lg:py-32 bg-[#F1ECF8] overflow-hidden">
+      {/* Top edge accent */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#6762AF]/40 to-transparent" />
+
+      {/* Aurora */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full bg-[#6762AF]/10 blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-20 right-0 w-[400px] h-[400px] rounded-full bg-[#71A7F5]/15 blur-3xl pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
@@ -40,69 +48,51 @@ export default function WhartonsJellyPower() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center max-w-3xl mx-auto mb-8"
+          className="text-center max-w-4xl mx-auto mb-20"
         >
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-primary bg-primary/5 rounded-full px-4 py-1.5 font-sans">
-            Wharton&apos;s Jelly
-          </span>
-          <h2 className="mt-5 text-4xl sm:text-5xl font-bold leading-tight text-gray-900">
-            Harness the Power of{" "}
-            <span className="gradient-text">Wharton&apos;s Jelly</span> that
-            Revolutionizes Stem Cell Therapy
+          <span className="eyebrow">Wharton&apos;s Jelly</span>
+          <h2 className="mt-4 lux-display text-4xl sm:text-5xl lg:text-[3.75rem] text-[#1A1F30] leading-[1.05]">
+            Harness the power of <em className="em">Wharton&apos;s Jelly</em> — the gold standard in stem cell therapy
           </h2>
-          <p className="mt-6 text-lg text-gray-600 leading-relaxed font-sans">
-            At Regenerative Revival, we specialize in providing advanced stem
-            cell therapy using the regenerative properties of Wharton&apos;s
-            Jelly. This remarkable substance, found in the umbilical cord, is
-            rich in mesenchymal stem cells (MSCs) and growth factors essential
-            for tissue repair and regeneration.
+          <p className="mt-7 text-base lg:text-lg text-[#4A4F66] leading-relaxed">
+            Sourced from ethically donated umbilical cord tissue, Wharton&apos;s Jelly is one of the richest known sources of high-quality mesenchymal stem cells (MSCs) and growth factors essential for tissue repair and regeneration.
           </p>
         </motion.div>
 
-        {/* Sub-heading */}
-        <motion.h3
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.15 }}
-          className="text-center text-2xl sm:text-3xl font-bold text-gray-900 mb-14"
-        >
-          Benefits of Wharton&apos;s Jelly in{" "}
-          <span className="gradient-text">Stem Cell Therapy:</span>
-        </motion.h3>
-
-        {/* 3 Benefit Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        {/* Benefit cards */}
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-16">
           {benefits.map((b, i) => (
             <motion.div
               key={b.title}
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
-              transition={{
-                duration: 0.6,
-                delay: 0.2 + i * 0.12,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="group"
+              initial={{ opacity: 0, y: 40 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.2 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              className="group relative rounded-[1.75rem] bg-white border border-white p-6 hover:border-[#6762AF]/15 transition-all duration-500 hover:-translate-y-1.5 luxe-shadow"
             >
-              <div className="relative overflow-hidden rounded-2xl mb-6">
-                <img
+              {/* Number accent */}
+              <div className="absolute top-5 right-5 lux-display text-2xl text-[#6762AF]/30 group-hover:text-[#6762AF] transition-colors">
+                <em className="em">{b.accent}</em>
+              </div>
+
+              {/* Image */}
+              <div className="relative overflow-hidden rounded-2xl mb-6 aspect-[4/3]">
+                <Image
                   src={b.image}
                   alt={b.title}
-                  className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-105"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#583563]/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-              <h4 className="text-xl font-semibold text-gray-900 mb-3">
-                {b.title}
-              </h4>
-              <p className="text-sm text-gray-500 leading-relaxed font-sans">
-                {b.description}
-              </p>
+
+              <h3 className="lux-display text-xl text-[#1A1F30] mb-3 leading-snug">{b.title}</h3>
+              <p className="text-sm text-[#4A4F66] leading-relaxed">{b.description}</p>
             </motion.div>
           ))}
         </div>
 
-        {/* CTA Bar */}
+        {/* CTA Bar — luxe gradient with shimmer */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -110,13 +100,15 @@ export default function WhartonsJellyPower() {
         >
           <a
             href="/contact"
-            className="group relative flex items-center justify-center gap-3 w-full py-6 bg-gradient-to-r from-primary to-primary-dark rounded-2xl text-white text-xl font-bold overflow-hidden transition-all hover:shadow-2xl hover:shadow-primary/25 hover:-translate-y-0.5"
+            className="group relative flex items-center justify-center gap-3 w-full py-7 rounded-2xl bg-gradient-to-r from-[#1A1F30] via-[#583563] to-[#6762AF] text-white text-lg font-semibold overflow-hidden transition-all duration-500 hover:shadow-[0_24px_64px_-12px_rgba(103,98,175,0.5)] hover:-translate-y-0.5 animate-gradient"
           >
             <span className="relative z-10 flex items-center gap-3">
-              Book Your FREE Consultation Today!
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <Sparkles className="h-5 w-5 text-[#71A7F5]" />
+              Book Your FREE Consultation Today
+              <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-primary-dark to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            {/* Shimmer */}
+            <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/20 to-transparent" />
           </a>
         </motion.div>
       </div>

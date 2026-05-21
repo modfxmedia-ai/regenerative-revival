@@ -23,9 +23,9 @@ export default function ContactForm() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className="relative py-24 bg-cream overflow-hidden">
-      <div className="absolute top-20 left-0 w-[500px] h-[500px] bg-primary/[0.04] rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-sage/40 rounded-full blur-3xl pointer-events-none" />
+    <section ref={ref} className="relative py-24 lg:py-28 bg-white overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#F1ECF8]/50 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#EAEFF7]/60 blur-[100px] pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section header */}
@@ -35,17 +35,13 @@ export default function ContactForm() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-primary bg-primary/5 rounded-full px-4 py-1.5 font-sans">
-            Get in Touch
-          </span>
-          <h2 className="mt-5 text-4xl sm:text-5xl font-bold leading-tight text-gray-900">
-            Get in Touch with{" "}
-            <span className="gradient-text">Regenerative Revival</span>
+          <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Get in Touch</span>
+          <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2.25rem] sm:text-5xl lg:text-[3.25rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+            Get in touch with{" "}
+            <em className="italic text-[#6762AF]">Regenerative Revival</em>
           </h2>
-          <p className="mt-6 text-lg text-gray-600 font-sans">
-            We&apos;re here to help you start your journey towards a pain-free
-            life. Contact us today and take the first step towards improved
-            health and wellness.
+          <p className="mt-5 text-base text-[#4A4F66]">
+            We&apos;re here to help you start your journey towards a pain-free life. Contact us today and take the first step towards improved health and wellness.
           </p>
         </motion.div>
 
@@ -164,39 +160,37 @@ function FormCard() {
     }
   }
 
-  const inputClass = "w-full rounded-xl bg-white/80 backdrop-blur-sm border px-4 py-3.5 text-sm text-gray-900 placeholder-gray-400 focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all font-sans";
+  const inputClass = "w-full rounded-xl bg-[#F4EFFA]/60 border px-4 py-3.5 text-sm text-[#1A1F30] placeholder-[#7A7F95] focus:border-[#6762AF]/40 focus:outline-none focus:ring-2 focus:ring-[#6762AF]/10 transition-all";
   const errorInputClass = "border-red-300 focus:border-red-400 focus:ring-red-100";
-  const normalInputClass = "border-gray-200/60";
+  const normalInputClass = "border-[#F1ECF8]";
 
   if (submitted) {
     return (
-      <div className="relative bg-white/70 backdrop-blur-2xl rounded-3xl p-8 sm:p-10 border border-white/80 shadow-[0_8px_40px_rgba(107,63,160,0.06)] text-center py-20">
-        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-500/15 border border-green-400/20 mx-auto mb-5">
-          <Send className="h-7 w-7 text-green-600" />
+      <div className="relative bg-white rounded-[20px] p-8 sm:p-10 border border-[#F1ECF8] shadow-[0_8px_40px_-12px_rgba(88,53,99,0.15)] text-center py-20">
+        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#F1ECF8] border border-[#6762AF]/20 mx-auto mb-5">
+          <Send className="h-7 w-7 text-[#6762AF]" />
         </div>
-        <h3 className="text-2xl font-semibold text-gray-900 mb-2">Thank You!</h3>
-        <p className="text-gray-600 font-sans">We&apos;ve received your message and will be in touch within 24 hours.</p>
+        <h3 className="font-[family-name:var(--font-fraunces)] text-2xl text-[#1A1F30] mb-2">Thank You!</h3>
+        <p className="text-[#4A4F66]">We&apos;ve received your message and will be in touch within 24 hours.</p>
       </div>
     );
   }
 
   return (
-    <div className="relative bg-white/70 backdrop-blur-2xl rounded-3xl p-8 sm:p-10 border border-white/80 shadow-[0_8px_40px_rgba(107,63,160,0.06)]">
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/60 via-transparent to-transparent pointer-events-none" />
-
+    <div className="relative bg-white rounded-[20px] p-8 sm:p-10 border border-[#F1ECF8] shadow-[0_8px_40px_-12px_rgba(88,53,99,0.12)]">
       <div className="relative mb-8">
         <div className="flex items-center gap-4 mb-2">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 border border-primary/10">
-            <Send className="h-6 w-6 text-primary" />
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F1ECF8] border border-[#6762AF]/10">
+            <Send className="h-5 w-5 text-[#6762AF]" />
           </div>
           <div>
-            <h3 className="text-xl font-semibold text-gray-900">Send Us a Message</h3>
-            <p className="text-sm text-gray-500 font-sans">Fill out the form and we&apos;ll get back to you shortly</p>
+            <h3 className="text-[17px] font-semibold text-[#1A1F30]">Send Us a Message</h3>
+            <p className="text-[13px] text-[#4A4F66]">Fill out the form and we&apos;ll get back to you shortly</p>
           </div>
         </div>
       </div>
 
-      {errors.form && <p className="relative text-sm text-red-500 mb-4 font-sans">{errors.form}</p>}
+      {errors.form && <p className="text-sm text-red-500 mb-4">{errors.form}</p>}
 
       <form className="relative flex flex-col gap-5" onSubmit={handleSubmit} noValidate>
         <div className="grid sm:grid-cols-2 gap-5">
@@ -252,14 +246,14 @@ function FormCard() {
           {errors.message && <p className="mt-1 text-xs text-red-500 font-sans">{errors.message}</p>}
         </div>
 
-        <button type="submit" disabled={submitting} className="group flex h-14 items-center justify-center gap-2.5 rounded-2xl bg-primary text-base font-semibold text-white transition-all duration-300 hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-0.5 font-sans disabled:opacity-60 disabled:cursor-not-allowed">
-          <Send className="h-5 w-5 group-hover:translate-x-0.5 transition-transform" />
+        <button type="submit" disabled={submitting} className="group flex h-13 py-3.5 items-center justify-center gap-2 rounded-full bg-[#021E3C] text-sm font-semibold text-white transition-all duration-300 hover:bg-[#345691] hover:shadow-[0_10px_30px_-8px_rgba(2,30,60,0.6)] hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed">
+          <Send className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
           {submitting ? "Sending..." : "Send Message"}
         </button>
 
-        <p className="text-xs text-gray-400 text-center leading-relaxed font-sans">
-          By providing a telephone number and submitting the form you are consenting to be contacted by SMS text message from Regenerative Revival and/or Seth Berge Inc. Message frequency may vary. Message &amp; data rates may apply. Reply STOP to opt out of further messaging. Reply HELP for more information. See our{" "}
-          <a href="#" className="text-primary hover:underline">Privacy Policy</a>.
+        <p className="text-[11px] text-[#7A7F95] text-center leading-relaxed">
+          By providing a telephone number and submitting the form you are consenting to be contacted by SMS text message from Regenerative Revival and/or Seth Berge Inc. Message frequency may vary. Message &amp; data rates may apply. Reply STOP to opt out. See our{" "}
+          <a href="/privacy-policy" className="text-[#6762AF] hover:underline">Privacy Policy</a>.
         </p>
       </form>
     </div>
@@ -269,71 +263,34 @@ function FormCard() {
 
 function ContactInfo() {
   const items = [
-    {
-      icon: Phone,
-      label: "Phone",
-      value: "(555) 123-4567",
-      href: "tel:+15551234567",
-    },
-    {
-      icon: Mail,
-      label: "Email",
-      value: "info@regenerativerevival.com",
-      href: "mailto:info@regenerativerevival.com",
-    },
-    {
-      icon: MapPin,
-      label: "Service Area",
-      value: "Nationwide — All 50 States",
-    },
-    {
-      icon: Clock,
-      label: "Hours",
-      value: "Mon–Fri: 9AM–6PM EST",
-    },
+    { icon: Phone, label: "Phone", value: "(555) 123-4567", href: "tel:+15551234567" },
+    { icon: Mail, label: "Email", value: "info@regenerativerevival.com", href: "mailto:info@regenerativerevival.com" },
+    { icon: MapPin, label: "Service Area", value: "Nationwide — All 50 States" },
+    { icon: Clock, label: "Hours", value: "Mon–Fri: 9AM–6PM EST" },
   ];
 
   return (
-    <div className="relative bg-white/70 backdrop-blur-2xl rounded-3xl p-8 border border-white/80 shadow-[0_4px_24px_rgba(107,63,160,0.04)]">
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/50 to-transparent pointer-events-none" />
-
-      {/* Mini image banner */}
-      <div className="relative rounded-xl overflow-hidden mb-6 h-32">
-        <img
-          src="/About Page & contact page-_Our Guarantee.jpeg"
-          alt="Regenerative Revival team"
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-secondary/70 to-secondary/20" />
+    <div className="relative bg-white rounded-[20px] p-7 border border-[#F1ECF8] shadow-[0_4px_24px_-8px_rgba(88,53,99,0.1)]">
+      <div className="relative rounded-xl overflow-hidden mb-6 h-28">
+        <img src="/About Page & contact page-_Our Guarantee.jpeg" alt="Regenerative Revival team" className="h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1A1F30]/70 to-[#1A1F30]/20" />
         <div className="absolute bottom-3 left-4 z-10">
-          <p className="text-white font-semibold text-sm">Contact Information</p>
-          <p className="text-white/60 text-xs font-sans">
-            We&apos;re here to help
-          </p>
+          <p className="text-white font-semibold text-[13px]">Contact Information</p>
+          <p className="text-white/60 text-[11px]">We&apos;re here to help</p>
         </div>
       </div>
-
-      <div className="relative flex flex-col gap-5">
+      <div className="flex flex-col gap-5">
         {items.map((item) => (
           <div key={item.label} className="flex items-start gap-4">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 border border-primary/10 shrink-0">
-              <item.icon className="h-5 w-5 text-primary" />
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#F1ECF8] border border-[#6762AF]/10 shrink-0">
+              <item.icon className="h-4 w-4 text-[#6762AF]" />
             </div>
             <div>
-              <p className="text-xs text-gray-400 uppercase tracking-wider font-sans">
-                {item.label}
-              </p>
+              <p className="text-[10px] text-[#7A7F95] uppercase tracking-wider mb-0.5">{item.label}</p>
               {item.href ? (
-                <a
-                  href={item.href}
-                  className="text-gray-900 font-medium hover:text-primary transition-colors text-sm font-sans"
-                >
-                  {item.value}
-                </a>
+                <a href={item.href} className="text-[#1A1F30] font-medium hover:text-[#6762AF] transition-colors text-[13px]">{item.value}</a>
               ) : (
-                <p className="text-gray-900 font-medium text-sm font-sans">
-                  {item.value}
-                </p>
+                <p className="text-[#1A1F30] font-medium text-[13px]">{item.value}</p>
               )}
             </div>
           </div>
@@ -351,29 +308,25 @@ function WhyReachOut() {
     "Discuss partnership opportunities",
     "Ask about concierge services",
   ];
-
   return (
-    <div className="relative bg-gradient-to-br from-primary/[0.06] to-primary/[0.02] backdrop-blur-2xl rounded-3xl p-8 border border-primary/10 shadow-[0_4px_24px_rgba(107,63,160,0.04)]">
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/50 to-transparent pointer-events-none" />
-      <h3 className="relative text-base font-semibold text-gray-900 mb-4">
-        Reasons to Reach Out
-      </h3>
-      <div className="relative flex flex-col gap-3">
+    <div className="relative bg-[#F4EFFA] rounded-[20px] p-7 border border-[#6762AF]/10">
+      <h3 className="text-[14px] font-semibold text-[#1A1F30] mb-4">Reasons to Reach Out</h3>
+      <div className="flex flex-col gap-3">
         {reasons.map((reason) => (
           <div key={reason} className="flex items-center gap-3">
-            <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
-            <span className="text-sm text-gray-600 font-sans">{reason}</span>
+            <span className="h-1.5 w-1.5 rounded-full bg-[#6762AF] shrink-0" />
+            <span className="text-[13px] text-[#4A4F66]">{reason}</span>
           </div>
         ))}
       </div>
-      <div className="relative mt-6">
+      <div className="mt-6">
         <a
           href="tel:+15551234567"
-          className="group flex h-12 items-center justify-center gap-2 rounded-xl bg-primary text-sm font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/20 font-sans"
+          className="group flex h-11 items-center justify-center gap-2 rounded-full bg-[#021E3C] text-[13px] font-semibold text-white transition-all hover:bg-[#345691] hover:shadow-[0_8px_24px_-8px_rgba(2,30,60,0.5)]"
         >
-          <Phone className="h-4 w-4" />
+          <Phone className="h-3.5 w-3.5" />
           Call Us Directly
-          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+          <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
         </a>
       </div>
     </div>
@@ -382,31 +335,21 @@ function WhyReachOut() {
 
 function QuickResponse() {
   return (
-    <div className="relative bg-white/70 backdrop-blur-2xl rounded-3xl p-8 text-center border border-white/80 shadow-[0_4px_24px_rgba(107,63,160,0.04)]">
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/50 to-transparent pointer-events-none" />
-      <div className="relative h-14 w-14 mx-auto rounded-2xl bg-gradient-to-br from-primary/15 to-primary/5 border border-primary/10 flex items-center justify-center mb-4">
-        <Zap className="h-7 w-7 text-primary" />
+    <div className="relative bg-gradient-to-br from-[#6762AF] to-[#583563] rounded-[20px] p-7 overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15),transparent_60%)] pointer-events-none" />
+      <div className="relative h-12 w-12 rounded-2xl bg-white/15 flex items-center justify-center mb-4 border border-white/20">
+        <Zap className="h-5 w-5 text-white" />
       </div>
-      <h3 className="relative text-lg font-semibold text-gray-900 mb-2">
-        Quick Response
-      </h3>
-      <p className="relative text-sm text-gray-600 font-sans">
-        We typically respond within 24 hours. For urgent inquiries, call us
-        directly.
+      <h3 className="relative text-[16px] font-semibold text-white mb-2">Quick Response</h3>
+      <p className="relative text-[13px] text-white/80 leading-relaxed">
+        We typically respond within 24 hours. For urgent inquiries, call us directly.
       </p>
-      <div className="relative mt-4 flex items-center justify-center gap-1">
+      <div className="relative mt-4 flex items-center gap-1">
         {[...Array(5)].map((_, i) => (
-          <Star
-            key={i}
-            className="h-4 w-4 fill-amber-400 text-amber-400"
-          />
+          <Star key={i} className="h-3.5 w-3.5 fill-[#71A7F5] text-[#71A7F5]" />
         ))}
-        <span className="ml-2 text-sm font-bold text-gray-900 font-sans">
-          4.9
-        </span>
-        <span className="text-xs text-gray-400 font-sans ml-1">
-          (500+ reviews)
-        </span>
+        <span className="ml-2 text-[13px] font-bold text-white">4.9</span>
+        <span className="text-[11px] text-white/60 ml-1">(500+ reviews)</span>
       </div>
     </div>
   );
@@ -420,21 +363,13 @@ function TrustBadges() {
     { icon: Award, label: "Board Certified" },
   ];
   return (
-    <div className="relative bg-white/70 backdrop-blur-2xl rounded-3xl p-8 border border-white/80 shadow-[0_4px_24px_rgba(107,63,160,0.04)]">
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/50 to-transparent pointer-events-none" />
-      <h3 className="relative text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4 font-sans">
-        Trusted &amp; Certified
-      </h3>
-      <div className="relative grid grid-cols-2 gap-3">
+    <div className="bg-white rounded-[20px] p-7 border border-[#F1ECF8] shadow-[0_4px_24px_-8px_rgba(88,53,99,0.08)]">
+      <h3 className="text-[11px] font-semibold text-[#7A7F95] uppercase tracking-[0.18em] mb-4">Trusted &amp; Certified</h3>
+      <div className="grid grid-cols-2 gap-2.5">
         {badges.map((b) => (
-          <div
-            key={b.label}
-            className="flex items-center gap-2 rounded-xl bg-white/70 backdrop-blur-sm border border-white/80 py-3 px-3 shadow-[0_2px_8px_rgba(107,63,160,0.03)]"
-          >
-            <b.icon className="h-4 w-4 text-primary/60 shrink-0" />
-            <span className="text-xs font-medium text-gray-600 font-sans">
-              {b.label}
-            </span>
+          <div key={b.label} className="flex items-center gap-2 rounded-xl bg-[#F4EFFA] border border-[#6762AF]/10 py-3 px-3">
+            <b.icon className="h-3.5 w-3.5 text-[#6762AF] shrink-0" />
+            <span className="text-[11px] font-medium text-[#4A4F66]">{b.label}</span>
           </div>
         ))}
       </div>

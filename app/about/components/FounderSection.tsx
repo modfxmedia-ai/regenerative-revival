@@ -2,7 +2,8 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ArrowRight, MapPin, Users2, Building2, Stethoscope } from "lucide-react";
+import { ArrowUpRight, MapPin, Users2, Building2, Stethoscope } from "lucide-react";
+import Image from "next/image";
 
 const stats = [
   { icon: Users2, value: "10,000+", label: "Patients Connected" },
@@ -16,130 +17,73 @@ export default function FounderSection() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className="relative py-28 bg-white overflow-hidden">
-      <div className="section-divider absolute top-0 left-0 right-0" />
-
-      {/* Subtle background image wash */}
-      <div className="absolute inset-0 pointer-events-none">
-        <img
-          src="/about/imgi_28_Untitled-design.png"
-          alt=""
-          className="h-full w-full object-cover opacity-[0.03]"
-        />
-      </div>
-
-      <div className="absolute top-20 left-0 w-[600px] h-[600px] bg-primary/[0.03] rounded-full blur-3xl pointer-events-none" />
+    <section ref={ref} className="relative py-24 lg:py-28 bg-[#1A1F30] overflow-hidden">
+      <div className="absolute top-1/4 left-0 w-[600px] h-[600px] rounded-full bg-[#6762AF]/15 blur-[140px] pointer-events-none animate-float-slow" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-[#345691]/20 blur-[140px] pointer-events-none" />
+      <div className="absolute inset-0 lux-grid opacity-25 pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left — Image composition */}
+        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+          {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
-            {/* Main photo */}
-            <div className="relative rounded-[2rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.15)]">
-              <div className="absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/20 z-10 pointer-events-none" />
-              <img
-                src="/photos/seth-berge-w-backdrop.jpg"
-                alt="Seth Berge — Founder of Regenerative Revival"
-                className="w-full h-auto rounded-[2rem] object-cover"
-              />
-              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/40 to-transparent" />
-              {/* Name overlay on image */}
-              <div className="absolute bottom-6 left-6 z-10">
-                <div className="text-white font-bold text-lg">Seth Berge</div>
-                <div className="text-white/60 text-sm font-sans">Founder &amp; CEO</div>
+            <div className="relative rounded-[2.5rem] overflow-hidden aspect-[4/5] shadow-[0_24px_64px_-12px_rgba(0,0,0,0.5)]">
+              <Image src="/photos/seth-berge-w-backdrop.jpg" alt="Seth Berge — Founder of Regenerative Revival" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#583563]/30 via-transparent to-[#71A7F5]/10" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-white/15 rounded-[2.5rem] pointer-events-none" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <p className="text-[11px] tracking-[0.3em] uppercase text-white/50 mb-1">Founder</p>
+                <p className="font-[family-name:var(--font-fraunces)] italic text-2xl text-white">Seth Berge</p>
               </div>
             </div>
 
-            {/* Floating stat card — bottom right */}
+            {/* Floating stat */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="absolute -bottom-6 -right-6 bg-white/90 backdrop-blur-2xl rounded-2xl p-6 shadow-[0_12px_40px_rgba(0,0,0,0.12)] border border-white/80"
+              className="absolute -bottom-6 -right-4 lg:-right-8 bg-white rounded-2xl p-6 shadow-[0_16px_40px_-8px_rgba(26,31,48,0.3)] border border-[#F1ECF8]"
             >
-              <div className="text-4xl font-bold gradient-text">8+</div>
-              <div className="text-xs text-gray-500 mt-1 font-sans">
-                Years in Regenerative
-                <br />
-                Medicine
-              </div>
+              <div className="font-[family-name:var(--font-fraunces)] italic text-5xl text-[#6762AF]">8+</div>
+              <div className="text-[11px] text-[#4A4F66] mt-1 leading-snug">Years in<br />Regenerative Medicine</div>
             </motion.div>
 
-            {/* Floating accent — top left */}
+            {/* Floating accent */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="absolute -top-4 -left-4 bg-primary/90 backdrop-blur-xl rounded-2xl p-4 shadow-[0_8px_32px_rgba(107,63,160,0.3)]"
+              transition={{ duration: 0.6, delay: 0.65 }}
+              className="absolute -top-4 -left-4 bg-gradient-to-br from-[#6762AF] to-[#583563] rounded-2xl p-4 shadow-[0_8px_32px_rgba(103,98,175,0.4)]"
             >
-              <div className="text-2xl font-bold text-white">1000s</div>
-              <div className="text-xs text-white/70 font-sans">Lives Changed</div>
+              <div className="font-[family-name:var(--font-fraunces)] italic text-2xl text-white">1000s</div>
+              <div className="text-[11px] text-white/70">Lives Changed</div>
             </motion.div>
-
-            {/* Small secondary image — accent */}
-            {/* <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.7 }}
-              className="absolute top-8 -right-10 hidden xl:block"
-            >
-              <div className="w-28 h-36 rounded-xl overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.12)] border-2 border-white rotate-3">
-                <img
-                  src="/about/imgi_72_HERO-PRESENTER.jpg"
-                  alt="Medical professional"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </motion.div> */}
           </motion.div>
 
-          {/* Right — Content */}
+          {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{
-              duration: 0.8,
-              delay: 0.2,
-              ease: [0.22, 1, 0.36, 1],
-            }}
+            transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-primary bg-primary/5 rounded-full px-4 py-1.5 font-sans">
-              Our Founder
-            </span>
-            <h2 className="mt-5 text-4xl sm:text-5xl font-bold leading-tight text-gray-900">
-              Meet <span className="gradient-text">Seth Berge</span>
+            <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#71A7F5]">Our Founder</span>
+            <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2.25rem] sm:text-5xl lg:text-[3.25rem] text-white leading-[1.05] tracking-[-0.02em]">
+              Meet <em className="italic text-[#71A7F5]">Seth Berge</em>
             </h2>
-            <p className="mt-2 text-lg text-gold font-semibold font-sans">
-              Founder of Regenerative Revival
+            <p className="mt-2 text-base text-[#71A7F5] font-medium">Founder of Regenerative Revival</p>
+
+            <p className="mt-6 text-base text-white/65 leading-relaxed">
+              Seth Berge is a visionary leader in the field of regenerative medicine, dedicated to helping individuals overcome chronic pain. Since 2018, Seth has been at the forefront of connecting thousands of patients with experienced providers offering the best regenerative medicine products on the market.
+            </p>
+            <p className="mt-4 text-[14px] text-white/45 leading-relaxed">
+              He has built strong relationships with top tissue manufacturers and has access to over 100 trained and licensed practitioners, including PAs, MDs, and DOs, across the 50 states.
             </p>
 
-            <p className="mt-6 text-lg text-gray-600 leading-relaxed font-sans">
-              Seth Berge is a visionary leader in the field of regenerative
-              medicine, dedicated to helping individuals overcome chronic pain.
-              Since 2018, Seth has been at the forefront of connecting thousands
-              of patients with experienced providers offering the best
-              regenerative medicine products on the market.
-            </p>
-            <p className="mt-4 text-base text-gray-500 leading-relaxed font-sans">
-              He has built strong relationships with top tissue manufacturers and
-              has access to over 100 trained and licensed practitioners,
-              including PAs, MDs, and DOs, across the 50 states.
-            </p>
-            <p className="mt-4 text-base text-gray-500 leading-relaxed font-sans">
-              Seth&apos;s innovative approach includes offering concierge
-              regenerative therapy treatments that can be administered in the
-              comfort of your home or office, regardless of your location in the
-              US, and all at an affordable price point. His commitment to patient
-              care and exceptional service have transformed countless lives,
-              making Regenerative Revival a trusted name in stem cell therapy.
-            </p>
-
-            {/* Stats row */}
+            {/* Stats grid */}
             <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
               {stats.map((s, i) => (
                 <motion.div
@@ -147,13 +91,11 @@ export default function FounderSection() {
                   initial={{ opacity: 0, y: 15 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.5 + i * 0.08 }}
-                  className="text-center p-3 rounded-xl bg-cream/60 border border-gray-100"
+                  className="border-t border-white/10 pt-4"
                 >
-                  <s.icon className="h-5 w-5 text-primary mx-auto mb-1.5" />
-                  <div className="text-lg font-bold text-gray-900 font-sans">
-                    {s.value}
-                  </div>
-                  <div className="text-xs text-gray-500 font-sans">{s.label}</div>
+                  <s.icon className="h-4 w-4 text-[#71A7F5] mb-2" />
+                  <div className="text-[17px] font-semibold text-white">{s.value}</div>
+                  <div className="text-[11px] text-white/45 mt-0.5">{s.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -162,14 +104,14 @@ export default function FounderSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.9 }}
-              className="mt-8"
+              className="mt-10"
             >
               <a
-                href="/#contact"
-                className="group inline-flex h-14 items-center justify-center gap-2.5 rounded-2xl bg-primary px-9 text-base font-semibold text-white transition-all hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-0.5 font-sans"
+                href="/consult-router"
+                className="group inline-flex h-12 items-center gap-2 rounded-full bg-white px-7 text-sm font-semibold text-[#1A1F30] hover:bg-[#F1ECF8] hover:shadow-[0_12px_32px_-8px_rgba(255,255,255,0.3)] transition-all duration-300"
               >
-                Schedule A Free Consultation ASAP
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                Schedule A Free Consultation
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </motion.div>
           </motion.div>

@@ -4,24 +4,18 @@ import { motion } from "framer-motion";
 
 export default function NewsHero() {
   return (
-    <section className="relative bg-secondary overflow-hidden">
-      {/* Ambient glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(107,63,160,0.3),transparent)] pointer-events-none" />
+    <section className="relative bg-gradient-to-b from-[#1A1F30] to-[#21253C] overflow-hidden">
+      {/* Aurora */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#6762AF]/15 blur-[140px] pointer-events-none" />
+      <div className="absolute inset-0 lux-grid opacity-25 pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8 pt-8 pb-20">
         <div className="max-w-4xl">
-          {/* <motion.div
-            initial={{ opacity: 0, width: 0 }}
-            animate={{ opacity: 1, width: 48 }}
-            transition={{ duration: 0.6 }}
-            className="h-[3px] bg-gradient-to-r from-primary-light to-gold mb-8"
-          /> */}
-
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-xs font-bold uppercase tracking-[0.3em] text-primary-light/60 font-sans mb-5"
+            className="text-[11px] font-semibold tracking-[0.32em] uppercase text-[#71A7F5] mb-6"
           >
             The Journal
           </motion.p>
@@ -29,26 +23,27 @@ export default function NewsHero() {
           <motion.h1
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.15 }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[0.95] tracking-tight"
+            transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="font-[family-name:var(--font-fraunces)] font-normal text-[3.5rem] sm:text-6xl md:text-7xl lg:text-[6rem] text-white leading-[0.95] tracking-[-0.02em]"
           >
-            News &<br />
-            <span className="bg-gradient-to-r from-primary-light via-[#c4a0f0] to-gold-light bg-clip-text text-transparent">
+            News &amp;<br />
+            <em className="italic bg-gradient-to-r from-[#8985C5] via-[#71A7F5] to-[#6762AF] bg-clip-text text-transparent">
               Insights
-            </span>
+            </em>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-8 max-w-lg text-base text-white/35 leading-relaxed font-sans"
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="mt-8 max-w-lg text-base text-white/45 leading-relaxed"
           >
-            Research updates, expert perspectives, and the latest in
-            regenerative medicine and stem cell therapy.
+            Research updates, expert perspectives, and the latest in regenerative medicine and stem cell therapy.
           </motion.p>
         </div>
       </div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#6762AF]/30 to-transparent" />
     </section>
   );
 }

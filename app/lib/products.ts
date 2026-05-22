@@ -81,7 +81,7 @@ export const products: Product[] = [
     shortDescription:
       "A physician-prescribed, compounded GLP-1 program designed for sustainable weight loss without daily injections.",
     longDescription:
-      "Semaglutide is a GLP-1 receptor agonist originally developed for type 2 diabetes and now widely used for weight management. It signals fullness, slows gastric emptying, and reduces food noise. Compounded sublingual semaglutide delivers the same active molecule under the tongue, absorbed through the oral mucosa — a practical alternative for patients who don't tolerate injections.",
+      "Semaglutide is a GLP-1 (glucagon-like peptide-1) receptor agonist. It works by mimicking a hormone your gut naturally releases after eating — signaling your brain that you're full, slowing gastric emptying, and reducing the constant background noise of hunger that makes caloric restriction so difficult. Clinical trials (STEP 1–4) demonstrated average weight loss of 14.9% body weight over 68 weeks at the 2.4mg dose. Compounded sublingual semaglutide delivers the same active molecule under the tongue, absorbed through the oral mucosa — a practical alternative for patients who don't tolerate injections or prefer a needle-free protocol. All programs are prescribed and monitored by a licensed clinician, with dose titration every 4 weeks based on your response.",
     benefits: [
       "Clinically studied GLP-1 receptor agonist designed for sustainable, long-term weight loss",
       "Regulates appetite and reduces cravings between meals",
@@ -122,7 +122,7 @@ export const products: Product[] = [
     shortDescription:
       "Dual GIP/GLP-1 receptor agonist for advanced metabolic and weight management, delivered sublingually.",
     longDescription:
-      "Tirzepatide is a dual GIP and GLP-1 receptor agonist, delivering broader metabolic effects than GLP-1 alone. Sublingual compounded tirzepatide is a needle-free alternative for patients who prefer not to inject, prescribed and monitored by a licensed clinician.",
+      "Tirzepatide is a dual GIP (glucose-dependent insulinotropic polypeptide) and GLP-1 receptor agonist — the first of its class. By activating two metabolic pathways simultaneously, it produces stronger appetite suppression and greater metabolic effects than GLP-1 alone. The SURMOUNT-1 trial demonstrated average weight loss of 22.5% body weight at the 15mg dose over 72 weeks — the largest weight loss ever recorded in a pharmaceutical trial at the time of publication. Sublingual compounded tirzepatide is a needle-free alternative for patients who prefer not to inject, prescribed and monitored by a licensed clinician with dose titration every 4 weeks.",
     benefits: [
       "Dual-action GIP + GLP-1 agonist for stronger metabolic effect",
       "Sublingual delivery — no needles required",
@@ -210,7 +210,7 @@ export const products: Product[] = [
     hub: "hormones-peptides",
     shortDescription: "Recovery and tissue repair peptide for soft-tissue injuries and gut health.",
     longDescription:
-      "BPC-157 is a synthetic peptide studied for its role in soft-tissue healing, tendon and ligament repair, and gut lining integrity. Prescribed and monitored by a licensed clinician.",
+      "BPC-157 (Body Protection Compound 157) is a synthetic pentadecapeptide derived from a protein found in gastric juice. It has been studied extensively in preclinical models for its role in soft-tissue healing, tendon and ligament repair, gut lining integrity, and anti-inflammatory signaling. Research published in the Journal of Physiology-Paris and multiple orthopedic journals demonstrates BPC-157's ability to accelerate tendon-to-bone healing, reduce inflammation in injured tissue, and support gastrointestinal mucosal repair. It is not FDA-approved for human use, but is prescribed off-label by licensed clinicians as part of supervised recovery protocols. All BPC-157 at Regenerative Revival is compounded by NABP-accredited pharmacies and prescribed following a clinical evaluation.",
     benefits: [
       "Supports recovery from soft-tissue injuries",
       "Studied for tendon and ligament repair",
@@ -232,7 +232,7 @@ export const products: Product[] = [
     shortDescription:
       "Cellular energy and longevity support through NAD+ supplementation, clinician-supervised.",
     longDescription:
-      "NAD+ (nicotinamide adenine dinucleotide) is a coenzyme central to mitochondrial energy production and DNA repair. Levels decline with age. NAD+ therapy is studied for its role in energy, cognitive clarity, and cellular longevity.",
+      "NAD+ (nicotinamide adenine dinucleotide) is a coenzyme present in every living cell. It is essential for mitochondrial energy production (the electron transport chain), DNA repair (via PARP enzymes), and longevity signaling (via sirtuins). Research from Harvard Medical School and the Sinclair Lab has demonstrated that NAD+ levels decline approximately 50% between age 40 and 60 — a decline associated with reduced mitochondrial function, cognitive decline, and accelerated aging. NAD+ therapy — delivered via injection or IV — restores circulating NAD+ levels, supporting cellular energy production, DNA repair capacity, and sirtuin-mediated longevity pathways. All protocols are prescribed and monitored by a licensed clinician.",
     benefits: [
       "Supports mitochondrial energy production",
       "Studied for cellular longevity pathways",

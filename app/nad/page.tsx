@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight, CheckCircle, Sparkles, Zap, Brain, Activity } from "lucide-react";
 import Breadcrumbs from "../components/Breadcrumbs";
 import ComplianceDisclaimer from "../components/ComplianceDisclaimer";
 import { generatePageMetadata } from "../lib/seo";
@@ -8,16 +8,59 @@ import {
   breadcrumbSchema,
   medicalWebPageSchema,
   productListSchema,
+  serviceSchema,
+  faqSchema,
 } from "../lib/schema";
 import { getProductsByHub } from "../lib/products";
 
+/**
+ * Primary keyword: "nad therapy" (4,400 vol, KD=24)
+ * Secondary: "nad infusion therapy" (18,100 vol, KD=14)
+ * Secondary: "nad iv therapy" (18,100 vol, KD=14)
+ * Secondary: "intravenous nad therapy" (18,100 vol, KD=3)
+ * Secondary: "nad iv therapy near me" (2,400 vol, KD=0)
+ */
+
 export const metadata = generatePageMetadata({
-  title: "NAD+ & Supplements",
+  title: "NAD+ Therapy — IV, Injection & Sublingual",
   description:
-    "Clinician-supervised NAD+ therapy and longevity supplements. Support cellular energy, mitochondrial function, and healthy aging.",
+    "Clinician-supervised NAD+ therapy for cellular energy, mitochondrial function, and longevity. IV, injection, and sublingual options. Telehealth in all 50 states.",
   path: "/nad",
-  cta: "Take The Quiz",
 });
+
+const faqs = [
+  {
+    question: "What is NAD+ infusion therapy?",
+    answer:
+      "NAD+ infusion therapy delivers nicotinamide adenine dinucleotide directly into the bloodstream via IV, bypassing the digestive system for maximum absorption. It supports mitochondrial energy production, DNA repair, and cellular longevity.",
+  },
+  {
+    question: "What is the difference between NAD IV therapy, NAD injection, and sublingual NAD+?",
+    answer:
+      "IV therapy delivers NAD+ directly into the bloodstream for the highest bioavailability. Injection (subcutaneous or intramuscular) is a convenient at-home option with good absorption. Sublingual NAD+ is absorbed under the tongue and is the most convenient delivery method. Our clinicians recommend the right form based on your goals and labs.",
+  },
+  {
+    question: "How long does NAD+ therapy take to work?",
+    answer:
+      "Most patients notice improved energy and mental clarity within 1–2 weeks of starting NAD+ therapy. Deeper cellular benefits — mitochondrial efficiency, DNA repair support — build over 4–8 weeks of consistent use.",
+  },
+  {
+    question: "Is NAD+ therapy safe?",
+    answer:
+      "NAD+ therapy is generally well-tolerated. IV administration can cause mild flushing or nausea if infused too quickly. Our clinicians supervise all protocols and adjust dosing based on your response.",
+  },
+  {
+    question: "Can I get NAD+ therapy at home?",
+    answer:
+      "Yes. Our concierge model delivers NAD+ therapy in your home via a licensed nurse practitioner. Telehealth options (injection and sublingual) are available in all 50 states without a clinic visit.",
+  },
+];
+
+const benefits = [
+  { icon: Zap, title: "Cellular Energy", desc: "Supports mitochondrial ATP production — the fuel your cells run on." },
+  { icon: Brain, title: "Cognitive Clarity", desc: "NAD+ is essential for neuronal function and stress resilience." },
+  { icon: Activity, title: "Recovery & Aging", desc: "Activates sirtuins and PARP enzymes involved in DNA repair and longevity." },
+];
 
 export default function NadHubPage() {
   const items = getProductsByHub("nad");
@@ -26,108 +69,174 @@ export default function NadHubPage() {
     <>
       <JsonLd
         data={medicalWebPageSchema({
-          title: "NAD+ & Supplements",
-          description:
-            "Clinician-supervised NAD+ therapy and longevity supplements.",
+          title: "NAD+ Therapy — IV, Injection & Sublingual",
+          description: "Clinician-supervised NAD+ therapy for cellular energy, mitochondrial function, and longevity.",
           url: "/nad",
+          medicalConditions: ["Fatigue", "Cognitive Decline", "Metabolic Dysfunction", "Aging"],
+        })}
+      />
+      <JsonLd
+        data={serviceSchema({
+          name: "NAD+ Therapy",
+          description: "Clinician-supervised NAD+ infusion therapy, injection, and sublingual programs for cellular energy and longevity.",
+          url: "/nad",
+          serviceType: "NAD+ Therapy",
+          areaServed: "United States",
         })}
       />
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", url: "https://www.regenerativerevival.com" },
-          {
-            name: "NAD+ & Supplements",
-            url: "https://www.regenerativerevival.com/nad",
-          },
+          { name: "NAD+ & Supplements", url: "https://www.regenerativerevival.com/nad" },
         ])}
       />
       <JsonLd
         data={productListSchema(
-          items.map((p) => ({
-            name: p.name,
-            slug: p.slug,
-            hub: p.hub,
-            description: p.shortDescription,
-          })),
+          items.map((p) => ({ name: p.name, slug: p.slug, hub: p.hub, description: p.shortDescription }))
         )}
       />
+      <JsonLd data={faqSchema(faqs)} />
 
       <Breadcrumbs items={[{ label: "NAD+ & Supplements", href: "/nad" }]} />
 
-      {/* Hero */}
-      <section className="bg-secondary text-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-20 lg:py-28">
-          <p className="text-sm uppercase tracking-widest text-primary-light mb-4">
-            Longevity · Cellular Energy
-          </p>
-          <h1 className="text-4xl lg:text-6xl font-semibold leading-tight max-w-3xl">
-            Fuel the Cells That Run You.
-          </h1>
-          <p className="mt-6 text-lg text-white/70 max-w-2xl">
-            NAD+ is a coenzyme central to mitochondrial energy production and
-            DNA repair. Levels decline with age. Our clinicians build
-            personalized NAD+ protocols designed to support energy, clarity,
-            and cellular longevity.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              href="/consult-router"
-              className="inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-white px-6 py-3 rounded-md font-medium transition-colors"
-            >
-              Take The 2-Minute Quiz <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="#catalog"
-              className="inline-flex items-center text-white/80 hover:text-white px-6 py-3 font-medium transition-colors"
-            >
-              See Programs
-            </Link>
+      {/* ── Hero ── */}
+      <section className="relative bg-gradient-to-b from-[#1A1F30] to-[#21253C] overflow-hidden">
+        <div className="absolute inset-0 lux-grid opacity-25 pointer-events-none" />
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] rounded-full bg-[#345691]/20 blur-[140px] pointer-events-none" />
+
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-32">
+          <div className="max-w-3xl">
+            <p className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#71A7F5] mb-5">
+              Longevity · Cellular Energy · All 50 States
+            </p>
+            <h1 className="font-[family-name:var(--font-fraunces)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4rem] text-white leading-[1.05] tracking-[-0.02em]">
+              NAD+ therapy — IV, injection &amp;{" "}
+              <em className="italic bg-gradient-to-r from-[#8985C5] via-[#71A7F5] to-[#6762AF] bg-clip-text text-transparent">
+                sublingual
+              </em>
+            </h1>
+            <p className="mt-7 text-base lg:text-lg text-white/65 leading-relaxed max-w-2xl">
+              NAD+ is a coenzyme central to mitochondrial energy production and DNA repair. Levels decline with age. Our clinicians build personalized NAD+ protocols — IV infusion, injection, or sublingual — based on your labs and goals.
+            </p>
+
+            <div className="mt-9 flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/consult-router"
+                className="group inline-flex h-13 py-3.5 items-center gap-2 rounded-full bg-white px-7 text-[14px] font-semibold text-[#1A1F30] hover:bg-[#F1ECF8] hover:shadow-[0_20px_50px_-12px_rgba(255,255,255,0.4)] transition-all"
+              >
+                <Sparkles className="h-4 w-4 text-[#6762AF]" />
+                Take The 2-Minute Quiz
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+              <Link
+                href="#programs"
+                className="inline-flex h-13 py-3.5 items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 text-[14px] font-medium text-white/80 hover:bg-white/10 transition-all"
+              >
+                See Programs
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Catalog */}
-      <section id="catalog" className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-20">
-          <div className="max-w-3xl mb-12">
-            <h2 className="text-3xl lg:text-4xl font-semibold text-secondary">
-              Available Programs
+      {/* ── Benefits ── */}
+      <section className="bg-white py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Why NAD+</span>
+            <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+              The coenzyme your cells can&apos;t function without
             </h2>
-            <p className="mt-4 text-gray-600">
-              Each program is reviewed by a licensed clinician and shipped from
-              a licensed compounding pharmacy.
+            <p className="mt-5 text-base text-[#4A4F66]">
+              NAD+ levels drop 50% between age 40 and 60. Restoring them supports the biological processes that keep you sharp, energized, and resilient.
             </p>
           </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {benefits.map((b) => (
+              <div key={b.title} className="rounded-[20px] bg-[#F4EFFA] p-7 border border-[#6762AF]/10">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white border border-[#6762AF]/10 mb-5">
+                  <b.icon className="h-5 w-5 text-[#6762AF]" />
+                </div>
+                <h3 className="font-[family-name:var(--font-fraunces)] font-normal text-[18px] text-[#1A1F30] mb-2">{b.title}</h3>
+                <p className="text-[13.5px] text-[#4A4F66] leading-relaxed">{b.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
+      {/* ── Delivery comparison ── */}
+      <section className="bg-[#F1ECF8] py-20 lg:py-24">
+        <div className="mx-auto max-w-5xl px-6 lg:px-8">
+          <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Delivery Options</span>
+          <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em] mb-10">
+            NAD IV therapy vs injection vs sublingual — which is right for you?
+          </h2>
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              { method: "IV Infusion", best: "Highest bioavailability", note: "In-home concierge delivery by licensed NP. Best for acute energy restoration.", tag: "Concierge" },
+              { method: "Injection", best: "Convenient at-home", note: "Subcutaneous or IM injection. Prescribed via telehealth, shipped to your door.", tag: "Telehealth" },
+              { method: "Sublingual", best: "Most convenient", note: "Absorbed under the tongue. No needles. Ideal for daily maintenance protocols.", tag: "Telehealth" },
+            ].map((d) => (
+              <div key={d.method} className="bg-white rounded-[20px] p-6 border border-white hover:border-[#6762AF]/20 hover:shadow-[0_16px_40px_-8px_rgba(88,53,99,0.15)] transition-all">
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-[#6762AF] bg-[#F1ECF8] px-2.5 py-1 rounded-full">{d.tag}</span>
+                <h3 className="font-[family-name:var(--font-fraunces)] font-normal text-[20px] text-[#1A1F30] mt-4 mb-1">{d.method}</h3>
+                <p className="text-[12px] font-semibold text-[#345691] mb-3">{d.best}</p>
+                <p className="text-[13px] text-[#4A4F66] leading-relaxed">{d.note}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Programs ── */}
+      <section id="programs" className="bg-white py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="max-w-3xl mb-12">
+            <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Programs</span>
+            <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+              Available NAD+ programs
+            </h2>
+          </div>
           {items.length === 0 ? (
-            <p className="text-gray-500">
-              Programs coming soon. Take the quiz to be notified.
-            </p>
+            <p className="text-[#4A4F66]">Programs coming soon. Take the quiz to get started.</p>
           ) : (
-            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {items.map((p) => (
                 <li key={p.slug}>
                   <Link
                     href={`/nad/${p.slug}`}
-                    className="group block h-full border border-gray-200 rounded-lg p-6 hover:border-primary hover:shadow-md transition-all"
+                    className="group block h-full bg-[#F4EFFA] rounded-[20px] p-6 border border-[#F1ECF8] hover:border-[#6762AF]/20 hover:-translate-y-1 hover:shadow-[0_24px_48px_-12px_rgba(88,53,99,0.18)] transition-all duration-500"
                   >
-                    <h3 className="text-xl font-semibold text-secondary group-hover:text-primary transition-colors">
-                      {p.name}
-                    </h3>
-                    <p className="mt-2 text-sm text-gray-600 line-clamp-3">
-                      {p.shortDescription}
-                    </p>
-                    <div className="mt-4 flex items-center justify-between">
-                      <span className="text-sm text-gray-500">
-                        {p.form.toUpperCase()}
-                      </span>
-                      <ArrowRight className="h-4 w-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <h3 className="font-[family-name:var(--font-fraunces)] font-normal text-[18px] text-[#1A1F30] group-hover:text-[#583563] transition-colors">{p.name}</h3>
+                    <p className="mt-2 text-[13px] text-[#4A4F66] line-clamp-3 leading-relaxed">{p.shortDescription}</p>
+                    <div className="mt-5 flex items-center justify-between">
+                      <span className="text-[12px] text-[#7A7F95] uppercase">{p.form}</span>
+                      <ArrowUpRight className="h-4 w-4 text-[#6762AF] opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
                   </Link>
                 </li>
               ))}
             </ul>
           )}
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section className="bg-[#F1ECF8] py-20 lg:py-24">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+          <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">FAQ</span>
+          <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em] mb-10">
+            NAD+ therapy questions answered
+          </h2>
+          <div className="flex flex-col gap-6">
+            {faqs.map((faq) => (
+              <div key={faq.question} className="border-b border-[#6762AF]/15 pb-6">
+                <h3 className="font-[family-name:var(--font-fraunces)] font-normal text-[18px] text-[#1A1F30] mb-3">{faq.question}</h3>
+                <p className="text-[14px] text-[#4A4F66] leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

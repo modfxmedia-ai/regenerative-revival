@@ -7,50 +7,46 @@ import { products } from "./lib/products";
 
 const SITE_URL = "https://www.regenerativerevival.com";
 
-/**
- * Sitemap rules followed (per SEO playbook):
- *   §2.2  <lastmod> must be accurate or Google ignores ALL lastmods sitewide.
- *         → We use hardcoded per-page dates for static pages (bump them when
- *           you actually edit the page), real publish dates for blog posts,
- *           and OMIT lastmod entirely for programmatic/hub URLs where there's
- *           no meaningful per-URL modification date. Google handles missing
- *           lastmod fine and won't punish us for honesty.
- *   §2.3  changeFrequency and priority are ignored by Google. Not emitted.
- *
- * TODO (§2.8 — at scale): if URL count grows past ~5K-10K or per-template
- *   indexing visibility in GSC is needed, migrate to a build-time script
- *   that generates sitemap-0.xml, sitemap-1.xml + sitemap-index.xml.
- *   Reference implementation: SEO-AUDIT-PLAYBOOK.md Appendix D.6.
- *   Currently 1,361 URLs — single file is well under the 50K protocol limit.
- */
-
-// Hardcoded modification dates for static / hand-curated pages.
-// Bump a specific date when you actually edit that page's content.
+// Bump these dates when you actually edit the page content.
+// Accurate lastmod = Google trusts your sitemap. Fake lastmod = Google ignores all of them.
 const STATIC_PAGE_DATES: Record<string, string> = {
-  "/": "2026-05-16",
-  "/about": "2026-05-16",
-  "/about/why-were-different": "2026-05-16",
-  "/services": "2026-05-16",
-  "/contact": "2026-05-16",
-  "/news": "2026-05-16",
-  "/stem-cell-therapy": "2026-05-16",
-  "/why-exosomes": "2026-05-16",
-  "/why-stem-cells": "2026-05-16",
-  "/whartons-jelly": "2026-05-16",
-  "/locations": "2026-05-16",
-  "/testimonials": "2026-05-16",
-  "/partner-with-us": "2026-05-16",
-  "/treatments": "2026-05-16",
-  "/partners": "2026-05-16",
-  "/privacy-policy": "2024-09-05", // from scraped WP page
-  "/terms-conditions": "2024-09-05", // from scraped WP page
+  // Core hub pages
+  "/": "2026-05-22",
+  "/about": "2026-05-22",
+  "/about/founder": "2026-05-22",
+  "/about/why-were-different": "2026-05-22",
+  "/contact": "2026-05-22",
+  "/news": "2026-05-22",
+
+  // Regenerative hub
+  "/stem-cell-therapy": "2026-05-22",
+  "/whartons-jelly": "2026-05-22",
+  "/why-exosomes": "2026-05-22",
+  "/why-stem-cells": "2026-05-22",
+  "/concierge-care-model": "2026-05-22",
+  "/services": "2026-05-22",
+
+  // Telehealth hub
+  "/hormones-peptides": "2026-05-22",
+  "/nad": "2026-05-22",
+
+  // Programmatic hubs
+  "/treatments": "2026-05-22",
+  "/locations": "2026-05-22",
+  "/partners": "2026-05-22",
+
+  // B2B / providers
+  "/for-providers": "2026-05-22",
+  "/partner-with-us": "2026-05-22",
+
+  // Social proof
+  "/testimonials": "2026-05-22",
+
+  // Legal (stable — don't bump unless content changes)
+  "/privacy-policy": "2024-09-05",
+  "/terms-conditions": "2024-09-05",
   "/disclaimer": "2025-01-01",
-  // V2 routes
-  "/hormones-peptides": "2026-05-20",
-  "/nad": "2026-05-20",
-  "/concierge-care-model": "2026-05-20",
-  "/for-providers": "2026-05-20",
-  "/about/founder": "2026-05-20",
+
   // /consult-router intentionally omitted — noindex utility route
 };
 
@@ -62,42 +58,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   );
 
-  // Blog/news posts — real publication date (already accurate).
+  // Blog posts — real publication dates
   const articlePages: MetadataRoute.Sitemap = articles.map((article) => ({
     url: `${SITE_URL}/news/${article.slug}`,
     lastModified: new Date(article.date),
   }));
 
-  // Treatment hub pages — no per-URL modification date available.
-  // Per playbook §2.2: omit lastmod rather than fake it with build time.
+  // Treatment hub pages — omit lastmod (no per-URL signal)
   const treatmentHubs: MetadataRoute.Sitemap = treatments.map((t) => ({
     url: `${SITE_URL}/treatments/${t.slug}`,
   }));
 
-  // Partner hub pages — same reasoning, omit lastmod.
+  // Partner hub pages
   const partnerHubs: MetadataRoute.Sitemap = partnerServices.map((s) => ({
     url: `${SITE_URL}/partners/${s.slug}`,
   }));
 
-  // Consumer programmatic pages: treatment × location.
-  // No per-URL signal → omit lastmod.
+  // Treatment × location programmatic pages
   const treatmentPages: MetadataRoute.Sitemap = treatments.flatMap((t) =>
     locations.map((l) => ({
       url: `${SITE_URL}/treatments/${t.slug}/${l.slug}`,
     }))
   );
 
-  // B2B partner programmatic pages: service × location.
+  // Partner × location programmatic pages
   const partnerPages: MetadataRoute.Sitemap = partnerServices.flatMap((s) =>
     locations.map((l) => ({
       url: `${SITE_URL}/partners/${s.slug}/${l.slug}`,
     }))
   );
 
-  // V2 product pages (Wizlo catalog) — no per-URL signal, omit lastmod.
-  // Only telehealth hubs have dynamic product routes (/hormones-peptides/[slug],
-  // /nad/[slug]). Regenerative SKUs are consult-only and covered by the
-  // /whartons-jelly hub page — exclude them to avoid 404s in the sitemap.
+  // Telehealth product pages (hormones-peptides + nad only — regen is consult-only)
   const productPages: MetadataRoute.Sitemap = products
     .filter((p) => p.hub === "hormones-peptides" || p.hub === "nad")
     .map((p) => ({

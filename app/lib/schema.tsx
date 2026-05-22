@@ -4,6 +4,7 @@
 const SITE_URL = "https://www.regenerativerevival.com";
 const SITE_NAME = "Regenerative Revival";
 const SITE_LOGO = `${SITE_URL}/logo.png`;
+// TODO: Replace with real phone/address when client provides
 const PHONE = "(555) 123-4567";
 
 // ─── Organization Schema ───
@@ -13,10 +14,26 @@ export function organizationSchema() {
     "@type": "Organization",
     name: SITE_NAME,
     url: SITE_URL,
-    logo: SITE_LOGO,
+    logo: {
+      "@type": "ImageObject",
+      url: SITE_LOGO,
+      width: 200,
+      height: 70,
+    },
     description:
-      "Advanced regenerative medicine clinic specializing in Wharton's Jelly stem cell therapy, exosome treatments, and non-invasive pain relief.",
+      "Concierge regenerative medicine and nationwide telehealth for hormones, peptides, and NAD+. One physician-led medical team, one patient record, one plan.",
     telephone: PHONE,
+    foundingDate: "2018",
+    founder: {
+      "@type": "Person",
+      name: "Seth Berge",
+    },
+    medicalSpecialty: [
+      "Regenerative Medicine",
+      "Hormone Optimization",
+      "Peptide Therapy",
+      "Longevity Medicine",
+    ],
     sameAs: [
       "https://www.facebook.com/regenerativerevival",
       "https://www.instagram.com/regenerativerevival",
@@ -27,6 +44,7 @@ export function organizationSchema() {
       telephone: PHONE,
       contactType: "customer service",
       availableLanguage: "English",
+      areaServed: "US",
     },
   };
 }
@@ -42,44 +60,47 @@ export function localBusinessSchema() {
     image: SITE_LOGO,
     telephone: PHONE,
     description:
-      "Regenerative Revival offers advanced stem cell therapy and regenerative medicine treatments including Wharton's Jelly, exosomes, and PRP therapy for chronic pain relief and tissue regeneration.",
+      "Regenerative Revival delivers concierge stem cell therapy in your home and nationwide telehealth for peptides, hormones, and NAD+. Physician-led under Arora Health Group.",
     priceRange: "$$",
+    areaServed: {
+      "@type": "Country",
+      name: "United States",
+    },
     address: {
       "@type": "PostalAddress",
-      streetAddress: "123 Regenerative Way",
-      addressLocality: "Your City",
-      addressRegion: "Your State",
-      postalCode: "00000",
       addressCountry: "US",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: "0.0",
-      longitude: "0.0",
     },
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
         opens: "09:00",
-        closes: "17:00",
+        closes: "18:00",
       },
     ],
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.9",
-      reviewCount: "150",
+      reviewCount: "500",
       bestRating: "5",
     },
     medicalSpecialty: "Regenerative Medicine",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Regenerative & Longevity Services",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "MedicalTherapy", name: "Wharton's Jelly Stem Cell Therapy" } },
+        { "@type": "Offer", itemOffered: { "@type": "MedicalTherapy", name: "Peptide Therapy" } },
+        { "@type": "Offer", itemOffered: { "@type": "MedicalTherapy", name: "NAD+ Therapy" } },
+        { "@type": "Offer", itemOffered: { "@type": "MedicalTherapy", name: "Hormone Optimization (TRT/HRT)" } },
+        { "@type": "Offer", itemOffered: { "@type": "MedicalTherapy", name: "GLP-1 Weight Management" } },
+      ],
+    },
   };
 }
 
-
 // ─── BreadcrumbList Schema ───
-export function breadcrumbSchema(
-  items: { name: string; url: string }[]
-) {
+export function breadcrumbSchema(items: { name: string; url: string }[]) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -93,9 +114,7 @@ export function breadcrumbSchema(
 }
 
 // ─── FAQPage Schema ───
-export function faqSchema(
-  faqs: { question: string; answer: string }[]
-) {
+export function faqSchema(faqs: { question: string; answer: string }[]) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -118,6 +137,7 @@ export function articleSchema(article: {
   image: string;
   datePublished: string;
   category: string;
+  authorName?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -128,60 +148,48 @@ export function articleSchema(article: {
     datePublished: article.datePublished,
     dateModified: article.datePublished,
     author: {
-      "@type": "Organization",
-      name: SITE_NAME,
+      "@type": article.authorName ? "Person" : "Organization",
+      name: article.authorName ?? SITE_NAME,
       url: SITE_URL,
     },
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,
-      logo: {
-        "@type": "ImageObject",
-        url: SITE_LOGO,
-      },
+      logo: { "@type": "ImageObject", url: SITE_LOGO },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `${SITE_URL}/news/${article.slug}`,
     },
     articleSection: article.category,
+    isPartOf: { "@type": "WebSite", name: SITE_NAME, url: SITE_URL },
   };
 }
 
 // ─── WebPage Schema ───
-export function webPageSchema(page: {
-  title: string;
-  description: string;
-  url: string;
-}) {
+export function webPageSchema(page: { title: string; description: string; url: string }) {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: page.title,
     description: page.description,
     url: `${SITE_URL}${page.url}`,
-    isPartOf: {
-      "@type": "WebSite",
-      name: SITE_NAME,
-      url: SITE_URL,
-    },
+    isPartOf: { "@type": "WebSite", name: SITE_NAME, url: SITE_URL },
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,
-      logo: {
-        "@type": "ImageObject",
-        url: SITE_LOGO,
-      },
+      logo: { "@type": "ImageObject", url: SITE_LOGO },
     },
   };
 }
 
-// ─── MedicalWebPage Schema (for service pages) ───
+// ─── MedicalWebPage Schema ───
 export function medicalWebPageSchema(page: {
   title: string;
   description: string;
   url: string;
   medicalConditions?: string[];
+  medicalAudience?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -193,27 +201,26 @@ export function medicalWebPageSchema(page: {
       "@type": "MedicalCondition",
       name: condition,
     })),
-    isPartOf: {
-      "@type": "WebSite",
-      name: SITE_NAME,
-      url: SITE_URL,
-    },
+    audience: page.medicalAudience
+      ? { "@type": "MedicalAudience", audienceType: page.medicalAudience }
+      : { "@type": "MedicalAudience", audienceType: "Patient" },
+    isPartOf: { "@type": "WebSite", name: SITE_NAME, url: SITE_URL },
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,
-      logo: {
-        "@type": "ImageObject",
-        url: SITE_LOGO,
-      },
+      logo: { "@type": "ImageObject", url: SITE_LOGO },
     },
     lastReviewed: new Date().toISOString().split("T")[0],
+    reviewedBy: {
+      "@type": "Person",
+      name: "Dr. Sean Arora",
+      jobTitle: "Medical Director",
+      affiliation: { "@type": "Organization", name: "Arora Health Group" },
+    },
   };
 }
 
-// ─── Product Schema (for Wizlo product pages, Google rich snippets) ───
-// Uses schema.org/Product with embedded Offer. For compounded Rx medications
-// we additionally surface @type: Drug context inside `isRelatedTo` so search
-// engines understand the clinical nature without claiming FDA approval.
+// ─── Product Schema ───
 export function productSchema(product: {
   name: string;
   slug: string;
@@ -224,7 +231,6 @@ export function productSchema(product: {
   priceFrom?: number;
   brand?: string;
   sku?: string;
-  /** When true, marks as PrescriptionOnly availability */
   prescriptionOnly?: boolean;
 }) {
   const url = `${SITE_URL}/${product.hub}/${product.slug}`;
@@ -236,10 +242,7 @@ export function productSchema(product: {
     url,
     sku: product.sku ?? product.slug,
     category: product.category,
-    brand: {
-      "@type": "Brand",
-      name: product.brand ?? SITE_NAME,
-    },
+    brand: { "@type": "Brand", name: product.brand ?? SITE_NAME },
     image: product.image ? `${SITE_URL}${product.image}` : SITE_LOGO,
   };
 
@@ -253,32 +256,18 @@ export function productSchema(product: {
         "@type": "UnitPriceSpecification",
         price: product.priceFrom,
         priceCurrency: "USD",
-        referenceQuantity: {
-          "@type": "QuantitativeValue",
-          value: 1,
-          unitCode: "MON", // months
-        },
+        referenceQuantity: { "@type": "QuantitativeValue", value: 1, unitCode: "MON" },
       },
-      availability: product.prescriptionOnly
-        ? "https://schema.org/InStock"
-        : "https://schema.org/InStock",
-      eligibleQuantity: {
-        "@type": "QuantitativeValue",
-        unitText: "monthly program",
-      },
-      seller: {
-        "@type": "Organization",
-        name: SITE_NAME,
-        url: SITE_URL,
-      },
+      availability: "https://schema.org/InStock",
+      eligibleQuantity: { "@type": "QuantitativeValue", unitText: "monthly program" },
+      seller: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
     };
   }
 
   return data;
 }
 
-// ─── ItemList Schema (for category/hub listing pages) ───
-// Helps Google understand collection pages like /hormones-peptides
+// ─── ItemList Schema ───
 export function productListSchema(items: {
   name: string;
   slug: string;
@@ -294,6 +283,55 @@ export function productListSchema(items: {
       url: `${SITE_URL}/${item.hub}/${item.slug}`,
       name: item.name,
       ...(item.description ? { description: item.description } : {}),
+    })),
+  };
+}
+
+// ─── Service Schema — for hub pages ───
+export function serviceSchema(service: {
+  name: string;
+  description: string;
+  url: string;
+  serviceType: string;
+  areaServed?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalTherapy",
+    name: service.name,
+    description: service.description,
+    url: `${SITE_URL}${service.url}`,
+    serviceType: service.serviceType,
+    provider: {
+      "@type": "MedicalBusiness",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    areaServed: service.areaServed ?? "United States",
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: `${SITE_URL}${service.url}`,
+      serviceType: "Online",
+    },
+  };
+}
+
+// ─── HowTo Schema — for process/steps pages ───
+export function howToSchema(howTo: {
+  name: string;
+  description: string;
+  steps: { name: string; text: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: howTo.name,
+    description: howTo.description,
+    step: howTo.steps.map((step, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: step.name,
+      text: step.text,
     })),
   };
 }

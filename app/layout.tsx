@@ -27,36 +27,37 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Regenerative Revival | Concierge Hub for Regeneration & Longevity",
+  title: "Regenerative Revival | Stem Cell Therapy, Peptides & Longevity Medicine",
   description:
-    "Regenerative therapy in your home. Hormones, peptides, and NAD+ through telehealth. One physician-led medical team, one record, one plan for the best decade of your life.",
+    "In-home stem cell therapy and nationwide telehealth for peptides, hormones, and NAD+. One physician-led medical team, one patient record, one plan for the best decade of your life.",
   keywords: [
     "regenerative medicine",
     "stem cell therapy",
-    "Wharton's Jelly",
-    "exosome therapy",
+    "peptide therapy",
     "NAD+ therapy",
-    "peptides",
+    "compounded semaglutide",
     "hormone optimization",
-    "longevity medicine",
+    "Wharton's Jelly",
     "concierge medicine",
+    "longevity medicine",
+    "telehealth",
   ],
   alternates: {
     canonical: "https://www.regenerativerevival.com",
   },
   openGraph: {
-    title: "Regenerative Revival | Concierge Hub for Regeneration & Longevity",
+    title: "Regenerative Revival | Stem Cell Therapy, Peptides & Longevity Medicine",
     description:
-      "One physician-led medical team. Regenerative therapy at home, plus telehealth for hormones, peptides, and NAD+.",
+      "In-home stem cell therapy and nationwide telehealth for peptides, hormones, and NAD+. One physician-led medical team.",
     url: "https://www.regenerativerevival.com",
     siteName: "Regenerative Revival",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Regenerative Revival | Concierge Hub for Regeneration & Longevity",
+    title: "Regenerative Revival | Stem Cell Therapy, Peptides & Longevity Medicine",
     description:
-      "One physician-led medical team. Regenerative therapy at home, plus telehealth for hormones, peptides, and NAD+.",
+      "In-home stem cell therapy and nationwide telehealth for peptides, hormones, and NAD+. One physician-led medical team.",
   },
   ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && {
     verification: {

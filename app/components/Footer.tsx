@@ -10,8 +10,8 @@ const services = [
 
 const about = [
   { label: "Medical Team", href: "/about" },
-  { label: "Arora Health Group", href: "/about/arora-health" },
-  { label: "Our Mission", href: "/about/why-were-different" },
+  { label: "Arora Health Group", href: "/about/why-were-different" },
+  { label: "Our Mission", href: "/concierge-care-model" },
 ];
 
 const resources = [

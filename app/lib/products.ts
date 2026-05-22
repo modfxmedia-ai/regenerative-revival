@@ -61,6 +61,11 @@ export interface Product {
   image?: string;
   /** SEO keywords */
   keywords: string[];
+  /** "What this program is not" — honest disclaimers per figma */
+  notFor?: string[];
+  /** Optional intro explainer (shown in first accordion).
+   *  Defaults to longDescription if not provided. */
+  introExplainer?: string;
 }
 
 // ───────────────────────────────────────────────────────────────────────────
@@ -110,6 +115,13 @@ export const products: Product[] = [
       "GLP-1 weight loss",
       "telehealth semaglutide",
     ],
+    notFor: [
+      "Not a quick fix. Sustainable results take 3–6 months minimum.",
+      "Not for everyone. Some patients are better served by injectable GLP-1s, lifestyle programs, or other interventions. Your provider will tell you honestly.",
+      "Not a pill mill. Every prescription requires a clinical evaluation, and ongoing dosing is reviewed by your provider.",
+    ],
+    introExplainer:
+      "Semaglutide is a GLP-1 receptor agonist — a class of medications originally developed for type 2 diabetes and now widely used for weight management. It works by signaling fullness, slowing gastric emptying, and reducing food noise and cravings. Most clinical research has been done on injectable forms. Compounded sublingual semaglutide delivers the same active molecule under the tongue, where it is absorbed through the oral mucosa. For patients who don't tolerate injections or prefer a daily oral dose, sublingual is a practical alternative — when prescribed and monitored by a clinician.",
   },
   {
     slug: "sublingual-tirzepatide",

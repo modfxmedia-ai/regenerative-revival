@@ -30,7 +30,7 @@ export default function FounderPage() {
       {/* === Hero === */}
       <section className="relative min-h-[70vh] flex items-end overflow-hidden bg-[#021E3C]">
         <div className="absolute inset-0">
-          <Image src="/photos/seth-berge-w-backdrop.jpg" alt="Seth Berge — Founder of Regenerative Revival" fill className="object-cover" priority />
+          <Image src="/headshots/1.jpg" alt="Seth Berge — Founder of Regenerative Revival" fill className="object-cover object-top" priority />
           <div className="absolute inset-0 bg-gradient-to-t from-[#021E3C] via-[#021E3C]/60 to-[#021E3C]/20" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#021E3C]/80 via-[#021E3C]/30 to-transparent" />
           <div className="absolute inset-0 bg-[#583563]/15 mix-blend-multiply" />

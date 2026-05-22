@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone, ChevronDown, ArrowUpRight, Sparkles, Users } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowUpRight, Sparkles, Users } from "lucide-react";
 import Image from "next/image";
 
 type DropdownItem = { label: string; href: string; desc: string };
@@ -184,16 +184,6 @@ export default function Navbar() {
 
             {/* Right side */}
             <div className="flex items-center gap-3">
-              <a
-                href="tel:+15551234567"
-                className={`hidden xl:flex items-center gap-2 text-xs font-medium tracking-wide transition-colors ${
-                  scrolled ? "text-[#1A1F30]/60 hover:text-[#583563]" : "text-white/60 hover:text-white"
-                }`}
-              >
-                <Phone className="h-3.5 w-3.5" />
-                (555) 123-4567
-              </a>
-
               {/* Take The Quiz CTA — primary action */}
               <a
                 href="/consult-router"

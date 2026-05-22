@@ -36,7 +36,7 @@ export default function ContactForm() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Get in Touch</span>
-          <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2.25rem] sm:text-5xl lg:text-[3.25rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+          <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2.25rem] sm:text-5xl lg:text-[3.25rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
             Get in touch with{" "}
             <em className="italic text-[#6762AF]">Regenerative Revival</em>
           </h2>
@@ -170,7 +170,7 @@ function FormCard() {
         <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#F1ECF8] border border-[#6762AF]/20 mx-auto mb-5">
           <Send className="h-7 w-7 text-[#6762AF]" />
         </div>
-        <h3 className="font-[family-name:var(--font-fraunces)] text-2xl text-[#1A1F30] mb-2">Thank You!</h3>
+        <h3 className="font-[family-name:var(--font-poppins)] text-2xl text-[#1A1F30] mb-2">Thank You!</h3>
         <p className="text-[#4A4F66]">We&apos;ve received your message and will be in touch within 24 hours.</p>
       </div>
     );

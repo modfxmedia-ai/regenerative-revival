@@ -109,7 +109,7 @@ export default function NadHubPage() {
             <p className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#71A7F5] mb-5">
               Longevity · Cellular Energy · All 50 States
             </p>
-            <h1 className="font-[family-name:var(--font-fraunces)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4rem] text-white leading-[1.05] tracking-[-0.02em]">
+            <h1 className="font-[family-name:var(--font-poppins)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4rem] text-white leading-[1.05] tracking-[-0.02em]">
               NAD+ therapy — IV, injection &amp;{" "}
               <em className="italic bg-gradient-to-r from-[#8985C5] via-[#71A7F5] to-[#6762AF] bg-clip-text text-transparent">
                 sublingual
@@ -144,7 +144,7 @@ export default function NadHubPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Why NAD+</span>
-            <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+            <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
               The coenzyme your cells can&apos;t function without
             </h2>
             <p className="mt-5 text-base text-[#4A4F66]">
@@ -157,7 +157,7 @@ export default function NadHubPage() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white border border-[#6762AF]/10 mb-5">
                   <b.icon className="h-5 w-5 text-[#6762AF]" />
                 </div>
-                <h3 className="font-[family-name:var(--font-fraunces)] font-normal text-[18px] text-[#1A1F30] mb-2">{b.title}</h3>
+                <h3 className="font-[family-name:var(--font-poppins)] font-normal text-[18px] text-[#1A1F30] mb-2">{b.title}</h3>
                 <p className="text-[13.5px] text-[#4A4F66] leading-relaxed">{b.desc}</p>
               </div>
             ))}
@@ -169,7 +169,7 @@ export default function NadHubPage() {
       <section className="bg-[#F1ECF8] py-20 lg:py-24">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Delivery Options</span>
-          <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em] mb-10">
+          <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em] mb-10">
             NAD IV therapy vs injection vs sublingual — which is right for you?
           </h2>
           <div className="grid md:grid-cols-3 gap-5">
@@ -180,7 +180,7 @@ export default function NadHubPage() {
             ].map((d) => (
               <div key={d.method} className="bg-white rounded-[20px] p-6 border border-white hover:border-[#6762AF]/20 hover:shadow-[0_16px_40px_-8px_rgba(88,53,99,0.15)] transition-all">
                 <span className="text-[10px] font-semibold uppercase tracking-wider text-[#6762AF] bg-[#F1ECF8] px-2.5 py-1 rounded-full">{d.tag}</span>
-                <h3 className="font-[family-name:var(--font-fraunces)] font-normal text-[20px] text-[#1A1F30] mt-4 mb-1">{d.method}</h3>
+                <h3 className="font-[family-name:var(--font-poppins)] font-normal text-[20px] text-[#1A1F30] mt-4 mb-1">{d.method}</h3>
                 <p className="text-[12px] font-semibold text-[#345691] mb-3">{d.best}</p>
                 <p className="text-[13px] text-[#4A4F66] leading-relaxed">{d.note}</p>
               </div>
@@ -194,7 +194,7 @@ export default function NadHubPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
             <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Programs</span>
-            <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+            <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
               Available NAD+ programs
             </h2>
           </div>
@@ -208,7 +208,7 @@ export default function NadHubPage() {
                     href={`/nad/${p.slug}`}
                     className="group block h-full bg-[#F4EFFA] rounded-[20px] p-6 border border-[#F1ECF8] hover:border-[#6762AF]/20 hover:-translate-y-1 hover:shadow-[0_24px_48px_-12px_rgba(88,53,99,0.18)] transition-all duration-500"
                   >
-                    <h3 className="font-[family-name:var(--font-fraunces)] font-normal text-[18px] text-[#1A1F30] group-hover:text-[#583563] transition-colors">{p.name}</h3>
+                    <h3 className="font-[family-name:var(--font-poppins)] font-normal text-[18px] text-[#1A1F30] group-hover:text-[#583563] transition-colors">{p.name}</h3>
                     <p className="mt-2 text-[13px] text-[#4A4F66] line-clamp-3 leading-relaxed">{p.shortDescription}</p>
                     <div className="mt-5 flex items-center justify-between">
                       <span className="text-[12px] text-[#7A7F95] uppercase">{p.form}</span>
@@ -226,13 +226,13 @@ export default function NadHubPage() {
       <section className="bg-[#F1ECF8] py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">FAQ</span>
-          <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em] mb-10">
+          <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em] mb-10">
             NAD+ therapy questions answered
           </h2>
           <div className="flex flex-col gap-6">
             {faqs.map((faq) => (
               <div key={faq.question} className="border-b border-[#6762AF]/15 pb-6">
-                <h3 className="font-[family-name:var(--font-fraunces)] font-normal text-[18px] text-[#1A1F30] mb-3">{faq.question}</h3>
+                <h3 className="font-[family-name:var(--font-poppins)] font-normal text-[18px] text-[#1A1F30] mb-3">{faq.question}</h3>
                 <p className="text-[14px] text-[#4A4F66] leading-relaxed">{faq.answer}</p>
               </div>
             ))}

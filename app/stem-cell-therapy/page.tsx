@@ -120,13 +120,13 @@ export default function StemCellTherapyPage() {
       <section className="bg-white py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">FAQ</span>
-          <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em] mb-10">
+          <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em] mb-10">
             Stem cell therapy questions answered
           </h2>
           <div className="flex flex-col gap-6">
             {faqs.map((faq) => (
               <div key={faq.question} className="border-b border-[#F1ECF8] pb-6">
-                <h3 className="font-[family-name:var(--font-fraunces)] font-normal text-[18px] text-[#1A1F30] mb-3">{faq.question}</h3>
+                <h3 className="font-[family-name:var(--font-poppins)] font-normal text-[18px] text-[#1A1F30] mb-3">{faq.question}</h3>
                 <p className="text-[14px] text-[#4A4F66] leading-relaxed">{faq.answer}</p>
               </div>
             ))}

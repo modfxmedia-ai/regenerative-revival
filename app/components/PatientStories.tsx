@@ -50,7 +50,7 @@ export default function PatientStories() {
           <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">
             Patient Stories
           </span>
-          <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2.5rem] sm:text-5xl lg:text-[3.25rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+          <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2.5rem] sm:text-5xl lg:text-[3.25rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
             Real patients. Real words. Real lives.
           </h2>
         </motion.div>
@@ -66,7 +66,7 @@ export default function PatientStories() {
               className="group relative rounded-2xl bg-[#F4EFFA] p-6 lg:p-7 hover:bg-white hover:shadow-[0_24px_48px_-12px_rgba(88,53,99,0.18)] hover:-translate-y-1 transition-all duration-500"
             >
               {/* Curly opening quote */}
-              <span className="block font-[family-name:var(--font-fraunces)] text-[42px] leading-none text-[#1A1F30] mb-2">
+              <span className="block font-[family-name:var(--font-poppins)] text-[42px] leading-none text-[#1A1F30] mb-2">
                 &ldquo;
               </span>
 

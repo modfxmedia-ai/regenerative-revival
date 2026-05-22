@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Fraunces } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
@@ -9,21 +9,12 @@ import GoogleAnalytics from "./components/GoogleAnalytics";
 import UtmCapture from "./components/UtmCapture";
 import { JsonLd, organizationSchema, localBusinessSchema } from "./lib/schema";
 
-// Body sans — Inter (clean, neutral)
-const inter = Inter({
-  variable: "--font-inter",
+// Poppins — primary font for all headings and body text
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
   display: "swap",
-});
-
-// Display serif — Fraunces (luxury, slightly editorial — closest match to the
-// elegant italic "Regenerative" treatment in the v3 brand book)
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  display: "swap",
-  axes: ["opsz", "SOFT"],
-  style: ["normal", "italic"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -74,7 +65,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${fraunces.variable} antialiased bg-white text-[#1A1F30]`}
+        className={`${poppins.variable} antialiased bg-white text-[#1A1F30]`}
       >
         <GoogleAnalytics />
         <UtmCapture />

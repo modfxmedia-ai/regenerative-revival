@@ -122,7 +122,7 @@ export default function ForProvidersPage() {
               <span className="h-px w-8 bg-white/30" />
               <span className="text-[11px] font-medium tracking-[0.32em] text-white/60 uppercase">For NPs, PAs &amp; Clinics</span>
             </div>
-            <h1 className="font-[family-name:var(--font-fraunces)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4.5rem] text-white leading-[1.02] tracking-[-0.02em]">
+            <h1 className="font-[family-name:var(--font-poppins)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4.5rem] text-white leading-[1.02] tracking-[-0.02em]">
               Build a concierge practice —{" "}
               <em className="italic bg-gradient-to-r from-[#8985C5] via-[#71A7F5] to-[#6762AF] bg-clip-text text-transparent">
                 without building the infrastructure
@@ -157,7 +157,7 @@ export default function ForProvidersPage() {
           <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
             <div>
               <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">The Opportunity</span>
-              <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl lg:text-[3rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+              <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl lg:text-[3rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
                 The demand for regenerative medicine is real. The infrastructure to deliver it isn&apos;t.
               </h2>
               <div className="mt-6 space-y-5 text-[15px] text-[#4A4F66] leading-[1.75]">
@@ -175,7 +175,7 @@ export default function ForProvidersPage() {
                   { value: "40,500", label: "Monthly searches for compounded semaglutide" },
                 ].map((s) => (
                   <div key={s.label} className="rounded-2xl bg-[#F4EFFA] p-4 border border-[#6762AF]/10">
-                    <div className="font-[family-name:var(--font-fraunces)] italic text-2xl text-[#6762AF]">{s.value}</div>
+                    <div className="font-[family-name:var(--font-poppins)] italic text-2xl text-[#6762AF]">{s.value}</div>
                     <div className="text-[11px] text-[#4A4F66] mt-1 leading-snug">{s.label}</div>
                   </div>
                 ))}
@@ -204,7 +204,7 @@ export default function ForProvidersPage() {
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#71A7F5]">What You Get</span>
-            <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-white leading-[1.05] tracking-[-0.02em]">
+            <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-white leading-[1.05] tracking-[-0.02em]">
               Everything you need to launch — nothing you don&apos;t
             </h2>
           </div>
@@ -217,11 +217,11 @@ export default function ForProvidersPage() {
                     <b.icon className="h-5 w-5 text-[#71A7F5]" />
                   </div>
                   <div className="text-right">
-                    <div className="font-[family-name:var(--font-fraunces)] italic text-2xl text-[#71A7F5]">{b.stat}</div>
+                    <div className="font-[family-name:var(--font-poppins)] italic text-2xl text-[#71A7F5]">{b.stat}</div>
                     <div className="text-[10px] text-white/45">{b.statLabel}</div>
                   </div>
                 </div>
-                <h3 className="font-[family-name:var(--font-fraunces)] font-normal text-[18px] text-white mb-3">{b.title}</h3>
+                <h3 className="font-[family-name:var(--font-poppins)] font-normal text-[18px] text-white mb-3">{b.title}</h3>
                 <p className="text-[13.5px] text-white/55 leading-[1.65]">{b.desc}</p>
               </div>
             ))}
@@ -235,7 +235,7 @@ export default function ForProvidersPage() {
           <div className="grid lg:grid-cols-2 gap-14 items-start">
             <div>
               <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Requirements</span>
-              <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+              <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
                 What you bring to the partnership
               </h2>
               <ul className="mt-7 flex flex-col gap-4">
@@ -255,13 +255,13 @@ export default function ForProvidersPage() {
             </div>
             <div>
               <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">The Process</span>
-              <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+              <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
                 From application to launch
               </h2>
               <div className="mt-7 flex flex-col gap-6">
                 {steps.map((step) => (
                   <div key={step.num} className="flex gap-5">
-                    <div className="font-[family-name:var(--font-fraunces)] italic text-2xl text-[#6762AF]/40 shrink-0 w-10">{step.num}</div>
+                    <div className="font-[family-name:var(--font-poppins)] italic text-2xl text-[#6762AF]/40 shrink-0 w-10">{step.num}</div>
                     <div>
                       <h3 className="text-[15px] font-semibold text-[#1A1F30] mb-1">{step.title}</h3>
                       <p className="text-[13px] text-[#4A4F66] leading-relaxed">{step.desc}</p>
@@ -282,7 +282,7 @@ export default function ForProvidersPage() {
             <Users className="h-5 w-5 text-white/70" />
             <TrendingUp className="h-5 w-5 text-white/70" />
           </div>
-          <h2 className="font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-white leading-[1.05] tracking-[-0.02em]">
+          <h2 className="font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-white leading-[1.05] tracking-[-0.02em]">
             Ready to build a concierge practice?
           </h2>
           <p className="mt-5 text-base text-white/80 max-w-xl mx-auto">
@@ -302,13 +302,13 @@ export default function ForProvidersPage() {
       <section className="bg-white py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">FAQ</span>
-          <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em] mb-10">
+          <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em] mb-10">
             Provider partnership questions
           </h2>
           <div className="flex flex-col gap-6">
             {faqs.map((faq) => (
               <div key={faq.question} className="border-b border-[#F1ECF8] pb-6">
-                <h3 className="font-[family-name:var(--font-fraunces)] font-normal text-[18px] text-[#1A1F30] mb-3">{faq.question}</h3>
+                <h3 className="font-[family-name:var(--font-poppins)] font-normal text-[18px] text-[#1A1F30] mb-3">{faq.question}</h3>
                 <p className="text-[14px] text-[#4A4F66] leading-relaxed">{faq.answer}</p>
               </div>
             ))}

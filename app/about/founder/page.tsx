@@ -44,7 +44,7 @@ export default function FounderPage() {
               <span className="h-px w-8 bg-white/30" />
               <span className="text-[11px] font-medium tracking-[0.32em] text-white/60 uppercase">Founder</span>
             </div>
-            <h1 className="font-[family-name:var(--font-fraunces)] font-normal text-[3rem] sm:text-6xl lg:text-[5rem] text-white leading-[1.02] tracking-[-0.02em]">
+            <h1 className="font-[family-name:var(--font-poppins)] font-normal text-[3rem] sm:text-6xl lg:text-[5rem] text-white leading-[1.02] tracking-[-0.02em]">
               Seth <em className="italic bg-gradient-to-r from-[#8985C5] via-[#71A7F5] to-[#6762AF] bg-clip-text text-transparent">Berge</em>
             </h1>
             <p className="mt-5 text-base lg:text-lg text-white/65 max-w-xl leading-relaxed">
@@ -78,7 +78,7 @@ export default function FounderPage() {
           <div className="space-y-10">
             <div>
               <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Why Regenerative Revival Exists</span>
-              <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.1] tracking-[-0.02em]">
+              <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.1] tracking-[-0.02em]">
                 The industry split in two. <em className="italic text-[#6762AF]">We built the bridge.</em>
               </h2>
               <div className="mt-6 space-y-5 text-[15px] text-[#4A4F66] leading-[1.75]">
@@ -94,7 +94,7 @@ export default function FounderPage() {
             <div className="h-px bg-gradient-to-r from-transparent via-[#6762AF]/20 to-transparent" />
 
             <div>
-              <h2 className="font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.1] tracking-[-0.02em]">
+              <h2 className="font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.1] tracking-[-0.02em]">
                 The dinner-seminar <em className="italic text-[#6762AF]">model</em>
               </h2>
               <div className="mt-6 space-y-5 text-[15px] text-[#4A4F66] leading-[1.75]">

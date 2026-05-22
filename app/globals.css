@@ -50,9 +50,12 @@
   --color-text-light: #4A4F66;
 
   /* === TYPOGRAPHY === */
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-fraunces);
-  --font-heading: var(--font-fraunces);
+  --font-sans: var(--font-poppins);
+  --font-display: var(--font-poppins);
+  --font-heading: var(--font-poppins);
+  /* Legacy aliases kept so existing components don't break */
+  --font-inter: var(--font-poppins);
+  --font-fraunces: var(--font-poppins);
 }
 
 html {
@@ -63,46 +66,65 @@ body {
   background: #ffffff;
   color: #1A1F30;
   overflow-x: hidden;
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-poppins), system-ui, sans-serif;
   font-feature-settings: "ss01", "cv11";
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-fraunces), "Playfair Display", Georgia, serif;
-  font-feature-settings: "ss01";
-  letter-spacing: -0.015em;
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  font-weight: 500;
+  line-height: 110%;
+  letter-spacing: -0.04em;
 }
 
+/* Scale letter-spacing with heading size so smaller headings aren't over-compressed */
+h1 { letter-spacing: -0.055em; font-size: clamp(2.25rem, 5vw, 4.5rem); }
+h2 { letter-spacing: -0.04em;  font-size: clamp(1.75rem, 3.5vw, 3rem); }
+h3 { letter-spacing: -0.03em;  font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+h4 { letter-spacing: -0.02em; }
+h5 { letter-spacing: -0.01em; }
+h6 { letter-spacing: 0; }
+
+/* Override Tailwind font-weight utilities on headings to preserve the spec.
+   Components may use font-bold/font-semibold for emphasis — allow that. */
+h1.font-normal, h2.font-normal, h3.font-normal { font-weight: 500 !important; }
+h1.font-medium, h2.font-medium, h3.font-medium { font-weight: 500 !important; }
+
 /* ============================================================
-   GRADIENT TEXT — Luxury "Regenerative" treatment
-   Per brand guide: thin serif italic with amethyst → lazuli flow
+   TEXT ACCENTS — Poppins bold amethyst treatment
    ============================================================ */
 .brand-italic {
-  font-family: var(--font-fraunces), "Playfair Display", Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  color: #6762AF;
 }
 
 .gradient-text {
-  background: linear-gradient(110deg, #6762AF 0%, #583563 50%, #6762AF 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #6762AF;
 }
 
 .gradient-text-luxe {
-  background: linear-gradient(110deg, #6762AF 0%, #71A7F5 60%, #345691 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #345691;
 }
 
 .gradient-text-gold {
-  background: linear-gradient(135deg, #71A7F5 0%, #345691 50%, #71A7F5 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #71A7F5;
+}
+
+/* lux-display — Poppins Medium 500, -4px tracking, 110% line-height */
+.lux-display {
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 110%;
+}
+.lux-display em,
+.lux-display .em {
+  font-style: normal;
+  font-weight: 600;
+  color: #6762AF;
 }
 
 /* Soft elevated shadows */
@@ -247,30 +269,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Eyebrow / kicker label — used across the site */
 .eyebrow {
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-poppins), system-ui, sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #345691;
-}
-
-/* "Regenerative" italic display treatment */
-.lux-display {
-  font-family: var(--font-fraunces), "Playfair Display", Georgia, serif;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1;
-}
-.lux-display em,
-.lux-display .em {
-  font-style: italic;
-  font-weight: 400;
-  font-feature-settings: "ss01";
-  background: linear-gradient(110deg, #6762AF 0%, #583563 50%, #6762AF 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 /* Selection */

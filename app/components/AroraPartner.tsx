@@ -32,7 +32,7 @@ export default function AroraPartner() {
             <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">
               The Infrastructure Behind The Care
             </span>
-            <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2.5rem] sm:text-5xl lg:text-[3.5rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+            <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2.5rem] sm:text-5xl lg:text-[3.5rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
               Serious medicine needs<br className="hidden sm:block" /> a serious partner.
             </h2>
             <a
@@ -53,14 +53,14 @@ export default function AroraPartner() {
           >
             {/* Top: Arora Health Group + wordmark */}
             <div className="flex items-start justify-between gap-4 mb-6">
-              <h3 className="font-[family-name:var(--font-fraunces)] font-normal text-2xl lg:text-[28px] text-[#1A1F30] leading-tight">
+              <h3 className="font-[family-name:var(--font-poppins)] font-normal text-2xl lg:text-[28px] text-[#1A1F30] leading-tight">
                 Arora Health Group
               </h3>
               <AroraWordmark />
             </div>
 
             {/* Subhead */}
-            <p className="font-[family-name:var(--font-fraunces)] italic text-[17px] text-[#1A1F30] leading-snug mb-3">
+            <p className="font-[family-name:var(--font-poppins)] italic text-[17px] text-[#1A1F30] leading-snug mb-3">
               The clinical backbone.
             </p>
 
@@ -77,7 +77,7 @@ export default function AroraPartner() {
 /* Custom Arora wordmark — clean serif "ar" + teal "o" with concentric ring + "ra" */
 function AroraWordmark() {
   return (
-    <div className="flex items-center font-[family-name:var(--font-fraunces)] text-[#1A1F30] leading-none">
+    <div className="flex items-center font-[family-name:var(--font-poppins)] text-[#1A1F30] leading-none">
       <span className="text-[26px] tracking-tight">ar</span>
       <span className="relative inline-flex items-center justify-center mx-[1px]">
         {/* Ring around the 'o' */}

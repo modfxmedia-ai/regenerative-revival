@@ -24,7 +24,7 @@ export default function NewsHero() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="font-[family-name:var(--font-fraunces)] font-normal text-[3.5rem] sm:text-6xl md:text-7xl lg:text-[6rem] text-white leading-[0.95] tracking-[-0.02em]"
+            className="font-[family-name:var(--font-poppins)] font-normal text-[3.5rem] sm:text-6xl md:text-7xl lg:text-[6rem] text-white leading-[0.95] tracking-[-0.02em]"
           >
             News &amp;<br />
             <em className="italic bg-gradient-to-r from-[#8985C5] via-[#71A7F5] to-[#6762AF] bg-clip-text text-transparent">

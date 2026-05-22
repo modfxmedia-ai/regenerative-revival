@@ -58,7 +58,7 @@ export default function QuizCTA() {
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-5 font-[family-name:var(--font-fraunces)] font-normal text-[2.5rem] sm:text-5xl lg:text-[3.75rem] text-white leading-[1.05] tracking-[-0.02em]"
+            className="mt-5 font-[family-name:var(--font-poppins)] font-normal text-[2.5rem] sm:text-5xl lg:text-[3.75rem] text-white leading-[1.05] tracking-[-0.02em]"
           >
             Not sure where to start?<br />
             Take the 2-minute quiz.

@@ -114,7 +114,7 @@ export default function TeamSection() {
           className="text-center max-w-3xl mx-auto mb-12"
         >
           <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Our Team</span>
-          <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2.25rem] sm:text-5xl lg:text-[3.25rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+          <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2.25rem] sm:text-5xl lg:text-[3.25rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
             The people behind <em className="italic text-[#6762AF]">your revival</em>
           </h2>
           <p className="mt-5 text-base text-[#4A4F66]">
@@ -166,7 +166,7 @@ export default function TeamSection() {
                   <activeSection.icon className="h-5 w-5 text-[#71A7F5]" />
                   <span className="text-[11px] font-medium text-white/60 uppercase tracking-wider">{activeSection.label}</span>
                 </div>
-                <h3 className="font-[family-name:var(--font-fraunces)] font-normal text-2xl sm:text-3xl text-white">{activeSection.subtitle}</h3>
+                <h3 className="font-[family-name:var(--font-poppins)] font-normal text-2xl sm:text-3xl text-white">{activeSection.subtitle}</h3>
                 <p className="mt-1.5 text-[12px] text-white/50">{activeSection.members.length} team member{activeSection.members.length !== 1 ? "s" : ""}</p>
               </div>
             </div>

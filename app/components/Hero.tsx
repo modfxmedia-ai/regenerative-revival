@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Award, Users, MapPin, ShieldCheck } from "lucide-react";
+import { Sparkles, Award, Users, MapPin, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 
 export default function Hero() {
@@ -107,16 +107,22 @@ export default function Hero() {
               <span className="h-px w-8 bg-white/30" />
             </motion.div>
 
-            {/* Headline */}
+            {/* Headline — Poppins Medium 500, 72px, -4px letter-spacing, 110% line-height, centered */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="lux-display text-white text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.02]"
+              className="text-white text-center"
+              style={{
+                fontFamily: "var(--font-poppins), system-ui, sans-serif",
+                fontWeight: 500,
+                fontSize: "clamp(2.5rem, 6vw, 72px)",
+                lineHeight: "110%",
+                letterSpacing: "-4px",
+              }}
             >
-              Your Concierge Hub for
-              <br />
-              <em className="em">Regeneration</em> &amp; <em className="em">Longevity</em>
+              Your Concierge Hub for<br />
+              Regeneration &amp; Longevity
             </motion.h1>
 
             {/* Subhead */}
@@ -124,37 +130,28 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.55 }}
-              className="mt-8 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed text-white/65"
+              className="mt-8 max-w-2xl mx-auto text-[15px] sm:text-[16px] leading-relaxed text-white/65 text-center"
             >
-              Regenerative therapy in your home. Hormones, peptides, and NAD+ through telehealth. One physician-led medical team, one patient record, one plan for the best decade of your life.
+              Regenerative therapy in your home. Hormones, peptides, and NAD+ through telehealth.<br className="hidden sm:block" />
+              One physician-led medical team, one patient record, one plan for the best decade of your life.
             </motion.p>
 
-            {/* CTA */}
+            {/* CTA — single white pill, centered */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.7 }}
-              className="mt-11 flex flex-col sm:flex-row items-center justify-center gap-4"
+              className="mt-10 flex justify-center"
             >
               <a
                 href="/consult-router"
-                className="group relative inline-flex h-14 items-center justify-center gap-2.5 rounded-full bg-white px-8 text-[15px] font-semibold text-[#1A1F30] overflow-hidden transition-all duration-300 hover:shadow-[0_20px_50px_-12px_rgba(255,255,255,0.5)] hover:scale-[1.02]"
+                className="group relative inline-flex h-14 items-center justify-center gap-2.5 rounded-full bg-white px-10 text-[15px] font-semibold text-[#1A1F30] overflow-hidden transition-all duration-300 hover:shadow-[0_20px_50px_-12px_rgba(255,255,255,0.5)] hover:scale-[1.02]"
               >
                 <span className="relative z-10 flex items-center gap-2.5">
                   <Sparkles className="h-4 w-4 text-[#6762AF]" />
                   Take The 2-Minute Quiz
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
-                {/* Shimmer */}
                 <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-[#F1ECF8] to-transparent" />
-              </a>
-
-              <a
-                href="/contact"
-                className="group inline-flex h-14 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-md px-7 text-[14px] font-medium text-white/85 hover:bg-white/10 hover:border-white/35 transition-all"
-              >
-                Book A Consult
-                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
               </a>
             </motion.div>
           </div>

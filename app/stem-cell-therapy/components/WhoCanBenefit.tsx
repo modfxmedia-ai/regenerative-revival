@@ -44,7 +44,7 @@ export default function WhoCanBenefit() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="absolute -bottom-6 -right-4 lg:-right-8 bg-white rounded-2xl p-5 shadow-[0_16px_40px_-8px_rgba(26,31,48,0.2)] border border-[#F1ECF8]"
             >
-              <div className="font-[family-name:var(--font-fraunces)] italic text-4xl text-[#6762AF]">8+</div>
+              <div className="font-[family-name:var(--font-poppins)] italic text-4xl text-[#6762AF]">8+</div>
               <div className="text-[11px] text-[#4A4F66] mt-1 leading-snug">Conditions<br />Treated</div>
             </motion.div>
           </motion.div>
@@ -56,7 +56,7 @@ export default function WhoCanBenefit() {
             transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
             <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Conditions Treated</span>
-            <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2.25rem] sm:text-5xl lg:text-[3.25rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+            <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2.25rem] sm:text-5xl lg:text-[3.25rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
               Who can <em className="italic text-[#6762AF]">benefit?</em>
             </h2>
             <p className="mt-6 text-base text-[#4A4F66] leading-relaxed">

@@ -122,7 +122,7 @@ export default function HormonesPeptidesPage() {
             <p className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#71A7F5] mb-5">
               Telehealth · Physician-Prescribed · All 50 States
             </p>
-            <h1 className="font-[family-name:var(--font-fraunces)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4rem] text-white leading-[1.05] tracking-[-0.02em]">
+            <h1 className="font-[family-name:var(--font-poppins)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4rem] text-white leading-[1.05] tracking-[-0.02em]">
               Peptide therapy &amp; hormone optimization —{" "}
               <em className="italic bg-gradient-to-r from-[#8985C5] via-[#71A7F5] to-[#6762AF] bg-clip-text text-transparent">
                 prescribed online
@@ -172,7 +172,7 @@ export default function HormonesPeptidesPage() {
           <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
             <div>
               <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Why Regenerative Revival</span>
-              <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl lg:text-[3rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+              <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl lg:text-[3rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
                 The best online peptide clinic coordinates everything — not just ships a product
               </h2>
               <p className="mt-6 text-base text-[#4A4F66] leading-relaxed">
@@ -195,7 +195,7 @@ export default function HormonesPeptidesPage() {
                 { value: "48 hrs", label: "Average time to first clinician review" },
               ].map((s) => (
                 <div key={s.label} className="rounded-2xl bg-[#F4EFFA] p-6 border border-[#6762AF]/10">
-                  <div className="font-[family-name:var(--font-fraunces)] italic text-3xl text-[#6762AF]">{s.value}</div>
+                  <div className="font-[family-name:var(--font-poppins)] italic text-3xl text-[#6762AF]">{s.value}</div>
                   <div className="text-[12px] text-[#4A4F66] mt-2 leading-snug">{s.label}</div>
                 </div>
               ))}
@@ -210,7 +210,7 @@ export default function HormonesPeptidesPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
             <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Catalog</span>
-            <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+            <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
               Physician-prescribed programs
             </h2>
             <p className="mt-4 text-base text-[#4A4F66]">
@@ -234,7 +234,7 @@ export default function HormonesPeptidesPage() {
                       </span>
                       <span className="text-[10px] text-[#7A7F95] uppercase">{p.form}</span>
                     </div>
-                    <h3 className="font-[family-name:var(--font-fraunces)] font-normal text-[18px] text-[#1A1F30] group-hover:text-[#583563] transition-colors leading-snug">
+                    <h3 className="font-[family-name:var(--font-poppins)] font-normal text-[18px] text-[#1A1F30] group-hover:text-[#583563] transition-colors leading-snug">
                       {p.name}
                     </h3>
                     <p className="mt-2 text-[13px] text-[#4A4F66] line-clamp-3 leading-relaxed">{p.shortDescription}</p>
@@ -260,13 +260,13 @@ export default function HormonesPeptidesPage() {
       <section className="bg-white py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">FAQ</span>
-          <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em] mb-10">
+          <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em] mb-10">
             Common questions about peptide therapy online
           </h2>
           <div className="flex flex-col gap-6">
             {faqs.map((faq) => (
               <div key={faq.question} className="border-b border-[#F1ECF8] pb-6">
-                <h3 className="font-[family-name:var(--font-fraunces)] font-normal text-[18px] text-[#1A1F30] mb-3">{faq.question}</h3>
+                <h3 className="font-[family-name:var(--font-poppins)] font-normal text-[18px] text-[#1A1F30] mb-3">{faq.question}</h3>
                 <p className="text-[14px] text-[#4A4F66] leading-relaxed">{faq.answer}</p>
               </div>
             ))}

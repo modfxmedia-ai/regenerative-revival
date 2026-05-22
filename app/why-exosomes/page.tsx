@@ -123,7 +123,7 @@ export default function WhyExosomesPage() {
               <span className="h-px w-8 bg-white/30" />
               <span className="text-[11px] font-medium tracking-[0.32em] text-white/60 uppercase">Regenerative Medicine · Cell Signaling</span>
             </div>
-            <h1 className="font-[family-name:var(--font-fraunces)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4.5rem] text-white leading-[1.02] tracking-[-0.02em]">
+            <h1 className="font-[family-name:var(--font-poppins)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4.5rem] text-white leading-[1.02] tracking-[-0.02em]">
               Exosomes — the{" "}
               <em className="italic bg-gradient-to-r from-[#8985C5] via-[#71A7F5] to-[#6762AF] bg-clip-text text-transparent">
                 signaling layer
@@ -159,7 +159,7 @@ export default function WhyExosomesPage() {
           <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
             <div>
               <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">The Science</span>
-              <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl lg:text-[3rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+              <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl lg:text-[3rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
                 What are exosomes, and why do they matter?
               </h2>
               <div className="mt-6 space-y-5 text-[15px] text-[#4A4F66] leading-[1.75]">
@@ -187,7 +187,7 @@ export default function WhyExosomesPage() {
                 <div className="absolute inset-0 ring-1 ring-inset ring-white/15 rounded-[2rem] pointer-events-none" />
               </div>
               <div className="absolute -bottom-6 -right-4 lg:-right-8 bg-white rounded-2xl p-5 shadow-[0_16px_40px_-8px_rgba(26,31,48,0.2)] border border-[#F1ECF8]">
-                <div className="font-[family-name:var(--font-fraunces)] italic text-4xl text-[#345691]">30–150</div>
+                <div className="font-[family-name:var(--font-poppins)] italic text-4xl text-[#345691]">30–150</div>
                 <div className="text-[11px] text-[#4A4F66] mt-1 leading-snug">Nanometers — smaller<br />than a virus</div>
               </div>
             </div>
@@ -200,7 +200,7 @@ export default function WhyExosomesPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Mechanism</span>
-            <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+            <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
               Four ways exosomes drive regeneration
             </h2>
           </div>
@@ -210,7 +210,7 @@ export default function WhyExosomesPage() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F1ECF8] border border-[#6762AF]/10 mb-5">
                   <m.icon className="h-5 w-5 text-[#6762AF]" />
                 </div>
-                <h3 className="font-[family-name:var(--font-fraunces)] font-normal text-[19px] text-[#1A1F30] mb-3">{m.title}</h3>
+                <h3 className="font-[family-name:var(--font-poppins)] font-normal text-[19px] text-[#1A1F30] mb-3">{m.title}</h3>
                 <p className="text-[13.5px] text-[#4A4F66] leading-[1.65]">{m.desc}</p>
               </div>
             ))}
@@ -225,7 +225,7 @@ export default function WhyExosomesPage() {
           <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
             <div>
               <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#71A7F5]">Combined Protocol</span>
-              <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl lg:text-[3rem] text-white leading-[1.05] tracking-[-0.02em]">
+              <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl lg:text-[3rem] text-white leading-[1.05] tracking-[-0.02em]">
                 Exosomes + Wharton&apos;s Jelly — why we use both
               </h2>
               <div className="mt-6 space-y-5 text-[15px] text-white/65 leading-[1.75]">
@@ -278,13 +278,13 @@ export default function WhyExosomesPage() {
       <section className="bg-white py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">FAQ</span>
-          <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em] mb-10">
+          <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em] mb-10">
             Exosome therapy questions answered
           </h2>
           <div className="flex flex-col gap-6">
             {faqs.map((faq) => (
               <div key={faq.question} className="border-b border-[#F1ECF8] pb-6">
-                <h3 className="font-[family-name:var(--font-fraunces)] font-normal text-[18px] text-[#1A1F30] mb-3">{faq.question}</h3>
+                <h3 className="font-[family-name:var(--font-poppins)] font-normal text-[18px] text-[#1A1F30] mb-3">{faq.question}</h3>
                 <p className="text-[14px] text-[#4A4F66] leading-relaxed">{faq.answer}</p>
               </div>
             ))}

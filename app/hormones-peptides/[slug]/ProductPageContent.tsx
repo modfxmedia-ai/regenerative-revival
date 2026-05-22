@@ -82,7 +82,7 @@ export default function ProductPageContent({ product, primaryWizloUrl, faqs }: P
               </div>
 
               {/* Title */}
-              <h1 className="font-[family-name:var(--font-fraunces)] font-normal text-[2.25rem] sm:text-[2.75rem] lg:text-[3rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+              <h1 className="font-[family-name:var(--font-poppins)] font-normal text-[2.25rem] sm:text-[2.75rem] lg:text-[3rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
                 {product.name}
               </h1>
 

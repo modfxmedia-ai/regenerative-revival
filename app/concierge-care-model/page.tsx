@@ -129,7 +129,7 @@ export default function ConciergeCareModelPage() {
               <span className="h-px w-8 bg-white/30" />
               <span className="text-[11px] font-medium tracking-[0.32em] text-white/60 uppercase">How We Work</span>
             </div>
-            <h1 className="font-[family-name:var(--font-fraunces)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4.5rem] text-white leading-[1.02] tracking-[-0.02em]">
+            <h1 className="font-[family-name:var(--font-poppins)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4.5rem] text-white leading-[1.02] tracking-[-0.02em]">
               One medical team.{" "}
               <em className="italic bg-gradient-to-r from-[#8985C5] via-[#71A7F5] to-[#6762AF] bg-clip-text text-transparent">
                 One plan.
@@ -166,7 +166,7 @@ export default function ConciergeCareModelPage() {
           <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
             <div>
               <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">The Problem We Solve</span>
-              <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl lg:text-[3rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+              <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl lg:text-[3rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
                 Most telehealth brands sell you a product. We build you a plan.
               </h2>
               <div className="mt-6 space-y-5 text-[15px] text-[#4A4F66] leading-[1.75]">
@@ -203,7 +203,7 @@ export default function ConciergeCareModelPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">The Model</span>
-            <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+            <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
               Four pillars of the Regenerative Revival model
             </h2>
           </div>
@@ -226,7 +226,7 @@ export default function ConciergeCareModelPage() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="font-[family-name:var(--font-fraunces)] font-normal text-[19px] text-[#1A1F30] mb-3">{p.title}</h3>
+                  <h3 className="font-[family-name:var(--font-poppins)] font-normal text-[19px] text-[#1A1F30] mb-3">{p.title}</h3>
                   <p className="text-[13.5px] text-[#4A4F66] leading-[1.65]">{p.desc}</p>
                 </div>
               </div>
@@ -240,7 +240,7 @@ export default function ConciergeCareModelPage() {
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">The Process</span>
-            <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+            <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
               How it works — from quiz to treatment
             </h2>
           </div>
@@ -252,7 +252,7 @@ export default function ConciergeCareModelPage() {
               { num: "04", title: "Ongoing coordination", desc: "One chart. As your protocols evolve, your team adjusts everything together." },
             ].map((step) => (
               <div key={step.num} className="border-t-2 border-[#F1ECF8] hover:border-[#6762AF] pt-6 transition-colors duration-500 group">
-                <span className="font-[family-name:var(--font-fraunces)] italic text-[3.5rem] leading-none text-[#6762AF]/15 group-hover:text-[#6762AF]/25 block mb-3 select-none transition-colors">
+                <span className="font-[family-name:var(--font-poppins)] italic text-[3.5rem] leading-none text-[#6762AF]/15 group-hover:text-[#6762AF]/25 block mb-3 select-none transition-colors">
                   {step.num}
                 </span>
                 <h3 className="text-[16px] font-semibold text-[#1A1F30] mb-2">{step.title}</h3>
@@ -276,13 +276,13 @@ export default function ConciergeCareModelPage() {
       <section className="bg-[#F1ECF8] py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">FAQ</span>
-          <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em] mb-10">
+          <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em] mb-10">
             Questions about the concierge model
           </h2>
           <div className="flex flex-col gap-6">
             {faqs.map((faq) => (
               <div key={faq.question} className="border-b border-[#6762AF]/15 pb-6">
-                <h3 className="font-[family-name:var(--font-fraunces)] font-normal text-[18px] text-[#1A1F30] mb-3">{faq.question}</h3>
+                <h3 className="font-[family-name:var(--font-poppins)] font-normal text-[18px] text-[#1A1F30] mb-3">{faq.question}</h3>
                 <p className="text-[14px] text-[#4A4F66] leading-relaxed">{faq.answer}</p>
               </div>
             ))}

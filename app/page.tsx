@@ -1,6 +1,7 @@
 import Hero from "./components/Hero";
 import ValueProps from "./components/ValueProps";
 import Treatments from "./components/Treatments";
+import HowItWorksHome from "./components/HowItWorksHome";
 import WhoWeHelp from "./components/WhoWeHelp";
 import AroraPartner from "./components/AroraPartner";
 import PatientStories from "./components/PatientStories";
@@ -30,6 +31,7 @@ export default function Home() {
       <Hero />
       <ValueProps />
       <Treatments />
+      <HowItWorksHome />
       <WhoWeHelp />
       <AroraPartner />
       <PatientStories />

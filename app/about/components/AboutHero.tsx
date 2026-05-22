@@ -34,7 +34,7 @@ export default function AboutHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="font-[family-name:var(--font-fraunces)] font-normal text-[2.75rem] sm:text-6xl lg:text-[5rem] text-white leading-[1.02] tracking-[-0.02em] max-w-4xl mx-auto"
+          className="font-[family-name:var(--font-poppins)] font-normal text-[2.75rem] sm:text-6xl lg:text-[5rem] text-white leading-[1.02] tracking-[-0.02em] max-w-4xl mx-auto"
         >
           Delivering advanced{" "}
           <em className="italic bg-gradient-to-r from-[#8985C5] via-[#71A7F5] to-[#6762AF] bg-clip-text text-transparent">

@@ -238,7 +238,7 @@ export default function Navbar() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: i * 0.05 }}
-                        className="text-2xl font-light tracking-tight text-[#1A1F30] font-[family-name:var(--font-fraunces)]"
+                        className="text-2xl font-light tracking-tight text-[#1A1F30] font-[family-name:var(--font-poppins)]"
                       >
                         {link.label}
                       </motion.span>
@@ -279,7 +279,7 @@ export default function Navbar() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.05 }}
                     onClick={() => setMobileOpen(false)}
-                    className="block py-4 border-b border-[#F1ECF8] hover:border-[#6762AF]/30 text-2xl font-light tracking-tight text-[#1A1F30] hover:text-[#583563] transition-colors font-[family-name:var(--font-fraunces)]"
+                    className="block py-4 border-b border-[#F1ECF8] hover:border-[#6762AF]/30 text-2xl font-light tracking-tight text-[#1A1F30] hover:text-[#583563] transition-colors font-[family-name:var(--font-poppins)]"
                   >
                     {link.label}
                   </motion.a>

@@ -57,7 +57,7 @@ const doctors = [
   {
     name: "Dr. Sean Arora",
     title: "Co-founder, CEO · Regenerative Revival",
-    image: "/team/3.jpg",
+    image: "/about/imgi_5_Dr-Sean-Arora.jpg",
     quote:
       "Regenerative medicine, hormone therapy, and peptide protocols don't belong in separate clinics. The same patient owns all of them, so the same team should, too.",
   },
@@ -114,7 +114,7 @@ function WhoWeHelpBlock() {
           <span className="text-[11px] font-semibold tracking-[0.32em] uppercase text-[#71A7F5]">
             This is probably you
           </span>
-          <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2.5rem] sm:text-5xl lg:text-[3.25rem] text-white leading-[1.05] tracking-[-0.02em]">
+          <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2.5rem] sm:text-5xl lg:text-[3.25rem] text-white leading-[1.05] tracking-[-0.02em]">
             Who we help
           </h2>
         </motion.div>
@@ -159,7 +159,7 @@ function PersonaCard({
           <span className="text-[10px] font-semibold tracking-[0.22em] uppercase text-[#71A7F5]">
             {eyebrow}
           </span>
-          <h3 className="mt-2.5 font-[family-name:var(--font-fraunces)] font-normal text-[20px] lg:text-[22px] text-white leading-[1.2] tracking-[-0.01em]">
+          <h3 className="mt-2.5 font-[family-name:var(--font-poppins)] font-normal text-[20px] lg:text-[22px] text-white leading-[1.2] tracking-[-0.01em]">
             {title}
           </h3>
           <p className="mt-3 text-[12.5px] text-white/55 leading-[1.6]">{body}</p>
@@ -211,7 +211,7 @@ function PhysicianLedBlock() {
           transition={{ duration: 0.8 }}
           className="text-center mb-14 lg:mb-16"
         >
-          <h2 className="font-[family-name:var(--font-fraunces)] font-normal text-[2.5rem] sm:text-5xl lg:text-[3.5rem] text-white leading-[1.05] tracking-[-0.02em]">
+          <h2 className="font-[family-name:var(--font-poppins)] font-normal text-[2.5rem] sm:text-5xl lg:text-[3.5rem] text-white leading-[1.05] tracking-[-0.02em]">
             Physician-led care
           </h2>
           <p className="mt-5 text-base text-white/85 font-medium leading-relaxed">
@@ -278,7 +278,7 @@ function DoctorCard({
       {/* Quote col */}
       <div className="flex flex-col justify-center pt-2 sm:pt-2">
         <Quote className="h-7 w-7 text-[#71A7F5] mb-5 fill-[#71A7F5]" />
-        <p className="font-[family-name:var(--font-fraunces)] font-normal text-[18px] lg:text-[21px] text-white/90 leading-[1.5] tracking-[-0.005em]">
+        <p className="font-[family-name:var(--font-poppins)] font-normal text-[18px] lg:text-[21px] text-white/90 leading-[1.5] tracking-[-0.005em]">
           {quote}
         </p>
         <p className="mt-6 text-[11.5px] text-[#71A7F5] tracking-wide">
@@ -318,7 +318,7 @@ function NumbersBlock() {
             <span className="text-[11px] font-semibold tracking-[0.32em] uppercase text-white/70">
               Track Record
             </span>
-            <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2.5rem] sm:text-5xl lg:text-[3.5rem] text-white leading-[1.05] tracking-[-0.02em]">
+            <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2.5rem] sm:text-5xl lg:text-[3.5rem] text-white leading-[1.05] tracking-[-0.02em]">
               Numbers we actually earned
             </h2>
           </motion.div>
@@ -333,7 +333,7 @@ function NumbersBlock() {
                 transition={{ duration: 0.8, delay: 0.2 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
                 className="text-center group"
               >
-                <div className="font-[family-name:var(--font-fraunces)] font-normal text-[5rem] sm:text-[6rem] lg:text-[7rem] leading-[0.9] tracking-[-0.04em] bg-gradient-to-b from-white via-white to-[#9D8FCF] bg-clip-text text-transparent transition-transform duration-500 group-hover:scale-[1.05]">
+                <div className="font-[family-name:var(--font-poppins)] font-normal text-[5rem] sm:text-[6rem] lg:text-[7rem] leading-[0.9] tracking-[-0.04em] bg-gradient-to-b from-white via-white to-[#9D8FCF] bg-clip-text text-transparent transition-transform duration-500 group-hover:scale-[1.05]">
                   {s.value}
                 </div>
                 <div className="mt-4 text-[12px] sm:text-[13px] text-white/75 tracking-wide">

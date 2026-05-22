@@ -65,7 +65,7 @@ export default function Treatments() {
           <span className="text-[12px] font-semibold tracking-[0.3em] uppercase text-[#345691]">
             Wholistic Care
           </span>
-          <h2 className="mt-5 font-[family-name:var(--font-fraunces)] font-normal text-[2.5rem] sm:text-5xl lg:text-[3.75rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+          <h2 className="mt-5 font-[family-name:var(--font-poppins)] font-normal text-[2.5rem] sm:text-5xl lg:text-[3.75rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
             One medical team that<br className="hidden sm:block" /> holds the whole picture
           </h2>
           <p className="mt-7 text-[15px] lg:text-[16px] text-[#4A4F66] leading-[1.7] max-w-[640px] mx-auto">
@@ -135,7 +135,7 @@ function TreatmentCard({
       <div className="flex flex-col h-full">
         {/* === Title + body (centered) === */}
         <div className="px-2 pt-3 pb-6 text-center">
-          <h3 className="font-[family-name:var(--font-fraunces)] font-normal text-[24px] lg:text-[26px] text-[#1A1F30] leading-[1.2] tracking-[-0.015em] mb-3">
+          <h3 className="font-[family-name:var(--font-poppins)] font-normal text-[24px] lg:text-[26px] text-[#1A1F30] leading-[1.2] tracking-[-0.015em] mb-3">
             {title}
           </h3>
           <p className="text-[13px] lg:text-[14px] text-[#4A4F66] leading-[1.65] max-w-[90%] mx-auto">

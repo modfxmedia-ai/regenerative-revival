@@ -50,7 +50,7 @@ export default function NewsList() {
                 </div>
                 <div className="lg:pb-4">
                   <span className="text-[11px] text-white/30 font-medium">{featured.date}</span>
-                  <h2 className="mt-3 font-[family-name:var(--font-fraunces)] font-normal text-[1.75rem] sm:text-4xl lg:text-5xl text-white leading-[1.1] tracking-[-0.02em] group-hover:text-[#8985C5] transition-colors duration-500">
+                  <h2 className="mt-3 font-[family-name:var(--font-poppins)] font-normal text-[1.75rem] sm:text-4xl lg:text-5xl text-white leading-[1.1] tracking-[-0.02em] group-hover:text-[#8985C5] transition-colors duration-500">
                     {featured.title}
                   </h2>
                   <p className="mt-5 text-[14px] text-white/40 leading-relaxed max-w-md">
@@ -96,7 +96,7 @@ export default function NewsList() {
                       <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#71A7F5]/60">{article.category}</span>
                       <span className="text-[11px] text-white/25">{article.date}</span>
                     </div>
-                    <h3 className="font-[family-name:var(--font-fraunces)] font-normal text-[17px] text-white leading-snug mb-3 line-clamp-2 group-hover:text-[#8985C5] transition-colors duration-300">{article.title}</h3>
+                    <h3 className="font-[family-name:var(--font-poppins)] font-normal text-[17px] text-white leading-snug mb-3 line-clamp-2 group-hover:text-[#8985C5] transition-colors duration-300">{article.title}</h3>
                     <p className="text-[12.5px] text-white/30 leading-relaxed line-clamp-2 mb-5">{article.excerpt}</p>
                     <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-[#71A7F5]/70 group-hover:text-[#71A7F5] group-hover:gap-3 transition-all duration-300">
                       Read <ArrowUpRight className="h-3.5 w-3.5" />
@@ -146,7 +146,7 @@ export default function NewsList() {
                     <span className="h-1 w-1 rounded-full bg-[#C5DBF7]" />
                     <span className="text-[11px] text-[#7A7F95]">{article.date}</span>
                   </div>
-                  <h3 className="font-[family-name:var(--font-fraunces)] font-normal text-[1.25rem] sm:text-2xl text-[#1A1F30] leading-snug mb-2 group-hover:text-[#583563] transition-colors duration-300">{article.title}</h3>
+                  <h3 className="font-[family-name:var(--font-poppins)] font-normal text-[1.25rem] sm:text-2xl text-[#1A1F30] leading-snug mb-2 group-hover:text-[#583563] transition-colors duration-300">{article.title}</h3>
                   <p className="text-[13px] text-[#4A4F66] leading-relaxed line-clamp-2 max-w-lg mb-4">{article.excerpt}</p>
                   <div className="flex items-center gap-2">
                     <Clock className="h-3 w-3 text-[#6762AF]" />

@@ -30,7 +30,7 @@ export default function OurGuarantee() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           >
             <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Our Promise</span>
-            <h2 className="mt-4 font-[family-name:var(--font-fraunces)] font-normal text-[2.25rem] sm:text-5xl lg:text-[3.25rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+            <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2.25rem] sm:text-5xl lg:text-[3.25rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
               Our guarantee,{" "}
               <em className="italic text-[#6762AF]">your health</em>
             </h2>

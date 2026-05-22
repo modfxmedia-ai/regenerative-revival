@@ -5,6 +5,9 @@ import { generatePageMetadata } from "../../../lib/seo";
 import { JsonLd, webPageSchema, breadcrumbSchema, faqSchema } from "../../../lib/schema";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 import PartnerPageContent from "./PartnerPageContent";
+import PatientStories from "../../../components/PatientStories";
+import About from "../../../components/About";
+import QuizCTA from "../../../components/QuizCTA";
 
 interface Props {
   params: Promise<{ slug: string; location: string }>;
@@ -71,6 +74,9 @@ export default async function PartnerLocationPage({ params }: Props) {
         nearby={nearby}
         relatedServices={relatedServices}
       />
+      <About />
+      <PatientStories />
+      <QuizCTA />
     </>
   );
 }

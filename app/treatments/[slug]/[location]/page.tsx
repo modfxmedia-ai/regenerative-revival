@@ -6,6 +6,9 @@ import { generatePageMetadata } from "../../../lib/seo";
 import { JsonLd, medicalWebPageSchema, breadcrumbSchema, faqSchema, localBusinessSchema } from "../../../lib/schema";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 import TreatmentPageContent from "./TreatmentPageContent";
+import PatientStories from "../../../components/PatientStories";
+import WhyChooseUs from "../../../components/WhyChooseUs";
+import QuizCTA from "../../../components/QuizCTA";
 
 interface Props {
   params: Promise<{ slug: string; location: string }>;
@@ -96,6 +99,9 @@ export default async function TreatmentLocationPage({ params }: Props) {
         nearby={nearby}
         relatedTreatments={relatedTreatments}
       />
+      <WhyChooseUs />
+      <PatientStories />
+      <QuizCTA />
     </>
   );
 }

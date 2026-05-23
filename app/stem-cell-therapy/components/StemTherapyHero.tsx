@@ -23,7 +23,7 @@ export default function StemTherapyHero() {
       <div className="absolute inset-0 noise-overlay opacity-[0.04] pointer-events-none" />
       <div className="absolute inset-0 lux-grid opacity-20 pointer-events-none" />
 
-      <div className="relative z-10 w-full mx-auto max-w-7xl px-6 lg:px-8 pb-20 lg:pb-28 pt-32">
+      <div className="relative z-10 w-full mx-auto max-w-7xl px-6 lg:px-8 pb-20 lg:pb-28 pt-12">
         <div className="max-w-3xl">
           {/* Eyebrow */}
           <motion.div
@@ -46,9 +46,9 @@ export default function StemTherapyHero() {
             className="font-[family-name:var(--font-poppins)] font-normal text-[2.75rem] sm:text-6xl lg:text-[5rem] text-white leading-[1.02] tracking-[-0.02em]"
           >
             Stem Cell{" "}
-            <em className="italic bg-gradient-to-r from-[#8985C5] via-[#71A7F5] to-[#6762AF] bg-clip-text text-transparent">
+            <span className="text-[#6762AF] font-semibold">
               Therapy
-            </em>
+            </span>
           </motion.h1>
 
           {/* Sub */}

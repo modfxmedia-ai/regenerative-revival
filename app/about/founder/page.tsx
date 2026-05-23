@@ -38,14 +38,14 @@ export default function FounderPage() {
         <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-[#6762AF]/20 blur-[140px] pointer-events-none" />
         <div className="absolute inset-0 lux-grid opacity-20 pointer-events-none" />
 
-        <div className="relative z-10 w-full mx-auto max-w-7xl px-6 lg:px-8 pb-20 lg:pb-28 pt-32">
+        <div className="relative z-10 w-full mx-auto max-w-7xl px-6 lg:px-8 pb-20 lg:pb-28 pt-12">
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-6">
               <span className="h-px w-8 bg-white/30" />
               <span className="text-[11px] font-medium tracking-[0.32em] text-white/60 uppercase">Founder</span>
             </div>
             <h1 className="font-[family-name:var(--font-poppins)] font-normal text-[3rem] sm:text-6xl lg:text-[5rem] text-white leading-[1.02] tracking-[-0.02em]">
-              Seth <em className="italic bg-gradient-to-r from-[#8985C5] via-[#71A7F5] to-[#6762AF] bg-clip-text text-transparent">Berge</em>
+              Seth <span className="text-[#6762AF] font-semibold">Berge</span>
             </h1>
             <p className="mt-5 text-base lg:text-lg text-white/65 max-w-xl leading-relaxed">
               Founder, Regenerative Revival. Building the concierge medical brand for people who refuse to treat aging as inevitable.
@@ -79,7 +79,7 @@ export default function FounderPage() {
             <div>
               <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Why Regenerative Revival Exists</span>
               <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.1] tracking-[-0.02em]">
-                The industry split in two. <em className="italic text-[#6762AF]">We built the bridge.</em>
+                The industry split in two. <span className="text-[#6762AF]">We built the bridge.</span>
               </h2>
               <div className="mt-6 space-y-5 text-[15px] text-[#4A4F66] leading-[1.75]">
                 <p>
@@ -95,7 +95,7 @@ export default function FounderPage() {
 
             <div>
               <h2 className="font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.1] tracking-[-0.02em]">
-                The dinner-seminar <em className="italic text-[#6762AF]">model</em>
+                The dinner-seminar <span className="text-[#6762AF]">model</span>
               </h2>
               <div className="mt-6 space-y-5 text-[15px] text-[#4A4F66] leading-[1.75]">
                 <p>
@@ -111,7 +111,7 @@ export default function FounderPage() {
 
             {/* TODO: Replace with final founder copy from Lydia (ModFX) at content freeze */}
             <div className="rounded-2xl bg-[#F1ECF8]/60 border border-[#6762AF]/10 px-6 py-5">
-              <p className="text-[13px] text-[#4A4F66] italic leading-relaxed">
+              <p className="text-[13px] text-[#4A4F66] leading-relaxed">
                 <strong className="text-[#1A1F30] not-italic">Note:</strong> Final founder biography pending from ModFX. This placeholder will be replaced at content freeze (Week 3).
               </p>
             </div>

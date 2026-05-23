@@ -38,7 +38,7 @@ export default function ContactForm() {
           <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Get in Touch</span>
           <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2.25rem] sm:text-5xl lg:text-[3.25rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
             Get in touch with{" "}
-            <em className="italic text-[#6762AF]">Regenerative Revival</em>
+            <span className="text-[#6762AF]">Regenerative Revival</span>
           </h2>
           <p className="mt-5 text-base text-[#4A4F66]">
             We&apos;re here to help you start your journey towards a pain-free life. Contact us today and take the first step towards improved health and wellness.

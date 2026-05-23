@@ -124,9 +124,9 @@ export default function HormonesPeptidesPage() {
             </p>
             <h1 className="font-[family-name:var(--font-poppins)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4rem] text-white leading-[1.05] tracking-[-0.02em]">
               Peptide therapy &amp; hormone optimization —{" "}
-              <em className="italic bg-gradient-to-r from-[#8985C5] via-[#71A7F5] to-[#6762AF] bg-clip-text text-transparent">
+              <span className="text-[#6762AF] font-semibold">
                 prescribed online
-              </em>
+              </span>
             </h1>
             <p className="mt-7 text-base lg:text-lg text-white/65 leading-relaxed max-w-2xl">
               Compounded semaglutide, BPC-157, GHK-Cu, TRT, and more — prescribed by a licensed clinician, reviewed against your labs, and shipped from a licensed compounding pharmacy. No clinic visit. No waiting room.
@@ -195,7 +195,7 @@ export default function HormonesPeptidesPage() {
                 { value: "48 hrs", label: "Average time to first clinician review" },
               ].map((s) => (
                 <div key={s.label} className="rounded-2xl bg-[#F4EFFA] p-6 border border-[#6762AF]/10">
-                  <div className="font-[family-name:var(--font-poppins)] italic text-3xl text-[#6762AF]">{s.value}</div>
+                  <div className="font-[family-name:var(--font-poppins)] text-3xl text-[#6762AF]">{s.value}</div>
                   <div className="text-[12px] text-[#4A4F66] mt-2 leading-snug">{s.label}</div>
                 </div>
               ))}

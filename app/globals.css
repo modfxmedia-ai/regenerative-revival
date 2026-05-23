@@ -97,7 +97,7 @@ h1.font-medium, h2.font-medium, h3.font-medium { font-weight: 500 !important; }
 .brand-italic {
   font-family: var(--font-poppins), system-ui, sans-serif;
   font-style: normal;
-  font-weight: 800;
+  font-weight: 600;
   color: #6762AF;
 }
 

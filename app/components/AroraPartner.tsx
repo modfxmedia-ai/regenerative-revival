@@ -60,7 +60,7 @@ export default function AroraPartner() {
             </div>
 
             {/* Subhead */}
-            <p className="font-[family-name:var(--font-poppins)] italic text-[17px] text-[#1A1F30] leading-snug mb-3">
+            <p className="font-[family-name:var(--font-poppins)] text-[17px] text-[#1A1F30] leading-snug mb-3">
               The clinical backbone.
             </p>
 

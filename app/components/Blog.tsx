@@ -55,7 +55,7 @@ export default function Blog() {
           <div>
             <span className="eyebrow">Latest News</span>
             <h2 className="mt-4 lux-display text-4xl sm:text-5xl lg:text-[3.75rem] text-[#1A1F30] leading-[1.05]">
-              Insights & <em className="em">updates</em>
+              Insights & <span className="text-[#6762AF] font-semibold">updates</span>
             </h2>
           </div>
           <Link

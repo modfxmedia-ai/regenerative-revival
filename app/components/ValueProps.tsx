@@ -144,7 +144,7 @@ function PillarRow({ pillar, index }: { pillar: (typeof pillars)[number]; index:
             {/* Callout note */}
             {pillar.note && (
               <div className="mt-7 rounded-xl bg-[#F1ECF8]/70 border-l-2 border-[#6762AF] px-5 py-4">
-                <p className="text-[13px] text-[#4A4F66] leading-relaxed italic">
+                <p className="text-[13px] text-[#4A4F66] leading-relaxed ">
                   {pillar.note}
                 </p>
               </div>
@@ -183,7 +183,7 @@ function PillarRow({ pillar, index }: { pillar: (typeof pillars)[number]; index:
             {/* Index badge */}
             <div className="absolute -top-4 -right-4 lg:-top-6 lg:-right-6 flex h-16 w-16 lg:h-20 lg:w-20 items-center justify-center rounded-full bg-white shadow-xl border border-[#F1ECF8]">
               <span className="lux-display text-2xl lg:text-3xl text-[#6762AF]">
-                <em className="em">0{index + 1}</em>
+                <span className="text-[#6762AF] font-semibold">0{index + 1}</span>
               </span>
             </div>
           </motion.div>
@@ -193,7 +193,7 @@ function PillarRow({ pillar, index }: { pillar: (typeof pillars)[number]; index:
   );
 }
 
-/** Renders the headline with the first word styled as italic serif accent. */
+/** Renders the headline with the first word styled as serif accent. */
 function renderTitle(title: string) {
   // Find a good word to highlight — usually a key noun
   const highlights: Record<string, string> = {
@@ -208,7 +208,7 @@ function renderTitle(title: string) {
   return (
     <>
       {parts[0]}
-      <em className="brand-italic text-[#583563]">{word}</em>
+      <span className="brand-italic text-[#583563]">{word}</span>
       {parts[1]}
     </>
   );

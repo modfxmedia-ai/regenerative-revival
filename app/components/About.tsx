@@ -50,7 +50,7 @@ export default function About() {
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
                 <div className="text-white">
                   <p className="text-xs tracking-[0.3em] uppercase text-white/60 mb-1">Founder</p>
-                  <p className="lux-display text-2xl">Seth <em className="em">Berge</em></p>
+                  <p className="lux-display text-2xl">Seth <span className="text-[#6762AF] font-semibold">Berge</span></p>
                 </div>
               </div>
             </div>
@@ -63,7 +63,7 @@ export default function About() {
               className="absolute -bottom-8 -right-4 lg:-right-12 rounded-2xl bg-white p-6 shadow-[0_24px_64px_-12px_rgba(0,0,0,0.4)] border border-white/80"
             >
               <div className="lux-display text-5xl text-[#6762AF]">
-                <em className="em">8+</em>
+                <span className="text-[#6762AF] font-semibold">8+</span>
               </div>
               <div className="text-xs text-[#4A4F66] mt-1 leading-snug">
                 Years in<br />Regenerative Medicine
@@ -80,7 +80,7 @@ export default function About() {
           >
             <span className="eyebrow text-[#71A7F5]">Our Story</span>
             <h2 className="mt-4 lux-display text-4xl sm:text-5xl lg:text-[4rem] text-white leading-[1.05]">
-              Built by a team that's lived the <em className="em">promise</em> of regenerative medicine
+              Built by a team that's lived the <span className="text-[#6762AF] font-semibold">promise</span> of regenerative medicine
             </h2>
             <p className="mt-7 text-lg text-white/65 leading-relaxed max-w-xl">
               Founded by Seth Berge with a singular mission: to make cutting-edge regenerative therapy accessible to everyone who needs it. We educate, we prescribe, we coordinate — under one physician-led medical team.
@@ -102,7 +102,7 @@ export default function About() {
                 >
                   <div className="flex items-baseline gap-3 mb-2">
                     <span className="lux-display text-sm text-[#71A7F5]">
-                      <em className="em">{v.number}</em>
+                      <span className="text-[#6762AF] font-semibold">{v.number}</span>
                     </span>
                     <h3 className="text-base font-semibold text-white">{v.title}</h3>
                   </div>

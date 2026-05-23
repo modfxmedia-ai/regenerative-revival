@@ -26,7 +26,7 @@ export default function ContactHero() {
       <div className="absolute inset-0 lux-grid opacity-20 pointer-events-none" />
       <div className="absolute inset-0 noise-overlay opacity-[0.04] pointer-events-none" />
 
-      <div className="relative z-10 w-full mx-auto max-w-7xl px-6 lg:px-8 pb-16 lg:pb-20 pt-32 text-center">
+      <div className="relative z-10 w-full mx-auto max-w-7xl px-6 lg:px-8 pb-16 lg:pb-20 pt-12 text-center">
         {/* Eyebrow */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
@@ -47,9 +47,9 @@ export default function ContactHero() {
           className="font-[family-name:var(--font-poppins)] font-normal text-[2.5rem] sm:text-5xl lg:text-[4.5rem] text-white leading-[1.02] tracking-[-0.02em] max-w-4xl mx-auto"
         >
           Expert guidance on your{" "}
-          <em className="italic bg-gradient-to-r from-[#8985C5] via-[#71A7F5] to-[#6762AF] bg-clip-text text-transparent">
+          <span className="text-[#6762AF] font-semibold">
             regenerative health journey
-          </em>
+          </span>
         </motion.h1>
 
         {/* Sub */}

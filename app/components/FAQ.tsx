@@ -80,7 +80,7 @@ export default function FAQ() {
           >
             <span className="eyebrow">FAQ</span>
             <h2 className="mt-4 lux-display text-4xl lg:text-5xl text-[#1A1F30] leading-[1.05]">
-              Frequently asked <em className="em">questions</em>
+              Frequently asked <span className="text-[#6762AF] font-semibold">questions</span>
             </h2>
             <p className="mt-6 text-sm text-[#4A4F66] leading-relaxed">
               Everything you need to know about our treatments and partnerships. Still have questions?{" "}

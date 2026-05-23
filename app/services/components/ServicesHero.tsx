@@ -27,7 +27,7 @@ export default function ServicesHero() {
       />
 
       <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8 pt-8 pb-24">
-        <div className="max-w-3xl">
+        <div className="max-w-5xl">
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}

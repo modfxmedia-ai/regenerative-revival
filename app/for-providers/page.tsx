@@ -116,7 +116,7 @@ export default function ForProvidersPage() {
         <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-[#6762AF]/20 blur-[140px] pointer-events-none" />
         <div className="absolute inset-0 lux-grid opacity-20 pointer-events-none" />
 
-        <div className="relative z-10 w-full mx-auto max-w-7xl px-6 lg:px-8 pb-20 lg:pb-28 pt-32">
+        <div className="relative z-10 w-full mx-auto max-w-7xl px-6 lg:px-8 pb-20 lg:pb-28 pt-12">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-7">
               <span className="h-px w-8 bg-white/30" />
@@ -124,9 +124,9 @@ export default function ForProvidersPage() {
             </div>
             <h1 className="font-[family-name:var(--font-poppins)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4.5rem] text-white leading-[1.02] tracking-[-0.02em]">
               Build a concierge practice —{" "}
-              <em className="italic bg-gradient-to-r from-[#8985C5] via-[#71A7F5] to-[#6762AF] bg-clip-text text-transparent">
+              <span className="text-[#6762AF] font-semibold">
                 without building the infrastructure
-              </em>
+              </span>
             </h1>
             <p className="mt-7 text-base lg:text-lg text-white/65 leading-relaxed max-w-2xl">
               Regenerative Revival partners with licensed clinicians to deliver in-home regenerative therapies and physician-led telehealth under Arora Health Group. We bring the platform, protocols, and compounding pharmacy network. You bring the patient relationship.
@@ -175,7 +175,7 @@ export default function ForProvidersPage() {
                   { value: "40,500", label: "Monthly searches for compounded semaglutide" },
                 ].map((s) => (
                   <div key={s.label} className="rounded-2xl bg-[#F4EFFA] p-4 border border-[#6762AF]/10">
-                    <div className="font-[family-name:var(--font-poppins)] italic text-2xl text-[#6762AF]">{s.value}</div>
+                    <div className="font-[family-name:var(--font-poppins)] text-2xl text-[#6762AF]">{s.value}</div>
                     <div className="text-[11px] text-[#4A4F66] mt-1 leading-snug">{s.label}</div>
                   </div>
                 ))}
@@ -217,7 +217,7 @@ export default function ForProvidersPage() {
                     <b.icon className="h-5 w-5 text-[#71A7F5]" />
                   </div>
                   <div className="text-right">
-                    <div className="font-[family-name:var(--font-poppins)] italic text-2xl text-[#71A7F5]">{b.stat}</div>
+                    <div className="font-[family-name:var(--font-poppins)] text-2xl text-[#71A7F5]">{b.stat}</div>
                     <div className="text-[10px] text-white/45">{b.statLabel}</div>
                   </div>
                 </div>
@@ -261,7 +261,7 @@ export default function ForProvidersPage() {
               <div className="mt-7 flex flex-col gap-6">
                 {steps.map((step) => (
                   <div key={step.num} className="flex gap-5">
-                    <div className="font-[family-name:var(--font-poppins)] italic text-2xl text-[#6762AF]/40 shrink-0 w-10">{step.num}</div>
+                    <div className="font-[family-name:var(--font-poppins)] text-2xl text-[#6762AF]/40 shrink-0 w-10">{step.num}</div>
                     <div>
                       <h3 className="text-[15px] font-semibold text-[#1A1F30] mb-1">{step.title}</h3>
                       <p className="text-[13px] text-[#4A4F66] leading-relaxed">{step.desc}</p>

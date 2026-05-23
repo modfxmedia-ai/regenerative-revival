@@ -123,7 +123,7 @@ export default function ConciergeCareModelPage() {
         <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-[#6762AF]/20 blur-[140px] pointer-events-none" />
         <div className="absolute inset-0 lux-grid opacity-20 pointer-events-none" />
 
-        <div className="relative z-10 w-full mx-auto max-w-7xl px-6 lg:px-8 pb-20 lg:pb-28 pt-32">
+        <div className="relative z-10 w-full mx-auto max-w-7xl px-6 lg:px-8 pb-20 lg:pb-28 pt-12">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-7">
               <span className="h-px w-8 bg-white/30" />
@@ -131,9 +131,9 @@ export default function ConciergeCareModelPage() {
             </div>
             <h1 className="font-[family-name:var(--font-poppins)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4.5rem] text-white leading-[1.02] tracking-[-0.02em]">
               One medical team.{" "}
-              <em className="italic bg-gradient-to-r from-[#8985C5] via-[#71A7F5] to-[#6762AF] bg-clip-text text-transparent">
+              <span className="text-[#6762AF] font-semibold">
                 One plan.
-              </em>{" "}
+              </span>{" "}
               The best decade of your life.
             </h1>
             <p className="mt-7 text-base lg:text-lg text-white/65 leading-relaxed max-w-2xl">
@@ -252,7 +252,7 @@ export default function ConciergeCareModelPage() {
               { num: "04", title: "Ongoing coordination", desc: "One chart. As your protocols evolve, your team adjusts everything together." },
             ].map((step) => (
               <div key={step.num} className="border-t-2 border-[#F1ECF8] hover:border-[#6762AF] pt-6 transition-colors duration-500 group">
-                <span className="font-[family-name:var(--font-poppins)] italic text-[3.5rem] leading-none text-[#6762AF]/15 group-hover:text-[#6762AF]/25 block mb-3 select-none transition-colors">
+                <span className="font-[family-name:var(--font-poppins)] text-[3.5rem] leading-none text-[#6762AF]/15 group-hover:text-[#6762AF]/25 block mb-3 select-none transition-colors">
                   {step.num}
                 </span>
                 <h3 className="text-[16px] font-semibold text-[#1A1F30] mb-2">{step.title}</h3>

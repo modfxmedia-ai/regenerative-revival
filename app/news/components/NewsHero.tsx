@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function NewsHero() {
   return (
-    <section className="relative bg-gradient-to-b from-[#1A1F30] to-[#21253C] overflow-hidden">
+    <section className="relative bg-gradient-to-b from-[#1A1F30] to-[#21253C] overflow-hidden pt-20">
       {/* Aurora */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#6762AF]/15 blur-[140px] pointer-events-none" />
       <div className="absolute inset-0 lux-grid opacity-25 pointer-events-none" />
@@ -27,9 +27,9 @@ export default function NewsHero() {
             className="font-[family-name:var(--font-poppins)] font-normal text-[3.5rem] sm:text-6xl md:text-7xl lg:text-[6rem] text-white leading-[0.95] tracking-[-0.02em]"
           >
             News &amp;<br />
-            <em className="italic bg-gradient-to-r from-[#8985C5] via-[#71A7F5] to-[#6762AF] bg-clip-text text-transparent">
+            <span className="text-[#6762AF] font-semibold">
               Insights
-            </em>
+            </span>
           </motion.h1>
 
           <motion.p

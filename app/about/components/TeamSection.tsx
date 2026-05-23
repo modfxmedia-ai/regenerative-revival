@@ -115,7 +115,7 @@ export default function TeamSection() {
         >
           <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Our Team</span>
           <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2.25rem] sm:text-5xl lg:text-[3.25rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
-            The people behind <em className="italic text-[#6762AF]">your revival</em>
+            The people behind <span className="text-[#6762AF]">your revival</span>
           </h2>
           <p className="mt-5 text-base text-[#4A4F66]">
             Our specialized leaders, practitioners, and support staff in regenerative therapy.

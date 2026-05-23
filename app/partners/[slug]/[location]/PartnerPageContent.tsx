@@ -99,7 +99,7 @@ export default function PartnerPageContent({
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-secondary overflow-hidden">
+      <section className="relative bg-secondary overflow-hidden pt-20">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(107,63,160,0.3),transparent)] pointer-events-none" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8 pt-8 pb-20">
           <div className="grid lg:grid-cols-5 gap-10 items-start">

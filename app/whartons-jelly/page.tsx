@@ -130,7 +130,7 @@ export default function WhartonsJellyPage() {
         <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-[#6762AF]/20 blur-[140px] pointer-events-none" />
         <div className="absolute inset-0 lux-grid opacity-20 pointer-events-none" />
 
-        <div className="relative z-10 w-full mx-auto max-w-7xl px-6 lg:px-8 pb-20 lg:pb-28 pt-32">
+        <div className="relative z-10 w-full mx-auto max-w-7xl px-6 lg:px-8 pb-20 lg:pb-28 pt-12">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-7">
               <span className="h-px w-8 bg-white/30" />
@@ -138,9 +138,9 @@ export default function WhartonsJellyPage() {
             </div>
             <h1 className="font-[family-name:var(--font-poppins)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4.5rem] text-white leading-[1.02] tracking-[-0.02em]">
               Wharton&apos;s Jelly —{" "}
-              <em className="italic bg-gradient-to-r from-[#8985C5] via-[#71A7F5] to-[#6762AF] bg-clip-text text-transparent">
+              <span className="text-[#6762AF] font-semibold">
                 the gold standard
-              </em>{" "}
+              </span>{" "}
               in stem cell therapy
             </h1>
             <p className="mt-7 text-base lg:text-lg text-white/65 leading-relaxed max-w-2xl">
@@ -201,7 +201,7 @@ export default function WhartonsJellyPage() {
               </div>
               {/* Floating stat */}
               <div className="absolute -bottom-6 -right-4 lg:-right-8 bg-white rounded-2xl p-5 shadow-[0_16px_40px_-8px_rgba(26,31,48,0.2)] border border-[#F1ECF8]">
-                <div className="font-[family-name:var(--font-poppins)] italic text-4xl text-[#6762AF]">10–100×</div>
+                <div className="font-[family-name:var(--font-poppins)] text-4xl text-[#6762AF]">10–100×</div>
                 <div className="text-[11px] text-[#4A4F66] mt-1 leading-snug">More MSCs per gram<br />vs bone marrow</div>
               </div>
             </div>

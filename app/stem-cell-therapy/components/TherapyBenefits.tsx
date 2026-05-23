@@ -32,7 +32,7 @@ export default function TherapyBenefits() {
         >
           <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Key Benefits</span>
           <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2.25rem] sm:text-5xl lg:text-[3.25rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
-            Benefits of <em className="italic text-[#6762AF]">stem cell therapy</em>
+            Benefits of <span className="text-[#6762AF]">stem cell therapy</span>
           </h2>
         </motion.div>
 

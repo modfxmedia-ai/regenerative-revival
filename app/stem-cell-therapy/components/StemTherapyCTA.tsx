@@ -38,9 +38,9 @@ export default function StemTherapyCTA() {
           className="font-[family-name:var(--font-poppins)] font-normal text-[2.5rem] sm:text-5xl lg:text-[3.75rem] text-white leading-[1.05] tracking-[-0.02em]"
         >
           Ready to experience{" "}
-          <em className="italic bg-gradient-to-r from-[#8985C5] via-[#71A7F5] to-[#6762AF] bg-clip-text text-transparent">
+          <span className="text-[#6762AF] font-semibold">
             stem cell therapy?
-          </em>
+          </span>
         </motion.h2>
 
         <motion.p

@@ -28,7 +28,7 @@ export default function Contact() {
         >
           <span className="eyebrow text-[#71A7F5]">Get Started</span>
           <h2 className="mt-4 lux-display text-4xl sm:text-5xl lg:text-[3.75rem] text-white leading-[1.05]">
-            Get in touch with <em className="em">Regenerative Revival</em>
+            Get in touch with <span className="text-[#6762AF] font-semibold">Regenerative Revival</span>
           </h2>
           <p className="mt-7 text-base lg:text-lg text-white/65 leading-relaxed">
             Whether you&apos;re a patient seeking treatment or a business looking to partner — we&apos;re here to help.
@@ -105,7 +105,7 @@ function FormCard({
           <Sparkles className="h-7 w-7 text-[#71A7F5]" />
         </div>
         <h3 className="lux-display text-3xl text-white mb-3">
-          Thank <em className="em">you</em>
+          Thank <span className="text-[#6762AF] font-semibold">you</span>
         </h3>
         <p className="text-white/60">We&apos;ve received your message and will be in touch within 24 hours.</p>
       </div>
@@ -203,7 +203,7 @@ function ContactInfo() {
   return (
     <div className="rounded-[1.75rem] bg-white/[0.04] backdrop-blur-xl border border-white/10 p-7">
       <h3 className="lux-display text-2xl text-white mb-6">
-        Contact <em className="em">information</em>
+        Contact <span className="text-[#6762AF] font-semibold">information</span>
       </h3>
       <div className="flex flex-col gap-5">
         <InfoRow

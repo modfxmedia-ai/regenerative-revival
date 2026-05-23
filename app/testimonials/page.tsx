@@ -233,7 +233,7 @@ export default function TestimonialsPage() {
       <Breadcrumbs items={[{ label: "Testimonials", href: "/testimonials" }]} />
 
       {/* Hero */}
-      <section className="relative pt-36 pb-20 bg-secondary overflow-hidden">
+      <section className="relative pt-20 pb-20 bg-secondary overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-primary/[0.06] rounded-full blur-[120px] pointer-events-none" />
 

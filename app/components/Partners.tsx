@@ -30,7 +30,7 @@ export default function Partners() {
         >
           <span className="eyebrow text-[#71A7F5]">For Medical Practices & Businesses</span>
           <h2 className="mt-4 lux-display text-4xl sm:text-5xl lg:text-[3.75rem] text-white leading-[1.05]">
-            Partner with <em className="em">Regenerative Revival</em>
+            Partner with <span className="text-[#6762AF] font-semibold">Regenerative Revival</span>
           </h2>
           <p className="mt-7 text-base lg:text-lg text-white/65 leading-relaxed">
             Looking to add stem cell therapy to your practice or buy wholesale? We offer a turnkey JV partnership with revenue sharing that makes it easy to get started.
@@ -66,7 +66,7 @@ export default function Partners() {
         >
           <div className="relative">
             <h3 className="lux-display text-2xl sm:text-3xl text-white">
-              Ready to <em className="em">grow</em> your practice?
+              Ready to <span className="text-[#6762AF] font-semibold">grow</span> your practice?
             </h3>
             <p className="mt-3 text-white/85 max-w-lg text-sm sm:text-base">
               Join our network of medical partners and start offering cutting-edge stem cell therapy with full support and shared revenue.

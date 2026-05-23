@@ -60,7 +60,7 @@ export default function WhyChooseUs() {
           >
             <span className="eyebrow">Why Us</span>
             <h2 className="mt-4 lux-display text-4xl sm:text-5xl lg:text-[3.75rem] text-[#1A1F30] leading-[1.05]">
-              Why choose <em className="em">Regenerative Revival</em>
+              Why choose <span className="text-[#6762AF] font-semibold">Regenerative Revival</span>
             </h2>
             <p className="mt-7 text-base lg:text-lg text-[#4A4F66] leading-relaxed">
               Expertise and innovation in regenerative medicine. We&apos;re committed to delivering cutting-edge treatments in a patient-centered environment — under one physician-led medical team.
@@ -92,7 +92,7 @@ export default function WhyChooseUs() {
               >
                 {/* Number */}
                 <div className="lux-display text-3xl text-[#6762AF]/40 group-hover:text-[#6762AF] transition-colors duration-300">
-                  <em className="em">0{i + 1}</em>
+                  <span className="text-[#6762AF] font-semibold">0{i + 1}</span>
                 </div>
                 {/* Content */}
                 <div className="pt-1">

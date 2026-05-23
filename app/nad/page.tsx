@@ -111,9 +111,9 @@ export default function NadHubPage() {
             </p>
             <h1 className="font-[family-name:var(--font-poppins)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4rem] text-white leading-[1.05] tracking-[-0.02em]">
               NAD+ therapy — IV, injection &amp;{" "}
-              <em className="italic bg-gradient-to-r from-[#8985C5] via-[#71A7F5] to-[#6762AF] bg-clip-text text-transparent">
+              <span className="text-[#6762AF] font-semibold">
                 sublingual
-              </em>
+              </span>
             </h1>
             <p className="mt-7 text-base lg:text-lg text-white/65 leading-relaxed max-w-2xl">
               NAD+ is a coenzyme central to mitochondrial energy production and DNA repair. Levels decline with age. Our clinicians build personalized NAD+ protocols — IV infusion, injection, or sublingual — based on your labs and goals.

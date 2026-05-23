@@ -37,7 +37,7 @@ export default function FounderSection() {
               <div className="absolute inset-0 ring-1 ring-inset ring-white/15 rounded-[2.5rem] pointer-events-none" />
               <div className="absolute bottom-6 left-6 right-6">
                 <p className="text-[11px] tracking-[0.3em] uppercase text-white/50 mb-1">Founder</p>
-                <p className="font-[family-name:var(--font-poppins)] italic text-2xl text-white">Seth Berge</p>
+                <p className="font-[family-name:var(--font-poppins)] text-2xl text-white">Seth Berge</p>
               </div>
             </div>
 
@@ -48,7 +48,7 @@ export default function FounderSection() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="absolute -bottom-6 -right-4 lg:-right-8 bg-white rounded-2xl p-6 shadow-[0_16px_40px_-8px_rgba(26,31,48,0.3)] border border-[#F1ECF8]"
             >
-              <div className="font-[family-name:var(--font-poppins)] italic text-5xl text-[#6762AF]">8+</div>
+              <div className="font-[family-name:var(--font-poppins)] text-5xl text-[#6762AF]">8+</div>
               <div className="text-[11px] text-[#4A4F66] mt-1 leading-snug">Years in<br />Regenerative Medicine</div>
             </motion.div>
 
@@ -59,7 +59,7 @@ export default function FounderSection() {
               transition={{ duration: 0.6, delay: 0.65 }}
               className="absolute -top-4 -left-4 bg-gradient-to-br from-[#6762AF] to-[#583563] rounded-2xl p-4 shadow-[0_8px_32px_rgba(103,98,175,0.4)]"
             >
-              <div className="font-[family-name:var(--font-poppins)] italic text-2xl text-white">1000s</div>
+              <div className="font-[family-name:var(--font-poppins)] text-2xl text-white">1000s</div>
               <div className="text-[11px] text-white/70">Lives Changed</div>
             </motion.div>
           </motion.div>
@@ -72,7 +72,7 @@ export default function FounderSection() {
           >
             <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#71A7F5]">Our Founder</span>
             <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2.25rem] sm:text-5xl lg:text-[3.25rem] text-white leading-[1.05] tracking-[-0.02em]">
-              Meet <em className="italic text-[#71A7F5]">Seth Berge</em>
+              Meet <span className="text-[#71A7F5]">Seth Berge</span>
             </h2>
             <p className="mt-2 text-base text-[#71A7F5] font-medium">Founder of Regenerative Revival</p>
 

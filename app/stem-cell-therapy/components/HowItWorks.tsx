@@ -27,7 +27,7 @@ export default function HowItWorks() {
         >
           <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">The Process</span>
           <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2.25rem] sm:text-5xl lg:text-[3.25rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
-            How stem cell therapy <em className="italic text-[#6762AF]">works</em>
+            How stem cell therapy <span className="text-[#6762AF]">works</span>
           </h2>
         </motion.div>
 
@@ -40,7 +40,7 @@ export default function HowItWorks() {
               transition={{ duration: 0.6, delay: 0.15 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="group relative border-t-2 border-[#F1ECF8] hover:border-[#6762AF] pt-6 transition-colors duration-500"
             >
-              <span className="font-[family-name:var(--font-poppins)] italic text-[4rem] leading-none text-[#6762AF]/10 group-hover:text-[#6762AF]/20 block mb-3 select-none transition-colors duration-500">
+              <span className="font-[family-name:var(--font-poppins)] text-[4rem] leading-none text-[#6762AF]/10 group-hover:text-[#6762AF]/20 block mb-3 select-none transition-colors duration-500">
                 {s.num}
               </span>
               <h3 className="text-[17px] font-semibold text-[#1A1F30] mb-3">{s.title}</h3>

@@ -59,7 +59,7 @@ export default function HeroContactForm() {
           <ArrowUpRight className="h-6 w-6 text-[#71A7F5]" />
         </div>
         <h3 className="lux-display text-2xl text-white mb-2">
-          Thank <em className="em">you</em>
+          Thank <span className="text-[#6762AF] font-semibold">you</span>
         </h3>
         <p className="text-sm text-white/50">We&apos;ll be in touch within 24 hours.</p>
       </div>
@@ -69,7 +69,7 @@ export default function HeroContactForm() {
   return (
     <div className="rounded-2xl bg-white/[0.05] backdrop-blur-xl border border-white/10 p-6 lg:p-8">
       <h3 className="lux-display text-xl text-white mb-1">
-        Free <em className="em">Consultation</em>
+        Free <span className="text-[#6762AF] font-semibold">Consultation</span>
       </h3>
       <p className="text-sm text-white/40 mb-6">Get a personalized treatment plan</p>
 

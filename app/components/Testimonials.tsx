@@ -184,7 +184,7 @@ export default function Testimonials() {
         >
           <span className="eyebrow text-[#71A7F5]">Real Results</span>
           <h2 className="mt-4 lux-display text-4xl sm:text-5xl lg:text-[4rem] text-white leading-[1.05]">
-            Hear it from <em className="em">real people</em>
+            Hear it from <span className="text-[#6762AF] font-semibold">real people</span>
           </h2>
           <p className="mt-7 max-w-2xl mx-auto text-base lg:text-lg text-white/55 leading-relaxed">
             From world-renowned figures to everyday patients — the proof is in the results that speak for themselves.

@@ -1,21 +1,36 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Sparkles, Award, Users, MapPin, ShieldCheck } from "lucide-react";
-import Image from "next/image";
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) return;
+
+    video.play().catch(() => {});
+  }, []);
+
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#021E3C]">
-      {/* === Full-bleed background photo === */}
+      {/* === Full-bleed background video === */}
       <div className="absolute inset-0">
-        <Image
-          src="/8470.jpg"
-          alt=""
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
+        <video
+          ref={videoRef}
+          src="/human-body-scan-3.mp4"
+          poster="/8470.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          aria-hidden
         />
         {/* Dark cinematic overlays — preserve readability over the photo */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#021E3C] via-[#021E3C]/70 to-[#021E3C]/40" />

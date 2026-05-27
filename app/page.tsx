@@ -1,5 +1,6 @@
 import Hero from "./components/Hero";
 import ValueProps from "./components/ValueProps";
+import ServicesAccordion from "./components/ServicesAccordion";
 import Treatments from "./components/Treatments";
 import HowItWorksHome from "./components/HowItWorksHome";
 import WhoWeHelp from "./components/WhoWeHelp";
@@ -30,6 +31,7 @@ export default function Home() {
       <JsonLd data={faqSchema(homeFaqs)} />
       <Hero />
       <ValueProps />
+      <ServicesAccordion />
       <Treatments />
       <HowItWorksHome />
       <WhoWeHelp />

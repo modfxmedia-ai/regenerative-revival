@@ -80,7 +80,7 @@ export default function ServicesAccordion() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-[#6762AF]/10 blur-[140px] rounded-full" />
       </div>
 
-      <div className="relative mx-auto max-w-[1280px] px-6 lg:px-10">
+      <div className="relative mx-auto max-w-[1380px] px-6 lg:px-10">
 
         {/* ── Section heading ───────────────────────────────────────────────── */}
         <div className="mb-12 lg:mb-16 text-center">
@@ -127,10 +127,10 @@ export default function ServicesAccordion() {
                 href={service.href}
                 className="relative overflow-hidden rounded-[20px] cursor-pointer group block"
                 style={{
-                  flexGrow: isActive ? 20 : 1,
+                  flexGrow: isActive ? 20 : 3,
                   flexShrink: 1,
-                  flexBasis: "80px",
-                  minWidth: "80px",
+                  flexBasis: "110px",
+                  minWidth: "110px",
                   transition: CARD_TRANSITION,
                 }}
                 onMouseEnter={() => setActiveIndex(i)}
@@ -141,7 +141,7 @@ export default function ServicesAccordion() {
                   src={service.image}
                   alt={service.tagline}
                   fill
-                  sizes="(max-width: 1280px) 60vw, 700px"
+                  sizes="(max-width: 1380px) 60vw, 700px"
                   className="object-cover"
                   style={{
                     objectPosition: service.objectPosition,
@@ -158,7 +158,7 @@ export default function ServicesAccordion() {
                   style={{
                     background: isActive
                       ? "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.2) 100%)"
-                      : "linear-gradient(to top, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.75) 100%)",
+                      : "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.30) 40%, rgba(0,0,0,0.55) 100%)",
                     transition: `background ${DURATION_MS}ms ${EASE}`,
                   }}
                 />
@@ -186,27 +186,19 @@ export default function ServicesAccordion() {
                   {!isActive && (
                     <motion.div
                       key="inactive-label"
-                      className="absolute inset-0 flex flex-col justify-between p-5"
+                      className="absolute inset-0 flex flex-col justify-between px-2 py-5"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      {/* Label — rotated for narrow column */}
-                      <span
-                        className="block text-white font-black text-[11px] tracking-[0.12em] uppercase leading-[1.3] whitespace-pre-line"
-                        style={{
-                          writingMode: "vertical-rl",
-                          textOrientation: "mixed",
-                          transform: "rotate(180deg)",
-                          alignSelf: "flex-end",
-                        }}
-                      >
-                        {service.label.replace(/\n/g, " ")}
+                      {/* Label — top-left, horizontal */}
+                      <span className="block text-white font-bold text-[15px] tracking-[0.08em] uppercase leading-[1.3] whitespace-pre-line drop-shadow-[0_2px_8px_rgba(0,0,0,0.2)] text-center">
+                        {service.label}
                       </span>
 
-                      {/* Plus icon */}
-                      <div className="self-center flex items-center justify-center w-9 h-9 rounded-full border border-white/40 bg-white/10 backdrop-blur-sm group-hover:bg-white/20 group-hover:border-white/60 transition-all duration-300">
+                      {/* Plus icon — bottom center */}
+                      <div className="self-center flex items-center justify-center w-10 h-10 rounded-full border border-white/50 bg-white/10 backdrop-blur-sm group-hover:bg-white/20 group-hover:border-white/70 transition-all duration-300">
                         <Plus className="w-4 h-4 text-white" strokeWidth={2.5} />
                       </div>
                     </motion.div>
@@ -233,8 +225,8 @@ export default function ServicesAccordion() {
                       <span className="inline-flex items-center gap-2 text-[13px] font-semibold text-white/90 uppercase tracking-[0.15em] group/cta">
                         Learn More
                         <span className="inline-flex items-center gap-0.5 transition-transform duration-300 group-hover/cta:translate-x-1">
-                          <ArrowRight className="w-4 h-4" />
-                          <span className="w-8 h-px bg-white/60 inline-block" />
+
+                          <svg data-v-e1c3f83f="" xmlns="http://www.w3.org/2000/svg" width="45" height="7" fill="none"><path data-v-e1c3f83f="" fill="#34B4F4" d="M.333 3.776a2.667 2.667 0 1 0 5.334 0 2.667 2.667 0 0 0-5.334 0Zm44.667 0L40 .89v5.773l5-2.887Zm-42 .5h37.5v-1H3v1Z"></path></svg>
                         </span>
                       </span>
                     </motion.div>

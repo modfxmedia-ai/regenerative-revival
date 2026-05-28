@@ -4,6 +4,9 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Sparkles, Award, Users, MapPin, ShieldCheck } from "lucide-react";
 
+const BLOB_BASE = "https://65iosdxq0lyc5cm9.public.blob.vercel-storage.com";
+const HERO_VIDEO = `${BLOB_BASE}/hero-video.mov`;
+
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -23,7 +26,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <video
           ref={videoRef}
-          src="/human-body-scan-3.mp4"
+          src={HERO_VIDEO}
           poster="/8470.jpg"
           autoPlay
           muted

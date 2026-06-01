@@ -226,27 +226,67 @@ export default function HormonesPeptidesPage() {
                 <li key={p.slug}>
                   <Link
                     href={`/hormones-peptides/${p.slug}`}
-                    className="group block h-full bg-white rounded-[20px] p-6 border border-white hover:border-[#6762AF]/20 hover:-translate-y-1 hover:shadow-[0_24px_48px_-12px_rgba(88,53,99,0.18)] transition-all duration-500"
+                    className="group block h-full bg-white rounded-[20px] overflow-hidden border border-white hover:border-[#6762AF]/20 hover:-translate-y-1 hover:shadow-[0_24px_48px_-12px_rgba(88,53,99,0.18)] transition-all duration-500"
                   >
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-[10px] uppercase tracking-wider text-[#6762AF] font-semibold">
-                        {p.category === "glp1" ? "GLP-1" : p.category === "peptide" ? "Peptide" : p.category === "capsule" ? "Oral" : p.category}
-                      </span>
-                      <span className="text-[10px] text-[#7A7F95] uppercase">{p.form}</span>
+                    {/* Mini bottle stage */}
+                    <div className="relative h-40 bg-gradient-to-br from-[#F1ECF8] via-[#EAEFF7] to-[#E8E0F2] flex items-center justify-center overflow-hidden">
+                      <span className="absolute top-[10%] left-[8%] w-16 h-16 rounded-full bg-white/40 blur-xl" />
+                      <span className="absolute bottom-[10%] right-[8%] w-20 h-20 rounded-full bg-[#C5DBF7]/50 blur-xl" />
+                      <svg viewBox="0 0 120 200" className="relative h-32 w-auto drop-shadow-md" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                          <linearGradient id={`b-${p.slug}`} x1="0" x2="1" y1="0" y2="1">
+                            <stop offset="0%" stopColor="#3F2549" />
+                            <stop offset="100%" stopColor="#1A0F22" />
+                          </linearGradient>
+                        </defs>
+                        {/* Cap */}
+                        <ellipse cx="60" cy="12" rx="14" ry="8" fill="#1A1F30" />
+                        <rect x="42" y="18" width="36" height="26" rx="3" fill="#1A1F30" />
+                        {/* Neck */}
+                        <rect x="47" y="44" width="26" height="8" fill={`url(#b-${p.slug})`} />
+                        {/* Body */}
+                        <rect x="22" y="52" width="76" height="130" rx="8" fill={`url(#b-${p.slug})`} />
+                        {/* Glass highlight */}
+                        <rect x="28" y="58" width="10" height="118" rx="4" fill="white" fillOpacity="0.15" />
+                        {/* Label */}
+                        <rect x="30" y="72" width="60" height="90" rx="2" fill="white" />
+                        {/* Brand */}
+                        <text x="60" y="92" textAnchor="middle" fontFamily="sans-serif" fontSize="5" fill="#1A1F30" fontWeight="700">REGENERATIVE</text>
+                        <text x="60" y="99" textAnchor="middle" fontFamily="sans-serif" fontSize="5" fill="#1A1F30" fontWeight="700">REVIVAL™</text>
+                        <line x1="36" y1="104" x2="84" y2="104" stroke="#1A1F30" strokeWidth="0.5" opacity="0.2" />
+                        {/* Product name — truncated */}
+                        <text x="60" y="118" textAnchor="middle" fontFamily="sans-serif" fontSize="6.5" fill="#1A1F30" fontWeight="800">
+                          {p.name.split("/")[0].slice(0, 10)}
+                        </text>
+                        {/* Dose pill */}
+                        <rect x="42" y="130" width="36" height="10" rx="5" fill="#71A7F5" />
+                        <text x="60" y="137.5" textAnchor="middle" fontFamily="sans-serif" fontSize="5.5" fill="white" fontWeight="700">
+                          {p.doses[0]?.label?.split("—")[0]?.trim()?.slice(0, 12) ?? ""}
+                        </text>
+                      </svg>
                     </div>
-                    <h3 className="font-[family-name:var(--font-poppins)] font-normal text-[18px] text-[#1A1F30] group-hover:text-[#583563] transition-colors leading-snug">
-                      {p.name}
-                    </h3>
-                    <p className="mt-2 text-[13px] text-[#4A4F66] line-clamp-3 leading-relaxed">{p.shortDescription}</p>
-                    <div className="mt-5 flex items-center justify-between">
-                      {p.priceFrom !== undefined ? (
-                        <span className="text-[13px] text-[#4A4F66]">
-                          From <span className="font-semibold text-[#1A1F30]">${p.priceFrom}</span>/mo
+
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-[10px] uppercase tracking-wider text-[#6762AF] font-semibold">
+                          {p.category === "glp1" ? "GLP-1" : p.category === "peptide" ? "Peptide" : p.category === "capsule" ? "Oral" : p.category}
                         </span>
-                      ) : (
-                        <span className="text-[13px] text-[#7A7F95]">Consult required</span>
-                      )}
-                      <ArrowUpRight className="h-4 w-4 text-[#6762AF] opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <span className="text-[10px] text-[#7A7F95] uppercase">{p.form}</span>
+                      </div>
+                      <h3 className="font-[family-name:var(--font-poppins)] font-semibold text-[16px] text-[#1A1F30] group-hover:text-[#583563] transition-colors leading-snug">
+                        {p.name}
+                      </h3>
+                      <p className="mt-2 text-[12.5px] text-[#4A4F66] line-clamp-2 leading-relaxed">{p.shortDescription}</p>
+                      <div className="mt-4 flex items-center justify-between">
+                        {p.priceFrom !== undefined ? (
+                          <span className="text-[13px] text-[#4A4F66]">
+                            From <span className="font-semibold text-[#1A1F30]">${p.priceFrom}</span>/mo
+                          </span>
+                        ) : (
+                          <span className="text-[13px] text-[#7A7F95]">Consult required</span>
+                        )}
+                        <ArrowUpRight className="h-4 w-4 text-[#6762AF] opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </div>
                     </div>
                   </Link>
                 </li>

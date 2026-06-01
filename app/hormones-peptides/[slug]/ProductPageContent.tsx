@@ -57,7 +57,9 @@ export default function ProductPageContent({ product, primaryWizloUrl, faqs }: P
   return (
     <>
       {/* ── Main product section ── */}
-      <section className="bg-white pt-10 pb-16">
+      <section className="relative bg-white pt-32 pb-16">
+        {/* Dark top strip so transparent navbar is visible on page load */}
+        <div className="absolute top-0 left-0 right-0 h-20 bg-[#1A1F30] pointer-events-none" />
         <div className="mx-auto max-w-[1200px] px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             {/* ── LEFT: Product image with lavender gradient bubble ── */}

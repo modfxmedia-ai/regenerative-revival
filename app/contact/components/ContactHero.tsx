@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function ContactHero() {
   return (
-    <section className="relative min-h-[60vh] flex items-end overflow-hidden bg-[#021E3C]">
+    <section className="relative min-h-[60vh] flex items-end overflow-hidden bg-[#021E3C] pt-20">
       {/* Background */}
       <div className="absolute inset-0">
         <Image

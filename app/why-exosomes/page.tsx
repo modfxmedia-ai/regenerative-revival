@@ -101,7 +101,7 @@ export default function WhyExosomesPage() {
       <Breadcrumbs items={[{ label: "Why Exosomes?", href: "/why-exosomes" }]} />
 
       {/* ── Hero ── */}
-      <section className="relative min-h-[80vh] flex items-end overflow-hidden bg-[#021E3C]">
+      <section className="relative min-h-[80vh] pt-20 flex items-end overflow-hidden bg-[#021E3C]">
         <div className="absolute inset-0">
           <Image
             src="/Why Exosomes Page&Contact page-_Ready to Explore Exosome Therapy__ And background image on contact pagesection.jpeg"

@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function AboutHero() {
   return (
-    <section className="relative min-h-[88vh] flex items-end overflow-hidden bg-[#021E3C]">
+    <section className="relative min-h-[88vh] pt-20 flex items-end overflow-hidden bg-[#021E3C]">
       <div className="absolute inset-0">
         <Image src="/about/imgi_71_HERO-STEM-CELL.jpg" alt="" fill className="object-cover" priority />
         <div className="absolute inset-0 bg-gradient-to-t from-[#021E3C] via-[#021E3C]/70 to-[#021E3C]/30" />

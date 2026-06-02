@@ -88,50 +88,10 @@ export default function ProductPageContent({ product, primaryWizloUrl, faqs }: P
                 {product.name}
               </h1>
 
-              {/* Price */}
+              {/* Price + plan selector */}
               {product.priceFrom !== undefined && (
-                <div className="mt-6">
-                  <p className="text-[15px] font-semibold text-[#1A1F30]">
-                    Programs starting at ${product.priceFrom}/month.
-                  </p>
-                  <p className="text-[13.5px] text-[#7A7F95] mt-0.5">
-                    Includes provider consult, prescription, and shipping.
-                  </p>
-                </div>
+                <PlanSelector product={product} primaryWizloUrl={primaryWizloUrl} />
               )}
-
-              {/* Description */}
-              <p className="mt-6 text-[14px] text-[#4A4F66] leading-[1.7] max-w-lg">
-                {product.shortDescription}
-              </p>
-
-              {/* Benefits with green checkmarks */}
-              <ul className="mt-7 flex flex-col gap-3.5">
-                {product.benefits.map((b) => (
-                  <li key={b} className="flex items-start gap-3 text-[14px] text-[#1A1F30] leading-[1.55]">
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#2E7D32]">
-                      <CheckCircle2 className="h-4 w-4 text-white" strokeWidth={2.5} />
-                    </span>
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* CTAs — dark navy primary + outline secondary */}
-              <div className="mt-9 flex flex-col sm:flex-row gap-3">
-                <a
-                  href={primaryWizloUrl}
-                  className="inline-flex h-13 py-3.5 items-center justify-center gap-2 rounded-full bg-[#021E3C] px-9 text-[14px] font-semibold text-white hover:bg-[#345691] hover:shadow-[0_10px_30px_-8px_rgba(2,30,60,0.5)] hover:-translate-y-0.5 transition-all"
-                >
-                  Take The 2-Minute Quiz
-                </a>
-                <Link
-                  href="/consult-router"
-                  className="inline-flex h-13 py-3.5 items-center justify-center gap-2 rounded-full border-2 border-[#021E3C] bg-white px-9 text-[14px] font-semibold text-[#021E3C] hover:bg-[#F1ECF8] transition-all"
-                >
-                  Talk to a Provider First
-                </Link>
-              </div>
 
               {/* Accordion */}
               <div className="mt-10">
@@ -175,9 +135,136 @@ export default function ProductPageContent({ product, primaryWizloUrl, faqs }: P
 }
 
 /* ============================================================
-   Product image stage — lavender gradient bubble background
-   matching the figma aesthetic
+   Plan Selector — monthly / quarterly toggle with dose picker
    ============================================================ */
+function PlanSelector({ product, primaryWizloUrl }: { product: Product; primaryWizloUrl: string }) {
+  const [plan, setPlan] = useState<"monthly" | "quarterly">("monthly");
+  const [selectedDoseIdx, setSelectedDoseIdx] = useState(0);
+
+  const dose = product.doses[selectedDoseIdx];
+  const monthlyDoses = product.doses.filter((d) => d.priceMonthly);
+  const quarterlyDoses = product.doses.filter((d) => d.priceQuarterly);
+  const hasQuarterly = quarterlyDoses.length > 0;
+
+  const displayDoses = plan === "monthly" ? monthlyDoses : quarterlyDoses;
+  const selectedDose = displayDoses[selectedDoseIdx] ?? displayDoses[0] ?? dose;
+  const wizloUrl = selectedDose?.wizloUrl ?? primaryWizloUrl;
+  const price = plan === "monthly" ? selectedDose?.priceMonthly : selectedDose?.priceQuarterly;
+  const monthlySavings = selectedDose?.priceMonthly && selectedDose?.priceQuarterly
+    ? Math.round((selectedDose.priceMonthly * 3 - selectedDose.priceQuarterly))
+    : null;
+
+  return (
+    <div className="mt-6">
+      {/* Description */}
+      <p className="text-[14px] text-[#4A4F66] leading-[1.7] max-w-lg mb-6">
+        {product.shortDescription}
+      </p>
+
+      {/* Benefits */}
+      <ul className="flex flex-col gap-3.5 mb-7">
+        {product.benefits.map((b) => (
+          <li key={b} className="flex items-start gap-3 text-[14px] text-[#1A1F30] leading-[1.55]">
+            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#2E7D32]">
+              <CheckCircle2 className="h-4 w-4 text-white" strokeWidth={2.5} />
+            </span>
+            <span>{b}</span>
+          </li>
+        ))}
+      </ul>
+
+      {/* Plan toggle */}
+      {hasQuarterly && (
+        <div className="flex gap-2 mb-5">
+          <button
+            onClick={() => { setPlan("monthly"); setSelectedDoseIdx(0); }}
+            className={`flex-1 py-3 px-4 rounded-xl text-[13.5px] font-semibold border-2 transition-all ${
+              plan === "monthly"
+                ? "bg-[#021E3C] text-white border-[#021E3C]"
+                : "bg-white text-[#4A4F66] border-[#E2DFF0] hover:border-[#6762AF]/30"
+            }`}
+          >
+            Monthly
+          </button>
+          <button
+            onClick={() => { setPlan("quarterly"); setSelectedDoseIdx(0); }}
+            className={`flex-1 py-3 px-4 rounded-xl text-[13.5px] font-semibold border-2 transition-all relative ${
+              plan === "quarterly"
+                ? "bg-[#021E3C] text-white border-[#021E3C]"
+                : "bg-white text-[#4A4F66] border-[#E2DFF0] hover:border-[#6762AF]/30"
+            }`}
+          >
+            Quarterly
+            {monthlySavings && monthlySavings > 0 && (
+              <span className="absolute -top-2.5 right-2 bg-[#2E7D32] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">
+                Save ${monthlySavings}
+              </span>
+            )}
+          </button>
+        </div>
+      )}
+
+      {/* Dose selector */}
+      {displayDoses.length > 1 && (
+        <div className="mb-5">
+          <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#7A7F95] mb-2">Select Dose / Supply</p>
+          <div className="flex flex-col gap-2">
+            {displayDoses.map((d, i) => (
+              <button
+                key={d.label}
+                onClick={() => setSelectedDoseIdx(i)}
+                className={`flex items-center justify-between rounded-xl px-4 py-3 border-2 text-left transition-all ${
+                  selectedDoseIdx === i
+                    ? "border-[#021E3C] bg-[#F4EFFA]"
+                    : "border-[#E2DFF0] bg-white hover:border-[#6762AF]/30"
+                }`}
+              >
+                <span className="text-[13.5px] font-medium text-[#1A1F30]">{d.label}</span>
+                <span className="text-[13.5px] font-semibold text-[#1A1F30]">
+                  ${plan === "monthly" ? d.priceMonthly : d.priceQuarterly}
+                  <span className="text-[11px] font-normal text-[#7A7F95] ml-1">
+                    {plan === "monthly" ? "/mo" : "/3 mo"}
+                  </span>
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Price display */}
+      {price && (
+        <div className="mb-6">
+          <p className="text-[22px] font-bold text-[#1A1F30]">
+            ${price}
+            <span className="text-[14px] font-normal text-[#7A7F95] ml-1">
+              {plan === "monthly" ? "/ month" : "/ 3 months"}
+            </span>
+          </p>
+          <p className="text-[12.5px] text-[#7A7F95] mt-1">
+            Includes provider consult, prescription, and shipping.
+          </p>
+        </div>
+      )}
+
+      {/* CTAs */}
+      <div className="flex flex-col sm:flex-row gap-3">
+        <a
+          href={wizloUrl}
+          className="inline-flex h-13 py-3.5 items-center justify-center gap-2 rounded-full bg-[#021E3C] px-9 text-[14px] font-semibold text-white hover:bg-[#345691] hover:shadow-[0_10px_30px_-8px_rgba(2,30,60,0.5)] hover:-translate-y-0.5 transition-all"
+        >
+          Take The 2-Minute Quiz
+        </a>
+        <Link
+          href="/consult-router"
+          className="inline-flex h-13 py-3.5 items-center justify-center gap-2 rounded-full border-2 border-[#021E3C] bg-white px-9 text-[14px] font-semibold text-[#021E3C] hover:bg-[#F1ECF8] transition-all"
+        >
+          Talk to a Provider First
+        </Link>
+      </div>
+    </div>
+  );
+}
 function ProductImageStage({ product }: { product: Product }) {
   // Figma-matched: square aspect ratio, soft lavender gradient with blurred
   // bubbles and a centered product silhouette. If a real product image is

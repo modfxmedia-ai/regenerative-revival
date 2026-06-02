@@ -62,7 +62,7 @@ export default function TermsConditionsPage() {
       />
       <Breadcrumbs items={[{ label: "Terms & Conditions", href: "/terms-conditions" }]} />
 
-      <section className="relative bg-secondary overflow-hidden">
+      <section className="relative bg-secondary overflow-hidden pt-20">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(107,63,160,0.3),transparent)] pointer-events-none" />
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8 pt-8 pb-12">
           <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight tracking-tight">

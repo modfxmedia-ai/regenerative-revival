@@ -139,57 +139,7 @@ export default function NadHubPage() {
         </div>
       </section>
 
-      {/* ── Benefits ── */}
-      <section className="bg-white py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Why NAD+</span>
-            <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
-              The coenzyme your cells can&apos;t function without
-            </h2>
-            <p className="mt-5 text-base text-[#4A4F66]">
-              NAD+ levels drop 50% between age 40 and 60. Restoring them supports the biological processes that keep you sharp, energized, and resilient.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {benefits.map((b) => (
-              <div key={b.title} className="rounded-[20px] bg-[#F4EFFA] p-7 border border-[#6762AF]/10">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white border border-[#6762AF]/10 mb-5">
-                  <b.icon className="h-5 w-5 text-[#6762AF]" />
-                </div>
-                <h3 className="font-[family-name:var(--font-poppins)] font-normal text-[18px] text-[#1A1F30] mb-2">{b.title}</h3>
-                <p className="text-[13.5px] text-[#4A4F66] leading-relaxed">{b.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Delivery comparison ── */}
-      <section className="bg-[#F1ECF8] py-20 lg:py-24">
-        <div className="mx-auto max-w-5xl px-6 lg:px-8">
-          <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Delivery Options</span>
-          <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em] mb-10">
-            NAD IV therapy vs injection vs sublingual — which is right for you?
-          </h2>
-          <div className="grid md:grid-cols-3 gap-5">
-            {[
-              { method: "IV Infusion", best: "Highest bioavailability", note: "In-home concierge delivery by licensed NP. Best for acute energy restoration.", tag: "Concierge" },
-              { method: "Injection", best: "Convenient at-home", note: "Subcutaneous or IM injection. Prescribed via telehealth, shipped to your door.", tag: "Telehealth" },
-              { method: "Sublingual", best: "Most convenient", note: "Absorbed under the tongue. No needles. Ideal for daily maintenance protocols.", tag: "Telehealth" },
-            ].map((d) => (
-              <div key={d.method} className="bg-white rounded-[20px] p-6 border border-white hover:border-[#6762AF]/20 hover:shadow-[0_16px_40px_-8px_rgba(88,53,99,0.15)] transition-all">
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-[#6762AF] bg-[#F1ECF8] px-2.5 py-1 rounded-full">{d.tag}</span>
-                <h3 className="font-[family-name:var(--font-poppins)] font-normal text-[20px] text-[#1A1F30] mt-4 mb-1">{d.method}</h3>
-                <p className="text-[12px] font-semibold text-[#345691] mb-3">{d.best}</p>
-                <p className="text-[13px] text-[#4A4F66] leading-relaxed">{d.note}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Programs ── */}
+       {/* ── Programs ── */}
       <section id="programs" className="bg-white py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
@@ -249,6 +199,57 @@ export default function NadHubPage() {
         </div>
       </section>
 
+      {/* ── Benefits ── */}
+      <section className="bg-white py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Why NAD+</span>
+            <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
+              The coenzyme your cells can&apos;t function without
+            </h2>
+            <p className="mt-5 text-base text-[#4A4F66]">
+              NAD+ levels drop 50% between age 40 and 60. Restoring them supports the biological processes that keep you sharp, energized, and resilient.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {benefits.map((b) => (
+              <div key={b.title} className="rounded-[20px] bg-[#F4EFFA] p-7 border border-[#6762AF]/10">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white border border-[#6762AF]/10 mb-5">
+                  <b.icon className="h-5 w-5 text-[#6762AF]" />
+                </div>
+                <h3 className="font-[family-name:var(--font-poppins)] font-normal text-[18px] text-[#1A1F30] mb-2">{b.title}</h3>
+                <p className="text-[13.5px] text-[#4A4F66] leading-relaxed">{b.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Delivery comparison ── */}
+      <section className="bg-[#F1ECF8] py-20 lg:py-24">
+        <div className="mx-auto max-w-5xl px-6 lg:px-8">
+          <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Delivery Options</span>
+          <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em] mb-10">
+            NAD IV therapy vs injection vs sublingual — which is right for you?
+          </h2>
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              { method: "IV Infusion", best: "Highest bioavailability", note: "In-home concierge delivery by licensed NP. Best for acute energy restoration.", tag: "Concierge" },
+              { method: "Injection", best: "Convenient at-home", note: "Subcutaneous or IM injection. Prescribed via telehealth, shipped to your door.", tag: "Telehealth" },
+              { method: "Sublingual", best: "Most convenient", note: "Absorbed under the tongue. No needles. Ideal for daily maintenance protocols.", tag: "Telehealth" },
+            ].map((d) => (
+              <div key={d.method} className="bg-white rounded-[20px] p-6 border border-white hover:border-[#6762AF]/20 hover:shadow-[0_16px_40px_-8px_rgba(88,53,99,0.15)] transition-all">
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-[#6762AF] bg-[#F1ECF8] px-2.5 py-1 rounded-full">{d.tag}</span>
+                <h3 className="font-[family-name:var(--font-poppins)] font-normal text-[20px] text-[#1A1F30] mt-4 mb-1">{d.method}</h3>
+                <p className="text-[12px] font-semibold text-[#345691] mb-3">{d.best}</p>
+                <p className="text-[13px] text-[#4A4F66] leading-relaxed">{d.note}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+     
       {/* ── FAQ ── */}
       <section className="bg-[#F1ECF8] py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">

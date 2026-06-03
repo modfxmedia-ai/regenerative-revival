@@ -1,12 +1,11 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
 import type { Metadata } from "next";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import ComplianceDisclaimer from "../../components/ComplianceDisclaimer";
 import { generatePageMetadata } from "../../lib/seo";
-import { JsonLd, breadcrumbSchema, productSchema } from "../../lib/schema";
+import { JsonLd, breadcrumbSchema, productSchema, medicalWebPageSchema, faqSchema } from "../../lib/schema";
 import { getProductBySlug, products } from "../../lib/products";
+import ProductPageContent from "../../components/ProductPageContent";
 
 export function generateStaticParams() {
   return products
@@ -31,11 +30,36 @@ export async function generateMetadata({
   }
   return generatePageMetadata({
     title: product.seoName ?? product.name,
-    description: product.shortDescription,
+    description: `${product.shortDescription} Physician-prescribed, compounded by NABP-accredited pharmacies, shipped to your door. Telehealth in all 50 states.`,
     path: `/nad/${product.slug}`,
     cta: "Start Intake",
   });
 }
+
+const nadProductFaqs: Record<string, { question: string; answer: string }[]> = {
+  "nad-plus": [
+    {
+      question: "What is NAD+ therapy?",
+      answer:
+        "NAD+ (nicotinamide adenine dinucleotide) is a coenzyme present in every cell of your body, essential for mitochondrial energy production, DNA repair, and longevity signaling. NAD+ levels decline approximately 50% between ages 40 and 60, contributing to aging and metabolic decline. Therapy restores circulating levels to support cellular health.",
+    },
+    {
+      question: "How is NAD+ administered?",
+      answer:
+        "NAD+ can be delivered via IV infusion (highest bioavailability, concierge in-home), subcutaneous injection (convenient at-home), or sublingual (no needles, daily maintenance). Your clinician will recommend the best delivery method based on your goals, lifestyle, and labs.",
+    },
+    {
+      question: "How long does it take for NAD+ to work?",
+      answer:
+        "Most patients notice improved energy and mental clarity within 1–2 weeks. Deeper cellular benefits — mitochondrial efficiency, DNA repair support — build over 4–8 weeks of consistent use. Long-term use supports sirtuin activity and healthy aging.",
+    },
+    {
+      question: "How much does NAD+ therapy cost?",
+      answer:
+        "NAD+ injection therapy at Regenerative Revival starts at $249/month, which includes the clinician consultation, prescription, and shipping from a licensed compounding pharmacy. Pricing varies by dose and delivery method.",
+    },
+  ],
+};
 
 export default async function NadProductPage({
   params,
@@ -44,12 +68,23 @@ export default async function NadProductPage({
 }) {
   const { slug } = await params;
   const product = getProductBySlug(slug);
-  if (!product || product.hub !== "nad") notFound();
+
+  if (!product || product.hub !== "nad") {
+    notFound();
+  }
 
   const primaryWizloUrl = product.doses[0]?.wizloUrl ?? "/consult-router";
+  const faqs = nadProductFaqs[slug] ?? [];
 
   return (
     <>
+      <JsonLd
+        data={medicalWebPageSchema({
+          title: product.seoName ?? product.name,
+          description: product.shortDescription,
+          url: `/nad/${product.slug}`,
+        })}
+      />
       <JsonLd
         data={productSchema({
           name: product.name,
@@ -58,22 +93,18 @@ export default async function NadProductPage({
           description: product.shortDescription,
           category: product.category,
           priceFrom: product.priceFrom,
+          image: product.image,
           prescriptionOnly: product.disclaimerKey === "compounded_rx",
         })}
       />
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", url: "https://www.regenerativerevival.com" },
-          {
-            name: "NAD+ & Supplements",
-            url: "https://www.regenerativerevival.com/nad",
-          },
-          {
-            name: product.name,
-            url: `https://www.regenerativerevival.com/nad/${product.slug}`,
-          },
+          { name: "NAD+ & Supplements", url: "https://www.regenerativerevival.com/nad" },
+          { name: product.name, url: `https://www.regenerativerevival.com/nad/${product.slug}` },
         ])}
       />
+      {faqs.length > 0 && <JsonLd data={faqSchema(faqs)} />}
 
       <Breadcrumbs
         items={[
@@ -82,61 +113,9 @@ export default async function NadProductPage({
         ]}
       />
 
-      <section className="bg-secondary text-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="text-sm uppercase tracking-widest text-primary-light mb-3">
-              Longevity Program
-            </p>
-            <h1 className="text-4xl lg:text-5xl font-semibold leading-tight">
-              {product.name}
-            </h1>
-            <p className="mt-6 text-white/70">{product.shortDescription}</p>
+      <ProductPageContent product={product} primaryWizloUrl={primaryWizloUrl} faqs={faqs} />
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href={primaryWizloUrl}
-                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-white px-6 py-3 rounded-md font-medium transition-colors"
-              >
-                Take The 2-Minute Quiz <ArrowRight className="h-4 w-4" />
-              </a>
-              <Link
-                href="/consult-router"
-                className="inline-flex items-center text-white/80 hover:text-white px-6 py-3 font-medium transition-colors"
-              >
-                Talk to a Provider First
-              </Link>
-            </div>
-          </div>
-
-          <div className="bg-white/5 border border-white/10 rounded-lg p-8">
-            <h2 className="text-sm uppercase tracking-widest text-primary-light mb-4">
-              Key Benefits
-            </h2>
-            <ul className="space-y-3">
-              {product.benefits.map((b) => (
-                <li key={b} className="flex items-start gap-3 text-white/90">
-                  <Check className="h-5 w-5 text-primary-light shrink-0 mt-0.5" />
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8 py-16 prose prose-lg text-gray-700">
-          <h2 className="text-3xl font-semibold text-secondary">
-            How {product.name} Works
-          </h2>
-          <p>{product.longDescription}</p>
-        </div>
-      </section>
-
-      <ComplianceDisclaimer
-        variant={product.disclaimerKey === "supplement" ? "supplement" : "compounded_rx"}
-      />
+      <ComplianceDisclaimer variant={product.disclaimerKey} />
     </>
   );
 }

@@ -41,7 +41,20 @@ export default function ProductPageContent({ product, primaryWizloUrl, faqs }: P
     },
     {
       title: `Who ${product.name} Is For`,
-      body: product.indications ?? [],
+      // Fall back to directions + supply info if no indications defined
+      body: product.indications && product.indications.length > 0
+        ? product.indications
+        : [
+            `${product.name} is prescribed to adults seeking ${
+              product.category === "glp1"
+                ? "clinician-supervised weight management"
+                : product.category === "nad"
+                ? "cellular energy, mitochondrial support, and longevity optimization"
+                : "clinician-supervised peptide therapy"
+            }.`,
+            "A clinical evaluation is required — your provider will confirm candidacy during your intake.",
+            ...(product.directions ? [`Dosing: ${product.directions}`] : []),
+          ],
     },
     {
       title: "What This Program Is Not",

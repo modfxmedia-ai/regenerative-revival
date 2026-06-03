@@ -4,7 +4,6 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import Image from "next/image";
-
 const benefits = [
   {
     image: "/1.webp",
@@ -34,13 +33,11 @@ export default function WhartonsJellyPower() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className="relative py-28 lg:py-32 bg-[#F1ECF8] overflow-hidden">
-      {/* Top edge accent */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#6762AF]/40 to-transparent" />
+    <section ref={ref} className="relative py-24 lg:py-32 bg-[#F4EFFA] overflow-hidden">
 
       {/* Aurora */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full bg-[#6762AF]/10 blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-20 right-0 w-[400px] h-[400px] rounded-full bg-[#71A7F5]/15 blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full bg-[#6762AF]/10 blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-20 right-0 w-[400px] h-[400px] rounded-full bg-[#71A7F5]/12 blur-[100px] pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}

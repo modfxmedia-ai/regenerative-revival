@@ -2,11 +2,12 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import WaveDivider from "./WaveDivider";
 
 /**
- * "Patient stories" — three soft lavender quote cards in a clean row.
- * Pure typography focus per figma: big serif heading, no embellishments
- * on the cards beyond the curly opening quote glyph.
+ * PatientStories — ONE wave used intentionally here: white → dark.
+ * This is the only meaningful light-to-dark shift on the homepage.
+ * The wave is subtle (tilt, low height) — a quiet gesture, not a headline.
  */
 
 const stories = [
@@ -15,21 +16,27 @@ const stories = [
       "I was six months out from a knee replacement. The RR team walked me through what regenerative therapy could and couldn't do, including what probably wouldn't work. I decided to try it. Two months later, I'm hiking with my dog again. They never promised that outcome. For me, it's been the right call so far.",
     name: "David R.",
     location: "Florida",
-    program: "Regenerative Therapy patient",
+    program: "Regenerative Therapy",
+    initial: "D",
+    accent: "#6762AF",
   },
   {
     quote:
       "The thing that sold me was that the same clinician reviewing my testosterone was reviewing my peptide stack. Nobody had ever looked at the whole picture before. It finally feels like I have a medical team, not four subscriptions.",
-    name: "David R.",
-    location: "Florida",
-    program: "Hormone & Peptide patient",
+    name: "Marcus T.",
+    location: "Texas",
+    program: "Hormone & Peptide",
+    initial: "M",
+    accent: "#345691",
   },
   {
     quote:
       "NAD+ was something I'd been curious about for two years. Doing it inside a real clinical program, with my labs, with a team that also manages my hormones, changed the whole equation. This is what longevity care was supposed to look like.",
-    name: "David R.",
-    location: "Florida",
-    program: "NAD+ & Longevity patient",
+    name: "Sandra K.",
+    location: "California",
+    program: "NAD+ & Longevity",
+    initial: "S",
+    accent: "#583563",
   },
 ];
 
@@ -38,51 +45,91 @@ export default function PatientStories() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className="relative pt-12 pb-24 lg:pt-16 lg:pb-28 bg-white overflow-hidden">
-      <div className="relative mx-auto max-w-[1100px] px-6 lg:px-8">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="mb-12"
-        >
-          <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">
-            Patient Stories
-          </span>
-          <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2.5rem] sm:text-5xl lg:text-[3.25rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
-            Real patients. Real words. Real lives.
-          </h2>
-        </motion.div>
+    <>
+      {/* Single intentional transition: white → midnight */}
+      <WaveDivider fill="#1A1F30" type="tilt" height={60} />
 
-        {/* Three quote cards */}
-        <div className="grid md:grid-cols-3 gap-5 lg:gap-6">
-          {stories.map((s, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.15 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-              className="group relative rounded-2xl bg-[#F4EFFA] p-6 lg:p-7 hover:bg-white hover:shadow-[0_24px_48px_-12px_rgba(88,53,99,0.18)] hover:-translate-y-1 transition-all duration-500"
-            >
-              {/* Curly opening quote */}
-              <span className="block font-[family-name:var(--font-poppins)] text-[42px] leading-none text-[#1A1F30] mb-2">
-                &ldquo;
-              </span>
+      <section
+        ref={ref}
+        className="relative py-24 lg:py-32 bg-[#1A1F30] overflow-hidden"
+      >
+        {/* Aurora — restrained */}
+        <div className="absolute top-0 left-[-8%] w-[600px] h-[500px] rounded-full bg-[#6762AF]/10 blur-[160px] pointer-events-none" />
+        <div className="absolute bottom-0 right-[-8%] w-[500px] h-[400px] rounded-full bg-[#345691]/12 blur-[140px] pointer-events-none" />
+        <div className="absolute inset-0 lux-grid opacity-[0.18] pointer-events-none" />
 
-              <p className="text-[13.5px] text-[#1A1F30] leading-[1.7]">{s.quote}</p>
+        <div className="relative mx-auto max-w-[1100px] px-6 lg:px-8">
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="mb-14 lg:mb-16"
+          >
+            <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#71A7F5]">
+              Patient Stories
+            </span>
+            <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-medium text-[2.5rem] sm:text-5xl lg:text-[3.25rem] text-white leading-[1.05] tracking-[-0.04em]">
+              Real patients.<br className="hidden sm:block" /> Real words.
+            </h2>
+          </motion.div>
 
-              {/* Attribution */}
-              <div className="mt-6 pt-5 border-t border-[#6762AF]/15">
-                <p className="text-[13px] font-semibold text-[#1A1F30]">
-                  {s.name} <span className="text-[#7A7F95] font-normal">| {s.location}</span>
-                </p>
-                <p className="text-[12px] text-[#7A7F95] mt-0.5">{s.program}</p>
-              </div>
-            </motion.div>
-          ))}
+          {/* Cards */}
+          <div className="grid md:grid-cols-3 gap-5 lg:gap-6">
+            {stories.map((s, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.15 + i * 0.12,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="group relative rounded-[1.75rem] bg-white/[0.05] border border-white/[0.07]
+                  hover:border-white/[0.14] hover:bg-white/[0.08]
+                  hover:shadow-[0_24px_56px_-12px_rgba(103,98,175,0.25)]
+                  hover:-translate-y-1 transition-all duration-500 overflow-hidden p-7 lg:p-8 flex flex-col"
+              >
+                {/* Per-card top accent line — appears on hover */}
+                <div
+                  className="absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{
+                    background: `linear-gradient(90deg, transparent, ${s.accent}88, transparent)`,
+                  }}
+                />
+
+                {/* Quote mark */}
+                <span
+                  className="block text-[48px] leading-none mb-3 font-[family-name:var(--font-poppins)]"
+                  style={{ color: s.accent + "CC" }}
+                >
+                  &ldquo;
+                </span>
+
+                <p className="text-[13.5px] text-white/70 leading-[1.75] flex-1">{s.quote}</p>
+
+                {/* Attribution */}
+                <div className="mt-7 pt-5 border-t border-white/[0.08] flex items-center gap-3">
+                  <div
+                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white text-xs font-bold"
+                    style={{ background: `${s.accent}33`, border: `1px solid ${s.accent}44` }}
+                  >
+                    {s.initial}
+                  </div>
+                  <div>
+                    <p className="text-[13px] font-semibold text-white">
+                      {s.name}{" "}
+                      <span className="text-white/35 font-normal">· {s.location}</span>
+                    </p>
+                    <p className="text-[11px] text-white/35 mt-0.5">{s.program} patient</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

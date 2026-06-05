@@ -104,7 +104,7 @@ function WhoWeHelpBlock() {
 
   return (
     <div ref={ref} className="relative pt-24 pb-20 lg:pt-28 lg:pb-24">
-      <div className="mx-auto max-w-[1100px] px-6 lg:px-8">
+      <div className="mx-auto max-w-[1280px] px-6 lg:px-16 xl:px-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -290,65 +290,100 @@ function DoctorCard({
 }
 
 /* ============================================================
-   3. NUMBERS WE ACTUALLY EARNED — stat band on lighter gradient
+   3. NUMBERS WE ACTUALLY EARNED
+   Figma: outer wrapper gradient #1A1F30→#6762AF, 16px padding
+   Inner card: 24px radius, 64px 100px padding
+   Numbers: 112px Poppins 400, -6px tracking, gradient white→#BCBAE2→#6762AF
+   Labels: 20px Poppins 500, -0.5px, white
    ============================================================ */
 function NumbersBlock() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <div ref={ref} className="relative">
-      <div className="relative overflow-hidden bg-gradient-to-b from-[#352D5C] via-[#403785] to-[#34316A]">
-        {/* Top + bottom edge accents */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#71A7F5]/40 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#71A7F5]/30 to-transparent" />
+    <div
+      ref={ref}
+      className="w-full flex flex-col items-start p-4"
+      style={{ background: "linear-gradient(180deg, #1A1F30 0%, #6762AF 100%)" }}
+    >
+      {/* Inner rounded card */}
+      <div
+        className="w-full rounded-3xl flex items-center justify-center"
+        style={{ padding: "64px 0" }}
+      >
+        {/* Container */}
+        <div className="flex flex-col items-center gap-16 w-full max-w-[1280px] px-6 lg:px-16 xl:px-20">
 
-        {/* Aurora highlights */}
-        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[400px] rounded-full bg-[#71A7F5]/15 blur-[120px] pointer-events-none" />
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[400px] rounded-full bg-[#583563]/30 blur-[120px] pointer-events-none" />
-
-        <div className="relative mx-auto max-w-[1100px] px-6 lg:px-8 py-20 lg:py-24">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-center mb-14"
+            className="flex flex-col items-center gap-6 w-full"
           >
-            <span className="text-[11px] font-semibold tracking-[0.32em] uppercase text-white/70">
+            {/* Eyebrow: Poppins 500 14px uppercase 1px spacing white */}
+            <span
+              className="font-[family-name:var(--font-poppins)] font-medium text-[14px] leading-[100%] tracking-[1px] uppercase text-white text-center"
+            >
               Track Record
             </span>
-            <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2.5rem] sm:text-5xl lg:text-[3.5rem] text-white leading-[1.05] tracking-[-0.02em]">
+
+            {/* H2: Poppins 500 48px/51px -2px white */}
+            <h2
+              className="font-[family-name:var(--font-poppins)] font-medium text-white text-center"
+              style={{ fontSize: "48px", lineHeight: "51px", letterSpacing: "-2px" }}
+            >
               Numbers we actually earned
             </h2>
           </motion.div>
 
-          {/* Stats — huge gradient numbers */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-4">
+          {/* Stats row */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 w-full gap-10 lg:gap-0">
             {stats.map((s, i) => (
               <motion.div
                 key={s.label}
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.2 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="text-center group"
+                className="flex flex-col items-center gap-6 py-8"
               >
-                <div className="font-[family-name:var(--font-poppins)] font-normal text-[5rem] sm:text-[6rem] lg:text-[7rem] leading-[0.9] tracking-[-0.04em] bg-gradient-to-b from-white via-white to-[#9D8FCF] bg-clip-text text-transparent transition-transform duration-500 group-hover:scale-[1.05]">
-                  {s.value}
-                </div>
-                <div className="mt-4 text-[12px] sm:text-[13px] text-white/75 tracking-wide">
-                  {s.label}
+                {/* Big number + label stacked */}
+                <div className="flex flex-col items-center gap-6">
+                  {/* Number: 112px Poppins 400, -6px tracking, gradient */}
+                  <span
+                    className="font-[family-name:var(--font-poppins)] font-normal text-center"
+                    style={{
+                      fontSize: "clamp(64px, 7vw, 112px)",
+                      lineHeight: "100%",
+                      letterSpacing: "-6px",
+                      background: "linear-gradient(180deg, #FFFFFF 10.65%, #BCBAE2 55%, #6762AF 85.65%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    {s.value}
+                  </span>
+
+                  {/* Label: Poppins 500 20px/24px -0.5px white */}
+                  <span
+                    className="font-[family-name:var(--font-poppins)] font-medium text-white text-center"
+                    style={{ fontSize: "20px", lineHeight: "24px", letterSpacing: "-0.5px" }}
+                  >
+                    {s.label}
+                  </span>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          {/* Footnote */}
+          {/* Footnote: Poppins 500 16px/150% -0.25px white, max 620px */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="mt-16 text-center text-[12px] text-white/50 leading-[1.7] max-w-[520px] mx-auto"
+            className="font-[family-name:var(--font-poppins)] font-medium text-white text-center max-w-[620px]"
+            style={{ fontSize: "16px", lineHeight: "150%", letterSpacing: "-0.25px" }}
           >
             Built by clinicians, backed by Arora Health Group, and delivered through telehealth infrastructure designed for medicine. Not improvised from consumer software.
           </motion.p>

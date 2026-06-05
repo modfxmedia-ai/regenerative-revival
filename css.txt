@@ -1,0 +1,239 @@
+/* Frame 2147258779 */
+
+width: 1400px;
+height: 600px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 11;
+align-self: stretch;
+flex-grow: 0;
+z-index: 11;
+
+
+/* Section - S12 FINAL CTA */
+
+position: absolute;
+width: 1400px;
+height: 600px;
+left: calc(50% - 1400px/2);
+top: -0.2px;
+
+background: linear-gradient(117.51deg, #533861 29.33%, #7CA8EF 79.71%);
+
+
+/* Stocksy_unlicensed_comp_6798149 1 */
+
+position: absolute;
+width: 1476px;
+height: 984px;
+left: calc(50% - 1476px/2 + 24px);
+top: calc(50% - 984px/2 + 164.21px);
+
+background: url(Stocksy_unlicensed_comp_6798149.jpg);
+opacity: 0.4;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Rectangle 240651073 */
+
+position: absolute;
+width: 1400px;
+height: 800px;
+left: 0px;
+top: 0.21px;
+
+background: linear-gradient(117.51deg, #533861 29.33%, #7CA8EF 79.71%);
+mix-blend-mode: hard-light;
+
+
+/* Frame 2147258778 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+gap: 24px;
+
+position: absolute;
+width: 1260px;
+height: 323.54px;
+left: calc(50% - 1260px/2);
+top: calc(50% - 323.54px/2 - 0.02px);
+
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+
+width: 1260px;
+height: 10px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* GET STARTED */
+
+width: 100px;
+height: 10px;
+
+/* Eyebrow */
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 100%;
+/* or 14px */
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 1px;
+text-transform: uppercase;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Heading 2 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px 0px 0.535px;
+
+width: 1260px;
+height: 112.54px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Not sure where to start? Take the 2-minute quiz. */
+
+width: 623px;
+height: 112px;
+
+/* H2: Medium */
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 56px;
+line-height: 56px;
+/* or 100% */
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -2px;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* We'll route you to the right clinician and the right program. If you're not a fit for any of them, we'll tell you that too. That's the whole point. */
+
+width: 556px;
+height: 81px;
+
+/* P1: Regular */
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 150%;
+/* or 27px */
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.25px;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Button */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 16px 32px;
+gap: 21px;
+
+width: 263px;
+height: 48px;
+
+background: #FFFFFF;
+border-radius: 40px;
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+flex-grow: 0;
+
+
+/* Take The 2-Minute Quiz */
+
+width: 199px;
+height: 13px;
+
+font-family: 'Geist';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 120%;
+/* or 22px */
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+letter-spacing: -0.01em;
+
+/* Midnight Velvet */
+color: #1A1F30;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;

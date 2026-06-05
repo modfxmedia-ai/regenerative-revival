@@ -4,8 +4,7 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Sparkles, Award, Users, MapPin, ShieldCheck } from "lucide-react";
 
-const BLOB_BASE = "https://65iosdxq0lyc5cm9.public.blob.vercel-storage.com";
-const HERO_VIDEO = `${BLOB_BASE}/hero-video.mov`;
+const HERO_VIDEO = "/human-body-scan-3.mp4";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -55,54 +54,6 @@ export default function Hero() {
 
       {/* Subtle noise */}
       <div className="absolute inset-0 noise-overlay opacity-[0.04] pointer-events-none mix-blend-overlay" />
-
-      {/* === Decorative health-record motifs === */}
-      {/* Body silhouette — top left (matches figma) */}
-      <motion.div
-        initial={{ opacity: 0, x: -30 }}
-        animate={{ opacity: 0.18, x: 0 }}
-        transition={{ duration: 1.4, delay: 0.5 }}
-        className="absolute top-24 left-6 lg:left-12 hidden md:block pointer-events-none"
-      >
-        <div className="text-[10px] font-medium tracking-[0.3em] text-white/40 mb-2">
-          HEALTH<br />RECORD
-        </div>
-        <BodySilhouette />
-        <div className="mt-3 text-[9px] tracking-widest text-white/35 font-mono">
-          SCAN<br />1246<sup>Hz</sup>
-        </div>
-      </motion.div>
-
-      {/* EKG-style chart bars — top right */}
-      <motion.div
-        initial={{ opacity: 0, x: 30 }}
-        animate={{ opacity: 0.5, x: 0 }}
-        transition={{ duration: 1.2, delay: 0.7 }}
-        className="absolute top-28 right-6 lg:right-16 hidden md:flex items-end gap-1 pointer-events-none"
-      >
-        {[24, 38, 52, 28, 64, 48, 72, 32, 56, 40, 80, 44, 60, 36, 28, 48, 64, 30, 52, 38, 70, 42, 58].map((h, i) => (
-          <motion.span
-            key={i}
-            initial={{ scaleY: 0 }}
-            animate={{ scaleY: 1 }}
-            transition={{ duration: 0.4, delay: 0.8 + i * 0.03, ease: "easeOut" }}
-            className="w-[3px] origin-bottom rounded-full bg-gradient-to-t from-[#71A7F5]/0 via-[#71A7F5]/60 to-[#71A7F5]"
-            style={{ height: `${h}px` }}
-          />
-        ))}
-      </motion.div>
-
-      {/* Floating coordinates / data — bottom left */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.18 }}
-        transition={{ duration: 2, delay: 1 }}
-        className="absolute bottom-44 left-8 lg:left-16 hidden lg:block pointer-events-none font-mono text-[10px] leading-relaxed text-[#71A7F5]"
-      >
-        2323234769<br />
-        9445466761155<br />
-        879996843178
-      </motion.div>
 
       {/* === Main content === */}
       <div className="relative z-10 flex min-h-screen flex-col">
@@ -175,20 +126,18 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* === Credentials strip — matches figma === */}
+        {/* === Credentials strip — matches figma: 1188×54 pill, 8px radius, bottom-16 === */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="relative z-10 border-t border-white/10 bg-black/30 backdrop-blur-md"
+          className="relative z-10 flex justify-center pb-4"
         >
-          <div className="mx-auto max-w-6xl px-6 lg:px-8 py-5">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-2">
-              <CredItem icon={<Award className="h-4 w-4" />} label="8+ years in Regenerative Medicine" />
-              <CredItem icon={<Users className="h-4 w-4" />} label="20+ Licensed Clinicians" />
-              <CredItem icon={<MapPin className="h-4 w-4" />} label="50+ States Covered" />
-              <CredItem icon={<ShieldCheck className="h-4 w-4" />} label="Backed by Arora Health Group" />
-            </div>
+          <div className="w-full max-w-[1188px] mx-auto h-[54px] bg-[#1A1F30] rounded-lg flex items-center justify-center px-10 gap-12">
+            <CredItem icon={<Award className="h-[18px] w-[18px]" />} label="8+ years in Regenerative Medicine" />
+            <CredItem icon={<Users className="h-[18px] w-[18px]" />} label="20+ Licensed Clinicians" />
+            <CredItem icon={<MapPin className="h-[18px] w-[18px]" />} label="50+ States Covered" />
+            <CredItem icon={<ShieldCheck className="h-[18px] w-[18px]" />} label="Backed by Arora Health Group" />
           </div>
         </motion.div>
       </div>
@@ -203,32 +152,11 @@ export default function Hero() {
 
 function CredItem({ icon, label }: { icon: React.ReactNode; label: string }) {
   return (
-    <div className="flex items-center justify-center md:justify-center gap-2.5 text-white/70">
-      <span className="text-[#71A7F5]">{icon}</span>
-      <span className="text-xs sm:text-[13px] font-medium tracking-wide">{label}</span>
+    <div className="flex items-center gap-1 text-white">
+      <span className="shrink-0">{icon}</span>
+      <span className="text-[16px] font-bold leading-[110%] whitespace-nowrap">{label}</span>
     </div>
   );
 }
 
-function BodySilhouette() {
-  return (
-    <svg width="62" height="120" viewBox="0 0 62 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g stroke="#71A7F5" strokeWidth="0.8" fill="none">
-        {/* Head */}
-        <circle cx="31" cy="11" r="7" />
-        {/* Neck */}
-        <line x1="31" y1="18" x2="31" y2="23" />
-        {/* Shoulders + torso */}
-        <path d="M14 26 L31 22 L48 26 L46 56 L40 78 L36 110 L31 118 L26 110 L22 78 L16 56 Z" />
-        {/* Arms */}
-        <path d="M14 26 L8 50 L6 70 L9 80" />
-        <path d="M48 26 L54 50 L56 70 L53 80" />
-        {/* Legs split */}
-        <line x1="31" y1="78" x2="31" y2="118" />
-        {/* Pulse markers */}
-        <circle cx="31" cy="50" r="1.4" fill="#71A7F5" />
-        <circle cx="31" cy="68" r="1.4" fill="#71A7F5" />
-      </g>
-    </svg>
-  );
-}
+

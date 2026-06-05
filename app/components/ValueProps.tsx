@@ -98,7 +98,7 @@ function PillarRow({ pillar, index }: { pillar: (typeof pillars)[number]; index:
       {/* Subtle ambient orbs */}
       <div className="absolute top-1/4 -right-32 w-[400px] h-[400px] rounded-full bg-[#6762AF]/5 blur-3xl pointer-events-none" />
 
-      <div ref={ref} className="relative mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-32">
+      <div ref={ref} className="relative mx-auto max-w-[1280px] px-6 lg:px-16 xl:px-20 py-24 lg:py-32">
         <div className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-center ${imgFirst ? "lg:[&>*:first-child]:order-2" : ""}`}>
           {/* TEXT COL */}
           <motion.div

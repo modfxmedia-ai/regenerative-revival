@@ -3,12 +3,10 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 /**
  * "The infrastructure behind the care" — Arora Health Group partner block.
- * Two-column layout matching figma: section heading on the left (with a
- * pill button below), and an Arora Health Group "card" callout on the right
- * showing the clinical backbone copy + Arora wordmark.
  */
 
 export default function AroraPartner() {
@@ -21,7 +19,7 @@ export default function AroraPartner() {
       <div className="absolute top-1/4 right-0 w-[400px] h-[400px] rounded-full bg-[#F1ECF8]/60 blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-[#EAEFF7] blur-[80px] pointer-events-none" />
 
-      <div className="relative mx-auto max-w-[1100px] px-6 lg:px-8">
+      <div className="relative mx-auto max-w-[1280px] px-6 lg:px-16 xl:px-20">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* === LEFT col === */}
           <motion.div
@@ -51,12 +49,18 @@ export default function AroraPartner() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative rounded-2xl bg-[#F4EFFA] border border-[#6762AF]/10 p-7 lg:p-8 hover:bg-white hover:border-[#6762AF]/20 hover:shadow-[0_24px_48px_-12px_rgba(88,53,99,0.15)] transition-all duration-500"
           >
-            {/* Top: Arora Health Group + wordmark */}
+            {/* Top: official Arora logo */}
             <div className="flex items-start justify-between gap-4 mb-6">
               <h3 className="font-[family-name:var(--font-poppins)] font-normal text-2xl lg:text-[28px] text-[#1A1F30] leading-tight">
                 Arora Health Group
               </h3>
-              <AroraWordmark />
+              <Image
+                src="/arora-logo.png"
+                alt="Arora Health Group"
+                width={120}
+                height={40}
+                className="h-10 w-auto object-contain shrink-0"
+              />
             </div>
 
             {/* Subhead */}
@@ -71,33 +75,5 @@ export default function AroraPartner() {
         </div>
       </div>
     </section>
-  );
-}
-
-/* Custom Arora wordmark — clean serif "ar" + teal "o" with concentric ring + "ra" */
-function AroraWordmark() {
-  return (
-    <div className="flex items-center font-[family-name:var(--font-poppins)] text-[#1A1F30] leading-none">
-      <span className="text-[26px] tracking-tight">ar</span>
-      <span className="relative inline-flex items-center justify-center mx-[1px]">
-        {/* Ring around the 'o' */}
-        <svg width="34" height="34" viewBox="0 0 34 34" className="absolute inset-0">
-          <circle
-            cx="17"
-            cy="17"
-            r="14"
-            fill="none"
-            stroke="#3FB9A8"
-            strokeWidth="1.4"
-            strokeDasharray="60 88"
-            strokeDashoffset="-12"
-            transform="rotate(-90 17 17)"
-          />
-          <circle cx="17" cy="17" r="2" fill="#3FB9A8" />
-        </svg>
-        <span className="text-[26px] tracking-tight relative px-[2px] opacity-0">o</span>
-      </span>
-      <span className="text-[26px] tracking-tight">ra</span>
-    </div>
   );
 }

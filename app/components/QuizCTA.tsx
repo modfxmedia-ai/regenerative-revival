@@ -22,33 +22,26 @@ export default function QuizCTA() {
       className="relative overflow-hidden"
       style={{ height: "600px" }}
     >
-      {/* === Background image — flipped vertically, 40% opacity === */}
+      {/* === Background image — flipped vertically, visible base === */}
       <div className="absolute inset-0">
         <Image
           src="/stocks-cta-image.jpg"
           alt=""
           fill
           className="object-cover object-center"
-          style={{ transform: "matrix(1, 0, 0, -1, 0, 0)", opacity: 0.4 }}
+          style={{ transform: "matrix(1, 0, 0, -1, 0, 0)" }}
           sizes="100vw"
           aria-hidden
         />
       </div>
 
-      {/* === Gradient layer 1 — base === */}
+      {/* === Gradient overlay — hard-light blend lets image show through === */}
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(117.51deg, #533861 29.33%, #7CA8EF 79.71%)",
-        }}
-      />
-
-      {/* === Gradient layer 2 — hard-light blend over image === */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: "linear-gradient(117.51deg, #533861 29.33%, #7CA8EF 79.71%)",
+          background: "linear-gradient(117.51deg, #2a1a32 29.33%, #4a6fa8 79.71%)",
           mixBlendMode: "hard-light",
+          opacity: 0.95,
         }}
       />
 

@@ -130,6 +130,10 @@ export default async function ProductPage({
           priceFrom: product.priceFrom,
           image: product.image,
           prescriptionOnly: product.disclaimerKey === "compounded_rx",
+          form: product.form,
+          refrigeration: product.refrigeration,
+          supplyDays: product.supplyDays,
+          indications: product.indications,
         })}
       />
       <JsonLd

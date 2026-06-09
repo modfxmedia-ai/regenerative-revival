@@ -3,7 +3,7 @@ import { locations, getNearbyLocations } from "../../../lib/locations";
 import { treatments, getTreatmentBySlug } from "../../../lib/treatments";
 import { generateIntro, generateBenefitSections, generateFAQs, getGovResources } from "../../../lib/content-engine";
 import { generatePageMetadata } from "../../../lib/seo";
-import { JsonLd, medicalWebPageSchema, breadcrumbSchema, faqSchema, localBusinessSchema } from "../../../lib/schema";
+import { JsonLd, medicalWebPageSchema, breadcrumbSchema, faqSchema, localBusinessSchema, serviceSchema } from "../../../lib/schema";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 import TreatmentPageContent from "./TreatmentPageContent";
 import PatientStories from "../../../components/PatientStories";
@@ -31,8 +31,8 @@ export async function generateMetadata({ params }: Props) {
   if (!treatment || !location) return {};
 
   return generatePageMetadata({
-    title: `${treatment.name} in ${location.city}, ${location.stateAbbr}`,
-    description: `${treatment.description} Serving ${location.city}, ${location.state} and the ${location.metro} area. Book your free consultation today.`,
+    title: `${treatment.name} in ${location.city}, ${location.state}`,
+    description: `${treatment.description} Serving ${location.city}, ${location.state} (${location.stateAbbr}) and the ${location.metro} area. Book your free consultation today.`,
     path: `/treatments/${treatment.slug}/${location.slug}`,
     cta: "Book Now",
   });
@@ -79,6 +79,13 @@ export default async function TreatmentLocationPage({ params }: Props) {
     <>
       <JsonLd data={localBiz} />
       <JsonLd data={medicalWebPageSchema({ title: `${treatment.name} in ${location.city}, ${location.stateAbbr}`, description: treatment.description, url: pagePath, medicalConditions: treatment.medicalConditions })} />
+      <JsonLd data={serviceSchema({
+        name: `${treatment.name} in ${location.city}, ${location.state}`,
+        description: treatment.description,
+        url: pagePath,
+        serviceType: treatment.name,
+        areaServed: `${location.city}, ${location.state}`,
+      })} />
       <JsonLd data={breadcrumbSchema([
         { name: "Home", url: SITE_URL },
         { name: treatment.name, url: `${SITE_URL}${treatment.pageLink}` },

@@ -42,6 +42,9 @@ const STATIC_PAGE_DATES: Record<string, string> = {
   // Social proof
   "/testimonials": "2026-05-22",
 
+  // HTML site map / link hub
+  "/site-map": "2026-05-22",
+
   // Legal (stable — don't bump unless content changes)
   "/privacy-policy": "2024-09-05",
   "/terms-conditions": "2024-09-05",

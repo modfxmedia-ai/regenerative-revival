@@ -19,6 +19,7 @@ const resources = [
   { label: "Patient Portal", href: "https://portal.regenerativerevival.com" },
   { label: "FAQ", href: "/#faq" },
   { label: "Blog", href: "/news" },
+  { label: "Site Map", href: "/site-map" },
 ];
 
 const contact = [
@@ -31,6 +32,7 @@ const legal = [
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms of Service", href: "/terms-conditions" },
   { label: "HIPAA Notice", href: "/disclaimer" },
+  { label: "Site Map", href: "/site-map" },
 ];
 
 export default function Footer() {

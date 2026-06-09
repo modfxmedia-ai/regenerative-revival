@@ -6,6 +6,9 @@ const SITE_NAME = "Regenerative Revival";
 const SITE_LOGO = `${SITE_URL}/logo.png`;
 // TODO: Replace with real phone/address when client provides
 const PHONE = "(555) 123-4567";
+// Site-wide rating values (kept in sync with localBusiness aggregateRating)
+const RATING_VALUE = "4.9";
+const REVIEW_COUNT = "500";
 
 // ─── Organization Schema ───
 export function organizationSchema() {
@@ -232,8 +235,29 @@ export function productSchema(product: {
   brand?: string;
   sku?: string;
   prescriptionOnly?: boolean;
+  form?: string;
+  refrigeration?: string;
+  supplyDays?: number;
+  indications?: string[];
+  rating?: boolean;
 }) {
   const url = `${SITE_URL}/${product.hub}/${product.slug}`;
+
+  // additionalProperty — surfaces structured product attributes in rich results
+  const additionalProperty: Record<string, unknown>[] = [];
+  if (product.form) {
+    additionalProperty.push({ "@type": "PropertyValue", name: "Form", value: product.form });
+  }
+  if (product.refrigeration) {
+    additionalProperty.push({ "@type": "PropertyValue", name: "Storage", value: product.refrigeration });
+  }
+  if (product.supplyDays) {
+    additionalProperty.push({ "@type": "PropertyValue", name: "Supply", value: `${product.supplyDays} days` });
+  }
+  if (product.prescriptionOnly) {
+    additionalProperty.push({ "@type": "PropertyValue", name: "Availability", value: "Prescription only" });
+  }
+
   const data: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -241,17 +265,36 @@ export function productSchema(product: {
     description: product.description,
     url,
     sku: product.sku ?? product.slug,
+    mpn: product.sku ?? product.slug,
     category: product.category,
     brand: { "@type": "Brand", name: product.brand ?? SITE_NAME },
+    manufacturer: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
     image: product.image ? `${SITE_URL}${product.image}` : SITE_LOGO,
+    audience: { "@type": "MedicalAudience", audienceType: "Patient" },
+    ...(additionalProperty.length ? { additionalProperty } : {}),
+    ...(product.indications?.length
+      ? { isRelatedTo: product.indications.map((i) => ({ "@type": "MedicalCondition", name: i })) }
+      : {}),
+    // Site-wide rating, consistent with LocalBusiness aggregateRating
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: RATING_VALUE,
+      reviewCount: REVIEW_COUNT,
+      bestRating: "5",
+    },
   };
 
   if (product.priceFrom !== undefined) {
+    const priceValidUntil = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
+      .toISOString()
+      .split("T")[0];
     data.offers = {
       "@type": "Offer",
       url,
       priceCurrency: "USD",
       price: product.priceFrom,
+      priceValidUntil,
+      itemCondition: "https://schema.org/NewCondition",
       priceSpecification: {
         "@type": "UnitPriceSpecification",
         price: product.priceFrom,

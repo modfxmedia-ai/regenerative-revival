@@ -66,6 +66,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta
+          name="ahrefs-site-verification"
+          content="860ee78bbd3510a9f7de6aa645b16cc796ddb986b5baa867c609ca40ba805e93"
+        />
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="cvy7YBrUuNdzaeWFmx7Pqw"

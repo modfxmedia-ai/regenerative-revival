@@ -12,8 +12,6 @@ const regenerativeDropdown: DropdownItem[] = [
   { label: "Wharton's Jelly", href: "/whartons-jelly", desc: "Source, science, and how it's delivered" },
   { label: "Why Exosomes", href: "/why-exosomes", desc: "The signaling layer that drives repair" },
   { label: "Concierge Care Model", href: "/concierge-care-model", desc: "NP-led, physician-overseen, in your home" },
-  { label: "All Treatments", href: "/treatments", desc: "Browse the full regenerative catalog" },
-  { label: "Service Areas", href: "/locations", desc: "Find concierge care in your city" },
 ];
 
 const aboutDropdown: DropdownItem[] = [

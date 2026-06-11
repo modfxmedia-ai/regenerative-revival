@@ -3,87 +3,94 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, Plus } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight, Dna, Droplets, Orbit, FlaskConical, Zap } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   SERVICES ACCORDION
-   Ways2Well-inspired expanding card strip.
-   Hover (desktop) or tap (mobile) a card to expand it.
-   Uses flex-grow CSS transition for buttery-smooth width changes.
+   OUR SERVICES — V2 elevated redesign
+   Featured-panel + selectable tiles. Hover/tap a tile to swap the hero panel
+   with a smooth crossfade. Numbered indices, service icons, gradient accents.
    ───────────────────────────────────────────────────────────────────────────── */
 
 const SERVICES = [
   {
     id: "stem-cell-therapy",
-    label: "STEM CELL\nTHERAPY",
-    tagline: "STEM CELL THERAPY",
+    number: "01",
+    label: "Stem Cell Therapy",
     description:
-      "Support your body's natural healing with advanced, science-backed regenerative therapies delivered to your door by a licensed nurse practitioner.",
+      "Science-backed regenerative therapies that may support the body's natural processes — delivered to your door by a licensed nurse practitioner.",
     href: "/stem-cell-therapy",
     image: "/2149230689.jpg",
     objectPosition: "center 30%",
+    icon: Dna,
+    frame: "from-[#6762AF] to-[#4F4A8E]",
   },
   {
     id: "whartons-jelly",
-    label: "WHARTON'S\nJELLY",
-    tagline: "WHARTON'S JELLY",
+    number: "02",
+    label: "Wharton's Jelly",
     description:
       "Premium umbilical cord-derived MSCs with superior potency for deep tissue regeneration — the gold standard in stem cell sourcing.",
     href: "/whartons-jelly",
     image: "/2148882109.jpg",
     objectPosition: "center 20%",
+    icon: Droplets,
+    frame: "from-[#71A7F5] to-[#345691]",
   },
   {
     id: "exosomes",
-    label: "EXOSOME\nTHERAPY",
-    tagline: "EXOSOME THERAPY",
+    number: "03",
+    label: "Exosome Therapy",
     description:
-      "Next-generation cellular messengers that amplify healing signals and accelerate recovery at the cellular level.",
+      "Next-generation cellular messengers that amplify healing signals and may accelerate recovery at the cellular level.",
     href: "/why-exosomes",
     image: "/2149374070.jpg",
     objectPosition: "center 25%",
+    icon: Orbit,
+    frame: "from-[#583563] to-[#3F2549]",
   },
   {
     id: "hormones-peptides",
-    label: "HORMONES &\nPEPTIDES",
-    tagline: "HORMONES & PEPTIDES",
+    number: "04",
+    label: "Hormones & Peptides",
     description:
-      "Clinician-prescribed hormone optimization and peptide protocols tailored to your unique biology — online, ship to door.",
+      "Clinician-prescribed hormone optimization and peptide protocols tailored to your unique biology — online, shipped to your door.",
     href: "/hormones-peptides",
     image: "/2149611219.jpg",
     objectPosition: "center 30%",
+    icon: FlaskConical,
+    frame: "from-[#345691] to-[#021E3C]",
   },
   {
     id: "nad",
-    label: "NAD+\nTHERAPY",
-    tagline: "NAD+ THERAPY",
+    number: "05",
+    label: "NAD+ Therapy",
     description:
-      "Cellular energy restoration and longevity protocols powered by NAD+ infusions. Feel younger, think sharper, perform better.",
+      "Cellular energy restoration and longevity protocols powered by NAD+. Feel younger, think sharper, perform better.",
     href: "/nad",
     image: "/2149040261.jpg",
     objectPosition: "center 35%",
+    icon: Zap,
+    frame: "from-[#6F4A7A] to-[#6762AF]",
   },
 ];
 
-/* ─── SHARED TRANSITION TIMING ─────────────────────────────────────────────── */
-const EASE = "cubic-bezier(0.4, 0, 0.2, 1)";
-const DURATION_MS = 700;
-const CARD_TRANSITION = `flex-grow ${DURATION_MS}ms ${EASE}, min-width ${DURATION_MS}ms ${EASE}`;
-
 export default function ServicesAccordion() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const active = SERVICES[activeIndex];
 
   return (
-    <section className="relative bg-[#080B12] py-20 lg:py-28 overflow-hidden">
-      {/* ── ambient background glow ───────────────────────────────────────── */}
+    <section className="relative bg-[#0B0E16] py-20 lg:py-28 overflow-hidden">
+      {/* ambient glow */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-[#6762AF]/10 blur-[140px] rounded-full" />
+        <div className="absolute top-0 left-1/4 w-[700px] h-[500px] bg-[#6762AF]/12 blur-[150px] rounded-full" />
+        <div className="absolute bottom-0 right-1/4 w-[600px] h-[400px] bg-[#345691]/12 blur-[150px] rounded-full" />
       </div>
+      <div className="absolute inset-0 lux-grid opacity-[0.12] pointer-events-none" />
 
-      <div className="relative mx-auto max-w-[1380px] px-6 lg:px-10">
-
-        {/* ── Section heading ───────────────────────────────────────────────── */}
-        <div className="mb-12 lg:mb-16 text-center">
+      <div className="relative mx-auto max-w-[1280px] px-6 lg:px-16 xl:px-20">
+        {/* Heading */}
+        <div className="mb-12 lg:mb-16 max-w-3xl">
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -98,239 +105,152 @@ export default function ServicesAccordion() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7, delay: 0.08 }}
-            className="font-[family-name:var(--font-poppins)] font-black text-[2.2rem] sm:text-[2.8rem] lg:text-[3.5rem] text-white uppercase leading-[1.05] tracking-[-0.01em]"
+            className="font-[family-name:var(--font-poppins)] font-medium text-[2.2rem] sm:text-[2.8rem] lg:text-[3.4rem] text-white leading-[1.05] tracking-[-0.04em]"
           >
-            Regenerative Care.
-            <br />
-            Personalized Protocols.
-            <br />
-            <span className="text-[#71A7F5]">Longevity, Reimagined.</span>
+            Regenerative care, personalized protocols,{" "}
+            <span className="bg-gradient-to-r from-[#8985C5] via-[#71A7F5] to-[#8985C5] bg-clip-text text-transparent">
+              longevity reimagined.
+            </span>
           </motion.h2>
         </div>
 
-        {/* ──────────────────────────────────────────────────────────────────
-            DESKTOP — horizontal expanding accordion
-        ─────────────────────────────────────────────────────────────────── */}
+        {/* ── Featured panel + tiles ───────────────────────────────────── */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.8, delay: 0.15 }}
-          className="hidden lg:flex gap-3 h-[520px]"
-          onMouseLeave={() => setActiveIndex(0)}
+          transition={{ duration: 0.8, delay: 0.12 }}
+          className="grid lg:grid-cols-[1.5fr_1fr] gap-5 lg:gap-6"
         >
-          {SERVICES.map((service, i) => {
-            const isActive = activeIndex === i;
-            return (
-              <a
-                key={service.id}
-                href={service.href}
-                className="relative overflow-hidden rounded-[20px] cursor-pointer group block"
-                style={{
-                  flexGrow: isActive ? 20 : 3,
-                  flexShrink: 1,
-                  flexBasis: "110px",
-                  minWidth: "110px",
-                  transition: CARD_TRANSITION,
-                }}
-                onMouseEnter={() => setActiveIndex(i)}
-                aria-label={service.tagline}
+          {/* FEATURED PANEL */}
+          <div className="relative rounded-[28px] overflow-hidden min-h-[420px] lg:min-h-[560px] group">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={active.id}
+                initial={{ opacity: 0, scale: 1.04 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute inset-0"
               >
-                {/* ── background image ──────────────────────────────────── */}
                 <Image
-                  src={service.image}
-                  alt={service.tagline}
+                  src={active.image}
+                  alt={active.label}
                   fill
-                  sizes="(max-width: 1380px) 60vw, 700px"
+                  sizes="(max-width: 1024px) 100vw, 760px"
                   className="object-cover"
-                  style={{
-                    objectPosition: service.objectPosition,
-                    transition: `transform ${DURATION_MS}ms ${EASE}`,
-                    transform: isActive ? "scale(1.04)" : "scale(1.0)",
-                  }}
-                  priority={i === 0}
+                  style={{ objectPosition: active.objectPosition }}
+                  priority
                 />
+              </motion.div>
+            </AnimatePresence>
 
-                {/* ── overlays ──────────────────────────────────────────── */}
-                {/* Dark base — heavier on inactive, lighter on active */}
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background: isActive
-                      ? "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.2) 100%)"
-                      : "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.30) 40%, rgba(0,0,0,0.55) 100%)",
-                    transition: `background ${DURATION_MS}ms ${EASE}`,
-                  }}
-                />
+            {/* overlays */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#06080F] via-[#06080F]/45 to-transparent" />
+            <div
+              className={`absolute inset-0 bg-gradient-to-tr ${active.frame} opacity-20 mix-blend-overlay transition-opacity duration-700`}
+            />
+            <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-[28px] pointer-events-none" />
 
-                {/* Brand accent glow at bottom of active card */}
-                <AnimatePresence>
-                  {isActive && (
-                    <motion.div
-                      key="glow"
-                      className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.5 }}
-                      style={{
-                        background:
-                          "radial-gradient(ellipse at bottom center, rgba(103,98,175,0.30) 0%, transparent 70%)",
-                      }}
-                    />
-                  )}
-                </AnimatePresence>
-
-                {/* ── INACTIVE label ────────────────────────────────────── */}
-                <AnimatePresence>
-                  {!isActive && (
-                    <motion.div
-                      key="inactive-label"
-                      className="absolute inset-0 flex flex-col justify-between px-2 py-5"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      {/* Label — top-left, horizontal */}
-                      <span className="block text-white font-bold text-[15px] tracking-[0.08em] uppercase leading-[1.3] whitespace-pre-line drop-shadow-[0_2px_8px_rgba(0,0,0,0.2)] text-center">
-                        {service.label}
-                      </span>
-
-                      {/* Plus icon — bottom center */}
-                      <div className="self-center flex items-center justify-center w-10 h-10 rounded-full border border-white/50 bg-white/10 backdrop-blur-sm group-hover:bg-white/20 group-hover:border-white/70 transition-all duration-300">
-                        <Plus className="w-4 h-4 text-white" strokeWidth={2.5} />
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-
-                {/* ── ACTIVE content ────────────────────────────────────── */}
-                <AnimatePresence>
-                  {isActive && (
-                    <motion.div
-                      key="active-content"
-                      className="absolute bottom-0 left-0 right-0 p-8"
-                      initial={{ opacity: 0, y: 16 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 8 }}
-                      transition={{ duration: 0.45, delay: 0.15 }}
-                    >
-                      <p className="font-black text-[1.6rem] lg:text-[2rem] uppercase text-[#71A7F5] leading-[1.1] tracking-[0.01em] mb-3">
-                        {service.tagline}
-                      </p>
-                      <p className="text-[14px] text-white/75 leading-[1.65] max-w-[420px] mb-6">
-                        {service.description}
-                      </p>
-                      <span className="inline-flex items-center gap-2 text-[13px] font-semibold text-white/90 uppercase tracking-[0.15em] group/cta">
-                        Learn More
-                        <span className="inline-flex items-center gap-0.5 transition-transform duration-300 group-hover/cta:translate-x-1">
-
-                          <svg data-v-e1c3f83f="" xmlns="http://www.w3.org/2000/svg" width="45" height="7" fill="none"><path data-v-e1c3f83f="" fill="#34B4F4" d="M.333 3.776a2.667 2.667 0 1 0 5.334 0 2.667 2.667 0 0 0-5.334 0Zm44.667 0L40 .89v5.773l5-2.887Zm-42 .5h37.5v-1H3v1Z"></path></svg>
-                        </span>
-                      </span>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </a>
-            );
-          })}
-        </motion.div>
-
-        {/* ──────────────────────────────────────────────────────────────────
-            MOBILE — vertical stacked accordion
-        ─────────────────────────────────────────────────────────────────── */}
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.7, delay: 0.12 }}
-          className="flex lg:hidden flex-col gap-3"
-        >
-          {SERVICES.map((service, i) => {
-            const isActive = activeIndex === i;
-            return (
-              <div
-                key={service.id}
-                className="relative overflow-hidden rounded-2xl cursor-pointer"
-                style={{
-                  height: isActive ? 280 : 72,
-                  transition: `height ${DURATION_MS}ms ${EASE}`,
-                }}
-                onClick={() => setActiveIndex(isActive ? 0 : i)}
-              >
-                {/* bg image */}
-                <Image
-                  src={service.image}
-                  alt={service.tagline}
-                  fill
-                  sizes="100vw"
-                  className="object-cover"
-                  style={{
-                    objectPosition: service.objectPosition,
-                    transition: `transform ${DURATION_MS}ms ${EASE}`,
-                    transform: isActive ? "scale(1.04)" : "scale(1.0)",
-                  }}
-                />
-
-                {/* overlay */}
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background: isActive
-                      ? "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.3) 60%)"
-                      : "rgba(0,0,0,0.72)",
-                    transition: `background ${DURATION_MS}ms ${EASE}`,
-                  }}
-                />
-
-                {/* collapsed row */}
-                <div className="absolute inset-x-0 top-0 h-[72px] flex items-center justify-between px-5">
-                  <span className="text-white font-black text-[12px] tracking-[0.15em] uppercase">
-                    {service.tagline}
-                  </span>
-                  <div
-                    className="flex items-center justify-center w-8 h-8 rounded-full border border-white/40 bg-white/10"
-                    style={{
-                      transition: `transform ${DURATION_MS}ms ${EASE}`,
-                      transform: isActive ? "rotate(45deg)" : "rotate(0deg)",
-                    }}
-                  >
-                    <Plus className="w-3.5 h-3.5 text-white" strokeWidth={2.5} />
-                  </div>
-                </div>
-
-                {/* expanded content */}
-                <AnimatePresence>
-                  {isActive && (
-                    <motion.div
-                      key="mobile-content"
-                      className="absolute bottom-0 left-0 right-0 p-5 pt-0"
-                      initial={{ opacity: 0, y: 12 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.35, delay: 0.18 }}
-                    >
-                      <p className="font-black text-[1.25rem] uppercase text-[#71A7F5] leading-[1.1] mb-2">
-                        {service.tagline}
-                      </p>
-                      <p className="text-[13px] text-white/70 leading-[1.6] mb-4">
-                        {service.description}
-                      </p>
-                      <a
-                        href={service.href}
-                        className="inline-flex items-center gap-2 text-[12px] font-semibold text-white/90 uppercase tracking-[0.15em]"
-                      >
-                        Learn More
-                        <ArrowRight className="w-3.5 h-3.5" />
-                        <span className="w-6 h-px bg-white/60 inline-block" />
-                      </a>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+            {/* content */}
+            <div className="absolute inset-0 flex flex-col justify-between p-7 lg:p-10">
+              {/* top — number + icon */}
+              <div className="flex items-start justify-between">
+                <span className="font-[family-name:var(--font-poppins)] text-[13px] font-mono tracking-[0.3em] text-white/50">
+                  ({active.number})
+                </span>
+                <span
+                  className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${active.frame} shadow-lg`}
+                >
+                  <active.icon className="h-5 w-5 text-white" strokeWidth={1.8} />
+                </span>
               </div>
-            );
-          })}
+
+              {/* bottom — text */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={active.id + "-text"}
+                  initial={{ opacity: 0, y: 18 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 8 }}
+                  transition={{ duration: 0.45, delay: 0.1 }}
+                >
+                  <h3 className="font-[family-name:var(--font-poppins)] font-semibold text-[1.9rem] lg:text-[2.6rem] text-white leading-[1.05] tracking-[-0.03em] mb-3">
+                    {active.label}
+                  </h3>
+                  <p className="text-[14px] lg:text-[15px] text-white/75 leading-[1.7] max-w-[460px] mb-7">
+                    {active.description}
+                  </p>
+                  <Link
+                    href={active.href}
+                    className="btn-gradient inline-flex h-12 items-center gap-2 px-7 text-[13px] font-semibold text-white uppercase tracking-[0.12em]"
+                  >
+                    Learn More
+                    <ArrowUpRight className="h-4 w-4" />
+                  </Link>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
+
+          {/* TILE LIST */}
+          <div className="flex flex-col gap-3">
+            {SERVICES.map((service, i) => {
+              const isActive = activeIndex === i;
+              return (
+                <button
+                  key={service.id}
+                  onMouseEnter={() => setActiveIndex(i)}
+                  onClick={() => setActiveIndex(i)}
+                  className={`group relative flex items-center gap-4 rounded-2xl border p-4 lg:p-5 text-left transition-all duration-400 overflow-hidden ${
+                    isActive
+                      ? "border-white/15 bg-white/[0.06]"
+                      : "border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] hover:border-white/10"
+                  }`}
+                >
+                  {/* active gradient sliver */}
+                  <span
+                    className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b ${service.frame} transition-opacity duration-400 ${
+                      isActive ? "opacity-100" : "opacity-0"
+                    }`}
+                  />
+                  {/* icon */}
+                  <span
+                    className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-all duration-400 ${
+                      isActive
+                        ? `bg-gradient-to-br ${service.frame} text-white`
+                        : "bg-white/[0.05] text-white/55 group-hover:text-white/80"
+                    }`}
+                  >
+                    <service.icon className="h-5 w-5" strokeWidth={1.8} />
+                  </span>
+                  {/* label */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[10px] font-mono tracking-[0.2em] text-white/35">
+                        {service.number}
+                      </span>
+                    </div>
+                    <span
+                      className={`block font-[family-name:var(--font-poppins)] font-semibold text-[15px] lg:text-[17px] transition-colors duration-300 ${
+                        isActive ? "text-white" : "text-white/70 group-hover:text-white"
+                      }`}
+                    >
+                      {service.label}
+                    </span>
+                  </div>
+                  {/* arrow */}
+                  <ArrowUpRight
+                    className={`h-4 w-4 shrink-0 transition-all duration-300 ${
+                      isActive
+                        ? "text-[#71A7F5] translate-x-0 opacity-100"
+                        : "text-white/30 -translate-x-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-0"
+                    }`}
+                  />
+                </button>
+              );
+            })}
+          </div>
         </motion.div>
       </div>
     </section>

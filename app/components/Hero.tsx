@@ -99,7 +99,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.55 }}
-              className="mt-8 max-w-2xl mx-auto text-[15px] sm:text-[16px] leading-relaxed text-white/65 text-center"
+              className="mt-8 max-w-3xl mx-auto text-[15px] sm:text-[16px] leading-relaxed text-white/65 text-center"
             >
               Regenerative therapy in your home. Hormones, peptides, and NAD+ through telehealth.<br className="hidden sm:block" />
               One physician-led medical team, one patient record, one plan for the best decade of your life.
@@ -135,8 +135,8 @@ export default function Hero() {
         >
           <div className="w-full max-w-[1188px] mx-auto h-[54px] bg-[#1A1F30] rounded-lg flex items-center justify-center px-10 gap-12">
             <CredItem icon={<Award className="h-[18px] w-[18px]" />} label="8+ years in Regenerative Medicine" />
-            <CredItem icon={<Users className="h-[18px] w-[18px]" />} label="20+ Licensed Clinicians" />
-            <CredItem icon={<MapPin className="h-[18px] w-[18px]" />} label="50+ States Covered" />
+            <CredItem icon={<Users className="h-[18px] w-[18px]" />} label="100+ Licensed Clinicians" />
+            <CredItem icon={<MapPin className="h-[18px] w-[18px]" />} label="50 States Covered" />
             <CredItem icon={<ShieldCheck className="h-[18px] w-[18px]" />} label="Backed by Arora Health Group" />
           </div>
         </motion.div>

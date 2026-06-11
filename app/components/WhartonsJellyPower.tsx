@@ -9,14 +9,14 @@ const benefits = [
     image: "/1.webp",
     title: "Enhanced Regeneration",
     description:
-      "MSCs from Wharton's Jelly accelerate the body's natural repair processes, significantly reducing recovery time for injuries and chronic conditions.",
+      "MSCs from Wharton's Jelly may support the body's natural repair processes, which may support faster recovery from injuries and chronic conditions.",
     accent: "01",
   },
   {
     image: "/2.webp",
     title: "Reduced Inflammation",
     description:
-      "Powerful anti-inflammatory properties effectively help manage pain and swelling associated with tissue damage.",
+      "Anti-inflammatory properties may help support pain management and reduce swelling associated with tissue damage.",
     accent: "02",
   },
   {
@@ -89,19 +89,19 @@ export default function WhartonsJellyPower() {
           ))}
         </div>
 
-        {/* CTA Bar — luxe gradient with shimmer */}
+        {/* CTA Bar — single primary action: the quiz */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.5 }}
         >
           <a
-            href="/contact"
-            className="group relative flex items-center justify-center gap-3 w-full py-7 rounded-2xl bg-gradient-to-r from-[#1A1F30] via-[#583563] to-[#6762AF] text-white text-lg font-semibold overflow-hidden transition-all duration-500 hover:shadow-[0_24px_64px_-12px_rgba(103,98,175,0.5)] hover:-translate-y-0.5 animate-gradient"
+            href="/consult-router"
+            className="group relative flex items-center justify-center gap-3 w-full py-7 rounded-2xl btn-gradient text-white text-lg font-semibold overflow-hidden"
           >
             <span className="relative z-10 flex items-center gap-3">
-              <Sparkles className="h-5 w-5 text-[#71A7F5]" />
-              Book Your FREE Consultation Today
+              <Sparkles className="h-5 w-5 text-[#C5DBF7]" />
+              Take The 2-Minute Quiz
               <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </span>
             {/* Shimmer */}

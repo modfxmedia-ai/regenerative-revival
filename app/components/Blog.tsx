@@ -36,26 +36,35 @@ const posts = [
   },
 ];
 
+const EASE = [0.22, 1, 0.36, 1] as const;
+
 export default function Blog() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+  const [featured, ...rest] = posts;
 
   return (
-    <section id="blog" className="relative py-28 lg:py-32 bg-[#F1ECF8] overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#6762AF]/40 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#6762AF]/40 to-transparent" />
+    <section id="blog" className="relative py-24 lg:py-32 bg-[#F1ECF8] overflow-hidden">
+      {/* ambient */}
+      <div className="absolute top-0 left-1/4 w-[600px] h-[400px] rounded-full bg-[#6762AF]/06 blur-[140px] pointer-events-none" />
 
-      <div ref={ref} className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div ref={ref} className="relative mx-auto max-w-[1280px] px-6 lg:px-16 xl:px-20">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8 mb-16"
+          className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8 mb-12 lg:mb-14"
         >
           <div>
-            <span className="eyebrow">Latest News</span>
-            <h2 className="mt-4 lux-display text-4xl sm:text-5xl lg:text-[3.75rem] text-[#1A1F30] leading-[1.05]">
-              Insights & <span className="text-[#6762AF] font-semibold">updates</span>
+            <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">
+              Latest News
+            </span>
+            <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-medium text-[2.25rem] sm:text-5xl lg:text-[3.4rem] text-[#1A1F30] leading-[1.05] tracking-[-0.04em]">
+              Insights &amp;{" "}
+              <span className="bg-gradient-to-r from-[#6762AF] to-[#71A7F5] bg-clip-text text-transparent">
+                updates
+              </span>
             </h2>
           </div>
           <Link
@@ -67,49 +76,107 @@ export default function Blog() {
           </Link>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {posts.map((post, i) => (
-            <motion.div
-              key={post.title}
-              initial={{ opacity: 0, y: 40 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.1 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+        {/* Editorial layout: featured + stacked */}
+        <div className="grid lg:grid-cols-2 gap-6">
+          {/* FEATURED — content over image */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: EASE }}
+          >
+            <Link
+              href={`/news/${featured.slug}`}
+              className="group relative block h-full min-h-[420px] lg:min-h-[560px] rounded-[1.75rem] overflow-hidden luxe-shadow"
             >
-              <Link
-                href={`/news/${post.slug}`}
-                className="group relative block bg-white rounded-[1.75rem] overflow-hidden hover:-translate-y-1.5 transition-all duration-500 luxe-shadow luxe-shadow-hover"
-              >
-                <div className="aspect-[16/10] overflow-hidden relative">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  {/* Top corner — read time */}
-                  <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-white/90 backdrop-blur-sm px-3 py-1 text-[11px] font-medium text-[#1A1F30] shadow-sm">
-                    <Clock className="h-3 w-3 text-[#6762AF]" />
-                    {post.readTime}
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A1F30]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </div>
-                <div className="p-7">
-                  <span className="inline-block rounded-full bg-[#F1ECF8] px-3 py-1 text-[11px] font-semibold text-[#583563] uppercase tracking-wider mb-4">
-                    {post.category}
+              <Image
+                src={featured.image}
+                alt={featured.title}
+                fill
+                sizes="(max-width: 1024px) 100vw, 620px"
+                className="object-cover transition-transform duration-[1.1s] group-hover:scale-105"
+              />
+              {/* gradient wash */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E16] via-[#0B0E16]/35 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#6762AF]/25 via-transparent to-transparent mix-blend-overlay" />
+
+              {/* read time chip */}
+              <div className="absolute top-5 left-5 inline-flex items-center gap-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 px-3 py-1.5 text-[11px] font-medium text-white">
+                <Clock className="h-3 w-3" />
+                {featured.readTime}
+              </div>
+
+              {/* content */}
+              <div className="absolute inset-x-0 bottom-0 p-7 lg:p-9">
+                <span className="inline-block rounded-full bg-white/15 backdrop-blur-md border border-white/20 px-3 py-1 text-[11px] font-semibold text-white uppercase tracking-wider mb-4">
+                  {featured.category}
+                </span>
+                <h3 className="font-[family-name:var(--font-poppins)] font-semibold text-[1.6rem] lg:text-[2.1rem] text-white leading-[1.12] tracking-[-0.02em] max-w-[520px]">
+                  {featured.title}
+                </h3>
+                <p className="mt-3 text-[13.5px] text-white/70 leading-relaxed max-w-[460px] line-clamp-2">
+                  {featured.excerpt}
+                </p>
+                <span className="mt-6 inline-flex items-center gap-2 text-[13px] font-semibold text-white">
+                  Read article
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/15 backdrop-blur-md border border-white/20 group-hover:bg-white group-hover:text-[#1A1F30] transition-all duration-300">
+                    <ArrowUpRight className="h-4 w-4" />
                   </span>
-                  <h3 className="lux-display text-xl text-[#1A1F30] leading-snug mb-3 group-hover:text-[#583563] transition-colors duration-300">
-                    {post.title}
-                  </h3>
-                  <p className="text-sm text-[#4A4F66] leading-relaxed line-clamp-2 mb-5">{post.excerpt}</p>
-                  <div className="flex items-center gap-2 text-sm font-semibold text-[#6762AF] group-hover:text-[#583563] transition-colors">
-                    Read article
-                    <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </span>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* STACKED — two compact horizontal cards */}
+          <div className="flex flex-col gap-6">
+            {rest.map((post, i) => (
+              <motion.div
+                key={post.slug}
+                initial={{ opacity: 0, y: 40 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.7, delay: 0.15 + i * 0.12, ease: EASE }}
+                className="flex-1"
+              >
+                <Link
+                  href={`/news/${post.slug}`}
+                  className="group flex h-full bg-white rounded-[1.5rem] overflow-hidden luxe-shadow luxe-shadow-hover hover:-translate-y-1 transition-all duration-500"
+                >
+                  {/* image */}
+                  <div className="relative w-[42%] shrink-0 overflow-hidden">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      sizes="280px"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10" />
                   </div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+                  {/* content */}
+                  <div className="flex-1 p-6 flex flex-col justify-center">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="inline-block rounded-full bg-[#F1ECF8] px-2.5 py-0.5 text-[10px] font-semibold text-[#583563] uppercase tracking-wider">
+                        {post.category}
+                      </span>
+                      <span className="inline-flex items-center gap-1 text-[10.5px] text-[#7A7F95]">
+                        <Clock className="h-2.5 w-2.5" />
+                        {post.readTime}
+                      </span>
+                    </div>
+                    <h3 className="font-[family-name:var(--font-poppins)] font-semibold text-[16px] lg:text-[18px] text-[#1A1F30] leading-snug group-hover:text-[#583563] transition-colors duration-300">
+                      {post.title}
+                    </h3>
+                    <p className="mt-2 text-[12.5px] text-[#4A4F66] leading-relaxed line-clamp-2">
+                      {post.excerpt}
+                    </p>
+                    <span className="mt-4 inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-[#6762AF] group-hover:gap-2.5 transition-all">
+                      Read article
+                      <ArrowUpRight className="h-3.5 w-3.5" />
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

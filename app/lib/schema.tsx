@@ -4,7 +4,7 @@
 const SITE_URL = "https://www.regenerativerevival.com";
 const SITE_NAME = "Regenerative Revival";
 const SITE_LOGO = `${SITE_URL}/logo.png`;
-// TODO: Replace with real phone/address when client provides
+// TODO: Replace with real phone number — client 10DLC/A2P verification pending
 const PHONE = "(555) 123-4567";
 // Site-wide rating values (kept in sync with localBusiness aggregateRating)
 const RATING_VALUE = "4.9";

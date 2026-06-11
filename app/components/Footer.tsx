@@ -78,8 +78,8 @@ export default function Footer() {
         <div className="relative mx-auto max-w-[1280px] px-8 lg:px-12 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
           {/* Social icons */}
           <div className="flex items-center gap-4">
-            <SocialIcon href="https://facebook.com" label="Facebook" icon={<Facebook className="h-[15px] w-[15px]" strokeWidth={2.2} />} />
-            <SocialIcon href="https://instagram.com" label="Instagram" icon={<Instagram className="h-[15px] w-[15px]" strokeWidth={2.2} />} />
+            <SocialIcon href="https://www.facebook.com/regenerativerevival" label="Facebook" icon={<Facebook className="h-[15px] w-[15px]" strokeWidth={2.2} />} />
+            <SocialIcon href="https://www.instagram.com/regenerativerevival" label="Instagram" icon={<Instagram className="h-[15px] w-[15px]" strokeWidth={2.2} />} />
           </div>
 
           {/* Copyright */}

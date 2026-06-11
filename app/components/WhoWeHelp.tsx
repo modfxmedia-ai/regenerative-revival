@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Quote } from "lucide-react";
+import { Quote, Activity, HeartPulse, ShieldCheck, Gauge, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
 /**
@@ -21,8 +21,8 @@ const personas = [
     body: "Peptides, NAD+, and hormone support for professionals and athletes chasing energy, body composition, recovery, and cognitive edge.",
     tag: "Hormones & Peptides",
     href: "/hormones-peptides",
-    image: "/2149230689.jpg",
-    objectPosition: "center 30%",
+    icon: Activity,
+    frame: "from-[#6762AF] to-[#4F4A8E]",
   },
   {
     eyebrow: "Recovering From An Injury",
@@ -30,8 +30,8 @@ const personas = [
     body: "Regenerative therapy for active adults recovering from sports injuries, joint wear, and soft-tissue damage.",
     tag: "Regenerative Therapy",
     href: "/stem-cell-therapy",
-    image: "/HomePage-_Conditions We Treat_ section.jpeg",
-    objectPosition: "center 25%",
+    icon: HeartPulse,
+    frame: "from-[#71A7F5] to-[#345691]",
   },
   {
     eyebrow: "Before You Say Yes To Surgery",
@@ -39,8 +39,8 @@ const personas = [
     body: "Non-surgical regenerative options with honest candidacy assessment. If we're not a fit, we'll tell you.",
     tag: "Regenerative Therapy",
     href: "/concierge-care-model",
-    image: "/HomePage-_Why Choose Regenerative Revival__ section.jpeg",
-    objectPosition: "center 30%",
+    icon: ShieldCheck,
+    frame: "from-[#583563] to-[#3F2549]",
   },
   {
     eyebrow: "Optimizing After 40",
@@ -48,8 +48,8 @@ const personas = [
     body: "Hormone optimization for men and women — HRT, TRT, and coordinated longevity planning built around real labs, not guesses.",
     tag: "Hormones & Peptides",
     href: "/hormones-peptides",
-    image: "/2149040261.jpg",
-    objectPosition: "center 20%",
+    icon: Gauge,
+    frame: "from-[#6F4A7A] to-[#6762AF]",
   },
 ];
 
@@ -64,7 +64,7 @@ const doctors = [
   {
     name: "Dr. Shannon Arora",
     title: "Chief Medical Officer · Regenerative Revival",
-    image: "/team/4.jpg",
+    image: "/team/shannon-arora.png",
     quote:
       "It makes sense to integrate regenerative medicine, hormone therapies, and peptide treatments rather than separating them into different facilities. A single team can effectively manage these services, as the same individual may benefit from all of them.",
   },
@@ -72,7 +72,7 @@ const doctors = [
 
 const stats = [
   { value: "8+", label: "Years in Regenerative Medicine" },
-  { value: "50+", label: "Licensed Clinicians" },
+  { value: "100+", label: "Licensed Clinicians" },
   { value: "50", label: "States" },
   { value: "6k+", label: "Patients Treated" },
 ];
@@ -142,52 +142,52 @@ function PersonaCard({
   body,
   tag,
   href,
-  image,
-  objectPosition,
+  icon: Icon,
+  frame,
 }: (typeof personas)[number]) {
   return (
     <a
       href={href}
-      className="group relative flex items-stretch gap-5 rounded-2xl bg-[#252840]/70 border border-white/[0.06] p-5 lg:p-6 hover:bg-[#2A2D48]/80 hover:border-[#6762AF]/30 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-[0_24px_64px_-12px_rgba(103,98,175,0.25)]"
+      className="group relative flex flex-col h-full overflow-hidden rounded-[1.5rem] bg-white/[0.04] border border-white/[0.07] p-7 lg:p-8 transition-all duration-500 hover:bg-white/[0.07] hover:border-white/15 hover:-translate-y-1 hover:shadow-[0_28px_64px_-16px_rgba(103,98,175,0.3)]"
     >
-      {/* Top accent line on hover */}
-      <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-[#71A7F5]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      {/* Gradient bloom — top-right, blooms on hover */}
+      <span
+        className={`absolute -top-16 -right-16 w-48 h-48 rounded-full bg-gradient-to-br ${frame} opacity-[0.12] blur-3xl group-hover:opacity-30 transition-opacity duration-700 pointer-events-none`}
+      />
+      {/* Watermark icon — large, faint, behind */}
+      <Icon
+        className="absolute -bottom-6 -right-4 h-40 w-40 text-white/[0.03] group-hover:text-white/[0.05] transition-colors duration-700 pointer-events-none"
+        strokeWidth={1}
+      />
 
-      {/* === Text col === */}
-      <div className="flex-1 min-w-0 flex flex-col justify-between">
-        <div>
-          <span className="text-[10px] font-semibold tracking-[0.22em] uppercase text-[#71A7F5]">
-            {eyebrow}
-          </span>
-          <h3 className="mt-2.5 font-[family-name:var(--font-poppins)] font-normal text-[20px] lg:text-[22px] text-white leading-[1.2] tracking-[-0.01em]">
-            {title}
-          </h3>
-          <p className="mt-3 text-[12.5px] text-white/55 leading-[1.6]">{body}</p>
-        </div>
-        <div className="mt-5">
-          <span className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-white group-hover:text-[#71A7F5] transition-colors">
-            {tag}
-            <span className="transition-transform duration-300 group-hover:translate-x-1">
-              →
-            </span>
-          </span>
-        </div>
+      {/* Icon tile */}
+      <div className="relative mb-6">
+        <span
+          className={`inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${frame} shadow-[0_10px_30px_-8px_rgba(103,98,175,0.5)]`}
+        >
+          <Icon className="h-6 w-6 text-white" strokeWidth={1.8} />
+        </span>
       </div>
 
-      {/* === Image col === */}
-      <div className="relative shrink-0 self-stretch w-[140px] sm:w-[160px] rounded-2xl overflow-hidden">
-        <Image
-          src={image}
-          alt={title}
-          fill
-          sizes="180px"
-          className="object-cover transition-transform duration-700 group-hover:scale-110"
-          style={{ objectPosition }}
-        />
-        {/* Soft ring */}
-        <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl pointer-events-none" />
-        {/* Soft top fade */}
-        <div className="absolute top-0 inset-x-0 h-8 bg-gradient-to-b from-[#1A1F30]/30 to-transparent pointer-events-none" />
+      {/* Text */}
+      <div className="relative flex-1">
+        <span className="text-[10px] font-semibold tracking-[0.22em] uppercase text-[#71A7F5]">
+          {eyebrow}
+        </span>
+        <h3 className="mt-3 font-[family-name:var(--font-poppins)] font-semibold text-[21px] lg:text-[23px] text-white leading-[1.2] tracking-[-0.01em]">
+          {title}
+        </h3>
+        <p className="mt-3 text-[13px] text-white/55 leading-[1.65] max-w-[420px]">{body}</p>
+      </div>
+
+      {/* Tag link */}
+      <div className="relative mt-7 pt-5 border-t border-white/[0.08] flex items-center justify-between">
+        <span className="inline-flex items-center gap-2 text-[12.5px] font-semibold text-white/80 group-hover:text-white transition-colors">
+          {tag}
+        </span>
+        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/[0.06] text-white/50 group-hover:bg-[#6762AF] group-hover:text-white transition-all duration-300">
+          <ArrowUpRight className="h-4 w-4" />
+        </span>
       </div>
     </a>
   );
@@ -385,7 +385,7 @@ function NumbersBlock() {
             className="font-[family-name:var(--font-poppins)] font-medium text-white text-center max-w-[620px]"
             style={{ fontSize: "16px", lineHeight: "150%", letterSpacing: "-0.25px" }}
           >
-            Built by clinicians, backed by Arora Health Group, and delivered through telehealth infrastructure designed for medicine. Not improvised from consumer software.
+            Built on trust, backed by Arora Health Group, delivered through telehealth.
           </motion.p>
         </div>
       </div>

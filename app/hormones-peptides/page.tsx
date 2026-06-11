@@ -12,6 +12,7 @@ import {
   faqSchema,
 } from "../lib/schema";
 import { getProductsByHub } from "../lib/products";
+import PeptidePrograms from "../components/PeptidePrograms";
 
 /**
  * Primary keyword: "peptide therapy" (18,100 vol, KD=9)
@@ -189,8 +190,8 @@ export default function HormonesPeptidesPage() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { value: "18,100+", label: "Monthly searches for peptide therapy" },
-                { value: "KD 0", label: "Keyword difficulty — wide open" },
+                { value: "100+", label: "Licensed clinicians on our medical team" },
+                { value: "14", label: "Solution-based peptide programs" },
                 { value: "50", label: "States we serve via telehealth" },
                 { value: "48 hrs", label: "Average time to first clinician review" },
               ].map((s) => (
@@ -203,6 +204,9 @@ export default function HormonesPeptidesPage() {
           </div>
         </div>
       </section>
+
+      {/* ── Solution-based peptide programs (productized funnel) ── */}
+      <PeptidePrograms />
 
       {/* ── Catalog ── */}
       <section id="catalog" className="bg-[#F1ECF8] py-20 lg:py-24">

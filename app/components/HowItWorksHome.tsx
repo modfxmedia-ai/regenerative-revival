@@ -155,7 +155,7 @@ export default function HowItWorksHome() {
         >
           <Link
             href="/consult-router"
-            className="group inline-flex h-13 py-3.5 items-center gap-2.5 rounded-full bg-[#1A1F30] px-9 text-[14px] font-semibold text-white hover:bg-[#583563] hover:shadow-[0_12px_36px_-8px_rgba(88,53,99,0.5)] hover:-translate-y-0.5 transition-all duration-300"
+            className="btn-gradient group inline-flex h-13 py-3.5 items-center gap-2.5 px-9 text-[14px] font-semibold text-white"
           >
             Take The 2-Minute Quiz
             <span className="transition-transform group-hover:translate-x-1">→</span>

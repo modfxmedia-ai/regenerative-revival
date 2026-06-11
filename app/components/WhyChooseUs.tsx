@@ -31,9 +31,9 @@ const reasons = [
       "Access licensed, vetted practitioners across the country who deliver our protocols with precision and care.",
   },
   {
-    title: "Proven results & outcomes",
+    title: "May support results & outcomes",
     description:
-      "Thousands of patients have experienced life-changing improvements in pain, mobility, and overall vitality.",
+      "Thousands of patients report meaningful improvements in pain, mobility, and overall vitality. Individual results may vary.",
   },
 ];
 

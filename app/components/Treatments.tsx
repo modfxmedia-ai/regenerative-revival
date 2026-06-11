@@ -14,7 +14,7 @@ import Image from "next/image";
 
 const cards = [
   {
-    title: "Regeneration, delivered to right your door.",
+    title: "Regeneration, delivered right to your door.",
     body: "Stem cell and exosome therapy for joints and soft tissue, in your home, by a licensed nurse practitioner, under physician oversight. No clinic visits. No waiting rooms.",
     image: "/regeneration.png",
     href: "/stem-cell-therapy",
@@ -58,7 +58,7 @@ export default function Treatments() {
             className="font-[family-name:var(--font-poppins)] font-medium text-[14px] leading-[100%] tracking-[1px] uppercase"
             style={{ color: "#1B3A5C" }}
           >
-            Wholistic Care
+            Holistic Care
           </span>
 
           {/* H2: Poppins 500 56px/56px, -2px spacing, #1A1F30 */}

@@ -49,7 +49,7 @@ export const peptideCategories: PeptideCategory[] = [
         ],
         priceMonthly: "$379",
         priceQuarterly: "$910",
-        slug: "tirzepatide",
+        slug: "sublingual-tirzepatide",
       },
       {
         name: "GLP-1 Semaglutide",
@@ -60,7 +60,7 @@ export const peptideCategories: PeptideCategory[] = [
         ],
         priceMonthly: "$379",
         priceQuarterly: "$910",
-        slug: "semaglutide",
+        slug: "sublingual-semaglutide",
       },
     ],
   },
@@ -98,7 +98,7 @@ export const peptideCategories: PeptideCategory[] = [
         ],
         priceMonthly: "$269",
         priceQuarterly: "$646",
-        slug: "cjc-1295-ipamorelin",
+        slug: "cjc-ipamorelin",
       },
     ],
   },
@@ -195,6 +195,7 @@ export const peptideCategories: PeptideCategory[] = [
         ],
         priceMonthly: "$249",
         priceQuarterly: "$598",
+        slug: "dsip-bpc-cjc",
       },
       {
         name: "BPC-157 / TB-500",
@@ -205,6 +206,7 @@ export const peptideCategories: PeptideCategory[] = [
         ],
         priceMonthly: "$249",
         priceQuarterly: "$598",
+        slug: "bpc-157-tb500",
       },
       {
         name: "DSIP",
@@ -215,6 +217,7 @@ export const peptideCategories: PeptideCategory[] = [
         ],
         priceMonthly: "$199",
         priceQuarterly: "$478",
+        slug: "dsip",
       },
     ],
   },
@@ -234,6 +237,7 @@ export const peptideCategories: PeptideCategory[] = [
         ],
         priceMonthly: "$219",
         priceQuarterly: "$526",
+        slug: "sermorelin",
       },
       {
         name: "IGF-LR3",
@@ -254,6 +258,7 @@ export const peptideCategories: PeptideCategory[] = [
         ],
         priceMonthly: "$269",
         priceQuarterly: "$646",
+        slug: "tesamorelin-ipamorelin",
       },
       {
         name: "Gonadorelin",
@@ -264,6 +269,7 @@ export const peptideCategories: PeptideCategory[] = [
         ],
         priceMonthly: "$209",
         priceQuarterly: "$502",
+        slug: "gonadorelin",
       },
     ],
   },
@@ -282,6 +288,7 @@ export const peptideCategories: PeptideCategory[] = [
         ],
         priceMonthly: "$219",
         priceQuarterly: "$526",
+        slug: "ghk-cu-epithalon",
       },
       {
         name: "GHK-Cu / Epithalon",
@@ -292,6 +299,7 @@ export const peptideCategories: PeptideCategory[] = [
         ],
         priceMonthly: "$229",
         priceQuarterly: "$550",
+        slug: "ghk-cu-epithalon",
       },
       {
         name: "GHK-Cu",
@@ -302,6 +310,7 @@ export const peptideCategories: PeptideCategory[] = [
         ],
         priceMonthly: "$209",
         priceQuarterly: "$502",
+        slug: "ghk-cu",
       },
       {
         name: "MOTS-C",
@@ -312,6 +321,7 @@ export const peptideCategories: PeptideCategory[] = [
         ],
         priceMonthly: "$249",
         priceQuarterly: "$598",
+        slug: "mots-c",
       },
     ],
   },
@@ -330,6 +340,7 @@ export const peptideCategories: PeptideCategory[] = [
         ],
         priceMonthly: "$269",
         priceQuarterly: "$646",
+        slug: "pinealon-pe22-28-selank",
       },
     ],
   },
@@ -348,6 +359,7 @@ export const peptideCategories: PeptideCategory[] = [
         ],
         priceMonthly: "$229",
         priceQuarterly: "$550",
+        slug: "thymosin-a1",
       },
       {
         name: "LL-37",
@@ -376,6 +388,7 @@ export const peptideCategories: PeptideCategory[] = [
         ],
         priceMonthly: "$209",
         priceQuarterly: "$502",
+        slug: "pt-141",
       },
       {
         name: "Kisspeptin",
@@ -404,6 +417,7 @@ export const peptideCategories: PeptideCategory[] = [
         ],
         priceMonthly: "$179",
         priceQuarterly: "$430",
+        slug: "glutathione",
       },
       {
         name: "LIPO-B",
@@ -414,6 +428,7 @@ export const peptideCategories: PeptideCategory[] = [
         ],
         priceMonthly: "$149",
         priceQuarterly: "$358",
+        slug: "lipo-b",
       },
     ],
   },
@@ -432,6 +447,7 @@ export const peptideCategories: PeptideCategory[] = [
         ],
         priceMonthly: "$379",
         priceQuarterly: "$910",
+        slug: "sublingual-semaglutide",
       },
       {
         name: "Sublingual Tirzepatide",
@@ -442,6 +458,7 @@ export const peptideCategories: PeptideCategory[] = [
         ],
         priceMonthly: "$379",
         priceQuarterly: "$910",
+        slug: "sublingual-tirzepatide",
       },
     ],
   },

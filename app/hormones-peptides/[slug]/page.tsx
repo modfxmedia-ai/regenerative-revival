@@ -19,7 +19,7 @@ import ProductPageContent from "./ProductPageContent";
 // SSG: pre-render one page per product at build time
 export function generateStaticParams() {
   return products
-    .filter((p) => p.hub === "hormones-peptides")
+    .filter((p) => p.hub === "hormones-peptides" || p.hub === "nad")
     .map((p) => ({ slug: p.slug }));
 }
 
@@ -104,7 +104,7 @@ export default async function ProductPage({
   const { slug } = await params;
   const product = getProductBySlug(slug);
 
-  if (!product || product.hub !== "hormones-peptides") {
+  if (!product || (product.hub !== "hormones-peptides" && product.hub !== "nad")) {
     notFound();
   }
 

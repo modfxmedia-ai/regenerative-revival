@@ -11,6 +11,7 @@ import {
 import { useRef, useState } from "react";
 import Link from "next/link";
 import { ClipboardCheck, Stethoscope, ClipboardList, PackageCheck } from "lucide-react";
+import WaveDivider from "./WaveDivider";
 
 const steps = [
   {
@@ -92,12 +93,12 @@ export default function HowItWorksHome() {
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[400px] rounded-full bg-[#345691]/[0.08] blur-[120px] pointer-events-none" />
 
       {/* Ghost step counter — visual texture */}
-      <div
+      {/* <div
         className="absolute right-6 bottom-10 text-[18rem] font-bold text-[#6762AF]/[0.03] select-none pointer-events-none leading-none tracking-[-0.06em]"
         aria-hidden
       >
         04
-      </div>
+      </div> */}
 
       <div className="mx-auto max-w-[1280px] px-6 lg:px-16 xl:px-20">
         {/* Header */}

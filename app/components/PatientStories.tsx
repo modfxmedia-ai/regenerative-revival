@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import WaveDivider from "./WaveDivider";
 
 /**
  * PatientStories — Figma S11 TESTIMONIALS

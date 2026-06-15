@@ -33,7 +33,7 @@ export default function Home() {
       <ValueProps />
       <ServicesAccordion />
       <Treatments />
-      <HowItWorksHome />
+      {/* <HowItWorksHome /> */}
       <WhoWeHelp />
       <AroraPartner />
       <PatientStories />

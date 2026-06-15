@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Dna, Droplets, Orbit, FlaskConical, Zap } from "lucide-react";
+import WaveDivider from "./WaveDivider";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    OUR SERVICES — V2 elevated redesign

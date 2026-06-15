@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Quote, Activity, HeartPulse, ShieldCheck, Gauge, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import WaveDivider from "./WaveDivider";
 
 /**
  * Three stacked sections on a continuous midnight purple-navy background.
@@ -79,7 +80,7 @@ const stats = [
 
 export default function WhoWeHelp() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#1A1F30] via-[#1F2138] to-[#252245]">
+    <section className="relative bg-gradient-to-b from-[#1A1F30] via-[#1F2138] to-[#252245]">
       {/* === Aurora orbs span all three sections === */}
       <div className="absolute top-[5%] left-[-10%] w-[600px] h-[600px] rounded-full bg-[#6762AF]/12 blur-[140px] pointer-events-none animate-float-slow" />
       <div className="absolute top-[40%] right-[-10%] w-[500px] h-[500px] rounded-full bg-[#345691]/15 blur-[140px] pointer-events-none animate-float-slow" style={{ animationDelay: "-7s" }} />
@@ -91,6 +92,8 @@ export default function WhoWeHelp() {
       <WhoWeHelpBlock />
       <PhysicianLedBlock />
       <NumbersBlock />
+      {/* dark #252245 → white AroraPartner */}
+      <WaveDivider fill="#ffffff" type="wave" height={100} />
     </section>
   );
 }

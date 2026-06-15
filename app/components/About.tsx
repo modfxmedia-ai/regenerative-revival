@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import WaveDivider from "./WaveDivider";
 
 const values = [
   { number: "01", title: "Education First", description: "Knowledge so you can make informed decisions about your health." },

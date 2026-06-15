@@ -76,11 +76,11 @@ export default function ExosomesCTA() {
           className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
         >
           <a
-            href="/contact"
+            href="/consult-router"
             className="group relative flex h-16 items-center justify-center gap-2.5 rounded-2xl bg-primary px-10 text-lg font-semibold text-white overflow-hidden transition-all hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-0.5 font-sans"
           >
             <span className="relative z-10 flex items-center gap-2.5">
-              Book Your FREE Consultation
+              Take The 2-Minute Quiz
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-primary-dark to-primary opacity-0 group-hover:opacity-100 transition-opacity" />

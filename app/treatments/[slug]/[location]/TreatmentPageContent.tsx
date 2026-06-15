@@ -104,10 +104,10 @@ export default function TreatmentPageContent({
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Link
-                  href="/contact"
+                  href="/consult-router"
                   className="group flex h-14 items-center justify-center gap-2.5 rounded-2xl bg-primary px-9 text-base font-semibold text-white transition-all hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-0.5"
                 >
-                  Book Free Consultation{" "}
+                  Take The 2-Minute Quiz{" "}
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <a
@@ -289,15 +289,15 @@ export default function TreatmentPageContent({
             Ready to Get Started in {location.city}?
           </h2>
           <p className="text-lg text-white/50 mb-8 max-w-2xl mx-auto">
-            Book your free consultation today and discover how{" "}
+            Take the quiz and discover how{" "}
             {treatment.name.toLowerCase()} can help you live pain-free.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/contact"
+              href="/consult-router"
               className="group flex h-14 items-center justify-center gap-2.5 rounded-2xl bg-primary px-9 text-base font-semibold text-white transition-all hover:shadow-2xl hover:shadow-primary/30"
             >
-              Book Free Consultation{" "}
+              Take The 2-Minute Quiz{" "}
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
             <a

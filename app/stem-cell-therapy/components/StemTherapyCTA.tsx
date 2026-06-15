@@ -59,12 +59,12 @@ export default function StemTherapyCTA() {
           className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
         >
           <a
-            href="/contact"
+            href="/consult-router"
             className="group relative inline-flex h-14 items-center justify-center gap-2.5 rounded-full bg-white px-8 text-[15px] font-semibold text-[#1A1F30] overflow-hidden transition-all duration-300 hover:shadow-[0_20px_50px_-12px_rgba(255,255,255,0.4)] hover:scale-[1.02]"
           >
             <span className="relative z-10 flex items-center gap-2.5">
               <Sparkles className="h-4 w-4 text-[#6762AF]" />
-              Book Free Consultation
+              Take The 2-Minute Quiz
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </span>
             <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-[#F1ECF8] to-transparent" />

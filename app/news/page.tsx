@@ -1,6 +1,7 @@
 import NewsHero from "./components/NewsHero";
 import NewsList from "./components/NewsList";
 import Breadcrumbs from "../components/Breadcrumbs";
+import QuizCTA from "../components/QuizCTA";
 import { generatePageMetadata } from "../lib/seo";
 import { JsonLd, webPageSchema, breadcrumbSchema } from "../lib/schema";
 
@@ -18,6 +19,7 @@ export default function NewsPage() {
       <Breadcrumbs items={[{ label: "News", href: "/news" }]} />
       <NewsHero />
       <NewsList />
+      <QuizCTA />
     </>
   );
 }

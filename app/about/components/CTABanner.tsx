@@ -72,7 +72,7 @@ export default function CTABanner() {
           >
             <span className="relative z-10 flex items-center gap-2.5">
               <Sparkles className="h-4 w-4 text-[#6762AF]" />
-              Book Free Consultation
+              Take The 2-Minute Quiz
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </span>
             <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-[#F1ECF8] to-transparent" />

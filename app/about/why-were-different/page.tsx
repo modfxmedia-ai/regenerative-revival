@@ -16,6 +16,7 @@ import {
   Star,
 } from "lucide-react";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import QuizCTA from "@/app/components/QuizCTA";
 
 const differentiators = [
   {
@@ -124,10 +125,10 @@ function HeroSection() {
           className="mt-10 flex flex-wrap items-center justify-center gap-4"
         >
           <a
-            href="/contact"
+            href="/consult-router"
             className="inline-flex h-12 items-center rounded-full bg-primary px-8 text-sm font-semibold text-white hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/30 transition-all"
           >
-            Book a Free Consultation
+            Take The 2-Minute Quiz
             <ArrowRight className="ml-2 h-4 w-4" />
           </a>
           <a
@@ -290,10 +291,10 @@ function CTASection() {
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
-              href="/contact"
+              href="/consult-router"
               className="inline-flex h-13 items-center rounded-full bg-primary px-10 py-3 text-base font-semibold text-white hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/25 transition-all"
             >
-              Book a Free Consultation
+              Take The 2-Minute Quiz
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>
             <a
@@ -321,7 +322,7 @@ export default function WhyWereDifferentPage() {
       <HeroSection />
       <DifferentiatorsSection />
       <ComparisonSection />
-      <CTASection />
+      <QuizCTA />
     </>
   );
 }

@@ -4,6 +4,7 @@ import HowItWorks from "./components/HowItWorks";
 import FounderSection from "./components/FounderSection";
 import TeamSection from "./components/TeamSection";
 import CTABanner from "./components/CTABanner";
+import QuizCTA from "../components/QuizCTA";
 import Breadcrumbs from "../components/Breadcrumbs";
 import { generatePageMetadata } from "../lib/seo";
 import { JsonLd, webPageSchema, breadcrumbSchema } from "../lib/schema";
@@ -26,6 +27,7 @@ export default function AboutPage() {
       <FounderSection />
       <TeamSection />
       <CTABanner />
+      <QuizCTA />
     </>
   );
 }

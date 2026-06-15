@@ -81,7 +81,7 @@ export default async function TreatmentLocationsPage({ params }: PageProps) {
             </p>
             <p className="mt-4 text-base text-white/40 max-w-3xl">
               Select your city below to view {treatment.name.toLowerCase()}{" "}
-              options and book a free consultation.
+              options and take the 2-minute quiz.
             </p>
           </AnimatedSection>
         </div>

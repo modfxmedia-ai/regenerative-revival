@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, CheckCircle, ShieldCheck, Network, BookOpen, Wallet, Users, TrendingUp } from "lucide-react";
 import Breadcrumbs from "../components/Breadcrumbs";
+import QuizCTA from "../components/QuizCTA";
 import { generatePageMetadata } from "../lib/seo";
 import { JsonLd, breadcrumbSchema, webPageSchema, faqSchema } from "../lib/schema";
 
@@ -315,6 +316,7 @@ export default function ForProvidersPage() {
           </div>
         </div>
       </section>
+      <QuizCTA />
     </>
   );
 }

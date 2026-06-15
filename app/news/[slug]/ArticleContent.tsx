@@ -176,10 +176,10 @@ export default function ArticleContent({ article, related }: Props) {
             Ready to take the next step?
           </p>
           <Link
-            href="/contact"
+            href="/consult-router"
             className="group inline-flex items-center gap-3 text-sm font-bold uppercase tracking-[0.15em] text-primary font-sans hover:gap-4 transition-all duration-300"
           >
-            Book Your Free Consultation
+            Take The 2-Minute Quiz
             <ArrowUpRight className="h-4 w-4" />
           </Link>
         </div>

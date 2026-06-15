@@ -135,6 +135,7 @@ export default function FounderPage() {
           </div>
         </div>
       </section>
+      
     </>
   );
 }

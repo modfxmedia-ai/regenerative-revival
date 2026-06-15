@@ -3,6 +3,7 @@ import WhatIsWhartonsJelly from "./components/WhatIsWhartonsJelly";
 import WhyConsider from "./components/WhyConsider";
 import VideoSection from "./components/VideoSection";
 import ServicesCTA from "./components/ServicesCTA";
+import QuizCTA from "../components/QuizCTA";
 import Breadcrumbs from "../components/Breadcrumbs";
 import { generatePageMetadata } from "../lib/seo";
 import { JsonLd, medicalWebPageSchema, breadcrumbSchema } from "../lib/schema";
@@ -25,6 +26,7 @@ export default function ServicesPage() {
       <WhyConsider />
       <VideoSection />
       <ServicesCTA />
+      <QuizCTA />
     </>
   );
 }

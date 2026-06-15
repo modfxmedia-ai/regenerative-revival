@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Play, Pause, Quote, Star, ArrowRight, MessageSquare } from "lucide-react";
 import Breadcrumbs from "../components/Breadcrumbs";
+import QuizCTA from "../components/QuizCTA";
 
 
 const BLOB_BASE = "https://65iosdxq0lyc5cm9.public.blob.vercel-storage.com";
@@ -367,18 +368,19 @@ export default function TestimonialsPage() {
               </span>
             </h2>
             <p className="mt-5 text-lg text-white/50">
-              Book a free consultation and find out if regenerative therapy is right for you.
+              Take the quiz and find out if regenerative therapy is right for you.
             </p>
             <a
-              href="/contact"
+              href="/consult-router"
               className="mt-8 inline-flex h-12 items-center rounded-full bg-primary px-10 text-sm font-semibold text-white hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/30 transition-all"
             >
-              Book a Free Consultation
+              Take The 2-Minute Quiz
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </motion.div>
         </div>
       </section>
+      <QuizCTA />
     </>
   );
 }

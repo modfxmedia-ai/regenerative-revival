@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight, CheckCircle, Sparkles, ShieldCheck, Clock, Users } from "lucide-react";
 import Breadcrumbs from "../components/Breadcrumbs";
 import ComplianceDisclaimer from "../components/ComplianceDisclaimer";
+import QuizCTA from "../components/QuizCTA";
 import { generatePageMetadata } from "../lib/seo";
 import {
   JsonLd,
@@ -318,6 +319,7 @@ export default function HormonesPeptidesPage() {
         </div>
       </section>
 
+      <QuizCTA />
       <ComplianceDisclaimer variant="compounded_rx" />
     </>
   );

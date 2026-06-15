@@ -133,10 +133,10 @@ export default function WhyConsider() {
           className="mt-16 text-center"
         >
           <a
-            href="/contact"
+            href="/consult-router"
             className="group inline-flex h-14 items-center justify-center gap-2.5 rounded-2xl bg-primary px-10 text-base font-semibold text-white transition-all hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-0.5 font-sans"
           >
-            Schedule Your Consultation
+            Take The 2-Minute Quiz
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
           </a>
         </motion.div>

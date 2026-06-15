@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, CheckCircle, Home, Stethoscope, Users, FileText, Sparkles } from "lucide-react";
 import Breadcrumbs from "../components/Breadcrumbs";
+import QuizCTA from "../components/QuizCTA";
 import { generatePageMetadata } from "../lib/seo";
 import {
   JsonLd,
@@ -289,6 +290,7 @@ export default function ConciergeCareModelPage() {
           </div>
         </div>
       </section>
+      <QuizCTA />
     </>
   );
 }

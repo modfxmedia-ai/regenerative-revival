@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight, CheckCircle, ShieldCheck, Microscope, Zap, Heart } from "lucide-react";
 import Breadcrumbs from "../components/Breadcrumbs";
 import ComplianceDisclaimer from "../components/ComplianceDisclaimer";
+import QuizCTA from "../components/QuizCTA";
 import { generatePageMetadata } from "../lib/seo";
 import {
   JsonLd,
@@ -151,7 +152,7 @@ export default function WhartonsJellyPage() {
                 href="/consult-router"
                 className="group inline-flex h-13 py-3.5 items-center gap-2 rounded-full bg-white px-7 text-[14px] font-semibold text-[#1A1F30] hover:bg-[#F1ECF8] hover:shadow-[0_20px_50px_-12px_rgba(255,255,255,0.4)] transition-all"
               >
-                Book a Free Consultation
+                Take The 2-Minute Quiz
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
               <Link
@@ -310,6 +311,7 @@ export default function WhartonsJellyPage() {
         </div>
       </section>
 
+      <QuizCTA />
       <ComplianceDisclaimer variant="regen_consult_only" />
     </>
   );

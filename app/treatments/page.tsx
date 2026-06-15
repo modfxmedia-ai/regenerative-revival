@@ -95,13 +95,13 @@ export default function TreatmentsHubPage() {
               Not sure which treatment is right for you?
             </h2>
             <p className="text-gray-600 mb-6">
-              Book a free consultation and our team will help you decide.
+              Take the quiz and we&apos;ll help you find the right fit.
             </p>
             <Link
-              href="/contact"
+              href="/consult-router"
               className="inline-flex items-center rounded-full bg-primary text-white px-6 py-3 font-semibold hover:bg-primary-dark transition-colors"
             >
-              Book Free Consultation
+              Take The 2-Minute Quiz
             </Link>
           </div>
         </section>

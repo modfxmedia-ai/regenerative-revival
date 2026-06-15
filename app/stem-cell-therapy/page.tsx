@@ -3,6 +3,7 @@ import HowItWorks from "./components/HowItWorks";
 import TherapyBenefits from "./components/TherapyBenefits";
 import WhoCanBenefit from "./components/WhoCanBenefit";
 import StemTherapyCTA from "./components/StemTherapyCTA";
+import QuizCTA from "../components/QuizCTA";
 import Breadcrumbs from "../components/Breadcrumbs";
 import ComplianceDisclaimer from "../components/ComplianceDisclaimer";
 import { generatePageMetadata } from "../lib/seo";
@@ -134,7 +135,8 @@ export default function StemCellTherapyPage() {
         </div>
       </section>
 
-      <StemTherapyCTA />
+      {/* <StemTherapyCTA /> */}
+      <QuizCTA />
       <ComplianceDisclaimer variant="regen_consult_only" />
     </>
   );

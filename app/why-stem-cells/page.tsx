@@ -4,6 +4,7 @@ import StemCellBenefits from "./components/StemCellBenefits";
 import StemCellApplications from "./components/StemCellApplications";
 import ConditionsTreated from "./components/ConditionsTreated";
 import StemCellsCTA from "./components/StemCellsCTA";
+import QuizCTA from "../components/QuizCTA";
 import Breadcrumbs from "../components/Breadcrumbs";
 import { generatePageMetadata } from "../lib/seo";
 import { JsonLd, medicalWebPageSchema, breadcrumbSchema } from "../lib/schema";
@@ -26,6 +27,7 @@ export default function WhyStemCellsPage() {
       <StemCellApplications />
       <ConditionsTreated />
       <StemCellsCTA />
+      <QuizCTA />
     </>
   );
 }

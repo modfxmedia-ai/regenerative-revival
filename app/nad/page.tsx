@@ -102,6 +102,17 @@ export default function NadHubPage() {
 
       {/* ── Hero ── */}
       <section className="relative bg-gradient-to-b from-[#1A1F30] to-[#21253C] overflow-hidden">
+        {/* Background video */}
+        <video
+          src="/AdobeStock_706285885.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover opacity-30"
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1A1F30]/80 to-[#21253C]/90" />
         <div className="absolute inset-0 lux-grid opacity-25 pointer-events-none" />
         <div className="absolute top-0 left-0 w-[600px] h-[600px] rounded-full bg-[#345691]/20 blur-[140px] pointer-events-none" />
 

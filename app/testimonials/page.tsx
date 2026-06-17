@@ -235,6 +235,17 @@ export default function TestimonialsPage() {
 
       {/* Hero */}
       <section className="relative pt-20 pb-20 bg-secondary overflow-hidden">
+        {/* Background video */}
+        <video
+          src="/AdobeStock_706285885.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover opacity-20"
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-secondary/80" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-primary/[0.06] rounded-full blur-[120px] pointer-events-none" />
 

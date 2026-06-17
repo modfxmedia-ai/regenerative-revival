@@ -28,7 +28,7 @@ export default function PeptidePrograms() {
       {/* Ambient */}
       <div className="absolute top-0 left-1/3 w-[600px] h-[400px] rounded-full bg-[#6762AF]/06 blur-[140px] pointer-events-none" />
 
-      <div className="relative mx-auto max-w-[1280px] px-6 lg:px-16 xl:px-20">
+      <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}

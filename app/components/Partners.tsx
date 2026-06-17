@@ -21,7 +21,7 @@ export default function Partners() {
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[#345691]/20 blur-[140px] pointer-events-none" />
       <div className="absolute inset-0 lux-grid opacity-30 pointer-events-none" />
 
-      <div ref={ref} className="relative mx-auto max-w-[1280px] px-6 lg:px-16 xl:px-20">
+      <div ref={ref} className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}

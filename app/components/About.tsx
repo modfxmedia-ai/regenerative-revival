@@ -26,7 +26,7 @@ export default function About() {
       {/* Grid */}
       <div className="absolute inset-0 lux-grid opacity-30 pointer-events-none" />
 
-      <div ref={ref} className="relative mx-auto max-w-[1280px] px-6 lg:px-16 xl:px-20">
+      <div ref={ref} className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* IMAGE — left, with stat card */}
           <motion.div

@@ -45,7 +45,7 @@ export default function Treatments() {
       id="treatments"
       className="relative bg-white overflow-hidden py-16 lg:py-20"
     >
-      <div ref={ref} className="mx-auto max-w-[1280px] px-6 lg:px-16 xl:px-20 flex flex-col items-center gap-10">
+      <div ref={ref} className="mx-auto max-w-[1400px] px-6 lg:px-10 flex flex-col items-center gap-10">
         {/* === Section header — matches Figma: 690px wide, centered === */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

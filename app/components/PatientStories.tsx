@@ -44,7 +44,7 @@ export default function PatientStories() {
       ref={ref}
       className="bg-white py-16 lg:py-20"
     >
-      <div className="mx-auto max-w-[1280px] px-6 lg:px-16 xl:px-20 flex flex-col gap-11">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-10 flex flex-col gap-11">
 
         {/* Header */}
         <motion.div

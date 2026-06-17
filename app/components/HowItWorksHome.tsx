@@ -100,7 +100,7 @@ export default function HowItWorksHome() {
         04
       </div> */}
 
-      <div className="mx-auto max-w-[1280px] px-6 lg:px-16 xl:px-20">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}

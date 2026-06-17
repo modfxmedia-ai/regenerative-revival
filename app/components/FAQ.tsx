@@ -69,7 +69,7 @@ export default function FAQ() {
       <div className="absolute top-1/4 left-0 w-[500px] h-[500px] rounded-full bg-[#F1ECF8]/60 blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-[#EAEFF7]/80 blur-[100px] pointer-events-none" />
 
-      <div ref={ref} className="relative mx-auto max-w-[1280px] px-6 lg:px-16 xl:px-20">
+      <div ref={ref} className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* Left — sticky header */}
           <motion.div

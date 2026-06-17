@@ -19,7 +19,7 @@ export default function AroraPartner() {
       <div className="absolute top-1/4 right-0 w-[400px] h-[400px] rounded-full bg-[#F1ECF8]/60 blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-[#EAEFF7] blur-[80px] pointer-events-none" />
 
-      <div className="relative mx-auto max-w-[1280px] px-6 lg:px-16 xl:px-20">
+      <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* === LEFT col === */}
           <motion.div

@@ -89,7 +89,7 @@ export default function ServicesAccordion() {
       </div>
       <div className="absolute inset-0 lux-grid opacity-[0.12] pointer-events-none" />
 
-      <div className="relative mx-auto max-w-[1280px] px-6 lg:px-16 xl:px-20">
+      <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
         {/* Heading */}
         <div className="mb-12 lg:mb-16 max-w-3xl">
           <motion.p

@@ -164,7 +164,7 @@ function PinnedShuffle() {
           </AnimatePresence>
         </motion.div>
 
-        <div className="relative h-full w-full flex items-center mx-auto max-w-[1280px] px-6 lg:px-16 xl:px-20">
+        <div className="relative h-full w-full flex items-center mx-auto max-w-[1400px] px-6 lg:px-10">
 
           {/* TOP BAR — label + progress segments */}
           <div className="absolute top-10 left-6 lg:left-16 xl:left-20 right-6 lg:right-16 xl:right-20 flex items-center justify-between">

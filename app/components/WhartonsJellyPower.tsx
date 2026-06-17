@@ -40,7 +40,7 @@ export default function WhartonsJellyPower() {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full bg-[#6762AF]/10 blur-[140px] pointer-events-none" />
       <div className="absolute bottom-20 right-0 w-[400px] h-[400px] rounded-full bg-[#71A7F5]/12 blur-[100px] pointer-events-none" />
 
-      <div className="relative mx-auto max-w-[1280px] px-6 lg:px-16 xl:px-20">
+      <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

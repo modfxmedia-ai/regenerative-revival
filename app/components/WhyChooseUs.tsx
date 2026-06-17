@@ -49,7 +49,7 @@ export default function WhyChooseUs() {
       <div className="absolute top-1/3 -left-32 w-[500px] h-[500px] rounded-full bg-[#6762AF]/[0.05] blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 -right-32 w-[400px] h-[400px] rounded-full bg-[#71A7F5]/10 blur-3xl pointer-events-none" />
 
-      <div ref={ref} className="relative mx-auto max-w-[1280px] px-6 lg:px-16 xl:px-20">
+      <div ref={ref} className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           {/* Sticky left */}
           <motion.div

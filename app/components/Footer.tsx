@@ -44,7 +44,7 @@ export default function Footer() {
         <div className="absolute inset-0 lux-grid opacity-[0.12] pointer-events-none" />
 
         {/* ── Top: logo + nav columns ── */}
-        <div className="relative mx-auto max-w-[1280px] px-8 lg:px-12 pt-14 pb-12">
+        <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10 pt-14 pb-12">
           <div className="grid grid-cols-2 lg:grid-cols-[200px_1fr_1fr_1fr_1fr] gap-8 lg:gap-6 items-start">
             {/* Logo */}
             <div className="col-span-2 lg:col-span-1">
@@ -70,12 +70,12 @@ export default function Footer() {
         </div>
 
         {/* Gradient divider line */}
-        <div className="mx-auto max-w-[1280px] px-8 lg:px-12">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
           <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         </div>
 
         {/* ── Mid bar ── */}
-        <div className="relative mx-auto max-w-[1280px] px-8 lg:px-12 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+        <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
           {/* Social icons */}
           <div className="flex items-center gap-4">
             <SocialIcon href="https://www.facebook.com/regenerativerevival" label="Facebook" icon={<Facebook className="h-[15px] w-[15px]" strokeWidth={2.2} />} />
@@ -107,10 +107,10 @@ export default function Footer() {
 
         {/* ── Compliance band ── */}
         <div className="relative">
-          <div className="mx-auto max-w-[1280px] px-8 lg:px-12">
+          <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
             <div className="h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
           </div>
-          <div className="mx-auto max-w-[1280px] px-8 lg:px-12 py-5">
+          <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-5">
             <p className="text-[11px] font-medium text-white/20 leading-[1.75]">
               © {new Date().getFullYear()} Regenerative Revival. All rights reserved. Regenerative Revival provides concierge regenerative medicine and coordinates telehealth-based longevity care through a nationwide network of licensed nurse practitioners under physician oversight. Statements on this site have not been evaluated by the FDA. Our services are not intended to diagnose, treat, cure, or prevent any disease. Individual results vary. Regenerative therapies are considered off-label for most musculoskeletal applications. Telehealth services are delivered by licensed clinicians in accordance with state-specific regulations. Compounded medications are dispensed by LegitScript- and NABP-accredited pharmacy partners.
             </p>

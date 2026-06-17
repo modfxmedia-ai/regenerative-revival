@@ -47,7 +47,7 @@ export default function QuizCTA() {
 
       {/* === Content — centered === */}
       <div className="relative z-10 flex h-full items-center justify-center px-6">
-        <div className="flex flex-col items-center gap-6 max-w-[1260px] w-full text-center">
+        <div className="flex flex-col items-center gap-6 max-w-[1400px] w-full text-center">
 
           {/* Eyebrow: Poppins 500 14px uppercase 1px spacing white */}
           <motion.span

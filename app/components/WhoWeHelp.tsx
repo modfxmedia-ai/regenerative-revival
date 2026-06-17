@@ -107,7 +107,7 @@ function WhoWeHelpBlock() {
 
   return (
     <div ref={ref} className="relative pt-24 pb-20 lg:pt-28 lg:pb-24">
-      <div className="mx-auto max-w-[1280px] px-6 lg:px-16 xl:px-20">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -315,7 +315,7 @@ function NumbersBlock() {
         style={{ padding: "64px 0" }}
       >
         {/* Container */}
-        <div className="flex flex-col items-center gap-16 w-full max-w-[1280px] px-6 lg:px-16 xl:px-20">
+        <div className="flex flex-col items-center gap-16 w-full max-w-[1400px] px-6 lg:px-10">
 
           {/* Header */}
           <motion.div

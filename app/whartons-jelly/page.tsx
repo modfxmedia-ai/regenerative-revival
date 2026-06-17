@@ -244,7 +244,7 @@ export default function WhartonsJellyPage() {
             <div className="relative order-2 lg:order-1">
               <div className="relative rounded-[2rem] overflow-hidden aspect-[4/3] shadow-[0_24px_64px_-12px_rgba(88,53,99,0.2)]">
                 <Image
-                  src="/AdobeStock_1848700749.png"
+                  src="/2149230689.jpg"
                   alt="In-home stem cell therapy delivery"
                   fill
                   className="object-cover object-center"

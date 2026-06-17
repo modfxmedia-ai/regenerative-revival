@@ -33,7 +33,7 @@ const SERVICES = [
     description:
       "Premium umbilical cord-derived MSCs with superior potency for deep tissue regeneration — the gold standard in stem cell sourcing.",
     href: "/whartons-jelly",
-    image: "/AdobeStock_1877540011.jpeg",
+    image: "/2148882109.jpg",
     objectPosition: "center 20%",
     icon: Droplets,
     frame: "from-[#71A7F5] to-[#345691]",
@@ -57,7 +57,7 @@ const SERVICES = [
     description:
       "Clinician-prescribed hormone optimization and peptide protocols tailored to your unique biology — online, shipped to your door.",
     href: "/hormones-peptides",
-    image: "/AdobeStock_1877540011.jpeg",
+    image: "/2149611219.jpg",
     objectPosition: "center 30%",
     icon: FlaskConical,
     frame: "from-[#345691] to-[#021E3C]",

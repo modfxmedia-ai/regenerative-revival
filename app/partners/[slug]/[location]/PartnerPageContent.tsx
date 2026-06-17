@@ -18,10 +18,10 @@ import type { PartnerService } from "../../../lib/partner-content";
 import HeroContactForm from "../../../components/HeroContactForm";
 
 const benefitImages = [
-  "/AdobeStock_1877540011.jpeg",
-  "/AdobeStock_1862763747.jpeg",
-  "/AdobeStock_1848700749.png",
-  "/AdobeStock_1877540011.jpeg",
+  "/2149040261.jpg",
+  "/2149374070.jpg",
+  "/2149230689.jpg",
+  "/2148882109.jpg",
 ];
 
 interface Props {

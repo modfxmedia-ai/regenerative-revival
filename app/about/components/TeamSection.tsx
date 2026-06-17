@@ -54,7 +54,7 @@ const staff: TeamMember[] = [
 const sections = [
   { id: "doctors", label: "Doctors", subtitle: "Our physicians in regenerative therapy.", icon: Stethoscope, members: doctors, banner: "/HomePage-_Why Choose Regenerative Revival__ section.jpeg" },
   { id: "advocates", label: "Revival Advocates", subtitle: "Our specialized leaders in regenerative therapy.", icon: HeartPulse, members: advocates, banner: "/about/imgi_72_HERO-PRESENTER.jpg" },
-  { id: "nps", label: "Nurse Practitioners", subtitle: "Our regenerative therapy nurse practitioners.", icon: ShieldPlus, members: nursePractitioners, banner: "/AdobeStock_1862763747.jpeg" },
+  { id: "nps", label: "Nurse Practitioners", subtitle: "Our regenerative therapy nurse practitioners.", icon: ShieldPlus, members: nursePractitioners, banner: "/2149611219.jpg" },
   { id: "staff", label: "Staff", subtitle: "Our staff in regenerative therapy.", icon: Users, members: staff, banner: "/about/imgi_71_HERO-STEM-CELL.jpg" },
 ];
 

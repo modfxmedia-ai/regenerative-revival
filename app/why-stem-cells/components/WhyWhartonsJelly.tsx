@@ -58,7 +58,7 @@ export default function WhyWhartonsJelly() {
           className="mb-16 rounded-[2rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.1)] max-w-4xl mx-auto"
         >
           <img
-            src="/AdobeStock_1848700749.png"
+            src="2149230689.jpg"
             alt="Stem cell research and therapy"
             className="w-full h-[320px] object-cover"
           />

@@ -1,15 +1,35 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Dna, ShieldCheck, Zap } from "lucide-react";
-import Image from "next/image";
 
 export default function StemTherapyHero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) return;
+    video.play().catch(() => {});
+  }, []);
+
   return (
     <section className="relative min-h-[88vh] pt-20 flex items-end overflow-hidden bg-[#021E3C]">
-      {/* Full-bleed background */}
+      {/* Full-bleed background VIDEO */}
       <div className="absolute inset-0">
-        <Image src="/2148882109.jpg" alt="" fill className="object-cover" priority />
+        <video
+          ref={videoRef}
+          src="/AdobeStock_706285885.mp4"
+          poster="/AdobeStock_1848700749.png"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          aria-hidden
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-[#021E3C] via-[#021E3C]/70 to-[#021E3C]/30" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#021E3C]/80 via-[#021E3C]/30 to-transparent" />
         <div className="absolute inset-0 bg-[#583563]/20 mix-blend-multiply" />

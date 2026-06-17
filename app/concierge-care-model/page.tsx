@@ -58,19 +58,19 @@ const pillars = [
     icon: Home,
     title: "In-home concierge for regenerative",
     desc: "Wharton's Jelly stem cell therapy, exosome protocols, and joint injections — delivered in your home, office, or hotel room. No clinic visit. No waiting room. No surgical prep.",
-    image: "/2149230689.jpg",
+    image: "/AdobeStock_1848700749.png",
   },
   {
     icon: FileText,
     title: "One plan, one patient record",
     desc: "Your regenerative therapy, hormone optimization, peptide stack, and NAD+ protocol all live in one chart. Programs are coordinated — not siloed across four different providers.",
-    image: "/2149611219.jpg",
+    image: "/AdobeStock_1877540011.jpeg",
   },
   {
     icon: Users,
     title: "Nationwide telehealth",
     desc: "Hormones, peptides, GLP-1, and NAD+ are prescribed via telehealth in all 50 states. Compounded by NABP-accredited pharmacies and shipped to your door.",
-    image: "/2149374070.jpg",
+    image: "/AdobeStock_1862763747.jpeg",
   },
 ];
 

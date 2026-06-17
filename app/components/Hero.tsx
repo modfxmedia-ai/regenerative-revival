@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Sparkles, Award, Users, MapPin, ShieldCheck } from "lucide-react";
 
-const HERO_VIDEO = "https://65iosdxq0lyc5cm9.public.blob.vercel-storage.com/hero-video.mov";
+const HERO_VIDEO = "AdobeStock_706285885.mp4";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);

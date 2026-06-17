@@ -6,9 +6,9 @@ import { CalendarCheck, ClipboardList, Sparkles, HeartHandshake, ArrowUpRight } 
 import Image from "next/image";
 
 const steps = [
-  { icon: CalendarCheck, title: "Schedule Your Consultation", description: "Book an appointment with our experienced team to discuss your health concerns and goals, offering flexible scheduling options to accommodate your busy lifestyle.", image: "/2149230689.jpg" },
+  { icon: CalendarCheck, title: "Schedule Your Consultation", description: "Book an appointment with our experienced team to discuss your health concerns and goals, offering flexible scheduling options to accommodate your busy lifestyle.", image: "/AdobeStock_1848700749.png" },
   { icon: ClipboardList, title: "Personalized Treatment Plan", description: "During your consultation, we'll review your medical history and assess your specific needs, creating a tailored treatment plan designed for the best possible outcomes.", image: "/About page-_Your Journey to Revival_ section 2.jpeg" },
-  { icon: Sparkles, title: "Regenerative Therapy", description: "Experience the transformative power of Wharton's Jelly-derived stem cell therapy, providing non-invasive and innovative solutions to enhance your health and well-being.", image: "/2149040261.jpg" },
+  { icon: Sparkles, title: "Regenerative Therapy", description: "Experience the transformative power of Wharton's Jelly-derived stem cell therapy, providing non-invasive and innovative solutions to enhance your health and well-being.", image: "/AdobeStock_1877540011.jpeg" },
   { icon: HeartHandshake, title: "Follow-Up and Support", description: "We're committed to your long-term health and well-being, providing ongoing support and follow-up care to ensure optimal results and maintain your improved quality of life.", image: "/About Page & contact page-_Our Guarantee.jpeg" },
 ];
 

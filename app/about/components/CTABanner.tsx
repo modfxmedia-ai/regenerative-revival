@@ -13,7 +13,7 @@ export default function CTABanner() {
     <section ref={ref} className="relative py-24 lg:py-28 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <Image src="/2149374070.jpg" alt="" fill className="object-cover" />
+        <Image src="/AdobeStock_1862763747.jpeg" alt="" fill className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#021E3C] via-[#021E3C]/85 to-[#021E3C]/70" />
         <div className="absolute inset-0 bg-[#583563]/20 mix-blend-multiply" />
       </div>

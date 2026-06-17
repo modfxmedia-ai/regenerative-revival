@@ -19,11 +19,11 @@ import type { Treatment } from "../../../lib/treatments";
 import HeroContactForm from "../../../components/HeroContactForm";
 
 const sectionImages = [
-  "/2149040261.jpg",
-  "/2149230689.jpg",
-  "/2149374070.jpg",
-  "/2148882109.jpg",
-  "/2149611219.jpg",
+  "/AdobeStock_1877540011.jpeg",
+  "/AdobeStock_1848700749.png",
+  "/AdobeStock_1862763747.jpeg",
+  "/AdobeStock_1877540011.jpeg",
+  "/AdobeStock_1848700749.png",
   "/about/imgi_71_HERO-STEM-CELL.jpg",
 ];
 

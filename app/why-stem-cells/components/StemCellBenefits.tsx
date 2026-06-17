@@ -73,7 +73,7 @@ export default function StemCellBenefits() {
           className="mb-16 rounded-[2rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.1)] max-w-4xl mx-auto"
         >
           <img
-            src="2149611219.jpg"
+            src="/AdobeStock_1877540011.jpeg"
             alt="Medical professional consulting with patient"
             className="w-full h-[320px] object-cover"
           />

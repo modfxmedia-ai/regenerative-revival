@@ -21,7 +21,7 @@ const SERVICES = [
     description:
       "Science-backed regenerative therapies that may support the body's natural processes — delivered to your door by a licensed nurse practitioner.",
     href: "/stem-cell-therapy",
-    image: "/2149230689.jpg",
+    image: "/AdobeStock_1848700749.png",
     objectPosition: "center 30%",
     icon: Dna,
     frame: "from-[#6762AF] to-[#4F4A8E]",
@@ -33,7 +33,7 @@ const SERVICES = [
     description:
       "Premium umbilical cord-derived MSCs with superior potency for deep tissue regeneration — the gold standard in stem cell sourcing.",
     href: "/whartons-jelly",
-    image: "/2148882109.jpg",
+    image: "/AdobeStock_1877540011.jpeg",
     objectPosition: "center 20%",
     icon: Droplets,
     frame: "from-[#71A7F5] to-[#345691]",
@@ -45,7 +45,7 @@ const SERVICES = [
     description:
       "Next-generation cellular messengers that amplify healing signals and may accelerate recovery at the cellular level.",
     href: "/why-exosomes",
-    image: "/2149374070.jpg",
+    image: "/AdobeStock_1862763747.jpeg",
     objectPosition: "center 25%",
     icon: Orbit,
     frame: "from-[#583563] to-[#3F2549]",
@@ -57,7 +57,7 @@ const SERVICES = [
     description:
       "Clinician-prescribed hormone optimization and peptide protocols tailored to your unique biology — online, shipped to your door.",
     href: "/hormones-peptides",
-    image: "/2149611219.jpg",
+    image: "/AdobeStock_1877540011.jpeg",
     objectPosition: "center 30%",
     icon: FlaskConical,
     frame: "from-[#345691] to-[#021E3C]",
@@ -69,7 +69,7 @@ const SERVICES = [
     description:
       "Cellular energy restoration and longevity protocols powered by NAD+. Feel younger, think sharper, perform better.",
     href: "/nad",
-    image: "/2149040261.jpg",
+    image: "/AdobeStock_1877540011.jpeg",
     objectPosition: "center 35%",
     icon: Zap,
     frame: "from-[#6F4A7A] to-[#6762AF]",

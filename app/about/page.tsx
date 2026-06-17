@@ -25,8 +25,8 @@ export default function AboutPage() {
       <HowItWorks />
       <OurGuarantee />
       <FounderSection />
+      {/* <CTABanner /> */}
       <TeamSection />
-      <CTABanner />
       <QuizCTA />
     </>
   );

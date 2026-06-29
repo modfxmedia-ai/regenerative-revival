@@ -12,6 +12,23 @@ const LEAD_RECIPIENTS = [
 const GHL_WEBHOOK_URL = process.env.GHL_WEBHOOK_URL;
 const TYRIACORE_WEBHOOK_URL = process.env.TYRIACORE_WEBHOOK_URL;
 
+// ── Tyria form API (tyriacore.app) ──────────────────────────────────────
+// Direct submission into the Tyria "Contact Form". Fire-and-forget like the
+// CRM webhooks; failures are logged but never surface to the user.
+const TYRIA_API_KEY = process.env.TYRIA_API_KEY;
+const TYRIA_FORM_ID =
+  process.env.TYRIA_FORM_ID || "frm_cf7dade5-7e28-419f-a82e-ce232bd0012a";
+// Question ids from the Tyria form template (see form updates/details.md).
+const TYRIA_FIELDS = {
+  firstName: "2290b181-cd97-4744-b8fc-87a5d916c9e3",
+  lastName: "9dc96eb6-d2c6-45a5-91b7-e824de65fdfc",
+  email: "266f6a32-5ba5-4a9c-b99a-4e0067abd51a",
+  phone: "f3aa2c29-7132-4aa8-b596-36e13452b774",
+  painAreas: "c12fc52d-9825-46f4-b03c-1d7b93dce6e5",
+  whatLed: "96710b63-d616-48a2-9fac-2288b53107e1",
+  everflowId: "5a12ac4a-0f54-44de-ad75-479b90068412",
+} as const;
+
 async function forwardToWebhook(
   url: string,
   label: string,
@@ -31,6 +48,58 @@ async function forwardToWebhook(
   }
 }
 
+async function forwardToTyria(fields: {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  message?: string | null;
+  subject?: string | null;
+  inquiryType?: string | null;
+  source: string;
+  everflowId?: string | null;
+}) {
+  if (!TYRIA_API_KEY) return;
+  try {
+    const answers: Record<string, string> = {
+      [TYRIA_FIELDS.firstName]: fields.firstName,
+      [TYRIA_FIELDS.lastName]: fields.lastName,
+      [TYRIA_FIELDS.email]: fields.email,
+      [TYRIA_FIELDS.phone]: fields.phone,
+    };
+    const note = [fields.subject, fields.inquiryType, fields.message]
+      .filter(Boolean)
+      .join(" — ");
+    if (note) answers[TYRIA_FIELDS.painAreas] = note;
+    answers[TYRIA_FIELDS.whatLed] = "Website";
+    if (fields.everflowId) answers[TYRIA_FIELDS.everflowId] = fields.everflowId;
+
+    const res = await fetch(
+      `https://www.tyriacore.app/api/v1/forms/${TYRIA_FORM_ID}/entries`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${TYRIA_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          answers,
+          submittedBy: {
+            email: fields.email,
+            name: `${fields.firstName} ${fields.lastName}`.trim(),
+          },
+          meta: { source: fields.source || "website" },
+        }),
+      },
+    );
+    if (!res.ok) {
+      console.error("[TYRIA FORM ERROR]", res.status, await res.text());
+    }
+  } catch (err) {
+    console.error("[TYRIA FORM EXCEPTION]", err);
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -43,6 +112,7 @@ export async function POST(req: NextRequest) {
       subject,
       inquiryType,
       source,
+      everflowId,
       // UTM attribution (optional, passed by client when present)
       utmSource,
       utmMedium,
@@ -77,6 +147,7 @@ export async function POST(req: NextRequest) {
         term: utmTerm || null,
         content: utmContent || null,
       },
+      everflowId: everflowId || null,
       submittedAt: new Date().toISOString(),
     };
 
@@ -87,6 +158,21 @@ export async function POST(req: NextRequest) {
     if (TYRIACORE_WEBHOOK_URL) {
       crmWrites.push(
         forwardToWebhook(TYRIACORE_WEBHOOK_URL, "TYRIACORE", crmPayload),
+      );
+    }
+    if (TYRIA_API_KEY) {
+      crmWrites.push(
+        forwardToTyria({
+          firstName: firstName.trim(),
+          lastName: (lastName || "").trim(),
+          email: email.trim(),
+          phone: phone.trim(),
+          message: message || null,
+          subject: subject || null,
+          inquiryType: inquiryType || null,
+          source: source || "website",
+          everflowId: everflowId || null,
+        }),
       );
     }
     // Don't await — let them run while we send email. We `void` them so the

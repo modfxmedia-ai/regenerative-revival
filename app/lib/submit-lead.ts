@@ -23,13 +23,23 @@ function readStoredUtms(): Record<string, string> {
   }
 }
 
+function readEverflowId(): string | undefined {
+  if (typeof window === "undefined") return undefined;
+  try {
+    return window.sessionStorage.getItem("rr_everflow") || undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 export async function submitLead(data: LeadData): Promise<{ success: boolean; error?: string }> {
   try {
     const utms = readStoredUtms();
+    const everflowId = readEverflowId();
     const res = await fetch("/api/leads", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...data, ...utms }),
+      body: JSON.stringify({ ...data, ...utms, everflowId }),
     });
     if (!res.ok) {
       const body = await res.json().catch(() => ({}));

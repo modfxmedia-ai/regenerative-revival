@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 import UtmCapture from "./components/UtmCapture";
+import EverflowCapture from "./components/EverflowCapture";
 import { JsonLd, organizationSchema, localBusinessSchema } from "./lib/schema";
 
 // Poppins — primary font for all headings and body text
@@ -82,6 +83,7 @@ export default function RootLayout({
       >
         <GoogleAnalytics />
         <UtmCapture />
+        <EverflowCapture />
         <JsonLd data={organizationSchema()} />
         <JsonLd data={localBusinessSchema()} />
         <Navbar />

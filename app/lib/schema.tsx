@@ -4,8 +4,8 @@
 const SITE_URL = "https://www.regenerativerevival.com";
 const SITE_NAME = "Regenerative Revival";
 const SITE_LOGO = `${SITE_URL}/logo.png`;
-// TODO: Replace with real phone number — client 10DLC/A2P verification pending
-const PHONE = "(555) 123-4567";
+const PHONE = "(651) 371-8668";
+const EMAIL = "info@regenerativerevival.com";
 // Site-wide rating values (kept in sync with localBusiness aggregateRating)
 const RATING_VALUE = "4.9";
 const REVIEW_COUNT = "500";
@@ -26,6 +26,15 @@ export function organizationSchema() {
     description:
       "Concierge regenerative medicine and nationwide telehealth for hormones, peptides, and NAD+. One physician-led medical team, one patient record, one plan.",
     telephone: PHONE,
+    email: EMAIL,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "10000 Hwy 55, Ste 200",
+      addressLocality: "Plymouth",
+      addressRegion: "MN",
+      postalCode: "55441",
+      addressCountry: "US",
+    },
     foundingDate: "2018",
     founder: {
       "@type": "Person",
@@ -45,6 +54,7 @@ export function organizationSchema() {
     contactPoint: {
       "@type": "ContactPoint",
       telephone: PHONE,
+      email: EMAIL,
       contactType: "customer service",
       availableLanguage: "English",
       areaServed: "US",
@@ -62,6 +72,7 @@ export function localBusinessSchema() {
     logo: SITE_LOGO,
     image: SITE_LOGO,
     telephone: PHONE,
+    email: EMAIL,
     description:
       "Regenerative Revival delivers concierge stem cell therapy in your home and nationwide telehealth for peptides, hormones, and NAD+. Physician-led under Arora Health Group.",
     priceRange: "$$",
@@ -71,6 +82,10 @@ export function localBusinessSchema() {
     },
     address: {
       "@type": "PostalAddress",
+      streetAddress: "10000 Hwy 55, Ste 200",
+      addressLocality: "Plymouth",
+      addressRegion: "MN",
+      postalCode: "55441",
       addressCountry: "US",
     },
     openingHoursSpecification: [

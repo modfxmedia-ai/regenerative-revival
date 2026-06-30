@@ -227,7 +227,7 @@ export async function POST(req: NextRequest) {
             We've received your submission and a member of our team will be reaching out to you shortly — typically within 24 hours.
           </p>
           <p style="font-size:16px;line-height:1.6;">
-            In the meantime, if you have any urgent questions, feel free to call us directly at <a href="tel:+15551234567" style="color:#6B3FA0;">(555) 123-4567</a> or reply to this email.
+            In the meantime, if you have any urgent questions, feel free to call us directly at <a href="tel:+16513718668" style="color:#6B3FA0;">(651) 371-8668</a> or reply to this email.
           </p>
           <hr style="border:none;border-top:1px solid #eee;margin:24px 0;" />
           <p style="font-size:13px;color:#999;line-height:1.5;">

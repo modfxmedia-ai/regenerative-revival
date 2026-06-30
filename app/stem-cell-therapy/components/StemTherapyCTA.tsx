@@ -70,7 +70,7 @@ export default function StemTherapyCTA() {
             <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-[#F1ECF8] to-transparent" />
           </a>
           <a
-            href="tel:+15551234567"
+            href="tel:+16513718668"
             className="inline-flex h-14 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-md px-7 text-[14px] font-medium text-white/80 hover:bg-white/10 hover:text-white transition-all"
           >
             Call Us Now

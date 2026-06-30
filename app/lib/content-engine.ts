@@ -89,7 +89,7 @@ const faqPool = [
   }),
   (t: Treatment, l: Location) => ({
     question: `Do you offer free consultations in ${l.city}?`,
-    answer: `Yes, Regenerative Revival offers complimentary consultations for ${l.city}, ${l.state} residents interested in ${t.name.toLowerCase()}. During your consultation, our medical team will evaluate your condition, discuss treatment options, explain the process in detail, and answer all your questions. There's no obligation — we want you to have all the information you need to make an informed decision about your health. Call us at (555) 123-4567 to schedule your free consultation today.`,
+    answer: `Yes, Regenerative Revival offers complimentary consultations for ${l.city}, ${l.state} residents interested in ${t.name.toLowerCase()}. During your consultation, our medical team will evaluate your condition, discuss treatment options, explain the process in detail, and answer all your questions. There's no obligation — we want you to have all the information you need to make an informed decision about your health. Call us at (651) 371-8668 to schedule your free consultation today.`,
   }),
   (t: Treatment, l: Location) => ({
     question: `How is ${t.name.toLowerCase()} different from surgery?`,

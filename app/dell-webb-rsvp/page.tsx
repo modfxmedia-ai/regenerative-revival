@@ -138,16 +138,10 @@ export default function DellWebbRsvpPage() {
                 </p>
                 <p>
                   For years, many have thought their only options were surgery
-                  or lifelong medication — or spending thousands to travel
-                  overseas for stem cell therapy.{" "}
-                  <span className="font-semibold text-[#1A1F30]">
-                    That ends now.
-                  </span>
+                  or lifelong medication.
                 </p>
-                <p>
-                  Join us for a complimentary dinner seminar where you&apos;ll
-                  learn how U.S.-based regenerative therapies are being used by
-                  people across the country.
+                <p className="font-serif text-[1.4rem] font-bold text-[#6762AF] sm:text-[1.75rem]">
+                  That ends now.
                 </p>
               </div>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -155,7 +149,7 @@ export default function DellWebbRsvpPage() {
                   href="#rsvp"
                   className="group inline-flex h-13 items-center gap-2 rounded-full bg-[#6762AF] px-7 py-3.5 text-[14px] font-semibold text-white transition-all hover:bg-[#565099]"
                 >
-                  Register Today
+                  Don&apos;t miss out — register today
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
                 <a
@@ -176,6 +170,32 @@ export default function DellWebbRsvpPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1A1F30]/25 to-transparent" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Chronic pain stops here (dark) ── */}
+      <section className="bg-gradient-to-br from-[#345691] to-[#021E3C] py-20 lg:py-28">
+        <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
+          <h2 className="font-[family-name:var(--font-poppins)] text-[2rem] font-normal leading-[1.05] tracking-[-0.02em] text-white sm:text-4xl lg:text-[3rem]">
+            Chronic pain stops here
+          </h2>
+          <p className="mt-6 font-serif text-[1.15rem] font-bold text-[#C5DBF7] sm:text-[1.5rem]">
+            Arthritis. Back pain. Shoulder injuries. Stiff knees.
+          </p>
+          <div className="mt-6 space-y-5 text-[15px] leading-[1.75] text-white/75">
+            <p>
+              For years, the only way you thought you could access stem cell
+              therapy was by spending thousands to travel overseas.
+            </p>
+            <p className="font-serif text-[1.4rem] font-bold text-[#8B86D4] sm:text-[1.75rem]">
+              That ends now.
+            </p>
+            <p>
+              Join us for a complimentary dinner seminar where you&apos;ll learn
+              how U.S.-based regenerative therapies are being used by people
+              across the country.
+            </p>
           </div>
         </div>
       </section>

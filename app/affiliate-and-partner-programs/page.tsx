@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   ArrowUpRight,
   Share2,
@@ -23,47 +22,54 @@ export const metadata = generatePageMetadata({
   noIndex: true,
 });
 
+const PDF_BASE = "https://regenerativerevival.com/wp-content/uploads/2026/06/";
+
 const partners = [
   {
     icon: Share2,
-    color: "#1E2A44",
-    tint: "#E8EBF1",
+    color: "#5B56A6",
+    tint: "#ECEBF8",
     title: "Social Affiliates",
     who: "Influencers and creators who post about us online.",
     earn: "A cut when someone they send becomes a patient.",
+    pdf: "RR_Affiliate_Agreement_Combined.pdf",
   },
   {
     icon: Building2,
-    color: "#345691",
-    tint: "#E9F0F9",
+    color: "#2F5390",
+    tint: "#E5EDF9",
     title: "Clinics & Gyms",
     who: "A clinic or gym that sends us their people.",
     earn: "A referral fee on each sale.",
+    pdf: "RR_Referral_Agreement_Facility.pdf",
   },
   {
     icon: Stethoscope,
-    color: "#2E8B6E",
-    tint: "#E6F4EF",
+    color: "#1F7D63",
+    tint: "#E1F2EC",
     title: "Doctors & Providers",
     who: "A licensed provider, like a chiropractor, who refers patients.",
     earn: "A set fee for each patient they refer.",
     note: "Check with legal first",
+    pdf: "RR_Referral_Agreement_Provider.pdf",
   },
   {
     icon: Users,
-    color: "#B67A1A",
-    tint: "#FBF1E0",
+    color: "#AC761F",
+    tint: "#F8EEDA",
     title: "Our Reps (Reggie & Jared)",
     who: "Our own team who find and manage partner deals.",
     earn: "An extra cut, called an override, on the deals they run.",
+    pdf: "RR_BizDev_Rep_Agreement.pdf",
   },
   {
     icon: Syringe,
-    color: "#B23A8E",
-    tint: "#FBEAF4",
+    color: "#8E3F7E",
+    tint: "#F5E6F1",
     title: "Peptide Reps",
     who: "People who share our peptide program using their own code.",
     earn: "Money every month while their client stays signed up.",
+    pdf: "RR_Affiliate_Agreement_Peptide.pdf",
   },
 ];
 
@@ -176,16 +182,16 @@ export default function AffiliatePartnerProgramsPage() {
                     <AlertTriangle className="h-3.5 w-3.5" /> {p.note}
                   </p>
                 )}
-                <Link
-                  href={`/contact?path=partner&type=${encodeURIComponent(
-                    p.title,
-                  )}`}
+                <a
+                  href={`${PDF_BASE}${p.pdf}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group mt-6 inline-flex h-11 items-center justify-center gap-2 rounded-full px-5 text-[14px] font-semibold text-white transition-all"
                   style={{ backgroundColor: p.color }}
                 >
                   Open the form
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </Link>
+                </a>
               </div>
             ))}
           </div>
@@ -196,24 +202,30 @@ export default function AffiliatePartnerProgramsPage() {
               Need more detail?
             </h2>
             <div className="mt-4 flex flex-wrap gap-3">
-              <Link
-                href="/for-providers"
+              <a
+                href={`${PDF_BASE}RR_Partnership_Affiliate_Master_Summary.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-full border border-[#6762AF]/30 bg-white px-5 py-2.5 text-[14px] font-medium text-[#6762AF] hover:bg-[#F1ECF8]"
               >
                 The Full Playbook (all the details)
-              </Link>
-              <Link
-                href="/for-providers"
+              </a>
+              <a
+                href={`${PDF_BASE}RR_Affiliate_Partner_Onboarding_SOP.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-full border border-[#6762AF]/30 bg-white px-5 py-2.5 text-[14px] font-medium text-[#6762AF] hover:bg-[#F1ECF8]"
               >
                 Setup Steps (how to set up a partner)
-              </Link>
-              <Link
-                href="/contact?path=partner&type=Affiliate%20-%20Stem%20Cells%20Only"
+              </a>
+              <a
+                href={`${PDF_BASE}RR_Affiliate_Agreement_StemCell.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-full border border-[#6762AF]/30 bg-white px-5 py-2.5 text-[14px] font-medium text-[#6762AF] hover:bg-[#F1ECF8]"
               >
                 Affiliate form: stem cells only
-              </Link>
+              </a>
             </div>
           </div>
         </div>

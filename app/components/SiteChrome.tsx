@@ -6,7 +6,7 @@ import Footer from "./Footer";
 
 // Routes that render their own full-page chrome (custom nav + footer)
 // and therefore should NOT show the global Regenerative Revival header/footer.
-const FULL_CUSTOM_ROUTES = ["/clp"];
+const FULL_CUSTOM_ROUTES = ["/clp", "/playing-overseas"];
 
 function isCustom(pathname: string | null): boolean {
   if (!pathname) return false;

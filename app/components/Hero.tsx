@@ -131,9 +131,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="relative z-10 flex justify-center pb-4"
+          className="relative z-10 flex justify-center pb-4 px-4"
         >
-          <div className="w-full max-w-[1188px] mx-auto h-[54px] bg-[#1A1F30] rounded-lg flex items-center justify-center px-10 gap-12">
+          <div className="w-full max-w-[1188px] mx-auto h-[54px] bg-[#1A1F30] rounded-lg flex items-center overflow-x-auto sm:justify-center px-6 sm:px-10 gap-8 sm:gap-12 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             <CredItem icon={<Award className="h-[18px] w-[18px]" />} label="8+ years in Regenerative Medicine" />
             <CredItem icon={<Users className="h-[18px] w-[18px]" />} label="100+ Licensed Clinicians" />
             <CredItem icon={<MapPin className="h-[18px] w-[18px]" />} label="50 States Covered" />

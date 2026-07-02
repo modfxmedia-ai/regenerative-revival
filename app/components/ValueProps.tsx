@@ -87,7 +87,7 @@ const pillars = [
 
 export default function ValueProps() {
   return (
-    <section className="relative bg-[#0B0E16]">
+    <section className="relative overflow-hidden bg-[#0B0E16]">
       <PinnedShuffle />
       <MobileStack />
     </section>

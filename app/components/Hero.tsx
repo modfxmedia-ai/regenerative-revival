@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Sparkles, Award, Users, MapPin, ShieldCheck } from "lucide-react";
 
@@ -93,6 +94,23 @@ export default function Hero() {
               Your Concierge Hub for<br />
               Regeneration &amp; Longevity
             </motion.h1>
+
+            {/* "got stem cells?" logo — white, transparent */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.45 }}
+              className="mt-6 flex justify-center"
+            >
+              <Image
+                src="/lp/miami/gsc-logo.png"
+                alt="got stem cells?"
+                width={480}
+                height={153}
+                priority
+                className="h-auto w-[220px] sm:w-[280px] lg:w-[340px]"
+              />
+            </motion.div>
 
             {/* Subhead */}
             <motion.p

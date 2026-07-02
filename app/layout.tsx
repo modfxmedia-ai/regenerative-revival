@@ -4,8 +4,7 @@ import { Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import { SiteNavbar, SiteFooter } from "./components/SiteChrome";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 import UtmCapture from "./components/UtmCapture";
 import EverflowCapture from "./components/EverflowCapture";
@@ -86,9 +85,9 @@ export default function RootLayout({
         <EverflowCapture />
         <JsonLd data={organizationSchema()} />
         <JsonLd data={localBusinessSchema()} />
-        <Navbar />
+        <SiteNavbar />
         {children}
-        <Footer />
+        <SiteFooter />
         <Analytics />
         <SpeedInsights />
       </body>

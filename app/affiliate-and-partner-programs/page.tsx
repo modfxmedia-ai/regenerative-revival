@@ -22,7 +22,8 @@ export const metadata = generatePageMetadata({
   noIndex: true,
 });
 
-const PDF_BASE = "/lp/affiliate/";
+const PDF_BASE =
+  "https://65iosdxq0lyc5cm9.public.blob.vercel-storage.com/affiliate/";
 
 const partners = [
   {

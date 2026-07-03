@@ -22,7 +22,7 @@ export const metadata = generatePageMetadata({
   noIndex: true,
 });
 
-const PDF_BASE = "https://regenerativerevival.com/wp-content/uploads/2026/06/";
+const PDF_BASE = "/lp/affiliate/";
 
 const partners = [
   {

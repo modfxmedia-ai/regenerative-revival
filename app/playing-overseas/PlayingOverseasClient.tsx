@@ -8,6 +8,7 @@ const BOOKING_URL = "https://s.blinq.me/gBWvOQyHyrfy?bs=icl";
 const HERO_BG = "/8470.jpg";
 const SCI_IMG = "/1.webp";
 const PRI_IMG = "/2.webp";
+const REGGIE_IMG = "/about/imgi_9_Screen-Shot-2026-01-27-at-1.25.19-PM.png";
 
 const stats = [
   { v: "2018", l: "Est. by Seth Berge" },
@@ -317,9 +318,10 @@ export default function PlayingOverseasClient() {
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div className="relative flex h-[560px] items-center justify-center overflow-hidden rounded border border-[#8B5CF6]/20 bg-[#13132A]">
             <div className="absolute left-1/2 top-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full border-[1.5px] border-[#8B5CF6]/30 bg-[radial-gradient(circle,rgba(139,92,246,.3)_0%,rgba(139,92,246,.1)_65%,transparent_100%)]" />
-            <span className="relative font-serif text-[120px] font-bold leading-none text-white/90">
-              RL
-            </span>
+            <div
+              className="absolute inset-0 bg-contain bg-center bg-no-repeat"
+              style={{ backgroundImage: `url('${REGGIE_IMG}')` }}
+            />
             <div className="absolute left-5 top-5 rounded-sm border border-[#8B5CF6]/20 bg-[#0D0D1A]/80 px-3.5 py-2 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#A78BFA]">
               Former Pro · Playing Overseas
             </div>

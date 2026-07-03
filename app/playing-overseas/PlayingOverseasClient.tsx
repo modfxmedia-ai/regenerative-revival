@@ -5,9 +5,9 @@ import Image from "next/image";
 
 const BOOKING_URL = "https://s.blinq.me/gBWvOQyHyrfy?bs=icl";
 
-const HERO_BG = "/8470.jpg";
-const SCI_IMG = "/1.webp";
-const PRI_IMG = "/2.webp";
+const HERO_BG = "/lp/playing-overseas/hero.jpg";
+const SCI_IMG = "/lp/playing-overseas/science.jpg";
+const PRI_IMG = "/lp/playing-overseas/priority.jpg";
 const REGGIE_IMG = "/about/imgi_9_Screen-Shot-2026-01-27-at-1.25.19-PM.png";
 
 const stats = [

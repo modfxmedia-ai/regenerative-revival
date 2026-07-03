@@ -8,7 +8,7 @@ const BOOKING_URL = "https://s.blinq.me/gBWvOQyHyrfy?bs=icl";
 const HERO_BG = "/8470.jpg";
 const SCI_IMG = "/1.webp";
 const PRI_IMG = "/2.webp";
-const REGGIE_IMG = "/about/imgi_9_Screen-Shot-2026-01-27-at-1.25.19-PM.png";
+const REGGIE_IMG = "/about/imgi_20_Screen-Shot-2026-01-27-at-1.25.06-PM.png";
 
 const stats = [
   { v: "2018", l: "Est. by Seth Berge" },

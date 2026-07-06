@@ -66,7 +66,7 @@ export default function ExosomesCTA() {
         >
           Discover how exosome therapy can support your body&apos;s natural
           healing processes. Our team is ready to answer your questions and
-          create a personalized treatment plan.
+          create a personalized care plan.
         </motion.p>
 
         <motion.div

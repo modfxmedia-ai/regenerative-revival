@@ -18,7 +18,7 @@ const reasons = [
   {
     title: "Patient education & empowerment",
     description:
-      "Informed patients get better outcomes. You'll understand every step of your treatment journey.",
+      "Informed patients get better outcomes. You'll understand every step of your care journey.",
   },
   {
     title: "Premium Wharton's Jelly products",

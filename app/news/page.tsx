@@ -7,7 +7,7 @@ import { JsonLd, webPageSchema, breadcrumbSchema } from "../lib/schema";
 
 export const metadata = generatePageMetadata({
   title: "News",
-  description: "Stay up to date with the latest news, insights, and articles on regenerative medicine, stem cell therapy, and Wharton's Jelly treatments.",
+  description: "Stay up to date with the latest news, insights, and articles on regenerative medicine, stem cell therapy, and Wharton's Jelly therapies.",
   path: "/news",
 });
 

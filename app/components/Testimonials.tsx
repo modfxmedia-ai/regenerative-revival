@@ -35,7 +35,7 @@ const writtenTestimonials = [
   { name: "Ethan M.", condition: "Rotator Cuff", quote: "I tore my rotator cuff. They told me I needed surgery. I'm 26 — no interest in being cut into. After one injection and 30 days, 80–90% of my range of motion is back, with no surgery recovery.", stars: 5, initials: "EM" },
   { name: "Margaret P.", condition: "Knee Mobility", quote: "For years, I could not bend my leg over my knee to put my socks on. Three days after the injection, I picked it up — I hadn't done it for 10 years. No pain whatsoever. Will I recommend this? You better believe it.", stars: 5, initials: "MP" },
   { name: "Roy B.", condition: "Knee Pain", quote: "I wasn't able to do much with my knee. Three weeks after the shot, I've been bouncing around, walking, almost running, riding bikes. Friends ask where I got it — I refer them to the doctor.", stars: 5, initials: "RB" },
-  { name: "John R.", condition: "Knee Burning", quote: "I was feeling a lot of burning in my right knee. Since the stem cell treatment, it has diminished. My knee feels great, I'm back to dancing where I couldn't before.", stars: 5, initials: "JR" },
+  { name: "John R.", condition: "Knee Burning", quote: "I was feeling a lot of burning in my right knee. Since the stem cell therapy, it has diminished. My knee feels great, I'm back to dancing where I couldn't before.", stars: 5, initials: "JR" },
 ];
 
 const marqueeItems = [...writtenTestimonials, ...writtenTestimonials];

@@ -43,7 +43,7 @@ export default function ConditionsTreated() {
             Conditions We Address
           </span>
           <h2 className="mt-5 text-4xl sm:text-5xl font-bold leading-tight text-gray-900">
-            Conditions Treated with{" "}
+            Conditions Addressed with{" "}
             <span className="gradient-text">Stem Cell Therapy</span>
           </h2>
         </motion.div>

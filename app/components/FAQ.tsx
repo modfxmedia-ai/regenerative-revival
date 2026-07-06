@@ -83,7 +83,7 @@ export default function FAQ() {
               Frequently asked <span className="text-[#6762AF] font-semibold">questions</span>
             </h2>
             <p className="mt-6 text-sm text-[#4A4F66] leading-relaxed">
-              Everything you need to know about our treatments and partnerships. Still have questions?{" "}
+              Everything you need to know about our therapies and partnerships. Still have questions?{" "}
               <a href="/contact" className="text-[#6762AF] underline-offset-2 hover:underline font-medium">
                 Get in touch.
               </a>

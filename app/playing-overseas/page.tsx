@@ -18,7 +18,7 @@ const faqItems = [
   {
     question: "Is stem cell and exosome therapy safe?",
     answer:
-      "Regenerative Revival therapies are administered by licensed practitioners — MDs, DOs, and NPs — in partnership with Arora Health Group under physician oversight. Individual results vary and candidacy is assessed case by case. Not everyone qualifies for treatment.",
+      "Regenerative Revival therapies are administered by licensed practitioners — MDs, DOs, and NPs — in partnership with Arora Health Group under physician oversight. Individual results vary and candidacy is assessed case by case. Not everyone qualifies for care.",
   },
   {
     question: "How is therapy delivered?",

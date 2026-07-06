@@ -49,7 +49,7 @@ export default function StemTherapyCTA() {
           transition={{ duration: 0.7, delay: 0.25 }}
           className="mt-7 text-base lg:text-lg text-white/60 max-w-2xl mx-auto leading-relaxed"
         >
-          Take the first step towards lasting relief. Our licensed practitioners will create a personalized treatment plan tailored to your needs.
+          Take the first step towards lasting relief. Our licensed practitioners will create a personalized care plan tailored to your needs.
         </motion.p>
 
         <motion.div

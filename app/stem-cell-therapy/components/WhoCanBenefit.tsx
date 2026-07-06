@@ -45,7 +45,7 @@ export default function WhoCanBenefit() {
               className="absolute -bottom-6 -right-4 lg:-right-8 bg-white rounded-2xl p-5 shadow-[0_16px_40px_-8px_rgba(26,31,48,0.2)] border border-[#F1ECF8]"
             >
               <div className="font-[family-name:var(--font-poppins)] text-4xl text-[#6762AF]">8+</div>
-              <div className="text-[11px] text-[#4A4F66] mt-1 leading-snug">Conditions<br />Treated</div>
+              <div className="text-[11px] text-[#4A4F66] mt-1 leading-snug">Conditions<br />Addressed</div>
             </motion.div>
           </motion.div>
 

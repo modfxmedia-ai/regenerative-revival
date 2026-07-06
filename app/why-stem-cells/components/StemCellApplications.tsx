@@ -76,7 +76,7 @@ export default function StemCellApplications() {
         >
           <img
             src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1400&q=80"
-            alt="Athlete receiving regenerative therapy treatment"
+            alt="Athlete receiving regenerative therapy"
             className="w-full h-[320px] object-cover"
           />
         </motion.div>

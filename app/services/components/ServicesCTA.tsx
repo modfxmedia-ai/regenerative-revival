@@ -65,7 +65,7 @@ export default function ServicesCTA() {
           className="mt-7 text-lg text-white/55 max-w-2xl mx-auto leading-relaxed font-sans"
         >
           Take the first step towards lasting pain relief. Our team of licensed
-          practitioners is ready to create a personalized treatment plan
+          practitioners is ready to create a personalized care plan
           tailored to your needs.
         </motion.p>
 

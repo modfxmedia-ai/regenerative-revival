@@ -231,7 +231,7 @@ function FormCard() {
           <select id="contact-subject" name="subject" className={`${inputClass} ${normalInputClass}`}>
             <option value="">Select a topic...</option>
             <option value="consultation">Schedule a Consultation</option>
-            <option value="treatment">Treatment Information</option>
+            <option value="treatment">Therapy Information</option>
             <option value="pricing">Pricing &amp; Insurance</option>
             <option value="partnership">Business Partnership</option>
             <option value="other">Other</option>

@@ -31,7 +31,7 @@ export default function Contact() {
             Get in touch with <span className="text-[#6762AF] font-semibold">Regenerative Revival</span>
           </h2>
           <p className="mt-7 text-base lg:text-lg text-white/65 leading-relaxed">
-            Whether you&apos;re a patient seeking treatment or a business looking to partner — we&apos;re here to help.
+            Whether you&apos;re a patient seeking care or a business looking to partner — we&apos;re here to help.
           </p>
         </motion.div>
 

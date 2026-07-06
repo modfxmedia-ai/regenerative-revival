@@ -71,7 +71,7 @@ export default function HeroContactForm() {
       <h3 className="lux-display text-xl text-white mb-1">
         Free <span className="text-[#6762AF] font-semibold">Consultation</span>
       </h3>
-      <p className="text-sm text-white/40 mb-6">Get a personalized treatment plan</p>
+      <p className="text-sm text-white/40 mb-6">Get a personalized care plan</p>
 
       <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4">
         {errors.form && <p className="text-xs text-red-400">{errors.form}</p>}

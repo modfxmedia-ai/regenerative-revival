@@ -85,7 +85,7 @@ export default function WhyConsider() {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="text-center text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto mb-16 font-sans"
         >
-          Unlike traditional treatments that often focus on masking pain
+          Unlike traditional options that often focus on masking pain
           symptoms, Wharton&apos;s Jelly stem cell therapy works to restore and
           rejuvenate the underlying tissues causing discomfort. Whether dealing
           with joint pain, arthritis, or soft tissue injuries, the regenerative

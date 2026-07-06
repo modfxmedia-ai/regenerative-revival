@@ -11,8 +11,8 @@ const posts = [
     slug: "the-ultimate-guide-to-managing-joint-pain-with-regenerative-therapies",
     title: "The Ultimate Guide to Managing Joint Pain with Regenerative Therapies",
     excerpt:
-      "Joint pain affects millions worldwide. Traditional treatments offer temporary relief, but regenerative therapies provide a promising long-term alternative.",
-    category: "Treatment Guide",
+      "Joint pain affects millions worldwide. Traditional options offer temporary relief, but regenerative therapies provide a promising long-term alternative.",
+    category: "Therapy Guide",
     readTime: "8 min read",
     image: "/news/imgi_15_manage-joint-pain-naturally-1080x675.jpg",
   },
@@ -29,7 +29,7 @@ const posts = [
     slug: "how-to-enhance-your-workout-recovery-with-stem-cell-therapy",
     title: "How to Enhance Your Workout Recovery with Stem Cell Therapy",
     excerpt:
-      "Intense workouts take a toll on your body. Emerging treatments like stem cell therapy are revolutionizing recovery.",
+      "Intense workouts take a toll on your body. Emerging therapies like stem cell therapy are revolutionizing recovery.",
     category: "Recovery",
     readTime: "6 min read",
     image: "/news/imgi_13_enhance-workout-recovery-1080x675.jpg",

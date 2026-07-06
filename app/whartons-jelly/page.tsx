@@ -50,7 +50,7 @@ const faqs = [
   {
     question: "How is Wharton's Jelly therapy administered?",
     answer:
-      "Treatment is delivered via targeted injection to the affected area by a licensed nurse practitioner in your home. No surgery, no clinic visit, no general anesthesia. Most sessions take 30–60 minutes.",
+      "Therapy is delivered via targeted injection to the affected area by a licensed nurse practitioner in your home. No surgery, no clinic visit, no general anesthesia. Most sessions take 30–60 minutes.",
   },
 ];
 

@@ -16,7 +16,7 @@ import {
 export const metadata = generatePageMetadata({
   title: "Exosome Therapy — The Signaling Layer of Regenerative Medicine",
   description:
-    "Exosomes are nano-sized vesicles that carry regenerative signals between cells. Learn how exosome therapy amplifies stem cell treatment and why it's the next frontier in regenerative medicine.",
+    "Exosomes are nano-sized vesicles that carry regenerative signals between cells. Learn how exosome therapy amplifies stem cell therapy and why it's the next frontier in regenerative medicine.",
   path: "/why-exosomes",
 });
 

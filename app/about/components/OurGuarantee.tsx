@@ -6,8 +6,8 @@ import { Heart, Microscope, Users, GraduationCap, ArrowUpRight } from "lucide-re
 import Image from "next/image";
 
 const guarantees = [
-  { icon: Heart, title: "Personalized Care", description: "Every patient receives a customized treatment plan tailored to their unique needs and goals." },
-  { icon: Microscope, title: "Advanced Techniques", description: "We utilize the latest advancements in regenerative medicine to provide the most effective treatments available." },
+  { icon: Heart, title: "Personalized Care", description: "Every patient receives a customized care plan tailored to their unique needs and goals." },
+  { icon: Microscope, title: "Advanced Techniques", description: "We utilize the latest advancements in regenerative medicine to provide the most effective therapies available." },
   { icon: Users, title: "Expert Team", description: "Our team consists of highly trained professionals dedicated to delivering exceptional care." },
   { icon: GraduationCap, title: "Patient Education", description: "We believe in empowering you with the knowledge and information needed to make informed decisions about your health." },
 ];
@@ -82,7 +82,7 @@ export default function OurGuarantee() {
             className="relative"
           >
             <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-[0_24px_64px_-12px_rgba(88,53,99,0.2)]">
-              <Image src="/About Page & contact page-_Our Guarantee.jpeg" alt="Advanced regenerative medicine treatment" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+              <Image src="/About Page & contact page-_Our Guarantee.jpeg" alt="Advanced regenerative medicine therapy" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1A1F30]/25 to-transparent" />
               <div className="absolute inset-0 ring-1 ring-inset ring-white/15 rounded-[2rem] pointer-events-none" />
             </div>

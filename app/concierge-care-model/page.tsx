@@ -23,7 +23,7 @@ const faqs = [
   {
     question: "What is concierge regenerative medicine?",
     answer:
-      "Concierge regenerative medicine means your treatment is delivered in your home by a licensed clinician — no clinic visit, no waiting room. At Regenerative Revival, it also means one physician-led team coordinates all your protocols: regenerative therapy, hormones, peptides, and NAD+.",
+      "Concierge regenerative medicine means your care is delivered in your home by a licensed clinician — no clinic visit, no waiting room. At Regenerative Revival, it also means one physician-led team coordinates all your protocols: regenerative therapy, hormones, peptides, and NAD+.",
   },
   {
     question: "Who oversees my care at Regenerative Revival?",
@@ -92,7 +92,7 @@ export default function ConciergeCareModelPage() {
           steps: [
             { name: "Take the 2-minute quiz", text: "Answer two questions about your goal and preferred care delivery. We route you to the right program." },
             { name: "Telehealth consultation", text: "A licensed clinician reviews your health history and labs. You get a personalized plan — not a generic protocol." },
-            { name: "Treatment delivered", text: "Regenerative therapy comes to your home. Telehealth prescriptions ship to your door." },
+            { name: "Care delivered", text: "Regenerative therapy comes to your home. Telehealth prescriptions ship to your door." },
             { name: "Ongoing coordination", text: "Your full history lives in one chart. As your protocols evolve, your team adjusts everything together." },
           ],
         })}
@@ -242,14 +242,14 @@ export default function ConciergeCareModelPage() {
           <div className="text-center mb-14">
             <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">The Process</span>
             <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
-              How it works — from quiz to treatment
+              How it works — from quiz to care
             </h2>
           </div>
           <div className="grid md:grid-cols-4 gap-8">
             {[
               { num: "01", title: "Take the quiz", desc: "Two questions. We route you to the right program — regen, telehealth, or both." },
               { num: "02", title: "Clinician review", desc: "A licensed clinician reviews your history and labs. You get a real plan, not a template." },
-              { num: "03", title: "Treatment delivered", desc: "Regen therapy comes to your home. Telehealth prescriptions ship to your door." },
+              { num: "03", title: "Care delivered", desc: "Regen therapy comes to your home. Telehealth prescriptions ship to your door." },
               { num: "04", title: "Ongoing coordination", desc: "One chart. As your protocols evolve, your team adjusts everything together." },
             ].map((step) => (
               <div key={step.num} className="border-t-2 border-[#F1ECF8] hover:border-[#6762AF] pt-6 transition-colors duration-500 group">

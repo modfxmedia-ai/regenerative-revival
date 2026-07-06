@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 const steps = [
   { num: "01", title: "Consultation & Assessment", description: "Your journey begins with a thorough consultation where our licensed practitioners assess your condition, review your medical history, and determine if stem cell therapy is right for you." },
-  { num: "02", title: "Treatment Planning", description: "A personalized treatment plan is created based on your specific needs, targeting the root cause of your pain or condition rather than just masking symptoms." },
+  { num: "02", title: "Care Planning", description: "A personalized care plan is created based on your specific needs, targeting the root cause of your pain or condition rather than just masking symptoms." },
   { num: "03", title: "Stem Cell Administration", description: "Mesenchymal stem cells are carefully administered to the affected area through minimally invasive injections, guided by advanced imaging when needed." },
   { num: "04", title: "Healing & Recovery", description: "The stem cells begin working immediately — differentiating into needed cell types, reducing inflammation, and stimulating your body's natural repair mechanisms." },
 ];

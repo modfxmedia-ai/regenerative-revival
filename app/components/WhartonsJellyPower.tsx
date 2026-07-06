@@ -24,7 +24,7 @@ const benefits = [
     image: "/3.webp",
     title: "Minimal Rejection Risk",
     description:
-      "The immune-privileged nature of Wharton's Jelly-derived MSCs lowers the likelihood of rejection, making treatment viable for most patients.",
+      "The immune-privileged nature of Wharton's Jelly-derived MSCs lowers the likelihood of rejection, making therapy viable for most patients.",
     accent: "03",
   },
 ];

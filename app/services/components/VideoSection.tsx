@@ -16,7 +16,7 @@ const videos = [
   {
     title: "How Stem Cell Therapy Works",
     description:
-      "Discover the step-by-step process of how regenerative therapy is administered and what to expect during treatment.",
+      "Discover the step-by-step process of how regenerative therapy is administered and what to expect during care.",
     thumbnail:
       "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80",
     youtubeId: "dQw4w9WgXcQ",

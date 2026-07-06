@@ -19,9 +19,9 @@ const benefits = [
   },
   {
     icon: Zap,
-    title: "Enhances Treatment Efficacy",
+    title: "Enhances Therapy Efficacy",
     description:
-      "Growth factors and cytokines in Wharton's Jelly amplify the body's repair mechanisms, boosting the effectiveness of regenerative treatments.",
+      "Growth factors and cytokines in Wharton's Jelly amplify the body's repair mechanisms, boosting the effectiveness of regenerative therapies.",
   },
   {
     icon: ShieldCheck,

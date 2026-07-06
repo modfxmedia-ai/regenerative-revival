@@ -67,7 +67,7 @@ const doctors = [
     title: "Chief Medical Officer · Regenerative Revival",
     image: "/team/shannon-arora.png",
     quote:
-      "It makes sense to integrate regenerative medicine, hormone therapies, and peptide treatments rather than separating them into different facilities. A single team can effectively manage these services, as the same individual may benefit from all of them.",
+      "It makes sense to integrate regenerative medicine, hormone therapies, and peptide therapies rather than separating them into different facilities. A single team can effectively manage these services, as the same individual may benefit from all of them.",
   },
 ];
 

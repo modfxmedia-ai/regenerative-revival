@@ -21,7 +21,7 @@ const benefits = [
     icon: ShieldCheck,
     title: "Minimal Rejection Risk",
     description:
-      "The immune-privileged nature of Wharton's jelly-derived MSCs lowers the likelihood of the body rejecting the treatment, opening up stem cell therapy to a wider range of patients.",
+      "The immune-privileged nature of Wharton's jelly-derived MSCs lowers the likelihood of the body rejecting the therapy, opening up stem cell therapy to a wider range of patients.",
   },
 ];
 

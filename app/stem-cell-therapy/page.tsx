@@ -37,12 +37,12 @@ const faqs = [
   {
     question: "How much does stem cell therapy cost?",
     answer:
-      "Stem cell therapy pricing varies based on the protocol, number of injection sites, and product used. Most concierge in-home programs range from $3,000–$8,000. We provide transparent pricing during your consultation — no surprises.",
+      "Because every program is personalized to your condition, the protocol, and the number of areas addressed, pricing is determined individually. We walk you through clear, transparent pricing during your consultation — no surprises.",
   },
   {
     question: "What is the success rate of stem cell therapy?",
     answer:
-      "Clinical outcomes vary by condition and patient. For musculoskeletal conditions like osteoarthritis and soft-tissue injuries, studies show 60–80% of patients report meaningful improvement in pain and function. We set realistic expectations during your consultation.",
+      "Clinical outcomes vary by condition and patient. Many people with musculoskeletal conditions like osteoarthritis and soft-tissue injuries report meaningful improvement in pain and function. We set realistic, individualized expectations during your consultation.",
   },
   {
     question: "What are the benefits of stem cell therapy?",

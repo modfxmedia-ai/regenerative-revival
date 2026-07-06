@@ -303,7 +303,7 @@ function ContactInfo() {
 function WhyReachOut() {
   const reasons = [
     "Schedule a free consultation",
-    "Learn about treatment options",
+    "Learn about therapy options",
     "Get pricing information",
     "Discuss partnership opportunities",
     "Ask about concierge services",

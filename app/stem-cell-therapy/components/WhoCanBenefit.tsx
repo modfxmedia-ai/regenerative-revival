@@ -55,7 +55,7 @@ export default function WhoCanBenefit() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Conditions Treated</span>
+            <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Conditions Addressed</span>
             <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2.25rem] sm:text-5xl lg:text-[3.25rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
               Who can <span className="text-[#6762AF]">benefit?</span>
             </h2>

@@ -28,7 +28,7 @@ const pillars = [
     title: "Your joints shouldn't be a surgery countdown",
     highlight: "joints",
     body: "Stem cell and exosome therapy, delivered in your home, by a licensed nurse practitioner, under physician oversight. It's the option most of your other providers never bring up, because they don't offer it.",
-    chips: ["Knee", "Hip", "Shoulder", "Back", "Elbow"],
+    chips: ["Knee", "Hip", "Shoulder", "Back", "Elbow", "Neck", "Ankle", "Wrist"],
     bullets: [
       "Pain or reduced mobility in joints and soft tissue",
       "Post-injury recovery and soft-tissue wear",

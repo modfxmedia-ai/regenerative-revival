@@ -45,7 +45,7 @@ const faqs = [
   {
     question: "What conditions can Wharton's Jelly stem cell therapy address?",
     answer:
-      "Our protocols focus on musculoskeletal conditions: osteoarthritis, joint degeneration, soft-tissue injuries, tendon and ligament damage, and chronic inflammation. We do not treat systemic diseases or conditions outside our clinical scope.",
+      "Our protocols focus on musculoskeletal conditions: osteoarthritis, joint degeneration, soft-tissue injuries, tendon and ligament damage, and chronic inflammation. We do not address systemic diseases or conditions outside our clinical scope.",
   },
   {
     question: "How is Wharton's Jelly therapy administered?",

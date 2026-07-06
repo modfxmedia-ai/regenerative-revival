@@ -163,7 +163,7 @@ export default function ForProvidersPage() {
               </h2>
               <div className="mt-6 space-y-5 text-[15px] text-[#4A4F66] leading-[1.75]">
                 <p>
-                  Patients are actively searching for peptide therapy, stem cell treatment, and hormone optimization. The search volume is there. The clinical demand is there. What&apos;s missing is a turnkey model that lets a licensed NP or PA deliver these services without spending 18 months building a platform, finding a medical director, and negotiating with compounding pharmacies.
+                  Patients are actively searching for peptide therapy, stem cell therapy, and hormone optimization. The search volume is there. The clinical demand is there. What&apos;s missing is a turnkey model that lets a licensed NP or PA deliver these services without spending 18 months building a platform, finding a medical director, and negotiating with compounding pharmacies.
                 </p>
                 <p>
                   That&apos;s what we built. Regenerative Revival is the infrastructure layer — clinical oversight, telehealth platform, protocol library, compounding pharmacy network, and patient acquisition support — so you can focus on what you do best: patient care.

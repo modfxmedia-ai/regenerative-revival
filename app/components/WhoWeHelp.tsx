@@ -75,7 +75,7 @@ const stats = [
   { value: "8+", label: "Years in Regenerative Medicine" },
   { value: "100+", label: "Licensed Clinicians" },
   { value: "50", label: "States" },
-  { value: "6k+", label: "Patients Treated" },
+  { value: "10,000+", label: "Patients Served" },
 ];
 
 export default function WhoWeHelp() {

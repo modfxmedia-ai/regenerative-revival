@@ -11,7 +11,7 @@ const reasons = [
       "Decades of combined experience in regenerative medicine, staying at the forefront of stem cell research.",
   },
   {
-    title: "Personalized treatment plans",
+    title: "Personalized care plans",
     description:
       "No two patients are alike. Custom protocols built around your unique biology, condition, and wellness goals.",
   },

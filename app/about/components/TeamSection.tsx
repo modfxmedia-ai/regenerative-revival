@@ -14,6 +14,7 @@ interface TeamMember {
 
 const doctors: TeamMember[] = [
   { name: "Dr. Sean Arora", role: "Medical Director", photo: "/about/imgi_5_Dr-Sean-Arora.jpg", bio: "Dr. Sean Arora is a board-certified physician whose primary focus lies in wellness and telehealth innovation. As the founder of Arora Health & Aesthetics, he leads medical oversight and compliance networks in the wellness and telehealth space, offering full-spectrum medical directorship, nationwide telehealth provider networks, EMR integrations, and cutting-edge protocol development. Licensed in all 50 states for telehealth oversight." },
+  { name: "Dr. Shannon Arora", role: "Chief Medical Officer", photo: "/team/shannon-arora.png", bio: "As Chief Medical Officer of Regenerative Revival, Dr. Shannon Arora champions an integrated model of care that brings regenerative medicine, hormone therapy, and peptide protocols together under one coordinated team — so the same patient can benefit from all of them without navigating separate clinics." },
 ];
 
 const advocates: TeamMember[] = [

@@ -34,7 +34,7 @@ export default function AroraPartner() {
               Serious medicine needs<br className="hidden sm:block" /> a serious partner.
             </h2>
             <a
-              href="/about/arora-health"
+              href="/about/why-were-different"
               className="mt-8 inline-flex h-12 items-center gap-2 rounded-full border border-[#6762AF]/30 bg-white px-6 text-[13px] font-semibold text-[#1A1F30] hover:border-[#6762AF] hover:bg-[#F1ECF8]/60 hover:shadow-[0_8px_24px_-8px_rgba(103,98,175,0.3)] transition-all duration-300 group"
             >
               About Arora Health

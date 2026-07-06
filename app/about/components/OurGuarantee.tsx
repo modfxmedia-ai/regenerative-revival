@@ -31,11 +31,11 @@ export default function OurGuarantee() {
           >
             <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Our Promise</span>
             <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2.25rem] sm:text-5xl lg:text-[3.25rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
-              Our guarantee,{" "}
+              Our commitment,{" "}
               <span className="text-[#6762AF]">your health</span>
             </h2>
             <p className="mt-6 text-base text-[#4A4F66] leading-relaxed">
-              At Regenerative Revival, your health and well-being are our top priorities. We guarantee:
+              At Regenerative Revival, your health and well-being are our top priorities. We&apos;re committed to:
             </p>
 
             <div className="mt-8 flex flex-col gap-5">

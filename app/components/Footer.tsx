@@ -10,7 +10,7 @@ const services = [
 
 const about = [
   { label: "Medical Team", href: "/about" },
-  { label: "Arora Health Group", href: "/about/why-were-different" },
+  { label: "Why We're Different", href: "/about/why-were-different" },
   { label: "Our Mission", href: "/concierge-care-model" },
 ];
 
@@ -31,7 +31,7 @@ const contact = [
 const legal = [
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms of Service", href: "/terms-conditions" },
-  { label: "HIPAA Notice", href: "/disclaimer" },
+  { label: "Disclaimer", href: "/disclaimer" },
   { label: "Site Map", href: "/site-map" },
 ];
 
@@ -112,7 +112,7 @@ export default function Footer() {
           </div>
           <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-5">
             <p className="text-[11px] font-medium text-white/20 leading-[1.75]">
-              © {new Date().getFullYear()} Regenerative Revival. All rights reserved. Regenerative Revival provides concierge regenerative medicine and coordinates telehealth-based longevity care through a nationwide network of licensed nurse practitioners under physician oversight. Statements on this site have not been evaluated by the FDA. Our services are not intended to diagnose, treat, cure, or prevent any disease. Individual results vary. Regenerative therapies are considered off-label for most musculoskeletal applications. Telehealth services are delivered by licensed clinicians in accordance with state-specific regulations. Compounded medications are dispensed by LegitScript- and NABP-accredited pharmacy partners.
+              Regenerative Revival provides concierge regenerative medicine and coordinates telehealth-based longevity care through a nationwide network of licensed nurse practitioners under physician oversight. Statements on this site have not been evaluated by the FDA. Our services are not intended to diagnose, treat, cure, or prevent any disease. Individual results vary. Regenerative therapies are considered off-label for most musculoskeletal applications. Telehealth services are delivered by licensed clinicians in accordance with state-specific regulations. Compounded medications are dispensed by LegitScript- and NABP-accredited pharmacy partners.
             </p>
           </div>
         </div>

@@ -5,17 +5,16 @@ import Breadcrumbs from "../components/Breadcrumbs";
 export const metadata = generatePageMetadata({
   title: "Disclaimer",
   description:
-    "Regenerative Revival disclaimer regarding earnings, individual results, and limitations of liability.",
+    "Medical disclaimer for Regenerative Revival regarding individual results, off-label therapies, and limitations of liability.",
   path: "/disclaimer",
 });
 
 const CONTENT_HTML = `
-<p><strong>We also hate SPAM as much as you do and will promise to keep your information safe.</strong></p>
-<p>Copyright &copy; 2025 Regenerative Revival</p>
-<p><strong>All Rights Reserved</strong></p>
-<p>Earnings and income representations made here are aspirational statements only of your earnings potential. Implied earnings, testimonials and other examples used are exceptional, non-typical results and are not intended to be and are not a guarantee that you or others will achieve the same results. Individual results will always vary and yours will depend entirely on your individual capacity, work ethic, business skills and experience, level of motivation, diligence in applying any strategies contained in &ldquo;Regenerative Revival&rdquo; or any other subsequent training.</p>
-<p>This can also mean the economy, the normal and unforeseen risks of doing business, and other factors.</p>
-<p>We are not responsible for your actions. You are solely responsible for your own moves and decisions and the evaluation and use of our products and services should be based on your own due diligence. You agree that the Author&rsquo;s programs and processes are not liable to you in any way for your results in using our products and services. See our <a href="/terms-conditions">Terms of Use</a> for our full disclaimer of liability and other restrictions.</p>
+<p><strong>The information provided by Regenerative Revival is for general educational purposes only and is not medical advice.</strong> It is not intended to diagnose, treat, cure, or prevent any disease and should not be used as a substitute for consultation with a qualified, licensed healthcare provider. Always seek the advice of your physician or other qualified provider with any questions you may have regarding a medical condition.</p>
+<p>Statements on this site have not been evaluated by the U.S. Food and Drug Administration (FDA). Regenerative therapies, including those derived from Wharton&rsquo;s Jelly and other perinatal tissues, are considered investigational or off-label for most musculoskeletal and wellness applications. No outcome is promised or guaranteed.</p>
+<p><strong>Individual results vary.</strong> Any testimonials, case examples, or outcomes referenced on this site reflect individual experiences and are not typical, expected, or guaranteed results. Candidacy for any therapy is determined on a case-by-case basis by a licensed clinician following an individualized evaluation. Not everyone qualifies.</p>
+<p>All medical services are delivered by licensed clinicians in accordance with applicable state and federal regulations, under physician oversight through our partner medical group. Compounded medications are dispensed by LegitScript- and NABP-accredited pharmacy partners.</p>
+<p>To the fullest extent permitted by law, Regenerative Revival is not liable for any decisions made or actions taken in reliance on the information provided on this site. Your use of our products, services, and information is at your own discretion and risk. See our <a href="/terms-conditions">Terms of Service</a> and <a href="/privacy-policy">Privacy Policy</a> for additional terms, limitations of liability, and information about how we handle your data.</p>
 `;
 
 export default function DisclaimerPage() {

@@ -59,7 +59,7 @@ export default function ContactHero() {
           transition={{ duration: 0.8, delay: 0.35 }}
           className="mt-7 max-w-xl mx-auto text-base lg:text-lg leading-relaxed text-white/60"
         >
-          Have questions about our treatments? Ready to schedule your consultation? We&apos;re here to help.
+          Have questions about our therapies? Ready to schedule your consultation? We&apos;re here to help.
         </motion.p>
 
         {/* Quick action pills */}

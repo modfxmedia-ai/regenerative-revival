@@ -43,7 +43,7 @@ const steps = [
   },
   {
     num: "04",
-    title: "Treatment delivered",
+    title: "Care delivered",
     desc: "Ongoing check-ins and dosing adjustments to keep you progressing safely.",
     icon: PackageCheck,
     accent: "#71A7F5",

@@ -4,6 +4,16 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 
+declare global {
+  interface Window {
+    gtag?: (
+      command: "event",
+      eventName: string,
+      params?: Record<string, unknown>,
+    ) => void;
+  }
+}
+
 type Goal =
   | "regen"           // joint pain, injury recovery, regenerative therapy
   | "weight"          // GLP-1 weight loss
@@ -69,23 +79,17 @@ export default function ConsultRouter() {
     setResult(r);
     setStep(2);
 
-    // Audit log to GHL/Tyriacore via /api/leads (fire-and-forget)
-    void fetch("/api/leads", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        firstName: "Quiz",
-        lastName: "Router",
-        email: "anonymous@quiz.local",
-        phone: "0000000000",
-        subject: "Consult router decision",
-        inquiryType: "quiz_router_audit",
-        source: "consult-router",
-        message: `goal=${goal} delivery=${d} -> path=${r.path} dest=${r.destination}`,
-      }),
-    }).catch(() => {
-      /* non-blocking */
-    });
+    // Track the quiz decision as a Google Analytics event — real, anonymous
+    // path analytics with no lead/CRM/email noise. Guarded so it no-ops if GA
+    // hasn't loaded (ad blockers, SSR, etc.).
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+      window.gtag("event", "quiz_router_decision", {
+        goal,
+        delivery: d,
+        path: r.path,
+        destination: r.destination,
+      });
+    }
   };
 
   const onProceed = () => {

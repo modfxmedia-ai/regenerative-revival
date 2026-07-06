@@ -121,6 +121,15 @@ export async function POST(req: NextRequest) {
       utmContent,
     } = body;
 
+    // Quiz-router audit pings are internal analytics, not real leads. They
+    // arrive with placeholder identity fields (anonymous@quiz.local, etc.), so
+    // we log them server-side but never email the team, never send a
+    // confirmation to the fake address, and never create a CRM contact.
+    if (inquiryType === "quiz_router_audit" || source === "consult-router") {
+      console.log("[QUIZ ROUTER AUDIT]", { subject, source, message });
+      return NextResponse.json({ success: true, audit: true });
+    }
+
     // Basic server-side validation
     if (!firstName?.trim() || !email?.trim() || !phone?.trim()) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });

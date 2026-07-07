@@ -53,7 +53,7 @@ export default function ProductPageContent({ product, primaryWizloUrl, faqs }: P
                 : "clinician-supervised peptide therapy"
             }.`,
             "A clinical evaluation is required — your provider will confirm candidacy during your intake.",
-            ...(product.directions ? [`Dosing: ${product.directions}`] : []),
+            "Your exact dose and protocol are set by your clinician based on your evaluation — not a one-size-fits-all script.",
           ],
     },
     {
@@ -116,7 +116,7 @@ export default function ProductPageContent({ product, primaryWizloUrl, faqs }: P
               {/* Fine print */}
               <div className="mt-8 space-y-3 text-[12.5px] text-[#7A7F95] leading-[1.6]">
                 <p>
-                  *Price shown applies to 6-Month plan paid upfront or with buy now, pay later programs. Actual price will depend on product and plan prescribed.
+                  *Prices shown reflect the plan you select above — monthly, or quarterly (billed once per 3-month supply). Your final price depends on the specific product, dose, and plan prescribed after your clinical evaluation.
                 </p>
                 <p>
                   **The FDA does not review or approve any compounded medications for safety or effectiveness.
@@ -163,8 +163,12 @@ function PlanSelector({ product, primaryWizloUrl }: { product: Product; primaryW
   const selectedDose = displayDoses[selectedDoseIdx] ?? displayDoses[0] ?? dose;
   const wizloUrl = selectedDose?.wizloUrl ?? primaryWizloUrl;
   const price = plan === "monthly" ? selectedDose?.priceMonthly : selectedDose?.priceQuarterly;
-  const monthlySavings = selectedDose?.priceMonthly && selectedDose?.priceQuarterly
-    ? Math.round((selectedDose.priceMonthly * 3 - selectedDose.priceQuarterly))
+  // Savings pairs the monthly dose with its matching quarterly dose by index, so the
+  // badge shows on every product — whether prices live on one entry or two.
+  const pairedMonthly = monthlyDoses[selectedDoseIdx] ?? monthlyDoses[0];
+  const pairedQuarterly = quarterlyDoses[selectedDoseIdx] ?? quarterlyDoses[0];
+  const monthlySavings = pairedMonthly?.priceMonthly && pairedQuarterly?.priceQuarterly
+    ? Math.round((pairedMonthly.priceMonthly * 3 - pairedQuarterly.priceQuarterly))
     : null;
 
   return (

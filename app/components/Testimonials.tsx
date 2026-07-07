@@ -1,32 +1,8 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
-import { Play, Pause, Quote, Star, Award } from "lucide-react";
-
-const BLOB_BASE = "https://65iosdxq0lyc5cm9.public.blob.vercel-storage.com";
-
-const videoTestimonials = [
-  {
-    name: "Joe Rogan",
-    title: "Podcast Host & Commentator",
-    src: `${BLOB_BASE}/testimonial_video/joe-rogan-resize.mp4`,
-    featured: false,
-  },
-  {
-    name: "Morgan Freeman",
-    title: "Actor & Philanthropist",
-    src: `${BLOB_BASE}/testimonial_video/Morgan-freeman-resize.mp4`,
-    featured: false,
-    poster: "/image.png",
-  },
-  {
-    name: "Tony Robbins",
-    title: "Peak Performance Coach",
-    src: `${BLOB_BASE}/testimonial_video/Tony-robbins-resize.mp4`,
-    featured: false,
-  },
-];
+import { useRef } from "react";
+import { Quote, Star } from "lucide-react";
 
 const writtenTestimonials = [
   { name: "Vicki R.", condition: "Osteoarthritis & Knee", quote: "The next morning I woke up and took a deep breath, swung my feet over the bed side and touched the floor. No pain. No hobbling. No tears. No fear. I welcome the journey to recovery and getting back to being able to do things I lost to the injury.", stars: 5, initials: "VR" },
@@ -75,96 +51,6 @@ function TestimonialCard({ t }: { t: (typeof writtenTestimonials)[0] }) {
   );
 }
 
-function VideoCard({
-  video,
-  index,
-  inView,
-}: {
-  video: (typeof videoTestimonials)[0] & { poster?: string };
-  index: number;
-  inView: boolean;
-}) {
-  const featured = video.featured;
-  const [playing, setPlaying] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const togglePlay = () => {
-    if (!videoRef.current) return;
-    if (playing) {
-      videoRef.current.pause();
-      setPlaying(false);
-    } else {
-      videoRef.current.play();
-      setPlaying(true);
-    }
-  };
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 40, scale: 0.96 }}
-      animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
-      transition={{ duration: 0.7, delay: 0.1 + index * 0.15, ease: [0.22, 1, 0.36, 1] }}
-      className={`group relative rounded-3xl overflow-hidden bg-white/[0.04] border shadow-[0_8px_40px_rgba(0,0,0,0.4)] hover:shadow-[0_24px_64px_-12px_rgba(103,98,175,0.4)] hover:-translate-y-1 transition-all duration-500 cursor-pointer ${
-        featured ? "border-[#6762AF]/40 ring-2 ring-[#6762AF]/20" : "border-white/10"
-      }`}
-      onClick={togglePlay}
-    >
-      {featured && (
-        <div className="absolute top-4 left-4 z-20">
-          <span className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 bg-[#6762AF] text-xs font-bold text-white shadow-lg uppercase tracking-wider">
-            <Award className="h-3 w-3" />
-            Featured
-          </span>
-        </div>
-      )}
-      <div className="relative aspect-[3/4] w-full overflow-hidden">
-        <video
-          ref={videoRef}
-          src={video.src}
-          className="w-full h-full object-cover"
-          preload="metadata"
-          playsInline
-          poster={(video as { poster?: string }).poster}
-          onLoadedMetadata={() => {
-            if (!(video as { poster?: string }).poster && videoRef.current) videoRef.current.currentTime = 5;
-          }}
-          onEnded={() => setPlaying(false)}
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-t from-[#021E3C] via-[#021E3C]/20 to-transparent pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#6762AF]/15 to-transparent pointer-events-none opacity-60" />
-
-        <div
-          className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
-            playing ? "opacity-0 group-hover:opacity-100" : "opacity-100"
-          }`}
-        >
-          <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-2xl shadow-[#6762AF]/40">
-            <div
-              className="absolute inset-0 rounded-full animate-ping bg-white/40"
-              style={{ animationDuration: playing ? "0s" : "1.5s" }}
-            />
-            {playing ? (
-              <Pause className="h-7 w-7 text-[#1A1F30] fill-[#1A1F30]" />
-            ) : (
-              <Play className="h-7 w-7 text-[#1A1F30] fill-[#1A1F30] translate-x-0.5" />
-            )}
-          </div>
-        </div>
-      </div>
-
-      <div className="absolute bottom-0 left-0 right-0 px-5 py-5 pointer-events-none">
-        <div className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 mb-2.5 bg-[#6762AF]/20 border border-[#6762AF]/30">
-          <div className="h-1.5 w-1.5 rounded-full bg-[#71A7F5]" />
-          <span className="text-xs font-semibold text-[#71A7F5] uppercase tracking-widest">Testimonial</span>
-        </div>
-        <p className="text-xl font-bold text-white">{video.name}</p>
-        {video.title && <p className="text-sm text-white/55 mt-0.5">{video.title}</p>}
-      </div>
-    </motion.div>
-  );
-}
-
 export default function Testimonials() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
@@ -187,7 +73,7 @@ export default function Testimonials() {
             Hear it from <span className="text-[#6762AF] font-semibold">real people</span>
           </h2>
           <p className="mt-7 max-w-2xl mx-auto text-base lg:text-lg text-white/55 leading-relaxed">
-            From world-renowned figures to everyday patients — the proof is in the results that speak for themselves.
+            From everyday patients reclaiming their lives — the proof is in the results that speak for themselves.
           </p>
         </motion.div>
       </div>
@@ -207,21 +93,6 @@ export default function Testimonials() {
           ))}
         </div>
       </motion.div>
-
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, scaleX: 0 }}
-          animate={inView ? { opacity: 1, scaleX: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.35 }}
-          className="lux-divider mb-20 origin-center"
-        />
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-          {videoTestimonials.map((video, i) => (
-            <VideoCard key={video.name} video={video} index={i} inView={inView} />
-          ))}
-        </div>
-      </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
     </section>

@@ -34,7 +34,7 @@ const faqs = [
   {
     question: "What conditions can exosome therapy address?",
     answer:
-      "Exosome therapy is used alongside stem cell protocols for joint degeneration, soft-tissue injuries, chronic inflammation, and recovery optimization. It is not a standalone treatment for systemic diseases.",
+      "Exosome therapy is used alongside stem cell protocols for joint degeneration, soft-tissue injuries, chronic inflammation, and recovery optimization. It is not a standalone therapy for systemic diseases.",
   },
   {
     question: "How are exosomes administered?",
@@ -67,7 +67,7 @@ const mechanisms = [
   {
     icon: TrendingUp,
     title: "Amplifies stem cell outcomes",
-    desc: "When used alongside Wharton's Jelly MSC therapy, exosomes extend the regenerative signal — continuing to instruct tissue repair long after the initial treatment.",
+    desc: "When used alongside Wharton's Jelly MSC therapy, exosomes extend the regenerative signal — continuing to instruct tissue repair long after the initial therapy.",
   },
 ];
 
@@ -78,7 +78,7 @@ export default function WhyExosomesPage() {
         data={medicalWebPageSchema({
           title: "Exosome Therapy — The Signaling Layer of Regenerative Medicine",
           description:
-            "Exosomes are nano-sized vesicles that carry regenerative signals. Learn how exosome therapy amplifies stem cell treatment.",
+            "Exosomes are nano-sized vesicles that carry regenerative signals. Learn how exosome therapy amplifies stem cell therapy.",
           url: "/why-exosomes",
           medicalConditions: ["Tissue Damage", "Chronic Inflammation", "Joint Degeneration", "Sports Injuries"],
         })}
@@ -146,7 +146,7 @@ export default function WhyExosomesPage() {
                 href="/whartons-jelly"
                 className="inline-flex h-13 py-3.5 items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 text-[14px] font-medium text-white/80 hover:bg-white/10 transition-all"
               >
-                About Wharton&apos;s Jelly →
+                Where They Come From: Wharton&apos;s Jelly →
               </Link>
             </div>
           </div>

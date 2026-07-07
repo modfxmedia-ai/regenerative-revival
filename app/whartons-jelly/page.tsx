@@ -58,7 +58,7 @@ const differentiators = [
   {
     icon: Microscope,
     title: "Highest MSC concentration",
-    desc: "Wharton's Jelly contains 10–100× more MSCs per gram than bone marrow aspirate. More cells means more signaling, more anti-inflammatory activity, and more regenerative potential per treatment.",
+    desc: "Wharton's Jelly contains 10–100× more MSCs per gram than bone marrow aspirate. More cells means more signaling, more anti-inflammatory activity, and more regenerative potential per therapy.",
   },
   {
     icon: Zap,
@@ -159,7 +159,7 @@ export default function WhartonsJellyPage() {
                 href="/stem-cell-therapy"
                 className="inline-flex h-13 py-3.5 items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 text-[14px] font-medium text-white/80 hover:bg-white/10 transition-all"
               >
-                See Stem Cell Therapy →
+                The Therapy That Uses Them: Stem Cell Therapy →
               </Link>
             </div>
           </div>

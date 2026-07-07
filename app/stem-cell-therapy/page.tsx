@@ -97,8 +97,8 @@ export default function StemCellTherapyPage() {
           description: "The 4-step process for receiving in-home concierge stem cell therapy through Regenerative Revival.",
           steps: [
             { name: "Consultation & Assessment", text: "Book a free consultation. Our licensed practitioners assess your condition and determine if stem cell therapy is right for you." },
-            { name: "Treatment Planning", text: "A personalized treatment plan is created targeting the root cause of your condition." },
-            { name: "In-Home Administration", text: "A licensed nurse practitioner delivers the treatment in your home. No clinic visit required." },
+            { name: "Therapy Planning", text: "A personalized therapy plan is created targeting the root cause of your condition." },
+            { name: "In-Home Administration", text: "A licensed nurse practitioner delivers the therapy in your home. No clinic visit required." },
             { name: "Follow-Up & Support", text: "Ongoing support and follow-up care to ensure optimal results." },
           ],
         })}

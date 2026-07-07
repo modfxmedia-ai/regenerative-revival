@@ -12,7 +12,6 @@ import {
   Award,
   Lock,
   Zap,
-  Star,
   CheckCircle2,
   ArrowRight,
 } from "lucide-react";
@@ -23,7 +22,7 @@ export default function ContactForm() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className="relative py-24 lg:py-28 bg-white overflow-hidden">
+    <section id="contact-form" ref={ref} className="relative py-24 lg:py-28 bg-white overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#F1ECF8]/50 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#EAEFF7]/60 blur-[100px] pointer-events-none" />
 
@@ -344,13 +343,6 @@ function QuickResponse() {
       <p className="relative text-[13px] text-white/80 leading-relaxed">
         We typically respond within 24 hours. For urgent inquiries, call us directly.
       </p>
-      <div className="relative mt-4 flex items-center gap-1">
-        {[...Array(5)].map((_, i) => (
-          <Star key={i} className="h-3.5 w-3.5 fill-[#71A7F5] text-[#71A7F5]" />
-        ))}
-        <span className="ml-2 text-[13px] font-bold text-white">4.9</span>
-        <span className="text-[11px] text-white/60 ml-1">(500+ reviews)</span>
-      </div>
     </div>
   );
 }

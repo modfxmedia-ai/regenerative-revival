@@ -63,7 +63,7 @@ export default function WhyChooseUs() {
               Why choose <span className="text-[#6762AF] font-semibold">Regenerative Revival</span>
             </h2>
             <p className="mt-7 text-base lg:text-lg text-[#4A4F66] leading-relaxed">
-              Expertise and innovation in regenerative medicine. We&apos;re committed to delivering cutting-edge treatments in a patient-centered environment — under one physician-led medical team.
+              Expertise and innovation in regenerative medicine. We&apos;re committed to delivering cutting-edge therapies in a patient-centered environment — under one physician-led medical team.
             </p>
 
             {/* Image with frame */}

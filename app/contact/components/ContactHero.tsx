@@ -70,17 +70,18 @@ export default function ContactHero() {
           className="mt-9 flex flex-wrap items-center justify-center gap-3"
         >
           {[
-            { icon: CalendarCheck, label: "Schedule Consultation" },
-            { icon: HelpCircle, label: "Ask a Question" },
-            { icon: MessageCircle, label: "Get in Touch" },
+            { icon: CalendarCheck, label: "Schedule Consultation", href: "/consult-router" },
+            { icon: HelpCircle, label: "Ask a Question", href: "#contact-form" },
+            { icon: MessageCircle, label: "Get in Touch", href: "#contact-form" },
           ].map((item) => (
-            <div
+            <a
               key={item.label}
-              className="flex items-center gap-2.5 rounded-full bg-white/[0.07] backdrop-blur-xl border border-white/[0.1] px-5 py-2.5"
+              href={item.href}
+              className="flex items-center gap-2.5 rounded-full bg-white/[0.07] backdrop-blur-xl border border-white/[0.1] px-5 py-2.5 transition-all hover:bg-white/[0.14] hover:border-white/25"
             >
               <item.icon className="h-4 w-4 text-[#71A7F5]" />
               <span className="text-sm font-medium text-white/75">{item.label}</span>
-            </div>
+            </a>
           ))}
         </motion.div>
       </div>

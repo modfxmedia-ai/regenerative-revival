@@ -204,7 +204,7 @@ export default function HormonesPeptidesPage() {
               {[
                 { value: "100+", label: "Licensed clinicians on our medical team" },
                 { value: "14", label: "Solution-based peptide programs" },
-                { value: "50", label: "States we serve via telehealth" },
+                { value: "Most", label: "U.S. states served via telehealth" },
                 { value: "48 hrs", label: "Average time to first clinician review" },
               ].map((s) => (
                 <div key={s.label} className="rounded-2xl bg-[#F4EFFA] p-6 border border-[#6762AF]/10">

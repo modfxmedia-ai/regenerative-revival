@@ -1,35 +1,11 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
-import { Play, Pause, Quote, Star, ArrowRight, MessageSquare } from "lucide-react";
+import { useRef } from "react";
+import { Quote, Star, ArrowRight, MessageSquare } from "lucide-react";
 import Breadcrumbs from "../components/Breadcrumbs";
 import QuizCTA from "../components/QuizCTA";
 
-
-const BLOB_BASE = "https://65iosdxq0lyc5cm9.public.blob.vercel-storage.com";
-
-const videoTestimonials = [
-  {
-    name: "Joe Rogan",
-    title: "Podcast Host & Commentator",
-    src: `${BLOB_BASE}/testimonial_video/joe-rogan-resize.mp4`,
-    featured: false,
-  },
-  {
-    name: "Morgan Freeman",
-    title: "Actor & Philanthropist",
-    src: `${BLOB_BASE}/testimonial_video/Morgan-freeman-resize.mp4`,
-    featured: false,
-    poster: "/image.png",
-  },
-  {
-    name: "Tony Robbins",
-    title: "Peak Performance Coach",
-    src: `${BLOB_BASE}/testimonial_video/Tony-robbins-resize.mp4`,
-    featured: false,
-  },
-];
 
 const writtenTestimonials = [
   {
@@ -130,103 +106,8 @@ function TestimonialCard({ t }: { t: (typeof writtenTestimonials)[0] }) {
   );
 }
 
-function VideoCard({
-  video,
-  index,
-  inView,
-  featured = false,
-}: {
-  video: (typeof videoTestimonials)[0] & { poster?: string };
-  index: number;
-  inView: boolean;
-  featured?: boolean;
-}) {
-  const [playing, setPlaying] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const togglePlay = () => {
-    if (!videoRef.current) return;
-    if (playing) {
-      videoRef.current.pause();
-      setPlaying(false);
-    } else {
-      videoRef.current.play();
-      setPlaying(true);
-    }
-  };
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 40, scale: 0.96 }}
-      animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
-      transition={{ duration: 0.7, delay: 0.1 + index * 0.12, ease: [0.22, 1, 0.36, 1] }}
-      className={`group relative rounded-3xl overflow-hidden bg-white/[0.04] border border-white/[0.08] shadow-[0_8px_40px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(107,63,160,0.25)] hover:-translate-y-1 transition-all duration-500 cursor-pointer ${
-        featured ? "ring-2 ring-primary/40" : ""
-      }`}
-      onClick={togglePlay}
-    >
-      {featured && (
-        <div className="absolute top-4 left-4 z-20">
-          <span className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 bg-primary text-xs font-bold text-white shadow-lg shadow-primary/30 uppercase tracking-wider">
-            <Star className="h-3 w-3 fill-white" />
-            Featured
-          </span>
-        </div>
-      )}
-
-      <div className="relative aspect-[3/4] w-full overflow-hidden">
-        <video
-          ref={videoRef}
-          src={video.src}
-          className="w-full h-full object-cover"
-          preload="metadata"
-          playsInline
-          poster={video.poster}
-          onLoadedMetadata={() => {
-            if (!video.poster && videoRef.current) videoRef.current.currentTime = 5;
-          }}
-          onEnded={() => setPlaying(false)}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/15 to-transparent pointer-events-none opacity-60" />
-
-        <div
-          className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
-            playing ? "opacity-0 group-hover:opacity-100" : "opacity-100"
-          }`}
-        >
-          <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-primary shadow-2xl shadow-primary/40">
-            <div
-              className="absolute inset-0 rounded-full animate-ping bg-primary/40"
-              style={{ animationDuration: playing ? "0s" : "1.5s" }}
-            />
-            {playing ? (
-              <Pause className="h-7 w-7 text-white fill-white" />
-            ) : (
-              <Play className="h-7 w-7 text-white fill-white translate-x-0.5" />
-            )}
-          </div>
-        </div>
-      </div>
-
-      <div className="absolute bottom-0 left-0 right-0 px-5 py-5 pointer-events-none">
-        <div className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 mb-2 bg-primary/20 border border-primary/30">
-          <div className="h-1.5 w-1.5 rounded-full bg-primary-light" />
-          <span className="text-xs font-semibold text-primary-light uppercase tracking-widest">
-            Testimonial
-          </span>
-        </div>
-        <p className="text-lg font-bold text-white">{video.name}</p>
-        {video.title && <p className="text-sm text-white/55 mt-0.5">{video.title}</p>}
-      </div>
-    </motion.div>
-  );
-}
-
 export default function TestimonialsPage() {
-  const videoRef = useRef(null);
   const writtenRef = useRef(null);
-  const videoInView = useInView(videoRef, { once: true, margin: "-80px" });
   const writtenInView = useInView(writtenRef, { once: true, margin: "-80px" });
 
   return (
@@ -278,7 +159,7 @@ export default function TestimonialsPage() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-6 text-xl text-white/50 leading-relaxed max-w-2xl mx-auto"
           >
-            From world-renowned names to everyday people reclaiming their lives — the results
+            From everyday people reclaiming their lives — the results
             speak for themselves.
           </motion.p>
         </div>
@@ -326,41 +207,6 @@ export default function TestimonialsPage() {
             ))}
           </div>
         </motion.div>
-      </section>
-
-      {/* Video testimonials */}
-      <section
-        ref={videoRef}
-        className="relative py-24 bg-black overflow-hidden"
-      >
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-primary/[0.04] rounded-full blur-[120px] pointer-events-none" />
-
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={videoInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-primary-light bg-primary/10 border border-primary/15 rounded-full px-4 py-1.5">
-              Video Stories
-            </span>
-            <h2 className="mt-4 text-3xl sm:text-4xl font-bold text-white">Watch Their Journey</h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-            {videoTestimonials.map((video, i) => (
-              <VideoCard
-                key={video.name}
-                video={video}
-                index={i}
-                inView={videoInView}
-                featured={video.featured}
-              />
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* CTA */}

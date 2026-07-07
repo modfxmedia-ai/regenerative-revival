@@ -16,29 +16,27 @@ import { getProductsByHub } from "../lib/products";
 
 /**
  * Primary keyword: "nad therapy" (4,400 vol, KD=24)
- * Secondary: "nad infusion therapy" (18,100 vol, KD=14)
- * Secondary: "nad iv therapy" (18,100 vol, KD=14)
- * Secondary: "intravenous nad therapy" (18,100 vol, KD=3)
- * Secondary: "nad iv therapy near me" (2,400 vol, KD=0)
+ * Secondary: "nad injection therapy", "sublingual nad", "nad supplement"
+ * NOTE: IV / infusion keywords intentionally not targeted — IV is not currently offered.
  */
 
 export const metadata = generatePageMetadata({
-  title: "NAD+ Therapy — IV, Injection & Sublingual",
+  title: "NAD+ Therapy — Injection & Sublingual",
   description:
-    "Clinician-supervised NAD+ therapy for cellular energy, mitochondrial function, and longevity. IV, injection, and sublingual options. Telehealth in all 50 states.",
+    "Clinician-supervised NAD+ therapy for cellular energy, mitochondrial function, and longevity. Injection and sublingual options via telehealth.",
   path: "/nad",
 });
 
 const faqs = [
   {
-    question: "What is NAD+ infusion therapy?",
+    question: "What is NAD+ therapy?",
     answer:
-      "NAD+ infusion therapy delivers nicotinamide adenine dinucleotide directly into the bloodstream via IV, bypassing the digestive system for maximum absorption. It supports mitochondrial energy production, DNA repair, and cellular longevity.",
+      "NAD+ therapy delivers nicotinamide adenine dinucleotide (NAD+) to support mitochondrial energy production, DNA repair, and cellular longevity. We offer clinician-supervised injection and sublingual protocols tailored to your labs and goals.",
   },
   {
-    question: "What is the difference between NAD IV therapy, NAD injection, and sublingual NAD+?",
+    question: "What is the difference between NAD+ injection and sublingual NAD+?",
     answer:
-      "IV therapy delivers NAD+ directly into the bloodstream for the highest bioavailability. Injection (subcutaneous or intramuscular) is a convenient at-home option with good absorption. Sublingual NAD+ is absorbed under the tongue and is the most convenient delivery method. Our clinicians recommend the right form based on your goals and labs.",
+      "Injection (subcutaneous or intramuscular) delivers NAD+ with strong absorption and is a convenient at-home option. Sublingual NAD+ is absorbed under the tongue and is the most convenient delivery method. Our clinicians recommend the right form based on your goals and labs.",
   },
   {
     question: "How long does NAD+ therapy take to work?",
@@ -48,12 +46,12 @@ const faqs = [
   {
     question: "Is NAD+ therapy safe?",
     answer:
-      "NAD+ therapy is generally well-tolerated. IV administration can cause mild flushing or nausea if infused too quickly. Our clinicians supervise all protocols and adjust dosing based on your response.",
+      "NAD+ therapy is generally well-tolerated. Some patients notice mild, temporary flushing or warmth. Our clinicians supervise all protocols and adjust dosing based on your response.",
   },
   {
     question: "Can I get NAD+ therapy at home?",
     answer:
-      "Yes. Our concierge model delivers NAD+ therapy in your home via a licensed nurse practitioner. Telehealth options (injection and sublingual) are available in all 50 states without a clinic visit.",
+      "Yes. Our telehealth options (injection and sublingual) let you start NAD+ therapy from home, supervised by our clinical team — no clinic visit required.",
   },
 ];
 
@@ -70,7 +68,7 @@ export default function NadHubPage() {
     <>
       <JsonLd
         data={medicalWebPageSchema({
-          title: "NAD+ Therapy — IV, Injection & Sublingual",
+          title: "NAD+ Therapy — Injection & Sublingual",
           description: "Clinician-supervised NAD+ therapy for cellular energy, mitochondrial function, and longevity.",
           url: "/nad",
           medicalConditions: ["Fatigue", "Cognitive Decline", "Metabolic Dysfunction", "Aging"],
@@ -79,7 +77,7 @@ export default function NadHubPage() {
       <JsonLd
         data={serviceSchema({
           name: "NAD+ Therapy",
-          description: "Clinician-supervised NAD+ infusion therapy, injection, and sublingual programs for cellular energy and longevity.",
+          description: "Clinician-supervised NAD+ injection and sublingual programs for cellular energy and longevity.",
           url: "/nad",
           serviceType: "NAD+ Therapy",
           areaServed: "United States",
@@ -122,13 +120,13 @@ export default function NadHubPage() {
               Longevity · Cellular Energy · All 50 States
             </p>
             <h1 className="font-[family-name:var(--font-poppins)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4rem] text-white leading-[1.05] tracking-[-0.02em]">
-              NAD+ therapy — IV, injection &amp;{" "}
+              NAD+ therapy — injection &amp;{" "}
               <span className="text-[#6762AF] font-semibold">
                 sublingual
               </span>
             </h1>
             <p className="mt-7 text-base lg:text-lg text-white/65 leading-relaxed max-w-2xl">
-              NAD+ is a coenzyme central to mitochondrial energy production and DNA repair. Levels decline with age. Our clinicians build personalized NAD+ protocols — IV infusion, injection, or sublingual — based on your labs and goals.
+              NAD+ is a coenzyme central to mitochondrial energy production and DNA repair. Levels decline with age. Our clinicians build personalized NAD+ protocols — injection or sublingual — based on your labs and goals.
             </p>
 
             <div className="mt-9 flex flex-col sm:flex-row gap-4">
@@ -242,11 +240,10 @@ export default function NadHubPage() {
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Delivery Options</span>
           <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em] mb-10">
-            NAD IV therapy vs injection vs sublingual — which is right for you?
+            NAD+ injection vs sublingual — which is right for you?
           </h2>
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-2 gap-5">
             {[
-              { method: "IV Infusion", best: "Highest bioavailability", note: "In-home concierge delivery by licensed NP. Best for acute energy restoration.", tag: "Concierge" },
               { method: "Injection", best: "Convenient at-home", note: "Subcutaneous or IM injection. Prescribed via telehealth, shipped to your door.", tag: "Telehealth" },
               { method: "Sublingual", best: "Most convenient", note: "Absorbed under the tongue. No needles. Ideal for daily maintenance protocols.", tag: "Telehealth" },
             ].map((d) => (

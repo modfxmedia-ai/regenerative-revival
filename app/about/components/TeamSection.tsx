@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Stethoscope, HeartPulse, ShieldPlus, Users } from "lucide-react";
 import Image from "next/image";
 
@@ -18,12 +18,12 @@ const doctors: TeamMember[] = [
 ];
 
 const advocates: TeamMember[] = [
-  { name: "Noah Nelson", role: "Revival Advocate", photo: "/about/imgi_6_staff1a.jpg", bio: "Noah Nelson brings more than 20 years of leadership experience in healthcare, spanning pharmaceuticals, biotechnology, and wellness. With a unique blend of clinical insight and strategic expertise, Noah guides individuals toward innovative protocols designed to restore strength, improve quality of life, and build lasting vitality." },
-  { name: "Dasa'n Fant", role: "Revival Advocate", photo: "/about/imgi_7_Screen-Shot-2026-01-27-at-1.24.46-PM.png" },
-  { name: "David Chavez", role: "Revival Advocate", photo: "/about/imgi_8_staff2a.jpg", bio: "David Chavez is a Revival Advocate whose path into regenerative wellness began with his own experiences as an athlete. His personal recovery journey sparked a passion for alternative therapies that restore strength and vitality." },
-  { name: "Reggie Lynch", role: "Revival Advocate", photo: "/about/imgi_9_Screen-Shot-2026-01-27-at-1.25.19-PM.png", bio: "Reggie Lynch's love for regenerative medicine was sparked by his experiences playing basketball at the professional level — including an eight-year professional career. His firsthand experience drives his passion for helping others overcome pain and improve longevity." },
-  { name: "Karl Canniff", role: "Senior Revival Advocate", photo: "/about/imgi_10_staff3a.jpg", bio: "As Senior Revival Advocate, Karl Canniff brings more than two decades of expertise in health, wellness, and regenerative medicine. With a foundation in stem cell sciences, he has guided over 2,000 pain management cases." },
-  { name: "Ben Nelson", role: "Revival Advocate", photo: "/about/imgi_11_staff4b.jpg", bio: "Ben Nelson's journey into regenerative medicine began on the baseball field. After receiving a stem cell injection, he returned to the field in just five months. He earned a degree in Kinesiology, dedicating his career to human performance and regenerative medicine." },
+  { name: "Noah Nelson", role: "Wellness Advocate", photo: "/about/imgi_6_staff1a.jpg", bio: "Noah Nelson brings more than 20 years of leadership experience in healthcare, spanning pharmaceuticals, biotechnology, and wellness. With a unique blend of clinical insight and strategic expertise, Noah guides individuals toward innovative protocols designed to restore strength, improve quality of life, and build lasting vitality." },
+  { name: "Dasa'n Fant", role: "Wellness Advocate", photo: "/about/imgi_7_Screen-Shot-2026-01-27-at-1.24.46-PM.png" },
+  { name: "David Chavez", role: "Wellness Advocate", photo: "/about/imgi_8_staff2a.jpg", bio: "David Chavez is a Wellness Advocate whose path into regenerative wellness began with his own experiences as an athlete. His personal recovery journey sparked a passion for alternative therapies that restore strength and vitality." },
+  { name: "Reggie Lynch", role: "Wellness Advocate", photo: "/about/imgi_9_Screen-Shot-2026-01-27-at-1.25.19-PM.png", bio: "Reggie Lynch's love for regenerative medicine was sparked by his experiences playing basketball at the professional level — including an eight-year professional career. His firsthand experience drives his passion for helping others overcome pain and improve longevity." },
+  { name: "Karl Canniff", role: "Senior Wellness Advocate", photo: "/about/imgi_10_staff3a.jpg", bio: "As Senior Wellness Advocate, Karl Canniff brings more than two decades of expertise in health, wellness, and regenerative medicine. With a foundation in stem cell sciences, he has guided over 2,000 pain management cases." },
+  { name: "Ben Nelson", role: "Wellness Advocate", photo: "/about/imgi_11_staff4b.jpg", bio: "Ben Nelson's journey into regenerative medicine began on the baseball field. After receiving a stem cell injection, he returned to the field in just five months. He earned a degree in Kinesiology, dedicating his career to human performance and regenerative medicine." },
 ];
 
 const nursePractitioners: TeamMember[] = [
@@ -54,12 +54,23 @@ const staff: TeamMember[] = [
 
 const sections = [
   { id: "doctors", label: "Doctors", subtitle: "Our physicians in regenerative therapy.", icon: Stethoscope, members: doctors, banner: "/HomePage-_Why Choose Regenerative Revival__ section.jpeg" },
-  { id: "advocates", label: "Revival Advocates", subtitle: "Our specialized leaders in regenerative therapy.", icon: HeartPulse, members: advocates, banner: "/about/imgi_72_HERO-PRESENTER.jpg" },
+  { id: "advocates", label: "Wellness Advocates", subtitle: "Our specialized leaders in regenerative therapy.", icon: HeartPulse, members: advocates, banner: "/about/imgi_72_HERO-PRESENTER.jpg" },
   { id: "nps", label: "Nurse Practitioners", subtitle: "Our regenerative therapy nurse practitioners.", icon: ShieldPlus, members: nursePractitioners, banner: "/2149611219.jpg" },
   { id: "staff", label: "Staff", subtitle: "Our staff in regenerative therapy.", icon: Users, members: staff, banner: "/about/imgi_71_HERO-STEM-CELL.jpg" },
 ];
 
 function MemberCard({ member, index }: { member: TeamMember; index: number }) {
+  const [expanded, setExpanded] = useState(false);
+  const [isClamped, setIsClamped] = useState(false);
+  const bioRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    const el = bioRef.current;
+    if (el) {
+      setIsClamped(el.scrollHeight > el.clientHeight + 2);
+    }
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -87,7 +98,24 @@ function MemberCard({ member, index }: { member: TeamMember; index: number }) {
           </div>
         </div>
         {member.bio && (
-          <p className="text-[12.5px] text-[#4A4F66] leading-[1.65] line-clamp-4">{member.bio}</p>
+          <>
+            <p
+              ref={bioRef}
+              className={`text-[12.5px] text-[#4A4F66] leading-[1.65] ${expanded ? "" : "line-clamp-4"}`}
+            >
+              {member.bio}
+            </p>
+            {(isClamped || expanded) && (
+              <button
+                type="button"
+                onClick={() => setExpanded((v) => !v)}
+                className="mt-2 text-[12px] font-semibold text-[#6762AF] hover:text-[#583563] transition-colors"
+                aria-expanded={expanded}
+              >
+                {expanded ? "Read less" : "Read more"}
+              </button>
+            )}
+          </>
         )}
       </div>
     </motion.div>

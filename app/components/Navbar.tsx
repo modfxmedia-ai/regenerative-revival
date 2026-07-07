@@ -9,87 +9,10 @@ import {
   ArrowUpRight,
   Sparkles,
   Users,
-  Dna,
-  Droplets,
-  Orbit,
-  Stethoscope,
-  Info,
-  User,
-  Star,
   type LucideIcon,
 } from "lucide-react";
 import Image from "next/image";
-
-type DropdownItem = {
-  label: string;
-  href: string;
-  desc: string;
-  icon: LucideIcon;
-};
-
-type Featured = {
-  title: string;
-  desc: string;
-  href: string;
-  cta: string;
-  frame: string;
-};
-
-type DropMenu = {
-  align: "left" | "right";
-  items: DropdownItem[];
-  featured: Featured;
-};
-
-const regenerativeDropdown: DropMenu = {
-  align: "left",
-  items: [
-    { label: "Stem Cell Therapy", href: "/stem-cell-therapy", desc: "In-home Wharton's Jelly regenerative care", icon: Dna },
-    { label: "Wharton's Jelly", href: "/whartons-jelly", desc: "Source, science, and how it's delivered", icon: Droplets },
-    { label: "Why Exosomes", href: "/why-exosomes", desc: "The signaling layer that drives repair", icon: Orbit },
-    { label: "Concierge Care Model", href: "/concierge-care-model", desc: "NP-led, physician-overseen, in your home", icon: Stethoscope },
-  ],
-  featured: {
-    title: "Not sure which therapy fits?",
-    desc: "Take the 2-minute quiz and we'll route you to the right protocol and clinician.",
-    href: "/consult-router",
-    cta: "Take The Quiz",
-    frame: "from-[#6762AF] via-[#583563] to-[#345691]",
-  },
-};
-
-const aboutDropdown: DropMenu = {
-  align: "right",
-  items: [
-    { label: "About Us", href: "/about", desc: "Our mission, team & story", icon: Info },
-    { label: "Founder — Seth Berge", href: "/about/founder", desc: "Why Regenerative Revival exists", icon: User },
-    { label: "Why We're Different", href: "/about/why-were-different", desc: "What sets Regenerative Revival apart", icon: Sparkles },
-    { label: "Testimonials", href: "/testimonials", desc: "Real results from real patients", icon: Star },
-  ],
-  featured: {
-    title: "One medical team. One plan.",
-    desc: "Physician-led, NP-delivered care coordinated under Arora Health Group.",
-    href: "/concierge-care-model",
-    cta: "How It Works",
-    frame: "from-[#345691] via-[#4F4A8E] to-[#583563]",
-  },
-};
-
-type NavLink = {
-  label: string;
-  href: string;
-  dropdown?: DropMenu;
-};
-
-const navLinks: NavLink[] = [
-  { label: "Regenerative", href: "/stem-cell-therapy", dropdown: regenerativeDropdown },
-  { label: "Hormones & Peptides", href: "/hormones-peptides" },
-  { label: "NAD+", href: "/nad" },
-  { label: "For Providers", href: "/for-providers" },
-  { label: "About", href: "/about", dropdown: aboutDropdown },
-  { label: "News", href: "/news" },
-  { label: "Contact", href: "/contact" },
-];
+import { navLinks, type DropMenu } from "../lib/nav-menus";
 
 /* ── Premium mega-dropdown panel ─────────────────────────────── */
 function MegaDropdown({

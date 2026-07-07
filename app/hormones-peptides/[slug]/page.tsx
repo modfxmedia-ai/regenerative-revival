@@ -139,7 +139,7 @@ export default async function ProductPage({
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", url: "https://www.regenerativerevival.com" },
-          { name: "Hormones & Peptides", url: "https://www.regenerativerevival.com/hormones-peptides" },
+          { name: "Peptides", url: "https://www.regenerativerevival.com/peptides" },
           { name: product.name, url: `https://www.regenerativerevival.com/hormones-peptides/${product.slug}` },
         ])}
       />
@@ -147,7 +147,7 @@ export default async function ProductPage({
 
       <Breadcrumbs
         items={[
-          { label: "Hormones & Peptides", href: "/hormones-peptides" },
+          { label: "Peptides", href: "/peptides" },
           { label: product.name, href: `/hormones-peptides/${product.slug}` },
         ]}
       />

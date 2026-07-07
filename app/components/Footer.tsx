@@ -4,7 +4,8 @@ import { Facebook, Instagram } from "lucide-react";
 
 const services = [
   { label: "Regenerative Therapy", href: "/stem-cell-therapy" },
-  { label: "Hormones & Peptides", href: "/hormones-peptides" },
+  { label: "Hormones", href: "/hormones" },
+  { label: "Peptides", href: "/peptides" },
   { label: "NAD+ & Supplements", href: "/nad" },
 ];
 

@@ -22,9 +22,9 @@ const cards = [
   },
   {
     title: "Hormones and peptides, prescribed online.",
-    body: "HRT and TRT. Clinician-led peptide protocols. Prescribed through telehealth, dispensed by licensed compounding pharmacies, shipped to your door.",
+    body: "TRT and HRT for hormone optimization. Clinician-led peptide protocols by goal. Prescribed through telehealth, dispensed by licensed compounding pharmacies, shipped to your door.",
     image: "/nads.png",
-    href: "/hormones-peptides",
+    href: "/peptides",
     imageOffset: 30,
   },
   {
@@ -42,7 +42,7 @@ export default function Treatments() {
 
   return (
     <section
-      id="treatments"
+      id="therapies"
       className="relative bg-white overflow-hidden py-16 lg:py-20"
     >
       <div ref={ref} className="mx-auto max-w-[1400px] px-6 lg:px-10 flex flex-col items-center gap-10">

@@ -37,7 +37,8 @@ const regenerativePages: { label: string; href: string }[] = [
 ];
 
 const telehealthPages: { label: string; href: string }[] = [
-  { label: "Hormones & Peptides", href: "/hormones-peptides" },
+  { label: "Hormones", href: "/hormones" },
+  { label: "Peptides", href: "/peptides" },
   { label: "NAD+ & Supplements", href: "/nad" },
 ];
 

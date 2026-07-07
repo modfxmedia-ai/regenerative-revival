@@ -104,7 +104,7 @@ export const treatments: Treatment[] = [
     slug: "peptide-therapy",
     shortName: "Peptides",
     description: "Physician-supervised peptide therapy — BPC-157, GHK-Cu, PT-141, MK-677 and more — prescribed via telehealth and shipped from a compounding pharmacy.",
-    pageLink: "/hormones-peptides",
+    pageLink: "/peptides",
     medicalConditions: ["Recovery", "Inflammation", "Sleep", "Sexual Health", "Longevity", "Muscle & Performance"],
     keywords: ["peptide therapy", "peptide treatment", "BPC-157", "GHK-Cu", "physician-supervised peptides"],
   },

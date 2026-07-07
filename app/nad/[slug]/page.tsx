@@ -46,7 +46,7 @@ const nadProductFaqs: Record<string, { question: string; answer: string }[]> = {
     {
       question: "How is NAD+ administered?",
       answer:
-        "NAD+ can be delivered via IV infusion (highest bioavailability, concierge in-home), subcutaneous injection (convenient at-home), or sublingual (no needles, daily maintenance). Your clinician will recommend the best delivery method based on your goals, lifestyle, and labs.",
+        "NAD+ can be delivered via subcutaneous injection (convenient at-home) or sublingual (no needles, daily maintenance). Your clinician will recommend the best delivery method based on your goals, lifestyle, and labs. IV infusion is not currently offered.",
     },
     {
       question: "How long does it take for NAD+ to work?",

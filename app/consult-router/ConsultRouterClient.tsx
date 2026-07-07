@@ -47,9 +47,9 @@ function routeAnswer(goal: Goal, delivery: Delivery): RouteResult {
   const telehealthDest: Record<Goal, string> = {
     regen: "/contact?path=regen",
     weight: "/hormones-peptides/sublingual-semaglutide",
-    hormones: "/hormones-peptides",
+    hormones: "/hormones",
     longevity: "/nad",
-    unsure: "/hormones-peptides",
+    unsure: "/peptides",
   };
 
   return {

@@ -51,20 +51,32 @@ const SERVICES = [
     frame: "from-[#583563] to-[#3F2549]",
   },
   {
-    id: "hormones-peptides",
+    id: "hormones",
     number: "04",
-    label: "Hormones & Peptides",
+    label: "Hormone Optimization",
     description:
-      "Clinician-prescribed hormone optimization and peptide protocols tailored to your unique biology — online, shipped to your door.",
-    href: "/hormones-peptides",
+      "TRT, HRT, and bioidentical hormone therapy tailored to your labs — prescribed online, shipped to your door.",
+    href: "/hormones",
     image: "/2149611219.jpg",
     objectPosition: "center 30%",
     icon: FlaskConical,
     frame: "from-[#345691] to-[#021E3C]",
   },
   {
-    id: "nad",
+    id: "peptides",
     number: "05",
+    label: "Peptide Therapy",
+    description:
+      "Solution-based peptide programs — recovery, weight, sleep, longevity — prescribed by a licensed clinician.",
+    href: "/peptides",
+    image: "/AdobeStock_1862763747.jpeg",
+    objectPosition: "center 25%",
+    icon: Orbit,
+    frame: "from-[#583563] to-[#3F2549]",
+  },
+  {
+    id: "nad",
+    number: "06",
     label: "NAD+ Therapy",
     description:
       "Cellular energy restoration and longevity protocols powered by NAD+. Feel younger, think sharper, perform better.",

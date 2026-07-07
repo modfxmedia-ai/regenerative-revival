@@ -44,7 +44,7 @@ const pillars = [
     accent: "#8985C5",
   },
   {
-    kicker: "Hormone & Peptide Therapy",
+    kicker: "Peptide Therapy",
     title: "Dial in the energy, recovery, and strength you've been missing",
     highlight: "energy",
     body: "Bioidentical hormone therapy: BHRT for women, TRT for men, and clinician-led peptide protocols. Prescribed through telehealth, built around your labs, delivered to your door.",
@@ -57,7 +57,7 @@ const pillars = [
       "Weight management and GLP-1 support",
     ],
     cta: "Get Started",
-    href: "/hormones-peptides",
+    href: "/peptides",
     image: "/photos/e0c12adf6bc19abb1aa0bcd6e622d43b89389a59.png",
     frame: "from-[#71A7F5] to-[#345691]",
     glow: "rgba(113,167,245,0.22)",

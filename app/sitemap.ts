@@ -27,7 +27,9 @@ const STATIC_PAGE_DATES: Record<string, string> = {
   "/services": "2026-05-22",
 
   // Telehealth hub
-  "/hormones-peptides": "2026-05-22",
+  "/hormones": "2026-07-07",
+  "/peptides": "2026-07-07",
+  "/hormones-peptides": "2026-07-07",
   "/nad": "2026-05-22",
 
   // Programmatic hubs

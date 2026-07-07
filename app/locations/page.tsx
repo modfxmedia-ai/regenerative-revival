@@ -142,7 +142,7 @@ export default function LocationsPage() {
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
-                href="/hormones-peptides"
+                href="/peptides"
                 className="text-sm font-semibold text-secondary hover:text-secondary/80"
               >
                 Hormones &amp; Peptides →
@@ -162,7 +162,7 @@ export default function LocationsPage() {
       <section className="py-12 bg-white border-b border-gray-100">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">
-            Browse by Treatment
+            Browse by Therapy
           </h2>
           <div className="flex flex-wrap gap-2">
             {treatments.map((t) => (

@@ -6,9 +6,9 @@ import Breadcrumbs from "../components/Breadcrumbs";
 import AnimatedSection from "../components/AnimatedSection";
 
 export const metadata = generatePageMetadata({
-  title: "Stem Cell Treatments & Regenerative Therapies",
+  title: "Stem Cell Therapies & Regenerative Medicine",
   description:
-    "Explore the full range of regenerative medicine treatments at Regenerative Revival — stem cell therapy, Wharton's Jelly, exosome therapy, PRP, and more — available across 100+ US cities.",
+    "Explore the full range of regenerative medicine therapies at Regenerative Revival — stem cell therapy, Wharton's Jelly, exosome therapy, PRP, and more — available across 100+ US cities.",
   path: "/treatments",
 });
 
@@ -17,19 +17,19 @@ export default function TreatmentsHubPage() {
     <>
       <JsonLd
         data={webPageSchema({
-          title: "Treatments — Regenerative Revival",
+          title: "Therapies — Regenerative Revival",
           description:
-            "Browse our complete catalog of regenerative medicine treatments and stem cell therapies.",
+            "Browse our complete catalog of regenerative medicine therapies and stem cell programs.",
           url: "/treatments",
         })}
       />
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", url: "https://www.regenerativerevival.com" },
-          { name: "Treatments", url: "https://www.regenerativerevival.com/treatments" },
+          { name: "Therapies", url: "https://www.regenerativerevival.com/treatments" },
         ])}
       />
-      <Breadcrumbs items={[{ label: "Treatments", href: "/treatments" }]} />
+      <Breadcrumbs items={[{ label: "Therapies", href: "/treatments" }]} />
 
       {/* Hero */}
       <section className="relative bg-secondary overflow-hidden pt-20">
@@ -39,7 +39,7 @@ export default function TreatmentsHubPage() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight tracking-tight">
               Regenerative{" "}
               <span className="bg-gradient-to-r from-primary-light via-[#b794e0] to-primary bg-clip-text text-transparent">
-                Treatments
+                Therapies
               </span>
             </h1>
             <p className="mt-6 text-lg text-white/50 max-w-2xl">
@@ -92,7 +92,7 @@ export default function TreatmentsHubPage() {
         <section className="bg-white py-12 border-t border-gray-100">
           <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
             <h2 className="text-2xl font-bold text-gray-900 mb-2">
-              Not sure which treatment is right for you?
+              Not sure which therapy is right for you?
             </h2>
             <p className="text-gray-600 mb-6">
               Take the quiz and we&apos;ll help you find the right fit.

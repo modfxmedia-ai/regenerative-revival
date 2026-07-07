@@ -172,7 +172,7 @@ export default function ForProvidersPage() {
               <div className="mt-8 grid grid-cols-3 gap-4">
                 {[
                   { value: "14,800", label: "Monthly searches for peptide therapy near me" },
-                  { value: "18,100", label: "Monthly searches for NAD IV therapy" },
+                  { value: "4,400", label: "Monthly searches for NAD+ therapy" },
                   { value: "40,500", label: "Monthly searches for compounded semaglutide" },
                 ].map((s) => (
                   <div key={s.label} className="rounded-2xl bg-[#F4EFFA] p-4 border border-[#6762AF]/10">

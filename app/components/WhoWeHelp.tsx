@@ -20,8 +20,8 @@ const personas = [
     eyebrow: "Performance Mindset",
     title: "You're optimizing, not catching up.",
     body: "Peptides, NAD+, and hormone support for professionals and athletes chasing energy, body composition, recovery, and cognitive edge.",
-    tag: "Hormones & Peptides",
-    href: "/hormones-peptides",
+    tag: "Peptides & NAD+",
+    href: "/peptides",
     icon: Activity,
     frame: "from-[#6762AF] to-[#4F4A8E]",
   },
@@ -47,8 +47,8 @@ const personas = [
     eyebrow: "Optimizing After 40",
     title: "Your labs look different than they used to. So does the mirror.",
     body: "Hormone optimization for men and women — HRT, TRT, and coordinated longevity planning built around real labs, not guesses.",
-    tag: "Hormones & Peptides",
-    href: "/hormones-peptides",
+    tag: "Hormone Optimization",
+    href: "/hormones",
     icon: Gauge,
     frame: "from-[#6F4A7A] to-[#6762AF]",
   },
@@ -75,7 +75,7 @@ const stats = [
   { value: "8+", label: "Years in Regenerative Medicine" },
   { value: "100+", label: "Licensed Clinicians" },
   { value: "50", label: "States" },
-  { value: "10,000+", label: "Patients Served" },
+  { value: "6k+", label: "Patients Treated" },
 ];
 
 export default function WhoWeHelp() {
@@ -221,7 +221,7 @@ function PhysicianLedBlock() {
             A nationwide medical team you can actually name
           </p>
           <p className="mt-4 text-[13px] text-white/45 leading-[1.7] max-w-[540px] mx-auto">
-            Every Regenerative Revival patient is cared for by a licensed nurse practitioner and overseen by our Medical Director, Dr. Sean Arora, CEO of Arora Health Group. Twenty-plus clinicians practicing across 12+ states. Concierge-level care coordinated in all 50.
+            Every Regenerative Revival patient is cared for by a licensed nurse practitioner and overseen by our Medical Director, Dr. Sean Arora, CEO of Arora Health Group. 100+ licensed clinicians across 50 states. Concierge-level care coordinated nationwide.
           </p>
         </motion.div>
 

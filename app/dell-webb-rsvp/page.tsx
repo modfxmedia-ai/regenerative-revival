@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import {
   ArrowUpRight,
   CheckCircle2,
@@ -15,7 +14,7 @@ import {
 } from "lucide-react";
 import { generatePageMetadata } from "../lib/seo";
 import { JsonLd, breadcrumbSchema, webPageSchema } from "../lib/schema";
-import LpLeadForm from "../components/LpLeadForm";
+import RsvpButton, { RSVP_FORM_SRC } from "./RsvpButton";
 
 export const metadata = generatePageMetadata({
   title: "Dell Webb RSVP — Free Regenerative Medicine Dinner Seminar",
@@ -103,13 +102,12 @@ export default function DellWebbRsvpPage() {
               </span>
             </div>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Link
-                href="#rsvp"
+              <RsvpButton
                 className="group inline-flex h-13 items-center gap-2 rounded-full bg-white px-8 py-3.5 text-[15px] font-semibold text-[#021E3C] transition-all hover:bg-[#F1ECF8]"
               >
                 Reserve my FREE seat &amp; dinner
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </Link>
+              </RsvpButton>
               <a
                 href={`tel:${PHONE.replace(/[^0-9]/g, "")}`}
                 className="inline-flex items-center gap-2 text-[14px] font-medium text-white/80 hover:text-white"
@@ -145,13 +143,12 @@ export default function DellWebbRsvpPage() {
                 </p>
               </div>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-                <Link
-                  href="#rsvp"
+                <RsvpButton
                   className="group inline-flex h-13 items-center gap-2 rounded-full bg-[#6762AF] px-7 py-3.5 text-[14px] font-semibold text-white transition-all hover:bg-[#565099]"
                 >
                   Don&apos;t miss out — register today
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </Link>
+                </RsvpButton>
                 <a
                   href={`tel:${PHONE.replace(/[^0-9]/g, "")}`}
                   className="inline-flex items-center gap-2 text-[14px] font-medium text-[#6762AF]"
@@ -299,24 +296,13 @@ export default function DellWebbRsvpPage() {
                 Complete the form and our team will confirm your reservation and
                 the event details.
               </p>
-              <div className="mt-6">
-                <LpLeadForm
-                  source="dell-webb-rsvp"
-                  subject="Dell Webb RSVP — Dinner Seminar"
-                  buttonText="Reserve my seat & dinner"
-                  selectField={{
-                    label: "Number in your party (including you)",
-                    options: [
-                      "Just me",
-                      "2 (me + 1 guest)",
-                      "3",
-                      "4",
-                      "5 (me + 4 guests)",
-                    ],
-                    defaultValue: "2 (me + 1 guest)",
-                  }}
-                  successTitle="Your seats are reserved!"
-                  successMessage="Thank you for your RSVP. Our team will confirm the event date, time, and venue with you shortly."
+              <div className="mt-6 overflow-hidden rounded-xl border border-[#EDE8F7] bg-white">
+                <iframe
+                  src={RSVP_FORM_SRC}
+                  title="RSVP Form"
+                  className="block w-full border-0"
+                  style={{ minHeight: 760 }}
+                  loading="lazy"
                 />
               </div>
               <p className="mt-5 text-center text-[12px] leading-relaxed text-[#7A7F95]">

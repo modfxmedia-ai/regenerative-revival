@@ -266,25 +266,30 @@ export default function DellWebbRsvpPage() {
                 <div className="flex items-center gap-3 text-[15px] text-[#1A1F30]">
                   <CalendarDays className="h-5 w-5 text-[#6762AF]" />
                   <span>
-                    Date: <span className="text-[#7A7F95]">To be announced</span>
+                    Dates:{" "}
+                    <span className="text-[#7A7F95]">June 28th &amp; June 29th</span>
                   </span>
                 </div>
                 <div className="flex items-center gap-3 text-[15px] text-[#1A1F30]">
                   <Clock className="h-5 w-5 text-[#6762AF]" />
                   <span>
-                    Time: <span className="text-[#7A7F95]">To be announced</span>
+                    Time: <span className="text-[#7A7F95]">6:30 PM</span>
                   </span>
                 </div>
-                <div className="flex items-center gap-3 text-[15px] text-[#1A1F30]">
-                  <MapPin className="h-5 w-5 text-[#6762AF]" />
+                <div className="flex items-start gap-3 text-[15px] text-[#1A1F30]">
+                  <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#6762AF]" />
                   <span>
                     Venue:{" "}
-                    <span className="text-[#7A7F95]">To be announced</span>
+                    <span className="text-[#7A7F95]">
+                      Del Webb Community in Durham, NC
+                      <br />
+                      357 Carolina Arbors Drive, Durham, NC 27703
+                    </span>
                   </span>
                 </div>
                 <p className="text-[12px] text-[#7A7F95]">
-                  Event date, time, and venue will be confirmed with you after
-                  you reserve your seats.
+                  Your reservation and seating details will be confirmed with
+                  you after you RSVP.
                 </p>
               </div>
             </div>

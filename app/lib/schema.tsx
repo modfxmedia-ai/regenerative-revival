@@ -37,10 +37,16 @@ export function organizationSchema() {
       "@type": "Person",
       name: "Seth Berge",
     },
-    medicalSpecialty: [
+    // knowsAbout is valid on all Organization types and accepts free text.
+    // medicalSpecialty is NOT valid on Organization — it only applies to
+    // MedicalOrganization/MedicalClinic/Physician subtypes.
+    knowsAbout: [
       "Regenerative Medicine",
+      "Stem Cell Therapy",
+      "Wharton's Jelly MSC Therapy",
       "Hormone Optimization",
       "Peptide Therapy",
+      "NAD+ Therapy",
       "Longevity Medicine",
     ],
     sameAs: [
@@ -93,7 +99,17 @@ export function localBusinessSchema() {
         closes: "18:00",
       },
     ],
-    medicalSpecialty: "Regenerative Medicine",
+    // medicalSpecialty on MedicalClinic must use schema.org's controlled
+    // enum (http://schema.org/MedicalSpecialty). Valid values that map to
+    // RR's actual practice areas:
+    //   Musculoskeletal — joint pain, sports injuries, stem cell orthopedics
+    //   Endocrine       — hormone optimization (TRT / HRT)
+    //   Rheumatologic   — arthritis, chronic inflammation
+    medicalSpecialty: [
+      "Musculoskeletal",
+      "Endocrine",
+      "Rheumatologic",
+    ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Regenerative & Longevity Services",

@@ -33,7 +33,7 @@ const conditions = [
   "Autoimmune Conditions",
 ];
 
-const PHONE = "(941) 212-0131";
+const PHONE = "(651) 371-8668";
 
 export default function DellWebbRsvpPage() {
   return (
@@ -250,7 +250,7 @@ export default function DellWebbRsvpPage() {
                 RSVP today
               </h2>
               <p className="mt-6 text-[15px] leading-[1.75] text-[#4A4F66]">
-                Bring your spouse and up to four friends. Discover how
+                Bring your spouse and up to 2 additional guests. Discover how
                 regenerative medicine may help you get back to a more active,
                 comfortable retirement.
               </p>
@@ -267,13 +267,13 @@ export default function DellWebbRsvpPage() {
                   <CalendarDays className="h-5 w-5 text-[#6762AF]" />
                   <span>
                     Dates:{" "}
-                    <span className="text-[#7A7F95]">June 28th &amp; June 29th</span>
+                    <span className="text-[#7A7F95]">Tuesday, July 28th &amp; Wednesday, July 29th</span>
                   </span>
                 </div>
                 <div className="flex items-center gap-3 text-[15px] text-[#1A1F30]">
                   <Clock className="h-5 w-5 text-[#6762AF]" />
                   <span>
-                    Time: <span className="text-[#7A7F95]">6:30 PM</span>
+                    Time: <span className="text-[#7A7F95]">6:00 PM</span>
                   </span>
                 </div>
                 <div className="flex items-start gap-3 text-[15px] text-[#1A1F30]">
@@ -281,7 +281,7 @@ export default function DellWebbRsvpPage() {
                   <span>
                     Venue:{" "}
                     <span className="text-[#7A7F95]">
-                      Del Webb Community in Durham, NC
+                      Carolina Arbors by Del Webb
                       <br />
                       357 Carolina Arbors Drive, Durham, NC 27703
                     </span>

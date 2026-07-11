@@ -63,7 +63,7 @@ export function organizationSchema() {
 export function localBusinessSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
+    "@type": "MedicalClinic",
     name: SITE_NAME,
     url: SITE_URL,
     logo: SITE_LOGO,
@@ -345,7 +345,7 @@ export function serviceSchema(service: {
     url: `${SITE_URL}${service.url}`,
     serviceType: service.serviceType,
     provider: {
-      "@type": "MedicalBusiness",
+      "@type": "MedicalClinic",
       name: SITE_NAME,
       url: SITE_URL,
     },

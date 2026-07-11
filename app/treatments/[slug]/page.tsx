@@ -53,9 +53,9 @@ export default async function TreatmentLocationsPage({ params }: PageProps) {
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: "https://www.regenerativerevival.com" },
-          { name: "Treatments", url: "https://www.regenerativerevival.com/treatments" },
-          { name: treatment.name, url: `https://www.regenerativerevival.com/treatments/${slug}` },
+          { name: "Home", url: "https://regenerativerevival.com" },
+          { name: "Treatments", url: "https://regenerativerevival.com/treatments" },
+          { name: treatment.name, url: `https://regenerativerevival.com/treatments/${slug}` },
         ])}
       />
       <Breadcrumbs

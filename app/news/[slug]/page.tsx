@@ -37,7 +37,7 @@ export default async function ArticlePage({ params }: Props) {
   return (
     <>
       <JsonLd data={articleSchema({ title: article.title, description: article.excerpt, slug: article.slug, image: article.image, datePublished: new Date(article.date).toISOString(), category: article.category })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Home", url: "https://www.regenerativerevival.com" }, { name: "News", url: "https://www.regenerativerevival.com/news" }, { name: article.title, url: `https://www.regenerativerevival.com/news/${article.slug}` }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Home", url: "https://regenerativerevival.com" }, { name: "News", url: "https://regenerativerevival.com/news" }, { name: article.title, url: `https://regenerativerevival.com/news/${article.slug}` }])} />
       <Breadcrumbs items={[{ label: "News", href: "/news" }, { label: article.title, href: `/news/${article.slug}` }]} />
       <ArticleContent article={article} related={related} />
     </>

@@ -25,8 +25,8 @@ export default function TreatmentsHubPage() {
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: "https://www.regenerativerevival.com" },
-          { name: "Therapies", url: "https://www.regenerativerevival.com/treatments" },
+          { name: "Home", url: "https://regenerativerevival.com" },
+          { name: "Therapies", url: "https://regenerativerevival.com/treatments" },
         ])}
       />
       <Breadcrumbs items={[{ label: "Therapies", href: "/treatments" }]} />

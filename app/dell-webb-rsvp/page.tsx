@@ -48,10 +48,10 @@ export default function DellWebbRsvpPage() {
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: "https://www.regenerativerevival.com" },
+          { name: "Home", url: "https://regenerativerevival.com" },
           {
             name: "Dell Webb RSVP",
-            url: "https://www.regenerativerevival.com/dell-webb-rsvp",
+            url: "https://regenerativerevival.com/dell-webb-rsvp",
           },
         ])}
       />
@@ -359,7 +359,7 @@ export default function DellWebbRsvpPage() {
                 <Globe className="h-4 w-4" /> Website
               </div>
               <a
-                href="https://www.regenerativerevival.com"
+                href="https://regenerativerevival.com"
                 className="mt-3 block text-[14px] text-white/75 hover:text-white"
               >
                 www.regenerativerevival.com

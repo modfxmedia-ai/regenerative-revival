@@ -49,7 +49,7 @@ export default async function PartnerLocationPage({ params }: Props) {
   const nearby = getNearbyLocations(location, 4);
   const relatedServices = partnerServices.filter((s) => s.slug !== service.slug).slice(0, 3);
 
-  const SITE_URL = "https://www.regenerativerevival.com";
+  const SITE_URL = "https://regenerativerevival.com";
   const pagePath = `/partners/${service.slug}/${location.slug}`;
 
   return (

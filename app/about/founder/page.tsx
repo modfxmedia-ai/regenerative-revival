@@ -22,9 +22,9 @@ export default function FounderPage() {
     <>
       <JsonLd data={webPageSchema({ title: "About Seth Berge — Founder", description: "The founder story behind Regenerative Revival.", url: "/about/founder" })} />
       <JsonLd data={breadcrumbSchema([
-        { name: "Home", url: "https://www.regenerativerevival.com" },
-        { name: "About", url: "https://www.regenerativerevival.com/about" },
-        { name: "Founder", url: "https://www.regenerativerevival.com/about/founder" },
+        { name: "Home", url: "https://regenerativerevival.com" },
+        { name: "About", url: "https://regenerativerevival.com/about" },
+        { name: "Founder", url: "https://regenerativerevival.com/about/founder" },
       ])} />
 
       {/* === Hero === */}

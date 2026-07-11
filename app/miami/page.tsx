@@ -85,8 +85,8 @@ export default function MiamiPage() {
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: "https://www.regenerativerevival.com" },
-          { name: "Miami", url: "https://www.regenerativerevival.com/miami" },
+          { name: "Home", url: "https://regenerativerevival.com" },
+          { name: "Miami", url: "https://regenerativerevival.com/miami" },
         ])}
       />
 

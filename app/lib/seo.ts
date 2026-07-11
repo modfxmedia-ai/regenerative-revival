@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const SITE_URL = "https://www.regenerativerevival.com";
+const SITE_URL = "https://regenerativerevival.com";
 const SITE_NAME = "Regenerative Revival";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/logo.png`;
 
@@ -30,9 +30,11 @@ export function generatePageMetadata({
   if (cta && fullTitle.length + cta.length + 3 <= 60) {
     fullTitle = `${title} | ${cta} | ${SITE_NAME}`;
   }
-  // Safeguard: cap title at 60 chars per SEO playbook §4.1 (~600px desktop).
-  if (fullTitle.length > 60) {
-    fullTitle = fullTitle.substring(0, 57).replace(/\s+\S*$/, "") + "…";
+  // Safeguard: cap title at 70 chars per SEO playbook §4.1 (~600px desktop).
+  // Note: fullTitle includes " | Regenerative Revival" (24 chars overhead),
+  // so the title input itself should stay under ~46 chars.
+  if (fullTitle.length > 70) {
+    fullTitle = fullTitle.substring(0, 67).replace(/\s+\S*$/, "") + "…";
   }
 
   // Dynamic CTA in description: append if under 158 chars (per playbook §4.2,
@@ -49,7 +51,9 @@ export function generatePageMetadata({
       fullDescription.substring(0, 155).replace(/\s+\S*$/, "") + "…";
   }
 
-  const url = `${SITE_URL}${path}`;
+  // Ensure path has trailing slash to match trailingSlash: true in next.config
+  const normalizedPath = path === "/" ? "/" : path.endsWith("/") ? path : `${path}/`;
+  const url = `${SITE_URL}${normalizedPath}`;
   const image = ogImage ? `${SITE_URL}${ogImage}` : DEFAULT_OG_IMAGE;
 
   return {

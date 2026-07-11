@@ -15,7 +15,7 @@ export default function NewsPage() {
   return (
     <>
       <JsonLd data={webPageSchema({ title: "News & Insights", description: "Latest news, insights, and articles on regenerative medicine, stem cell therapy, and Wharton's Jelly treatments.", url: "/news" })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Home", url: "https://www.regenerativerevival.com" }, { name: "News", url: "https://www.regenerativerevival.com/news" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Home", url: "https://regenerativerevival.com" }, { name: "News", url: "https://regenerativerevival.com/news" }])} />
       <Breadcrumbs items={[{ label: "News", href: "/news" }]} />
       <NewsHero />
       <NewsList />

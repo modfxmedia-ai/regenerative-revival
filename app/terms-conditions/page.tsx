@@ -53,10 +53,10 @@ export default function TermsConditionsPage() {
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: "https://www.regenerativerevival.com" },
+          { name: "Home", url: "https://regenerativerevival.com" },
           {
             name: "Terms & Conditions",
-            url: "https://www.regenerativerevival.com/terms-conditions",
+            url: "https://regenerativerevival.com/terms-conditions",
           },
         ])}
       />

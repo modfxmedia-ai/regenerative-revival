@@ -23,7 +23,7 @@ import { getProductsByHub } from "../lib/products";
 export const metadata = generatePageMetadata({
   title: "NAD+ Therapy — Injection & Sublingual",
   description:
-    "Clinician-supervised NAD+ therapy for cellular energy, mitochondrial function, and longevity. Injection and sublingual options via telehealth.",
+    "NAD+ therapy for energy, longevity, and mitochondrial health. Clinician-supervised injection or sublingual via telehealth.",
   path: "/nad",
 });
 
@@ -85,8 +85,8 @@ export default function NadHubPage() {
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: "https://www.regenerativerevival.com" },
-          { name: "NAD+ & Supplements", url: "https://www.regenerativerevival.com/nad" },
+          { name: "Home", url: "https://regenerativerevival.com" },
+          { name: "NAD+ & Supplements", url: "https://regenerativerevival.com/nad" },
         ])}
       />
       <JsonLd

@@ -8,7 +8,7 @@ import { generatePageMetadata } from "../lib/seo";
 import { JsonLd, webPageSchema, breadcrumbSchema } from "../lib/schema";
 import Breadcrumbs from "../components/Breadcrumbs";
 
-const SITE_URL = "https://www.regenerativerevival.com";
+const SITE_URL = "https://regenerativerevival.com";
 
 export const metadata = generatePageMetadata({
   title: "Site Map — Every Page on Regenerative Revival",

@@ -16,7 +16,7 @@ import { hormonePrograms } from "../lib/nav-menus";
 export const metadata = generatePageMetadata({
   title: "Hormone Optimization — TRT & HRT Online",
   description:
-    "Physician-prescribed testosterone replacement (TRT), women's hormone therapy (HRT), and metabolic hormone support through telehealth. Licensed clinician oversight, shipped to your door.",
+    "Online TRT and women's HRT — physician-prescribed, lab-reviewed. Metabolic hormones shipped to your door.",
   path: "/hormones",
 });
 
@@ -83,8 +83,8 @@ export default function HormonesPage() {
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: "https://www.regenerativerevival.com" },
-          { name: "Hormones", url: "https://www.regenerativerevival.com/hormones" },
+          { name: "Home", url: "https://regenerativerevival.com" },
+          { name: "Hormones", url: "https://regenerativerevival.com/hormones" },
         ])}
       />
       <JsonLd data={faqSchema(faqs)} />

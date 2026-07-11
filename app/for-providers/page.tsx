@@ -92,8 +92,8 @@ export default function ForProvidersPage() {
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: "https://www.regenerativerevival.com" },
-          { name: "For Providers", url: "https://www.regenerativerevival.com/for-providers" },
+          { name: "Home", url: "https://regenerativerevival.com" },
+          { name: "For Providers", url: "https://regenerativerevival.com/for-providers" },
         ])}
       />
       <JsonLd data={faqSchema(faqs)} />

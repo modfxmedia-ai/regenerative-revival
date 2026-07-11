@@ -5,7 +5,7 @@ import { treatments } from "./lib/treatments";
 import { partnerServices } from "./lib/partner-content";
 import { products } from "./lib/products";
 
-const SITE_URL = "https://www.regenerativerevival.com";
+const SITE_URL = "https://regenerativerevival.com";
 
 // Bump these dates when you actually edit the page content.
 // Accurate lastmod = Google trusts your sitemap. Fake lastmod = Google ignores all of them.

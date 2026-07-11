@@ -51,7 +51,7 @@ export default async function TreatmentLocationPage({ params }: Props) {
   const nearby = getNearbyLocations(location, 4);
   const relatedTreatments = treatments.filter((t) => t.slug !== treatment.slug).slice(0, 4);
 
-  const SITE_URL = "https://www.regenerativerevival.com";
+  const SITE_URL = "https://regenerativerevival.com";
   const pagePath = `/treatments/${treatment.slug}/${location.slug}`;
 
   const localBiz = {

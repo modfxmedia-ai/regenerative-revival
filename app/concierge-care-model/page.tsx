@@ -99,8 +99,8 @@ export default function ConciergeCareModelPage() {
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: "https://www.regenerativerevival.com" },
-          { name: "Concierge Care Model", url: "https://www.regenerativerevival.com/concierge-care-model" },
+          { name: "Home", url: "https://regenerativerevival.com" },
+          { name: "Concierge Care Model", url: "https://regenerativerevival.com/concierge-care-model" },
         ])}
       />
       <JsonLd data={faqSchema(faqs)} />

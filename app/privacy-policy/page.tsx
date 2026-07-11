@@ -56,10 +56,10 @@ export default function PrivacyPolicyPage() {
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: "https://www.regenerativerevival.com" },
+          { name: "Home", url: "https://regenerativerevival.com" },
           {
             name: "Privacy Policy",
-            url: "https://www.regenerativerevival.com/privacy-policy",
+            url: "https://regenerativerevival.com/privacy-policy",
           },
         ])}
       />

@@ -20,9 +20,9 @@ import {
  */
 
 export const metadata = generatePageMetadata({
-  title: "Wharton's Jelly Stem Cell Therapy — Umbilical Cord MSCs",
+  title: "Wharton's Jelly Stem Cell Therapy",
   description:
-    "Wharton's Jelly is the gold standard source for mesenchymal stem cells. Learn why umbilical cord-derived MSCs outperform other sources — and how we deliver them in your home.",
+    "Wharton's Jelly MSCs — younger, more potent than bone marrow or fat cells. In-home stem cell therapy, physician-supervised, nationwide.",
   path: "/whartons-jelly",
 });
 
@@ -106,8 +106,8 @@ export default function WhartonsJellyPage() {
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: "https://www.regenerativerevival.com" },
-          { name: "Wharton's Jelly", url: "https://www.regenerativerevival.com/whartons-jelly" },
+          { name: "Home", url: "https://regenerativerevival.com" },
+          { name: "Wharton's Jelly", url: "https://regenerativerevival.com/whartons-jelly" },
         ])}
       />
       <JsonLd data={faqSchema(faqs)} />

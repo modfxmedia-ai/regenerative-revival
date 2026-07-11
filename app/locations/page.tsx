@@ -58,10 +58,10 @@ export default function LocationsPage() {
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: "https://www.regenerativerevival.com" },
+          { name: "Home", url: "https://regenerativerevival.com" },
           {
             name: "Service Areas",
-            url: "https://www.regenerativerevival.com/locations",
+            url: "https://regenerativerevival.com/locations",
           },
         ])}
       />

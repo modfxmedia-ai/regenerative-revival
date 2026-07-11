@@ -53,9 +53,9 @@ export default async function PartnerLocationsPage({ params }: PageProps) {
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: "https://www.regenerativerevival.com" },
-          { name: "Partner Programs", url: "https://www.regenerativerevival.com/partners" },
-          { name: service.name, url: `https://www.regenerativerevival.com/partners/${slug}` },
+          { name: "Home", url: "https://regenerativerevival.com" },
+          { name: "Partner Programs", url: "https://regenerativerevival.com/partners" },
+          { name: service.name, url: `https://regenerativerevival.com/partners/${slug}` },
         ])}
       />
       <Breadcrumbs

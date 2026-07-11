@@ -103,9 +103,9 @@ export default async function NadProductPage({
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: "https://www.regenerativerevival.com" },
-          { name: "NAD+ & Supplements", url: "https://www.regenerativerevival.com/nad" },
-          { name: product.name, url: `https://www.regenerativerevival.com/nad/${product.slug}` },
+          { name: "Home", url: "https://regenerativerevival.com" },
+          { name: "NAD+ & Supplements", url: "https://regenerativerevival.com/nad" },
+          { name: product.name, url: `https://regenerativerevival.com/nad/${product.slug}` },
         ])}
       />
       {faqs.length > 0 && <JsonLd data={faqSchema(faqs)} />}

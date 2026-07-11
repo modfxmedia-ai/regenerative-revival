@@ -121,10 +121,10 @@ export default function AffiliatePartnerProgramsPage() {
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: "https://www.regenerativerevival.com" },
+          { name: "Home", url: "https://regenerativerevival.com" },
           {
             name: "Affiliate and Partner Programs",
-            url: "https://www.regenerativerevival.com/affiliate-and-partner-programs",
+            url: "https://regenerativerevival.com/affiliate-and-partner-programs",
           },
         ])}
       />

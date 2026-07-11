@@ -138,9 +138,9 @@ export default async function ProductPage({
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: "https://www.regenerativerevival.com" },
-          { name: "Peptides", url: "https://www.regenerativerevival.com/peptides" },
-          { name: product.name, url: `https://www.regenerativerevival.com/hormones-peptides/${product.slug}` },
+          { name: "Home", url: "https://regenerativerevival.com" },
+          { name: "Peptides", url: "https://regenerativerevival.com/peptides" },
+          { name: product.name, url: `https://regenerativerevival.com/hormones-peptides/${product.slug}` },
         ])}
       />
       {faqs.length > 0 && <JsonLd data={faqSchema(faqs)} />}

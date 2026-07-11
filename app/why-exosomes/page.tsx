@@ -13,10 +13,14 @@ import {
   faqSchema,
 } from "../lib/schema";
 
+/**
+ * Primary keyword: "exosome therapy"
+ * Secondary: "exosome stem cell therapy", "what are exosomes"
+ */
 export const metadata = generatePageMetadata({
-  title: "Exosome Therapy — The Signaling Layer of Regenerative Medicine",
+  title: "Exosome Therapy — Science & Benefits",
   description:
-    "Exosomes are nano-sized vesicles that carry regenerative signals between cells. Learn how exosome therapy amplifies stem cell therapy and why it's the next frontier in regenerative medicine.",
+    "Exosomes amplify stem cell therapy by carrying regenerative signals to damaged tissue. Add-on to Wharton's Jelly protocols.",
   path: "/why-exosomes",
 });
 
@@ -93,8 +97,8 @@ export default function WhyExosomesPage() {
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: "https://www.regenerativerevival.com" },
-          { name: "Why Exosomes?", url: "https://www.regenerativerevival.com/why-exosomes" },
+          { name: "Home", url: "https://regenerativerevival.com" },
+          { name: "Why Exosomes?", url: "https://regenerativerevival.com/why-exosomes" },
         ])}
       />
       <JsonLd data={faqSchema(faqs)} />

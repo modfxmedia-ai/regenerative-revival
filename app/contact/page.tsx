@@ -15,7 +15,7 @@ export default function ContactPage() {
   return (
     <>
       <JsonLd data={webPageSchema({ title: "Contact Regenerative Revival", description: "Contact us for expert guidance on your regenerative health journey. Schedule your consultation today.", url: "/contact" })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Home", url: "https://www.regenerativerevival.com" }, { name: "Contact", url: "https://www.regenerativerevival.com/contact" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Home", url: "https://regenerativerevival.com" }, { name: "Contact", url: "https://regenerativerevival.com/contact" }])} />
       <Breadcrumbs items={[{ label: "Contact", href: "/contact" }]} />
       <ContactHero />
       <ContactForm />

@@ -23,10 +23,10 @@ export default function Page() {
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: "https://www.regenerativerevival.com" },
+          { name: "Home", url: "https://regenerativerevival.com" },
           {
             name: "Take The Quiz",
-            url: "https://www.regenerativerevival.com/consult-router",
+            url: "https://regenerativerevival.com/consult-router",
           },
         ])}
       />

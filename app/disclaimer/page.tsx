@@ -30,10 +30,10 @@ export default function DisclaimerPage() {
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: "https://www.regenerativerevival.com" },
+          { name: "Home", url: "https://regenerativerevival.com" },
           {
             name: "Disclaimer",
-            url: "https://www.regenerativerevival.com/disclaimer",
+            url: "https://regenerativerevival.com/disclaimer",
           },
         ])}
       />

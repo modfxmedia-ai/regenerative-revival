@@ -25,8 +25,8 @@ export default function PartnersHubPage() {
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: "https://www.regenerativerevival.com" },
-          { name: "Partner Programs", url: "https://www.regenerativerevival.com/partners" },
+          { name: "Home", url: "https://regenerativerevival.com" },
+          { name: "Partner Programs", url: "https://regenerativerevival.com/partners" },
         ])}
       />
       <Breadcrumbs items={[{ label: "Partner Programs", href: "/partners" }]} />

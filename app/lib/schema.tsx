@@ -1,7 +1,7 @@
 // JSON-LD Schema Markup Generators for SEO
 // Organization, LocalBusiness, BreadcrumbList, FAQPage, Article, WebPage
 
-const SITE_URL = "https://www.regenerativerevival.com";
+const SITE_URL = "https://regenerativerevival.com";
 const SITE_NAME = "Regenerative Revival";
 const SITE_LOGO = `${SITE_URL}/logo.png`;
 const PHONE = "(651) 371-8668";

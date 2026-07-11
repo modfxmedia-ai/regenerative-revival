@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     "telehealth",
   ],
   alternates: {
-    canonical: "https://www.regenerativerevival.com",
+    canonical: "https://regenerativerevival.com/",
   },
   icons: {
     icon: [
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "Regenerative Revival | Stem Cell Therapy, Peptides & Longevity Medicine",
     description:
       "In-home stem cell therapy and nationwide telehealth for peptides, hormones, and NAD+. One physician-led medical team.",
-    url: "https://www.regenerativerevival.com",
+    url: "https://regenerativerevival.com/",
     siteName: "Regenerative Revival",
     type: "website",
   },

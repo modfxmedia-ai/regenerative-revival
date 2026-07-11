@@ -35,6 +35,6 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "*", ...baseRules },
       ...allowedAIBots.map((userAgent) => ({ userAgent, ...baseRules })),
     ],
-    sitemap: "https://www.regenerativerevival.com/sitemap.xml",
+    sitemap: "https://regenerativerevival.com/sitemap.xml",
   };
 }

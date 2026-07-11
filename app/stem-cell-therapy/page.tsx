@@ -27,9 +27,9 @@ import {
  */
 
 export const metadata = generatePageMetadata({
-  title: "Stem Cell Therapy — In-Home Concierge Regenerative Medicine",
+  title: "Stem Cell Therapy — In-Home & Nationwide",
   description:
-    "Wharton's Jelly stem cell therapy delivered in your home by a licensed nurse practitioner. Physician-led, FDA-compliant, available nationwide. Book a free consultation.",
+    "Wharton's Jelly stem cell therapy at home — physician-led, transparent pricing, available nationwide.",
   path: "/stem-cell-therapy",
 });
 
@@ -105,8 +105,8 @@ export default function StemCellTherapyPage() {
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: "https://www.regenerativerevival.com" },
-          { name: "Stem Cell Therapy", url: "https://www.regenerativerevival.com/stem-cell-therapy" },
+          { name: "Home", url: "https://regenerativerevival.com" },
+          { name: "Stem Cell Therapy", url: "https://regenerativerevival.com/stem-cell-therapy" },
         ])}
       />
       <JsonLd data={faqSchema(faqs)} />

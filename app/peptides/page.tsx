@@ -16,9 +16,9 @@ import {
 import { getProductsByHub } from "../lib/products";
 
 export const metadata = generatePageMetadata({
-  title: "Peptide Therapy Online — Physician-Prescribed Programs",
+  title: "Peptide Therapy — Physician-Prescribed Online",
   description:
-    "Physician-prescribed peptide therapy — BPC-157, semaglutide, CJC-1295, and more. Solution-based programs by goal. Licensed clinician oversight, shipped to your door.",
+    "Physician-prescribed peptide therapy — BPC-157, semaglutide, CJC-1295, and more. Telehealth intake, licensed clinician oversight, shipped to your door.",
   path: "/peptides",
 });
 
@@ -85,8 +85,8 @@ export default function PeptidesPage() {
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", url: "https://www.regenerativerevival.com" },
-          { name: "Peptides", url: "https://www.regenerativerevival.com/peptides" },
+          { name: "Home", url: "https://regenerativerevival.com" },
+          { name: "Peptides", url: "https://regenerativerevival.com/peptides" },
         ])}
       />
       <JsonLd

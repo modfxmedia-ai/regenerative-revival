@@ -14,24 +14,24 @@ import WaveDivider from "./WaveDivider";
 const stories = [
   {
     quote:
-      "I was six months out from a knee replacement. The RR team walked me through what regenerative therapy could and couldn't do, including what probably wouldn't work. I decided to try it. Two months later, I'm hiking with my dog again. They never promised that outcome. For me, it's been the right call so far.",
-    name: "David R.",
-    location: "Florida",
+      "The Osteoarthritis set in fast. I had no cartilage left — I could feel the bones grinding and clicking. After my stem cell injections, the next morning I woke up, swung my feet over the bedside and touched the floor. Holy cow! No pain. No hobbling. No tears. No fear. I welcome the journey to recovery.",
+    name: "Vicki R.",
+    location: "Minnesota",
+    program: "Stem Cell Therapy patient",
+  },
+  {
+    quote:
+      "I tore my rotator cuff at work. They told me I needed surgery. I'm 26 — I had no interest in letting them cut into my body. After one injection and 30 days, 80-90% of my range of motion returned and I have minimal to no pain. And no recovery time from surgery.",
+    name: "Ethan M.",
+    location: "Texas",
     program: "Regenerative Therapy patient",
   },
   {
     quote:
-      "The thing that sold me was that the same clinician reviewing my testosterone was reviewing my peptide stack. Nobody had ever looked at the whole picture before. It finally feels like I have a medical team, not four subscriptions.",
-    name: "Marcus T.",
-    location: "Texas",
-    program: "Hormone & Peptide patient",
-  },
-  {
-    quote:
-      "NAD+ was something I'd been curious about for two years. Doing it inside a real clinical program, with my labs, with a team that also manages my hormones, changed the whole equation. This is what longevity care was supposed to look like.",
-    name: "Sandra K.",
-    location: "California",
-    program: "NAD+ & Longevity patient",
+      "For years I couldn't bend my leg to put my socks on. I got my injection. Three days later I picked my right leg up and put it over my knee — I hadn't done it in 10 years. I've had no pain whatsoever. None. Will I recommend this to others? You better believe it.",
+    name: "Margaret P.",
+    location: "Florida",
+    program: "Regenerative Therapy patient",
   },
 ];
 

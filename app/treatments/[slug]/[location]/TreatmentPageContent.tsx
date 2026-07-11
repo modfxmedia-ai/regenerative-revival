@@ -124,7 +124,6 @@ export default function TreatmentPageContent({
                   className="flex h-14 items-center justify-center gap-3 rounded-2xl bg-white/[0.06] backdrop-blur-xl border border-white/[0.1] px-7 text-base font-semibold text-white transition-all hover:bg-white/[0.12]"
                 >
                   <Phone className="h-4 w-4" /> Call (651) 371-8668
-                  123-4567
                 </a>
               </div>
               <div className="mt-8 flex flex-wrap items-center gap-5">

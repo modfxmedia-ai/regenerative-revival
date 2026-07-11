@@ -3,12 +3,9 @@
 
 const SITE_URL = "https://regenerativerevival.com";
 const SITE_NAME = "Regenerative Revival";
-const SITE_LOGO = `${SITE_URL}/logo.png`;
+const SITE_LOGO = `${SITE_URL}/icon-512.png`;
 const PHONE = "(651) 371-8668";
 const EMAIL = "info@regenerativerevival.com";
-// Site-wide rating values (kept in sync with localBusiness aggregateRating)
-const RATING_VALUE = "4.9";
-const REVIEW_COUNT = "500";
 
 // ─── Organization Schema ───
 export function organizationSchema() {
@@ -20,8 +17,8 @@ export function organizationSchema() {
     logo: {
       "@type": "ImageObject",
       url: SITE_LOGO,
-      width: 200,
-      height: 70,
+      width: 512,
+      height: 512,
     },
     description:
       "Concierge regenerative medicine and nationwide telehealth for hormones, peptides, and NAD+. One physician-led medical team, one patient record, one plan.",
@@ -96,12 +93,6 @@ export function localBusinessSchema() {
         closes: "18:00",
       },
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "500",
-      bestRating: "5",
-    },
     medicalSpecialty: "Regenerative Medicine",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -290,13 +281,6 @@ export function productSchema(product: {
     ...(product.indications?.length
       ? { isRelatedTo: product.indications.map((i) => ({ "@type": "MedicalCondition", name: i })) }
       : {}),
-    // Site-wide rating, consistent with LocalBusiness aggregateRating
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: RATING_VALUE,
-      reviewCount: REVIEW_COUNT,
-      bestRating: "5",
-    },
   };
 
   if (product.priceFrom !== undefined) {

@@ -221,8 +221,8 @@ const authorityBlocks = [
     body: "All biological materials used in our protocols are sourced from AATB-accredited tissue banks and tested for sterility, viability, and potency before use. We follow FDA compliance standards for human cellular and tissue products at every step. Our patients don't accept shortcuts, and neither do we.",
   },
   {
-    heading: "500+ Patient Outcomes. 4.9-Star Average.",
-    body: "With a 4.9-star patient satisfaction rating across 500+ outcomes, our track record speaks for itself. We don't measure success by procedures performed — we measure it by the people who got their lives back. Every protocol is followed by outcome tracking so we can continue refining what works.",
+    heading: "Proven Outcomes. Measurable Results.",
+    body: "Our track record speaks for itself — not because we promote it, but because patients refer their family members and colleagues. Every protocol is followed by outcome tracking so we can continue refining what works. We measure success by the people who got their lives back.",
   },
   {
     heading: "Built on Evidence, Not Marketing.",
@@ -311,7 +311,7 @@ const benefitBlocks = [
   }),
   (t: Treatment, l: Location) => ({
     heading: `Key Benefits for ${l.city} Patients`,
-    content: `${l.city} residents choosing ${t.name.toLowerCase()} at Regenerative Revival benefit from non-surgical treatment with minimal downtime, no general anesthesia, reduced dependence on pain medications, and personalized protocols designed for their unique condition. Our patients in the ${l.metro} area consistently report significant improvements in pain levels, mobility, and quality of life — with a 4.9-star satisfaction rating across 500+ outcomes.`,
+    content: `${l.city} residents choosing ${t.name.toLowerCase()} at Regenerative Revival benefit from non-surgical treatment with minimal downtime, no general anesthesia, reduced dependence on pain medications, and personalized protocols designed for their unique condition. Our patients in the ${l.metro} area consistently report significant improvements in pain levels, mobility, and quality of life.`,
   }),
   (t: Treatment, l: Location) => ({
     heading: `${t.name} vs. Surgery — What You Need to Know`,
@@ -517,7 +517,7 @@ const descPatterns = [
   (t: Treatment, l: Location) =>
     `${l.city} patients: non-surgical ${t.name.toLowerCase()} for ${t.medicalConditions.slice(0, 2).join(" & ").toLowerCase()}. In-home delivery, physician oversight.`,
   (t: Treatment, l: Location) =>
-    `Regenerative Revival offers ${t.name.toLowerCase()} in ${l.city}, ${l.stateAbbr}. AATB-accredited materials, physician-supervised protocols, 4.9-star outcomes.`,
+    `Regenerative Revival offers ${t.name.toLowerCase()} in ${l.city}, ${l.stateAbbr}. AATB-accredited materials, physician-supervised protocols, consistently high patient outcomes.`,
   (t: Treatment, l: Location) =>
     `${t.name} in ${l.city} — concierge delivery, physician oversight, transparent pricing. Serving the ${l.metro} area with proven regenerative care.`,
   (t: Treatment, l: Location) =>

@@ -203,7 +203,7 @@ const keywordBodyPool = [
 ];
 
 export function generateKeywordBody(treatment: Treatment, location: Location): string[] {
-  return seededDraw(keywordBodyPool, `${treatment.slug}-${location.slug}-body`, 2).map(
+  return seededDraw(keywordBodyPool, `${treatment.slug}-${location.slug}-body`, 4).map(
     (fn) => fn(treatment, location)
   );
 }
@@ -434,7 +434,45 @@ export function generateFAQs(
   treatment: Treatment,
   location: Location
 ): { question: string; answer: string }[] {
-  return seededDraw(faqPool, `${treatment.slug}-${location.slug}-faq`, 5).map(
+  return seededDraw(faqPool, `${treatment.slug}-${location.slug}-faq`, 7).map(
+    (fn) => fn(treatment, location)
+  );
+}
+
+// --- Context Block Pool (Patient Education) ----------------------------------
+// 12 entries. Draws 3 per page. Covers 30/60/90-day outcomes, post-treatment
+// protocol, compliance, and patient-education topics distinct from keywordBody.
+// Adds ~1,500 chars of unique educational text per page.
+
+const contextBlockPool = [
+  (t: Treatment, l: Location) =>
+    `The first 30 days after ${t.shortName.toLowerCase()} treatment are the most important for setting the stage of recovery. During this window, the injected biological materials are actively signaling your body's repair cells to the treatment site. ${l.city} patients are advised to limit high-impact activity, stay well hydrated, and avoid anti-inflammatory medications that can blunt the regenerative cascade. Most patients notice reduced baseline pain and improved range of motion during this period — subtle at first, then increasingly pronounced as tissue repair accelerates.`,
+  (t: Treatment, l: Location) =>
+    `By 60 to 90 days post-treatment, the majority of ${t.shortName.toLowerCase()} patients in the ${l.metro} area are experiencing the most meaningful phase of their recovery. Tissue remodeling — the structural repair of cartilage, tendons, ligaments, or other affected tissues — continues well beyond the initial inflammatory response. Many ${l.city} patients are surprised to find that improvements noticed at week 4 continue to deepen at weeks 8 and 12. For patients tracking their pain scores and functional benchmarks, this progression is clearly measurable.`,
+  (t: Treatment, l: Location) =>
+    `Long-term outcomes from ${t.name.toLowerCase()} depend significantly on patient compliance with post-treatment protocols and lifestyle factors that support tissue health. ${l.city} patients who maintain adequate hydration, follow the recommended activity progression, and attend their follow-up assessments consistently report better 12-month outcomes than those who do not. Our clinical team provides detailed post-treatment guidance and a direct line for any questions that arise during recovery.`,
+  (t: Treatment, l: Location) =>
+    `One advantage of Regenerative Revival's concierge model that ${l.city} patients consistently cite is the continuity of care. When the same clinical team delivers your treatment, tracks your progress, and is available for follow-up, the program functions like a coordinated care relationship — not a one-time procedure. This continuity is particularly valuable for patients managing chronic conditions like ${t.medicalConditions[0].toLowerCase()}, where treatment response must be monitored over time and protocols may need adjustment.`,
+  (t: Treatment, l: Location) =>
+    `Understanding what "AATB accreditation" means is important context for any ${l.city} patient considering ${t.name.toLowerCase()}. The American Association of Tissue Banks accredits tissue processors to rigorous standards covering donor screening, infectious disease testing, processing procedures, and quality control. When we say all our biological materials are AATB-accredited, it means they've been held to the same standard required for human tissue products used in surgery — a meaningful distinction from unregulated alternatives in the marketplace.`,
+  (t: Treatment, l: Location) =>
+    `The physician oversight model at Regenerative Revival is not ceremonial — it is the clinical backbone of everything we do. Every ${l.city} patient's case is reviewed by a supervising physician before treatment begins, with specific attention to contraindications, lab values where relevant, and protocol selection. This review happens before your nurse practitioner arrives, so the clinical decisions are already made by the time treatment begins. It's the same model used in hospital-based care, adapted for the concierge setting.`,
+  (t: Treatment, l: Location) =>
+    `${t.name} is a rapidly evolving field, and the protocols available today are meaningfully more advanced than those from even 3-5 years ago. Higher-concentration formulations, improved processing techniques, and combination protocols that pair ${t.shortName.toLowerCase()} with exosomes or peptides have expanded both the candidate pool and the potential outcomes. ${l.city} patients who were told they weren't candidates in the past may now qualify under current protocols. A fresh evaluation is worth having.`,
+  (t: Treatment, l: Location) =>
+    `The consent process for ${t.name.toLowerCase()} at Regenerative Revival is designed to ensure ${l.city} patients make fully informed decisions. We explain the mechanism of action, the realistic range of outcomes based on published literature and our own patient data, the known risks, and the alternatives to treatment. We don't present ${t.shortName.toLowerCase()} as the only option — we present it as one option in a considered clinical context. Patients who proceed do so because the evidence and their own values align with the approach.`,
+  (t: Treatment, l: Location) =>
+    `Maximizing the benefit of ${t.name.toLowerCase()} after treatment involves more than rest. ${l.city} patients who incorporate targeted rehabilitation — gentle range-of-motion work, physical therapy, or guided strength training starting at the 3-4 week mark — typically see faster functional recovery. The regenerative materials create the biological conditions for tissue repair; appropriate loading and movement signal the new tissue to organize and strengthen correctly. Our team provides guidance on when and how to begin this activity progression.`,
+  (t: Treatment, l: Location) =>
+    `Some ${l.city} patients ask whether ${t.name.toLowerCase()} is a permanent solution or a treatment they'll need to repeat. In most cases, a single protocol produces lasting structural improvement — not indefinite relief requiring maintenance dosing. However, patients with ongoing degenerative conditions or high-activity lifestyles may benefit from a follow-up treatment at 12-24 months to address any progression. This is evaluated on a case-by-case basis, not sold as a subscription.`,
+  (t: Treatment, l: Location) =>
+    `The relationship between ${t.shortName.toLowerCase()} outcomes and the patient's overall metabolic health is well documented. ${l.city} patients who are managing chronic inflammation through diet, sleep, and stress management tend to respond better to regenerative protocols than those who aren't. This is why Regenerative Revival takes a whole-body view — coordinating ${t.shortName.toLowerCase()} with hormones, peptides, and lifestyle support where appropriate. The regenerative response is a biological process, and biology is always context-dependent.`,
+  (t: Treatment, l: Location) =>
+    `For ${l.city} patients who have had previous joint surgeries or procedures, ${t.name.toLowerCase()} can still be highly effective. Post-surgical patients should disclose their full history during consultation so our medical team can assess protocol suitability and adjust delivery approach if needed. The anti-inflammatory and regenerative signals these protocols deliver can benefit the biological environment post-surgery. Previous treatment is not a disqualifier.`,
+];
+
+export function generateContextBlock(treatment: Treatment, location: Location): string[] {
+  return seededDraw(contextBlockPool, `${treatment.slug}-${location.slug}-context`, 3).map(
     (fn) => fn(treatment, location)
   );
 }

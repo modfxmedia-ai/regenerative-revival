@@ -11,6 +11,7 @@ import {
   generatePainPoints,
   generateKeywordBody,
   generateAuthorityBlock,
+  generateContextBlock,
   generateMetaTitle,
   generateMetaDesc,
 } from "../../../lib/content-engine";
@@ -72,6 +73,7 @@ export default async function TreatmentLocationPage({ params }: Props) {
   const painPoints = generatePainPoints(treatment, location);
   const keywordBody = generateKeywordBody(treatment, location);
   const authorityBlock = generateAuthorityBlock(treatment);
+  const contextBlock = generateContextBlock(treatment, location);
 
   const SITE_URL = "https://regenerativerevival.com";
   const pagePath = `/treatments/${treatment.slug}/${location.slug}`;
@@ -132,6 +134,7 @@ export default async function TreatmentLocationPage({ params }: Props) {
         painPoints={painPoints}
         keywordBody={keywordBody}
         authorityBlock={authorityBlock}
+        contextBlock={contextBlock}
       />
       <WhyChooseUs />
       <PatientStories />

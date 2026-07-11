@@ -42,6 +42,7 @@ interface Props {
   painPoints: { heading: string; points: string[] };
   keywordBody: string[];
   authorityBlock: { heading: string; body: string };
+  contextBlock: string[];
 }
 
 function FAQItem({ faq }: { faq: { question: string; answer: string } }) {
@@ -88,6 +89,7 @@ export default function TreatmentPageContent({
   painPoints,
   keywordBody,
   authorityBlock,
+  contextBlock,
 }: Props) {
   return (
     <>
@@ -307,6 +309,22 @@ export default function TreatmentPageContent({
           <p className="text-base text-white/60 leading-relaxed max-w-2xl mx-auto">
             {authorityBlock.body}
           </p>
+        </div>
+      </section>
+
+      {/* Context / Patient Education Block */}
+      <section className="py-16 bg-white">
+        <div className="mx-auto max-w-3xl px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">
+            What {location.city} Patients Need to Know
+          </h2>
+          <div className="space-y-6">
+            {contextBlock.map((paragraph, i) => (
+              <p key={i} className="text-base text-gray-600 leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
+          </div>
         </div>
       </section>
 

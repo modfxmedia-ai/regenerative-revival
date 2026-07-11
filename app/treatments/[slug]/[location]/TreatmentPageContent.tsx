@@ -36,6 +36,12 @@ interface Props {
   govLinks: { title: string; url: string }[];
   nearby: Location[];
   relatedTreatments: Treatment[];
+  // v2 OOPSEO pillars
+  heroHeadline: string;
+  heroSubheadline: string;
+  painPoints: { heading: string; points: string[] };
+  keywordBody: string[];
+  authorityBlock: { heading: string; body: string };
 }
 
 function FAQItem({ faq }: { faq: { question: string; answer: string } }) {
@@ -77,6 +83,11 @@ export default function TreatmentPageContent({
   govLinks,
   nearby,
   relatedTreatments,
+  heroHeadline,
+  heroSubheadline,
+  painPoints,
+  keywordBody,
+  authorityBlock,
 }: Props) {
   return (
     <>
@@ -93,14 +104,10 @@ export default function TreatmentPageContent({
                 </span>
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-[1.08] tracking-tight">
-                {treatment.name} in{" "}
-                <span className="bg-gradient-to-r from-primary-light via-[#b794e0] to-primary bg-clip-text text-transparent">
-                  {location.city}, {location.stateAbbr}
-                </span>
+                {heroHeadline}
               </h1>
               <p className="mt-6 text-lg text-white/50 leading-relaxed">
-                {treatment.description} Serving {location.city} and the{" "}
-                {location.metro} area.
+                {heroSubheadline}
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Link
@@ -145,6 +152,26 @@ export default function TreatmentPageContent({
             <div className="lg:col-span-2">
               <HeroContactForm />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pain Points — Pillar 3 */}
+      <section className="py-16 bg-secondary">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">
+            {painPoints.heading}
+          </h2>
+          <div className="grid sm:grid-cols-3 gap-5">
+            {painPoints.points.map((point, i) => (
+              <div
+                key={i}
+                className="rounded-2xl bg-white/[0.05] border border-white/[0.08] p-6"
+              >
+                <div className="h-1 w-8 rounded-full bg-primary mb-4" />
+                <p className="text-sm text-white/70 leading-relaxed">{point}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -213,6 +240,19 @@ export default function TreatmentPageContent({
         );
       })}
 
+      {/* Keyword Body Copy — Pillar 5 (semantic depth) */}
+      <section className="py-16 bg-white">
+        <div className="mx-auto max-w-3xl px-6 lg:px-8">
+          <div className="space-y-6">
+            {keywordBody.map((paragraph, i) => (
+              <p key={i} className="text-base text-gray-600 leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Conditions — with visual grid */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -252,6 +292,21 @@ export default function TreatmentPageContent({
               <div className="absolute inset-0 bg-gradient-to-t from-secondary/20 to-transparent" />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Authority Block — Pillar 8 */}
+      <section className="py-16 bg-secondary">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-primary-light bg-primary/10 rounded-full px-4 py-1.5 mb-6">
+            Why Regenerative Revival
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">
+            {authorityBlock.heading}
+          </h2>
+          <p className="text-base text-white/60 leading-relaxed max-w-2xl mx-auto">
+            {authorityBlock.body}
+          </p>
         </div>
       </section>
 

@@ -36,6 +36,9 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "https://regenerativerevival.com/",
+    types: {
+      "text/plain": "https://regenerativerevival.com/llms.txt",
+    },
   },
   icons: {
     icon: [

@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0",
+  "siteDescription": "Concierge regenerative medicine and nationwide telehealth — stem cells, peptides, hormones, and NAD+.",
+  "actions": [
+    {
+      "id": "schedule-consultation",
+      "name": "Schedule a Free Consultation",
+      "description": "Book a free consultation with a licensed clinician to discuss regenerative medicine, peptide therapy, hormone optimization, or NAD+ options.",
+      "url": "https://regenerativerevival.com/contact/",
+      "method": "navigate",
+      "params": []
+    },
+    {
+      "id": "consult-router-quiz",
+      "name": "Take the 2-Minute Consult Quiz",
+      "description": "Complete a 2-question quiz to be matched with the right program — in-home regenerative therapy or telehealth.",
+      "url": "https://regenerativerevival.com/consult-router/",
+      "method": "navigate",
+      "params": []
+    },
+    {
+      "id": "browse-regenerative",
+      "name": "Browse Regenerative Treatments",
+      "description": "View all available in-home regenerative medicine treatments including stem cell therapy, Wharton's Jelly, and exosomes.",
+      "url": "https://regenerativerevival.com/services/",
+      "method": "navigate",
+      "params": []
+    },
+    {
+      "id": "browse-peptides",
+      "name": "Browse Peptide Therapy Programs",
+      "description": "View physician-prescribed peptide programs including BPC-157, semaglutide, CJC-1295, and more.",
+      "url": "https://regenerativerevival.com/peptides/",
+      "method": "navigate",
+      "params": []
+    },
+    {
+      "id": "browse-hormones",
+      "name": "Browse Hormone Optimization Programs",
+      "description": "View TRT and HRT programs available via telehealth.",
+      "url": "https://regenerativerevival.com/hormones/",
+      "method": "navigate",
+      "params": []
+    },
+    {
+      "id": "browse-nad",
+      "name": "Browse NAD+ Therapy",
+      "description": "View NAD+ injection and sublingual programs for cellular energy and longevity.",
+      "url": "https://regenerativerevival.com/nad/",
+      "method": "navigate",
+      "params": []
+    },
+    {
+      "id": "call",
+      "name": "Call Regenerative Revival",
+      "description": "Call the main patient support line.",
+      "url": "tel:+16513718668",
+      "method": "navigate",
+      "params": []
+    }
+  ],
+  "gating": {
+    "read_paths": "allow",
+    "form_submissions": "allow",
+    "payment": "captcha_gate",
+    "account_creation": "rate_limited"
+  },
+  "contact": {
+    "phone": "+16513718668",
+    "email": "info@regenerativerevival.com",
+    "url": "https://regenerativerevival.com/contact/"
+  }
+}

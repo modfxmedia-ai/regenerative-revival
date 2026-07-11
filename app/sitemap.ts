@@ -11,29 +11,29 @@ const SITE_URL = "https://regenerativerevival.com";
 // Accurate lastmod = Google trusts your sitemap. Fake lastmod = Google ignores all of them.
 const STATIC_PAGE_DATES: Record<string, string> = {
   // Core hub pages
-  "/": "2026-05-22",
-  "/about": "2026-05-22",
+  "/": "2026-07-11",
+  "/about": "2026-07-11",
   "/about/founder": "2026-05-22",
   "/about/why-were-different": "2026-05-22",
   "/contact": "2026-05-22",
   "/news": "2026-05-22",
 
   // Regenerative hub
-  "/stem-cell-therapy": "2026-05-22",
-  "/whartons-jelly": "2026-05-22",
-  "/why-exosomes": "2026-05-22",
-  "/why-stem-cells": "2026-05-22",
+  "/stem-cell-therapy": "2026-07-11",
+  "/whartons-jelly": "2026-07-11",
+  "/why-exosomes": "2026-07-11",
+  "/why-stem-cells": "2026-07-11",
   "/concierge-care-model": "2026-05-22",
-  "/services": "2026-05-22",
+  "/services": "2026-07-11",
 
   // Telehealth hub
-  "/hormones": "2026-07-07",
-  "/peptides": "2026-07-07",
+  "/hormones": "2026-07-11",
+  "/peptides": "2026-07-11",
   "/hormones-peptides": "2026-07-07",
-  "/nad": "2026-05-22",
+  "/nad": "2026-07-11",
 
   // Programmatic hubs
-  "/treatments": "2026-05-22",
+  "/treatments": "2026-07-11",
   "/locations": "2026-05-22",
   "/partners": "2026-05-22",
 

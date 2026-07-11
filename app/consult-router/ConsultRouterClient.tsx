@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { ArrowRight, ArrowLeft, X, Send, CheckCircle2 } from "lucide-react";
 import { submitLead } from "@/app/lib/submit-lead";
 
@@ -158,6 +159,12 @@ export default function ConsultRouter() {
                   <ArrowRight className="h-4 w-4 text-primary-light" />
                 </button>
               ))}
+            </div>
+
+            <div className="mt-10 text-center">
+              <Link href="/services" className="text-sm text-white/40 hover:text-white/70 transition-colors">
+                Just want to browse? View all treatments &rarr;
+              </Link>
             </div>
           </div>
         )}

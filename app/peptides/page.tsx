@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight, CheckCircle, Sparkles, ShieldCheck, Clock, Users } from "lucide-react";
 import Breadcrumbs from "../components/Breadcrumbs";
 import ComplianceDisclaimer from "../components/ComplianceDisclaimer";
-import QuizCTA from "../components/QuizCTA";
+import TalkToProviderCTA from "../components/TalkToProviderCTA";
 import PeptidePrograms from "../components/PeptidePrograms";
 import { generatePageMetadata } from "../lib/seo";
 import {
@@ -290,7 +290,7 @@ export default function PeptidesPage() {
         </div>
       </section>
 
-      <QuizCTA />
+      <TalkToProviderCTA />
       <ComplianceDisclaimer variant="compounded_rx" />
     </>
   );

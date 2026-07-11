@@ -113,10 +113,10 @@ export default function TreatmentPageContent({
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Link
-                  href="/consult-router"
+                  href="/contact"
                   className="group flex h-14 items-center justify-center gap-2.5 rounded-2xl bg-primary px-9 text-base font-semibold text-white transition-all hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-0.5"
                 >
-                  Take The 2-Minute Quiz{" "}
+                  Talk to a Provider{" "}
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <a
@@ -358,18 +358,18 @@ export default function TreatmentPageContent({
         <div className="absolute inset-0 bg-secondary/90" />
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Ready to Get Started in {location.city}?
+            Talk to a Provider About {treatment.name} in {location.city}
           </h2>
           <p className="text-lg text-white/50 mb-8 max-w-2xl mx-auto">
-            Take the quiz and discover how{" "}
-            {treatment.name.toLowerCase()} can help you live pain-free.
+            A licensed clinician will review your case and walk you through
+            whether {treatment.shortName.toLowerCase()} is right for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/consult-router"
+              href="/contact"
               className="group flex h-14 items-center justify-center gap-2.5 rounded-2xl bg-primary px-9 text-base font-semibold text-white transition-all hover:shadow-2xl hover:shadow-primary/30"
             >
-              Take The 2-Minute Quiz{" "}
+              Talk to a Provider{" "}
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
             <a

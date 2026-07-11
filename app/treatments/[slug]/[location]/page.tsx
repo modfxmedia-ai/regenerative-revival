@@ -138,7 +138,6 @@ export default async function TreatmentLocationPage({ params }: Props) {
       />
       <WhyChooseUs />
       <PatientStories />
-      <QuizCTA />
     </>
   );
 }

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight, CheckCircle, Sparkles, Zap, Brain, Activity } from "lucide-react";
 import Breadcrumbs from "../components/Breadcrumbs";
 import ComplianceDisclaimer from "../components/ComplianceDisclaimer";
-import QuizCTA from "../components/QuizCTA";
+import TalkToProviderCTA from "../components/TalkToProviderCTA";
 import { generatePageMetadata } from "../lib/seo";
 import {
   JsonLd,
@@ -266,7 +266,7 @@ export default function NadHubPage() {
         </div>
       </section>
 
-      <QuizCTA />
+      <TalkToProviderCTA />
       <ComplianceDisclaimer variant="compounded_rx" />
     </>
   );

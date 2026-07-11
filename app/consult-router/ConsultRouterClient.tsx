@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { ArrowRight, ArrowLeft } from "lucide-react";
+import { ArrowRight, ArrowLeft, X, Send, CheckCircle2 } from "lucide-react";
+import { submitLead } from "@/app/lib/submit-lead";
 
 declare global {
   interface Window {
@@ -66,6 +67,7 @@ export default function ConsultRouter() {
   const [goal, setGoal] = useState<Goal | null>(null);
   const [delivery, setDelivery] = useState<Delivery | null>(null);
   const [result, setResult] = useState<RouteResult | null>(null);
+  const [showModal, setShowModal] = useState(false);
 
   const onSelectGoal = (g: Goal) => {
     setGoal(g);
@@ -78,6 +80,7 @@ export default function ConsultRouter() {
     const r = routeAnswer(goal, d);
     setResult(r);
     setStep(2);
+    setShowModal(true);
 
     // Track the quiz decision as a Google Analytics event — real, anonymous
     // path analytics with no lead/CRM/email noise. Guarded so it no-ops if GA
@@ -102,6 +105,7 @@ export default function ConsultRouter() {
     setGoal(null);
     setDelivery(null);
     setResult(null);
+    setShowModal(false);
   };
 
   return (
@@ -212,10 +216,10 @@ export default function ConsultRouter() {
             <div className="mt-10 flex flex-wrap gap-4">
               <button
                 type="button"
-                onClick={onProceed}
+                onClick={() => setShowModal(true)}
                 className="inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-white px-6 py-3 rounded-md font-medium transition-colors"
               >
-                Continue <ArrowRight className="h-4 w-4" />
+                Get Started <ArrowRight className="h-4 w-4" />
               </button>
               <button
                 type="button"
@@ -233,7 +237,244 @@ export default function ConsultRouter() {
             </p>
           </div>
         )}
+{/* Capture modal — auto-opens when result is ready */}
+        {showModal && result && (
+          <ConsultModal
+            result={result}
+            goal={goal}
+            delivery={delivery}
+            onClose={() => setShowModal(false)}
+            onSuccess={() => router.push(result.destination)}
+          />
+        )}
       </section>
     </main>
+  );
+}
+
+// ─── Capture Modal ────────────────────────────────────────────────────────────
+
+function validateName(value: string, field: string): string | null {
+  const trimmed = value.trim();
+  if (!trimmed) return `${field} is required`;
+  if (trimmed.length < 2) return `${field} must be at least 2 characters`;
+  if (!/^[a-zA-Z\s'-]+$/.test(trimmed)) return `${field} contains invalid characters`;
+  return null;
+}
+
+function validatePhone(value: string): string | null {
+  const digits = value.replace(/\D/g, "");
+  if (!digits) return "Phone number is required";
+  if (digits.length < 10 || digits.length > 11) return "Enter a valid 10-digit phone number";
+  const areaCode = digits.length === 11 ? digits.slice(1, 4) : digits.slice(0, 3);
+  if (/^[01]/.test(areaCode) || /^.11$/.test(areaCode)) return "Enter a valid US area code";
+  return null;
+}
+
+function validateEmail(value: string): string | null {
+  if (!value.trim()) return "Email is required";
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) return "Enter a valid email address";
+  return null;
+}
+
+interface ConsultModalProps {
+  result: RouteResult;
+  goal: Goal | null;
+  delivery: Delivery | null;
+  onClose: () => void;
+  onSuccess: () => void;
+}
+
+function ConsultModal({ result, goal, delivery, onClose, onSuccess }: ConsultModalProps) {
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const inputClass = "w-full rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-sm text-white placeholder-white/40 focus:border-primary-light/60 focus:outline-none focus:ring-2 focus:ring-primary-light/20 transition-all";
+  const errorInputClass = "border-red-400/60 focus:border-red-400 focus:ring-red-400/20";
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const newErrors: Record<string, string> = {};
+
+    const firstName = (data.get("firstName") as string) || "";
+    const lastName = (data.get("lastName") as string) || "";
+    const fnErr = validateName(firstName, "First name");
+    if (fnErr) newErrors.firstName = fnErr;
+    const lnErr = validateName(lastName, "Last name");
+    if (lnErr) newErrors.lastName = lnErr;
+
+    const phoneErr = validatePhone((data.get("phone") as string) || "");
+    if (phoneErr) newErrors.phone = phoneErr;
+    const emailErr = validateEmail((data.get("email") as string) || "");
+    if (emailErr) newErrors.email = emailErr;
+
+    setErrors(newErrors);
+    if (Object.keys(newErrors).length > 0) return;
+
+    setSubmitting(true);
+
+    const contextNote = `Quiz path: ${result.path} | Goal: ${goal ?? "unknown"} | Delivery: ${delivery ?? "unknown"} | Routed to: ${result.destination}`;
+    const userMessage = ((data.get("message") as string) || "").trim();
+
+    const submitResult = await submitLead({
+      firstName,
+      lastName,
+      email: (data.get("email") as string).trim(),
+      phone: (data.get("phone") as string).trim(),
+      message: userMessage ? `${userMessage}\n\n[${contextNote}]` : `[${contextNote}]`,
+      inquiryType: result.path === "regen" ? "regenerative-therapy" : "telehealth",
+      source: "consult-router",
+    });
+
+    setSubmitting(false);
+
+    if (submitResult.success) {
+      if (typeof window !== "undefined" && typeof window.gtag === "function") {
+        window.gtag("event", "quiz_lead_captured", {
+          goal,
+          delivery,
+          path: result.path,
+          destination: result.destination,
+        });
+      }
+      setSubmitted(true);
+      setTimeout(onSuccess, 2000);
+    } else {
+      setErrors({ form: submitResult.error || "Something went wrong. Please try again." });
+    }
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="consult-modal-title"
+    >
+      {/* Backdrop */}
+      <div
+        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        onClick={submitted ? undefined : onClose}
+      />
+
+      {/* Card */}
+      <div className="relative w-full max-w-lg bg-secondary border border-white/10 rounded-2xl shadow-2xl p-8 sm:p-10 max-h-[90vh] overflow-y-auto">
+        {/* Close button */}
+        {!submitted && (
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+            aria-label="Close"
+          >
+            <X className="h-4 w-4 text-white" />
+          </button>
+        )}
+
+        {submitted ? (
+          <div className="text-center py-8">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/20 border border-primary-light/30 mx-auto mb-5">
+              <CheckCircle2 className="h-8 w-8 text-primary-light" />
+            </div>
+            <h3 className="text-2xl font-semibold text-white mb-2">You&apos;re all set!</h3>
+            <p className="text-white/60">We&apos;ve got your info. Taking you to your next step now&hellip;</p>
+          </div>
+        ) : (
+          <>
+            <div className="mb-6">
+              <p className="text-xs uppercase tracking-widest text-primary-light mb-1">One last step</p>
+              <h2 id="consult-modal-title" className="text-2xl font-semibold text-white">
+                Where should we send your consult details?
+              </h2>
+              <p className="mt-2 text-sm text-white/50">
+                A clinician will reach out to confirm your {result.path === "regen" ? "in-home consult" : "telehealth intake"} within one business day.
+              </p>
+            </div>
+
+            {errors.form && (
+              <p className="text-sm text-red-400 mb-4 rounded-lg bg-red-400/10 border border-red-400/20 px-4 py-3">{errors.form}</p>
+            )}
+
+            <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4">
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="cr-firstName" className="block text-xs font-medium text-white/70 mb-1.5">
+                    First Name <span className="text-red-400">*</span>
+                  </label>
+                  <input
+                    id="cr-firstName" name="firstName" type="text" required autoComplete="given-name"
+                    placeholder="Jane"
+                    className={`${inputClass} ${errors.firstName ? errorInputClass : ""}`}
+                  />
+                  {errors.firstName && <p className="mt-1 text-xs text-red-400">{errors.firstName}</p>}
+                </div>
+                <div>
+                  <label htmlFor="cr-lastName" className="block text-xs font-medium text-white/70 mb-1.5">
+                    Last Name <span className="text-red-400">*</span>
+                  </label>
+                  <input
+                    id="cr-lastName" name="lastName" type="text" required autoComplete="family-name"
+                    placeholder="Smith"
+                    className={`${inputClass} ${errors.lastName ? errorInputClass : ""}`}
+                  />
+                  {errors.lastName && <p className="mt-1 text-xs text-red-400">{errors.lastName}</p>}
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="cr-email" className="block text-xs font-medium text-white/70 mb-1.5">
+                  Email <span className="text-red-400">*</span>
+                </label>
+                <input
+                  id="cr-email" name="email" type="email" required autoComplete="email"
+                  placeholder="jane@example.com"
+                  className={`${inputClass} ${errors.email ? errorInputClass : ""}`}
+                />
+                {errors.email && <p className="mt-1 text-xs text-red-400">{errors.email}</p>}
+              </div>
+
+              <div>
+                <label htmlFor="cr-phone" className="block text-xs font-medium text-white/70 mb-1.5">
+                  Phone <span className="text-red-400">*</span>
+                </label>
+                <input
+                  id="cr-phone" name="phone" type="tel" required autoComplete="tel"
+                  placeholder="(555) 123-4567"
+                  className={`${inputClass} ${errors.phone ? errorInputClass : ""}`}
+                />
+                {errors.phone && <p className="mt-1 text-xs text-red-400">{errors.phone}</p>}
+              </div>
+
+              <div>
+                <label htmlFor="cr-message" className="block text-xs font-medium text-white/70 mb-1.5">
+                  Anything else we should know? <span className="text-white/30">(optional)</span>
+                </label>
+                <textarea
+                  id="cr-message" name="message" rows={3}
+                  placeholder="Tell us a bit about your situation, condition, or questions..."
+                  className={`${inputClass} resize-none`}
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={submitting}
+                className="group flex h-12 items-center justify-center gap-2 rounded-xl bg-primary hover:bg-primary-light text-white text-sm font-semibold transition-all disabled:opacity-60 disabled:cursor-not-allowed mt-1"
+              >
+                <Send className="h-4 w-4" />
+                {submitting ? "Sending..." : "Send My Info"}
+              </button>
+
+              <p className="text-[10px] text-white/30 text-center leading-relaxed">
+                By submitting you consent to be contacted by SMS and/or phone by Regenerative Revival and/or Seth Berge Inc. Message &amp; data rates may apply. Reply STOP to opt out.{" "}
+                <a href="/privacy-policy" className="text-white/50 hover:text-white/80 underline">Privacy Policy</a>.
+              </p>
+            </form>
+          </>
+        )}
+      </div>
+    </div>
   );
 }

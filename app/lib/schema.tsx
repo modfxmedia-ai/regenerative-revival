@@ -4,7 +4,7 @@
 const SITE_URL = "https://regenerativerevival.com";
 const SITE_NAME = "Regenerative Revival";
 const SITE_LOGO = `${SITE_URL}/icon-512.png`;
-const PHONE = "(651) 371-8668";
+const PHONE = "612-453-3182";
 const EMAIL = "info@regenerativerevival.com";
 
 // ─── Organization Schema ───

@@ -54,7 +54,7 @@
       "id": "call",
       "name": "Call Regenerative Revival",
       "description": "Call the main patient support line.",
-      "url": "tel:+16513718668",
+      "url": "tel:+16124533182",
       "method": "navigate",
       "params": []
     }
@@ -66,7 +66,7 @@
     "account_creation": "rate_limited"
   },
   "contact": {
-    "phone": "+16513718668",
+    "phone": "+16124533182",
     "email": "info@regenerativerevival.com",
     "url": "https://regenerativerevival.com/contact/"
   }

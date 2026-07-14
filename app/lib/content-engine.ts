@@ -378,7 +378,7 @@ const faqPool = [
   }),
   (t: Treatment, l: Location) => ({
     question: `Do you offer free consultations in ${l.city}?`,
-    answer: `Yes, Regenerative Revival offers complimentary consultations for ${l.city}, ${l.state} residents. During your consultation, our medical team reviews your condition, evaluates candidacy, explains the treatment process, and answers all your questions. There's no obligation and no pressure. Call us at (651) 371-8668 or take our 2-minute quiz to get started.`,
+    answer: `Yes, Regenerative Revival offers complimentary consultations for ${l.city}, ${l.state} residents. During your consultation, our medical team reviews your condition, evaluates candidacy, explains the treatment process, and answers all your questions. There's no obligation and no pressure. Call us at 612-453-3182 or take our 2-minute quiz to get started.`,
   }),
   (t: Treatment, l: Location) => ({
     question: `How is ${t.name.toLowerCase()} different from cortisone injections or PRP?`,

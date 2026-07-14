@@ -209,8 +209,8 @@ function ContactInfo() {
         <InfoRow
           icon={<Phone className="h-4 w-4 text-[#71A7F5]" />}
           label="Phone"
-          value="(651) 371-8668"
-          href="tel:+16513718668"
+          value="612-453-3182"
+          href="tel:+16124533182"
         />
         <InfoRow
           icon={<Mail className="h-4 w-4 text-[#71A7F5]" />}

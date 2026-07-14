@@ -120,10 +120,10 @@ export default function TreatmentPageContent({
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <a
-                  href="tel:+16513718668"
+                  href="tel:+16124533182"
                   className="flex h-14 items-center justify-center gap-3 rounded-2xl bg-white/[0.06] backdrop-blur-xl border border-white/[0.1] px-7 text-base font-semibold text-white transition-all hover:bg-white/[0.12]"
                 >
-                  <Phone className="h-4 w-4" /> Call (651) 371-8668
+                  <Phone className="h-4 w-4" /> Call 612-453-3182
                 </a>
               </div>
               <div className="mt-8 flex flex-wrap items-center gap-5">
@@ -373,10 +373,10 @@ export default function TreatmentPageContent({
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
             <a
-              href="tel:+16513718668"
+              href="tel:+16124533182"
               className="flex h-14 items-center justify-center gap-3 rounded-2xl bg-white/[0.06] border border-white/[0.1] px-7 text-base font-semibold text-white transition-all hover:bg-white/[0.12]"
             >
-              <Phone className="h-4 w-4" /> (651) 371-8668
+              <Phone className="h-4 w-4" /> 612-453-3182
             </a>
           </div>
         </div>

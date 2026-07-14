@@ -262,7 +262,7 @@ function FormCard() {
 
 function ContactInfo() {
   const items = [
-    { icon: Phone, label: "Phone", value: "(651) 371-8668", href: "tel:+16513718668" },
+    { icon: Phone, label: "Phone", value: "612-453-3182", href: "tel:+16124533182" },
     { icon: Mail, label: "Email", value: "info@regenerativerevival.com", href: "mailto:info@regenerativerevival.com" },
     { icon: MapPin, label: "Service Area", value: "Nationwide — All 50 States" },
     { icon: Clock, label: "Hours", value: "Mon–Fri: 9AM–6PM EST" },
@@ -320,7 +320,7 @@ function WhyReachOut() {
       </div>
       <div className="mt-6">
         <a
-          href="tel:+16513718668"
+          href="tel:+16124533182"
           className="group flex h-11 items-center justify-center gap-2 rounded-full bg-[#021E3C] text-[13px] font-semibold text-white transition-all hover:bg-[#345691] hover:shadow-[0_8px_24px_-8px_rgba(2,30,60,0.5)]"
         >
           <Phone className="h-3.5 w-3.5" />

@@ -33,7 +33,7 @@ const conditions = [
   "Autoimmune Conditions",
 ];
 
-const PHONE = "(651) 371-8668";
+const PHONE = "612-453-3182";
 
 export default function DellWebbRsvpPage() {
   return (

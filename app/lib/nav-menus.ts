@@ -57,8 +57,10 @@ export const peptidesDropdown: DropMenu = {
   align: "left",
   items: [
     { label: "BPC-157", href: "/hormones-peptides/bpc-157", desc: "Recovery, tissue repair & gut support", icon: FlaskConical },
-    { label: "Compounded Semaglutide", href: "/hormones-peptides/sublingual-semaglutide", desc: "GLP-1 weight management via telehealth", icon: Scale },
-    { label: "Compounded Tirzepatide", href: "/hormones-peptides/sublingual-tirzepatide", desc: "Dual GIP/GLP-1 metabolic support", icon: Scale },
+    { label: "Semaglutide — Sublingual", href: "/hormones-peptides/sublingual-semaglutide", desc: "GLP-1 weight management — no needles", icon: Scale },
+    { label: "Semaglutide — GLP-1 Injection", href: "/hormones-peptides/semaglutide-b12-injection", desc: "Injectable GLP-1 + B12 for weight loss", icon: Scale },
+    { label: "Tirzepatide — Sublingual", href: "/hormones-peptides/sublingual-tirzepatide", desc: "Dual GIP/GLP-1 support — no needles", icon: Scale },
+    { label: "Tirzepatide — GLP-1 Injection", href: "/hormones-peptides/tirzepatide-b12-injection", desc: "Injectable dual GIP/GLP-1 + B12", icon: Scale },
     { label: "CJC-1295 / Ipamorelin", href: "/hormones-peptides/cjc-ipamorelin", desc: "Sleep, recovery & body composition", icon: Zap },
     { label: "GHK-Cu", href: "/hormones-peptides/ghk-cu", desc: "Skin rejuvenation & cellular repair", icon: Sparkles },
     { label: "All Peptide Programs", href: "/peptides", desc: "Browse by goal — weight, recovery, longevity", icon: FlaskConical },

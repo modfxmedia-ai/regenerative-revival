@@ -36,31 +36,54 @@ export interface PeptideCategory {
 export const peptideCategories: PeptideCategory[] = [
   {
     id: "metabolic-reset",
-    title: "Metabolic Reset",
-    blurb: "Support healthy weight loss and metabolic balance.",
+    title: "Weight Management & Metabolic Health",
+    blurb:
+      "Support healthy weight loss, appetite regulation, and metabolic balance — sublingual or injectable GLP-1.",
     tone: "amethyst",
     peptides: [
       {
-        name: "GLP-1 Tirzepatide",
+        name: "Sublingual Semaglutide",
         benefits: [
-          "May support weight management",
+          "May support appetite control & cravings",
+          "May promote healthy weight loss",
+          "May improve blood sugar regulation",
+        ],
+        priceMonthly: "$379",
+        priceQuarterly: "$910",
+        slug: "sublingual-semaglutide",
+      },
+      {
+        name: "GLP-1 Semaglutide + B12 Injection",
+        benefits: [
+          "Most clinically studied GLP-1 delivery",
           "May reduce appetite & cravings",
-          "May improve metabolic health",
+          "B12 supports energy during weight loss",
+        ],
+        priceMonthly: "$349",
+        priceQuarterly: "$837",
+        slug: "semaglutide-b12-injection",
+      },
+      {
+        name: "Sublingual Tirzepatide",
+        benefits: [
+          "May enhance fat loss & appetite suppression",
+          "May support blood sugar & insulin balance",
+          "May promote sustained metabolic health",
         ],
         priceMonthly: "$379",
         priceQuarterly: "$910",
         slug: "sublingual-tirzepatide",
       },
       {
-        name: "GLP-1 Semaglutide",
+        name: "GLP-1 Tirzepatide + B12 Injection",
         benefits: [
-          "May support weight management",
+          "Dual GIP + GLP-1 for stronger metabolic effect",
           "May reduce appetite & cravings",
-          "May improve metabolic health",
+          "B12 supports energy during weight loss",
         ],
         priceMonthly: "$379",
         priceQuarterly: "$910",
-        slug: "sublingual-semaglutide",
+        slug: "tirzepatide-b12-injection",
       },
     ],
   },
@@ -429,36 +452,6 @@ export const peptideCategories: PeptideCategory[] = [
         priceMonthly: "$149",
         priceQuarterly: "$358",
         slug: "lipo-b",
-      },
-    ],
-  },
-  {
-    id: "weight-management",
-    title: "Weight Management & Metabolic Health",
-    blurb: "Support healthy weight loss, appetite regulation, and metabolic balance.",
-    tone: "amethyst",
-    peptides: [
-      {
-        name: "Sublingual Semaglutide",
-        benefits: [
-          "May support appetite control & cravings",
-          "May promote healthy weight loss",
-          "May improve blood sugar regulation",
-        ],
-        priceMonthly: "$379",
-        priceQuarterly: "$910",
-        slug: "sublingual-semaglutide",
-      },
-      {
-        name: "Sublingual Tirzepatide",
-        benefits: [
-          "May enhance fat loss & appetite suppression",
-          "May support blood sugar & insulin balance",
-          "May promote sustained metabolic health",
-        ],
-        priceMonthly: "$379",
-        priceQuarterly: "$910",
-        slug: "sublingual-tirzepatide",
       },
     ],
   },

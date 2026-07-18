@@ -10,7 +10,7 @@ const FULL_CUSTOM_ROUTES = ["/clp", "/playing-overseas"];
 
 // Routes that should hide the global header/nav only (focused landing pages
 // where we don't want visitors navigating away before they take action).
-const NAV_HIDDEN_ROUTES = ["/dell-webb-rsvp"];
+const NAV_HIDDEN_ROUTES = ["/dell-webb-rsvp", "/pre-screen"];
 
 function matchesRoute(pathname: string | null, routes: string[]): boolean {
   if (!pathname) return false;

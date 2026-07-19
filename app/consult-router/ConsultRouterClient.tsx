@@ -83,7 +83,7 @@ export default function ConsultRouter() {
     setStep(2);
     setShowModal(true);
 
-    // Track the quiz decision as a Google Analytics event — real, anonymous
+    // Track the quiz decision as a Google Analytics event - real, anonymous
     // path analytics with no lead/CRM/email noise. Guarded so it no-ops if GA
     // hasn't loaded (ad blockers, SSR, etc.).
     if (typeof window !== "undefined" && typeof window.gtag === "function") {
@@ -146,7 +146,7 @@ export default function ConsultRouter() {
                   ["weight", "Sustainable weight loss (GLP-1 like Semaglutide / Tirzepatide)"],
                   ["hormones", "Hormone optimization (TRT, HRT, peptides)"],
                   ["longevity", "Energy, recovery, and longevity (NAD+, peptides)"],
-                  ["unsure", "I'm not sure yet — help me figure it out"],
+                  ["unsure", "I'm not sure yet - help me figure it out"],
                 ] as [Goal, string][]
               ).map(([value, label]) => (
                 <button
@@ -190,8 +190,8 @@ export default function ConsultRouter() {
               {(
                 [
                   ["in_home", "In-home concierge visit with a clinician"],
-                  ["telehealth", "Telehealth — video / phone consults work for me"],
-                  ["either", "Either is fine — recommend what's best"],
+                  ["telehealth", "Telehealth - video / phone consults work for me"],
+                  ["either", "Either is fine - recommend what's best"],
                 ] as [Delivery, string][]
               ).map(([value, label]) => (
                 <button
@@ -244,7 +244,7 @@ export default function ConsultRouter() {
             </p>
           </div>
         )}
-{/* Capture modal — auto-opens when result is ready */}
+{/* Capture modal - auto-opens when result is ready */}
         {showModal && result && (
           <ConsultModal
             result={result}

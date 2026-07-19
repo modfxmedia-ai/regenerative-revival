@@ -6,7 +6,7 @@ const LEAD_RECIPIENTS = [
   "justin@modfxmedia.com",
 ];
 
-// Optional dual-write targets — leads also forwarded to GHL and Tyriacore CRM
+// Optional dual-write targets - leads also forwarded to GHL and Tyriacore CRM
 // when these env vars are present. Both are fire-and-forget; failures never
 // break the user-facing response.
 const GHL_WEBHOOK_URL = process.env.GHL_WEBHOOK_URL;
@@ -69,7 +69,7 @@ async function forwardToTyria(fields: {
     };
     const note = [fields.subject, fields.inquiryType, fields.message]
       .filter(Boolean)
-      .join(" — ");
+      .join(" - ");
     if (note) answers[TYRIA_FIELDS.painAreas] = note;
     answers[TYRIA_FIELDS.whatLed] = "Website";
     if (fields.everflowId) answers[TYRIA_FIELDS.everflowId] = fields.everflowId;
@@ -184,7 +184,7 @@ export async function POST(req: NextRequest) {
         }),
       );
     }
-    // Don't await — let them run while we send email. We `void` them so the
+    // Don't await - let them run while we send email. We `void` them so the
     // unhandled-promise lint stays quiet; errors are already swallowed inside
     // forwardToWebhook.
     if (crmWrites.length) void Promise.all(crmWrites);
@@ -205,7 +205,7 @@ export async function POST(req: NextRequest) {
     if (!RESEND_API_KEY) {
       // Log the lead so it's not lost even if email isn't configured yet
       console.log("[LEAD]", { fullName, email, phone, message, subject, inquiryType, source });
-      return NextResponse.json({ success: true, warning: "Email not configured — lead logged to server." });
+      return NextResponse.json({ success: true, warning: "Email not configured - lead logged to server." });
     }
 
     // Send lead notification to team
@@ -218,7 +218,7 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify({
         from: "Regenerative Revival <leads@regenerativerevival.com>",
         to: LEAD_RECIPIENTS,
-        subject: `New Lead: ${fullName} — ${subject || inquiryType || "Website Inquiry"}`,
+        subject: `New Lead: ${fullName} - ${subject || inquiryType || "Website Inquiry"}`,
         html: htmlBody,
         reply_to: email,
       }),
@@ -233,7 +233,7 @@ export async function POST(req: NextRequest) {
         <div style="padding:32px;background:#fff;border:1px solid #eee;border-top:none;border-radius:0 0 12px 12px;">
           <h2 style="color:#6B3FA0;margin-top:0;">Thank you, ${firstName.trim()}!</h2>
           <p style="font-size:16px;line-height:1.6;">
-            We've received your submission and a member of our team will be reaching out to you shortly — typically within 24 hours.
+            We've received your submission and a member of our team will be reaching out to you shortly - typically within 24 hours.
           </p>
           <p style="font-size:16px;line-height:1.6;">
             In the meantime, if you have any urgent questions, feel free to call us directly at <a href="tel:+16124533182" style="color:#6B3FA0;">612-453-3182</a> or reply to this email.
@@ -256,7 +256,7 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify({
         from: "Regenerative Revival <no-reply@regenerativerevival.com>",
         to: [email.trim()],
-        subject: "We've received your inquiry — Regenerative Revival",
+        subject: "We've received your inquiry - Regenerative Revival",
         html: confirmationHtml,
       }),
     });

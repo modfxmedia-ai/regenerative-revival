@@ -18,7 +18,7 @@ export default function NewsList() {
 
   return (
     <div ref={ref}>
-      {/* ═══ FEATURED HERO ARTICLE — dark midnight ═══ */}
+      {/* ═══ FEATURED HERO ARTICLE - dark midnight ═══ */}
       <section className="relative bg-gradient-to-b from-[#21253C] to-[#1A1F30] overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(103,98,175,0.12),transparent_70%)] pointer-events-none" />
         <div className="absolute inset-0 lux-grid opacity-20 pointer-events-none" />
@@ -69,7 +69,7 @@ export default function NewsList() {
         </motion.div>
       </section>
 
-      {/* ═══ SPOTLIGHT TRIO — deeper midnight ═══ */}
+      {/* ═══ SPOTLIGHT TRIO - deeper midnight ═══ */}
       <section className="relative bg-[#0F1220] overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-20">
           <div className="grid md:grid-cols-3 gap-px bg-white/[0.05]">
@@ -109,7 +109,7 @@ export default function NewsList() {
         </div>
       </section>
 
-      {/* ═══ REMAINING — EDITORIAL LIST — white ═══ */}
+      {/* ═══ REMAINING - EDITORIAL LIST - white ═══ */}
       <section className="relative bg-white overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-20">
           <motion.div

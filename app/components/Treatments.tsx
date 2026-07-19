@@ -46,7 +46,7 @@ export default function Treatments() {
       className="relative bg-white overflow-hidden py-16 lg:py-20"
     >
       <div ref={ref} className="mx-auto max-w-[1400px] px-6 lg:px-10 flex flex-col items-center gap-10">
-        {/* === Section header — matches Figma: 690px wide, centered === */}
+        {/* === Section header - matches Figma: 690px wide, centered === */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -80,7 +80,7 @@ export default function Treatments() {
           >
             Sublingual Semaglutide doesn&apos;t have to exist in a silo. Our clinicians can
             coordinate it with peptide protocols, hormone optimization (TRT/HRT), NAD+ programs,
-            and even regenerative therapy — so your weight loss plan plugs into your bigger
+            and even regenerative therapy - so your weight loss plan plugs into your bigger
             longevity strategy instead of competing with it.
           </p>
         </motion.div>
@@ -184,7 +184,7 @@ function TreatmentCard({
 
       {/* === Image stage at bottom === */}
       <div className="relative mt-auto w-full h-[269px] overflow-visible">
-        {/* Gradient backdrop — taller so images sit IN it with tops breaking out */}
+        {/* Gradient backdrop - taller so images sit IN it with tops breaking out */}
         <div
           className="absolute inset-x-[14px] bottom-0 h-[160px] rounded-lg"
           style={{
@@ -193,7 +193,7 @@ function TreatmentCard({
           }}
         />
 
-        {/* Image — bottom-aligned with the gradient, top breaks out */}
+        {/* Image - bottom-aligned with the gradient, top breaks out */}
         <div className="absolute inset-x-0 bottom-0 flex items-end justify-center overflow-visible">
           <Image
             src={image}

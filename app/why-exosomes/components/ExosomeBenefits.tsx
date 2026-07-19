@@ -87,7 +87,7 @@ export default function ExosomeBenefits() {
         >
           The regenerative potential of exosomes has been a subject of intense
           research in recent years. They have been shown to play a critical role
-          in wound healing, tissue repair, and inflammation reduction — offering
+          in wound healing, tissue repair, and inflammation reduction - offering
           a cell-free approach to regenerative medicine.
         </motion.p>
 

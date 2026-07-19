@@ -41,7 +41,7 @@ function offset(direction: Direction, distance: number) {
 }
 
 /**
- * Reveal — the standard scroll-triggered entrance for the V2 elevated build.
+ * Reveal - the standard scroll-triggered entrance for the V2 elevated build.
  * Fades + slides content in as it enters the viewport, once. Supports an
  * optional stagger mode that sequences direct children via <RevealItem>.
  */

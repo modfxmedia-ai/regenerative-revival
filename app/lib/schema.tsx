@@ -38,7 +38,7 @@ export function organizationSchema() {
       name: "Seth Berge",
     },
     // knowsAbout is valid on all Organization types and accepts free text.
-    // medicalSpecialty is NOT valid on Organization — it only applies to
+    // medicalSpecialty is NOT valid on Organization - it only applies to
     // MedicalOrganization/MedicalClinic/Physician subtypes.
     knowsAbout: [
       "Regenerative Medicine",
@@ -102,9 +102,9 @@ export function localBusinessSchema() {
     // medicalSpecialty on MedicalClinic must use schema.org's controlled
     // enum (http://schema.org/MedicalSpecialty). Valid values that map to
     // RR's actual practice areas:
-    //   Musculoskeletal — joint pain, sports injuries, stem cell orthopedics
-    //   Endocrine       — hormone optimization (TRT / HRT)
-    //   Rheumatologic   — arthritis, chronic inflammation
+    //   Musculoskeletal - joint pain, sports injuries, stem cell orthopedics
+    //   Endocrine - hormone optimization (TRT / HRT)
+    //   Rheumatologic - arthritis, chronic inflammation
     medicalSpecialty: [
       "Musculoskeletal",
       "Endocrine",
@@ -265,7 +265,7 @@ export function productSchema(product: {
 }) {
   const url = `${SITE_URL}/${product.hub}/${product.slug}`;
 
-  // additionalProperty — surfaces structured product attributes in rich results
+  // additionalProperty - surfaces structured product attributes in rich results
   const additionalProperty: Record<string, unknown>[] = [];
   if (product.form) {
     additionalProperty.push({ "@type": "PropertyValue", name: "Form", value: product.form });
@@ -345,7 +345,7 @@ export function productListSchema(items: {
   };
 }
 
-// ─── Service Schema — for hub pages ───
+// ─── Service Schema - for hub pages ───
 export function serviceSchema(service: {
   name: string;
   description: string;
@@ -374,7 +374,7 @@ export function serviceSchema(service: {
   };
 }
 
-// ─── HowTo Schema — for process/steps pages ───
+// ─── HowTo Schema - for process/steps pages ───
 export function howToSchema(howTo: {
   name: string;
   description: string;

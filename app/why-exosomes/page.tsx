@@ -18,7 +18,7 @@ import {
  * Secondary: "exosome stem cell therapy", "what are exosomes"
  */
 export const metadata = generatePageMetadata({
-  title: "Exosome Therapy — Science & Benefits",
+  title: "Exosome Therapy - Science & Benefits",
   description:
     "Exosomes amplify stem cell therapy by carrying regenerative signals to damaged tissue. Add-on to Wharton's Jelly protocols.",
   path: "/why-exosomes",
@@ -28,12 +28,12 @@ const faqs = [
   {
     question: "What are exosomes and how do they work?",
     answer:
-      "Exosomes are nano-sized extracellular vesicles (30–150 nanometers) secreted by cells — including mesenchymal stem cells. They carry proteins, lipids, and RNA that act as molecular signals, instructing recipient cells to reduce inflammation, repair tissue, and regenerate. Think of them as the messaging system that tells your body what to do.",
+      "Exosomes are nano-sized extracellular vesicles (30–150 nanometers) secreted by cells - including mesenchymal stem cells. They carry proteins, lipids, and RNA that act as molecular signals, instructing recipient cells to reduce inflammation, repair tissue, and regenerate. Think of them as the messaging system that tells your body what to do.",
   },
   {
     question: "Are exosomes the same as stem cells?",
     answer:
-      "No. Stem cells are living cells that can differentiate and divide. Exosomes are cell-free vesicles — they carry the signaling molecules that stem cells produce, without the cells themselves. This makes them easier to standardize, store, and administer, with a lower risk of immune reaction.",
+      "No. Stem cells are living cells that can differentiate and divide. Exosomes are cell-free vesicles - they carry the signaling molecules that stem cells produce, without the cells themselves. This makes them easier to standardize, store, and administer, with a lower risk of immune reaction.",
   },
   {
     question: "What conditions can exosome therapy address?",
@@ -56,12 +56,12 @@ const mechanisms = [
   {
     icon: Radio,
     title: "Cell-to-cell communication",
-    desc: "Exosomes carry microRNA, proteins, and lipids that reprogram recipient cells — turning down inflammatory pathways and turning up repair signals. They are the body's native messaging system, amplified.",
+    desc: "Exosomes carry microRNA, proteins, and lipids that reprogram recipient cells - turning down inflammatory pathways and turning up repair signals. They are the body's native messaging system, amplified.",
   },
   {
     icon: Layers,
     title: "Paracrine signaling at scale",
-    desc: "A single MSC secretes thousands of exosomes. When delivered therapeutically, they flood the target tissue with regenerative signals — far more than the cells themselves could produce in situ.",
+    desc: "A single MSC secretes thousands of exosomes. When delivered therapeutically, they flood the target tissue with regenerative signals - far more than the cells themselves could produce in situ.",
   },
   {
     icon: Target,
@@ -71,7 +71,7 @@ const mechanisms = [
   {
     icon: TrendingUp,
     title: "Amplifies stem cell outcomes",
-    desc: "When used alongside Wharton's Jelly MSC therapy, exosomes extend the regenerative signal — continuing to instruct tissue repair long after the initial therapy.",
+    desc: "When used alongside Wharton's Jelly MSC therapy, exosomes extend the regenerative signal - continuing to instruct tissue repair long after the initial therapy.",
   },
 ];
 
@@ -80,7 +80,7 @@ export default function WhyExosomesPage() {
     <>
       <JsonLd
         data={medicalWebPageSchema({
-          title: "Exosome Therapy — The Signaling Layer of Regenerative Medicine",
+          title: "Exosome Therapy - The Signaling Layer of Regenerative Medicine",
           description:
             "Exosomes are nano-sized vesicles that carry regenerative signals. Learn how exosome therapy amplifies stem cell therapy.",
           url: "/why-exosomes",
@@ -129,14 +129,14 @@ export default function WhyExosomesPage() {
               <span className="text-[11px] font-medium tracking-[0.32em] text-white/60 uppercase">Regenerative Medicine · Cell Signaling</span>
             </div>
             <h1 className="font-[family-name:var(--font-poppins)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4.5rem] text-white leading-[1.02] tracking-[-0.02em]">
-              Exosomes — the{" "}
+              Exosomes - the{" "}
               <span className="text-[#6762AF] font-semibold">
                 signaling layer
               </span>{" "}
               that drives repair
             </h1>
             <p className="mt-7 text-base lg:text-lg text-white/65 leading-relaxed max-w-2xl">
-              Stem cells don&apos;t repair tissue directly. They send signals. Exosomes are those signals — nano-sized vesicles packed with the molecular instructions that tell your body to reduce inflammation, rebuild tissue, and regenerate. Here&apos;s why they matter.
+              Stem cells don&apos;t repair tissue directly. They send signals. Exosomes are those signals - nano-sized vesicles packed with the molecular instructions that tell your body to reduce inflammation, rebuild tissue, and regenerate. Here&apos;s why they matter.
             </p>
             <div className="mt-9 flex flex-col sm:flex-row gap-4">
               <Link
@@ -169,10 +169,10 @@ export default function WhyExosomesPage() {
               </h2>
               <div className="mt-6 space-y-5 text-[15px] text-[#4A4F66] leading-[1.75]">
                 <p>
-                  For decades, researchers assumed stem cells repaired tissue by differentiating into new cells — replacing damaged cartilage with new cartilage, damaged muscle with new muscle. The reality is more elegant: stem cells primarily work by secreting signals that instruct the body&apos;s own cells to repair themselves.
+                  For decades, researchers assumed stem cells repaired tissue by differentiating into new cells - replacing damaged cartilage with new cartilage, damaged muscle with new muscle. The reality is more elegant: stem cells primarily work by secreting signals that instruct the body&apos;s own cells to repair themselves.
                 </p>
                 <p>
-                  Exosomes are the primary vehicle for those signals. They are nano-sized vesicles (30–150 nanometers) that bud off from cell membranes and carry a cargo of microRNA, proteins, and lipids. When they fuse with a recipient cell, they deliver their payload — reprogramming the cell&apos;s behavior.
+                  Exosomes are the primary vehicle for those signals. They are nano-sized vesicles (30–150 nanometers) that bud off from cell membranes and carry a cargo of microRNA, proteins, and lipids. When they fuse with a recipient cell, they deliver their payload - reprogramming the cell&apos;s behavior.
                 </p>
                 <p>
                   In the context of regenerative medicine, MSC-derived exosomes carry anti-inflammatory signals, pro-regenerative growth factors, and RNA sequences that activate tissue repair pathways. They are, in effect, the active ingredient in stem cell therapy.
@@ -193,7 +193,7 @@ export default function WhyExosomesPage() {
               </div>
               <div className="absolute -bottom-6 -right-4 lg:-right-8 bg-white rounded-2xl p-5 shadow-[0_16px_40px_-8px_rgba(26,31,48,0.2)] border border-[#F1ECF8]">
                 <div className="font-[family-name:var(--font-poppins)] text-4xl text-[#345691]">30–150</div>
-                <div className="text-[11px] text-[#4A4F66] mt-1 leading-snug">Nanometers — smaller<br />than a virus</div>
+                <div className="text-[11px] text-[#4A4F66] mt-1 leading-snug">Nanometers - smaller<br />than a virus</div>
               </div>
             </div>
           </div>
@@ -231,11 +231,11 @@ export default function WhyExosomesPage() {
             <div>
               <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#71A7F5]">Combined Protocol</span>
               <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl lg:text-[3rem] text-white leading-[1.05] tracking-[-0.02em]">
-                Exosomes + Wharton&apos;s Jelly — why we use both
+                Exosomes + Wharton&apos;s Jelly - why we use both
               </h2>
               <div className="mt-6 space-y-5 text-[15px] text-white/65 leading-[1.75]">
                 <p>
-                  Wharton&apos;s Jelly MSCs are living cells that engraft in the target tissue and continue producing regenerative signals for weeks. Exosomes are the concentrated signaling payload — they act immediately, flooding the tissue with repair instructions from the moment of injection.
+                  Wharton&apos;s Jelly MSCs are living cells that engraft in the target tissue and continue producing regenerative signals for weeks. Exosomes are the concentrated signaling payload - they act immediately, flooding the tissue with repair instructions from the moment of injection.
                 </p>
                 <p>
                   Used together, they create a two-phase regenerative response: exosomes provide the immediate signal burst, while MSCs sustain the regenerative environment over time. This is why our combined protocols consistently outperform either therapy alone.

@@ -32,7 +32,7 @@ export default function FounderSection() {
             className="relative"
           >
             <div className="relative rounded-[2.5rem] overflow-hidden aspect-[4/5] shadow-[0_24px_64px_-12px_rgba(0,0,0,0.5)]">
-              <Image src="/photos/seth-berge-w-backdrop.jpg" alt="Seth Berge — Founder of Regenerative Revival" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+              <Image src="/photos/seth-berge-w-backdrop.jpg" alt="Seth Berge - Founder of Regenerative Revival" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
               <div className="absolute inset-0 bg-gradient-to-tr from-[#583563]/30 via-transparent to-[#71A7F5]/10" />
               <div className="absolute inset-0 ring-1 ring-inset ring-white/15 rounded-[2.5rem] pointer-events-none" />
               <div className="absolute bottom-6 left-6 right-6">

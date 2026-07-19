@@ -193,7 +193,7 @@ export default function Navbar() {
 
             {/* Right side */}
             <div className="flex items-center gap-3">
-              {/* Take The Quiz CTA — primary action */}
+              {/* Take The Quiz CTA - primary action */}
               <a
                 href="/consult-router"
                 className={`hidden md:inline-flex h-11 items-center gap-1.5 rounded-full px-5 text-sm font-semibold transition-all duration-300 ${

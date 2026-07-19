@@ -4,7 +4,7 @@ import { generatePageMetadata } from "../../lib/seo";
 import { JsonLd, breadcrumbSchema, webPageSchema } from "../../lib/schema";
 
 export const metadata = generatePageMetadata({
-  title: "About Seth Berge — Founder",
+  title: "About Seth Berge - Founder",
   description:
     "Seth Berge founded Regenerative Revival to make concierge regenerative medicine and longevity care available outside the clinic walls.",
   path: "/about/founder",
@@ -20,7 +20,7 @@ const stats = [
 export default function FounderPage() {
   return (
     <>
-      <JsonLd data={webPageSchema({ title: "About Seth Berge — Founder", description: "The founder story behind Regenerative Revival.", url: "/about/founder" })} />
+      <JsonLd data={webPageSchema({ title: "About Seth Berge - Founder", description: "The founder story behind Regenerative Revival.", url: "/about/founder" })} />
       <JsonLd data={breadcrumbSchema([
         { name: "Home", url: "https://regenerativerevival.com" },
         { name: "About", url: "https://regenerativerevival.com/about" },
@@ -30,7 +30,7 @@ export default function FounderPage() {
       {/* === Hero === */}
       <section className="relative min-h-[70vh] flex items-end overflow-hidden bg-[#021E3C]">
         <div className="absolute inset-0">
-          <Image src="/headshots/1.jpg" alt="Seth Berge — Founder of Regenerative Revival" fill className="object-cover" style={{ objectPosition: "center 15%" }} priority />
+          <Image src="/headshots/1.jpg" alt="Seth Berge - Founder of Regenerative Revival" fill className="object-cover" style={{ objectPosition: "center 15%" }} priority />
           <div className="absolute inset-0 bg-gradient-to-t from-[#021E3C] via-[#021E3C]/60 to-[#021E3C]/20" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#021E3C]/80 via-[#021E3C]/30 to-transparent" />
           <div className="absolute inset-0 bg-[#583563]/15 mix-blend-multiply" />
@@ -86,7 +86,7 @@ export default function FounderPage() {
                   Seth Berge founded Regenerative Revival after watching the regenerative medicine industry split in two: white-glove clinics that locked the best protocols behind in-person-only access, and commodity telehealth brands that ship one drug in a box and call it care.
                 </p>
                 <p>
-                  Regenerative Revival is built to be neither. We deliver concierge regenerative therapies in your home, and we extend the same physician-led team into telehealth for hormones, peptides, GLP-1, and NAD+. One team, one chart, one plan — for the best decade of your life.
+                  Regenerative Revival is built to be neither. We deliver concierge regenerative therapies in your home, and we extend the same physician-led team into telehealth for hormones, peptides, GLP-1, and NAD+. One team, one chart, one plan - for the best decade of your life.
                 </p>
               </div>
             </div>
@@ -99,10 +99,10 @@ export default function FounderPage() {
               </h2>
               <div className="mt-6 space-y-5 text-[15px] text-[#4A4F66] leading-[1.75]">
                 <p>
-                  Most of our patients meet us first at a private dinner seminar. That&apos;s where Seth and our clinical team walk through what regenerative medicine can and can&apos;t do — without the sales pressure of a clinic appointment. The website is built to extend that experience, not replace it.
+                  Most of our patients meet us first at a private dinner seminar. That&apos;s where Seth and our clinical team walk through what regenerative medicine can and can&apos;t do - without the sales pressure of a clinic appointment. The website is built to extend that experience, not replace it.
                 </p>
                 <p>
-                  Since 2018, Seth has connected thousands of patients with experienced providers offering the best regenerative medicine products on the market. He has built strong relationships with top tissue manufacturers and has access to over 100 trained and licensed practitioners — including PAs, MDs, and DOs — across all 50 states.
+                  Since 2018, Seth has connected thousands of patients with experienced providers offering the best regenerative medicine products on the market. He has built strong relationships with top tissue manufacturers and has access to over 100 trained and licensed practitioners - including PAs, MDs, and DOs - across all 50 states.
                 </p>
               </div>
             </div>

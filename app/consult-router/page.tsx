@@ -5,7 +5,7 @@ import ConsultRouterClient from "./ConsultRouterClient";
 export const metadata = generatePageMetadata({
   title: "Take The 2-Minute Quiz",
   description:
-    "Tell us your goal and how you'd like care delivered. We'll point you to the right program — regenerative therapy, telehealth peptides, GLP-1, or NAD+.",
+    "Tell us your goal and how you'd like care delivered. We'll point you to the right program - regenerative therapy, telehealth peptides, GLP-1, or NAD+.",
   path: "/consult-router",
   noIndex: true, // utility router, not an SEO target
 });
@@ -17,7 +17,7 @@ export default function Page() {
         data={webPageSchema({
           title: "Take The 2-Minute Quiz",
           description:
-            "Routes patients to the right consult — regen, hormones, NAD+, or general telehealth.",
+            "Routes patients to the right consult - regen, hormones, NAD+, or general telehealth.",
           url: "/consult-router",
         })}
       />

@@ -21,7 +21,7 @@ const highlights = [
     icon: ShieldCheck,
     title: "Cell-Free Therapy",
     description:
-      "Not living cells — they are byproducts that carry therapeutic signals safely.",
+      "Not living cells - they are byproducts that carry therapeutic signals safely.",
   },
   {
     icon: Dna,
@@ -41,7 +41,7 @@ export default function WhatAreExosomes() {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left — image */}
+          {/* Left - image */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -94,7 +94,7 @@ export default function WhatAreExosomes() {
             </motion.div>
           </motion.div>
 
-          {/* Right — content */}
+          {/* Right - content */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -113,7 +113,7 @@ export default function WhatAreExosomes() {
             </h2>
 
             <p className="mt-6 text-lg text-gray-600 leading-relaxed font-sans">
-              Exosomes are tiny vesicles — essentially small packets — that stem
+              Exosomes are tiny vesicles - essentially small packets - that stem
               cells release to communicate with surrounding tissue. They carry
               proteins, lipids, and genetic material like microRNA that instruct
               other cells on how to respond. In short, they deliver the
@@ -123,7 +123,7 @@ export default function WhatAreExosomes() {
             <p className="mt-4 text-base text-gray-500 leading-relaxed font-sans">
               Because they aren&apos;t living cells, exosomes are easier to
               standardize, store, and administer. Research into their role in
-              tissue repair and inflammation reduction has grown significantly —
+              tissue repair and inflammation reduction has grown significantly - 
               and what&apos;s becoming clear is that a lot of the regenerative
               benefit we associate with stem cells may actually be driven by
               the exosomes they produce.

@@ -8,7 +8,7 @@ import { ArrowUpRight, Dna, Droplets, Orbit, FlaskConical, Zap } from "lucide-re
 import WaveDivider from "./WaveDivider";
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   OUR SERVICES — V2 elevated redesign
+   OUR SERVICES - V2 elevated redesign
    Featured-panel + selectable tiles. Hover/tap a tile to swap the hero panel
    with a smooth crossfade. Numbered indices, service icons, gradient accents.
    ───────────────────────────────────────────────────────────────────────────── */
@@ -19,7 +19,7 @@ const SERVICES = [
     number: "01",
     label: "Stem Cell Therapy",
     description:
-      "Science-backed regenerative therapies that may support the body's natural processes — delivered to your door by a licensed nurse practitioner.",
+      "Science-backed regenerative therapies that may support the body's natural processes - delivered to your door by a licensed nurse practitioner.",
     href: "/stem-cell-therapy",
     image: "/AdobeStock_1848700749.png",
     objectPosition: "center 30%",
@@ -31,7 +31,7 @@ const SERVICES = [
     number: "02",
     label: "Wharton's Jelly",
     description:
-      "Premium umbilical cord-derived MSCs with superior potency for deep tissue regeneration — the gold standard in stem cell sourcing.",
+      "Premium umbilical cord-derived MSCs with superior potency for deep tissue regeneration - the gold standard in stem cell sourcing.",
     href: "/whartons-jelly",
     image: "/2148882109.jpg",
     objectPosition: "center 20%",
@@ -55,7 +55,7 @@ const SERVICES = [
     number: "04",
     label: "Hormone Optimization",
     description:
-      "TRT, HRT, and bioidentical hormone therapy tailored to your labs — prescribed online, shipped to your door.",
+      "TRT, HRT, and bioidentical hormone therapy tailored to your labs - prescribed online, shipped to your door.",
     href: "/hormones",
     image: "/2149611219.jpg",
     objectPosition: "center 30%",
@@ -67,7 +67,7 @@ const SERVICES = [
     number: "05",
     label: "Peptide Therapy",
     description:
-      "Solution-based peptide programs — recovery, weight, sleep, longevity — prescribed by a licensed clinician.",
+      "Solution-based peptide programs - recovery, weight, sleep, longevity - prescribed by a licensed clinician.",
     href: "/peptides",
     image: "/AdobeStock_1862763747.jpeg",
     objectPosition: "center 25%",
@@ -167,7 +167,7 @@ export default function ServicesAccordion() {
 
             {/* content */}
             <div className="absolute inset-0 flex flex-col justify-between p-7 lg:p-10">
-              {/* top — number + icon */}
+              {/* top - number + icon */}
               <div className="flex items-start justify-between">
                 <span className="font-[family-name:var(--font-poppins)] text-[13px] font-mono tracking-[0.3em] text-white/50">
                   ({active.number})
@@ -179,7 +179,7 @@ export default function ServicesAccordion() {
                 </span>
               </div>
 
-              {/* bottom — text */}
+              {/* bottom - text */}
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active.id + "-text"}

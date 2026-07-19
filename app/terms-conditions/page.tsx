@@ -45,7 +45,7 @@ export default function TermsConditionsPage() {
     <>
       <JsonLd
         data={webPageSchema({
-          title: "Terms & Conditions — Regenerative Revival",
+          title: "Terms & Conditions - Regenerative Revival",
           description:
             "The terms governing your use of the Regenerative Revival website and services.",
           url: "/terms-conditions",

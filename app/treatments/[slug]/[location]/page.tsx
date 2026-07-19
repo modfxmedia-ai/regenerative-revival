@@ -23,7 +23,7 @@ import PatientStories from "../../../components/PatientStories";
 import WhyChooseUs from "../../../components/WhyChooseUs";
 import QuizCTA from "../../../components/QuizCTA";
 
-// ISR: revalidate every 24 hours — body pools re-draw on each revalidation
+// ISR: revalidate every 24 hours - body pools re-draw on each revalidation
 export const revalidate = 86400;
 
 interface Props {
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: Props) {
   const location = locations.find((l) => l.slug === locSlug);
   if (!treatment || !location) return {};
 
-  // Pooled title + desc — seeded by slug so stable across ISR crawls
+  // Pooled title + desc - seeded by slug so stable across ISR crawls
   return generatePageMetadata({
     title: generateMetaTitle(treatment, location),
     description: generateMetaDesc(treatment, location),
@@ -80,7 +80,7 @@ export default async function TreatmentLocationPage({ params }: Props) {
 
   const localBiz = {
     ...localBusinessSchema(),
-    name: `Regenerative Revival — ${location.city}`,
+    name: `Regenerative Revival - ${location.city}`,
     address: {
       "@type": "PostalAddress" as const,
       addressLocality: location.city,

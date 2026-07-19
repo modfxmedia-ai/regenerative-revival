@@ -27,7 +27,7 @@ const highlights = [
     icon: Leaf,
     title: "Natural Source",
     description:
-      "Derived from the umbilical cord — a safe, ethically sourced material.",
+      "Derived from the umbilical cord - a safe, ethically sourced material.",
   },
 ];
 
@@ -41,7 +41,7 @@ export default function WhatIsWhartonsJelly() {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left — image composition */}
+          {/* Left - image composition */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -94,7 +94,7 @@ export default function WhatIsWhartonsJelly() {
             </motion.div>
           </motion.div>
 
-          {/* Right — content */}
+          {/* Right - content */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}

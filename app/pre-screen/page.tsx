@@ -12,7 +12,7 @@ import { generatePageMetadata } from "../lib/seo";
 import { JsonLd, breadcrumbSchema, webPageSchema } from "../lib/schema";
 
 export const metadata = generatePageMetadata({
-  title: "Pre-Screening Survey — See If You're a Candidate",
+  title: "Pre-Screening Survey - See If You're a Candidate",
   description:
     "Complete a short, confidential pre-screening survey and our team will follow up to see if regenerative medicine may be right for you.",
   path: "/pre-screen",
@@ -60,7 +60,7 @@ export default function PreScreenPage() {
     <>
       <JsonLd
         data={webPageSchema({
-          title: "Pre-Screening Survey — See If You're a Candidate",
+          title: "Pre-Screening Survey - See If You're a Candidate",
           description:
             "Complete a short, confidential pre-screening survey and our team will follow up to see if regenerative medicine may be right for you.",
           url: "/pre-screen",
@@ -95,7 +95,7 @@ export default function PreScreenPage() {
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/65">
               Answer a few quick questions below and our care team will review
               your responses, then reach out to walk you through your options.
-              No obligation — just a clear next step.
+              No obligation - just a clear next step.
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-[13px] text-white/70">
               <span className="flex items-center gap-2">

@@ -5,10 +5,10 @@ import { useRef, useState } from "react";
 import { Plus, Minus } from "lucide-react";
 
 const faqs = [
-  { q: "What is stem cell therapy?", a: "Stem cell therapy uses mesenchymal stem cells (MSCs) — sourced externally from ethically donated umbilical cord tissue, not from your own body — to support your body's natural repair processes. These cells are introduced via injection or IV and work by signaling the body to reduce inflammation and promote tissue regeneration." },
+  { q: "What is stem cell therapy?", a: "Stem cell therapy uses mesenchymal stem cells (MSCs) - sourced externally from ethically donated umbilical cord tissue, not from your own body - to support your body's natural repair processes. These cells are introduced via injection or IV and work by signaling the body to reduce inflammation and promote tissue regeneration." },
   { q: "Why Wharton's Jelly MSCs specifically?", a: "Wharton's Jelly, found in umbilical cord tissue, is one of the richest known sources of high-quality MSCs. Because these cells come from newborn tissue, they're younger, more active, and carry a lower risk of immune rejection than adult-derived cells. It's simply a better starting point." },
-  { q: "Is this safe?", a: "Yes. Our protocols use rigorously tested, FDA-compliant products sourced from accredited tissue banks. Wharton's Jelly-derived MSCs are well-tolerated by most people and do not require immunosuppressants. That said, every client goes through a screening process — this isn't a one-size-fits-all approach." },
-  { q: "What kinds of wellness goals do people come to you for?", a: "People come to us for all sorts of reasons — joint discomfort, post-injury recovery, fatigue, inflammation, longevity, and performance. We don't make specific medical claims, but we work with each client to understand their goals and match them with the right protocol and provider." },
+  { q: "Is this safe?", a: "Yes. Our protocols use rigorously tested, FDA-compliant products sourced from accredited tissue banks. Wharton's Jelly-derived MSCs are well-tolerated by most people and do not require immunosuppressants. That said, every client goes through a screening process - this isn't a one-size-fits-all approach." },
+  { q: "What kinds of wellness goals do people come to you for?", a: "People come to us for all sorts of reasons - joint discomfort, post-injury recovery, fatigue, inflammation, longevity, and performance. We don't make specific medical claims, but we work with each client to understand their goals and match them with the right protocol and provider." },
   { q: "What happens during a consultation?", a: "Your consultation is a conversation, not a sales pitch. We go over your health history, listen to what you're dealing with, and walk you through which protocols might make sense. From there, you're connected to a licensed practitioner who handles the clinical side." },
   { q: "How soon do people notice a difference?", a: "It really depends on the person and the protocol. Some clients notice changes within a few weeks; for others it unfolds over several months as the regenerative process continues. We'll set realistic expectations from the start." },
   { q: "How do I become a business partner?", a: "We offer a turnkey JV partnership with revenue sharing for medical practices and businesses. Contact us through the partner inquiry form and our team will walk you through the process." },
@@ -71,7 +71,7 @@ export default function FAQ() {
 
       <div ref={ref} className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-          {/* Left — sticky header */}
+          {/* Left - sticky header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -90,7 +90,7 @@ export default function FAQ() {
             </p>
           </motion.div>
 
-          {/* Right — accordion */}
+          {/* Right - accordion */}
           <div className="lg:col-span-8">
             {inView && faqs.map((faq, i) => <FAQItem key={i} faq={faq} index={i} />)}
           </div>

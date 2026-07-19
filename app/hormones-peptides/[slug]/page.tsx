@@ -52,7 +52,7 @@ const productFaqs: Record<string, { question: string; answer: string }[]> = {
     {
       question: "What is sublingual semaglutide?",
       answer:
-        "Sublingual semaglutide is a compounded formulation of semaglutide — the same GLP-1 receptor agonist found in Ozempic and Wegovy — delivered under the tongue rather than by injection. It is absorbed through the oral mucosa, making it a needle-free alternative for patients who prefer not to self-inject.",
+        "Sublingual semaglutide is a compounded formulation of semaglutide - the same GLP-1 receptor agonist found in Ozempic and Wegovy - delivered under the tongue rather than by injection. It is absorbed through the oral mucosa, making it a needle-free alternative for patients who prefer not to self-inject.",
     },
     {
       question: "Is compounded semaglutide the same as Ozempic?",
@@ -74,7 +74,7 @@ const productFaqs: Record<string, { question: string; answer: string }[]> = {
     {
       question: "What is sublingual tirzepatide?",
       answer:
-        "Sublingual tirzepatide is a compounded formulation of tirzepatide — a dual GIP and GLP-1 receptor agonist — delivered under the tongue. It activates two metabolic pathways simultaneously, producing stronger appetite suppression and metabolic effects than GLP-1 alone.",
+        "Sublingual tirzepatide is a compounded formulation of tirzepatide - a dual GIP and GLP-1 receptor agonist - delivered under the tongue. It activates two metabolic pathways simultaneously, producing stronger appetite suppression and metabolic effects than GLP-1 alone.",
     },
     {
       question: "Is tirzepatide stronger than semaglutide?",

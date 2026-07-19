@@ -17,7 +17,7 @@ import { JsonLd, breadcrumbSchema, webPageSchema } from "../lib/schema";
 export const metadata = generatePageMetadata({
   title: "Affiliate and Partner Programs",
   description:
-    "Regenerative Revival partner programs — the simple version. Find your partner type and open the right agreement form.",
+    "Regenerative Revival partner programs - the simple version. Find your partner type and open the right agreement form.",
   path: "/affiliate-and-partner-programs",
   noIndex: true,
 });
@@ -115,7 +115,7 @@ export default function AffiliatePartnerProgramsPage() {
         data={webPageSchema({
           title: "Affiliate and Partner Programs",
           description:
-            "Regenerative Revival partner programs — the simple version.",
+            "Regenerative Revival partner programs - the simple version.",
           url: "/affiliate-and-partner-programs",
         })}
       />
@@ -145,7 +145,7 @@ export default function AffiliatePartnerProgramsPage() {
             We work with people who help bring us new patients. Each kind of
             partner has its own short agreement. Find the partner below, then tap
             the colored button to open the right form. Each color is one kind of
-            partner — the color matches its button.
+            partner - the color matches its button.
           </p>
         </div>
       </section>

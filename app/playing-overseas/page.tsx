@@ -3,7 +3,7 @@ import { JsonLd, webPageSchema, faqSchema } from "../lib/schema";
 import PlayingOverseasClient from "./PlayingOverseasClient";
 
 export const metadata = generatePageMetadata({
-  title: "Playing Overseas × Regenerative Revival — Elite Athlete Recovery",
+  title: "Playing Overseas × Regenerative Revival - Elite Athlete Recovery",
   description:
     "Priority stem cell and exosome therapy for professional athletes playing overseas. Concierge delivery by licensed specialists across all 50 states. Free consultation.",
   path: "/playing-overseas",
@@ -18,12 +18,12 @@ const faqItems = [
   {
     question: "Is stem cell and exosome therapy safe?",
     answer:
-      "Regenerative Revival therapies are administered by licensed practitioners — MDs, DOs, and NPs — in partnership with Arora Health Group under physician oversight. Individual results vary and candidacy is assessed case by case. Not everyone qualifies for care.",
+      "Regenerative Revival therapies are administered by licensed practitioners - MDs, DOs, and NPs - in partnership with Arora Health Group under physician oversight. Individual results vary and candidacy is assessed case by case. Not everyone qualifies for care.",
   },
   {
     question: "How is therapy delivered?",
     answer:
-      "Regenerative Revival operates on a concierge model — a licensed specialist comes directly to you. We have 100+ licensed practitioners across all 50 US states. International delivery is assessed on a case-by-case basis.",
+      "Regenerative Revival operates on a concierge model - a licensed specialist comes directly to you. We have 100+ licensed practitioners across all 50 US states. International delivery is assessed on a case-by-case basis.",
   },
   {
     question: "How long until I see results?",
@@ -38,7 +38,7 @@ const faqItems = [
   {
     question: "Is the free consultation really no cost?",
     answer:
-      "Yes — completely. As a Playing Overseas partner, you receive priority access to a complimentary initial consultation with no obligation.",
+      "Yes - completely. As a Playing Overseas partner, you receive priority access to a complimentary initial consultation with no obligation.",
   },
 ];
 

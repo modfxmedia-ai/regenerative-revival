@@ -45,7 +45,7 @@ export default function ContactForm() {
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-10">
-          {/* Form — left side */}
+          {/* Form - left side */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -55,7 +55,7 @@ export default function ContactForm() {
             <FormCard />
           </motion.div>
 
-          {/* Sidebar — right side */}
+          {/* Sidebar - right side */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -134,7 +134,7 @@ function FormCard() {
     if (Object.keys(newErrors).length === 0) {
       setSubmitting(true);
       // TODO (when paid ads launch): capture marketing attribution per SEO
-      // playbook §11.3 / §12.4 — read utm_*, gclid, fbclid, msclkid, ttclid,
+      // playbook §11.3 / §12.4 - read utm_*, gclid, fbclid, msclkid, ttclid,
       // li_fat_id from URL params (persist across pages via sessionStorage)
       // plus landing_page + document.referrer. Pass them to submitLead so the
       // /api/leads route can surface them in the team email. Without this,
@@ -264,7 +264,7 @@ function ContactInfo() {
   const items = [
     { icon: Phone, label: "Phone", value: "612-453-3182", href: "tel:+16124533182" },
     { icon: Mail, label: "Email", value: "info@regenerativerevival.com", href: "mailto:info@regenerativerevival.com" },
-    { icon: MapPin, label: "Service Area", value: "Nationwide — All 50 States" },
+    { icon: MapPin, label: "Service Area", value: "Nationwide - All 50 States" },
     { icon: Clock, label: "Hours", value: "Mon–Fri: 9AM–6PM EST" },
   ];
 

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
 
 /**
- * TalkToProviderCTA — replaces QuizCTA on product and pSEO pages.
+ * TalkToProviderCTA - replaces QuizCTA on product and pSEO pages.
  * Single action: contact a clinician. No quiz redirect.
  */
 export default function TalkToProviderCTA() {
@@ -17,7 +17,7 @@ export default function TalkToProviderCTA() {
         </h2>
         <p className="text-lg text-white/60 mb-10 max-w-xl mx-auto">
           A licensed clinician will review your case and walk you through your
-          options — no commitment required.
+          options - no commitment required.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link

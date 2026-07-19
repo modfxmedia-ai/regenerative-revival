@@ -9,7 +9,7 @@ import { useEffect } from "react";
  * it to every lead POST so the /api/leads route can forward it as the Tyria
  * `everflow_id` field.
  *
- * First-touch wins for the session — once a transaction id is captured we keep
+ * First-touch wins for the session - once a transaction id is captured we keep
  * it even if a downstream click rewrites the URL.
  */
 declare global {
@@ -26,7 +26,7 @@ export default function EverflowCapture() {
     try {
       if (window.sessionStorage.getItem("rr_everflow")) return; // first-touch wins
     } catch {
-      // sessionStorage blocked — best-effort, continue
+      // sessionStorage blocked - best-effort, continue
     }
 
     const script = document.createElement("script");
@@ -56,7 +56,7 @@ export default function EverflowCapture() {
           try {
             window.sessionStorage.setItem("rr_everflow", transactionId);
           } catch {
-            // sessionStorage blocked — fail silent
+            // sessionStorage blocked - fail silent
           }
         }
       });

@@ -14,7 +14,7 @@ import { JsonLd, webPageSchema, breadcrumbSchema } from "../lib/schema";
  * High-traffic page: 597 clicks, 9,508 impressions (GSC 3-month data)
  */
 export const metadata = generatePageMetadata({
-  title: "About — Physician-Led Regenerative Medicine",
+  title: "About - Physician-Led Regenerative Medicine",
   description:
     "Meet founder Seth Berge and the physician-led team delivering regenerative medicine, peptides, and NAD+ care nationwide.",
   path: "/about",

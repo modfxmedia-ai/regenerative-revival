@@ -58,7 +58,7 @@ export default function HowItWorksHome() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const reduceMotion = useReducedMotion();
 
-  // Scroll progress through the timeline track — drives the fill line + comet.
+  // Scroll progress through the timeline track - drives the fill line + comet.
   const { scrollYProgress } = useScroll({
     target: timelineRef,
     offset: ["start 75%", "end 65%"],
@@ -88,11 +88,11 @@ export default function HowItWorksHome() {
       ref={ref}
       className="relative py-24 lg:py-32 overflow-hidden bg-[#F0EBF8]"
     >
-      {/* Ambient orbs — depth without noise */}
+      {/* Ambient orbs - depth without noise */}
       <div className="absolute top-0 left-1/4 w-[600px] h-[500px] rounded-full bg-[#6762AF]/[0.06] blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[400px] rounded-full bg-[#345691]/[0.08] blur-[120px] pointer-events-none" />
 
-      {/* Ghost step counter — visual texture */}
+      {/* Ghost step counter - visual texture */}
       {/* <div
         className="absolute right-6 bottom-10 text-[18rem] font-bold text-[#6762AF]/[0.03] select-none pointer-events-none leading-none tracking-[-0.06em]"
         aria-hidden
@@ -185,7 +185,7 @@ export default function HowItWorksHome() {
                       hover:-translate-y-1 hover:border-[#6762AF]/35 hover:shadow-[0_28px_72px_-16px_rgba(103,98,175,0.32)]
                       ${isRight ? "lg:ml-auto" : "lg:mr-auto"}`}
                   >
-                    {/* Gradient bloom — intensifies when active */}
+                    {/* Gradient bloom - intensifies when active */}
                     <div
                       className={`absolute inset-0 bg-gradient-to-br ${step.bloom} transition-opacity duration-700 rounded-[1.75rem] pointer-events-none ${
                         isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"

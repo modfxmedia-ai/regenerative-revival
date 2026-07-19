@@ -16,7 +16,7 @@ import { JsonLd, medicalWebPageSchema, breadcrumbSchema } from "../lib/schema";
 export const metadata = generatePageMetadata({
   title: "How Stem Cell Therapy Works",
   description:
-    "Stem cell therapy delivers MSCs to damaged tissue — reducing inflammation and supporting natural repair. See the science behind Wharton's Jelly.",
+    "Stem cell therapy delivers MSCs to damaged tissue - reducing inflammation and supporting natural repair. See the science behind Wharton's Jelly.",
   path: "/why-stem-cells",
 });
 

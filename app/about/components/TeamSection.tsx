@@ -18,14 +18,13 @@ const img = (file: string) => `${TEAM_BLOB}/${file}`;
 
 const doctors: TeamMember[] = [
   { name: "Dr. Sean Arora", role: "Medical Director", photo: img("sean-arora.jpg"), bio: "Dr. Sean Arora is a board-certified physician whose primary focus lies in wellness and telehealth innovation. As the founder of Arora Health & Aesthetics, he leads medical oversight and compliance networks in the wellness and telehealth space, offering full-spectrum medical directorship, nationwide telehealth provider networks, EMR integrations, and cutting-edge protocol development. Licensed in all 50 states for telehealth oversight." },
-  { name: "Dr. Shannon Arora", role: "Chief Medical Officer", photo: img("shannon-arora.png"), bio: "As Chief Medical Officer of Regenerative Revival, Dr. Shannon Arora champions an integrated model of care that brings regenerative medicine, hormone therapy, and peptide protocols together under one coordinated team — so the same patient can benefit from all of them without navigating separate clinics." },
+  { name: "Dr. Shannon Arora", role: "Chief Medical Officer", photo: img("shannon-arora.png"), bio: "As Chief Medical Officer of Regenerative Revival, Dr. Shannon Arora champions an integrated model of care that brings regenerative medicine, hormone therapy, and peptide protocols together under one coordinated team - so the same patient can benefit from all of them without navigating separate clinics." },
 ];
 
 const advocates: TeamMember[] = [
   { name: "Noah Nelson", role: "Wellness Advocate", photo: img("noah-nelson.jpg"), bio: "Noah Nelson brings more than 20 years of leadership experience in healthcare, spanning pharmaceuticals, biotechnology, and wellness. With a unique blend of clinical insight and strategic expertise, Noah guides individuals toward innovative protocols designed to restore strength, improve quality of life, and build lasting vitality." },
-  { name: "Dasa'n Fant", role: "Wellness Advocate", photo: img("dasan-fant.png") },
   { name: "David Chavez", role: "Wellness Advocate", photo: img("david-chavez.jpg"), bio: "David Chavez is a Wellness Advocate whose path into regenerative wellness began with his own experiences as an athlete. His personal recovery journey sparked a passion for alternative therapies that restore strength and vitality." },
-  { name: "Reggie Lynch", role: "Wellness Advocate", photo: img("reggie-lynch.png"), bio: "Reggie Lynch's love for regenerative medicine was sparked by his experiences playing basketball at the professional level — including an eight-year professional career. His firsthand experience drives his passion for helping others overcome pain and improve longevity." },
+  { name: "Reggie Lynch", role: "Wellness Advocate", photo: img("reggie-lynch.png"), bio: "Reggie Lynch's love for regenerative medicine was sparked by his experiences playing basketball at the professional level - including an eight-year professional career. His firsthand experience drives his passion for helping others overcome pain and improve longevity." },
   { name: "Karl Canniff", role: "Senior Wellness Advocate", photo: img("karl-canniff.jpg"), bio: "As Senior Wellness Advocate, Karl Canniff brings more than two decades of expertise in health, wellness, and regenerative medicine. With a foundation in stem cell sciences, he has guided over 2,000 pain management cases." },
   { name: "Ben Nelson", role: "Wellness Advocate", photo: img("ben-nelson.jpg"), bio: "Ben Nelson's journey into regenerative medicine began on the baseball field. After receiving a stem cell injection, he returned to the field in just five months. He earned a degree in Kinesiology, dedicating his career to human performance and regenerative medicine." },
   { name: "Adam Berge", role: "Wellness Advocate", photo: img("adam-berge.jpeg") },
@@ -61,6 +60,7 @@ const nursePractitioners: TeamMember[] = [
 
 const staff: TeamMember[] = [
   { name: "Jared Novack", role: "Director of Operations", photo: img("jared-novack.png") },
+  { name: "Dasa'n Fant", role: "Chief of Staff", photo: img("dasan-fant.png") },
   { name: "Shannon Lonergan", role: "Chief of Staff", photo: img("shannon-lonergan.jpg") },
   { name: "Lexi Taylor", role: "Executive Assistant", photo: img("lexi-taylor.jpg") },
   { name: "Cathy Wandmacher", role: "Administrative Assistant", photo: img("cathy-wandmacher.jpg") },
@@ -68,7 +68,7 @@ const staff: TeamMember[] = [
   { name: "Lydia D'Antonio", role: "Director of Marketing", photo: img("lydia.jpg") },
   { name: "Shaughnessy Crespo", role: "Support Team", photo: img("shaughnessy-crespo.jpg") },
   { name: "Emma Feddo", role: "Assistant", photo: img("emma-feddo.jpg") },
-  { name: "Michaela Gebert", role: "Assistant" },
+  { name: "Michaela Gebert", role: "Assistant", photo: img("michaela-gebert.png") },
   { name: "Lane Snover", role: "Assistant" },
   { name: "Elizabeth King-Rodolf", role: "Assistant" },
 ];

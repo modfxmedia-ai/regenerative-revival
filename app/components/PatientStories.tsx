@@ -5,7 +5,7 @@ import { useRef } from "react";
 import WaveDivider from "./WaveDivider";
 
 /**
- * PatientStories — Figma S11 TESTIMONIALS
+ * PatientStories - Figma S11 TESTIMONIALS
  * White bg, 64px 100px padding, left-aligned header
  * Three #F1ECF8 cards, 16px radius, 32px padding, 24px gap
  * Navy quote mark, 18px body, 14px semibold attribution
@@ -14,21 +14,21 @@ import WaveDivider from "./WaveDivider";
 const stories = [
   {
     quote:
-      "The Osteoarthritis set in fast. I had no cartilage left — I could feel the bones grinding and clicking. After my stem cell injections, the next morning I woke up, swung my feet over the bedside and touched the floor. Holy cow! No pain. No hobbling. No tears. No fear. I welcome the journey to recovery.",
+      "The Osteoarthritis set in fast. I had no cartilage left - I could feel the bones grinding and clicking. After my stem cell injections, the next morning I woke up, swung my feet over the bedside and touched the floor. Holy cow! No pain. No hobbling. No tears. No fear. I welcome the journey to recovery.",
     name: "Vicki R.",
     location: "Minnesota",
     program: "Stem Cell Therapy patient",
   },
   {
     quote:
-      "I tore my rotator cuff at work. They told me I needed surgery. I'm 26 — I had no interest in letting them cut into my body. After one injection and 30 days, 80-90% of my range of motion returned and I have minimal to no pain. And no recovery time from surgery.",
+      "I tore my rotator cuff at work. They told me I needed surgery. I'm 26 - I had no interest in letting them cut into my body. After one injection and 30 days, 80-90% of my range of motion returned and I have minimal to no pain. And no recovery time from surgery.",
     name: "Ethan M.",
     location: "Texas",
     program: "Regenerative Therapy patient",
   },
   {
     quote:
-      "For years I couldn't bend my leg to put my socks on. I got my injection. Three days later I picked my right leg up and put it over my knee — I hadn't done it in 10 years. I've had no pain whatsoever. None. Will I recommend this to others? You better believe it.",
+      "For years I couldn't bend my leg to put my socks on. I got my injection. Three days later I picked my right leg up and put it over my knee - I hadn't done it in 10 years. I've had no pain whatsoever. None. Will I recommend this to others? You better believe it.",
     name: "Margaret P.",
     location: "Florida",
     program: "Regenerative Therapy patient",
@@ -75,7 +75,7 @@ export default function PatientStories() {
           </h2>
         </motion.div>
 
-        {/* Cards row — scrollable on mobile */}
+        {/* Cards row - scrollable on mobile */}
         <div className="grid md:grid-cols-3 gap-6">
           {stories.map((s, i) => (
             <motion.div

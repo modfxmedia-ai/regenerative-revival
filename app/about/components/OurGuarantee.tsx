@@ -23,7 +23,7 @@ export default function OurGuarantee() {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
-          {/* Left — text */}
+          {/* Left - text */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -74,7 +74,7 @@ export default function OurGuarantee() {
             </motion.div>
           </motion.div>
 
-          {/* Right — image with floating cards */}
+          {/* Right - image with floating cards */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -87,7 +87,7 @@ export default function OurGuarantee() {
               <div className="absolute inset-0 ring-1 ring-inset ring-white/15 rounded-[2rem] pointer-events-none" />
             </div>
 
-            {/* Floating card — bottom left */}
+            {/* Floating card - bottom left */}
             <motion.div
               initial={{ opacity: 0, scale: 0.85 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
@@ -105,7 +105,7 @@ export default function OurGuarantee() {
               </div>
             </motion.div>
 
-            {/* Floating card — top right */}
+            {/* Floating card - top right */}
             <motion.div
               initial={{ opacity: 0, scale: 0.85 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}

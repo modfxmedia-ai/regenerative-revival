@@ -8,9 +8,9 @@ const writtenTestimonials = [
   { name: "Vicki R.", condition: "Osteoarthritis & Knee", quote: "The next morning I woke up and took a deep breath, swung my feet over the bed side and touched the floor. No pain. No hobbling. No tears. No fear. I welcome the journey to recovery and getting back to being able to do things I lost to the injury.", stars: 5, initials: "VR" },
   { name: "Crystal R.", condition: "Back & Ankle Pain", quote: "I had severe injuries to my ankle, bulging discs, and arthritis. Eight days after my appointment, I was driving to work and realized I didn't play my pain game. I didn't have to. It was so great.", stars: 5, initials: "CR" },
   { name: "Grace", condition: "MS & Fibromyalgia", quote: "I had MS, fibromyalgia, degenerative disc disease, and scoliosis. I was on opioids and couldn't get out of bed. I'm now off them. My husband can put his arm around me again.", stars: 5, initials: "G" },
-  { name: "Ethan M.", condition: "Rotator Cuff", quote: "I tore my rotator cuff. They told me I needed surgery. I'm 26 — no interest in being cut into. After one injection and 30 days, 80–90% of my range of motion is back, with no surgery recovery.", stars: 5, initials: "EM" },
-  { name: "Margaret P.", condition: "Knee Mobility", quote: "For years, I could not bend my leg over my knee to put my socks on. Three days after the injection, I picked it up — I hadn't done it for 10 years. No pain whatsoever. Will I recommend this? You better believe it.", stars: 5, initials: "MP" },
-  { name: "Roy B.", condition: "Knee Pain", quote: "I wasn't able to do much with my knee. Three weeks after the shot, I've been bouncing around, walking, almost running, riding bikes. Friends ask where I got it — I refer them to the doctor.", stars: 5, initials: "RB" },
+  { name: "Ethan M.", condition: "Rotator Cuff", quote: "I tore my rotator cuff. They told me I needed surgery. I'm 26 - no interest in being cut into. After one injection and 30 days, 80–90% of my range of motion is back, with no surgery recovery.", stars: 5, initials: "EM" },
+  { name: "Margaret P.", condition: "Knee Mobility", quote: "For years, I could not bend my leg over my knee to put my socks on. Three days after the injection, I picked it up - I hadn't done it for 10 years. No pain whatsoever. Will I recommend this? You better believe it.", stars: 5, initials: "MP" },
+  { name: "Roy B.", condition: "Knee Pain", quote: "I wasn't able to do much with my knee. Three weeks after the shot, I've been bouncing around, walking, almost running, riding bikes. Friends ask where I got it - I refer them to the doctor.", stars: 5, initials: "RB" },
   { name: "John R.", condition: "Knee Burning", quote: "I was feeling a lot of burning in my right knee. Since the stem cell therapy, it has diminished. My knee feels great, I'm back to dancing where I couldn't before.", stars: 5, initials: "JR" },
 ];
 
@@ -73,7 +73,7 @@ export default function Testimonials() {
             Hear it from <span className="text-[#6762AF] font-semibold">real people</span>
           </h2>
           <p className="mt-7 max-w-2xl mx-auto text-base lg:text-lg text-white/55 leading-relaxed">
-            From everyday patients reclaiming their lives — the proof is in the results that speak for themselves.
+            From everyday patients reclaiming their lives - the proof is in the results that speak for themselves.
           </p>
         </motion.div>
       </div>

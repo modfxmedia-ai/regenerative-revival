@@ -28,7 +28,7 @@ const conditions = [
   {
     icon: "⚡",
     title: "Sports Injuries",
-    desc: "Muscle tears, ligament damage, tendinopathy — designed to support accelerated return to peak performance.",
+    desc: "Muscle tears, ligament damage, tendinopathy - designed to support accelerated return to peak performance.",
   },
   {
     icon: "🔁",
@@ -43,7 +43,7 @@ const conditions = [
   {
     icon: "🎯",
     title: "Joint Pain",
-    desc: "Shoulder, knee, hip — designed to promote function and assist with pain management without invasive surgery.",
+    desc: "Shoulder, knee, hip - designed to promote function and assist with pain management without invasive surgery.",
   },
   {
     icon: "🧬",
@@ -59,7 +59,7 @@ const conditions = [
 
 const checklist = [
   "Priority booking for Playing Overseas athletes",
-  "Complimentary initial consultation — no obligation",
+  "Complimentary initial consultation - no obligation",
   "Concierge delivery wherever you are in the world",
   "Licensed specialists across all 50 US states",
 ];
@@ -71,11 +71,11 @@ const faqs = [
   },
   {
     q: "Is stem cell and exosome therapy safe?",
-    a: "Regenerative Revival therapies are administered by licensed practitioners — MDs, DOs, and NPs — in partnership with Arora Health Group under physician oversight. As with any medical procedure, individual results vary and candidacy is assessed case by case. Your free consultation includes a health history review to determine whether you may be a candidate. Not everyone qualifies for care.",
+    a: "Regenerative Revival therapies are administered by licensed practitioners - MDs, DOs, and NPs - in partnership with Arora Health Group under physician oversight. As with any medical procedure, individual results vary and candidacy is assessed case by case. Your free consultation includes a health history review to determine whether you may be a candidate. Not everyone qualifies for care.",
   },
   {
     q: "How is therapy delivered?",
-    a: "Regenerative Revival operates on a concierge model — a licensed specialist comes directly to you. Whether you're home, at a training facility, or traveling, we coordinate around your schedule. We have 100+ licensed practitioners across all 50 US states. International delivery is assessed on a case-by-case basis during your consultation.",
+    a: "Regenerative Revival operates on a concierge model - a licensed specialist comes directly to you. Whether you're home, at a training facility, or traveling, we coordinate around your schedule. We have 100+ licensed practitioners across all 50 US states. International delivery is assessed on a case-by-case basis during your consultation.",
   },
   {
     q: "How long until I see results?",
@@ -83,11 +83,11 @@ const faqs = [
   },
   {
     q: "How is this different from cortisone or PRP?",
-    a: "Cortisone is anti-inflammatory but does not address underlying tissue damage. PRP uses your own blood platelets to support healing and is a solid first step. Stem cell and exosome therapy is designed to go further — introducing signaling molecules intended to support tissue regeneration at the source, not just manage symptoms. Your specialist can help determine what may be right for your situation.",
+    a: "Cortisone is anti-inflammatory but does not address underlying tissue damage. PRP uses your own blood platelets to support healing and is a solid first step. Stem cell and exosome therapy is designed to go further - introducing signaling molecules intended to support tissue regeneration at the source, not just manage symptoms. Your specialist can help determine what may be right for your situation.",
   },
   {
     q: "Is the free consultation really no cost?",
-    a: "Yes — completely. As a Playing Overseas partner, you receive priority access to a complimentary initial consultation with no obligation. It's an opportunity to discuss your situation with a specialist, understand your candidacy, and ask questions before making any decisions. No pressure, no commitment required.",
+    a: "Yes - completely. As a Playing Overseas partner, you receive priority access to a complimentary initial consultation with no obligation. It's an opportunity to discuss your situation with a specialist, understand your candidacy, and ask questions before making any decisions. No pressure, no commitment required.",
   },
 ];
 
@@ -174,7 +174,7 @@ export default function PlayingOverseasClient() {
           </div>
           <p className="my-6 max-w-[500px] text-[15px] leading-[1.85] text-[#9B96C4]">
             Regenerative Revival delivers cutting-edge stem cell and exosome
-            therapy to professional athletes worldwide — concierge delivery by
+            therapy to professional athletes worldwide - concierge delivery by
             licensed specialists.{" "}
             <strong className="font-medium text-[#E8E4FF]">
               Your free consultation awaits.
@@ -254,7 +254,7 @@ export default function PlayingOverseasClient() {
             </h2>
             <p className="mb-6 max-w-[560px] text-[15px] leading-[1.85] text-[#9B96C4]">
               Wharton's Jelly stem cells and exosomes signal your body to
-              accelerate natural repair — reducing inflammation, rebuilding
+              accelerate natural repair - reducing inflammation, rebuilding
               tissue, and supporting function at the cellular level.
             </p>
             <div className="mt-7 grid grid-cols-2 gap-2.5">
@@ -341,13 +341,13 @@ export default function PlayingOverseasClient() {
             </h2>
             <p className="mb-6 max-w-[560px] text-[15px] leading-[1.85] text-[#9B96C4]">
               Former professional basketball player Reggie Lynch knows the
-              overseas grind — the wear on your body, the pressure to perform,
+              overseas grind - the wear on your body, the pressure to perform,
               and the challenge of staying healthy season after season.
             </p>
             <p className="mb-6 max-w-[560px] text-[15px] leading-[1.85] text-[#9B96C4]">
               Whether you have questions about stem cell and exosome therapy,
               want to understand how this fits into your off-season recovery, or
-              are ready to start — Reggie is here to connect you with the right
+              are ready to start - Reggie is here to connect you with the right
               specialists and answer your questions directly.
             </p>
             <a
@@ -394,7 +394,7 @@ export default function PlayingOverseasClient() {
             </p>
             <p className="mb-6 max-w-[560px] text-[15px] leading-[1.85] text-[#9B96C4]">
               Whether you're recovering from injury, managing chronic pain, or
-              optimizing longevity — access therapies once reserved for elite
+              optimizing longevity - access therapies once reserved for elite
               professionals. This is your opportunity.
             </p>
             <div className="my-6 flex flex-col gap-3">
@@ -507,7 +507,7 @@ export default function PlayingOverseasClient() {
           <p className="mx-auto my-5 max-w-[580px] text-[14.5px] leading-[1.85] text-[#9B96C4]">
             Don't let injury, chronic pain, or time write the end of your story.
             Your free consultation with a Regenerative Revival specialist is
-            waiting — stem cell and exosome therapy built for professional
+            waiting - stem cell and exosome therapy built for professional
             athletes, delivered on your schedule, wherever you are.
           </p>
           <a

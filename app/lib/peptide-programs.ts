@@ -1,5 +1,5 @@
 /**
- * Peptide Programs — solution-based category taxonomy.
+ * Peptide Programs - solution-based category taxonomy.
  * Source: Regenerative Revival "Peptide Programs" one-pager (V2).
  *
  * This is the relational mapping that powers the productized
@@ -21,7 +21,7 @@ export interface Peptide {
   benefits: string[];
   priceMonthly: string;
   priceQuarterly: string;
-  /** Slug on /hormones-peptides/[slug] — best-effort match; verify against DB. */
+  /** Slug on /hormones-peptides/[slug] - best-effort match; verify against DB. */
   slug?: string;
 }
 
@@ -38,7 +38,7 @@ export const peptideCategories: PeptideCategory[] = [
     id: "metabolic-reset",
     title: "Weight Management & Metabolic Health",
     blurb:
-      "Support healthy weight loss, appetite regulation, and metabolic balance — sublingual or injectable GLP-1.",
+      "Support healthy weight loss, appetite regulation, and metabolic balance - sublingual or injectable GLP-1.",
     tone: "amethyst",
     peptides: [
       {

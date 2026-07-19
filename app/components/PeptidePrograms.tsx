@@ -11,7 +11,7 @@ import {
 } from "../lib/peptide-programs";
 
 /**
- * PeptidePrograms — solution-based funnel for Hormones & Peptides.
+ * PeptidePrograms - solution-based funnel for Hormones & Peptides.
  * Instead of a wall of products, users pick a SOLUTION (category);
  * the matching peptides reveal below with benefits + pricing.
  *
@@ -45,12 +45,12 @@ export default function PeptidePrograms() {
           </h2>
           <p className="mt-5 text-[15px] lg:text-base text-[#4A4F66] leading-relaxed">
             Tell us what you&apos;re solving for. We&apos;ll show the peptide
-            protocols our clinicians prescribe for it — each reviewed against
+            protocols our clinicians prescribe for it - each reviewed against
             your labs and shipped from a licensed compounding pharmacy.
           </p>
         </motion.div>
 
-        {/* Category selector — the funnel entry */}
+        {/* Category selector - the funnel entry */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}

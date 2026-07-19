@@ -17,11 +17,11 @@ import { getProductsByHub } from "../lib/products";
 /**
  * Primary keyword: "nad therapy" (4,400 vol, KD=24)
  * Secondary: "nad injection therapy", "sublingual nad", "nad supplement"
- * NOTE: IV / infusion keywords intentionally not targeted — IV is not currently offered.
+ * NOTE: IV / infusion keywords intentionally not targeted - IV is not currently offered.
  */
 
 export const metadata = generatePageMetadata({
-  title: "NAD+ Therapy — Injection & Sublingual",
+  title: "NAD+ Therapy - Injection & Sublingual",
   description:
     "NAD+ therapy for energy, longevity, and mitochondrial health. Clinician-supervised injection or sublingual via telehealth.",
   path: "/nad",
@@ -41,7 +41,7 @@ const faqs = [
   {
     question: "How long does NAD+ therapy take to work?",
     answer:
-      "Most patients notice improved energy and mental clarity within 1–2 weeks of starting NAD+ therapy. Deeper cellular benefits — mitochondrial efficiency, DNA repair support — build over 4–8 weeks of consistent use.",
+      "Most patients notice improved energy and mental clarity within 1–2 weeks of starting NAD+ therapy. Deeper cellular benefits - mitochondrial efficiency, DNA repair support - build over 4–8 weeks of consistent use.",
   },
   {
     question: "Is NAD+ therapy safe?",
@@ -51,12 +51,12 @@ const faqs = [
   {
     question: "Can I get NAD+ therapy at home?",
     answer:
-      "Yes. Our telehealth options (injection and sublingual) let you start NAD+ therapy from home, supervised by our clinical team — no clinic visit required.",
+      "Yes. Our telehealth options (injection and sublingual) let you start NAD+ therapy from home, supervised by our clinical team - no clinic visit required.",
   },
 ];
 
 const benefits = [
-  { icon: Zap, title: "Cellular Energy", desc: "Supports mitochondrial ATP production — the fuel your cells run on." },
+  { icon: Zap, title: "Cellular Energy", desc: "Supports mitochondrial ATP production - the fuel your cells run on." },
   { icon: Brain, title: "Cognitive Clarity", desc: "NAD+ is essential for neuronal function and stress resilience." },
   { icon: Activity, title: "Recovery & Aging", desc: "Activates sirtuins and PARP enzymes involved in DNA repair and longevity." },
 ];
@@ -68,7 +68,7 @@ export default function NadHubPage() {
     <>
       <JsonLd
         data={medicalWebPageSchema({
-          title: "NAD+ Therapy — Injection & Sublingual",
+          title: "NAD+ Therapy - Injection & Sublingual",
           description: "Clinician-supervised NAD+ therapy for cellular energy, mitochondrial function, and longevity.",
           url: "/nad",
           medicalConditions: ["Fatigue", "Cognitive Decline", "Metabolic Dysfunction", "Aging"],
@@ -98,7 +98,7 @@ export default function NadHubPage() {
 
       <Breadcrumbs items={[{ label: "NAD+ & Supplements", href: "/nad" }]} />
 
-      {/* Hero — static gradient (no heavy background video) */}
+      {/* Hero - static gradient (no heavy background video) */}
       <section className="relative bg-gradient-to-b from-[#1A1F30] to-[#21253C] overflow-hidden">
         <div className="absolute inset-0 lux-grid opacity-25 pointer-events-none" />
         <div className="absolute top-0 left-0 w-[600px] h-[600px] rounded-full bg-[#345691]/20 blur-[140px] pointer-events-none" />
@@ -109,13 +109,13 @@ export default function NadHubPage() {
               Longevity · Cellular Energy · All 50 States
             </p>
             <h1 className="font-[family-name:var(--font-poppins)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4rem] text-white leading-[1.05] tracking-[-0.02em]">
-              NAD+ therapy — injection &amp;{" "}
+              NAD+ therapy - injection &amp;{" "}
               <span className="text-[#6762AF] font-semibold">
                 sublingual
               </span>
             </h1>
             <p className="mt-7 text-base lg:text-lg text-white/65 leading-relaxed max-w-2xl">
-              NAD+ is a coenzyme central to mitochondrial energy production and DNA repair. Levels decline with age. Our clinicians build personalized NAD+ protocols — injection or sublingual — based on your labs and goals.
+              NAD+ is a coenzyme central to mitochondrial energy production and DNA repair. Levels decline with age. Our clinicians build personalized NAD+ protocols - injection or sublingual - based on your labs and goals.
             </p>
 
             <div className="mt-9 flex flex-col sm:flex-row gap-4">
@@ -229,7 +229,7 @@ export default function NadHubPage() {
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Delivery Options</span>
           <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-[#1A1F30] leading-[1.05] tracking-[-0.02em] mb-10">
-            NAD+ injection vs sublingual — which is right for you?
+            NAD+ injection vs sublingual - which is right for you?
           </h2>
           <div className="grid md:grid-cols-2 gap-5">
             {[

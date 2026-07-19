@@ -50,7 +50,7 @@ export default function WhartonsJellyPower() {
         >
           <span className="eyebrow">Wharton&apos;s Jelly</span>
           <h2 className="mt-4 lux-display text-4xl sm:text-5xl lg:text-[3.75rem] text-[#1A1F30] leading-[1.05]">
-            Harness the power of <span className="text-[#6762AF] font-semibold">Wharton&apos;s Jelly</span> — the gold standard in stem cell therapy
+            Harness the power of <span className="text-[#6762AF] font-semibold">Wharton&apos;s Jelly</span> - the gold standard in stem cell therapy
           </h2>
           <p className="mt-7 text-base lg:text-lg text-[#4A4F66] leading-relaxed">
             Sourced from ethically donated umbilical cord tissue, Wharton&apos;s Jelly is one of the richest known sources of high-quality mesenchymal stem cells (MSCs) and growth factors essential for tissue repair and regeneration.
@@ -90,7 +90,7 @@ export default function WhartonsJellyPower() {
           ))}
         </div>
 
-        {/* CTA Bar — single primary action: the quiz */}
+        {/* CTA Bar - single primary action: the quiz */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}

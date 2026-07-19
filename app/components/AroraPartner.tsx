@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
 /**
- * "The infrastructure behind the care" — Arora Health Group partner block.
+ * "The infrastructure behind the care" - Arora Health Group partner block.
  */
 
 export default function AroraPartner() {
@@ -42,7 +42,7 @@ export default function AroraPartner() {
             </a>
           </motion.div>
 
-          {/* === RIGHT col — Arora card === */}
+          {/* === RIGHT col - Arora card === */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}

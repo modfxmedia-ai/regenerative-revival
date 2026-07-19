@@ -14,9 +14,9 @@ import {
 import { hormonePrograms } from "../lib/nav-menus";
 
 export const metadata = generatePageMetadata({
-  title: "Hormone Optimization — TRT & HRT Online",
+  title: "Hormone Optimization - TRT & HRT Online",
   description:
-    "Online TRT and women's HRT — physician-prescribed, lab-reviewed. Metabolic hormones shipped to your door.",
+    "Online TRT and women's HRT - physician-prescribed, lab-reviewed. Metabolic hormones shipped to your door.",
   path: "/hormones",
 });
 
@@ -24,7 +24,7 @@ const faqs = [
   {
     question: "What is hormone optimization?",
     answer:
-      "Hormone optimization uses bioidentical hormones — testosterone for men (TRT), estrogen/progesterone for women (HRT), and related protocols — to restore levels that decline with age. All programs are prescribed and monitored by a licensed clinician based on your labs.",
+      "Hormone optimization uses bioidentical hormones - testosterone for men (TRT), estrogen/progesterone for women (HRT), and related protocols - to restore levels that decline with age. All programs are prescribed and monitored by a licensed clinician based on your labs.",
   },
   {
     question: "How do I get TRT or HRT prescribed online?",
@@ -34,7 +34,7 @@ const faqs = [
   {
     question: "Is hormone therapy the same as peptide therapy?",
     answer:
-      "No. Hormone therapy replaces or optimizes endogenous hormones like testosterone and estrogen. Peptide therapy uses signaling peptides for recovery, metabolism, and performance. At Regenerative Revival, the same medical team coordinates both — so your protocols work together.",
+      "No. Hormone therapy replaces or optimizes endogenous hormones like testosterone and estrogen. Peptide therapy uses signaling peptides for recovery, metabolism, and performance. At Regenerative Revival, the same medical team coordinates both - so your protocols work together.",
   },
   {
     question: "Is hormone therapy safe?",
@@ -46,7 +46,7 @@ const faqs = [
 const benefits = [
   "Licensed clinician reviews your labs before prescribing",
   "Bioidentical hormones from NABP-accredited pharmacies",
-  "Ships directly to your door — no clinic visits",
+  "Ships directly to your door - no clinic visits",
   "Same medical team coordinates hormones, peptides, and NAD+",
   "Telehealth available in all 50 states",
   "Physician oversight under Arora Health Group",
@@ -57,7 +57,7 @@ export default function HormonesPage() {
     <>
       <JsonLd
         data={medicalWebPageSchema({
-          title: "Hormone Optimization — TRT & HRT Online",
+          title: "Hormone Optimization - TRT & HRT Online",
           description:
             "Physician-prescribed testosterone replacement and women's hormone therapy through telehealth.",
           url: "/hormones",
@@ -91,7 +91,7 @@ export default function HormonesPage() {
 
       <Breadcrumbs items={[{ label: "Hormones", href: "/hormones" }]} />
 
-      {/* Hero — static gradient (no heavy background video) */}
+      {/* Hero - static gradient (no heavy background video) */}
       <section className="relative bg-gradient-to-b from-[#1A1F30] to-[#21253C] overflow-hidden">
         <div className="absolute inset-0 lux-grid opacity-25 pointer-events-none" />
         <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#6762AF]/15 blur-[140px] pointer-events-none" />
@@ -102,11 +102,11 @@ export default function HormonesPage() {
               Telehealth · Physician-Prescribed · All 50 States
             </p>
             <h1 className="font-[family-name:var(--font-poppins)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4rem] text-white leading-[1.05] tracking-[-0.02em]">
-              Hormone optimization —{" "}
+              Hormone optimization - {" "}
               <span className="text-[#6762AF] font-semibold">TRT &amp; HRT online</span>
             </h1>
             <p className="mt-7 text-base lg:text-lg text-white/65 leading-relaxed max-w-2xl">
-              Testosterone replacement for men. Bioidentical hormone therapy for women. Clinician-led, lab-reviewed, and shipped from a licensed compounding pharmacy — coordinated with your peptides and NAD+ by the same medical team.
+              Testosterone replacement for men. Bioidentical hormone therapy for women. Clinician-led, lab-reviewed, and shipped from a licensed compounding pharmacy - coordinated with your peptides and NAD+ by the same medical team.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -151,7 +151,7 @@ export default function HormonesPage() {
               Hormone programs our clinicians prescribe
             </h2>
             <p className="mt-4 text-base text-[#4A4F66]">
-              Every protocol starts with labs and a telehealth consult. Your clinician builds a plan around your goals — not a one-size-fits-all template.
+              Every protocol starts with labs and a telehealth consult. Your clinician builds a plan around your goals - not a one-size-fits-all template.
             </p>
           </div>
 
@@ -189,7 +189,7 @@ export default function HormonesPage() {
                 One team coordinates your hormones, peptides, and NAD+
               </h2>
               <p className="mt-6 text-base text-[#4A4F66] leading-relaxed">
-                Most telehealth hormone clinics operate in silos. Your TRT provider doesn&apos;t know about your peptide stack. At Regenerative Revival, one physician-led team manages all of it — under Arora Health Group clinical oversight.
+                Most telehealth hormone clinics operate in silos. Your TRT provider doesn&apos;t know about your peptide stack. At Regenerative Revival, one physician-led team manages all of it - under Arora Health Group clinical oversight.
               </p>
               <ul className="mt-8 flex flex-col gap-3">
                 {benefits.map((b) => (

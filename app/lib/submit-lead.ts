@@ -11,7 +11,7 @@ export interface LeadData {
 
 /**
  * Read UTM params previously stashed in sessionStorage by <UtmCapture/>.
- * Safe on SSR — returns empty object if window is undefined.
+ * Safe on SSR - returns empty object if window is undefined.
  */
 function readStoredUtms(): Record<string, string> {
   if (typeof window === "undefined") return {};
@@ -47,6 +47,6 @@ export async function submitLead(data: LeadData): Promise<{ success: boolean; er
     }
     return { success: true };
   } catch {
-    return { success: false, error: "Network error — please try again" };
+    return { success: false, error: "Network error - please try again" };
   }
 }

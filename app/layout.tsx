@@ -10,7 +10,7 @@ import UtmCapture from "./components/UtmCapture";
 import EverflowCapture from "./components/EverflowCapture";
 import { JsonLd, organizationSchema, localBusinessSchema } from "./lib/schema";
 
-// Poppins — primary font for all headings and body text
+// Poppins - primary font for all headings and body text
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],

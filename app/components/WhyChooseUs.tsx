@@ -63,7 +63,7 @@ export default function WhyChooseUs() {
               Why choose <span className="text-[#6762AF] font-semibold">Regenerative Revival</span>
             </h2>
             <p className="mt-7 text-base lg:text-lg text-[#4A4F66] leading-relaxed">
-              Expertise and innovation in regenerative medicine. We&apos;re committed to delivering cutting-edge therapies in a patient-centered environment — under one physician-led medical team.
+              Expertise and innovation in regenerative medicine. We&apos;re committed to delivering cutting-edge therapies in a patient-centered environment - under one physician-led medical team.
             </p>
 
             {/* Image with frame */}
@@ -80,7 +80,7 @@ export default function WhyChooseUs() {
             </div>
           </motion.div>
 
-          {/* Right — numbered list */}
+          {/* Right - numbered list */}
           <div className="lg:col-span-7 flex flex-col gap-1">
             {reasons.map((r, i) => (
               <motion.div

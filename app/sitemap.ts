@@ -47,12 +47,12 @@ const STATIC_PAGE_DATES: Record<string, string> = {
   // HTML site map / link hub
   "/site-map": "2026-05-22",
 
-  // Legal (stable — don't bump unless content changes)
+  // Legal (stable - don't bump unless content changes)
   "/privacy-policy": "2024-09-05",
   "/terms-conditions": "2024-09-05",
   "/disclaimer": "2025-01-01",
 
-  // /consult-router intentionally omitted — noindex utility route
+  // /consult-router intentionally omitted - noindex utility route
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -63,13 +63,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   );
 
-  // Blog posts — real publication dates
+  // Blog posts - real publication dates
   const articlePages: MetadataRoute.Sitemap = articles.map((article) => ({
     url: `${SITE_URL}/news/${article.slug}`,
     lastModified: new Date(article.date),
   }));
 
-  // Treatment hub pages — omit lastmod (no per-URL signal)
+  // Treatment hub pages - omit lastmod (no per-URL signal)
   const treatmentHubs: MetadataRoute.Sitemap = treatments.map((t) => ({
     url: `${SITE_URL}/treatments/${t.slug}`,
   }));
@@ -93,7 +93,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  // Telehealth product pages (hormones-peptides + nad only — regen is consult-only)
+  // Telehealth product pages (hormones-peptides + nad only - regen is consult-only)
   const productPages: MetadataRoute.Sitemap = products
     .filter((p) => p.hub === "hormones-peptides" || p.hub === "nad")
     .map((p) => ({

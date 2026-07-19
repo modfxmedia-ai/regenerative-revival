@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * WaveDivider — animated SVG wave between sections.
+ * WaveDivider - animated SVG wave between sections.
  * fill = the NEXT section's background colour.
  *
  * The wave path always fills solid to the bottom edge.

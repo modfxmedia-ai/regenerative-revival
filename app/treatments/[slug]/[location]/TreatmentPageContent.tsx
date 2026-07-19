@@ -157,7 +157,7 @@ export default function TreatmentPageContent({
         </div>
       </section>
 
-      {/* Pain Points — Pillar 3 */}
+      {/* Pain Points - Pillar 3 */}
       <section className="py-16 bg-secondary">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">
@@ -203,7 +203,7 @@ export default function TreatmentPageContent({
         </div>
       </section>
 
-      {/* Content Sections — alternating image/text layout */}
+      {/* Content Sections - alternating image/text layout */}
       {sections.map((section, i) => {
         const imageLeft = i % 2 === 0;
         const img = sectionImages[i % sectionImages.length];
@@ -241,7 +241,7 @@ export default function TreatmentPageContent({
         );
       })}
 
-      {/* Keyword Body Copy — Pillar 5 (semantic depth) */}
+      {/* Keyword Body Copy - Pillar 5 (semantic depth) */}
       <section className="py-16 bg-white">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <div className="space-y-6">
@@ -254,7 +254,7 @@ export default function TreatmentPageContent({
         </div>
       </section>
 
-      {/* Conditions — with visual grid */}
+      {/* Conditions - with visual grid */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -296,7 +296,7 @@ export default function TreatmentPageContent({
         </div>
       </section>
 
-      {/* Authority Block — Pillar 8 */}
+      {/* Authority Block - Pillar 8 */}
       <section className="py-16 bg-secondary">
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-primary-light bg-primary/10 rounded-full px-4 py-1.5 mb-6">

@@ -10,9 +10,9 @@ import WaveDivider from "./WaveDivider";
  * Three stacked sections on a continuous midnight purple-navy background.
  * Designed to mirror figma exactly:
  *
- *   1. "Who we help"            — 2x2 persona cards, image on right
- *   2. "Physician-led care"     — two large doctor quote cards (portrait left, quote right)
- *   3. "Numbers we actually earned" — 4-stat band on a lighter amethyst gradient
+ *   1. "Who we help" - 2x2 persona cards, image on right
+ *   2. "Physician-led care" - two large doctor quote cards (portrait left, quote right)
+ *   3. "Numbers we actually earned" - 4-stat band on a lighter amethyst gradient
  */
 
 const personas = [
@@ -46,7 +46,7 @@ const personas = [
   {
     eyebrow: "Optimizing After 40",
     title: "Your labs look different than they used to. So does the mirror.",
-    body: "Hormone optimization for men and women — HRT, TRT, and coordinated longevity planning built around real labs, not guesses.",
+    body: "Hormone optimization for men and women - HRT, TRT, and coordinated longevity planning built around real labs, not guesses.",
     tag: "Hormone Optimization",
     href: "/hormones",
     icon: Gauge,
@@ -99,7 +99,7 @@ export default function WhoWeHelp() {
 }
 
 /* ============================================================
-   1. WHO WE HELP — 2x2 persona cards
+   1. WHO WE HELP - 2x2 persona cards
    ============================================================ */
 function WhoWeHelpBlock() {
   const ref = useRef(null);
@@ -153,11 +153,11 @@ function PersonaCard({
       href={href}
       className="group relative flex flex-col h-full overflow-hidden rounded-[1.5rem] bg-white/[0.04] border border-white/[0.07] p-7 lg:p-8 transition-all duration-500 hover:bg-white/[0.07] hover:border-white/15 hover:-translate-y-1 hover:shadow-[0_28px_64px_-16px_rgba(103,98,175,0.3)]"
     >
-      {/* Gradient bloom — top-right, blooms on hover */}
+      {/* Gradient bloom - top-right, blooms on hover */}
       <span
         className={`absolute -top-16 -right-16 w-48 h-48 rounded-full bg-gradient-to-br ${frame} opacity-[0.12] blur-3xl group-hover:opacity-30 transition-opacity duration-700 pointer-events-none`}
       />
-      {/* Watermark icon — large, faint, behind */}
+      {/* Watermark icon - large, faint, behind */}
       <Icon
         className="absolute -bottom-6 -right-4 h-40 w-40 text-white/[0.03] group-hover:text-white/[0.05] transition-colors duration-700 pointer-events-none"
         strokeWidth={1}
@@ -197,7 +197,7 @@ function PersonaCard({
 }
 
 /* ============================================================
-   2. PHYSICIAN-LED CARE — two large doctor quote cards
+   2. PHYSICIAN-LED CARE - two large doctor quote cards
    Portrait on LEFT with name underneath, quote on RIGHT
    ============================================================ */
 function PhysicianLedBlock() {
@@ -285,7 +285,7 @@ function DoctorCard({
           {quote}
         </p>
         <p className="mt-6 text-[11.5px] text-[#71A7F5] tracking-wide">
-          {name} — {title}
+          {name} - {title}
         </p>
       </div>
     </div>

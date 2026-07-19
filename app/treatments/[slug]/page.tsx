@@ -46,7 +46,7 @@ export default async function TreatmentLocationsPage({ params }: PageProps) {
     <>
       <JsonLd
         data={webPageSchema({
-          title: `${treatment.name} — Find Locations`,
+          title: `${treatment.name} - Find Locations`,
           description: treatment.description,
           url: `/treatments/${slug}`,
         })}

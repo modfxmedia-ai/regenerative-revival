@@ -16,9 +16,9 @@ import {
 import { getProductsByHub } from "../lib/products";
 
 export const metadata = generatePageMetadata({
-  title: "Peptide Therapy — Physician-Prescribed Online",
+  title: "Peptide Therapy - Physician-Prescribed Online",
   description:
-    "Physician-prescribed peptide therapy — BPC-157, semaglutide, CJC-1295, and more. Telehealth intake, licensed clinician oversight, shipped to your door.",
+    "Physician-prescribed peptide therapy - BPC-157, semaglutide, CJC-1295, and more. Telehealth intake, licensed clinician oversight, shipped to your door.",
   path: "/peptides",
 });
 
@@ -26,12 +26,12 @@ const faqs = [
   {
     question: "How do I get peptides prescribed online?",
     answer:
-      "Take our 2-minute quiz, complete a telehealth intake with a licensed clinician, and receive your prescription from a licensed compounding pharmacy — all without leaving home. No clinic visit required.",
+      "Take our 2-minute quiz, complete a telehealth intake with a licensed clinician, and receive your prescription from a licensed compounding pharmacy - all without leaving home. No clinic visit required.",
   },
   {
     question: "What is the best online peptide clinic?",
     answer:
-      "The best online peptide clinic is one where a licensed physician reviews your labs and coordinates your peptide stack with your hormones and NAD+ — not just ships a product. At Regenerative Revival, the same medical team manages all of it.",
+      "The best online peptide clinic is one where a licensed physician reviews your labs and coordinates your peptide stack with your hormones and NAD+ - not just ships a product. At Regenerative Revival, the same medical team manages all of it.",
   },
   {
     question: "How long does peptide therapy take to work?",
@@ -48,7 +48,7 @@ const faqs = [
 const benefits = [
   "Licensed clinician reviews your labs before prescribing",
   "Compounded by NABP-accredited pharmacies",
-  "Ships directly to your door — no clinic visits",
+  "Ships directly to your door - no clinic visits",
   "Same medical team coordinates hormones, peptides, and NAD+",
   "Telehealth available in all 50 states",
   "Physician oversight under Arora Health Group",
@@ -61,9 +61,9 @@ export default function PeptidesPage() {
     <>
       <JsonLd
         data={medicalWebPageSchema({
-          title: "Peptide Therapy Online — Physician-Prescribed Programs",
+          title: "Peptide Therapy Online - Physician-Prescribed Programs",
           description:
-            "Physician-prescribed peptide therapy through telehealth — solution-based programs by goal.",
+            "Physician-prescribed peptide therapy through telehealth - solution-based programs by goal.",
           url: "/peptides",
           medicalConditions: [
             "Obesity",
@@ -98,7 +98,7 @@ export default function PeptidesPage() {
 
       <Breadcrumbs items={[{ label: "Peptides", href: "/peptides" }]} />
 
-      {/* Hero — static gradient (no heavy background video) */}
+      {/* Hero - static gradient (no heavy background video) */}
       <section className="relative bg-gradient-to-b from-[#1A1F30] to-[#21253C] overflow-hidden">
         <div className="absolute inset-0 lux-grid opacity-25 pointer-events-none" />
         <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#6762AF]/15 blur-[140px] pointer-events-none" />
@@ -109,11 +109,11 @@ export default function PeptidesPage() {
               Telehealth · Physician-Prescribed · All 50 States
             </p>
             <h1 className="font-[family-name:var(--font-poppins)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4rem] text-white leading-[1.05] tracking-[-0.02em]">
-              Peptide therapy —{" "}
+              Peptide therapy - {" "}
               <span className="text-[#6762AF] font-semibold">prescribed online</span>
             </h1>
             <p className="mt-7 text-base lg:text-lg text-white/65 leading-relaxed max-w-2xl">
-              BPC-157, semaglutide, CJC-1295, GHK-Cu, and more — start with your goal, not a product wall. Prescribed by a licensed clinician, reviewed against your labs, and shipped from a licensed compounding pharmacy.
+              BPC-157, semaglutide, CJC-1295, GHK-Cu, and more - start with your goal, not a product wall. Prescribed by a licensed clinician, reviewed against your labs, and shipped from a licensed compounding pharmacy.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -155,10 +155,10 @@ export default function PeptidesPage() {
             <div>
               <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691]">Why Regenerative Revival</span>
               <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl lg:text-[3rem] text-[#1A1F30] leading-[1.05] tracking-[-0.02em]">
-                Start with your goal — not a wall of products
+                Start with your goal - not a wall of products
               </h2>
               <p className="mt-6 text-base text-[#4A4F66] leading-relaxed">
-                Most telehealth peptide companies dump you into a catalog. We funnel you by solution — weight loss, recovery, sleep, longevity — then show the protocols our clinicians actually prescribe. Looking for hormones?{" "}
+                Most telehealth peptide companies dump you into a catalog. We funnel you by solution - weight loss, recovery, sleep, longevity - then show the protocols our clinicians actually prescribe. Looking for hormones?{" "}
                 <Link href="/hormones" className="text-[#6762AF] font-semibold hover:underline">
                   See our hormone programs
                 </Link>
@@ -238,7 +238,7 @@ export default function PeptidesPage() {
                         </text>
                         <rect x="42" y="130" width="36" height="10" rx="5" fill="#71A7F5" />
                         <text x="60" y="137.5" textAnchor="middle" fontFamily="sans-serif" fontSize="5.5" fill="white" fontWeight="700">
-                          {p.doses[0]?.label?.split("—")[0]?.trim()?.slice(0, 12) ?? ""}
+                          {p.doses[0]?.label?.split(" - ")[0]?.trim()?.slice(0, 12) ?? ""}
                         </text>
                       </svg>
                     </div>

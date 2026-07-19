@@ -17,7 +17,7 @@ import { JsonLd, breadcrumbSchema, webPageSchema } from "../lib/schema";
 import RsvpButton, { RSVP_FORM_SRC } from "./RsvpButton";
 
 export const metadata = generatePageMetadata({
-  title: "Dell Webb RSVP — Free Regenerative Medicine Dinner Seminar",
+  title: "Dell Webb RSVP - Free Regenerative Medicine Dinner Seminar",
   description:
     "Reserve your free seat and complimentary dinner at our educational stem cell therapy seminar. No surgery, no drugs, no long recovery. Seats are limited.",
   path: "/dell-webb-rsvp",
@@ -40,7 +40,7 @@ export default function DellWebbRsvpPage() {
     <>
       <JsonLd
         data={webPageSchema({
-          title: "Dell Webb RSVP — Free Regenerative Medicine Dinner Seminar",
+          title: "Dell Webb RSVP - Free Regenerative Medicine Dinner Seminar",
           description:
             "Reserve your free seat and complimentary dinner at our educational stem cell therapy seminar.",
           url: "/dell-webb-rsvp",
@@ -146,7 +146,7 @@ export default function DellWebbRsvpPage() {
                 <RsvpButton
                   className="group inline-flex h-13 items-center gap-2 rounded-full bg-[#6762AF] px-7 py-3.5 text-[14px] font-semibold text-white transition-all hover:bg-[#565099]"
                 >
-                  Don&apos;t miss out — register today
+                  Don&apos;t miss out - register today
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </RsvpButton>
                 <a

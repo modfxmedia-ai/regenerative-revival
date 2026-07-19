@@ -22,14 +22,14 @@ import {
  * Secondary: "benefits of stem cell therapy" (720 vol)
  * Secondary: "back pain stem cell therapy" (2,400 vol)
  * Secondary: "arthritis stem cell therapy" (1,000 vol)
- * Note: "stem cell therapy near me" shows 0 vol — Google suppressed (FDA sensitivity)
+ * Note: "stem cell therapy near me" shows 0 vol - Google suppressed (FDA sensitivity)
  *       The programmatic /treatments/[slug]/[location] pages handle local intent.
  */
 
 export const metadata = generatePageMetadata({
-  title: "Stem Cell Therapy — In-Home & Nationwide",
+  title: "Stem Cell Therapy - In-Home & Nationwide",
   description:
-    "Wharton's Jelly stem cell therapy at home — physician-led, transparent pricing, available nationwide.",
+    "Wharton's Jelly stem cell therapy at home - physician-led, transparent pricing, available nationwide.",
   path: "/stem-cell-therapy",
 });
 
@@ -37,7 +37,7 @@ const faqs = [
   {
     question: "How much does stem cell therapy cost?",
     answer:
-      "Because every program is personalized to your condition, the protocol, and the number of areas addressed, pricing is determined individually. We walk you through clear, transparent pricing during your consultation — no surprises.",
+      "Because every program is personalized to your condition, the protocol, and the number of areas addressed, pricing is determined individually. We walk you through clear, transparent pricing during your consultation - no surprises.",
   },
   {
     question: "What is the success rate of stem cell therapy?",
@@ -66,7 +66,7 @@ export default function StemCellTherapyPage() {
     <>
       <JsonLd
         data={medicalWebPageSchema({
-          title: "Stem Cell Therapy — In-Home Concierge Regenerative Medicine",
+          title: "Stem Cell Therapy - In-Home Concierge Regenerative Medicine",
           description:
             "Wharton's Jelly stem cell therapy delivered in your home by a licensed nurse practitioner. Physician-led, FDA-compliant, available nationwide.",
           url: "/stem-cell-therapy",

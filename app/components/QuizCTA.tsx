@@ -6,7 +6,7 @@ import { Sparkles } from "lucide-react";
 import Image from "next/image";
 
 /**
- * QuizCTA — Figma S12 FINAL CTA
+ * QuizCTA - Figma S12 FINAL CTA
  * 600px tall, gradient(117.51deg, #533861 → #7CA8EF)
  * Background image flipped vertically, opacity 0.4, hard-light blend
  * Centered column: eyebrow · 56px headline · 18px body · white pill button
@@ -22,7 +22,7 @@ export default function QuizCTA() {
       className="relative overflow-hidden"
       style={{ height: "600px" }}
     >
-      {/* === Background image — flipped vertically, visible base === */}
+      {/* === Background image - flipped vertically, visible base === */}
       <div className="absolute inset-0">
         <Image
           src="/stocks-cta-image.jpg"
@@ -35,7 +35,7 @@ export default function QuizCTA() {
         />
       </div>
 
-      {/* === Gradient overlay — hard-light blend lets image show through === */}
+      {/* === Gradient overlay - hard-light blend lets image show through === */}
       <div
         className="absolute inset-0"
         style={{
@@ -45,7 +45,7 @@ export default function QuizCTA() {
         }}
       />
 
-      {/* === Content — centered === */}
+      {/* === Content - centered === */}
       <div className="relative z-10 flex h-full items-center justify-center px-6">
         <div className="flex flex-col items-center gap-6 max-w-[1400px] w-full text-center">
 

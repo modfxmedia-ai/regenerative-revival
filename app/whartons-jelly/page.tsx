@@ -22,7 +22,7 @@ import {
 export const metadata = generatePageMetadata({
   title: "Wharton's Jelly Stem Cell Therapy",
   description:
-    "Wharton's Jelly MSCs — younger, more potent than bone marrow or fat cells. In-home stem cell therapy, physician-supervised, nationwide.",
+    "Wharton's Jelly MSCs - younger, more potent than bone marrow or fat cells. In-home stem cell therapy, physician-supervised, nationwide.",
   path: "/whartons-jelly",
 });
 
@@ -35,12 +35,12 @@ const faqs = [
   {
     question: "How is Wharton's Jelly different from bone marrow or fat-derived stem cells?",
     answer:
-      "Bone marrow and adipose (fat) stem cells are autologous — taken from your own body. They decline in quality and quantity with age. Wharton's Jelly MSCs are allogeneic (donor-sourced) from ethically donated umbilical cords, meaning they are younger, more potent, and available in consistent, high-quality supply without a painful harvest procedure.",
+      "Bone marrow and adipose (fat) stem cells are autologous - taken from your own body. They decline in quality and quantity with age. Wharton's Jelly MSCs are allogeneic (donor-sourced) from ethically donated umbilical cords, meaning they are younger, more potent, and available in consistent, high-quality supply without a painful harvest procedure.",
   },
   {
     question: "Is Wharton's Jelly therapy safe?",
     answer:
-      "Yes. Wharton's Jelly MSCs are immune-privileged — they express low levels of MHC class II antigens, which means the body rarely mounts a rejection response. All products we use are sourced from AATB-accredited tissue banks and tested for sterility, viability, and potency before use.",
+      "Yes. Wharton's Jelly MSCs are immune-privileged - they express low levels of MHC class II antigens, which means the body rarely mounts a rejection response. All products we use are sourced from AATB-accredited tissue banks and tested for sterility, viability, and potency before use.",
   },
   {
     question: "What conditions can Wharton's Jelly stem cell therapy address?",
@@ -63,12 +63,12 @@ const differentiators = [
   {
     icon: Zap,
     title: "Younger, more potent cells",
-    desc: "Neonatal MSCs divide faster, secrete more growth factors, and have longer telomeres than adult-derived cells. Age matters in regenerative medicine — and Wharton's Jelly starts at day zero.",
+    desc: "Neonatal MSCs divide faster, secrete more growth factors, and have longer telomeres than adult-derived cells. Age matters in regenerative medicine - and Wharton's Jelly starts at day zero.",
   },
   {
     icon: ShieldCheck,
-    title: "Immune-privileged — no rejection drugs",
-    desc: "Wharton's Jelly MSCs express low MHC class II antigens. The immune system tolerates them without immunosuppressants — a significant safety advantage over other allogeneic therapies.",
+    title: "Immune-privileged - no rejection drugs",
+    desc: "Wharton's Jelly MSCs express low MHC class II antigens. The immune system tolerates them without immunosuppressants - a significant safety advantage over other allogeneic therapies.",
   },
   {
     icon: Heart,
@@ -138,14 +138,14 @@ export default function WhartonsJellyPage() {
               <span className="text-[11px] font-medium tracking-[0.32em] text-white/60 uppercase">Regenerative Medicine · Source Science</span>
             </div>
             <h1 className="font-[family-name:var(--font-poppins)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4.5rem] text-white leading-[1.02] tracking-[-0.02em]">
-              Wharton&apos;s Jelly —{" "}
+              Wharton&apos;s Jelly - {" "}
               <span className="text-[#6762AF] font-semibold">
                 the gold standard
               </span>{" "}
               in stem cell therapy
             </h1>
             <p className="mt-7 text-base lg:text-lg text-white/65 leading-relaxed max-w-2xl">
-              Not all stem cells are equal. Wharton&apos;s Jelly — the gelatinous tissue inside the umbilical cord — contains the youngest, most potent mesenchymal stem cells available. Here&apos;s why it matters, and why we use nothing else.
+              Not all stem cells are equal. Wharton&apos;s Jelly - the gelatinous tissue inside the umbilical cord - contains the youngest, most potent mesenchymal stem cells available. Here&apos;s why it matters, and why we use nothing else.
             </p>
             <div className="mt-9 flex flex-col sm:flex-row gap-4">
               <Link
@@ -178,13 +178,13 @@ export default function WhartonsJellyPage() {
               </h2>
               <div className="mt-6 space-y-5 text-[15px] text-[#4A4F66] leading-[1.75]">
                 <p>
-                  Wharton&apos;s Jelly is the gelatinous connective tissue that surrounds the blood vessels inside the umbilical cord. It was first described by English physician Thomas Wharton in 1656 — but its significance in regenerative medicine wasn&apos;t understood until the early 2000s, when researchers discovered it contains an exceptionally high density of mesenchymal stem cells (MSCs).
+                  Wharton&apos;s Jelly is the gelatinous connective tissue that surrounds the blood vessels inside the umbilical cord. It was first described by English physician Thomas Wharton in 1656 - but its significance in regenerative medicine wasn&apos;t understood until the early 2000s, when researchers discovered it contains an exceptionally high density of mesenchymal stem cells (MSCs).
                 </p>
                 <p>
-                  These MSCs are the same type of cell found in bone marrow and adipose tissue — but with a critical difference: they come from neonatal tissue. That means they&apos;re younger, divide faster, secrete more growth factors, and carry a lower immune rejection risk than cells harvested from adult donors.
+                  These MSCs are the same type of cell found in bone marrow and adipose tissue - but with a critical difference: they come from neonatal tissue. That means they&apos;re younger, divide faster, secrete more growth factors, and carry a lower immune rejection risk than cells harvested from adult donors.
                 </p>
                 <p>
-                  The umbilical cord is discarded after birth. By collecting it from consenting mothers after healthy, full-term deliveries, we access one of the most potent regenerative sources in the human body — without any harm to mother or child.
+                  The umbilical cord is discarded after birth. By collecting it from consenting mothers after healthy, full-term deliveries, we access one of the most potent regenerative sources in the human body - without any harm to mother or child.
                 </p>
               </div>
             </div>
@@ -261,7 +261,7 @@ export default function WhartonsJellyPage() {
               </h2>
               <div className="mt-6 space-y-5 text-[15px] text-[#4A4F66] leading-[1.75]">
                 <p>
-                  We don&apos;t run a clinic. We come to you. A licensed nurse practitioner — operating under Dr. Sean Arora and Arora Health Group — delivers your Wharton&apos;s Jelly treatment in your home, office, or hotel room.
+                  We don&apos;t run a clinic. We come to you. A licensed nurse practitioner - operating under Dr. Sean Arora and Arora Health Group - delivers your Wharton&apos;s Jelly treatment in your home, office, or hotel room.
                 </p>
                 <p>
                   The treatment itself is a targeted injection to the affected joint or tissue. Most sessions take 30–60 minutes. There&apos;s no general anesthesia, no surgical prep, and no recovery room. You can return to light activity the same day.
@@ -269,7 +269,7 @@ export default function WhartonsJellyPage() {
               </div>
               <ul className="mt-7 flex flex-col gap-3">
                 {[
-                  "No clinic visit — we come to you",
+                  "No clinic visit - we come to you",
                   "Licensed NP under physician oversight",
                   "Targeted injection to affected area",
                   "30–60 minute session",

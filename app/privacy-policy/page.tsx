@@ -48,7 +48,7 @@ export default function PrivacyPolicyPage() {
     <>
       <JsonLd
         data={webPageSchema({
-          title: "Privacy Policy — Regenerative Revival",
+          title: "Privacy Policy - Regenerative Revival",
           description:
             "How Regenerative Revival collects, uses, and protects your personal information.",
           url: "/privacy-policy",

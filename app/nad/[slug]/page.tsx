@@ -51,7 +51,7 @@ const nadProductFaqs: Record<string, { question: string; answer: string }[]> = {
     {
       question: "How long does it take for NAD+ to work?",
       answer:
-        "Most patients notice improved energy and mental clarity within 1–2 weeks. Deeper cellular benefits — mitochondrial efficiency, DNA repair support — build over 4–8 weeks of consistent use. Long-term use supports sirtuin activity and healthy aging.",
+        "Most patients notice improved energy and mental clarity within 1–2 weeks. Deeper cellular benefits - mitochondrial efficiency, DNA repair support - build over 4–8 weeks of consistent use. Long-term use supports sirtuin activity and healthy aging.",
     },
     {
       question: "How much does NAD+ therapy cost?",

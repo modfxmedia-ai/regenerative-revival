@@ -79,7 +79,7 @@ export default function StemCellBenefits() {
           />
         </motion.div>
 
-        {/* Benefits — horizontal cards */}
+        {/* Benefits - horizontal cards */}
         <div className="grid gap-6">
           {benefits.map((b, i) => (
             <motion.div

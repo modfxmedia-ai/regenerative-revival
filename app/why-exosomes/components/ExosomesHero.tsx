@@ -66,7 +66,7 @@ export default function ExosomesHero() {
           >
             Think of exosomes as the message, not the messenger. They&apos;re
             tiny vesicles released by stem cells that carry the regenerative
-            signals — without being living cells themselves. For many people,
+            signals - without being living cells themselves. For many people,
             that distinction matters a lot. No cells, no complexity, just
             targeted biological communication that tells your body to get
             to work.

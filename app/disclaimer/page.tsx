@@ -22,7 +22,7 @@ export default function DisclaimerPage() {
     <>
       <JsonLd
         data={webPageSchema({
-          title: "Disclaimer — Regenerative Revival",
+          title: "Disclaimer - Regenerative Revival",
           description:
             "Regenerative Revival disclaimer regarding earnings, individual results, and limitations of liability.",
           url: "/disclaimer",

@@ -36,7 +36,7 @@ export default function Hero() {
           className="absolute inset-0 h-full w-full object-cover object-center"
           aria-hidden
         />
-        {/* Dark cinematic overlays — preserve readability over the photo */}
+        {/* Dark cinematic overlays - preserve readability over the photo */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#021E3C] via-[#021E3C]/70 to-[#021E3C]/40" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#021E3C]/80 via-[#1A1F30]/30 to-transparent" />
         <div className="absolute inset-0 bg-[#583563]/20 mix-blend-multiply" />
@@ -44,7 +44,7 @@ export default function Hero() {
 
       {/* === Background layers === */}
 
-      {/* Aurora orbs — sit on top of photo */}
+      {/* Aurora orbs - sit on top of photo */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] left-[-5%] w-[700px] h-[700px] rounded-full bg-[#6762AF]/25 blur-[140px] animate-float-slow" />
         <div className="absolute bottom-[-15%] right-[-10%] w-[800px] h-[800px] rounded-full bg-[#345691]/30 blur-[140px] animate-float-slow" style={{ animationDelay: "-6s" }} />
@@ -78,7 +78,7 @@ export default function Hero() {
               <span className="h-px w-8 bg-white/30" />
             </motion.div>
 
-            {/* Headline — Poppins Medium 500, 72px, -4px letter-spacing, 110% line-height, centered */}
+            {/* Headline - Poppins Medium 500, 72px, -4px letter-spacing, 110% line-height, centered */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -96,7 +96,7 @@ export default function Hero() {
               Regeneration &amp; Longevity
             </motion.h1>
 
-            {/* "got stem cells?" logo — white, transparent */}
+            {/* "got stem cells?" logo - white, transparent */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -124,7 +124,7 @@ export default function Hero() {
               One physician-led medical team, one patient record, one plan for the best decade of your life.
             </motion.p>
 
-            {/* CTA — single white pill, centered */}
+            {/* CTA - single white pill, centered */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -145,7 +145,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* === Credentials strip — matches figma: 1188×54 pill, 8px radius, bottom-16 === */}
+        {/* === Credentials strip - matches figma: 1188×54 pill, 8px radius, bottom-16 === */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -161,7 +161,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Side brand text — vertical, right edge */}
+      {/* Side brand text - vertical, right edge */}
       <div className="absolute right-3 top-1/2 -translate-y-1/2 hidden xl:block">
         <span className="brand-side-text text-white/30">SETH BERGE</span>
       </div>

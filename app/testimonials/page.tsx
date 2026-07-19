@@ -52,7 +52,7 @@ const writtenTestimonials = [
     name: "Roy B.",
     condition: "Knee Pain",
     quote:
-      "I wasn't able to do much of my moving towards my right, with my knee problem. Since I've got the shot, the three weeks, I've been bouncing around, walking all over the place, and almost running, riding bikes, things that I wasn't able to do. I've been talking to a lot of people and they've been asking me \"Where did you get it?\" — I've referred them to the doctor and a few of them have taken the procedure and they're doing great.",
+      "I wasn't able to do much of my moving towards my right, with my knee problem. Since I've got the shot, the three weeks, I've been bouncing around, walking all over the place, and almost running, riding bikes, things that I wasn't able to do. I've been talking to a lot of people and they've been asking me \"Where did you get it?\" - I've referred them to the doctor and a few of them have taken the procedure and they're doing great.",
     stars: 5,
     initials: "RB",
   },
@@ -159,13 +159,13 @@ export default function TestimonialsPage() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-6 text-xl text-white/50 leading-relaxed max-w-2xl mx-auto"
           >
-            From everyday people reclaiming their lives — the results
+            From everyday people reclaiming their lives - the results
             speak for themselves.
           </motion.p>
         </div>
       </section>
 
-      {/* Written testimonials — marquee */}
+      {/* Written testimonials - marquee */}
       <section
         ref={writtenRef}
         className="relative py-24 bg-black overflow-hidden"
@@ -190,7 +190,7 @@ export default function TestimonialsPage() {
           </motion.div>
         </div>
 
-        {/* Marquee — full bleed */}
+        {/* Marquee - full bleed */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={writtenInView ? { opacity: 1 } : {}}

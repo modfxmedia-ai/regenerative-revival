@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 /**
- * WaveTransition — full-bleed animated canvas wave that bridges
+ * WaveTransition - full-bleed animated canvas wave that bridges
  * the Hero (#021E3C) into the ValueProps (#0B0E16) dark section.
  *
  * Technique: pixel-level sinusoidal interference pattern rendered
@@ -15,7 +15,7 @@ import { useEffect, useRef } from "react";
  *   deep navy  #021E3C  →  brand purple #6762AF  →  indigo #345691
  */
 
-const SCALE = 3; // downsample factor — bigger = faster, softer
+const SCALE = 3; // downsample factor - bigger = faster, softer
 
 // ── Brand colour stops (0-1 range per channel) ──────────────────────────
 // We blend between three stops based on the wave pattern value:
@@ -43,7 +43,7 @@ export default function WaveTransition() {
   const rafRef = useRef<number>(0);
 
   useEffect(() => {
-    // respect prefers-reduced-motion — render a static gradient instead
+    // respect prefers-reduced-motion - render a static gradient instead
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const canvas = canvasRef.current;
@@ -120,7 +120,7 @@ export default function WaveTransition() {
 
           // blend brand colours based on wave + position
           const blend1 = wave < 0.5 ? mix3(A, B, wave * 2) : mix3(B, C, (wave - 0.5) * 2);
-          // subtle vertical depth — deeper colour lower in frame
+          // subtle vertical depth - deeper colour lower in frame
           const blend2 = mix3(blend1, A, uy * 0.18 + 0.18);
 
           const idx = (py * pw + px) * 4;
@@ -172,7 +172,7 @@ export default function WaveTransition() {
         className="absolute inset-0 w-full h-full"
         style={{ mixBlendMode: "normal" }}
       />
-      {/* Top feather — blends into Hero */}
+      {/* Top feather - blends into Hero */}
       <div
         className="absolute inset-x-0 top-0 h-20 pointer-events-none"
         style={{
@@ -180,7 +180,7 @@ export default function WaveTransition() {
             "linear-gradient(to bottom, #021E3C, transparent)",
         }}
       />
-      {/* Bottom feather — blends into ValueProps */}
+      {/* Bottom feather - blends into ValueProps */}
       <div
         className="absolute inset-x-0 bottom-0 h-20 pointer-events-none"
         style={{

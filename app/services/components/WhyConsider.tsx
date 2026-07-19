@@ -47,7 +47,7 @@ const benefits = [
     icon: Stethoscope,
     title: "Expert Administration",
     description:
-      "Administered by licensed practitioners — PAs, MDs, and DOs across all 50 states.",
+      "Administered by licensed practitioners - PAs, MDs, and DOs across all 50 states.",
   },
 ];
 

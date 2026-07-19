@@ -19,7 +19,7 @@ interface Props {
 }
 
 /**
- * Product page content — exactly per figma:
+ * Product page content - exactly per figma:
  * - 50/50 split: lavender bubble image on left, product info right
  * - Stock + ship pill, big serif title, price, description
  * - Green checkmark benefit list
@@ -52,17 +52,17 @@ export default function ProductPageContent({ product, primaryWizloUrl, faqs }: P
                 ? "cellular energy, mitochondrial support, and longevity optimization"
                 : "clinician-supervised peptide therapy"
             }.`,
-            "A clinical evaluation is required — your provider will confirm candidacy during your intake.",
-            "Your exact dose and protocol are set by your clinician based on your evaluation — not a one-size-fits-all script.",
+            "A clinical evaluation is required - your provider will confirm candidacy during your intake.",
+            "Your exact dose and protocol are set by your clinician based on your evaluation - not a one-size-fits-all script.",
           ],
     },
     {
       title: "What This Program Is Not",
       body:
         product.notFor ?? [
-          "Not a quick fix — sustainable results take time and clinician oversight.",
-          "Not for everyone — your provider will tell you honestly if another path fits better.",
-          "Not a pill mill — every prescription requires a clinical evaluation.",
+          "Not a quick fix - sustainable results take time and clinician oversight.",
+          "Not for everyone - your provider will tell you honestly if another path fits better.",
+          "Not a pill mill - every prescription requires a clinical evaluation.",
         ],
     },
   ];
@@ -116,14 +116,14 @@ export default function ProductPageContent({ product, primaryWizloUrl, faqs }: P
               {/* Fine print */}
               <div className="mt-8 space-y-3 text-[12.5px] text-[#7A7F95] leading-[1.6]">
                 <p>
-                  *Prices shown reflect the plan you select above — monthly, or quarterly (billed once per 3-month supply). Your final price depends on the specific product, dose, and plan prescribed after your clinical evaluation.
+                  *Prices shown reflect the plan you select above - monthly, or quarterly (billed once per 3-month supply). Your final price depends on the specific product, dose, and plan prescribed after your clinical evaluation.
                 </p>
                 <p>
                   **The FDA does not review or approve any compounded medications for safety or effectiveness.
                 </p>
               </div>
 
-              {/* FAQ Schema-friendly extra Q&A — collapsed below for SEO */}
+              {/* FAQ Schema-friendly extra Q&A - collapsed below for SEO */}
               {faqs.length > 0 && (
                 <div className="mt-10 pt-8 border-t border-[#F1ECF8]">
                   <h2 className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#345691] mb-5">
@@ -141,14 +141,14 @@ export default function ProductPageContent({ product, primaryWizloUrl, faqs }: P
         </div>
       </section>
 
-      {/* ── Trust strip — full-width lavender band ── */}
+      {/* ── Trust strip - full-width lavender band ── */}
       <TrustStrip />
     </>
   );
 }
 
 /* ============================================================
-   Plan Selector — monthly / quarterly toggle with dose picker
+   Plan Selector - monthly / quarterly toggle with dose picker
    ============================================================ */
 function PlanSelector({ product, primaryWizloUrl }: { product: Product; primaryWizloUrl: string }) {
   const [plan, setPlan] = useState<"monthly" | "quarterly">("monthly");
@@ -164,7 +164,7 @@ function PlanSelector({ product, primaryWizloUrl }: { product: Product; primaryW
   const wizloUrl = selectedDose?.wizloUrl ?? primaryWizloUrl;
   const price = plan === "monthly" ? selectedDose?.priceMonthly : selectedDose?.priceQuarterly;
   // Savings pairs the monthly dose with its matching quarterly dose by index, so the
-  // badge shows on every product — whether prices live on one entry or two.
+  // badge shows on every product - whether prices live on one entry or two.
   const pairedMonthly = monthlyDoses[selectedDoseIdx] ?? monthlyDoses[0];
   const pairedQuarterly = quarterlyDoses[selectedDoseIdx] ?? quarterlyDoses[0];
   const monthlySavings = pairedMonthly?.priceMonthly && pairedQuarterly?.priceQuarterly
@@ -291,7 +291,7 @@ function ProductImageStage({ product }: { product: Product }) {
       {/* Base lavender gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#F1ECF8] via-[#EAEFF7] to-[#E8E0F2]" />
 
-      {/* Floating blurred bubbles — abstract liquid feel */}
+      {/* Floating blurred bubbles - abstract liquid feel */}
       <div className="absolute inset-0 pointer-events-none">
         <span className="absolute top-[15%] left-[10%] w-32 h-32 rounded-full bg-white/40 blur-2xl" />
         <span className="absolute bottom-[20%] right-[15%] w-40 h-40 rounded-full bg-[#C5DBF7]/50 blur-2xl" />
@@ -299,7 +299,7 @@ function ProductImageStage({ product }: { product: Product }) {
         <span className="absolute bottom-[35%] left-[18%] w-24 h-24 rounded-full bg-[#F1ECF8]/80 blur-xl" />
       </div>
 
-      {/* Subtle ring/swoosh — soft amethyst arc */}
+      {/* Subtle ring/swoosh - soft amethyst arc */}
       <div className="absolute inset-0 pointer-events-none">
         <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 600 600" fill="none">
           <ellipse cx="200" cy="200" rx="180" ry="40" fill="url(#amethystArc)" opacity="0.35" transform="rotate(-25 200 200)" />
@@ -336,9 +336,9 @@ function ProductImageStage({ product }: { product: Product }) {
   );
 }
 
-/* SVG bottle placeholder — luxe pharmacy-style amber dropper bottle with
+/* SVG bottle placeholder - luxe pharmacy-style amber dropper bottle with
    the Regenerative Revival label, used until real product photography lands.
-   Designed to match the figma look — center-stage, generous padding. */
+   Designed to match the figma look - center-stage, generous padding. */
 function BottlePlaceholder({ product }: { product: Product }) {
   // Pull the product label data
   const isSublingual = product.form === "sublingual";
@@ -440,7 +440,7 @@ function BottlePlaceholder({ product }: { product: Product }) {
 }
 
 /* ============================================================
-   Accordion row — expands with framer-motion
+   Accordion row - expands with framer-motion
    ============================================================ */
 function AccordionRow({
   title,
@@ -519,7 +519,7 @@ function AccordionRow({
 }
 
 /* ============================================================
-   Trust strip — figma full-width lavender band, 5 items
+   Trust strip - figma full-width lavender band, 5 items
    ============================================================ */
 function TrustStrip() {
   const items = [

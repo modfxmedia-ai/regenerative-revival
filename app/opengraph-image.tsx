@@ -2,11 +2,11 @@ import { ImageResponse } from "next/og";
 
 // Per SEO playbook §4.7 / §16.12: dynamic OG image generator.
 // Replaces /logo.png as the default OG image (logos at 1200×630 look bad
-// on social — mostly empty space). This produces a branded card with
+// on social - mostly empty space). This produces a branded card with
 // title + tagline in the safe area, 1200×630, ~80 KB.
 
 export const runtime = "edge";
-export const alt = "Regenerative Revival — Stem Cell Therapy & Regenerative Medicine";
+export const alt = "Regenerative Revival - Stem Cell Therapy & Regenerative Medicine";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

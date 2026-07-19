@@ -64,7 +64,7 @@ export default function StemCellsHero() {
             transition={{ duration: 0.7, delay: 0.25 }}
             className="mt-7 max-w-2xl text-lg leading-relaxed text-white/55 font-sans"
           >
-            Your body already knows how to heal — it just needs the right signals.
+            Your body already knows how to heal - it just needs the right signals.
             Mesenchymal stem cells (MSCs) sourced from Wharton&apos;s Jelly are
             among the most potent regenerative cells available today. They&apos;re
             not taken from your own body. They come from ethically donated umbilical

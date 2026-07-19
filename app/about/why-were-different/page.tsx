@@ -23,7 +23,7 @@ const differentiators = [
     icon: FlaskConical,
     title: "Premium-Grade Source Material",
     body:
-      "We use only Wharton's Jelly MSCs from accredited, FDA-compliant tissue banks — not from your own body. Neonatal tissue is younger, more active, and clinically outperforms adult-derived cells. No compromise, no shortcuts.",
+      "We use only Wharton's Jelly MSCs from accredited, FDA-compliant tissue banks - not from your own body. Neonatal tissue is younger, more active, and clinically outperforms adult-derived cells. No compromise, no shortcuts.",
   },
   {
     icon: ShieldCheck,
@@ -35,25 +35,25 @@ const differentiators = [
     icon: Users,
     title: "Licensed Practitioner Network",
     body:
-      "We don't sell you a product and send you home. You're matched with a licensed, vetted provider in our nationwide network who administers your protocol under proper medical oversight — the way it should be done.",
+      "We don't sell you a product and send you home. You're matched with a licensed, vetted provider in our nationwide network who administers your protocol under proper medical oversight - the way it should be done.",
   },
   {
     icon: Heart,
     title: "Truly Personalized Protocols",
     body:
-      "Your biology is unique. We build each protocol around your specific health history, goals, and response profile. Generic one-size-fits-all programs exist elsewhere — they don't exist here.",
+      "Your biology is unique. We build each protocol around your specific health history, goals, and response profile. Generic one-size-fits-all programs exist elsewhere - they don't exist here.",
   },
   {
     icon: BookOpen,
     title: "Education-First Approach",
     body:
-      "We never sell you something you don't understand. Before any protocol, you'll know exactly what's going into your body, why, and what to expect. An informed patient is an empowered patient — and that leads to better outcomes.",
+      "We never sell you something you don't understand. Before any protocol, you'll know exactly what's going into your body, why, and what to expect. An informed patient is an empowered patient - and that leads to better outcomes.",
   },
   {
     icon: Zap,
     title: "Cutting-Edge Regenerative Protocols",
     body:
-      "We stay at the leading edge of regenerative science — not because it's trendy, but because our patients deserve the most effective options available. Our medical advisory team continuously reviews emerging research.",
+      "We stay at the leading edge of regenerative science - not because it's trendy, but because our patients deserve the most effective options available. Our medical advisory team continuously reviews emerging research.",
   },
   {
     icon: MapPin,
@@ -65,7 +65,7 @@ const differentiators = [
     icon: Award,
     title: "Proven, Documented Outcomes",
     body:
-      "We track results. Thousands of clients have experienced measurable improvements in pain, mobility, energy, and quality of life. Real outcomes — not just anecdotes — guide everything we refine about our process.",
+      "We track results. Thousands of clients have experienced measurable improvements in pain, mobility, energy, and quality of life. Real outcomes - not just anecdotes - guide everything we refine about our process.",
   },
 ];
 
@@ -125,7 +125,7 @@ function HeroSection() {
           className="mt-6 max-w-3xl mx-auto text-xl text-white/55 leading-relaxed"
         >
           Regenerative medicine is full of big promises and thin evidence. We built Regenerative
-          Revival to be the exception — rigorous sourcing, licensed practitioners, personalized
+          Revival to be the exception - rigorous sourcing, licensed practitioners, personalized
           protocols, and a commitment to your education every step of the way.
         </motion.p>
 
@@ -176,7 +176,7 @@ function DifferentiatorsSection() {
           </h2>
           <p className="mt-5 max-w-2xl mx-auto text-lg text-gray-500 leading-relaxed">
             From source to protocol to follow-up, here&apos;s exactly what makes our approach
-            different — and why it matters for your outcomes.
+            different - and why it matters for your outcomes.
           </p>
         </motion.div>
 
@@ -297,7 +297,7 @@ function CTASection() {
             <span className="gradient-text">Regenerative Revival Difference</span>
           </h2>
           <p className="mt-5 text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
-            Your free consultation is a real conversation — not a sales call. Come with questions.
+            Your free consultation is a real conversation - not a sales call. Come with questions.
             Leave with clarity.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">

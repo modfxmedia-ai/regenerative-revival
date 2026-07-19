@@ -12,7 +12,7 @@ const services = [
 const about = [
   { label: "Medical Team", href: "/about" },
   { label: "Why We're Different", href: "/about/why-were-different" },
-  { label: "Our Mission", href: "/concierge-care-model" },
+  { label: "Our Mission", href: "/about/founder" },
 ];
 
 const resources = [
@@ -25,8 +25,8 @@ const resources = [
 
 const contact = [
   { label: "Patient Support", href: "/contact" },
-  { label: "Wholesale", href: "/partner-with-us" },
-  { label: "Press", href: "/contact" },
+  { label: "Partner With Us", href: "/partner-with-us" },
+  { label: "Press", href: "/news" },
 ];
 
 const legal = [

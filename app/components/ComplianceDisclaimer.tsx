@@ -1,5 +1,5 @@
 /**
- * Reusable compliance disclaimer band — drop into the bottom of any page
+ * Reusable compliance disclaimer band - drop into the bottom of any page
  * that needs to surface compounded/Rx/regen language. Driven by the
  * disclaimerKey enum from `lib/products.ts`.
  */

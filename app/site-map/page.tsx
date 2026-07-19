@@ -11,9 +11,9 @@ import Breadcrumbs from "../components/Breadcrumbs";
 const SITE_URL = "https://regenerativerevival.com";
 
 export const metadata = generatePageMetadata({
-  title: "Site Map — Every Page on Regenerative Revival",
+  title: "Site Map - Every Page on Regenerative Revival",
   description:
-    "Browse the complete directory of Regenerative Revival pages — treatments, locations, hormone and peptide programs, NAD+, partner services, and articles.",
+    "Browse the complete directory of Regenerative Revival pages - treatments, locations, hormone and peptide programs, NAD+, partner services, and articles.",
   path: "/site-map",
 });
 
@@ -95,7 +95,7 @@ export default function SiteMapPage() {
     <>
       <JsonLd
         data={webPageSchema({
-          title: "Site Map — Regenerative Revival",
+          title: "Site Map - Regenerative Revival",
           description:
             "Complete directory of every page on Regenerative Revival.",
           url: "/site-map",

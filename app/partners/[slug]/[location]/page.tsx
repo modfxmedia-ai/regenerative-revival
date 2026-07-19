@@ -63,7 +63,7 @@ export default async function PartnerLocationPage({ params }: Props) {
       <JsonLd data={faqSchema(faqs)} />
       <Breadcrumbs items={[
         { label: "Partners", href: "/#partners" },
-        { label: `${service.shortName} — ${location.city}, ${location.stateAbbr}`, href: pagePath },
+        { label: `${service.shortName} - ${location.city}, ${location.stateAbbr}`, href: pagePath },
       ]} />
       <PartnerPageContent
         service={service}

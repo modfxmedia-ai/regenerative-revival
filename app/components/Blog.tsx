@@ -78,7 +78,7 @@ export default function Blog() {
 
         {/* Editorial layout: featured + stacked */}
         <div className="grid lg:grid-cols-2 gap-6">
-          {/* FEATURED — content over image */}
+          {/* FEATURED - content over image */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -126,7 +126,7 @@ export default function Blog() {
             </Link>
           </motion.div>
 
-          {/* STACKED — two compact horizontal cards */}
+          {/* STACKED - two compact horizontal cards */}
           <div className="flex flex-col gap-6">
             {rest.map((post, i) => (
               <motion.div

@@ -1,16 +1,16 @@
 import type { MetadataRoute } from "next";
 
 /**
- * robots.ts — 2026 AI/GEO-optimized bot policy
+ * robots.ts - 2026 AI/GEO-optimized bot policy
  *
  * Architecture (per Agentic Search 2026 playbook):
- *   INDEXING bots   — crawl for index/training; allow all strategic ones
- *   LIVE-FETCH bots — user-triggered at query time; must ALSO be allowed
+ *   INDEXING bots - crawl for index/training; allow all strategic ones
+ *   LIVE-FETCH bots - user-triggered at query time; must ALSO be allowed
  *                     (denying live-fetch = invisible even if indexed)
- *   DISALLOWED      — heavy non-strategic crawlers (Bytespider/ByteDance)
+ *   DISALLOWED - heavy non-strategic crawlers (Bytespider/ByteDance)
  *
  * Hard rule: denying Google-Extended forfeits Google AI Mode citation.
- * Perplexity has the highest cite-to-click ratio of any AI surface — never deny.
+ * Perplexity has the highest cite-to-click ratio of any AI surface - never deny.
  *
  * Reference: https://regenerativerevival.com/llms.txt
  */
@@ -30,7 +30,7 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "Google-Extended", ...allow },
 
       // ── ChatGPT Search (OAI-SearchBot = index, ChatGPT-User = live fetch) ─
-      // Both must be allowed — indexing ≠ live retrieval
+      // Both must be allowed - indexing ≠ live retrieval
       { userAgent: "GPTBot",          ...allow }, // training corpus
       { userAgent: "OAI-SearchBot",   ...allow }, // ChatGPT search index
       { userAgent: "ChatGPT-User",    ...allow }, // live fetch at query time
@@ -61,7 +61,7 @@ export default function robots(): MetadataRoute.Robots {
       // Allow on read; payment/form paths are CAPTCHA-gated at the app layer
       { userAgent: "ChatGPT-browsing", ...allow },
 
-      // ── DENY: ByteDance / TikTok — heavy over-fetcher, zero strategic value
+      // ── DENY: ByteDance / TikTok - heavy over-fetcher, zero strategic value
       { userAgent: "Bytespider", allow: [], disallow: ["/"] },
 
       // ── DENY: scraper-class bots with no citation/referral value ─────────

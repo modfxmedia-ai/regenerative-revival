@@ -6,12 +6,12 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
 /**
- * "The three pillars" — cinematic pinned scroll-shuffle.
+ * "The three pillars" - cinematic pinned scroll-shuffle.
  *
  * DESKTOP: the section pins full-screen (sticky). As you scroll NATURALLY
- * through a tall wrapper, the active pillar advances — image, content,
+ * through a tall wrapper, the active pillar advances - image, content,
  * background colour, and the giant index all shuffle/cross-fade in place.
- * No scroll hijacking — buttery and predictable.
+ * No scroll hijacking - buttery and predictable.
  *
  * MOBILE: clean stacked cards with scroll-reveal.
  */
@@ -61,7 +61,7 @@ const pillars = [
     kicker: "Cellular Health · Longevity Protocols",
     title: "Longevity, guided by clinicians, not by an algorithm",
     highlight: "Longevity",
-    body: "NAD+ therapy and clinician-curated supplement stacks, prescribed based on your labs and reviewed by the same medical team that manages your hormones, peptides, and — if needed — your regenerative care.",
+    body: "NAD+ therapy and clinician-curated supplement stacks, prescribed based on your labs and reviewed by the same medical team that manages your hormones, peptides, and - if needed - your regenerative care.",
     chips: ["Cellular energy", "Cognitive", "Recovery", "Resilience"],
     bullets: [
       "Cellular energy and mitochondrial function",
@@ -69,7 +69,7 @@ const pillars = [
       "Recovery, metabolic efficiency, and healthy aging",
       "Long-term healthspan, built around your labs",
     ],
-    note: "This isn't a subscription. It's clinician-led longevity medicine — the standard you should expect in 2026, but almost nobody is actually delivering.",
+    note: "This isn't a subscription. It's clinician-led longevity medicine - the standard you should expect, but almost nobody is actually delivering.",
     cta: "Get Started",
     href: "/nad",
     image: "/photos/cd1ca0b5a4d6f5adc5e2705a0de1b27b91cf69e2.png",
@@ -89,7 +89,7 @@ export default function ValueProps() {
 }
 
 /* ─────────────────────────────────────────────────────────────
-   DESKTOP — stacked pillars (natural scroll, no dead runway)
+   DESKTOP - stacked pillars (natural scroll, no dead runway)
 ───────────────────────────────────────────────────────────── */
 function DesktopStack() {
   return (
@@ -99,7 +99,7 @@ function DesktopStack() {
         {/* Header */}
         <div className="mb-16 flex items-center justify-between">
           <span className="text-[11px] font-semibold tracking-[0.32em] uppercase text-[#71A7F5]">
-            What We Do — Three Pillars
+            What We Do - Three Pillars
           </span>
           <div className="flex items-center gap-3">
             {pillars.map((pl, i) => (
@@ -143,7 +143,7 @@ function DesktopPillar({ p, index }: { p: (typeof pillars)[number]; index: numbe
 
       <div className="relative w-full grid grid-cols-[0.95fr_1.05fr] gap-16 items-center">
 
-        {/* LEFT — image */}
+        {/* LEFT - image */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -185,7 +185,7 @@ function DesktopPillar({ p, index }: { p: (typeof pillars)[number]; index: numbe
           </div>
         </motion.div>
 
-        {/* RIGHT — content */}
+        {/* RIGHT - content */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -231,7 +231,7 @@ function DesktopPillar({ p, index }: { p: (typeof pillars)[number]; index: numbe
 }
 
 /* ─────────────────────────────────────────────────────────────
-   MOBILE — stacked scroll-reveal cards
+   MOBILE - stacked scroll-reveal cards
 ───────────────────────────────────────────────────────────── */
 function MobileStack() {
   return (

@@ -17,7 +17,7 @@ export default function PartnersHubPage() {
     <>
       <JsonLd
         data={webPageSchema({
-          title: "Partner Programs — Regenerative Revival",
+          title: "Partner Programs - Regenerative Revival",
           description:
             "B2B partnership programs for medical practices that want to offer regenerative medicine.",
           url: "/partners",
@@ -93,7 +93,7 @@ export default function PartnersHubPage() {
               { title: "Premium Products", body: "FDA-compliant tissue products and biologics from accredited tissue banks." },
               { title: "Clinical Training", body: "Hands-on staff training on protocols, technique, and patient management." },
               { title: "Marketing Support", body: "Patient education materials, local SEO assets, and lead-gen support." },
-              { title: "Revenue Sharing", body: "Aligned incentives — we win when your practice wins. Zero upfront risk." },
+              { title: "Revenue Sharing", body: "Aligned incentives - we win when your practice wins. Zero upfront risk." },
             ].map((b, i) => (
               <AnimatedSection key={b.title} delay={i * 0.08}>
                 <div className="bg-cream rounded-2xl p-6 border border-gray-100 h-full">

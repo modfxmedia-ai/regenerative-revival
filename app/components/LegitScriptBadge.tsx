@@ -19,7 +19,7 @@ const status =
 const ASSETS: Record<Status, { src: string; alt: string; href: string }> = {
   pending: {
     src: "/badges/legitscript-pending.svg",
-    alt: "LegitScript Certification — Application In Progress",
+    alt: "LegitScript Certification - Application In Progress",
     href: "https://www.legitscript.com/searchresults",
   },
   certified: {

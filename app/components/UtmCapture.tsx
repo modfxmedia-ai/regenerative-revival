@@ -8,7 +8,7 @@ import { useEffect } from "react";
  * sessionStorage and attaches them to every lead POST so the team email +
  * GHL/Tyriacore webhooks receive source attribution.
  *
- * First-touch wins for the session — we don't overwrite an existing entry
+ * First-touch wins for the session - we don't overwrite an existing entry
  * if a downstream click rewrites the URL.
  */
 const KEYS = [
@@ -45,7 +45,7 @@ export default function UtmCapture() {
         window.sessionStorage.setItem("rr_utm", JSON.stringify(captured));
       }
     } catch {
-      // sessionStorage may be blocked — fail silent, attribution is best-effort
+      // sessionStorage may be blocked - fail silent, attribution is best-effort
     }
   }, []);
 

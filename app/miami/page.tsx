@@ -18,7 +18,7 @@ import { JsonLd, breadcrumbSchema, webPageSchema } from "../lib/schema";
 import LpLeadForm from "../components/LpLeadForm";
 
 export const metadata = generatePageMetadata({
-  title: "Got Stem Cells? — Miami Air & Sea Show Special",
+  title: "Got Stem Cells? - Miami Air & Sea Show Special",
   description:
     "Exclusive Miami Air & Sea Show offer: $500 off your first stem cell therapy. Concierge regenerative medicine delivered to your home or office.",
   path: "/miami",
@@ -77,7 +77,7 @@ export default function MiamiPage() {
     <>
       <JsonLd
         data={webPageSchema({
-          title: "Got Stem Cells? — Miami Air & Sea Show Special",
+          title: "Got Stem Cells? - Miami Air & Sea Show Special",
           description:
             "Exclusive Miami Air & Sea Show offer: $500 off your first stem cell therapy. Concierge regenerative medicine delivered to your home or office.",
           url: "/miami",
@@ -127,11 +127,11 @@ export default function MiamiPage() {
                 href="#offer"
                 className="group inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[#0EA5E9] px-8 text-[15px] font-semibold text-white shadow-lg shadow-[#0EA5E9]/30 transition-all hover:bg-[#0284C7]"
               >
-                Get $500 OFF — Contact Us Now
+                Get $500 OFF - Contact Us Now
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
               <div className="inline-flex h-14 items-center justify-center gap-2 rounded-full border border-[#0EA5E9]/40 px-7 text-[14px] font-semibold text-[#7DD3FC]">
-                <Clock className="h-4 w-4" /> Limited Time — Offer Ends May 24th
+                <Clock className="h-4 w-4" /> Limited Time - Offer Ends May 24th
               </div>
             </div>
           </div>
@@ -189,7 +189,7 @@ export default function MiamiPage() {
               Regenerative Revival educates clients on advanced wellness
               protocols using Wharton&apos;s Jelly stem cells and exosomes from
               umbilical cord tissue. We connect you with licensed practitioners
-              who deliver personalized therapy plans right to your location —
+              who deliver personalized therapy plans right to your location - 
               making cutting-edge regenerative therapy accessible and
               affordable.
             </p>
@@ -299,7 +299,7 @@ export default function MiamiPage() {
                 Exclusive Miami Offer
               </span>
               <h2 className="mt-4 font-[family-name:var(--font-poppins)] text-[2rem] font-normal leading-[1.05] tracking-[-0.02em] text-[#1A1F30] sm:text-4xl">
-                Air Show Weekend Special — Get $500 OFF Your First Therapy
+                Air Show Weekend Special - Get $500 OFF Your First Therapy
               </h2>
               <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#E0F2FE] px-4 py-1.5 text-[13px] font-semibold text-[#0284C7]">
                 Offer Ends May 24th, 2026
@@ -334,7 +334,7 @@ export default function MiamiPage() {
               <div className="mt-6">
                 <LpLeadForm
                   source="miami-air-sea-show"
-                  subject="Miami Air & Sea Show — $500 Off Request"
+                  subject="Miami Air & Sea Show - $500 Off Request"
                   buttonText="Claim $500 OFF"
                   showMessage
                   accentClass="bg-[#0EA5E9] hover:bg-[#0284C7]"
@@ -358,7 +358,7 @@ export default function MiamiPage() {
             href="#offer"
             className="group mt-8 inline-flex h-14 items-center gap-2 rounded-full bg-[#0EA5E9] px-8 text-[15px] font-semibold text-white shadow-lg shadow-[#0EA5E9]/30 transition-all hover:bg-[#0284C7]"
           >
-            Contact Us Now — Claim $500 OFF
+            Contact Us Now - Claim $500 OFF
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
           <p className="mx-auto mt-10 max-w-2xl text-[11px] leading-relaxed text-white/40">

@@ -8,7 +8,7 @@ import AnimatedSection from "../components/AnimatedSection";
 export const metadata = generatePageMetadata({
   title: "Stem Cell Therapies & Regenerative Medicine",
   description:
-    "Explore the full range of regenerative medicine therapies at Regenerative Revival — stem cell therapy, Wharton's Jelly, exosome therapy, PRP, and more — available across 100+ US cities.",
+    "Explore the full range of regenerative medicine therapies at Regenerative Revival - stem cell therapy, Wharton's Jelly, exosome therapy, PRP, and more - available across 100+ US cities.",
   path: "/treatments",
 });
 
@@ -17,7 +17,7 @@ export default function TreatmentsHubPage() {
     <>
       <JsonLd
         data={webPageSchema({
-          title: "Therapies — Regenerative Revival",
+          title: "Therapies - Regenerative Revival",
           description:
             "Browse our complete catalog of regenerative medicine therapies and stem cell programs.",
           url: "/treatments",
@@ -45,7 +45,7 @@ export default function TreatmentsHubPage() {
             <p className="mt-6 text-lg text-white/50 max-w-2xl">
               Cutting-edge stem cell and regenerative therapies designed to relieve
               chronic pain, repair damaged tissue, and restore your body&apos;s
-              natural healing — without surgery.
+              natural healing - without surgery.
             </p>
           </AnimatedSection>
         </div>

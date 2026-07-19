@@ -22,14 +22,14 @@ const partnerTypes = [
     icon: Dumbbell,
     title: "Gyms & Fitness Centers",
     desc:
-      "Offer members a powerful recovery and performance edge. Integrate regenerative protocols as a premium upsell — zero clinical infrastructure required on your end.",
+      "Offer members a powerful recovery and performance edge. Integrate regenerative protocols as a premium upsell - zero clinical infrastructure required on your end.",
     ideal: ["High-performance gyms", "CrossFit & functional fitness", "Recovery-focused studios"],
   },
   {
     icon: HeartPulse,
     title: "Recovery Centers",
     desc:
-      "Complement your existing modalities — cryotherapy, hyperbaric, IV therapy — with stem cell protocols that deepen outcomes and drive premium revenue.",
+      "Complement your existing modalities - cryotherapy, hyperbaric, IV therapy - with stem cell protocols that deepen outcomes and drive premium revenue.",
     ideal: ["Cryo & recovery lounges", "Longevity clinics", "Anti-aging centers"],
   },
   {
@@ -49,12 +49,12 @@ const partnerTypes = [
 ];
 
 const benefits = [
-  { icon: DollarSign, text: "Generous revenue share — industry-leading JV structure" },
+  { icon: DollarSign, text: "Generous revenue share - industry-leading JV structure" },
   { icon: BarChart3, text: "Turnkey systems: training, marketing collateral, onboarding" },
   { icon: Shield, text: "We handle all compliance, sourcing, and clinical protocols" },
   { icon: Zap, text: "Dedicated partner success manager from day one" },
-  { icon: TrendingUp, text: "Proven demand — this market is growing fast and we're ahead of it" },
-  { icon: Handshake, text: "Long-term partnership focus — not a one-and-done transaction" },
+  { icon: TrendingUp, text: "Proven demand - this market is growing fast and we're ahead of it" },
+  { icon: Handshake, text: "Long-term partnership focus - not a one-and-done transaction" },
 ];
 
 const howItWorks = [
@@ -76,14 +76,14 @@ const howItWorks = [
   {
     step: "04",
     title: "Launch & Grow",
-    desc: "Go live with full support — marketing assets, training, and a dedicated success manager.",
+    desc: "Go live with full support - marketing assets, training, and a dedicated success manager.",
   },
 ];
 
 const faqs = [
   {
     q: "Do I need a medical license to partner with you?",
-    a: "No. We pair you with licensed practitioners in our network who handle all clinical administration. Your role is referral and education — we handle the medical side.",
+    a: "No. We pair you with licensed practitioners in our network who handle all clinical administration. Your role is referral and education - we handle the medical side.",
   },
   {
     q: "How is revenue structured?",
@@ -95,7 +95,7 @@ const faqs = [
   },
   {
     q: "What marketing support do you provide?",
-    a: "We provide co-branded materials, landing pages, email sequences, and social content — all compliant and ready to deploy. You don't have to build anything from scratch.",
+    a: "We provide co-branded materials, landing pages, email sequences, and social content - all compliant and ready to deploy. You don't have to build anything from scratch.",
   },
 ];
 
@@ -149,7 +149,7 @@ export default function PartnerWithUsPage() {
           >
             Are you a gym, recovery center, physical therapist, or health influencer? Our turnkey
             partnership program lets you bring world-class regenerative medicine to your audience
-            — with full revenue share and zero clinical complexity on your end.
+ - with full revenue share and zero clinical complexity on your end.
           </motion.p>
 
           <motion.div
@@ -211,7 +211,7 @@ export default function PartnerWithUsPage() {
               <span className="gradient-text">Health & Wellness Leaders</span>
             </h2>
             <p className="mt-5 max-w-2xl mx-auto text-lg text-gray-500">
-              If you serve an audience that cares about recovery, performance, and longevity — we
+              If you serve an audience that cares about recovery, performance, and longevity - we
               built this for you.
             </p>
           </motion.div>
@@ -269,7 +269,7 @@ export default function PartnerWithUsPage() {
                 </span>
               </h2>
               <p className="mt-5 text-lg text-white/50 leading-relaxed">
-                We built this to be genuinely turnkey. You focus on your audience — we handle the
+                We built this to be genuinely turnkey. You focus on your audience - we handle the
                 rest.
               </p>
               <a
@@ -479,7 +479,7 @@ export default function PartnerWithUsPage() {
                 <textarea
                   rows={4}
                   className="w-full rounded-xl border border-white/10 bg-white/[0.06] px-4 py-3 text-sm text-white placeholder-white/25 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition resize-none"
-                  placeholder="Brief overview — audience size, location, current offerings..."
+                  placeholder="Brief overview - audience size, location, current offerings..."
                 />
               </div>
             </div>

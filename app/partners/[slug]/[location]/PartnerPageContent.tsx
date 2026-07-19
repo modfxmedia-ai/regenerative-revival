@@ -190,7 +190,7 @@ export default function PartnerPageContent({
         </div>
       </section>
 
-      {/* Benefits — alternating image/text */}
+      {/* Benefits - alternating image/text */}
       {benefits.map((section, i) => {
         const imageLeft = i % 2 === 0;
         const img = benefitImages[i % benefitImages.length];

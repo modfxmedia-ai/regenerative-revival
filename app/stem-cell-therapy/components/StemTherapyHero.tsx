@@ -78,7 +78,7 @@ export default function StemTherapyHero() {
             transition={{ duration: 0.8, delay: 0.35 }}
             className="mt-7 max-w-xl text-base lg:text-lg leading-relaxed text-white/60"
           >
-            Harness the regenerative power of mesenchymal stem cells to promote natural healing, reduce inflammation, and restore damaged tissues — delivered in your home by a licensed clinician.
+            Harness the regenerative power of mesenchymal stem cells to promote natural healing, reduce inflammation, and restore damaged tissues - delivered in your home by a licensed clinician.
           </motion.p>
 
           {/* Feature pills */}

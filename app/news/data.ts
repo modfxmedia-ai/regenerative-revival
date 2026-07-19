@@ -549,10 +549,10 @@ Stem cells contribute to regeneration of tendons and ligaments, promoting better
 
 ## Integrating Into Your Recovery Routine
 
-1. **Consult with a Specialist** — Discuss your workout routine and recovery goals.
-2. **Combine with Traditional Methods** — Continue balanced diet, hydration, rest, and physical therapy.
-3. **Follow Post-Procedure Care** — Adhere to guidelines regarding activity levels and rest periods.
-4. **Track Your Progress** — Keep a recovery journal noting improvements.
+1. **Consult with a Specialist** - Discuss your workout routine and recovery goals.
+2. **Combine with Traditional Methods** - Continue balanced diet, hydration, rest, and physical therapy.
+3. **Follow Post-Procedure Care** - Adhere to guidelines regarding activity levels and rest periods.
+4. **Track Your Progress** - Keep a recovery journal noting improvements.
 
 If you're ready to explore stem cell therapy for workout recovery, booking a consultation is the first step.`,
   },
@@ -581,7 +581,7 @@ Find activities you enjoy and aim for at least 30 minutes most days of the week.
 Practice meditation, deep breathing, or journaling. Set aside time each day for relaxation.
 
 ## 6. Take Breaks and Rest Periodically
-Follow the Pomodoro Technique — 25 minutes of focused work followed by a 5-minute break.
+Follow the Pomodoro Technique - 25 minutes of focused work followed by a 5-minute break.
 
 ## 7. Optimize Your Environment
 Ensure good lighting, maintain a clean space, and minimize distractions.

@@ -12,9 +12,9 @@ import {
 import Breadcrumbs from "../components/Breadcrumbs";
 
 export const metadata = generatePageMetadata({
-  title: "Service Areas — In-Home Regenerative Medicine Nationwide",
+  title: "Service Areas - In-Home Regenerative Medicine Nationwide",
   description:
-    "Regenerative Revival delivers concierge in-home stem cell, Wharton's Jelly, and exosome therapy across 100+ US cities — plus nationwide telehealth for peptides, hormones, and NAD+.",
+    "Regenerative Revival delivers concierge in-home stem cell, Wharton's Jelly, and exosome therapy across 100+ US cities - plus nationwide telehealth for peptides, hormones, and NAD+.",
   path: "/locations",
 });
 
@@ -23,7 +23,7 @@ const stateSlug = (state: string) =>
   state.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
 
 // V2 priority treatments featured on every city card.
-// Pulled from treatments.ts — keep these 4 in sync with the catalog hubs.
+// Pulled from treatments.ts - keep these 4 in sync with the catalog hubs.
 const FEATURED_TREATMENT_SLUGS = [
   "stem-cell-therapy",
   "whartons-jelly-treatment",
@@ -50,7 +50,7 @@ export default function LocationsPage() {
       <JsonLd
         data={webPageSchema({
           title:
-            "Service Areas — In-Home Regenerative Medicine & Nationwide Telehealth",
+            "Service Areas - In-Home Regenerative Medicine & Nationwide Telehealth",
           description:
             "Find Regenerative Revival in your city. Concierge in-home regenerative medicine across 100+ US cities and nationwide telehealth for peptides, hormones, and NAD+.",
           url: "/locations",
@@ -81,7 +81,7 @@ export default function LocationsPage() {
             </span>
           </h1>
           <p className="mt-6 text-lg text-white/70 max-w-2xl leading-relaxed">
-            White-glove, in-home regenerative medicine across {locations.length}+ U.S. cities — plus
+            White-glove, in-home regenerative medicine across {locations.length}+ U.S. cities - plus
             nationwide telehealth for peptides, hormones, and NAD+. Find your nearest service area
             below, or take the 2-question quiz to be routed to the right program.
           </p>
@@ -112,7 +112,7 @@ export default function LocationsPage() {
                 <HomeIcon className="w-5 h-5 text-primary" />
               </div>
               <h2 className="text-lg font-bold text-gray-900">
-                In-Home Concierge — {locations.length}+ Cities
+                In-Home Concierge - {locations.length}+ Cities
               </h2>
             </div>
             <p className="text-sm text-gray-600 leading-relaxed mb-3">
@@ -133,7 +133,7 @@ export default function LocationsPage() {
                 <Truck className="w-5 h-5 text-secondary" />
               </div>
               <h2 className="text-lg font-bold text-gray-900">
-                Nationwide Telehealth — All 50 States
+                Nationwide Telehealth - All 50 States
               </h2>
             </div>
             <p className="text-sm text-gray-600 leading-relaxed mb-3">
@@ -158,7 +158,7 @@ export default function LocationsPage() {
         </div>
       </section>
 
-      {/* Treatments quick nav — equity passes to /treatments/[slug] hubs */}
+      {/* Treatments quick nav - equity passes to /treatments/[slug] hubs */}
       <section className="py-12 bg-white border-b border-gray-100">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">

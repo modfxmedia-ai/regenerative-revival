@@ -28,7 +28,7 @@ export default function About() {
 
       <div ref={ref} className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* IMAGE — left, with stat card */}
+          {/* IMAGE - left, with stat card */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -38,7 +38,7 @@ export default function About() {
             <div className="relative rounded-[2.5rem] overflow-hidden aspect-[4/5] luxe-shadow">
               <Image
                 src="/photos/seth-berge-w-backdrop.jpg"
-                alt="Seth Berge — Founder of Regenerative Revival"
+                alt="Seth Berge - Founder of Regenerative Revival"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover"
@@ -56,7 +56,7 @@ export default function About() {
               </div>
             </div>
 
-            {/* Floating stat — 8+ years */}
+            {/* Floating stat - 8+ years */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
               animate={inView ? { opacity: 1, scale: 1, y: 0 } : {}}
@@ -84,14 +84,14 @@ export default function About() {
               Built by a team that's lived the <span className="text-[#6762AF] font-semibold">promise</span> of regenerative medicine
             </h2>
             <p className="mt-7 text-lg text-white/65 leading-relaxed max-w-xl">
-              Founded by Seth Berge with a singular mission: to make cutting-edge regenerative therapy accessible to everyone who needs it. We educate, we prescribe, we coordinate — under one physician-led medical team.
+              Founded by Seth Berge with a singular mission: to make cutting-edge regenerative therapy accessible to everyone who needs it. We educate, we prescribe, we coordinate - under one physician-led medical team.
             </p>
             <p className="mt-4 text-base text-white/45 leading-relaxed max-w-xl">
               No waiting rooms. No fragmented care. No subscription gimmicks.
               Just clinician-led medicine, in your home or through telehealth, built around your labs and your life.
             </p>
 
-            {/* Values grid — minimal numbered list */}
+            {/* Values grid - minimal numbered list */}
             <div className="mt-10 grid sm:grid-cols-2 gap-x-8 gap-y-6">
               {values.map((v, i) => (
                 <motion.div

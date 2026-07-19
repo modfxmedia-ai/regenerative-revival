@@ -8,7 +8,7 @@ const perks = [
   { icon: TrendingUp, title: "Revenue Share Model", description: "Joint venture with competitive rev-share on the back end. Grow your practice revenue with zero upfront risk." },
   { icon: Package, title: "Premium Product Supply", description: "Access to top-tier Wharton's Jelly stem cell products from accredited tissue banks, delivered reliably." },
   { icon: Headphones, title: "Full Practice Support", description: "Marketing materials, patient education resources, training, and ongoing clinical support for your team." },
-  { icon: Building2, title: "Turnkey Integration", description: "We handle the complexity — from compliance to logistics — so you can focus on patient care." },
+  { icon: Building2, title: "Turnkey Integration", description: "We handle the complexity - from compliance to logistics - so you can focus on patient care." },
 ];
 
 export default function Partners() {

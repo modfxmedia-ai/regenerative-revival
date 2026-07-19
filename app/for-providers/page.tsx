@@ -7,7 +7,7 @@ import { generatePageMetadata } from "../lib/seo";
 import { JsonLd, breadcrumbSchema, webPageSchema, faqSchema } from "../lib/schema";
 
 export const metadata = generatePageMetadata({
-  title: "For Providers — Build a Concierge Practice Without the Infrastructure",
+  title: "For Providers - Build a Concierge Practice Without the Infrastructure",
   description:
     "NPs, PAs, and clinics: partner with Regenerative Revival to deliver in-home regenerative medicine and telehealth under Arora Health Group's clinical umbrella. Revenue share, protocols, and full support.",
   path: "/for-providers",
@@ -17,7 +17,7 @@ const faqs = [
   {
     question: "What kind of providers do you partner with?",
     answer:
-      "We partner with licensed nurse practitioners, physician assistants, and independent clinics who want to offer regenerative medicine and telehealth services without building the infrastructure from scratch. You bring the patient relationship — we bring the platform, protocols, and compounding pharmacy network.",
+      "We partner with licensed nurse practitioners, physician assistants, and independent clinics who want to offer regenerative medicine and telehealth services without building the infrastructure from scratch. You bring the patient relationship - we bring the platform, protocols, and compounding pharmacy network.",
   },
   {
     question: "Do I need my own malpractice insurance?",
@@ -37,21 +37,21 @@ const faqs = [
   {
     question: "What is the Wizlo telehealth platform?",
     answer:
-      "Wizlo is the white-labeled telehealth platform we use for intake, e-Rx, compounding pharmacy handoff, and patient portal. It's already built and integrated — you don't need to set up your own telehealth infrastructure.",
+      "Wizlo is the white-labeled telehealth platform we use for intake, e-Rx, compounding pharmacy handoff, and patient portal. It's already built and integrated - you don't need to set up your own telehealth infrastructure.",
   },
 ];
 
 const benefits = [
   {
     icon: ShieldCheck,
-    title: "Clinical umbrella — Arora Health Group",
+    title: "Clinical umbrella - Arora Health Group",
     desc: "Operate under Dr. Sean Arora and Arora Health Group's multi-state licensure and clinical oversight. We handle the medical director infrastructure so you can focus on patient care.",
     stat: "50 states",
     statLabel: "Telehealth coverage",
   },
   {
     icon: Network,
-    title: "Wizlo telehealth stack — already built",
+    title: "Wizlo telehealth stack - already built",
     desc: "Plug into a fully white-labeled telehealth platform with intake forms, e-Rx, compounding pharmacy partners, and patient portal. No tech build required.",
     stat: "58 SKUs",
     statLabel: "Active product catalog",
@@ -65,7 +65,7 @@ const benefits = [
   },
   {
     icon: Wallet,
-    title: "Concierge economics — not commodity telehealth",
+    title: "Concierge economics - not commodity telehealth",
     desc: "Premium concierge pricing model built around in-person dinner seminars, referrals, and high-retention programs. Not a race to the bottom on GLP-1 subscriptions.",
     stat: "JV model",
     statLabel: "Revenue share structure",
@@ -84,7 +84,7 @@ export default function ForProvidersPage() {
     <>
       <JsonLd
         data={webPageSchema({
-          title: "For Providers — Build a Concierge Practice Without the Infrastructure",
+          title: "For Providers - Build a Concierge Practice Without the Infrastructure",
           description:
             "Partner with Regenerative Revival to deliver concierge regenerative medicine and telehealth under Arora Health Group.",
           url: "/for-providers",
@@ -124,7 +124,7 @@ export default function ForProvidersPage() {
               <span className="text-[11px] font-medium tracking-[0.32em] text-white/60 uppercase">For NPs, PAs &amp; Clinics</span>
             </div>
             <h1 className="font-[family-name:var(--font-poppins)] font-normal text-[2.75rem] sm:text-5xl lg:text-[4.5rem] text-white leading-[1.02] tracking-[-0.02em]">
-              Build a concierge practice —{" "}
+              Build a concierge practice - {" "}
               <span className="text-[#6762AF] font-semibold">
                 without building the infrastructure
               </span>
@@ -166,7 +166,7 @@ export default function ForProvidersPage() {
                   Patients are actively searching for peptide therapy, stem cell therapy, and hormone optimization. The search volume is there. The clinical demand is there. What&apos;s missing is a turnkey model that lets a licensed NP or PA deliver these services without spending 18 months building a platform, finding a medical director, and negotiating with compounding pharmacies.
                 </p>
                 <p>
-                  That&apos;s what we built. Regenerative Revival is the infrastructure layer — clinical oversight, telehealth platform, protocol library, compounding pharmacy network, and patient acquisition support — so you can focus on what you do best: patient care.
+                  That&apos;s what we built. Regenerative Revival is the infrastructure layer - clinical oversight, telehealth platform, protocol library, compounding pharmacy network, and patient acquisition support - so you can focus on what you do best: patient care.
                 </p>
               </div>
               <div className="mt-8 grid grid-cols-3 gap-4">
@@ -206,7 +206,7 @@ export default function ForProvidersPage() {
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#71A7F5]">What You Get</span>
             <h2 className="mt-4 font-[family-name:var(--font-poppins)] font-normal text-[2rem] sm:text-4xl text-white leading-[1.05] tracking-[-0.02em]">
-              Everything you need to launch — nothing you don&apos;t
+              Everything you need to launch - nothing you don&apos;t
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-5 lg:gap-6">

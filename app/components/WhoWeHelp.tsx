@@ -65,7 +65,7 @@ const doctors = [
   {
     name: "Dr. Shannon Arora",
     title: "Chief Medical Officer · Regenerative Revival",
-    image: "/team/shannon-arora.png",
+    image: "https://65iosdxq0lyc5cm9.public.blob.vercel-storage.com/team/shannon-arora.png",
     quote:
       "It makes sense to integrate regenerative medicine, hormone therapies, and peptide therapies rather than separating them into different facilities. A single team can effectively manage these services, as the same individual may benefit from all of them.",
   },

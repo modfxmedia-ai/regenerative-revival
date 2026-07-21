@@ -42,3 +42,4 @@ next-env.d.ts
 
 # local reference material (scraped landing pages, not source)
 /missing lps/
+/audit

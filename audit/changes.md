@@ -1,4 +1,5 @@
-still missing from the website under staff. I am Director of Marketing and I am attaching my new headshot. Please cross-reference the old site for all staff and employees and make sure you have everyone added into the about page.
+Here are the things I have found: Footer link issues: "How It Works" and "Our Mission" both point to /concierge-care-model. "Press" points to the same contact page as Patient Support. "Wholesale" points to /partner-with-us and should be relabeled "Partner With Us" or "For Providers." | Em dash usage throughout the copy. Swap to hyphens (or restructure sentences) for consistency with the rest of our brand materials. | "The standard you should expect in 2026" will read stale within months. Cut the year.
+[4:34 PM]Also Jared's photo on the about page is Michaela Gebert's lol
+[4:34 PM]Also Dasa'n is now our Chief of Staff
 
 https://regenerativerevival.com/about/
-https://mdfx.regenerativerevival.com/about/

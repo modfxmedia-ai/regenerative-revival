@@ -58,8 +58,8 @@ async function forwardToTyria(fields: {
   inquiryType?: string | null;
   source: string;
   everflowId?: string | null;
-}) {
-  if (!TYRIA_API_KEY) return;
+}): Promise<string | null> {
+  if (!TYRIA_API_KEY) return null;
   try {
     const answers: Record<string, string> = {
       [TYRIA_FIELDS.firstName]: fields.firstName,
@@ -94,9 +94,18 @@ async function forwardToTyria(fields: {
     );
     if (!res.ok) {
       console.error("[TYRIA FORM ERROR]", res.status, await res.text());
+      return null;
     }
+    // Return the opaque entry id (Lead ID). This is NOT PHI - it is a random
+    // reference token used to link downstream tools (e.g. the appointment
+    // embeddable) to this submission without passing any patient data.
+    const json = (await res.json().catch(() => null)) as
+      | { data?: { id?: string } }
+      | null;
+    return json?.data?.id ?? null;
   } catch (err) {
     console.error("[TYRIA FORM EXCEPTION]", err);
+    return null;
   }
 }
 
@@ -133,7 +142,8 @@ export async function POST(req: NextRequest) {
       typeof email === "string" &&
       /@quiz\.local$/i.test(email.trim());
     if (inquiryType === "quiz_router_audit" || isPlaceholderIdentity) {
-      console.log("[QUIZ ROUTER AUDIT]", { subject, source, message });
+      // Log source only - never PHI (no name/email/phone/message).
+      console.log("[QUIZ ROUTER AUDIT]", { source: source || "unknown" });
       return NextResponse.json({ success: true, audit: true });
     }
 
@@ -176,43 +186,46 @@ export async function POST(req: NextRequest) {
         forwardToWebhook(TYRIACORE_WEBHOOK_URL, "TYRIACORE", crmPayload),
       );
     }
-    if (TYRIA_API_KEY) {
-      crmWrites.push(
-        forwardToTyria({
-          firstName: firstName.trim(),
-          lastName: (lastName || "").trim(),
-          email: email.trim(),
-          phone: phone.trim(),
-          message: message || null,
-          subject: subject || null,
-          inquiryType: inquiryType || null,
-          source: source || "website",
-          everflowId: everflowId || null,
-        }),
-      );
-    }
-    // Don't await - let them run while we send email. We `void` them so the
-    // unhandled-promise lint stays quiet; errors are already swallowed inside
-    // forwardToWebhook.
+    // Fire the webhook writes without blocking; errors are swallowed inside
+    // forwardToWebhook. We `void` them so the unhandled-promise lint stays quiet.
     if (crmWrites.length) void Promise.all(crmWrites);
 
+    // Write to the Tyria CRM and AWAIT it so we can capture the Lead ID (the
+    // opaque entry id). Tyria is the BAA-covered system of record that holds
+    // the PHI; the Lead ID is a non-PHI reference token returned to the client
+    // for downstream use (e.g. the appointment embeddable).
+    let leadId: string | null = null;
+    if (TYRIA_API_KEY) {
+      leadId = await forwardToTyria({
+        firstName: firstName.trim(),
+        lastName: (lastName || "").trim(),
+        email: email.trim(),
+        phone: phone.trim(),
+        message: message || null,
+        subject: subject || null,
+        inquiryType: inquiryType || null,
+        source: source || "website",
+        everflowId: everflowId || null,
+      });
+    }
+
+    // HIPAA: the team notification email contains NO PHI. Patient identity and
+    // any health details live only in the BAA-covered CRM. This email is just a
+    // ping with the non-PHI Lead ID so the team can open the record in the CRM.
     const htmlBody = `
       <h2>New Lead from Regenerative Revival</h2>
+      <p style="font-size:14px;color:#555;">A new lead was submitted through the website. For HIPAA compliance, no patient or health information is included in this email. Open the record in the CRM using the Lead ID below to view details and follow up.</p>
       <table style="border-collapse:collapse;width:100%;max-width:600px;">
-        <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Name</td><td style="padding:8px;border-bottom:1px solid #eee;">${fullName}</td></tr>
-        <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Email</td><td style="padding:8px;border-bottom:1px solid #eee;"><a href="mailto:${email}">${email}</a></td></tr>
-        <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Phone</td><td style="padding:8px;border-bottom:1px solid #eee;"><a href="tel:${phone}">${phone}</a></td></tr>
-        ${subject ? `<tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Subject</td><td style="padding:8px;border-bottom:1px solid #eee;">${subject}</td></tr>` : ""}
-        ${inquiryType ? `<tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Inquiry Type</td><td style="padding:8px;border-bottom:1px solid #eee;">${inquiryType}</td></tr>` : ""}
+        <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Lead ID</td><td style="padding:8px;border-bottom:1px solid #eee;">${leadId || "(unavailable - check CRM)"}</td></tr>
         ${source ? `<tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Source</td><td style="padding:8px;border-bottom:1px solid #eee;">${source}</td></tr>` : ""}
-        ${message ? `<tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Message</td><td style="padding:8px;border-bottom:1px solid #eee;">${message}</td></tr>` : ""}
+        <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Submitted</td><td style="padding:8px;border-bottom:1px solid #eee;">${new Date().toISOString()}</td></tr>
       </table>
     `;
 
     if (!RESEND_API_KEY) {
-      // Log the lead so it's not lost even if email isn't configured yet
-      console.log("[LEAD]", { fullName, email, phone, message, subject, inquiryType, source });
-      return NextResponse.json({ success: true, warning: "Email not configured - lead logged to server." });
+      // Log non-PHI only (source + Lead ID). Never log name/email/phone/message.
+      console.log("[LEAD] received", { source: source || "website", leadId });
+      return NextResponse.json({ success: true, leadId, warning: "Email not configured - lead logged to server." });
     }
 
     // Send lead notification to team
@@ -225,9 +238,10 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify({
         from: "Regenerative Revival <leads@regenerativerevival.com>",
         to: LEAD_RECIPIENTS,
-        subject: `New Lead: ${fullName} - ${subject || inquiryType || "Website Inquiry"}`,
+        // No PHI in the subject line (no name). reply_to is intentionally
+        // omitted so the patient email is not exposed in the message headers.
+        subject: `New website lead${source ? ` (${source})` : ""}`,
         html: htmlBody,
-        reply_to: email,
       }),
     });
 
@@ -278,7 +292,7 @@ export async function POST(req: NextRequest) {
       console.error("[CONFIRMATION EMAIL ERROR]", await confirmRes.text());
     }
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, leadId });
   } catch (err) {
     console.error("[LEAD API ERROR]", err);
     return NextResponse.json({ error: "Something went wrong" }, { status: 500 });

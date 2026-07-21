@@ -125,7 +125,14 @@ export async function POST(req: NextRequest) {
     // arrive with placeholder identity fields (anonymous@quiz.local, etc.), so
     // we log them server-side but never email the team, never send a
     // confirmation to the fake address, and never create a CRM contact.
-    if (inquiryType === "quiz_router_audit" || source === "consult-router") {
+    //
+    // NOTE: match on the audit marker / placeholder identity ONLY. Real quiz
+    // leads also use source === "consult-router" but carry a genuine email, so
+    // we must NOT drop them here or those leads are silently lost.
+    const isPlaceholderIdentity =
+      typeof email === "string" &&
+      /@quiz\.local$/i.test(email.trim());
+    if (inquiryType === "quiz_router_audit" || isPlaceholderIdentity) {
       console.log("[QUIZ ROUTER AUDIT]", { subject, source, message });
       return NextResponse.json({ success: true, audit: true });
     }

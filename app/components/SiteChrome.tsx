@@ -6,11 +6,11 @@ import Footer from "./Footer";
 
 // Routes that render their own full-page chrome (custom nav + footer)
 // and therefore should NOT show the global Regenerative Revival header/footer.
-const FULL_CUSTOM_ROUTES = ["/clp", "/playing-overseas"];
+const FULL_CUSTOM_ROUTES = ["/clp", "/playing-overseas", "/patient"];
 
 // Routes that should hide the global header/nav only (focused landing pages
 // where we don't want visitors navigating away before they take action).
-const NAV_HIDDEN_ROUTES = ["/dell-webb-rsvp", "/pre-screen"];
+const NAV_HIDDEN_ROUTES = ["/dell-webb-rsvp", "/foley-rsvp", "/pre-screen"];
 
 function matchesRoute(pathname: string | null, routes: string[]): boolean {
   if (!pathname) return false;

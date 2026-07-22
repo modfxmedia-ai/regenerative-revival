@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import {
   Send,
   Phone,
@@ -15,7 +15,6 @@ import {
   CheckCircle2,
   ArrowRight,
 } from "lucide-react";
-import { submitLead } from "@/app/lib/submit-lead";
 
 export default function ContactForm() {
   const ref = useRef(null);
@@ -74,111 +73,19 @@ export default function ContactForm() {
 }
 
 
+// Full intake form hosted in Tyria (frm_cf7dade5). This is the complete form
+// with gender, state, pain areas, favorite activities, "what led you," and the
+// "team member" selector that routes each lead to the proper rep. Embedding the
+// real Tyria form (rather than posting a subset of fields through /api/leads)
+// keeps rep-assignment native and captures every question.
+const CONTACT_FORM_SRC =
+  "https://www.tyriacore.app/forms/frm_cf7dade5-7e28-419f-a82e-ce232bd0012a?workspaceId=ws_962d7611-e9b4-4990-9ddc-89bf7c899735&embed=1";
+
 function FormCard() {
-  const [errors, setErrors] = useState<Record<string, string>>({});
-  const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-
-  function validateName(value: string, field: string): string | null {
-    const trimmed = value.trim();
-    if (!trimmed) return `${field} is required`;
-    if (trimmed.length < 2) return `${field} must be at least 2 characters`;
-    if (!/^[a-zA-Z\s'-]+$/.test(trimmed)) return `${field} contains invalid characters`;
-    return null;
-  }
-
-  function validatePhone(value: string): string | null {
-    const digits = value.replace(/\D/g, "");
-    if (!digits) return "Phone number is required";
-    if (digits.length < 10 || digits.length > 11) return "Enter a valid 10-digit phone number";
-    const areaCode = digits.length === 11 ? digits.slice(1, 4) : digits.slice(0, 3);
-    // Reject invalid area codes (0xx, 1xx, x11 except 911)
-    if (/^[01]/.test(areaCode) || /^.11$/.test(areaCode)) return "Enter a valid US area code";
-    return null;
-  }
-
-  function validateEmail(value: string): string | null {
-    if (!value.trim()) return "Email is required";
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) return "Enter a valid email address";
-    return null;
-  }
-
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const data = new FormData(form);
-    const newErrors: Record<string, string> = {};
-
-    const firstName = (data.get("firstName") as string) || "";
-    const lastName = (data.get("lastName") as string) || "";
-    const fullName = `${firstName.trim()} ${lastName.trim()}`.trim();
-    const nameParts = fullName.split(/\s+/).filter(Boolean);
-
-    const fnErr = validateName(firstName, "First name");
-    if (fnErr) newErrors.firstName = fnErr;
-    const lnErr = validateName(lastName, "Last name");
-    if (lnErr) newErrors.lastName = lnErr;
-    if (!fnErr && !lnErr && nameParts.length < 2) newErrors.lastName = "Please enter your full name (first and last)";
-
-    const phoneErr = validatePhone((data.get("phone") as string) || "");
-    if (phoneErr) newErrors.phone = phoneErr;
-
-    const emailErr = validateEmail((data.get("email") as string) || "");
-    if (emailErr) newErrors.email = emailErr;
-
-    const message = ((data.get("message") as string) || "").trim();
-    if (!message) newErrors.message = "Message is required";
-    if (message && message.length < 10) newErrors.message = "Please provide more detail in your message";
-
-    setErrors(newErrors);
-    if (Object.keys(newErrors).length === 0) {
-      setSubmitting(true);
-      // TODO (when paid ads launch): capture marketing attribution per SEO
-      // playbook §11.3 / §12.4 - read utm_*, gclid, fbclid, msclkid, ttclid,
-      // li_fat_id from URL params (persist across pages via sessionStorage)
-      // plus landing_page + document.referrer. Pass them to submitLead so the
-      // /api/leads route can surface them in the team email. Without this,
-      // paid leads attribute to "direct" and Google Ads / Meta can't import
-      // conversions back to optimize ad spend.
-      const result = await submitLead({
-        firstName,
-        lastName,
-        email: (data.get("email") as string).trim(),
-        phone: (data.get("phone") as string).trim(),
-        message,
-        subject: (data.get("subject") as string) || undefined,
-        source: "contact-page",
-      });
-      setSubmitting(false);
-      if (result.success) {
-        setSubmitted(true);
-        form.reset();
-      } else {
-        setErrors({ form: result.error || "Something went wrong. Please try again." });
-      }
-    }
-  }
-
-  const inputClass = "w-full rounded-xl bg-[#F4EFFA]/60 border px-4 py-3.5 text-sm text-[#1A1F30] placeholder-[#7A7F95] focus:border-[#6762AF]/40 focus:outline-none focus:ring-2 focus:ring-[#6762AF]/10 transition-all";
-  const errorInputClass = "border-red-300 focus:border-red-400 focus:ring-red-100";
-  const normalInputClass = "border-[#F1ECF8]";
-
-  if (submitted) {
-    return (
-      <div className="relative bg-white rounded-[20px] p-8 sm:p-10 border border-[#F1ECF8] shadow-[0_8px_40px_-12px_rgba(88,53,99,0.15)] text-center py-20">
-        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#F1ECF8] border border-[#6762AF]/20 mx-auto mb-5">
-          <Send className="h-7 w-7 text-[#6762AF]" />
-        </div>
-        <h3 className="font-[family-name:var(--font-poppins)] text-2xl text-[#1A1F30] mb-2">Thank You!</h3>
-        <p className="text-[#4A4F66]">We&apos;ve received your message and will be in touch within 24 hours.</p>
-      </div>
-    );
-  }
-
   return (
-    <div className="relative bg-white rounded-[20px] p-8 sm:p-10 border border-[#F1ECF8] shadow-[0_8px_40px_-12px_rgba(88,53,99,0.12)]">
-      <div className="relative mb-8">
-        <div className="flex items-center gap-4 mb-2">
+    <div className="relative bg-white rounded-[20px] p-6 sm:p-8 border border-[#F1ECF8] shadow-[0_8px_40px_-12px_rgba(88,53,99,0.12)]">
+      <div className="relative mb-6">
+        <div className="flex items-center gap-4">
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F1ECF8] border border-[#6762AF]/10">
             <Send className="h-5 w-5 text-[#6762AF]" />
           </div>
@@ -189,72 +96,20 @@ function FormCard() {
         </div>
       </div>
 
-      {errors.form && <p className="text-sm text-red-500 mb-4">{errors.form}</p>}
+      <div className="overflow-hidden rounded-xl border border-[#F1ECF8] bg-white">
+        <iframe
+          src={CONTACT_FORM_SRC}
+          title="Contact Regenerative Revival"
+          className="block w-full border-0"
+          style={{ minHeight: 1100 }}
+          loading="lazy"
+        />
+      </div>
 
-      <form className="relative flex flex-col gap-5" onSubmit={handleSubmit} noValidate>
-        <div className="grid sm:grid-cols-2 gap-5">
-          <div>
-            <label htmlFor="contact-firstName" className="block text-sm font-medium text-gray-900 mb-2 font-sans">
-              First Name <span className="text-red-400">*</span>
-            </label>
-            <input id="contact-firstName" name="firstName" type="text" required className={`${inputClass} ${errors.firstName ? errorInputClass : normalInputClass}`} placeholder="John" />
-            {errors.firstName && <p className="mt-1 text-xs text-red-500 font-sans">{errors.firstName}</p>}
-          </div>
-          <div>
-            <label htmlFor="contact-lastName" className="block text-sm font-medium text-gray-900 mb-2 font-sans">
-              Last Name <span className="text-red-400">*</span>
-            </label>
-            <input id="contact-lastName" name="lastName" type="text" required className={`${inputClass} ${errors.lastName ? errorInputClass : normalInputClass}`} placeholder="Doe" />
-            {errors.lastName && <p className="mt-1 text-xs text-red-500 font-sans">{errors.lastName}</p>}
-          </div>
-        </div>
-
-        <div>
-          <label htmlFor="contact-email" className="block text-sm font-medium text-gray-900 mb-2 font-sans">
-            Email <span className="text-red-400">*</span>
-          </label>
-          <input id="contact-email" name="email" type="email" required className={`${inputClass} ${errors.email ? errorInputClass : normalInputClass}`} placeholder="john@example.com" />
-          {errors.email && <p className="mt-1 text-xs text-red-500 font-sans">{errors.email}</p>}
-        </div>
-
-        <div>
-          <label htmlFor="contact-phone" className="block text-sm font-medium text-gray-900 mb-2 font-sans">
-            Phone <span className="text-red-400">*</span>
-          </label>
-          <input id="contact-phone" name="phone" type="tel" required className={`${inputClass} ${errors.phone ? errorInputClass : normalInputClass}`} placeholder="(555) 123-4567" />
-          {errors.phone && <p className="mt-1 text-xs text-red-500 font-sans">{errors.phone}</p>}
-        </div>
-
-        <div>
-          <label htmlFor="contact-subject" className="block text-sm font-medium text-gray-900 mb-2 font-sans">Subject</label>
-          <select id="contact-subject" name="subject" className={`${inputClass} ${normalInputClass}`}>
-            <option value="">Select a topic...</option>
-            <option value="consultation">Schedule a Consultation</option>
-            <option value="treatment">Therapy Information</option>
-            <option value="pricing">Pricing &amp; Insurance</option>
-            <option value="partnership">Business Partnership</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-
-        <div>
-          <label htmlFor="contact-message" className="block text-sm font-medium text-gray-900 mb-2 font-sans">
-            Message <span className="text-red-400">*</span>
-          </label>
-          <textarea id="contact-message" name="message" rows={5} required className={`${inputClass} resize-none ${errors.message ? errorInputClass : normalInputClass}`} placeholder="Tell us about your health concerns, questions, or how we can help you..." />
-          {errors.message && <p className="mt-1 text-xs text-red-500 font-sans">{errors.message}</p>}
-        </div>
-
-        <button type="submit" disabled={submitting} className="group flex h-13 py-3.5 items-center justify-center gap-2 rounded-full bg-[#021E3C] text-sm font-semibold text-white transition-all duration-300 hover:bg-[#345691] hover:shadow-[0_10px_30px_-8px_rgba(2,30,60,0.6)] hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed">
-          <Send className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
-          {submitting ? "Sending..." : "Send Message"}
-        </button>
-
-        <p className="text-[11px] text-[#7A7F95] text-center leading-relaxed">
-          By providing a telephone number and submitting the form you are consenting to be contacted by SMS text message from Regenerative Revival and/or Seth Berge Inc. Message frequency may vary. Message &amp; data rates may apply. Reply STOP to opt out. See our{" "}
-          <a href="/privacy-policy" className="text-[#6762AF] hover:underline">Privacy Policy</a>.
-        </p>
-      </form>
+      <p className="mt-4 text-[11px] text-[#7A7F95] text-center leading-relaxed">
+        By providing a telephone number and submitting the form you are consenting to be contacted by SMS text message from Regenerative Revival and/or Seth Berge Inc. Message frequency may vary. Message &amp; data rates may apply. Reply STOP to opt out. See our{" "}
+        <a href="/privacy-policy" className="text-[#6762AF] hover:underline">Privacy Policy</a>.
+      </p>
     </div>
   );
 }

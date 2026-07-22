@@ -43,3 +43,6 @@ next-env.d.ts
 # local reference material (scraped landing pages, not source)
 /missing lps/
 /audit
+
+# standalone Vite design source, ported into app/patient (not part of the build)
+/New LP/

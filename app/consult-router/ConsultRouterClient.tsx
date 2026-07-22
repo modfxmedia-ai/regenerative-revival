@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { ArrowRight, ArrowLeft, X, Send, CheckCircle2 } from "lucide-react";
 import { submitLead } from "@/app/lib/submit-lead";
+import AppointmentBooking from "@/app/components/AppointmentBooking";
 
 declare global {
   interface Window {
@@ -296,6 +297,16 @@ function ConsultModal({ result, goal, delivery, onClose, onSuccess }: ConsultMod
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [lead, setLead] = useState<{
+    leadId?: string | null;
+    clientId?: string | null;
+    prospectId?: string | null;
+    name: string;
+    email: string;
+  }>({
+    name: "",
+    email: "",
+  });
 
   const inputClass = "w-full rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-sm text-white placeholder-white/40 focus:border-primary-light/60 focus:outline-none focus:ring-2 focus:ring-primary-light/20 transition-all";
   const errorInputClass = "border-red-400/60 focus:border-red-400 focus:ring-red-400/20";
@@ -347,8 +358,14 @@ function ConsultModal({ result, goal, delivery, onClose, onSuccess }: ConsultMod
           destination: result.destination,
         });
       }
+      setLead({
+        leadId: submitResult.leadId,
+        clientId: submitResult.clientId,
+        prospectId: submitResult.prospectId,
+        name: `${firstName.trim()} ${lastName.trim()}`.trim(),
+        email: (data.get("email") as string).trim(),
+      });
       setSubmitted(true);
-      setTimeout(onSuccess, 2000);
     } else {
       setErrors({ form: submitResult.error || "Something went wrong. Please try again." });
     }
@@ -381,12 +398,22 @@ function ConsultModal({ result, goal, delivery, onClose, onSuccess }: ConsultMod
         )}
 
         {submitted ? (
-          <div className="text-center py-8">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/20 border border-primary-light/30 mx-auto mb-5">
-              <CheckCircle2 className="h-8 w-8 text-primary-light" />
+          <div className="py-2">
+            <div className="text-center mb-6">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/20 border border-primary-light/30 mx-auto mb-5">
+                <CheckCircle2 className="h-8 w-8 text-primary-light" />
+              </div>
+              <h3 className="text-2xl font-semibold text-white mb-2">You&apos;re all set!</h3>
+              <p className="text-white/60">Pick a time below to book your {result.path === "regen" ? "in-home consult" : "telehealth intake"}.</p>
             </div>
-            <h3 className="text-2xl font-semibold text-white mb-2">You&apos;re all set!</h3>
-            <p className="text-white/60">We&apos;ve got your info. Taking you to your next step now&hellip;</p>
+            <AppointmentBooking leadId={lead.leadId} clientId={lead.clientId} prospectId={lead.prospectId} name={lead.name} email={lead.email} />
+            <button
+              type="button"
+              onClick={onSuccess}
+              className="mt-6 w-full text-center text-sm text-white/50 hover:text-white transition-colors"
+            >
+              Skip for now &mdash; continue to your recommended page &rarr;
+            </button>
           </div>
         ) : (
           <>

@@ -34,7 +34,13 @@ function readEverflowId(): string | undefined {
 
 export async function submitLead(
   data: LeadData,
-): Promise<{ success: boolean; error?: string; leadId?: string | null }> {
+): Promise<{
+  success: boolean;
+  error?: string;
+  leadId?: string | null;
+  clientId?: string | null;
+  prospectId?: string | null;
+}> {
   try {
     const utms = readStoredUtms();
     const everflowId = readEverflowId();
@@ -47,10 +53,19 @@ export async function submitLead(
       const body = await res.json().catch(() => ({}));
       return { success: false, error: body.error || "Submission failed" };
     }
-    // leadId is the opaque CRM entry id (not PHI) - safe to hand to downstream
-    // tools like the appointment embeddable.
-    const body = (await res.json().catch(() => ({}))) as { leadId?: string | null };
-    return { success: true, leadId: body.leadId ?? null };
+    // Entity ids are opaque CRM reference tokens (not PHI) - safe to hand to
+    // downstream tools like the appointment embeddable.
+    const body = (await res.json().catch(() => ({}))) as {
+      leadId?: string | null;
+      clientId?: string | null;
+      prospectId?: string | null;
+    };
+    return {
+      success: true,
+      leadId: body.leadId ?? null,
+      clientId: body.clientId ?? null,
+      prospectId: body.prospectId ?? null,
+    };
   } catch {
     return { success: false, error: "Network error - please try again" };
   }

@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { ArrowUpRight, MapPin, Phone, Mail, Sparkles, ShieldCheck, Award, Lock } from "lucide-react";
 import { submitLead } from "@/app/lib/submit-lead";
+import AppointmentBooking from "@/app/components/AppointmentBooking";
 
 export default function Contact() {
   const ref = useRef(null);
@@ -71,6 +72,16 @@ function FormCard({
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [formError, setFormError] = useState("");
+  const [lead, setLead] = useState<{
+    leadId?: string | null;
+    clientId?: string | null;
+    prospectId?: string | null;
+    name: string;
+    email: string;
+  }>({
+    name: "",
+    email: "",
+  });
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -79,10 +90,14 @@ function FormCard({
     setFormError("");
     setSubmitting(true);
 
+    const firstName = ((data.get("firstName") as string) || "").trim();
+    const lastName = ((data.get("lastName") as string) || "").trim();
+    const email = ((data.get("email") as string) || "").trim();
+
     const result = await submitLead({
-      firstName: ((data.get("firstName") as string) || "").trim(),
-      lastName: ((data.get("lastName") as string) || "").trim(),
-      email: ((data.get("email") as string) || "").trim(),
+      firstName,
+      lastName,
+      email,
       phone: ((data.get("phone") as string) || "").trim(),
       message: ((data.get("message") as string) || "").trim(),
       inquiryType,
@@ -91,6 +106,13 @@ function FormCard({
 
     setSubmitting(false);
     if (result.success) {
+      setLead({
+        leadId: result.leadId,
+        clientId: result.clientId,
+        prospectId: result.prospectId,
+        name: `${firstName} ${lastName}`.trim(),
+        email,
+      });
       setSubmitted(true);
       form.reset();
     } else {
@@ -100,14 +122,17 @@ function FormCard({
 
   if (submitted) {
     return (
-      <div className="rounded-[1.75rem] bg-white/[0.05] backdrop-blur-2xl border border-white/10 p-10 text-center">
-        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#71A7F5]/15 border border-[#71A7F5]/30 mx-auto mb-5">
-          <Sparkles className="h-7 w-7 text-[#71A7F5]" />
+      <div className="rounded-[1.75rem] bg-white/[0.05] backdrop-blur-2xl border border-white/10 p-8 lg:p-10">
+        <div className="text-center mb-6">
+          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#71A7F5]/15 border border-[#71A7F5]/30 mx-auto mb-5">
+            <Sparkles className="h-7 w-7 text-[#71A7F5]" />
+          </div>
+          <h3 className="lux-display text-3xl text-white mb-3">
+            Thank <span className="text-[#6762AF] font-semibold">you</span>
+          </h3>
+          <p className="text-white/60">Choose a time below to book your consultation.</p>
         </div>
-        <h3 className="lux-display text-3xl text-white mb-3">
-          Thank <span className="text-[#6762AF] font-semibold">you</span>
-        </h3>
-        <p className="text-white/60">We&apos;ve received your message and will be in touch within 24 hours.</p>
+        <AppointmentBooking leadId={lead.leadId} clientId={lead.clientId} prospectId={lead.prospectId} name={lead.name} email={lead.email} />
       </div>
     );
   }

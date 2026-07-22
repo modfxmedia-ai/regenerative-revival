@@ -29,6 +29,16 @@ const TYRIA_FIELDS = {
   everflowId: "5a12ac4a-0f54-44de-ad75-479b90068412",
 } as const;
 
+// Resolved Tyria entity ids returned to the client. All non-PHI reference
+// tokens. clientId/prospectId are present only when Tyria matched an existing
+// record; otherwise a new lead is created and only leadId is set.
+type TyriaEntity = {
+  leadId: string | null;
+  clientId: string | null;
+  prospectId: string | null;
+};
+const EMPTY_ENTITY: TyriaEntity = { leadId: null, clientId: null, prospectId: null };
+
 async function forwardToWebhook(
   url: string,
   label: string,
@@ -58,8 +68,8 @@ async function forwardToTyria(fields: {
   inquiryType?: string | null;
   source: string;
   everflowId?: string | null;
-}): Promise<string | null> {
-  if (!TYRIA_API_KEY) return null;
+}): Promise<TyriaEntity> {
+  if (!TYRIA_API_KEY) return EMPTY_ENTITY;
   try {
     const answers: Record<string, string> = {
       [TYRIA_FIELDS.firstName]: fields.firstName,
@@ -94,18 +104,23 @@ async function forwardToTyria(fields: {
     );
     if (!res.ok) {
       console.error("[TYRIA FORM ERROR]", res.status, await res.text());
-      return null;
+      return EMPTY_ENTITY;
     }
-    // Return the opaque entry id (Lead ID). This is NOT PHI - it is a random
-    // reference token used to link downstream tools (e.g. the appointment
-    // embeddable) to this submission without passing any patient data.
+    // Return the opaque entity id (Lead/Prospect/Client ID). This is NOT PHI - it
+    // is a random reference token used to link downstream tools (e.g. the
+    // appointment embeddable) to this submission without passing any patient data.
     const json = (await res.json().catch(() => null)) as
-      | { data?: { id?: string } }
+      | { data?: { id?: string; leadId?: string; clientId?: string; prospectId?: string } }
       | null;
-    return json?.data?.id ?? null;
+    const data = json?.data ?? {};
+    return {
+      leadId: data.leadId ?? data.id ?? null,
+      clientId: data.clientId ?? null,
+      prospectId: data.prospectId ?? null,
+    };
   } catch (err) {
     console.error("[TYRIA FORM EXCEPTION]", err);
-    return null;
+    return EMPTY_ENTITY;
   }
 }
 
@@ -194,9 +209,9 @@ export async function POST(req: NextRequest) {
     // opaque entry id). Tyria is the BAA-covered system of record that holds
     // the PHI; the Lead ID is a non-PHI reference token returned to the client
     // for downstream use (e.g. the appointment embeddable).
-    let leadId: string | null = null;
+    let entity: TyriaEntity = EMPTY_ENTITY;
     if (TYRIA_API_KEY) {
-      leadId = await forwardToTyria({
+      entity = await forwardToTyria({
         firstName: firstName.trim(),
         lastName: (lastName || "").trim(),
         email: email.trim(),
@@ -208,6 +223,8 @@ export async function POST(req: NextRequest) {
         everflowId: everflowId || null,
       });
     }
+    const { leadId, clientId, prospectId } = entity;
+    const entityId = clientId ?? prospectId ?? leadId;
 
     // HIPAA: the team notification email contains NO PHI. Patient identity and
     // any health details live only in the BAA-covered CRM. This email is just a
@@ -216,7 +233,7 @@ export async function POST(req: NextRequest) {
       <h2>New Lead from Regenerative Revival</h2>
       <p style="font-size:14px;color:#555;">A new lead was submitted through the website. For HIPAA compliance, no patient or health information is included in this email. Open the record in the CRM using the Lead ID below to view details and follow up.</p>
       <table style="border-collapse:collapse;width:100%;max-width:600px;">
-        <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Lead ID</td><td style="padding:8px;border-bottom:1px solid #eee;">${leadId || "(unavailable - check CRM)"}</td></tr>
+        <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Lead ID</td><td style="padding:8px;border-bottom:1px solid #eee;">${entityId || "(unavailable - check CRM)"}</td></tr>
         ${source ? `<tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Source</td><td style="padding:8px;border-bottom:1px solid #eee;">${source}</td></tr>` : ""}
         <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Submitted</td><td style="padding:8px;border-bottom:1px solid #eee;">${new Date().toISOString()}</td></tr>
       </table>
@@ -225,7 +242,7 @@ export async function POST(req: NextRequest) {
     if (!RESEND_API_KEY) {
       // Log non-PHI only (source + Lead ID). Never log name/email/phone/message.
       console.log("[LEAD] received", { source: source || "website", leadId });
-      return NextResponse.json({ success: true, leadId, warning: "Email not configured - lead logged to server." });
+      return NextResponse.json({ success: true, leadId, clientId, prospectId, warning: "Email not configured - lead logged to server." });
     }
 
     // Send lead notification to team
@@ -292,7 +309,7 @@ export async function POST(req: NextRequest) {
       console.error("[CONFIRMATION EMAIL ERROR]", await confirmRes.text());
     }
 
-    return NextResponse.json({ success: true, leadId });
+    return NextResponse.json({ success: true, leadId, clientId, prospectId });
   } catch (err) {
     console.error("[LEAD API ERROR]", err);
     return NextResponse.json({ error: "Something went wrong" }, { status: 500 });

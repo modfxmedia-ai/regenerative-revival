@@ -3,11 +3,22 @@
 import { useState } from "react";
 import { ArrowUpRight, Shield } from "lucide-react";
 import { submitLead } from "@/app/lib/submit-lead";
+import AppointmentBooking from "@/app/components/AppointmentBooking";
 
 export default function HeroContactForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [lead, setLead] = useState<{
+    leadId?: string | null;
+    clientId?: string | null;
+    prospectId?: string | null;
+    name: string;
+    email: string;
+  }>({
+    name: "",
+    email: "",
+  });
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -40,6 +51,7 @@ export default function HeroContactForm() {
       });
       setSubmitting(false);
       if (result.success) {
+        setLead({ leadId: result.leadId, clientId: result.clientId, prospectId: result.prospectId, name, email });
         setSubmitted(true);
         form.reset();
       } else {
@@ -54,14 +66,17 @@ export default function HeroContactForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-2xl bg-white/[0.05] backdrop-blur-xl border border-white/10 p-8 text-center">
-        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#71A7F5]/20 border border-[#71A7F5]/30 mx-auto mb-4">
-          <ArrowUpRight className="h-6 w-6 text-[#71A7F5]" />
+      <div className="rounded-2xl bg-white/[0.05] backdrop-blur-xl border border-white/10 p-6 lg:p-8">
+        <div className="text-center mb-6">
+          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#71A7F5]/20 border border-[#71A7F5]/30 mx-auto mb-4">
+            <ArrowUpRight className="h-6 w-6 text-[#71A7F5]" />
+          </div>
+          <h3 className="lux-display text-2xl text-white mb-2">
+            Thank <span className="text-[#6762AF] font-semibold">you</span>
+          </h3>
+          <p className="text-sm text-white/50">Pick a time below to book your free consultation.</p>
         </div>
-        <h3 className="lux-display text-2xl text-white mb-2">
-          Thank <span className="text-[#6762AF] font-semibold">you</span>
-        </h3>
-        <p className="text-sm text-white/50">We&apos;ll be in touch within 24 hours.</p>
+        <AppointmentBooking leadId={lead.leadId} clientId={lead.clientId} prospectId={lead.prospectId} name={lead.name} email={lead.email} />
       </div>
     );
   }

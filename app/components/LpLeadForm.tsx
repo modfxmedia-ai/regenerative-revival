@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { submitLead } from "@/app/lib/submit-lead";
+import AppointmentBooking from "@/app/components/AppointmentBooking";
 
 interface LpLeadFormProps {
   /** Lead source tag surfaced in the team email / CRM. */
@@ -49,6 +50,16 @@ export default function LpLeadForm({
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [lead, setLead] = useState<{
+    leadId?: string | null;
+    clientId?: string | null;
+    prospectId?: string | null;
+    name: string;
+    email: string;
+  }>({
+    name: "",
+    email: "",
+  });
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -89,6 +100,13 @@ export default function LpLeadForm({
     setSubmitting(false);
 
     if (result.success) {
+      setLead({
+        leadId: result.leadId,
+        clientId: result.clientId,
+        prospectId: result.prospectId,
+        name: `${firstName} ${lastName}`.trim(),
+        email,
+      });
       setSubmitted(true);
       form.reset();
     } else {
@@ -98,12 +116,16 @@ export default function LpLeadForm({
 
   if (submitted) {
     return (
-      <div className="rounded-2xl bg-white p-8 text-center shadow-[0_8px_40px_-12px_rgba(88,53,99,0.18)] border border-[#F1ECF8]">
-        <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#F1ECF8]">
-          <CheckCircle2 className="h-7 w-7 text-[#6762AF]" />
+      <div className="rounded-2xl bg-white p-8 shadow-[0_8px_40px_-12px_rgba(88,53,99,0.18)] border border-[#F1ECF8]">
+        <div className="text-center mb-6">
+          <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#F1ECF8]">
+            <CheckCircle2 className="h-7 w-7 text-[#6762AF]" />
+          </div>
+          <h3 className="text-xl font-semibold text-[#1A1F30]">{successTitle}</h3>
+          <p className="mt-2 text-[#4A4F66]">{successMessage}</p>
+          <p className="mt-2 text-sm font-medium text-[#6762AF]">Pick a time below to book your free consultation.</p>
         </div>
-        <h3 className="text-xl font-semibold text-[#1A1F30]">{successTitle}</h3>
-        <p className="mt-2 text-[#4A4F66]">{successMessage}</p>
+        <AppointmentBooking leadId={lead.leadId} clientId={lead.clientId} prospectId={lead.prospectId} name={lead.name} email={lead.email} />
       </div>
     );
   }

@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { ImageWithFallback } from "./_components/ImageWithFallback";
 import { ASSETS, BOOKING_URL } from "./config";
+import AppointmentBooking from "@/app/components/AppointmentBooking";
 
 export default function PatientHomePage() {
   return (
@@ -205,7 +206,7 @@ export default function PatientHomePage() {
       </section>
 
       {/* 10 REASONS */}
-      <section className="bg-white px-6 py-32">
+      <section id="why-cellular-therapy" className="scroll-mt-24 bg-white px-6 py-32">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto mb-24 max-w-3xl text-center">
             <div className="mb-6 text-[10px] font-bold uppercase tracking-[0.2em] text-blue-600">
@@ -301,7 +302,7 @@ export default function PatientHomePage() {
       </section>
 
       {/* TREATMENT APPROACHES */}
-      <section className="border-t border-slate-100 bg-slate-50 px-6 py-24 lg:py-32">
+      <section id="treatment-approaches" className="scroll-mt-24 border-t border-slate-100 bg-slate-50 px-6 py-24 lg:py-32">
         <div className="mx-auto max-w-6xl">
           <div className="mb-16 max-w-3xl">
             <h2 className="mb-6 text-3xl font-semibold tracking-tight text-slate-900 lg:text-4xl">
@@ -379,7 +380,7 @@ export default function PatientHomePage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="bg-slate-900 px-6 py-24 text-center">
+      <section id="ready-to-explore" className="scroll-mt-24 bg-slate-900 px-6 py-24 text-center">
         <div className="mx-auto max-w-3xl">
           <h2 className="mb-6 text-3xl font-semibold tracking-tight text-white lg:text-4xl">
             Ready to explore your options?
@@ -394,6 +395,24 @@ export default function PatientHomePage() {
           >
             Book a Free Consultation
           </a>
+        </div>
+      </section>
+
+      {/* BOOKING WIDGET */}
+      <section id="book-consultation" className="scroll-mt-24 bg-white px-6 py-24 lg:py-32">
+        <div className="mx-auto max-w-3xl">
+          <div className="mb-10 text-center">
+            <div className="mb-6 text-[10px] font-bold uppercase tracking-[0.2em] text-blue-600">
+              Schedule Your Visit
+            </div>
+            <h2 className="mb-4 text-3xl font-semibold tracking-tight text-slate-900 lg:text-4xl">
+              Book your free consultation
+            </h2>
+            <p className="text-lg leading-relaxed text-slate-500">
+              Choose a time that works for you and our medical team will confirm your visit.
+            </p>
+          </div>
+          <AppointmentBooking className="rounded-3xl border border-slate-100 bg-slate-50 p-4 sm:p-6" />
         </div>
       </section>
     </div>

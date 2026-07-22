@@ -24,7 +24,7 @@ export default function PatientLayout({
           {/* Left: Logos */}
           <div className="flex items-center gap-5">
             <Link href="/patient" className="flex items-center">
-              <RegenLinxLogo className="[&_span:first-child]:text-xl" />
+              <RegenLinxLogo className="h-14" />
             </Link>
             <span className="hidden h-10 w-px bg-slate-200 lg:block" />
             <div className="hidden items-center gap-3 lg:flex">
@@ -93,7 +93,7 @@ export default function PatientLayout({
           <div className="mb-24 grid gap-16 md:grid-cols-4">
             <div className="md:col-span-2">
               <div className="mb-8">
-                <RegenLinxLogo showTagline />
+                <RegenLinxLogo showTagline className="h-20" />
               </div>
               <p className="mb-12 max-w-sm text-sm font-medium leading-relaxed text-slate-500">
                 Advanced regenerative medicine therapies helping you live a more
@@ -119,24 +119,24 @@ export default function PatientLayout({
               </h4>
               <ul className="space-y-5 text-sm font-medium text-slate-500">
                 <li>
-                  <Link
-                    href="/patient"
+                  <a
+                    href="#treatment-approaches"
                     className="transition-colors hover:text-blue-600"
                   >
                     Our Therapies
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/patient"
-                    className="transition-colors hover:text-blue-600"
-                  >
-                    Patient FAQ
-                  </Link>
+                  </a>
                 </li>
                 <li>
                   <a
-                    href={BOOKING_URL}
+                    href="#why-cellular-therapy"
+                    className="transition-colors hover:text-blue-600"
+                  >
+                    Patient FAQ
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#ready-to-explore"
                     className="transition-colors hover:text-blue-600"
                   >
                     Book Consult

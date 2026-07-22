@@ -1,9 +1,12 @@
 // ---------------------------------------------------------------------------
-// RegenLinx wordmark
-// Text-based logo matching the RegenLinx brand system. No raster logo asset was
-// supplied, so this renders a clean, scalable wordmark. Swap for a next/image
-// <Image> once an official logo file is provided.
+// Regenlix logo
+// Renders the official REGENLIX brand lockup (orb + wordmark + tagline). The
+// tagline ("Regenerative Lifestyle") is baked into the artwork, so `showTagline`
+// is kept only for call-site compatibility and no longer changes the output.
 // ---------------------------------------------------------------------------
+import { ImageWithFallback } from "./ImageWithFallback";
+import { ASSETS } from "../config";
+
 export function RegenLinxLogo({
   className = "",
   showTagline = false,
@@ -11,16 +14,12 @@ export function RegenLinxLogo({
   className?: string;
   showTagline?: boolean;
 }) {
+  void showTagline;
   return (
-    <div className={`flex flex-col leading-none ${className}`}>
-      <span className="text-2xl font-bold tracking-tight text-slate-900">
-        Regen<span className="text-blue-600">Linx</span>
-      </span>
-      {showTagline && (
-        <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">
-          a division of Medlinx
-        </span>
-      )}
-    </div>
+    <ImageWithFallback
+      src={ASSETS.regenlixLogo}
+      alt="Regenlix — Regenerative Lifestyle"
+      className={`w-auto object-contain ${className}`}
+    />
   );
 }

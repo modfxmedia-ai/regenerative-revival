@@ -8,6 +8,7 @@ import { SiteNavbar, SiteFooter } from "./components/SiteChrome";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 import UtmCapture from "./components/UtmCapture";
 import EverflowCapture from "./components/EverflowCapture";
+import FinancingFloatingCTA from "./components/FinancingFloatingCTA";
 import { JsonLd, organizationSchema, localBusinessSchema } from "./lib/schema";
 
 // Poppins - primary font for all headings and body text
@@ -100,6 +101,7 @@ export default function RootLayout({
         <SiteNavbar />
         {children}
         <SiteFooter />
+        <FinancingFloatingCTA />
         <Analytics />
         <SpeedInsights />
       </body>

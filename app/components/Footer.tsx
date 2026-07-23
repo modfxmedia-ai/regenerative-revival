@@ -17,6 +17,7 @@ const about = [
 
 const resources = [
   { label: "How It Works", href: "/concierge-care-model" },
+  { label: "Financing & Payment Plans", href: "/financing" },
   { label: "Patient Portal", href: "https://portal.regenerativerevival.com" },
   { label: "FAQ", href: "/#faq" },
   { label: "Blog", href: "/news" },

@@ -64,11 +64,9 @@ export const metadata: Metadata = {
     description:
       "In-home stem cell therapy and nationwide telehealth for peptides, hormones, and NAD+. One physician-led medical team.",
   },
-  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && {
-    verification: {
-      google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
-    },
-  }),
+  verification: {
+    google: "QJvmV1-OR8tFb-gAKiewTi3iP93tnN3HDE1dpzYqBIo",
+  },
 };
 
 export default function RootLayout({

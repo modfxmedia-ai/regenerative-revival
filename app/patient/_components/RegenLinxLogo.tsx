@@ -18,7 +18,7 @@ export function RegenLinxLogo({
   return (
     <ImageWithFallback
       src={ASSETS.regenlixLogo}
-      alt="Regenlix — Regenerative Lifestyle"
+      alt="Regenlix - Regenerative Lifestyle"
       className={`w-auto object-contain ${className}`}
     />
   );

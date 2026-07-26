@@ -16,7 +16,7 @@ const about = [
 ];
 
 const resources = [
-  { label: "How It Works", href: "/concierge-care-model" },
+  { label: "How It Works", href: "/#how-it-works" },
   { label: "Financing & Payment Plans", href: "/financing" },
   { label: "Patient Portal", href: "https://portal.regenerativerevival.com" },
   { label: "FAQ", href: "/#faq" },
@@ -27,6 +27,7 @@ const resources = [
 const contact = [
   { label: "Patient Support", href: "/contact" },
   { label: "Partner With Us", href: "/partner-with-us" },
+  { label: "For Providers", href: "/for-providers" },
   { label: "Press", href: "/news" },
 ];
 
@@ -59,7 +60,10 @@ export default function Footer() {
                   className="h-14 w-auto brightness-0 invert"
                 />
               </Link>
-              <p className="mt-4 text-[12px] text-white/35 leading-[1.7] max-w-[160px]">
+              <p className="mt-4 text-[13px] font-medium italic text-white/55 leading-[1.5]">
+                got stem cells?™
+              </p>
+              <p className="mt-2 text-[12px] text-white/35 leading-[1.7] max-w-[180px]">
                 Advanced regenerative medicine, delivered to your door.
               </p>
             </div>
@@ -114,7 +118,7 @@ export default function Footer() {
           </div>
           <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-5">
             <p className="text-[11px] font-medium text-white/20 leading-[1.75]">
-              Regenerative Revival provides concierge regenerative medicine and coordinates telehealth-based longevity care through a nationwide network of licensed nurse practitioners under physician oversight. Statements on this site have not been evaluated by the FDA. Our services are not intended to diagnose, treat, cure, or prevent any disease. Individual results vary. Regenerative therapies are considered off-label for most musculoskeletal applications. Telehealth services are delivered by licensed clinicians in accordance with state-specific regulations. Compounded medications are dispensed by LegitScript- and NABP-accredited pharmacy partners.
+              Regenerative Revival® and got stem cells?™ are trademarks of Regenerative Revival. Regenerative Revival provides concierge regenerative medicine and coordinates telehealth-based longevity care through a nationwide network of licensed nurse practitioners under physician oversight. Statements on this site have not been evaluated by the FDA. Our services are not intended to diagnose, treat, cure, or prevent any disease. Individual results vary. Regenerative therapies are considered off-label for most musculoskeletal applications. Telehealth services are delivered by licensed clinicians in accordance with state-specific regulations. Compounded medications are dispensed by LegitScript- and NABP-accredited pharmacy partners.
             </p>
           </div>
         </div>

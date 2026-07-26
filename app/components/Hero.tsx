@@ -96,20 +96,23 @@ export default function Hero() {
               Regeneration &amp; Longevity
             </motion.h1>
 
-            {/* "got stem cells?" logo - white, transparent */}
+            {/* "got stem cells?™" - HTML text for trademark visibility + logo mark */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.45 }}
-              className="mt-6 flex justify-center"
+              className="mt-6 flex flex-col items-center gap-3"
             >
+              <h2 className="font-[family-name:var(--font-poppins)] text-[clamp(1.35rem,3.2vw,2rem)] font-medium tracking-[-0.02em] text-white/95">
+                got stem cells?™
+              </h2>
               <Image
                 src="/lp/miami/gsc-logo.png"
-                alt="got stem cells?"
+                alt="Regenerative Revival® got stem cells?™"
                 width={480}
                 height={153}
                 priority
-                className="h-auto w-[220px] sm:w-[280px] lg:w-[340px]"
+                className="h-auto w-[180px] sm:w-[220px] lg:w-[260px] opacity-90"
               />
             </motion.div>
 
@@ -137,7 +140,7 @@ export default function Hero() {
               >
                 <span className="relative z-10 flex items-center gap-2.5">
                   <Sparkles className="h-4 w-4 text-[#6762AF]" />
-                  Take The 2-Minute Quiz
+                  See if you&apos;ve got stem cells?™
                 </span>
                 <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-[#F1ECF8] to-transparent" />
               </a>

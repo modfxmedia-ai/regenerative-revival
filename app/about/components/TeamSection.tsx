@@ -59,16 +59,16 @@ const nursePractitioners: TeamMember[] = [
 ];
 
 const staff: TeamMember[] = [
-  { name: "Jared Novack", role: "Director of Operations", photo: img("jared-novack.png") },
+  { name: "Jared Novack", role: "Director of Operations", photo: "/team/jared-novack.png" },
   { name: "Dasa'n Fant", role: "Chief of Staff", photo: img("dasan-fant.png") },
   { name: "Shannon Lonergan", role: "Chief of Staff", photo: img("shannon-lonergan.jpg") },
   { name: "Lexi Taylor", role: "Executive Assistant", photo: img("lexi-taylor.jpg") },
   { name: "Cathy Wandmacher", role: "Administrative Assistant", photo: img("cathy-wandmacher.jpg") },
   { name: "Danielle Kreienbrink", role: "Support Team Account Manager", photo: img("danielle-kreienbrink.jpg") },
-  { name: "Lydia D'Antonio", role: "Director of Marketing", photo: img("lydia.jpg") },
+  { name: "Lydia D'Antonio", role: "Director of Marketing", photo: "/team/lydia.jpg" },
   { name: "Shaughnessy Crespo", role: "Support Team", photo: img("shaughnessy-crespo.jpg") },
   { name: "Emma Feddo", role: "Assistant", photo: img("emma-feddo.jpg") },
-  { name: "Michaela Gebert", role: "Assistant", photo: img("michaela-gebert.png") },
+  { name: "Michaela Gebert", role: "Assistant", photo: "/team/michaela-gebert.png" },
   { name: "Lane Snover", role: "Assistant" },
   { name: "Elizabeth King-Rodolf", role: "Assistant" },
 ];

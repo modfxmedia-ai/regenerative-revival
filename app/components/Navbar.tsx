@@ -131,11 +131,11 @@ export default function Navbar() {
       >
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
           <div className="flex h-20 items-center justify-between">
-            {/* Logo */}
+            {/* Logo + trademark tagline */}
             <a href="/" className="flex items-center gap-3 shrink-0 group">
               <Image
                 src="/logo.png"
-                alt="Regenerative Revival"
+                alt="Regenerative Revival®"
                 width={180}
                 height={64}
                 className={`h-14 w-auto transition-all duration-500 ${
@@ -143,6 +143,13 @@ export default function Navbar() {
                 }`}
                 priority
               />
+              <span
+                className={`hidden sm:block text-[12px] font-medium italic tracking-wide transition-colors duration-500 ${
+                  scrolled ? "text-[#6762AF]" : "text-white/75"
+                }`}
+              >
+                got stem cells?™
+              </span>
             </a>
 
             {/* Desktop nav links */}

@@ -3,11 +3,8 @@
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 
-// TODO: Replace with the Foley / "The Grove" event-specific TyriaCore RSVP form URL.
-// Ben provides the form ID + eventContextToken for this event. The Dell Webb token
-// below MUST NOT be reused — it would route Foley RSVPs to the wrong event.
 export const RSVP_FORM_SRC =
-  "https://www.tyriacore.app/forms/REPLACE_WITH_FOLEY_FORM_ID?workspaceId=ws_962d7611-e9b4-4990-9ddc-89bf7c899735&embed=1";
+  "https://www.tyriacore.app/forms/frm_a1bb3ad6-9d92-4fd8-b61e-5f401a75ecfb?workspaceId=ws_962d7611-e9b4-4990-9ddc-89bf7c899735&eventContextToken=pctx_ws_962d7611-e9b4-4990-9ddc-89bf7c899735--WxZCv3_376q4EiiN.YSajU14vS4VXmm91QY1z_Rml1VNil8ODY1Phcq9UrCI&embed=1";
 
 type RsvpButtonProps = {
   children: React.ReactNode;

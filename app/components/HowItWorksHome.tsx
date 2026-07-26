@@ -35,7 +35,7 @@ const steps = [
   {
     num: "03",
     title: "Get a personalized plan",
-    desc: "Your provider builds a personalized dosing protocol. Medication ships within 3–5 business days.",
+    desc: "Your provider builds a personalized dosing protocol. Medication ships within 3-5 business days.",
     icon: ClipboardList,
     accent: "#583563",
     glow: "rgba(88,53,99,0.35)",
@@ -85,6 +85,7 @@ export default function HowItWorksHome() {
 
   return (
     <section
+      id="how-it-works"
       ref={ref}
       className="relative py-24 lg:py-32 overflow-hidden bg-[#F0EBF8]"
     >

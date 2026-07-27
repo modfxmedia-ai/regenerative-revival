@@ -281,9 +281,9 @@ export default function FoleyRsvpPage() {
                   <span>
                     Venue:{" "}
                     <span className="text-[#7A7F95]">
-                      Wolf Bay Restaurant &amp; Catering
+                      The Main Hall at The Foley Grove
                       <br />
-                      8647 Arlington Drive, Foley, AL 36535
+                      8647 Arlington Drive, Foley, AL, 36535, United States
                     </span>
                   </span>
                 </div>

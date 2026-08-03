@@ -20,7 +20,7 @@ const resources = [
   { label: "Financing & Payment Plans", href: "/financing" },
   { label: "Patient Portal", href: "https://portal.regenerativerevival.com" },
   { label: "FAQ", href: "/#faq" },
-  { label: "Blog", href: "/news" },
+  { label: "News", href: "/news" },
   { label: "Site Map", href: "/site-map" },
 ];
 

@@ -1,29 +1,64 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { ArrowUpRight, ChevronDown, Clock } from "lucide-react";
 import { articles } from "../data";
 import Link from "next/link";
 import Image from "next/image";
 
-const featured = articles[0];
-const spotlight = articles.slice(1, 4);
-const remaining = articles.slice(4);
-
 export default function NewsList() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
   const [expanded, setExpanded] = useState(false);
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const categories = useMemo(
+    () => ["All", ...Array.from(new Set(articles.map((a) => a.category)))],
+    []
+  );
+
+  const filtered = activeCategory === "All" ? articles : articles.filter((a) => a.category === activeCategory);
+  const featured = filtered[0];
+  const spotlight = filtered.slice(1, 4);
+  const remaining = filtered.slice(4);
+
+  function selectCategory(cat: string) {
+    setActiveCategory(cat);
+    setExpanded(false);
+  }
 
   return (
     <div ref={ref}>
+      {/* ═══ CATEGORY FILTER ═══ */}
+      <section className="relative bg-[#1A1F30] overflow-hidden">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-8">
+          <div className="flex flex-wrap items-center gap-3">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => selectCategory(cat)}
+                className={`px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.15em] rounded-full border transition-colors duration-300 cursor-pointer ${
+                  activeCategory === cat
+                    ? "bg-[#71A7F5] text-[#1A1F30] border-[#71A7F5]"
+                    : "border-white/15 text-white/50 hover:border-[#71A7F5]/50 hover:text-white"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ═══ FEATURED HERO ARTICLE - dark midnight ═══ */}
+      {featured && (
       <section className="relative bg-gradient-to-b from-[#21253C] to-[#1A1F30] overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(103,98,175,0.12),transparent_70%)] pointer-events-none" />
         <div className="absolute inset-0 lux-grid opacity-20 pointer-events-none" />
 
         <motion.div
+          key={featured.slug}
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 1 }}
@@ -68,8 +103,10 @@ export default function NewsList() {
           </Link>
         </motion.div>
       </section>
+      )}
 
       {/* ═══ SPOTLIGHT TRIO - deeper midnight ═══ */}
+      {spotlight.length > 0 && (
       <section className="relative bg-[#0F1220] overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-20">
           <div className="grid md:grid-cols-3 gap-px bg-white/[0.05]">
@@ -108,8 +145,10 @@ export default function NewsList() {
           </div>
         </div>
       </section>
+      )}
 
       {/* ═══ REMAINING - EDITORIAL LIST - white ═══ */}
+      {remaining.length > 0 && (
       <section className="relative bg-white overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-20">
           <motion.div
@@ -172,6 +211,15 @@ export default function NewsList() {
           )}
         </div>
       </section>
+      )}
+
+      {!featured && (
+        <section className="relative bg-white overflow-hidden">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 py-24 text-center text-[#4A4F66]">
+            No articles found in this category.
+          </div>
+        </section>
+      )}
     </div>
   );
 }

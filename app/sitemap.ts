@@ -44,6 +44,9 @@ const STATIC_PAGE_DATES: Record<string, string> = {
   // Social proof
   "/testimonials": "2026-05-22",
 
+  // Treatment / clinic landing pages
+  "/onda-pro": "2026-10-12",
+
   // HTML site map / link hub
   "/site-map": "2026-05-22",
 

@@ -34,6 +34,7 @@ const regenerativePages: { label: string; href: string }[] = [
   { label: "Why Stem Cells", href: "/why-stem-cells" },
   { label: "Concierge Care Model", href: "/concierge-care-model" },
   { label: "Services", href: "/services" },
+  { label: "ONDA Pro Body Contouring", href: "/onda-pro" },
 ];
 
 const telehealthPages: { label: string; href: string }[] = [
